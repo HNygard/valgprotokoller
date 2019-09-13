@@ -50,7 +50,7 @@ foreach ($files as $file) {
 $html .= "</ul>\n\n";
 
 $html = str_replace('-----SUMMARY-----HERE-----', $summary_html, $html);
-file_put_contents(__DIR__ . '/data-store/html/index.html', $html);
+file_put_contents(__DIR__ . '/docs/index.html', $html);
 
 function str_starts_with($haystack, $needle) {
     return substr($haystack, 0, strlen($needle)) == $needle;
