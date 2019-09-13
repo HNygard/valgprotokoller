@@ -121,8 +121,8 @@ foreach ($files as $file) {
 
     $obj->numbers = array();
 
-    if(ifExistsAndEqual($lines, $i, 'Representantfordeling')) {
-        while(!str_starts_with(trim($lines[$i]), 'Sum')) {
+    if (ifExistsAndEqual($lines, $i, 'Representantfordeling')) {
+        while (!str_starts_with(trim($lines[$i]), 'Sum')) {
             // Skip
             $i++;
         }
@@ -274,7 +274,7 @@ foreach ($files as $file) {
     // C4.6 Merknad
     $i = assertLine_trim($lines, $i, 'C3 Stemmegivninger - valgting');
     // Skip
-    while($lines[$i] != 'C4.6 Merknad') {
+    while ($lines[$i] != 'C4.6 Merknad') {
         $i++;
     }
 
@@ -289,7 +289,7 @@ foreach ($files as $file) {
     $i = assertLine_trim($lines, $i, 'C4.7 Antall stemmesedler i beredskapskonvolutt');
     $i = removeLineIfPresent_andEmpty($lines, $i);
     // Skip
-    while($lines[$i] != 'C4.9 Merknad') {
+    while ($lines[$i] != 'C4.9 Merknad') {
         $i++;
     }
 
@@ -306,7 +306,7 @@ foreach ($files as $file) {
     // D1.3 Godkjente forhåndsstemmesedler fordelt på parti
     // TODO: parse - D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler
 
-    while($lines[$i] != 'D1.5 Merknad') {
+    while ($lines[$i] != 'D1.5 Merknad') {
         // Skip
         $i++;
     }
@@ -324,7 +324,7 @@ foreach ($files as $file) {
     // D2.2 Forkastede valgtingsstemmesedler
     // D2.3 Godkjente valgtingsstemmesedler fordelt på parti
     // D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler
-    while($lines[$i] != 'D2.5 Merknad') {
+    while ($lines[$i] != 'D2.5 Merknad') {
         // Skip
         $i++;
     }
@@ -338,13 +338,12 @@ foreach ($files as $file) {
 
 
     // D3 Totaloversikt over antall stemmesedler fordelt på parti
-    while($lines[$i] != 'Øvrige medlemmer:') {
+    while ($lines[$i] != 'Øvrige medlemmer:') {
         // Skip
         $i++;
     }
     $i++;
 
-    var_dump($obj);
 
     $unknown_lines = false;
     for (; $i < count($lines); $i++) {
@@ -357,6 +356,14 @@ foreach ($files as $file) {
     }
 
     // TODO: write file
+    $data_dir = __DIR__ . '/data-store/json/' . $obj->election . '/' . $obj->county;
+    if (!file_exists($data_dir)) {
+        mkdir($data_dir, 0777, true);
+    }
+    file_put_contents(
+        $data_dir . '/' . $obj->municipality . '.json',
+        json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE)
+    );
 
     var_dump($obj);
 }
@@ -467,7 +474,7 @@ function readComments($obj, $lines, $i, $merknad_heading, $merknad_reason, $cont
 
     $comment_lines = array();
     while (!str_starts_with($lines[$i], $continue_until)) {
-        $comment_lines[] = $lines[$i++];
+        $comment_lines[] = trim($lines[$i++]);
     }
     $comments = explode("\n\n", trim(implode("\n", $comment_lines)));
     $obj->comments[$merknad_heading] = $comments;
