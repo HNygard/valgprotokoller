@@ -93,6 +93,88 @@ foreach ($files as $file) {
     $match = regexAssertAndReturnMatch('/^ Totalt antall forkastede stemmesedler \s*([0-9 ]*)\s*$/', $lines[$i++]);
     $obj->keyfigures_totaltAntallForkastedeStemmesedler = $match[1];
 
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    $obj->numbers = array();
+
+    $i = assertLine_trim($lines, $i, 'A Administrative forhold');
+    // A1 Valgstyret
+    // A2 Valgtinget
+    // Continue to 'B Foreløpig opptelling av forhåndsstemmer'
+    while (trim($lines[$i]) != 'B Foreløpig opptelling av forhåndsstemmer') {
+        $i++;
+    }
+
+    $i = assertLine_trim($lines, $i, 'B Foreløpig opptelling av forhåndsstemmer');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = assertLine_trim($lines, $i, 'B1 Behandling av mottatte forhåndsstemmegivninger');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+
+    // ---- Table - B1.1 Totalt mottatte forhåndsstemmegivninger
+    $current_heading = 'B1.1 Totalt mottatte forhåndsstemmegivninger';
+    $column1 = 'Forkastet';
+    $column2 = 'Godkjente';
+    $obj->numbers[$current_heading] = array();
+    $i = assertLine_trim($lines, $i, $current_heading);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    $i = assertLine_trim($lines, $i, 'Antall stemmegivninger');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    regexAssertAndReturnMatch('/^\s*' . $column1 . ' \s* ' . $column2 . '$/', $lines[$i++]);
+
+    $readTable_twoColNumbers = function ($lines, $i) {
+        // One line.
+        $line = $lines[$i++];
+
+        // Line 2
+        if (strlen($lines[$i]) > 3) {
+            $line .= str_replace("\r", '', $lines[$i++]);
+        }
+
+        // Line 3
+        if (strlen($lines[$i]) > 3) {
+            $line .= str_replace("\r", '', $lines[$i++]);
+        }
+
+        $line = str_replace("\n", '', $line);
+
+        // Status:
+        // - All on one line
+        // - Numbers all the way to the right
+
+        $match = regexAssertAndReturnMatch('/^(.*)\s+([0-9]* ?[0-9]+)\s\s\s+([0-9]* ?[0-9]+)\s*$/', $line);
+
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+
+        return array(
+            'i' => $i,
+            'line' => $line,
+            'text' => trim($match[1]),
+            'numberColumn1' => $match[2],
+            'numberColumn2' => $match[3]
+        );
+    };
+    while (!str_starts_with($lines[$i], 'Totalt antall')) {
+        $row = $readTable_twoColNumbers($lines, $i);
+        $obj->numbers[$current_heading][$row['text']] = array(
+            $column1 => $row['numberColumn1'],
+            $column2 => $row['numberColumn2']
+        );
+        $i = $row['i'];
+    }
+
+
+
+
+    var_dump($obj);
+
+    assertLine($lines, $i, 'asdf');
+
     $unknown_lines = false;
     for (; $i < count($lines); $i++) {
         $unknown_lines = true;
