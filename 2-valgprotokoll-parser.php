@@ -222,6 +222,111 @@ foreach ($files as $file) {
     $i = assertLine_trim($lines, $i, 'C Foreløpig opptelling av valgtingsstemmer');
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = assertLine_trim($lines, $i, 'C1 Oversikt over stemmer mottatt i alle kretser');
+    while (!str_starts_with(trim($lines[$i]), 'C2 Foreløpig opptelling hos stemmestyrene')) {
+        // Skip
+        $i++;
+    }
+    $i = assertLine_trim($lines, $i, 'C2 Foreløpig opptelling hos stemmestyrene');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    // ---- Table - C2.1 Antall valgtingsstemmesedler i urne
+    $current_heading = 'C2.1 Antall valgtingsstemmesedler i urne';
+    $text_heading = null;
+    $column_heading = null;
+    $column1 = 'Kryss i manntall';
+    $column2 = 'Ant. sedler';
+    $sum_row1 = null;
+    $sum_row2 = null;
+    $table_ending = 'C2.2 Partifordelte Valgtingsstemmesedler';
+    $i = readTable($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
+
+    // ---- Table - C2.2 Partifordelte Valgtingsstemmesedler
+    $i = assertLine_trim($lines, $i, 'C2.2 Partifordelte Valgtingsstemmesedler');
+    while (!str_starts_with(trim($lines[$i]), 'Totalt antall partifordelte stemmesedler')) {
+        // Skip
+        $i++;
+    }
+    $i++;
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+
+    // ---- Table - C2.3 Merknad fra stemmestyret
+    $merknad_heading = 'C2.3 Merknad fra stemmestyret';
+    $merknad_reason = '(Årsak til evt. differanse mellom kryss i manntall (C2.1) og foreløpig opptelling og evt. andre forhold)';
+    $continue_until = 'C3 Stemmegivninger - valgting';
+    $i = readComments($obj, $lines, $i, $merknad_heading, $merknad_reason, $continue_until);
+
+
+    // C3 Stemmegivninger - valgting
+    // C4 Foreløpig opptelling hos valgstyret
+    // C4.1 - C4.3 Valgtingsstemmesedler i urne
+    // C4.4 Antall stemmesedler i særskilt omslag
+    // C4.5 Partifordelte stemmesedler i særskilt omslag
+    // C4.6 Merknad
+    $i = assertLine_trim($lines, $i, 'C3 Stemmegivninger - valgting');
+    // Skip
+    while($lines[$i] != 'C4.6 Merknad') {
+        $i++;
+    }
+
+    // ---- Table - C4.6 Merknad
+    $merknad_heading = 'C4.6 Merknad';
+    $merknad_reason = '(Årsak til evt. differanse mellom kryss i manntall (C4.4) og foreløpig opptelling (C4.5) og evt. andre forhold)';
+    $continue_until = 'C4.7 Antall stemmesedler i beredskapskonvolutt';
+    $i = readComments($obj, $lines, $i, $merknad_heading, $merknad_reason, $continue_until);
+
+    // C4.7 Antall stemmesedler i beredskapskonvolutt
+    // C4.8 Partifordelte stemmesedler i beredskapskonvolutt
+    $i = assertLine_trim($lines, $i, 'C4.7 Antall stemmesedler i beredskapskonvolutt');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    // Skip
+    while($lines[$i] != 'C4.9 Merknad') {
+        $i++;
+    }
+
+    // ---- Table - C4.9 Merknad
+    $merknad_heading = 'C4.9 Merknad';
+    $merknad_reason = '(Årsak til evt. differanse mellom kryss i manntall (C4.7) og foreløpig opptelling (C4.8) og evt. andre forhold)';
+    $continue_until = 'D Endelig opptelling';
+    $i = readComments($obj, $lines, $i, $merknad_heading, $merknad_reason, $continue_until);
+
+    // D Endelig opptelling
+    // D1 Forhåndsstemmer
+    // D1.1 Opptalte forhåndsstemmesedler
+    // D1.2 Forkastede forhåndsstemmesedler
+    // D1.3 Godkjente forhåndsstemmesedler fordelt på parti
+    // TODO: parse - D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler
+
+    while($lines[$i] != 'D1.5 Merknad') {
+        // Skip
+        $i++;
+    }
+    //
+
+    // ---- Table - D1.5 Merknad
+    $merknad_heading = 'D1.5 Merknad';
+    $merknad_reason = '(Årsak til evt. differanse mellom foreløpig og endelig opptelling av forhåndsstemmer.)';
+    $continue_until = 'D2 Valgtingsstemmer';
+    $i = readComments($obj, $lines, $i, $merknad_heading, $merknad_reason, $continue_until);
+
+
+    // D2 Valgtingsstemmer
+    // D2.1 Opptalte valgtingsstemmesedler
+    // D2.2 Forkastede valgtingsstemmesedler
+    // D2.3 Godkjente valgtingsstemmesedler fordelt på parti
+    // D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler
+    while($lines[$i] != 'D2.5 Merknad') {
+        // Skip
+        $i++;
+    }
+    //
+
+    // ---- Table - D2.5 Merknad
+    $merknad_heading = 'D2.5 Merknad';
+    $merknad_reason = '(Årsak til evt. differanse mellom foreløpig og endelig opptelling av valgtingsstemmer)';
+    $continue_until = 'D3 Totaloversikt over antall stemmesedler fordelt på parti';
+    $i = readComments($obj, $lines, $i, $merknad_heading, $merknad_reason, $continue_until);
+
 
 
     var_dump($obj);
