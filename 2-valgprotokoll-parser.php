@@ -141,8 +141,8 @@ foreach ($files as $file) {
     $column2 = 'Godkjente';
     $sum_row1 = 'Totalt antall';
     $sum_row2 = null;
-    $i = readTable($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2);
-
+    $table_ending = $sum_row1;
+    $i = readTable($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
 
     // ---- Table - B1.2 Behandlede forhåndsstemmegivninger
     $current_heading = 'B1.2 Behandlede forhåndsstemmegivninger';
@@ -152,8 +152,23 @@ foreach ($files as $file) {
     $column2 = 'Utenriks';
     $sum_row1 = 'Godkjente forhåndsstemmegivninger (skal være lik sum av B2.1.1 og B2.2.1)';
     $sum_row2 = 'Totalt antall forhåndsstemmegivninger';
-    $i = readTable($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2);
+    $table_ending = $sum_row1;
+    $i = readTable($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
 
+    // Headings
+    $i = assertLine_trim($lines, $i, 'B2 Foreløpig opptelling av forhåndsstemmesedler');
+    $i = assertLine_trim($lines, $i, 'B2.1 Startet senest 4 timer før valglokalene stenger');
+
+    // ---- Table - B2.1.1 Behandlede ordinære forhåndsstemmesedler
+    $current_heading = 'B2.1.1 Behandlede ordinære forhåndsstemmesedler';
+    $text_heading = null;
+    $column_heading = null;
+    $column1 = 'Kryss i manntall';
+    $column2 = 'Ant. sedler';
+    $sum_row1 = null;
+    $sum_row2 = null;
+    $table_ending = 'B2.1.2 Partifordelte forhåndsstemmesedler';
+    $i = readTable($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
 
     var_dump($obj);
 
@@ -174,13 +189,19 @@ foreach ($files as $file) {
     var_dump($obj);
 }
 
-function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2) {
+function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_heading,
+                   $column1, $column2,
+                   $sum_row1, $sum_row2, $table_ending) {
     $obj->numbers[$current_heading] = array();
     $i = assertLine_trim($lines, $i, $current_heading);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
-    if ($text_heading == null) {
+    if ($text_heading == null && $column_heading == null) {
+        $header_length = strlen($lines[$i]);
+        regexAssertAndReturnMatch('/^\s*' . $column1 . ' \s* ' . $column2 . '$/', $lines[$i++]);
+    }
+    elseif ($text_heading == null) {
         $i = assertLine_trim($lines, $i, $column_heading);
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $header_length = strlen($lines[$i]);
@@ -190,17 +211,17 @@ function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_
         $header_length = strlen($lines[$i]);
         regexAssertAndReturnMatch('/^' . $text_heading . '\s*' . $column1 . '\s*' . $column2 . '$/', trim($lines[$i++]));
     }
-    $readTable_twoColNumbers = function ($lines, $i, $header_length, $sum_row1) {
+    $readTable_twoColNumbers = function ($lines, $i, $header_length, $table_ending) {
         // One line.
         $row_lines = array($lines[$i++]);
 
         // Line 2
-        if (strlen($lines[$i]) > 3 && !str_starts_with(trim($lines[$i]), $sum_row1)) {
+        if (strlen($lines[$i]) > 3 && !str_starts_with(trim($lines[$i]), $table_ending)) {
             $row_lines[] = str_replace("\r", '', $lines[$i++]);
         }
 
         // Line 3
-        if (strlen($lines[$i]) > 3 && !str_starts_with(trim($lines[$i]), $sum_row1)) {
+        if (strlen($lines[$i]) > 3 && !str_starts_with(trim($lines[$i]), $table_ending)) {
             $row_lines[] = str_replace("\r", '', $lines[$i++]);
         }
 
@@ -214,7 +235,7 @@ function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_
         foreach ($row_lines as $line) {
             if (strlen($line) >= ($header_length - 10)) {
                 // -> Numbers line
-                $match = regexAssertAndReturnMatch('/^(.*)\s+([0-9]* ?[0-9]+)\s\s\s+([0-9]* ?[0-9]+)\s*$/', $line);
+                $match = regexAssertAndReturnMatch('/^(.*)\s+(([0-9]* ?[0-9]+)|(\—))\s\s\s+([0-9]* ?[0-9]+)\s*$/', $line);
                 $row_line .= trim($match[1]);
             }
             else {
@@ -232,11 +253,11 @@ function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_
             'line' => $row_lines,
             'text' => $row_line,
             'numberColumn1' => $match[2],
-            'numberColumn2' => $match[3]
+            'numberColumn2' => $match[5]
         );
     };
-    while (!str_starts_with(trim($lines[$i]), $sum_row1)) {
-        $row = $readTable_twoColNumbers($lines, $i, $header_length, $sum_row1);
+    while (!str_starts_with(trim($lines[$i]), $table_ending)) {
+        $row = $readTable_twoColNumbers($lines, $i, $header_length, $table_ending);
         $obj->numbers[$current_heading][$row['text']] = array(
             $column1 => $row['numberColumn1'],
             $column2 => $row['numberColumn2']
