@@ -328,10 +328,14 @@ foreach ($files as $file) {
     $i = readComments($obj, $lines, $i, $merknad_heading, $merknad_reason, $continue_until);
 
 
+    // D3 Totaloversikt over antall stemmesedler fordelt på parti
+    while($lines[$i] != 'Øvrige medlemmer:') {
+        // Skip
+        $i++;
+    }
+    $i++;
 
     var_dump($obj);
-
-    assertLine($lines, $i, 'asdf');
 
     $unknown_lines = false;
     for (; $i < count($lines); $i++) {
