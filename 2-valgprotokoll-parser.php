@@ -116,14 +116,39 @@ foreach ($files as $file) {
 
     // ---- Table - B1.1 Totalt mottatte forhåndsstemmegivninger
     $current_heading = 'B1.1 Totalt mottatte forhåndsstemmegivninger';
+    $column_heading = 'Antall stemmegivninger';
     $column1 = 'Forkastet';
     $column2 = 'Godkjente';
+    $sum_row1 = 'Totalt antall';
+    $i = readTable($obj, $lines, $i, $current_heading, $column_heading, $column1, $column2, $sum_row1);
+
+
+    var_dump($obj);
+
+    assertLine($lines, $i, 'asdf');
+
+    $unknown_lines = false;
+    for (; $i < count($lines); $i++) {
+        $unknown_lines = true;
+    }
+
+    if ($unknown_lines) {
+        logError('Unknown lines in [' . $file . '].');
+        // TODO: throw exception here!
+    }
+
+    // TODO: write file
+
+    var_dump($obj);
+}
+
+function readTable(&$obj, &$lines, $i, $current_heading, $column_heading, $column1, $column2, $sum_row1) {
     $obj->numbers[$current_heading] = array();
     $i = assertLine_trim($lines, $i, $current_heading);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
-    $i = assertLine_trim($lines, $i, 'Antall stemmegivninger');
+    $i = assertLine_trim($lines, $i, $column_heading);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     regexAssertAndReturnMatch('/^\s*' . $column1 . ' \s* ' . $column2 . '$/', $lines[$i++]);
 
@@ -168,26 +193,10 @@ foreach ($files as $file) {
         $i = $row['i'];
     }
 
-
-
-
-    var_dump($obj);
-
-    assertLine($lines, $i, 'asdf');
-
-    $unknown_lines = false;
-    for (; $i < count($lines); $i++) {
-        $unknown_lines = true;
-    }
-
-    if ($unknown_lines) {
-        logError('Unknown lines in [' . $file . '].');
-        // TODO: throw exception here!
-    }
-
-    // TODO: write file
-
-    var_dump($obj);
+    $obj->numbers[$current_heading][$sum_row1] = regexAssertAndReturnMatch('/^' . $sum_row1 . ' \s* ([0-9 ]*)$/', $lines[$i++]);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    return $i;
 }
 
 function str_starts_with($haystack, $needle) {
