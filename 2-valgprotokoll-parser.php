@@ -116,11 +116,24 @@ foreach ($files as $file) {
 
     // ---- Table - B1.1 Totalt mottatte forhåndsstemmegivninger
     $current_heading = 'B1.1 Totalt mottatte forhåndsstemmegivninger';
+    $text_heading = null;
     $column_heading = 'Antall stemmegivninger';
     $column1 = 'Forkastet';
     $column2 = 'Godkjente';
     $sum_row1 = 'Totalt antall';
-    $i = readTable($obj, $lines, $i, $current_heading, $column_heading, $column1, $column2, $sum_row1);
+    $sum_row2 = null;
+    $i = readTable($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2);
+
+
+    // ---- Table - B1.2 Behandlede forhåndsstemmegivninger
+    $current_heading = 'B1.2 Behandlede forhåndsstemmegivninger';
+    $text_heading = 'Forkastelser';
+    $column_heading = 'Antall stemmegivninger';
+    $column1 = 'Innenriks';
+    $column2 = 'Utenriks';
+    $sum_row1 = 'Godkjente forhåndsstemmegivninger (skal være lik sum av B2.1.1 og B2.2.1)';
+    $sum_row2 = 'Totalt antall forhåndsstemmegivninger';
+    $i = readTable($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2);
 
 
     var_dump($obj);
@@ -142,60 +155,95 @@ foreach ($files as $file) {
     var_dump($obj);
 }
 
-function readTable(&$obj, &$lines, $i, $current_heading, $column_heading, $column1, $column2, $sum_row1) {
+function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2) {
     $obj->numbers[$current_heading] = array();
     $i = assertLine_trim($lines, $i, $current_heading);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
-    $i = assertLine_trim($lines, $i, $column_heading);
-    $i = removeLineIfPresent_andEmpty($lines, $i);
-    regexAssertAndReturnMatch('/^\s*' . $column1 . ' \s* ' . $column2 . '$/', $lines[$i++]);
-
-    $readTable_twoColNumbers = function ($lines, $i) {
+    if ($text_heading == null) {
+        $i = assertLine_trim($lines, $i, $column_heading);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $header_length = strlen($lines[$i]);
+        regexAssertAndReturnMatch('/^\s*' . $column1 . ' \s* ' . $column2 . '$/', $lines[$i++]);
+    }
+    else {
+        $header_length = strlen($lines[$i]);
+        regexAssertAndReturnMatch('/^' . $text_heading . '\s*' . $column1 . '\s*' . $column2 . '$/', trim($lines[$i++]));
+    }
+    $readTable_twoColNumbers = function ($lines, $i, $header_length, $sum_row1) {
         // One line.
-        $line = $lines[$i++];
+        $row_lines = array($lines[$i++]);
 
         // Line 2
-        if (strlen($lines[$i]) > 3) {
-            $line .= str_replace("\r", '', $lines[$i++]);
+        if (strlen($lines[$i]) > 3 && !str_starts_with(trim($lines[$i]), $sum_row1)) {
+            $row_lines[] = str_replace("\r", '', $lines[$i++]);
         }
 
         // Line 3
-        if (strlen($lines[$i]) > 3) {
-            $line .= str_replace("\r", '', $lines[$i++]);
+        if (strlen($lines[$i]) > 3 && !str_starts_with(trim($lines[$i]), $sum_row1)) {
+            $row_lines[] = str_replace("\r", '', $lines[$i++]);
         }
 
-        $line = str_replace("\n", '', $line);
 
         // Status:
         // - All on one line
         // - Numbers all the way to the right
 
-        $match = regexAssertAndReturnMatch('/^(.*)\s+([0-9]* ?[0-9]+)\s\s\s+([0-9]* ?[0-9]+)\s*$/', $line);
+        $row_line = '';
+        var_dump($row_lines);
+        foreach ($row_lines as $line) {
+            if (strlen($line) >= ($header_length - 10)) {
+                // -> Numbers line
+                $match = regexAssertAndReturnMatch('/^(.*)\s+([0-9]* ?[0-9]+)\s\s\s+([0-9]* ?[0-9]+)\s*$/', $line);
+                $row_line .= trim($match[1]);
+            }
+            else {
+                $row_line .= $line;
+            }
+        }
 
         $i = removeLineIfPresent_andEmpty($lines, $i);
 
+        $row_line = str_replace("\n", '', $row_line);
+        $row_line = trim($row_line);
+
         return array(
             'i' => $i,
-            'line' => $line,
-            'text' => trim($match[1]),
+            'line' => $row_lines,
+            'text' => $row_line,
             'numberColumn1' => $match[2],
             'numberColumn2' => $match[3]
         );
     };
-    while (!str_starts_with($lines[$i], 'Totalt antall')) {
-        $row = $readTable_twoColNumbers($lines, $i);
+    while (!str_starts_with(trim($lines[$i]), $sum_row1)) {
+        $row = $readTable_twoColNumbers($lines, $i, $header_length, $sum_row1);
         $obj->numbers[$current_heading][$row['text']] = array(
             $column1 => $row['numberColumn1'],
             $column2 => $row['numberColumn2']
         );
+        var_dump($obj);
         $i = $row['i'];
     }
 
-    $obj->numbers[$current_heading][$sum_row1] = regexAssertAndReturnMatch('/^' . $sum_row1 . ' \s* ([0-9 ]*)$/', $lines[$i++]);
+    $obj->numbers[$current_heading][$sum_row1] = regexAssertAndReturnMatch('/^'
+        . str_replace('(', '\(',
+            str_replace(')', '\)',
+                $sum_row1
+            ))
+        . ' \s* ([0-9 ]*)$/', trim($lines[$i++]));
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
+    if ($sum_row2 != null) {
+        $obj->numbers[$current_heading][$sum_row2] = regexAssertAndReturnMatch('/^'
+            . str_replace('(', '\(',
+                str_replace(')', '\)',
+                    $sum_row2
+                ))
+            . ' \s* ([0-9 ]*)$/', trim($lines[$i++]));
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+    }
     return $i;
 }
 
