@@ -11,6 +11,10 @@
  * @author Hallvard Nygård, @hallny
  */
 
+set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errcontext) {
+    throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
+});
+
 $cache_dir_pdfs = __DIR__ . '/data-store/pdfs/';
 $lines = file(__DIR__ . '/data-store/urls.txt');
 foreach ($lines as $line) {

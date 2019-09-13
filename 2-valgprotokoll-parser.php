@@ -6,6 +6,10 @@
  */
 
 
+set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errcontext) {
+    throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
+});
+
 $files = getDirContents(__DIR__ . '/data-store/pdfs');
 foreach ($files as $file) {
     if (!str_ends_with($file, '.layout.txt')) {
@@ -23,8 +27,8 @@ foreach ($files as $file) {
 
     // TODO: Handle multiple
     echo $i . ': ' . trim($lines[$i]) . "\n";
-    $i = assertLine_trim($lines, $i, 'Fylkestingsvalget 2019');
-    $obj->election = 'Fylkestingsvalget 2019';
+    $match = regexAssertAndReturnMatch('/^\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\s*$/', $lines[$i++]);
+    $obj->election = $match[1];
 
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
