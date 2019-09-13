@@ -30,15 +30,14 @@ foreach ($files as $file) {
     $file_content = preg_replace($regex_footer . 'm', '', $file_content);
 
     // Strip multiple empty lines. Remenants of footer.
-    $file_content = preg_replace('/\n\n/', "\n", $file_content);
-    $file_content = preg_replace('/\n\n/', "\n", $file_content);
-    $file_content = preg_replace('/\n\n/', "\n", $file_content);
-    $file_content = preg_replace('/\n\n/', "\n", $file_content);
+    $file_content = preg_replace('/\n\n\n/', "\n\n", $file_content);
+    $file_content = preg_replace('/\n\n\n/', "\n\n", $file_content);
+    $file_content = preg_replace('/\n\n\n/', "\n\n", $file_content);
 
     // Split into array and start counter.
     $lines_untrimmed = explode("\n", $file_content);
     $lines = array();
-    foreach($lines_untrimmed as $line) {
+    foreach ($lines_untrimmed as $line) {
         $lines[] = str_replace("\n", '', $line);
     }
     $i = 0;
@@ -170,6 +169,26 @@ foreach ($files as $file) {
     $table_ending = 'B2.1.2 Partifordelte forhåndsstemmesedler';
     $i = readTable($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
 
+    // ---- Table - B2.1.2 Partifordelte forhåndsstemmesedler
+    $i = assertLine_trim($lines, $i, 'B2.1.2 Partifordelte forhåndsstemmesedler');
+    while (!str_starts_with(trim($lines[$i]), 'Totalt antall partifordelte stemmesedler')) {
+        // Skip
+        $i++;
+    }
+    $i++;
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    // ---- Table - B2.1.3 Merknad
+    $i = assertLine_trim($lines, $i, 'B2.1.3 Merknad');
+    $i = assertLine_trim($lines, $i, '(Årsak til evt. differanse mellom kryss i manntall (B2.1.1) og foreløpig opptelling (B2.1.2) og evt. andre forhold)');
+
+    $comment_lines = array();
+    while (!str_starts_with($lines[$i], 'B2.2 Opptalt etter kl. 17.00 dagen etter valgdagen (lagt til side og sent innkomne)')) {
+        $comment_lines[] = $lines[$i++];
+    }
+    $comments = explode("\n\n", trim(implode("\n", $comment_lines)));
+    $obj->comments['B2.1.3 Merknad'] = $comments;
+
     var_dump($obj);
 
     assertLine($lines, $i, 'asdf');
@@ -266,14 +285,16 @@ function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_
         $i = $row['i'];
     }
 
-    $obj->numbers[$current_heading][$sum_row1] = regexAssertAndReturnMatch('/^'
-        . str_replace('(', '\(',
-            str_replace(')', '\)',
-                $sum_row1
-            ))
-        . ' \s* ([0-9 ]*)$/', trim($lines[$i++]));
-    $i = removeLineIfPresent_andEmpty($lines, $i);
-    $i = removeLineIfPresent_andEmpty($lines, $i);
+    if ($sum_row1 != null) {
+        $obj->numbers[$current_heading][$sum_row1] = regexAssertAndReturnMatch('/^'
+            . str_replace('(', '\(',
+                str_replace(')', '\)',
+                    $sum_row1
+                ))
+            . ' \s* ([0-9 ]*)$/', trim($lines[$i++]));
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+    }
     if ($sum_row2 != null) {
         $obj->numbers[$current_heading][$sum_row2] = regexAssertAndReturnMatch('/^'
             . str_replace('(', '\(',
