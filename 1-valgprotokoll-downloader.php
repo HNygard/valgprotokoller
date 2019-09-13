@@ -18,10 +18,10 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errconte
 $cache_dir_pdfs = __DIR__ . '/data-store/pdfs/';
 $lines = file(__DIR__ . '/data-store/urls.txt');
 foreach ($lines as $line) {
-    if (str_starts_with($line, '#')) {
+    $line = trim($line);
+    if (str_starts_with($line, '#') || empty($line)) {
         continue;
     }
-    $line = trim($line);
 
     // :: Download file if it is not already cached
     $cache_name = str_replace('https://', '', $line);
@@ -108,7 +108,7 @@ function logLine($string, $log_level) {
     }
 }
 
-function getUrlUsingCurl($url, $usepost = false, $post_data = array(), $headers = array(), $followredirect = false) {
+function getUrlUsingCurl($url, $usepost = false, $post_data = array(), $headers = array(), $followredirect = true) {
     logInfo('---------------------------------------------');
 
     $ch = curl_init($url);
@@ -154,6 +154,10 @@ function getUrlUsingCurl($url, $usepost = false, $post_data = array(), $headers 
     $body = substr($res, $header_size);
 
     logInfo('   Response size: ' . strlen($body));
+    if (strlen($body) == 0) {
+        var_dump($header);
+        throw new Exception('Zero size response.');
+    }
 
     //$info = curl_getinfo($ch);
     //var_dump($info);

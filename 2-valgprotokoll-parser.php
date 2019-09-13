@@ -19,8 +19,15 @@ foreach ($files as $file) {
     // => Parse this file. Line by line.
     logInfo('Parsing [' . str_replace(__DIR__ . '/', '', $file) . '].');
 
-    $obj = new stdClass();
+    if ($file) {
+        $obj = new stdClass();
+    }
     $file_content = file_get_contents($file);
+
+    if (strlen(trim($file_content)) == 0) {
+        echo "---> NO CONTENT.\n";
+        continue;
+    }
 
     // :: Strip footers
     // 11.09.2019 12:50:17        Valgprotokoll for valgstyret      Side 4
@@ -31,6 +38,17 @@ foreach ($files as $file) {
 
     // Strip new page
     $file_content = str_replace(chr(12), '', $file_content);
+
+    // Note: Don't know if this is a thing. But Levanger kommune have a logo and text at the top.
+    /*
+    if (str_starts_with(trim($file_content), 'Levanger kommune')) {
+        $file_content = preg_replace('/\s\s\sLevanger kommune/', '', $file_content);
+        $file_content = trim($file_content);
+
+        var_dump( $file_content);
+
+    }
+    */
 
     // Strip multiple empty lines. Remenants of footer.
     $file_content = preg_replace('/\n\n\n/', "\n\n", $file_content);
@@ -46,7 +64,6 @@ foreach ($files as $file) {
     $i = 0;
 
     // --- START page 1
-
     echo $i . ': ' . trim($lines[$i]) . "\n";
     $match = regexAssertAndReturnMatch('/^\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\s*$/', $lines[$i++]);
     $obj->election = $match[1];
@@ -67,11 +84,11 @@ foreach ($files as $file) {
     $i = assertLine_trim($lines, $i, 'Valgprotokoll for valgstyret - ' . $obj->election);
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
-    $match = regexAssertAndReturnMatch('/^Kommune: \s*([A-Za-zÆØÅæøå]*)\s*$/', $lines[$i++]);
-    $obj->municipality = $match[1];
+    $match = regexAssertAndReturnMatch('/^Kommune: \s*([A-Za-zÆØÅæøå ]*)\s*$/', $lines[$i++]);
+    $obj->municipality = trim($match[1]);
     $i = removeLineIfPresent_andEmpty($lines, $i);
-    $match = regexAssertAndReturnMatch('/^Fylke: \s*([A-Za-zÆØÅæøå]*)\s*$/', $lines[$i++]);
-    $obj->county = $match[1];
+    $match = regexAssertAndReturnMatch('/^Fylke: \s*([A-Za-zÆØÅæøå ]*)\s*$/', $lines[$i++]);
+    $obj->county = trim($match[1]);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $match = regexAssertAndReturnMatch('/^År: \s*([0-9]*)\s*$/', $lines[$i++]);
     $obj->electionYear = $match[1];
@@ -238,33 +255,39 @@ foreach ($files as $file) {
     $i = assertLine_trim($lines, $i, 'C2 Foreløpig opptelling hos stemmestyrene');
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
-    // ---- Table - C2.1 Antall valgtingsstemmesedler i urne
-    $current_heading = 'C2.1 Antall valgtingsstemmesedler i urne';
-    $text_heading = null;
-    $column_heading = null;
-    $column1 = 'Kryss i manntall';
-    $column2 = 'Ant. sedler';
-    $sum_row1 = null;
-    $sum_row2 = null;
-    $table_ending = 'C2.2 Partifordelte Valgtingsstemmesedler';
-    $i = readTable($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
-
-    // ---- Table - C2.2 Partifordelte Valgtingsstemmesedler
-    $i = assertLine_trim($lines, $i, 'C2.2 Partifordelte Valgtingsstemmesedler');
-    while (!str_starts_with(trim($lines[$i]), 'Totalt antall partifordelte stemmesedler')) {
-        // Skip
-        $i++;
+    if ($lines[$i] == 'Det er ikke foretatt foreløpig opptelling hos stemmestyrene.') {
+        $i = assertLine_trim($lines, $i, 'Det er ikke foretatt foreløpig opptelling hos stemmestyrene.');
+        $i = removeLineIfPresent_andEmpty($lines, $i);
     }
-    $i++;
-    $i = removeLineIfPresent_andEmpty($lines, $i);
+    else {
+        // ---- Table - C2.1 Antall valgtingsstemmesedler i urne
+        $current_heading = 'C2.1 Antall valgtingsstemmesedler i urne';
+        $text_heading = null;
+        $column_heading = null;
+        $column1 = 'Kryss i manntall';
+        $column2 = 'Ant. sedler';
+        $sum_row1 = null;
+        $sum_row2 = null;
+        $table_ending = 'C2.2 Partifordelte Valgtingsstemmesedler';
+
+        $i = readTable($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
+
+        // ---- Table - C2.2 Partifordelte Valgtingsstemmesedler
+        $i = assertLine_trim($lines, $i, 'C2.2 Partifordelte Valgtingsstemmesedler');
+        while (!str_starts_with(trim($lines[$i]), 'Totalt antall partifordelte stemmesedler')) {
+            // Skip
+            $i++;
+        }
+        $i++;
+        $i = removeLineIfPresent_andEmpty($lines, $i);
 
 
-    // ---- Table - C2.3 Merknad fra stemmestyret
-    $merknad_heading = 'C2.3 Merknad fra stemmestyret';
-    $merknad_reason = '(Årsak til evt. differanse mellom kryss i manntall (C2.1) og foreløpig opptelling og evt. andre forhold)';
-    $continue_until = 'C3 Stemmegivninger - valgting';
-    $i = readComments($obj, $lines, $i, $merknad_heading, $merknad_reason, $continue_until);
-
+        // ---- Table - C2.3 Merknad fra stemmestyret
+        $merknad_heading = 'C2.3 Merknad fra stemmestyret';
+        $merknad_reason = '(Årsak til evt. differanse mellom kryss i manntall (C2.1) og foreløpig opptelling og evt. andre forhold)';
+        $continue_until = 'C3 Stemmegivninger - valgting';
+        $i = readComments($obj, $lines, $i, $merknad_heading, $merknad_reason, $continue_until);
+    }
 
     // C3 Stemmegivninger - valgting
     // C4 Foreløpig opptelling hos valgstyret
@@ -355,7 +378,6 @@ foreach ($files as $file) {
         // TODO: throw exception here!
     }
 
-    // TODO: write file
     $data_dir = __DIR__ . '/data-store/json/' . $obj->election . '/' . $obj->county;
     if (!file_exists($data_dir)) {
         mkdir($data_dir, 0777, true);
@@ -364,8 +386,6 @@ foreach ($files as $file) {
         $data_dir . '/' . $obj->municipality . '.json',
         json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE)
     );
-
-    var_dump($obj);
 }
 
 function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_heading,
@@ -410,7 +430,6 @@ function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_
         // - Numbers all the way to the right
 
         $row_line = '';
-        var_dump($row_lines);
         foreach ($row_lines as $line) {
             if (strlen($line) >= ($header_length - 10)) {
                 // -> Numbers line
@@ -441,7 +460,6 @@ function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_
             $column1 => $row['numberColumn1'],
             $column2 => $row['numberColumn2']
         );
-        var_dump($obj);
         $i = $row['i'];
     }
 
@@ -470,6 +488,7 @@ function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_
 
 function readComments($obj, $lines, $i, $merknad_heading, $merknad_reason, $continue_until) {
     $i = assertLine_trim($lines, $i, $merknad_heading);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = assertLine_trim($lines, $i, $merknad_reason);
 
     $comment_lines = array();
