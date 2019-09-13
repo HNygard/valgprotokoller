@@ -38,10 +38,60 @@ foreach ($files as $file) {
 
     $i = assertLine_trim($lines, $i, 'Valgprotokoll for valgstyret i');
     $i = removeLineIfPresent_andEmpty($lines, $i);
-    $obj->heading = 'Valgprotokoll for valgstyret i ' . $lines[$i++];
+    $obj->heading = 'Valgprotokoll for valgstyret i ' . trim($lines[$i++]);
 
     // --- START page 2
     $i = assertLine_trim($lines, $i, 'Kommunestyre- og fylkestingsvalget 2019');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = assertLine_trim($lines, $i, 'Valgprotokoll for valgstyret - ' . $obj->election);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    $match = regexAssertAndReturnMatch('/^Kommune: \s*([A-Za-zÆØÅæøå]*)\s*$/', $lines[$i++]);
+    $obj->municipality = $match[1];
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^Fylke: \s*([A-Za-zÆØÅæøå]*)\s*$/', $lines[$i++]);
+    $obj->county = $match[1];
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^År: \s*([0-9]*)\s*$/', $lines[$i++]);
+    $obj->electionYear = $match[1];
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    $i = assertLine_trim($lines, $i, 'Nøkkeltall i valggjennomføringen');
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^ Antall stemmeberettigede \s*([0-9 ]*)\s*$/', $lines[$i++]);
+    $obj->keyfigures_antallStemmeberettigede = $match[1];
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^ Totalt antall kryss i manntallet \s*([0-9 ]*)\s*$/', $lines[$i++]);
+    $obj->keyfigures_totaltAntallKryssIManntallet = $match[1];
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^ Oppmøteprosent \s*([0-9, %]*)\s*$/', $lines[$i++]);
+    $obj->keyfigures_oppmøteprosent = $match[1];
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^ Totalt antall godkjente forhåndsstemmegivninger \s*([0-9 ]*)\s*$/', $lines[$i++]);
+    $obj->keyfigures_totaltAntallGodkjenteForhåndsstemmegivninger = $match[1];
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^ Totalt antall godkjente valgtingsstemmegivninger \s*([0-9 ]*)\s*$/', $lines[$i++]);
+    $obj->keyfigures_totaltAntallGodkjenteValgtingsstemmegivninger = $match[1];
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^ Totalt antall forkastede stemmegivninger \s*([0-9 ]*)\s*$/', $lines[$i++]);
+    $obj->keyfigures_totaltAntallForkastedeStemmegivninger = $match[1];
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^ Totalt antall godkjente stemmesedler \s*([0-9 ]*)\s*$/', $lines[$i++]);
+    $obj->keyfigures_totaltAntallGodkjenteStemmesedler = $match[1];
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^ Totalt antall forkastede stemmesedler \s*([0-9 ]*)\s*$/', $lines[$i++]);
+    $obj->keyfigures_totaltAntallForkastedeStemmesedler = $match[1];
 
     $unknown_lines = false;
     for (; $i < count($lines); $i++) {
