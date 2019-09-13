@@ -37,6 +37,7 @@ foreach ($lines as $line) {
     // :: Read PDF into TXT file
     // Keeping layout as this is important for tables.
     if (!file_exists($cache_name . '.layout.txt')) {
+        $pdfLines = '';
         exec('pdftotext -layout "' . $cache_name . '" -', $pdfLines);
         file_put_contents($cache_name . '.layout.txt', implode(chr(10), $pdfLines));
     }
