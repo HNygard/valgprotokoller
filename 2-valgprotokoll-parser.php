@@ -20,12 +20,31 @@ foreach ($files as $file) {
     logInfo('Parsing [' . str_replace(__DIR__ . '/', '', $file) . '].');
 
     $obj = new stdClass();
-    $lines = file($file);
+    $file_content = file_get_contents($file);
+
+    // :: Strip footers
+    // 11.09.2019 12:50:17        Valgprotokoll for valgstyret      Side 4
+    $regex_footer = '/^([0-9]*\.[0-9]*\.[0-9]* [0-9]*:[0-9]*:[0-9]*) \s* Valgprotokoll for valgstyret \s* Side [0-9]*$/';
+    $match = regexAssertAndReturnMatch($regex_footer . 'm', $file_content);
+    $obj->reportGenerated = $match[1];
+    $file_content = preg_replace($regex_footer . 'm', '', $file_content);
+
+    // Strip multiple empty lines. Remenants of footer.
+    $file_content = preg_replace('/\n\n/', "\n", $file_content);
+    $file_content = preg_replace('/\n\n/', "\n", $file_content);
+    $file_content = preg_replace('/\n\n/', "\n", $file_content);
+    $file_content = preg_replace('/\n\n/', "\n", $file_content);
+
+    // Split into array and start counter.
+    $lines_untrimmed = explode("\n", $file_content);
+    $lines = array();
+    foreach($lines_untrimmed as $line) {
+        $lines[] = str_replace("\n", '', $line);
+    }
     $i = 0;
 
     // --- START page 1
 
-    // TODO: Handle multiple
     echo $i . ': ' . trim($lines[$i]) . "\n";
     $match = regexAssertAndReturnMatch('/^\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\s*$/', $lines[$i++]);
     $obj->election = $match[1];
