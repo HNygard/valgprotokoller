@@ -5,7 +5,8 @@
  * 1. Read data-store/urls.txt
  * 2. Download all PDFs we haven't downloaded yet.
  * 3. Use 'pdftotext' to parse PDFs and get ready for regex.
- * 4. Output JSON formatted data.
+ * 4. Parser magic. Regex and such.
+ * 5. Output JSON formatted data.
  *
  * @author Hallvard Nygård, @hallny
  */
