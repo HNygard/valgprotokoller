@@ -29,6 +29,9 @@ foreach ($files as $file) {
     $obj->reportGenerated = $match[1];
     $file_content = preg_replace($regex_footer . 'm', '', $file_content);
 
+    // Strip new page
+    $file_content = str_replace(chr(12), '', $file_content);
+
     // Strip multiple empty lines. Remenants of footer.
     $file_content = preg_replace('/\n\n\n/', "\n\n", $file_content);
     $file_content = preg_replace('/\n\n\n/', "\n\n", $file_content);
@@ -179,15 +182,47 @@ foreach ($files as $file) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
     // ---- Table - B2.1.3 Merknad
-    $i = assertLine_trim($lines, $i, 'B2.1.3 Merknad');
-    $i = assertLine_trim($lines, $i, '(Årsak til evt. differanse mellom kryss i manntall (B2.1.1) og foreløpig opptelling (B2.1.2) og evt. andre forhold)');
+    $merknad_heading = 'B2.1.3 Merknad';
+    $merknad_reason = '(Årsak til evt. differanse mellom kryss i manntall (B2.1.1) og foreløpig opptelling (B2.1.2) og evt. andre forhold)';
+    $continue_until = 'B2.2 Opptalt etter kl. 17.00 dagen etter valgdagen (lagt til side og sent innkomne)';
+    $i = readComments($obj, $lines, $i, $merknad_heading, $merknad_reason, $continue_until);
 
-    $comment_lines = array();
-    while (!str_starts_with($lines[$i], 'B2.2 Opptalt etter kl. 17.00 dagen etter valgdagen (lagt til side og sent innkomne)')) {
-        $comment_lines[] = $lines[$i++];
+    $i = assertLine_trim($lines, $i, 'B2.2 Opptalt etter kl. 17.00 dagen etter valgdagen (lagt til side og sent innkomne)');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    // ---- Table - B2.2.1 Behandlede sent innkomne forhåndsstemmesedler
+    $current_heading = 'B2.2.1 Behandlede sent innkomne forhåndsstemmesedler';
+    $text_heading = null;
+    $column_heading = null;
+    $column1 = 'Kryss i manntall';
+    $column2 = 'Ant. sedler';
+    $sum_row1 = null;
+    $sum_row2 = null;
+    $table_ending = 'B2.2.2 Partifordelte sent innkomne forhåndsstemmesedler';
+    $i = readTable($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
+
+
+    // ---- Table - B2.2.2 Partifordelte sent innkomne forhåndsstemmesedler
+    $i = assertLine_trim($lines, $i, 'B2.2.2 Partifordelte sent innkomne forhåndsstemmesedler');
+    while (!str_starts_with(trim($lines[$i]), 'Totalt antall partifordelte stemmesedler')) {
+        // Skip
+        $i++;
     }
-    $comments = explode("\n\n", trim(implode("\n", $comment_lines)));
-    $obj->comments['B2.1.3 Merknad'] = $comments;
+    $i++;
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    // ---- Table - B2.2.3 Merknad
+    $merknad_heading = 'B2.2.3 Merknad';
+    $merknad_reason = '(Årsak til evt. differanse mellom kryss i manntall (B2.2.1) og foreløpig opptelling (B2.2.2) og evt. andre forhold)';
+    $continue_until = 'C Foreløpig opptelling av valgtingsstemmer';
+    $i = readComments($obj, $lines, $i, $merknad_heading, $merknad_reason, $continue_until);
+
+
+    // ---- C Foreløpig opptelling av valgtingsstemmer
+    $i = assertLine_trim($lines, $i, 'C Foreløpig opptelling av valgtingsstemmer');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = assertLine_trim($lines, $i, 'C1 Oversikt over stemmer mottatt i alle kretser');
+
 
     var_dump($obj);
 
@@ -305,6 +340,19 @@ function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
     }
+    return $i;
+}
+
+function readComments($obj, $lines, $i, $merknad_heading, $merknad_reason, $continue_until) {
+    $i = assertLine_trim($lines, $i, $merknad_heading);
+    $i = assertLine_trim($lines, $i, $merknad_reason);
+
+    $comment_lines = array();
+    while (!str_starts_with($lines[$i], $continue_until)) {
+        $comment_lines[] = $lines[$i++];
+    }
+    $comments = explode("\n\n", trim(implode("\n", $comment_lines)));
+    $obj->comments[$merknad_heading] = $comments;
     return $i;
 }
 
