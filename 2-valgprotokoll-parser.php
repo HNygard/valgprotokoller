@@ -121,6 +121,15 @@ foreach ($files as $file) {
 
     $obj->numbers = array();
 
+    if(ifExistsAndEqual($lines, $i, 'Representantfordeling')) {
+        while(!str_starts_with(trim($lines[$i]), 'Sum')) {
+            // Skip
+            $i++;
+        }
+        $i++;
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+    }
+
     $i = assertLine_trim($lines, $i, 'A Administrative forhold');
     // A1 Valgstyret
     // A2 Valgtinget
