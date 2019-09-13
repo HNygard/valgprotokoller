@@ -1,6 +1,11 @@
 <?php
 /**
- * Download 'valgprotokoll' from
+ * Download 'valgprotokoll' from different sources.
+ *
+ * 1. Read data-store/urls.txt
+ * 2. Download all PDFs we haven't downloaded yet.
+ * 3. Use 'pdftotext' to parse PDFs and get ready for regex.
+ * 4. Output JSON formatted data.
  *
  * @author Hallvard Nygård, @hallny
  */
@@ -13,6 +18,7 @@ foreach ($lines as $line) {
     }
     $line = trim($line);
 
+    // :: Download file if it is not already cached
     $cache_name = str_replace('https://', '', $line);
     $cache_name = str_replace('/', '-', $cache_name);
     $cache_name = $cache_dir_pdfs . $cache_name . '.pdf';
@@ -20,14 +26,22 @@ foreach ($lines as $line) {
         $data = getUrlUsingCurl($line);
         file_put_contents($cache_name, $data);
 
-        // :: Same some meta data
+        // :: Save some meta data
         $obj = new stdClass();
         $obj->url = $line;
         $obj->downloadTime = date('Y-m-d H:i:s');
         file_put_contents($cache_name . '.json', json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES));
     }
 
-
+    // :: Read PDF into TXT file
+    // Keeping layout as this is important for tables.
+    if (!file_exists($cache_name . '.layout.txt')) {
+        exec('pdftotext -layout "' . $cache_name . '" -', $pdfLines);
+        file_put_contents($cache_name . '.layout.txt', implode(chr(10), $pdfLines));
+    }
+    else {
+        $pdfLines = file($cache_name . '.layout.txt', FILE_IGNORE_NEW_LINES);
+    }
 }
 
 
