@@ -19,10 +19,25 @@ foreach ($files as $file) {
     $lines = file($file);
     $i = 0;
 
-    $lines[$i] = trim($lines[$i]);
-    echo $i . ': ' . $lines[$i] . "\n";
-    $i = assertLine($lines, $i, 'Fylkestingsvalget 2019');
+    // --- START page 1
+
+    // TODO: Handle multiple
+    echo $i . ': ' . trim($lines[$i]) . "\n";
+    $i = assertLine_trim($lines, $i, 'Fylkestingsvalget 2019');
     $obj->election = 'Fylkestingsvalget 2019';
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    $i = assertLine_trim($lines, $i, 'Valgprotokoll for valgstyret i');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $obj->heading = 'Valgprotokoll for valgstyret i ' . $lines[$i++];
+
+    // --- START page 2
+    $i = assertLine_trim($lines, $i, 'Kommunestyre- og fylkestingsvalget 2019');
 
     $unknown_lines = false;
     for (; $i < count($lines); $i++) {
@@ -36,6 +51,7 @@ foreach ($files as $file) {
 
     // TODO: write file
 
+    var_dump($obj);
 }
 
 function str_starts_with($haystack, $needle) {
@@ -128,9 +144,34 @@ function assertLine($lines, $i, $expected) {
     return $i + 1;
 }
 
+function assertLine_trim($lines, $i, $expected) {
+    $lines[$i] = trim($lines[$i], " \t\n\r\0\x0B" . chr(12));
+    if ($lines[$i] != $expected) {
+        printChars($lines[$i]);
+        throw new Exception('Did not find expected value on line [' . $i . '].' . chr(10)
+            . 'Expected ... : ' . $expected . chr(10)
+            . 'Actual ..... : ' . $lines[$i]
+        );
+    }
+    return $i + 1;
+}
+
 function removeLineIfPresent($lines, $i, $expected) {
     if (isset($lines[$i]) && $lines[$i] == $expected) {
         $i++;
     }
     return $i;
+}
+
+function removeLineIfPresent_andEmpty($lines, $i) {
+    if (isset($lines[$i]) && empty(trim($lines[$i]))) {
+        $i++;
+    }
+    return $i;
+}
+
+function printChars($string) {
+    for ($i = 0; $i < strlen($string); $i++) {
+        echo '[' . $i . '] ' . ord($string{$i}) . ' - ' . $string{$i} . "\n";
+    }
 }
