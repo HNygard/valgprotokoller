@@ -71,12 +71,6 @@ function logError($string) {
     logLine($string, 'ERROR');
 }
 
-$last_method = null;
-function setLastMethod($method) {
-    global $last_method;
-    $last_method = $method;
-}
-
 /**
  * @param $string
  * @param Exception $e
