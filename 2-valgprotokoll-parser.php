@@ -15,7 +15,15 @@ foreach ($files as $file) {
     if (!str_ends_with($file, '.layout.txt')) {
         continue;
     }
+    try {
+        parseFile_andWriteToDisk($file);
+    }
+    catch(Exception $e) {
+        logErrorWithStacktrace('Error parsing [' . $file .'].', $e);
+    }
+}
 
+function parseFile_andWriteToDisk($file) {
     // => Parse this file. Line by line.
     logInfo('Parsing [' . str_replace(__DIR__ . '/', '', $file) . '].');
 
@@ -26,8 +34,31 @@ foreach ($files as $file) {
 
     if (strlen(trim($file_content)) == 0) {
         echo "---> NO CONTENT.\n";
-        continue;
+        return;
     }
+
+
+    if (str_contains($file_content, 'Kretsrapport valglokale')) {
+        logInfo('Ignoring. Kretsrapport valglokale.');
+        return;
+    }
+    if (str_contains($file_content, 'Ny kandidatrangering per parti')) {
+        logInfo('Ignoring. Ny kandidatrangering per parti.');
+        return;
+    }
+    if (str_contains($file_content, 'Valgoppgjør for ')) {
+        logInfo('Ignoring. Valgoppgjør for .');
+        return;
+    }
+
+    /*
+     * DIDN'T WORK - Should maybe pre clean these type of file instead of cluttering the code
+     *  if (str_starts_with(trim($file_content), '* VALG')) {
+         // Remove some stuff at the beginning of the file.
+         // data-store/pdfs/elections-no.github.io-docs-2019-Troms_og_Finnmark-Kvænangen kommune, Troms og Finnmark fylke - kommunestyrevalget.pdf.layout.txt
+         logInfo('Removing "* VALG" from first line.');
+         $file_content = trim(substr(trim($file_content), strlen('* VALG')));
+     }*/
 
     // :: Strip footers
     // 11.09.2019 12:50:17        Valgprotokoll for valgstyret      Side 4
@@ -64,6 +95,11 @@ foreach ($files as $file) {
     $i = 0;
 
     // --- START page 1
+    if (trim($lines[$i]) == 'Levanger kommune') {
+        logInfo('Ignoring Levanger kommune.');
+        return;
+    }
+
     echo $i . ': ' . trim($lines[$i]) . "\n";
     $match = regexAssertAndReturnMatch('/^\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\s*$/', $lines[$i++]);
     $obj->election = $match[1];
@@ -84,7 +120,7 @@ foreach ($files as $file) {
     $i = assertLine_trim($lines, $i, 'Valgprotokoll for valgstyret - ' . $obj->election);
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
-    $match = regexAssertAndReturnMatch('/^Kommune: \s*([A-Za-zÆØÅæøå ]*)\s*$/', $lines[$i++]);
+    $match = regexAssertAndReturnMatch('/^Kommune: \s*([A-Za-zÆØÅæøåá\- ]*)\s*$/', $lines[$i++]);
     $obj->municipality = trim($match[1]);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $match = regexAssertAndReturnMatch('/^Fylke: \s*([A-Za-zÆØÅæøå ]*)\s*$/', $lines[$i++]);
@@ -305,11 +341,18 @@ foreach ($files as $file) {
     $merknad_heading = 'C4.6 Merknad';
     $merknad_reason = '(Årsak til evt. differanse mellom kryss i manntall (C4.4) og foreløpig opptelling (C4.5) og evt. andre forhold)';
     $continue_until = 'C4.7 Antall stemmesedler i beredskapskonvolutt';
+    if (str_contains($file_content, 'C4.7 Antall fremmede stemmesedler')) {
+        $continue_until = 'C4.7 Antall fremmede stemmesedler';
+    }
     $i = readComments($obj, $lines, $i, $merknad_heading, $merknad_reason, $continue_until);
 
     // C4.7 Antall stemmesedler i beredskapskonvolutt
     // C4.8 Partifordelte stemmesedler i beredskapskonvolutt
-    $i = assertLine_trim($lines, $i, 'C4.7 Antall stemmesedler i beredskapskonvolutt');
+    //
+    // OR
+    // C4.7 Antall fremmede stemmesedler
+    // C4.8 Partifordelte fremmede stemmesedler
+    $i = assertLine_trim($lines, $i, $continue_until);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     // Skip
     while ($lines[$i] != 'C4.9 Merknad') {
@@ -523,6 +566,16 @@ function logInfo($string) {
 
 function logError($string) {
     logLine($string, 'ERROR');
+}
+
+/**
+ * @param $string
+ * @param Exception $e
+ */
+function logErrorWithStacktrace($string, $e) {
+    logLine($string . chr(10)
+        . $e->getMessage() . chr(10)
+        . $e->getTraceAsString(), 'ERROR');
 }
 
 function logLine($string, $log_level) {
