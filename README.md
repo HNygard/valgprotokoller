@@ -31,7 +31,7 @@ Ubuntu:
 `php 1.2-valgprotokoll-elections-no.php`
 
 - Reads PDFs in elections.no git repo. Manual git submodule update required.
-- Git submodule update (NOTE! NOT SURE IF THIS IS THE RIGHT COMMAND): `git submodule update --remote elections-no.github.io`
+- Git submodule update: `git submodule update --remote elections-no.github.io`
 
 `php 2-valgprotokoll-parser.php`
 
