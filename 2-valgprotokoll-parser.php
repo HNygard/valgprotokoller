@@ -450,6 +450,50 @@ function parseFile_andWriteToDisk($file) {
     );
 }
 
+function readTable_twoColNumbers($lines, $i, $header_length, $table_ending) {
+    // One line.
+    $row_lines = array($lines[$i++]);
+
+    // Line 2
+    if (strlen($lines[$i]) > 3 && !str_starts_with(trim($lines[$i]), $table_ending)) {
+        $row_lines[] = str_replace("\r", '', $lines[$i++]);
+    }
+
+    // Line 3
+    if (strlen($lines[$i]) > 3 && !str_starts_with(trim($lines[$i]), $table_ending)) {
+        $row_lines[] = str_replace("\r", '', $lines[$i++]);
+    }
+
+
+    // Status:
+    // - All on one line
+    // - Numbers all the way to the right
+
+    $row_line = '';
+    foreach ($row_lines as $line) {
+        if (strlen($line) >= ($header_length - 10)) {
+            // -> Numbers line
+            $match = regexAssertAndReturnMatch('/^(.*)\s+(([0-9]* ?[0-9]+)|(\—))\s\s\s+([0-9]* ?[0-9]+)\s*$/', $line);
+            $row_line .= trim($match[1]);
+        }
+        else {
+            $row_line .= $line;
+        }
+    }
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    $row_line = str_replace("\n", '', $row_line);
+    $row_line = trim($row_line);
+
+    return array(
+        'i' => $i,
+        'line' => $row_lines,
+        'text' => $row_line,
+        'numberColumn1' => $match[2],
+        'numberColumn2' => $match[5]
+    );
+}
 function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_heading,
                    $column1, $column2,
                    $sum_row1, $sum_row2, $table_ending) {
@@ -472,52 +516,8 @@ function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_
         $header_length = strlen($lines[$i]);
         regexAssertAndReturnMatch('/^' . $text_heading . '\s*' . $column1 . '\s*' . $column2 . '$/', trim($lines[$i++]));
     }
-    $readTable_twoColNumbers = function ($lines, $i, $header_length, $table_ending) {
-        // One line.
-        $row_lines = array($lines[$i++]);
-
-        // Line 2
-        if (strlen($lines[$i]) > 3 && !str_starts_with(trim($lines[$i]), $table_ending)) {
-            $row_lines[] = str_replace("\r", '', $lines[$i++]);
-        }
-
-        // Line 3
-        if (strlen($lines[$i]) > 3 && !str_starts_with(trim($lines[$i]), $table_ending)) {
-            $row_lines[] = str_replace("\r", '', $lines[$i++]);
-        }
-
-
-        // Status:
-        // - All on one line
-        // - Numbers all the way to the right
-
-        $row_line = '';
-        foreach ($row_lines as $line) {
-            if (strlen($line) >= ($header_length - 10)) {
-                // -> Numbers line
-                $match = regexAssertAndReturnMatch('/^(.*)\s+(([0-9]* ?[0-9]+)|(\—))\s\s\s+([0-9]* ?[0-9]+)\s*$/', $line);
-                $row_line .= trim($match[1]);
-            }
-            else {
-                $row_line .= $line;
-            }
-        }
-
-        $i = removeLineIfPresent_andEmpty($lines, $i);
-
-        $row_line = str_replace("\n", '', $row_line);
-        $row_line = trim($row_line);
-
-        return array(
-            'i' => $i,
-            'line' => $row_lines,
-            'text' => $row_line,
-            'numberColumn1' => $match[2],
-            'numberColumn2' => $match[5]
-        );
-    };
     while (!str_starts_with(trim($lines[$i]), $table_ending)) {
-        $row = $readTable_twoColNumbers($lines, $i, $header_length, $table_ending);
+        $row = readTable_twoColNumbers($lines, $i, $header_length, $table_ending);
         $obj->numbers[$current_heading][$row['text']] = array(
             $column1 => $row['numberColumn1'],
             $column2 => $row['numberColumn2']
