@@ -4,7 +4,17 @@ Scripts run using PHP. They run in sequence and outputs to file.
 
 All PDFs are cached in this Git repo. So step 2 or step 3 does not require any download.
 
-## Requirements:
+The summary pages is her:
+
+- https://hnygard.github.io/valgprotokoller/
+
+The JSON files can be seen here:
+
+- https://github.com/HNygard/valgprotokoller/tree/master/data-store/json
+
+
+## Requirements for running
+
 - `php`
 - `pdftotext` (step 1 / step 1.2 only)
 
