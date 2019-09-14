@@ -23,8 +23,27 @@ $html .= "Laget av <a href='https://twitter.com/hallny'>@hallny</a> / <a href='h
 $html .= "<a href='https://github.com/HNygard/valgprotokoller/blob/master/data-store/urls.txt'>Kilder - adresseliste</a> -\n";
 $html .= "<a href='https://github.com/HNygard/valgprotokoller'>Kildekode for denne rapporten</a> (Github)<br>\n";
 $html .= '<h2>Oppsummering</h2>
-<ul>-----SUMMARY-----HERE-----</ul>';
+<ul>-----SUMMARY-----HERE-----</ul>
+
+<h2>D1.4 </h2>
+----D1.4-TABLE---
+
+<h2>D2.4</h2>
+----D2.4-TABLE---
+
+';
 $summary_html = '';
+
+$html_d1_4 = '<table>
+<tr>
+<th>Valg - Kommune</th>
+<td>Foreløpig</td>
+<td>Endelig</td>
+<td>Avvik</td>
+</tr>
+';
+$html_d2_4 = $html_d1_4;
+
 $html .= "<h2>Merknader</h2>
 <ul>\n";
 foreach ($files as $file) {
@@ -45,11 +64,32 @@ foreach ($files as $file) {
         $html .= "<li><b>$commentType: </b>" . implode("<br>", $comments) . "</li>\n";
     }
     $html .= "</ul></li>\n";
+
+
+    $html_d1_4 .= '<tr>
+    <th>' . $obj->election . ' - ' . $obj->municipality . '</th>
+    <td>' . $obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'}->{'Foreløpig'} . '</td>
+    <td>' . $obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'}->{'Endelig'} . '</td>
+    <td>' . $obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'}->{'Avvik'} . '</td>
+</tr>
+';
+    $html_d2_4 .= '<tr>
+    <th>' . $obj->election . ' - ' . $obj->municipality . '</th>
+    <td>' . $obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'}->{'Foreløpig'} . '</td>
+    <td>' . $obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'}->{'Endelig'} . '</td>
+    <td>' . $obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'}->{'Avvik'} . '</td>
+</tr>
+';
 }
 
 $html .= "</ul>\n\n";
 
+$html_d1_4 .= '</table>';
+$html_d2_4 .= '</table>';
+
 $html = str_replace('-----SUMMARY-----HERE-----', $summary_html, $html);
+$html = str_replace('----D1.4-TABLE---', $html_d1_4, $html);
+$html = str_replace('----D2.4-TABLE---', $html_d2_4, $html);
 file_put_contents(__DIR__ . '/docs/index.html', $html);
 
 function str_starts_with($haystack, $needle) {
