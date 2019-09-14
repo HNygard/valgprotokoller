@@ -225,7 +225,7 @@ function parseFile_andWriteToDisk($file) {
     $sum_row1 = 'Totalt antall';
     $sum_row2 = null;
     $table_ending = $sum_row1;
-    $i = readTable($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
+    $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
 
     // ---- Table - B1.2 Behandlede forhåndsstemmegivninger
     $current_heading = 'B1.2 Behandlede forhåndsstemmegivninger';
@@ -236,7 +236,7 @@ function parseFile_andWriteToDisk($file) {
     $sum_row1 = 'Godkjente forhåndsstemmegivninger (skal være lik sum av B2.1.1 og B2.2.1)';
     $sum_row2 = 'Totalt antall forhåndsstemmegivninger';
     $table_ending = $sum_row1;
-    $i = readTable($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
+    $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
 
     // Headings
     $i = assertLine_trim($lines, $i, 'B2 Foreløpig opptelling av forhåndsstemmesedler');
@@ -251,7 +251,7 @@ function parseFile_andWriteToDisk($file) {
     $sum_row1 = null;
     $sum_row2 = null;
     $table_ending = 'B2.1.2 Partifordelte forhåndsstemmesedler';
-    $i = readTable($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
+    $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
 
     // ---- Table - B2.1.2 Partifordelte forhåndsstemmesedler
     $i = assertLine_trim($lines, $i, 'B2.1.2 Partifordelte forhåndsstemmesedler');
@@ -280,7 +280,7 @@ function parseFile_andWriteToDisk($file) {
     $sum_row1 = null;
     $sum_row2 = null;
     $table_ending = 'B2.2.2 Partifordelte sent innkomne forhåndsstemmesedler';
-    $i = readTable($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
+    $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
 
 
     // ---- Table - B2.2.2 Partifordelte sent innkomne forhåndsstemmesedler
@@ -325,7 +325,7 @@ function parseFile_andWriteToDisk($file) {
         $sum_row2 = null;
         $table_ending = 'C2.2 Partifordelte Valgtingsstemmesedler';
 
-        $i = readTable($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
+        $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
 
         // ---- Table - C2.2 Partifordelte Valgtingsstemmesedler
         $i = assertLine_trim($lines, $i, 'C2.2 Partifordelte Valgtingsstemmesedler');
@@ -488,9 +488,10 @@ function readTableRow($lines, $i, $header_length, $table_ending, $rowRegex, $ret
 
     return $returnFunction($i, $row_lines, $row_line, $match);
 }
-function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_heading,
-                   $column1, $column2,
-                   $sum_row1, $sum_row2, $table_ending) {
+
+function readTable_twoColumns(&$obj, &$lines, $i, $current_heading, $text_heading, $column_heading,
+                              $column1, $column2,
+                              $sum_row1, $sum_row2, $table_ending) {
     $obj->numbers[$current_heading] = array();
     $i = assertLine_trim($lines, $i, $current_heading);
     $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -513,7 +514,7 @@ function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_
     while (!str_starts_with(trim($lines[$i]), $table_ending)) {
         $row = readTableRow($lines, $i, $header_length, $table_ending,
             '/^(.*)\s+(([0-9]* ?[0-9]+)|(\—))\s\s\s+([0-9]* ?[0-9]+)\s*$/',
-            function($i, $row_lines, $row_line, $match) {
+            function ($i, $row_lines, $row_line, $match) {
                 return array(
                     'i' => $i,
                     'line' => $row_lines,
