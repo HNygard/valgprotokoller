@@ -17,6 +17,23 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errconte
     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
 });
 
+$kommunale_domener = file(__DIR__ . '/kommunale-domener.csv');
+$domain_to_name = array();
+foreach ($kommunale_domener as $line) {
+    $line = explode(',', trim($line));
+    if (!str_contains($line[1], 'http://') && !str_contains($line[1], 'https://')) {
+        // -> Plain domain
+        // .name.kommune.no
+        $domain_to_name['.' . $line[1]] = $line[0];
+        // https://name.kommune.no or http://name.kommune.no
+        $domain_to_name['://' . $line[1]] = $line[0];
+    }
+    else {
+        // -> Full address
+        $domain_to_name[$line[1]] = $line[0];
+    }
+}
+
 $files = getDirContents(__DIR__ . '/data-store/pdfs');
 foreach ($files as $file) {
     if (!str_ends_with($file, '.layout.txt')) {
@@ -38,12 +55,31 @@ foreach ($files as $file) {
 }
 
 function parseFile_andWriteToDisk($file) {
+    global $domain_to_name;
+
     // => Parse this file. Line by line.
     logInfo('Parsing [' . str_replace(__DIR__ . '/', '', $file) . '].');
 
-    if ($file) {
-        $obj = new stdClass();
+    $obj = new stdClass();
+
+    $file_info_file = str_replace('.layout.txt', '.json', $file);
+    if (file_exists($file_info_file)) {
+        $file_info = json_decode(file_get_contents($file_info_file));
+
+        $obj->url = $file_info->url;
+        $obj->downloadTime = $file_info->downloadTime;
+
+        foreach ($domain_to_name as $domain => $name) {
+            if (str_contains($obj->url, $domain)) {
+                $obj->municipalNameFromUrl = $name;
+            }
+        }
     }
+    else {
+        $obj->url = '<missing>';
+        $obj->downloadTime = null;
+    }
+
     $file_content = file_get_contents($file);
 
     if (strlen(trim($file_content)) == 0) {
