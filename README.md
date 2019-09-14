@@ -8,6 +8,10 @@ All PDFs are cached in this Git repo. So step 2 or step 3 does not require any d
 - `php`
 - `pdftotext` (step 1 / step 1.2 only)
 
+Ubuntu:
+
+`apt install php-cli poppler-utils`
+
 ## Commands
 
 `php 1-valgprotokoll-download.php`
