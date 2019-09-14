@@ -18,9 +18,12 @@ foreach ($files as $file) {
     try {
         parseFile_andWriteToDisk($file);
     }
-    catch(Exception $e) {
-        logErrorWithStacktrace('Error parsing [' . $file .'].', $e);
+    catch (Exception $e) {
+        logErrorWithStacktrace('Error parsing [' . $file . '].', $e);
     }
+    logInfo('.');
+    logInfo('.');
+    logInfo('.');
 }
 
 function parseFile_andWriteToDisk($file) {
@@ -33,21 +36,27 @@ function parseFile_andWriteToDisk($file) {
     $file_content = file_get_contents($file);
 
     if (strlen(trim($file_content)) == 0) {
-        echo "---> NO CONTENT.\n";
+        logInfo('---> NO CONTENT.');
         return;
     }
 
 
-    if (str_contains($file_content, 'Kretsrapport valglokale')) {
+    // :: Check for text in the start of the file
+    // We are ignoring known headings.
+    if (str_contains(substr($file_content, 0, 100), 'Kretsrapport valglokale')) {
         logInfo('Ignoring. Kretsrapport valglokale.');
         return;
     }
-    if (str_contains($file_content, 'Ny kandidatrangering per parti')) {
+    if (str_contains(substr($file_content, 0, 100), 'Ny kandidatrangering per parti')) {
         logInfo('Ignoring. Ny kandidatrangering per parti.');
         return;
     }
-    if (str_contains($file_content, 'Valgoppgjør for ')) {
+    if (str_contains(substr($file_content, 0, 100), 'Valgoppgjør for ')) {
         logInfo('Ignoring. Valgoppgjør for .');
+        return;
+    }
+    if (str_contains(substr($file_content, 0, 100), 'Valgdeltakelse')) {
+        logInfo('Ignoring. Valgdeltakelse.');
         return;
     }
 
@@ -100,7 +109,6 @@ function parseFile_andWriteToDisk($file) {
         return;
     }
 
-    echo $i . ': ' . trim($lines[$i]) . "\n";
     $match = regexAssertAndReturnMatch('/^\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\s*$/', $lines[$i++]);
     $obj->election = $match[1];
 
@@ -417,7 +425,7 @@ function parseFile_andWriteToDisk($file) {
     }
 
     if ($unknown_lines) {
-        logError('Unknown lines in [' . $file . '].');
+        logError('Unknown lines in [' . str_replace(__DIR__ . '/', '', $file) . '].');
         // TODO: throw exception here!
     }
 
