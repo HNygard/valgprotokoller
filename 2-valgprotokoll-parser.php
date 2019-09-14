@@ -39,28 +39,43 @@ foreach ($files as $file) {
     if (!str_ends_with($file, '.layout.txt')) {
         continue;
     }
+
+    $obj = new stdClass();
     try {
-        parseFile_andWriteToDisk($file);
+        parseFile_andWriteToDisk($obj, $file);
     }
     catch (Exception $e) {
+        $obj->error = true;
+        $obj->errorMessage = $e->getTraceAsString();
         logErrorWithStacktrace('Error parsing [' . $file . '].', $e);
 
         if (isset($argv[1]) && $argv[1] == 'throw') {
             throw $e;
         }
     }
+
+
+    if (isset($obj->election) && isset($obj->county)) {
+        $data_dir = __DIR__ . '/data-store/json/' . $obj->election . '/' . $obj->county;
+        if (!file_exists($data_dir)) {
+            mkdir($data_dir, 0777, true);
+        }
+        file_put_contents(
+            $data_dir . '/' . $obj->municipality . '.json',
+            json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE)
+        );
+    }
+
     logInfo('.');
     logInfo('.');
     logInfo('.');
 }
 
-function parseFile_andWriteToDisk($file) {
+function parseFile_andWriteToDisk(&$obj, $file) {
     global $domain_to_name;
 
     // => Parse this file. Line by line.
     logInfo('Parsing [' . str_replace(__DIR__ . '/', '', $file) . '].');
-
-    $obj = new stdClass();
 
     $file_info_file = str_replace('.layout.txt', '.json', $file);
     if (file_exists($file_info_file)) {
@@ -83,6 +98,8 @@ function parseFile_andWriteToDisk($file) {
     $file_content = file_get_contents($file);
 
     if (strlen(trim($file_content)) == 0) {
+        $obj->error = true;
+        $obj->errorMessage = 'No content. Might contain scanned image.';
         logInfo('---> NO CONTENT.');
         return;
     }
@@ -91,18 +108,26 @@ function parseFile_andWriteToDisk($file) {
     // :: Check for text in the start of the file
     // We are ignoring known headings.
     if (str_contains(substr($file_content, 0, 100), 'Kretsrapport valglokale')) {
+        $obj->doumentType = 'kretsrapport_valglokale';
+        $obj->error = false;
         logInfo('Ignoring. Kretsrapport valglokale.');
         return;
     }
     if (str_contains(substr($file_content, 0, 100), 'Ny kandidatrangering per parti')) {
+        $obj->doumentType = 'ny_kandidatrangering_per_parti';
+        $obj->error = false;
         logInfo('Ignoring. Ny kandidatrangering per parti.');
         return;
     }
     if (str_contains(substr($file_content, 0, 200), 'Valgoppgjør for ')) {
+        $obj->doumentType = 'valgoppgjør';
+        $obj->error = false;
         logInfo('Ignoring. Valgoppgjør for .');
         return;
     }
     if (str_contains(substr($file_content, 0, 100), 'Valgdeltakelse')) {
+        $obj->doumentType = 'valgdeltakelse';
+        $obj->error = false;
         logInfo('Ignoring. Valgdeltakelse.');
         return;
     }
@@ -120,6 +145,8 @@ function parseFile_andWriteToDisk($file) {
     // 11.09.2019 12:50:17        Valgprotokoll for valgstyret      Side 4
     $regex_footer = '/^([0-9]*\.[0-9]*\.[0-9]* [0-9]*:[0-9]*:[0-9]*) \s* Valgprotokoll for valgstyret \s* Side [0-9]*$/';
     $match = regexAssertAndReturnMatch($regex_footer . 'm', $file_content);
+    $obj->doumentType = 'valgprotokoll';
+    $obj->error = false;
     $obj->reportGenerated = $match[1];
     $file_content = preg_replace($regex_footer . 'm', '', $file_content);
 
@@ -152,6 +179,7 @@ function parseFile_andWriteToDisk($file) {
 
     // --- START page 1
     if (trim($lines[$i]) == 'Levanger kommune') {
+        $obj->error = true;
         logInfo('Ignoring Levanger kommune.');
         return;
     }
@@ -513,14 +541,7 @@ function parseFile_andWriteToDisk($file) {
         // TODO: throw exception here!
     }
 
-    $data_dir = __DIR__ . '/data-store/json/' . $obj->election . '/' . $obj->county;
-    if (!file_exists($data_dir)) {
-        mkdir($data_dir, 0777, true);
-    }
-    file_put_contents(
-        $data_dir . '/' . $obj->municipality . '.json',
-        json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE)
-    );
+    return;
 }
 
 function readTableRow($lines, $i, $header_length, array $start_of_row_keywords, $table_ending, $rowRegex, $returnFunction) {
