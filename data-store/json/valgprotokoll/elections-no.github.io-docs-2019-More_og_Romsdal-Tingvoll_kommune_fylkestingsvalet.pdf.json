@@ -1,0 +1,9 @@
+{
+    "localSource": "data-store/pdfs/elections-no.github.io-docs-2019-More_og_Romsdal-Tingvoll_kommune_fylkestingsvalet.pdf.layout.txt",
+    "url": "<missing>",
+    "downloadTime": null,
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "10.09.2019 17:04:12",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\\s*$\nLine ...... : å VALG\n\n#0 2-valgprotokoll-parser.php(241): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '\\xC3\\xA5 VALG')\n#1 2-valgprotokoll-parser.php(47): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
