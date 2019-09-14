@@ -18,6 +18,15 @@ $html = "<!DOCTYPE html>
   <title>Valgprotokoller</title>
 </head>
 <body>
+<style>
+table th {
+text-align: left;
+}
+table td {
+text-align: right;
+}
+</style>
+
 <h1>Valgprotokoller</h1>\n";
 $html .= "Laget av <a href='https://twitter.com/hallny'>@hallny</a> / <a href='https://norske-postlister.no'>Norske-postlister.no</a><br>\n";
 $html .= "<a href='https://github.com/HNygard/valgprotokoller/blob/master/data-store/urls.txt'>Kilder - adresseliste</a> -\n";
@@ -25,10 +34,12 @@ $html .= "<a href='https://github.com/HNygard/valgprotokoller'>Kildekode for den
 $html .= '<h2>Oppsummering</h2>
 <ul>-----SUMMARY-----HERE-----</ul>
 
-<h2>D1.4 </h2>
+<h2>D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler</h2>
+<i>Summary lines for each election in each municipality below.</i>
 ----D1.4-TABLE---
 
-<h2>D2.4</h2>
+<h2>D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler</h2>
+<i>Summary lines for each election in each municipality below.</i>
 ----D2.4-TABLE---
 
 ';
@@ -36,15 +47,15 @@ $summary_html = '';
 
 $html_d1_4 = '<table>
 <tr>
-<th>Valg - Kommune</th>
-<td>Foreløpig</td>
-<td>Endelig</td>
-<td>Avvik</td>
+<th>Election - Municipality</th>
+<td>Initial count ("Foreløpig")</td>
+<td>Final count ("Endelig")</td>
+<td>Discrepancy ("Avvik")</td>
 </tr>
 ';
 $html_d2_4 = $html_d1_4;
 
-$html .= "<h2>Merknader</h2>
+$html .= "<h2>Merknader (Comments to discrepancy)</h2>
 <ul>\n";
 foreach ($files as $file) {
 
