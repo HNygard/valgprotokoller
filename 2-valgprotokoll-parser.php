@@ -62,7 +62,7 @@ function parseFile_andWriteToDisk($file) {
         logInfo('Ignoring. Ny kandidatrangering per parti.');
         return;
     }
-    if (str_contains(substr($file_content, 0, 100), 'Valgoppgjør for ')) {
+    if (str_contains(substr($file_content, 0, 200), 'Valgoppgjør for ')) {
         logInfo('Ignoring. Valgoppgjør for .');
         return;
     }
@@ -389,13 +389,22 @@ function parseFile_andWriteToDisk($file) {
     // D1.1 Opptalte forhåndsstemmesedler
     // D1.2 Forkastede forhåndsstemmesedler
     // D1.3 Godkjente forhåndsstemmesedler fordelt på parti
-    // TODO: parse - D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler
-
-    while ($lines[$i] != 'D1.5 Merknad') {
+    while ($lines[$i] != 'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler') {
         // Skip
         $i++;
     }
-    //
+
+    // ---- Table - D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler
+    // 3 columns with numbers
+    $current_heading = 'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler';
+    $text_heading = 'Parti';
+    $column1 = 'Foreløpig';
+    $column2 = 'Endelig';
+    $column3 = 'Avvik';
+    $table_ending = 'D1.5 Merknad';
+    $i = readTable_threeColumns($obj, $lines, $i, $current_heading,
+        $text_heading, $column1, $column2, $column3, $table_ending);
+
 
     // ---- Table - D1.5 Merknad
     $merknad_heading = 'D1.5 Merknad';
@@ -450,17 +459,27 @@ function parseFile_andWriteToDisk($file) {
     );
 }
 
-function readTableRow($lines, $i, $header_length, $table_ending, $rowRegex, $returnFunction) {
+function readTableRow($lines, $i, $header_length, $length_to_first_number, $table_ending, $rowRegex, $returnFunction) {
     // One line.
     $row_lines = array($lines[$i++]);
 
     // Line 2
-    if (strlen($lines[$i]) > 3 && !str_starts_with(trim($lines[$i]), $table_ending)) {
+    if (
+        // Stop picking up lines, if there are empty lines
+        strlen($lines[$i]) > 3
+
+        // This is not the last line?
+        && !str_starts_with(trim($lines[$i]), $table_ending)) {
         $row_lines[] = str_replace("\r", '', $lines[$i++]);
     }
 
     // Line 3
-    if (strlen($lines[$i]) > 3 && !str_starts_with(trim($lines[$i]), $table_ending)) {
+    if (
+        // Stop picking up lines, if there are empty lines
+        strlen($lines[$i]) > 3
+
+        // This is not the last line?
+        && !str_starts_with(trim($lines[$i]), $table_ending)) {
         $row_lines[] = str_replace("\r", '', $lines[$i++]);
     }
 
@@ -513,7 +532,7 @@ function readTable_twoColumns(&$obj, &$lines, $i, $current_heading, $text_headin
     }
     while (!str_starts_with(trim($lines[$i]), $table_ending)) {
         $row = readTableRow($lines, $i, $header_length, $table_ending,
-            '/^(.*)\s+(([0-9]* ?[0-9]+)|(\—))\s\s\s+([0-9]* ?[0-9]+)\s*$/',
+            '/^(.*)\s+\s\s(([0-9]* ?[0-9]+)|(\—))\s\s\s+([0-9]* ?[0-9]+)\s*$/',
             function ($i, $row_lines, $row_line, $match) {
                 return array(
                     'i' => $i,
@@ -550,6 +569,51 @@ function readTable_twoColumns(&$obj, &$lines, $i, $current_heading, $text_headin
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
     }
+    return $i;
+}
+
+function readTable_threeColumns(&$obj, &$lines, $i, $current_heading, $text_heading,
+                                $column1, $column2, $column3,
+                                $table_ending) {
+    $obj->numbers[$current_heading] = array();
+    $i = assertLine_trim($lines, $i, $current_heading);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    $header_length = strlen($lines[$i]);
+    $length_to_first_number = strpos($lines[$i], $column1);
+    regexAssertAndReturnMatch('/^' . $text_heading . '\s*' . $column1 . '\s*' . $column2 . '\s*' . $column3 . '$/', trim($lines[$i++]));
+
+    while (!str_starts_with(trim($lines[$i]), $table_ending)) {
+        $row = readTableRow($lines, $i, $header_length, $length_to_first_number, $table_ending,
+            '/^(.*)\s+\s\s(([0-9]* ?[0-9]+)|(\—))\s\s\s+([0-9]* ?[0-9]+)\s\s\s+(\-?[0-9]* ?[0-9]+)\s*$/',
+            function ($i, $row_lines, $row_line, $match) {
+                return array(
+                    'i' => $i,
+                    'line' => $row_lines,
+                    'text' => $row_line,
+                    'numberColumn1' => $match[2],
+                    'numberColumn2' => $match[5],
+                    'numberColumn3' => $match[6]
+                );
+            });
+
+        if ($obj->municipality == 'Larvik') {
+            var_dump($row);
+        }
+        $obj->numbers[$current_heading][$row['text']] = array(
+            $column1 => $row['numberColumn1'],
+            $column2 => $row['numberColumn2'],
+            $column3 => $row['numberColumn3']
+        );
+        $i = $row['i'];
+    }
+
+    if ($obj->municipality == 'Larvik') {
+        var_dump($row);
+        exit;
+    }
+
     return $i;
 }
 
