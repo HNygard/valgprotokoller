@@ -1,9 +1,10 @@
 {
+    "localSource": "data-store/pdfs/www.trondheim.kommune.no-globalassets-10-bilder-og-filer-08-organisasjon-bystyresekreteriatet-kandidatkaring.pdf.pdf.layout.txt",
     "url": "https://www.trondheim.kommune.no/globalassets/10-bilder-og-filer/08-organisasjon/bystyresekreteriatet/kandidatkaring.pdf",
     "downloadTime": "2019-09-14 12:21:50",
     "municipalNameFromUrl": "Trondheim",
     "documentType": "valgprotokoll",
     "error": true,
     "reportGenerated": "10.09.2019 21:29:47",
-    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\\s*$\nLine ...... : E2 Kandidatkåring\n\n#0 2-valgprotokoll-parser.php(226): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', 'E2 Kandidatk\\xC3\\xA5r...')\n#1 2-valgprotokoll-parser.php(45): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\\s*$\nLine ...... : E2 Kandidatkåring\n\n#0 2-valgprotokoll-parser.php(237): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', 'E2 Kandidatk\\xC3\\xA5r...')\n#1 2-valgprotokoll-parser.php(47): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
 }

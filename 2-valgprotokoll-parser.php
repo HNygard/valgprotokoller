@@ -116,6 +116,8 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     // => Parse this file. Line by line.
     logInfo('Parsing [' . str_replace(__DIR__ . '/', '', $file) . '].');
 
+    $obj->localSource = str_replace(__DIR__ . '/', '', $file);
+
     $file_info_file = str_replace('.layout.txt', '.json', $file);
     if (file_exists($file_info_file)) {
         $file_info = json_decode(file_get_contents($file_info_file));
