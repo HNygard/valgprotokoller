@@ -40,3 +40,26 @@ Ubuntu:
 
 `php 3-valgprotokoll-html-report.php`
 - Created HTML from JSON ouput in step 2.
+
+## Grabbing URLs from Google
+
+- Search. 
+- Open dev tools and run the following:
+```var a = document.getElementsByTagName('a');
+   var list = '';
+   for (var i = 0; i < a.length; i++) {
+       var that = a[i];
+   console.log(that);
+       if(
+           that.href.indexOf('google.com') === -1
+           && that.href.indexOf('google.no') === -1
+           && that.href.indexOf('youtube.com') === -1
+           && that.href.indexOf('blogger.com') === -1
+           && that.href.indexOf('googleusercontent.com') === -1
+           && that.href.length > 2) {
+           list += "\n" + that.href;
+       }
+   }
+   console.log(list + "\n");
+```
+- Browse to next page and redo.

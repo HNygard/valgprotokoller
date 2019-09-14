@@ -15,11 +15,15 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errconte
     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
 });
 
+$clean_file = '';
+$lines_found = array();
+
 $cache_dir_pdfs = __DIR__ . '/data-store/pdfs/';
 $lines = file(__DIR__ . '/data-store/urls.txt');
 foreach ($lines as $line) {
     $line = trim($line);
     if (str_starts_with($line, '#') || empty($line)) {
+        $clean_file .= $line . "\n";
         continue;
     }
 
@@ -48,7 +52,15 @@ foreach ($lines as $line) {
     else {
         $pdfLines = file($cache_name . '.layout.txt', FILE_IGNORE_NEW_LINES);
     }
+
+    if (!isset($lines_found[$line])) {
+        // Removes any duplicates to keep it clean.
+        $lines_found[$line] = '';
+        $clean_file .= $line . "\n";
+    }
 }
+
+file_put_contents(__DIR__ . '/data-store/urls.txt', $clean_file);
 
 
 function str_starts_with($haystack, $needle) {
