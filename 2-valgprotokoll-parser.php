@@ -2,6 +2,13 @@
 /**
  * Parse 'valgprotokoll' PDFs
  *
+ * Usage:
+ *
+ * - Normal usage. Tries to parse all files. Logs error but continues.
+ *   php 2-valgprotokoll-parser.php
+ * - Parser development. Stop on exceptions.
+ *   php 2-valgprotokoll-parser.php throw
+ *
  * @author Hallvard Nygård, @hallny
  */
 
@@ -20,6 +27,10 @@ foreach ($files as $file) {
     }
     catch (Exception $e) {
         logErrorWithStacktrace('Error parsing [' . $file . '].', $e);
+
+        if (isset($argv[1]) && $argv[1] == 'throw') {
+            throw $e;
+        }
     }
     logInfo('.');
     logInfo('.');
