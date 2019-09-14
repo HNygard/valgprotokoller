@@ -46,7 +46,19 @@ foreach ($files as $file) {
     }
     catch (Exception $e) {
         $obj->error = true;
-        $obj->errorMessage = $e->getTraceAsString();
+        $obj->errorMessage = $e->getMessage() . "\n\n" . str_replace(__DIR__ . '/', '', $e->getTraceAsString());
+
+        // Removing all folders
+        $dir = __DIR__;
+        $dir_last = __DIR__;
+        while (dirname($dir) != $dir_last) {
+            echo dirname($dir) . " -- " . $dir_last . "\n";
+            $obj->errorMessage = str_replace(dirname($dir), '', $obj->errorMessage);
+            $dir_last = dirname($dir);
+            $dir = dirname($dir);
+        }
+
+
         logErrorWithStacktrace('Error parsing [' . $file . '].', $e);
 
         if (isset($argv[1]) && $argv[1] == 'throw') {
@@ -64,6 +76,33 @@ foreach ($files as $file) {
             $data_dir . '/' . $obj->municipality . '.json',
             json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE)
         );
+    }
+    elseif (isset($obj->documentType)) {
+        $data_dir = __DIR__ . '/data-store/json/' . $obj->documentType . '/';
+        if (!file_exists($data_dir)) {
+            mkdir($data_dir, 0777, true);
+        }
+        file_put_contents(
+            $data_dir . '/'
+            . (isset($obj->municipalityNameFromUrl) ? $obj->municipalityNameFromUrl . ' - ' : '')
+            . basename(str_replace('.layout.txt', '', $file))
+            . '.json',
+            json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE)
+        );
+    }
+    elseif ($obj->error) {
+        $data_dir = __DIR__ . '/data-store/json/error';
+        if (!file_exists($data_dir)) {
+            mkdir($data_dir, 0777, true);
+        }
+        file_put_contents(
+            $data_dir . '/' . basename(str_replace('.layout.txt', '', $file)) . '.json',
+            json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE)
+        );
+    }
+    else {
+        var_dump($obj);
+        throw new Exception('What? Dont know where to write this thing.');
     }
 
     logInfo('.');
@@ -108,25 +147,25 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     // :: Check for text in the start of the file
     // We are ignoring known headings.
     if (str_contains(substr($file_content, 0, 100), 'Kretsrapport valglokale')) {
-        $obj->doumentType = 'kretsrapport_valglokale';
+        $obj->documentType = 'kretsrapport_valglokale';
         $obj->error = false;
         logInfo('Ignoring. Kretsrapport valglokale.');
         return;
     }
     if (str_contains(substr($file_content, 0, 100), 'Ny kandidatrangering per parti')) {
-        $obj->doumentType = 'ny_kandidatrangering_per_parti';
+        $obj->documentType = 'ny_kandidatrangering_per_parti';
         $obj->error = false;
         logInfo('Ignoring. Ny kandidatrangering per parti.');
         return;
     }
     if (str_contains(substr($file_content, 0, 200), 'Valgoppgjør for ')) {
-        $obj->doumentType = 'valgoppgjør';
+        $obj->documentType = 'valgoppgjør';
         $obj->error = false;
         logInfo('Ignoring. Valgoppgjør for .');
         return;
     }
     if (str_contains(substr($file_content, 0, 100), 'Valgdeltakelse')) {
-        $obj->doumentType = 'valgdeltakelse';
+        $obj->documentType = 'valgdeltakelse';
         $obj->error = false;
         logInfo('Ignoring. Valgdeltakelse.');
         return;
@@ -145,7 +184,7 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     // 11.09.2019 12:50:17        Valgprotokoll for valgstyret      Side 4
     $regex_footer = '/^([0-9]*\.[0-9]*\.[0-9]* [0-9]*:[0-9]*:[0-9]*) \s* Valgprotokoll for valgstyret \s* Side [0-9]*$/';
     $match = regexAssertAndReturnMatch($regex_footer . 'm', $file_content);
-    $obj->doumentType = 'valgprotokoll';
+    $obj->documentType = 'valgprotokoll';
     $obj->error = false;
     $obj->reportGenerated = $match[1];
     $file_content = preg_replace($regex_footer . 'm', '', $file_content);
