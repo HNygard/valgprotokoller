@@ -68,6 +68,10 @@ foreach ($files as $file) {
     }
     $obj = json_decode(file_get_contents($file));
 
+    if ($obj->error || $obj->documentType != 'valgprotokoll' || !isset($obj->election) || !isset($obj->municipality)) {
+        continue;
+    }
+
     $summary_html .= '<li>' . $obj->election . ' - ' . $obj->municipality . "</li>\n";
 
     $html .= '<li>' . $obj->election . ' - ' . $obj->municipality . "\n"
