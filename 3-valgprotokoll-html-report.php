@@ -27,18 +27,19 @@ text-align: right;
 }
 </style>
 
-<h1>Valgprotokoller</h1>\n";
-$html .= "Laget av <a href='https://twitter.com/hallny'>@hallny</a> / <a href='https://norske-postlister.no'>Norske-postlister.no</a><br>\n";
-$html .= "<a href='https://github.com/HNygard/valgprotokoller/blob/master/data-store/urls.txt'>Kilder - adresseliste</a> -\n";
-$html .= "<a href='https://github.com/HNygard/valgprotokoller'>Kildekode for denne rapporten</a> (Github)<br>\n";
-$html .= '<h2>Oppsummering</h2>
+<h1>Election protocol (\"Valgprotokoller\" / \"Valgstyrets møtebok\")</h1>\n";
+$html .= "Created by <a href='https://twitter.com/hallny'>@hallny</a> / <a href='https://norske-postlister.no'>Norske-postlister.no</a><br>\n";
+$html .= "<a href='https://github.com/HNygard/valgprotokoller/blob/master/data-store/urls.txt'>Source - URL list</a> -\n";
+$html .= "<a href='https://github.com/elections-no/elections-no.github.io/tree/master/docs/2019'>Source - Elections.no</a> -\n";
+$html .= "<a href='https://github.com/HNygard/valgprotokoller'>Source code for this report</a> (Github)<br>\n";
+$html .= '<h2>Summary</h2>
 <ul>-----SUMMARY-----HERE-----</ul>
 
-<h2>D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler</h2>
+<h2>D1.4 Discrepancy between initial and final counting of pre-election-day votes ("Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler")</h2>
 <i>Summary lines for each election in each municipality below.</i>
 ----D1.4-TABLE---
 
-<h2>D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler</h2>
+<h2>D2.4 Discrepancy between initial and final counting of ordinary votes ("Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler")</h2>
 <i>Summary lines for each election in each municipality below.</i>
 ----D2.4-TABLE---
 
