@@ -450,7 +450,7 @@ function parseFile_andWriteToDisk($file) {
     );
 }
 
-function readTable_twoColNumbers($lines, $i, $header_length, $table_ending) {
+function readTableRow($lines, $i, $header_length, $table_ending, $rowRegex, $returnFunction) {
     // One line.
     $row_lines = array($lines[$i++]);
 
@@ -473,7 +473,7 @@ function readTable_twoColNumbers($lines, $i, $header_length, $table_ending) {
     foreach ($row_lines as $line) {
         if (strlen($line) >= ($header_length - 10)) {
             // -> Numbers line
-            $match = regexAssertAndReturnMatch('/^(.*)\s+(([0-9]* ?[0-9]+)|(\—))\s\s\s+([0-9]* ?[0-9]+)\s*$/', $line);
+            $match = regexAssertAndReturnMatch($rowRegex, $line);
             $row_line .= trim($match[1]);
         }
         else {
@@ -486,13 +486,7 @@ function readTable_twoColNumbers($lines, $i, $header_length, $table_ending) {
     $row_line = str_replace("\n", '', $row_line);
     $row_line = trim($row_line);
 
-    return array(
-        'i' => $i,
-        'line' => $row_lines,
-        'text' => $row_line,
-        'numberColumn1' => $match[2],
-        'numberColumn2' => $match[5]
-    );
+    return $returnFunction($i, $row_lines, $row_line, $match);
 }
 function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_heading,
                    $column1, $column2,
@@ -517,7 +511,17 @@ function readTable(&$obj, &$lines, $i, $current_heading, $text_heading, $column_
         regexAssertAndReturnMatch('/^' . $text_heading . '\s*' . $column1 . '\s*' . $column2 . '$/', trim($lines[$i++]));
     }
     while (!str_starts_with(trim($lines[$i]), $table_ending)) {
-        $row = readTable_twoColNumbers($lines, $i, $header_length, $table_ending);
+        $row = readTableRow($lines, $i, $header_length, $table_ending,
+            '/^(.*)\s+(([0-9]* ?[0-9]+)|(\—))\s\s\s+([0-9]* ?[0-9]+)\s*$/',
+            function($i, $row_lines, $row_line, $match) {
+                return array(
+                    'i' => $i,
+                    'line' => $row_lines,
+                    'text' => $row_line,
+                    'numberColumn1' => $match[2],
+                    'numberColumn2' => $match[5]
+                );
+            });
         $obj->numbers[$current_heading][$row['text']] = array(
             $column1 => $row['numberColumn1'],
             $column2 => $row['numberColumn2']
