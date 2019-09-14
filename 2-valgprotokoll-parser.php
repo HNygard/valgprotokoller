@@ -590,8 +590,8 @@ function readTable_twoColumns(&$obj, &$lines, $i, $current_heading, $text_headin
                 );
             });
         $obj->numbers[$current_heading][$row['text']] = array(
-            $column1 => $row['numberColumn1'],
-            $column2 => $row['numberColumn2']
+            $column1 => cleanFormattedNumber($row['numberColumn1']),
+            $column2 => cleanFormattedNumber($row['numberColumn2'])
         );
         $i = $row['i'];
     }
@@ -644,20 +644,12 @@ function readTable_threeColumns(&$obj, &$lines, $i, $current_heading, $text_head
                 );
             });
 
-        if ($obj->municipality == 'Larvik') {
-            var_dump($row);
-        }
         $obj->numbers[$current_heading][$row['text']] = array(
-            $column1 => $row['numberColumn1'],
-            $column2 => $row['numberColumn2'],
-            $column3 => $row['numberColumn3']
+            $column1 => cleanFormattedNumber($row['numberColumn1']),
+            $column2 => cleanFormattedNumber($row['numberColumn2']),
+            $column3 => cleanFormattedNumber($row['numberColumn3'])
         );
         $i = $row['i'];
-    }
-
-    if ($obj->municipality == 'Larvik') {
-        var_dump($row);
-        exit;
     }
 
     return $i;
@@ -807,4 +799,26 @@ function printChars($string) {
     for ($i = 0; $i < strlen($string); $i++) {
         echo '[' . $i . '] ' . ord($string{$i}) . ' - ' . $string{$i} . "\n";
     }
+}
+
+/**
+ * Remove thosand sep + "type cast":
+ * "12 123" => "12123" => 12123
+ *
+ * Special case '-' is just returned.
+ *
+ * @param $stringNumber
+ * @return int|string
+ */
+function cleanFormattedNumber($stringNumber) {
+    if ($stringNumber == '-') {
+        return $stringNumber;
+    }
+
+    $stringNumber = str_replace(' ', '', $stringNumber);
+    if (is_numeric($stringNumber) && !str_contains($stringNumber, ',')) {
+        return (int)$stringNumber;
+    }
+
+    return $stringNumber;
 }
