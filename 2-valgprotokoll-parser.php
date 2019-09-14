@@ -63,7 +63,7 @@ foreach ($files as $file) {
 
         logErrorWithStacktrace('Error parsing [' . $file . '].', $e);
 
-        if (isset($argv[1]) && $argv[1] == 'throw') {
+        if (isset($argv[1]) && $argv[1] == 'throw' && $obj->documentType == 'valgprotokoll') {
             throw $e;
         }
     }
