@@ -402,8 +402,27 @@ function parseFile_andWriteToDisk($file) {
     $column2 = 'Endelig';
     $column3 = 'Avvik';
     $table_ending = 'D1.5 Merknad';
+    $start_of_row_keywords = array(
+        // Known values for this table. Improves reading.
+        'Demokratene',
+        'Liberalistene',
+        'Senterpartiet',
+        'Høyre',
+        'Pensjonistpartiet',
+        'Rødt',
+        'Kristelig Folkeparti',
+        'Arbeiderpartiet',
+        'Fremskrittspartiet',
+        'Partiet De Kristne',
+        'Miljøpartiet De Grønne',
+        'SV - Sosialistisk Venstreparti',
+        'Venstre',
+        'Helsepartiet',
+        'Totalt antall partifordelte stemmesedler',
+    );
     $i = readTable_threeColumns($obj, $lines, $i, $current_heading,
-        $text_heading, $column1, $column2, $column3, $table_ending);
+        $text_heading, $column1, $column2, $column3, $table_ending,
+        $start_of_row_keywords);
 
 
     // ---- Table - D1.5 Merknad
@@ -459,24 +478,43 @@ function parseFile_andWriteToDisk($file) {
     );
 }
 
-function readTableRow($lines, $i, $header_length, $length_to_first_number, $table_ending, $rowRegex, $returnFunction) {
+function readTableRow($lines, $i, $header_length, array $start_of_row_keywords, $table_ending, $rowRegex, $returnFunction) {
     // One line.
     $row_lines = array($lines[$i++]);
 
-    // Line 2
+    // :: Line 2
+
+    $start_with_keyword = false;
+    foreach ($start_of_row_keywords as $keyword) {
+        if (str_starts_with(trim($lines[$i]), $keyword)) {
+            $start_with_keyword = true;
+        }
+    }
     if (
         // Stop picking up lines, if there are empty lines
         strlen($lines[$i]) > 3
+
+        // Is the next line a key word?
+        && !$start_with_keyword
 
         // This is not the last line?
         && !str_starts_with(trim($lines[$i]), $table_ending)) {
         $row_lines[] = str_replace("\r", '', $lines[$i++]);
     }
 
-    // Line 3
+    // :: Line 3
+
+    foreach ($start_of_row_keywords as $keyword) {
+        if (str_starts_with(trim($lines[$i]), $keyword)) {
+            $start_with_keyword = true;
+        }
+    }
     if (
         // Stop picking up lines, if there are empty lines
         strlen($lines[$i]) > 3
+
+        // Is the next line a key word?
+        && !$start_with_keyword
 
         // This is not the last line?
         && !str_starts_with(trim($lines[$i]), $table_ending)) {
@@ -531,7 +569,7 @@ function readTable_twoColumns(&$obj, &$lines, $i, $current_heading, $text_headin
         regexAssertAndReturnMatch('/^' . $text_heading . '\s*' . $column1 . '\s*' . $column2 . '$/', trim($lines[$i++]));
     }
     while (!str_starts_with(trim($lines[$i]), $table_ending)) {
-        $row = readTableRow($lines, $i, $header_length, $table_ending,
+        $row = readTableRow($lines, $i, $header_length, array(), $table_ending,
             '/^(.*)\s+\s\s(([0-9]* ?[0-9]+)|(\—))\s\s\s+([0-9]* ?[0-9]+)\s*$/',
             function ($i, $row_lines, $row_line, $match) {
                 return array(
@@ -574,18 +612,17 @@ function readTable_twoColumns(&$obj, &$lines, $i, $current_heading, $text_headin
 
 function readTable_threeColumns(&$obj, &$lines, $i, $current_heading, $text_heading,
                                 $column1, $column2, $column3,
-                                $table_ending) {
+                                $table_ending, $start_of_row_keywords) {
     $obj->numbers[$current_heading] = array();
     $i = assertLine_trim($lines, $i, $current_heading);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
     $header_length = strlen($lines[$i]);
-    $length_to_first_number = strpos($lines[$i], $column1);
     regexAssertAndReturnMatch('/^' . $text_heading . '\s*' . $column1 . '\s*' . $column2 . '\s*' . $column3 . '$/', trim($lines[$i++]));
 
     while (!str_starts_with(trim($lines[$i]), $table_ending)) {
-        $row = readTableRow($lines, $i, $header_length, $length_to_first_number, $table_ending,
+        $row = readTableRow($lines, $i, $header_length, $start_of_row_keywords, $table_ending,
             '/^(.*)\s+\s\s(([0-9]* ?[0-9]+)|(\—))\s\s\s+([0-9]* ?[0-9]+)\s\s\s+(\-?[0-9]* ?[0-9]+)\s*$/',
             function ($i, $row_lines, $row_line, $match) {
                 return array(
