@@ -34,6 +34,8 @@ foreach ($kommunale_domener as $line) {
     }
 }
 
+$files_written = array();
+
 $files = getDirContents(__DIR__ . '/data-store/pdfs');
 foreach ($files as $file) {
     if (!str_ends_with($file, '.layout.txt')) {
@@ -72,10 +74,21 @@ foreach ($files as $file) {
         if (!file_exists($data_dir)) {
             mkdir($data_dir, 0777, true);
         }
+        $json_file = $data_dir . '/' . $obj->municipality . '.json';
+        if (isset($files_written[$json_file])) {
+            $first_file = $files_written[$json_file];
+            if (isset($first_file->otherSources)) {
+                $obj->otherSources = $first_file->otherSources;
+            }
+            unset($first_file->otherSources);
+            $obj->otherSources[] = getDiffBetweenObjects($obj, $first_file);
+        }
+
         file_put_contents(
-            $data_dir . '/' . $obj->municipality . '.json',
+            $json_file,
             json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE)
         );
+        $files_written[$json_file] = $obj;
     }
     elseif (isset($obj->documentType)) {
         $data_dir = __DIR__ . '/data-store/json/' . $obj->documentType . '/';
@@ -919,4 +932,48 @@ function cleanFormattedNumber($stringNumber) {
     }
 
     return $stringNumber;
+}
+
+
+function getDiffBetweenObjects($document, $document_new) {
+    // Check key by key
+    $new_key_values = array();
+    foreach ($document_new as $key => $value) {
+        if ($value == null) {
+            continue;
+        }
+        if (!isset($document->$key)) {
+            // -> New key
+            $new_key_values[$key] = $value;
+            continue;
+        }
+
+        if (is_array($value)) {
+            // -> Diff on keys
+            foreach($value as $key2 => $value2) {
+                if ($value2 == null) {
+                    continue;
+                }
+
+                if (!isset($document->$key[$key2]) || $document->$key[$key2] != $value2) {
+                    // -> Non existing key i orignal document OR changed value
+                    if (!isset($new_key_values[$key])) {
+                        $new_key_values[$key] = array();
+                    }
+                    $new_key_values[$key][$key2] = $value2;
+                }
+            }
+        }
+       /* elseif (is_object($document->$key)) {
+            $diff = getDiffBetweenObjects($document->$key, $value);
+            if (count($diff) > 0) {
+                $new_key_values[$key] = $diff;
+            }
+        }*/
+        elseif ($document->$key != $value) {
+            $new_key_values[$key] = $value;
+        }
+    }
+
+    return $new_key_values;
 }
