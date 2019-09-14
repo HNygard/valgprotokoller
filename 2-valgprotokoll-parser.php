@@ -402,7 +402,7 @@ function parseFile_andWriteToDisk($file) {
     $column2 = 'Endelig';
     $column3 = 'Avvik';
     $table_ending = 'D1.5 Merknad';
-    $start_of_row_keywords = array(
+    $start_of_row_keywords_partier = array(
         // Known values for this table. Improves reading.
         'Demokratene',
         'Liberalistene',
@@ -422,7 +422,7 @@ function parseFile_andWriteToDisk($file) {
     );
     $i = readTable_threeColumns($obj, $lines, $i, $current_heading,
         $text_heading, $column1, $column2, $column3, $table_ending,
-        $start_of_row_keywords);
+        $start_of_row_keywords_partier);
 
 
     // ---- Table - D1.5 Merknad
@@ -436,12 +436,21 @@ function parseFile_andWriteToDisk($file) {
     // D2.1 Opptalte valgtingsstemmesedler
     // D2.2 Forkastede valgtingsstemmesedler
     // D2.3 Godkjente valgtingsstemmesedler fordelt på parti
-    // D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler
-    while ($lines[$i] != 'D2.5 Merknad') {
+    while ($lines[$i] != 'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler') {
         // Skip
         $i++;
     }
-    //
+
+    // ---- Table - D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler
+    $current_heading = 'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler';
+    $text_heading = 'Parti';
+    $column1 = 'Foreløpig';
+    $column2 = 'Endelig';
+    $column3 = 'Avvik';
+    $table_ending = 'D2.5 Merknad';
+    $i = readTable_threeColumns($obj, $lines, $i, $current_heading,
+        $text_heading, $column1, $column2, $column3, $table_ending,
+        $start_of_row_keywords_partier);
 
     // ---- Table - D2.5 Merknad
     $merknad_heading = 'D2.5 Merknad';
