@@ -950,7 +950,7 @@ function getDiffBetweenObjects($document, $document_new) {
 
         if (is_array($value)) {
             // -> Diff on keys
-            foreach($value as $key2 => $value2) {
+            foreach ($value as $key2 => $value2) {
                 if ($value2 == null) {
                     continue;
                 }
@@ -964,12 +964,12 @@ function getDiffBetweenObjects($document, $document_new) {
                 }
             }
         }
-       /* elseif (is_object($document->$key)) {
-            $diff = getDiffBetweenObjects($document->$key, $value);
-            if (count($diff) > 0) {
-                $new_key_values[$key] = $diff;
-            }
-        }*/
+        /* elseif (is_object($document->$key)) {
+             $diff = getDiffBetweenObjects($document->$key, $value);
+             if (count($diff) > 0) {
+                 $new_key_values[$key] = $diff;
+             }
+         }*/
         elseif ($document->$key != $value) {
             $new_key_values[$key] = $value;
         }
