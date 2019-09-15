@@ -115,6 +115,16 @@ foreach ($files as $file) {
             json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE)
         );
     }
+    elseif ($obj->error && $obj->errorMessage == 'No content. Might contain scanned image.') {
+        $data_dir = __DIR__ . '/data-store/json/error-no-content';
+        if (!file_exists($data_dir)) {
+            mkdir($data_dir, 0777, true);
+        }
+        file_put_contents(
+            $data_dir . '/' . basename(str_replace('.layout.txt', '', $file)) . '.json',
+            json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE)
+        );
+    }
     elseif ($obj->error) {
         $data_dir = __DIR__ . '/data-store/json/error';
         if (!file_exists($data_dir)) {

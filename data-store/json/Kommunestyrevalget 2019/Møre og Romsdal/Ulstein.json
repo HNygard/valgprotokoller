@@ -147,7 +147,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
-    "errorMessage": "Undefined offset: 1750\n\n#0 2-valgprotokoll-parser.php(806): {closure}(8, 'Undefined offse...', '...', 806, Array)\n#1 2-valgprotokoll-parser.php(515): readComments(Object(stdClass), Array, 1750, 'C4.6 Merknad', '(\\xC3\\x85rsak til evt...', 'C4.7 Antall ste...')\n#2 2-valgprotokoll-parser.php(59): parseFile_andWriteToDisk(Object(stdClass), '...')\n#3 {main}",
+    "errorMessage": "Undefined offset: 1750\n\n#0 2-valgprotokoll-parser.php(816): {closure}(8, 'Undefined offse...', '...', 816, Array)\n#1 2-valgprotokoll-parser.php(525): readComments(Object(stdClass), Array, 1750, 'C4.6 Merknad', '(\\xC3\\x85rsak til evt...', 'C4.7 Antall ste...')\n#2 2-valgprotokoll-parser.php(59): parseFile_andWriteToDisk(Object(stdClass), '...')\n#3 {main}",
     "otherSources": [
         {
             "localSource": "data-store/pdfs/www.ulstein.kommune.no-_f-p34-i9988a095-5011-416a-82b6-612ca34171cd-motebok-kommunestyrevalet-2019.pdf.pdf.layout.txt",
