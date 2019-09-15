@@ -3,10 +3,12 @@
     "url": "https://www.levanger.kommune.no/PageFiles/410912/valgstyrets_m%C3%B8tebok_fylke_2019.pdf",
     "downloadTime": "2019-09-14 12:23:18",
     "municipalNameFromUrl": "Levanger",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
     "error": true,
     "reportGenerated": "10.09.2019 18:25:47",
     "election": "Fylkestingsvalget 2019",
     "heading": "Valgprotokoll for valgstyret i Levanger kommune, Trøndelag fylke",
-    "errorMessage": "Did not find expected value on line [5].\nExpected ... : Kommunestyre- og fylkestingsvalget 2019\nActual ..... : Kommunestyre- og fylkestingsvalget 2019                                                     Levanger kommune\n\n#0 2-valgprotokoll-parser.php(279): assertLine_trim(Array, 5, 'Kommunestyre- o...')\n#1 2-valgprotokoll-parser.php(47): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+    "errorMessage": "Did not find expected value on line [5].\nExpected ... : Kommunestyre- og fylkestingsvalget 2019\nActual ..... : Kommunestyre- og fylkestingsvalget 2019                                                     Levanger kommune\n\n#0 2-valgprotokoll-parser.php(284): assertLine_trim(Array, 5, 'Kommunestyre- o...')\n#1 2-valgprotokoll-parser.php(59): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
 }

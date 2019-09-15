@@ -3,8 +3,10 @@
     "url": "https://www.kvanangen.kommune.no/getfile.php/4541388.1387.7saibtmkuqspll/Valgprotokoll+kommunestyrevalget+2019.pdf",
     "downloadTime": "2019-09-14 12:20:12",
     "municipalNameFromUrl": "Kvænangen",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
     "error": true,
     "reportGenerated": "10.09.2019 18:37:19",
-    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\\s*$\nLine ...... :     * VALG\n\n#0 2-valgprotokoll-parser.php(265): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '    * VALG')\n#1 2-valgprotokoll-parser.php(47): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\\s*$\nLine ...... :     * VALG\n\n#0 2-valgprotokoll-parser.php(270): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '    * VALG')\n#1 2-valgprotokoll-parser.php(59): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
 }

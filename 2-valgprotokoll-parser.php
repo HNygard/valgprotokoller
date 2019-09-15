@@ -34,6 +34,18 @@ foreach ($kommunale_domener as $line) {
     }
 }
 
+$lines = file(__DIR__ . '/data-store/nynorsk/nynorsk-til-bokmål.csv');
+$nynorskToBokmaal = array();
+foreach ($lines as $line) {
+    if (empty(trim($line))) {
+        continue;
+    }
+    $line = trim($line);
+    $nynorskString = explode("\t", $line)[0];
+    $bokmaalString = explode("\t", $line)[1];
+    $nynorskToBokmaal[$nynorskString] = $bokmaalString;
+}
+
 $files_written = array();
 
 $files = getDirContents(__DIR__ . '/data-store/pdfs');
@@ -194,6 +206,23 @@ function parseFile_andWriteToDisk(&$obj, $file) {
          logInfo('Removing "* VALG" from first line.');
          $file_content = trim(substr(trim($file_content), strlen('* VALG')));
      }*/
+
+    $nynorsk = str_contains($file_content, 'Valprotokoll for valstyret');
+    if ($nynorsk) {
+        $obj->language = 'nn-NO';
+        $obj->languageName = 'Norwegian, Nynorsk';
+
+        global $nynorskToBokmaal;
+        foreach ($nynorskToBokmaal as $nynorskString => $bokmaalString) {
+            $file_content = str_replace($nynorskString, $bokmaalString, $file_content);
+        }
+        $file_content = str_replace("manntalll", "manntall", $file_content);
+    }
+    elseif (str_contains($file_content, 'Valgprotokoll for valgstyret')) {
+        $obj->language = 'nb-NO';
+        $obj->languageName = 'Norwegian, Bokmål';
+    }
+
 
     // :: Strip footers
     // 11.09.2019 12:50:17        Valgprotokoll for valgstyret      Side 4
@@ -431,9 +460,11 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     if ($lines[$i] == 'Det er ikke foretatt foreløpig opptelling hos stemmestyrene.') {
         $i = assertLine_trim($lines, $i, 'Det er ikke foretatt foreløpig opptelling hos stemmestyrene.');
         $i = removeLineIfPresent_andEmpty($lines, $i);
+        $obj->foretattForeløpigOpptellingHosStemmestyrene = false;
     }
     else {
         // ---- Table - C2.1 Antall valgtingsstemmesedler i urne
+        $obj->foretattForeløpigOpptellingHosStemmestyrene = true;
         $current_heading = 'C2.1 Antall valgtingsstemmesedler i urne';
         $text_heading = null;
         $column_heading = null;

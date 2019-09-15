@@ -1,0 +1,11 @@
+{
+    "localSource": "data-store/pdfs/elections-no.github.io-docs-2019-More_og_Romsdal-Sande_kommune_fylkestingsvalet.pdf.layout.txt",
+    "url": "<missing>",
+    "downloadTime": null,
+    "language": "nn-NO",
+    "languageName": "Norwegian, Nynorsk",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "10.09.2019 17:02:10",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\\s*$\nLine ...... : VALG\n\n#0 2-valgprotokoll-parser.php(270): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', 'VALG')\n#1 2-valgprotokoll-parser.php(59): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}

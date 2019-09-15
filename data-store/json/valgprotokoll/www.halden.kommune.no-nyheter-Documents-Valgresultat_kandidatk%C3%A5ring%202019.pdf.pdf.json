@@ -3,8 +3,10 @@
     "url": "https://www.halden.kommune.no/nyheter/Documents/Valgresultat_kandidatk%C3%A5ring%202019.pdf",
     "downloadTime": "2019-09-14 12:22:15",
     "municipalNameFromUrl": "Halden",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
     "error": true,
     "reportGenerated": "11.09.2019 10:05:29",
-    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\\s*$\nLine ...... : E2 Kandidatkåring\n\n#0 2-valgprotokoll-parser.php(265): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', 'E2 Kandidatk\\xC3\\xA5r...')\n#1 2-valgprotokoll-parser.php(47): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\\s*$\nLine ...... : E2 Kandidatkåring\n\n#0 2-valgprotokoll-parser.php(270): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', 'E2 Kandidatk\\xC3\\xA5r...')\n#1 2-valgprotokoll-parser.php(59): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
 }
