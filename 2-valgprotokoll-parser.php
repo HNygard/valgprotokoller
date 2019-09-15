@@ -207,6 +207,13 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         logInfo('Ignoring. Valgdeltakelse.');
         return;
     }
+    if (str_contains(substr($file_content, 0, 100), 'Valprotokoll for fylkesvalstyret')
+    || str_contains(substr($file_content, 0, 100), 'Valgprotokoll for fylkesvalgstyret')) {
+        $obj->documentType = 'valgprotokoll-fylkesvalgstyret';
+        $obj->error = false;
+        logInfo('Ignoring. Valkesvalgstyret.');
+        return;
+    }
 
     /*
      * DIDN'T WORK - Should maybe pre clean these type of file instead of cluttering the code
