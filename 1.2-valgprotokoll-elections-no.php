@@ -11,6 +11,10 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errconte
 
 
 // TODO: git submodule update
+$command = 'git submodule update --remote elections-no.github.io';
+logInfo('Exec: ' . $command);
+exec($command, $find);
+logInfo("Command output\n" . implode("\n", $find));
 
 $data_dir = __DIR__ . '/elections-no.github.io/docs/2019/';
 $cache_dir_pdfs = __DIR__ . '/data-store/pdfs/';
@@ -42,9 +46,9 @@ foreach ($files as $file) {
 
 function getDirContents($dir) {
     $command = 'find "' . $dir . '"';
-    logDebug('Exec: ' . $command);
+    logInfo('Exec: ' . $command);
     exec($command, $find);
-    logDebug('- Found [' . count($find) . ']');
+    logInfo('- Found [' . count($find) . ']');
     $data_store_files = array();
     foreach ($find as $line) {
         if (is_dir($line)) {
