@@ -229,6 +229,12 @@ foreach ($files as $file) {
     // - Ant. sedler - Number of ballots after election
     $ballotsPreOrdinary = $obj->numbers->{'B2.1.1 Behandlede ordinære forhåndsstemmesedler'}->{'Total antall behandlede forhåndsstemmesedler'};
     $ballotsPreLate = $obj->numbers->{'B2.2.1 Behandlede sent innkomne forhåndsstemmesedler'}->{'Total antall sent innkomne forhåndsstemmesedler'};
+    if ($obj->foretattForeløpigOpptellingHosStemmestyrene) {
+        $ballotsMainFirstCounting = $obj->numbers->{'C2.1 Antall valgtingsstemmesedler i urne'}->{'Total antall valgtingstemmesedler i urne'};
+    }
+    else {
+        $ballotsMainFirstCounting = null;
+    }
 
     $ballotStuffingRow = function ($text, $ballots) {
         $checksum = $ballots->{'Kryss i manntall'} - $ballots->{'Ant. sedler'};
@@ -236,23 +242,30 @@ foreach ($files as $file) {
     <td>" . $ballots->{'Kryss i manntall'} . '</td>
     <td>' . $ballots->{'Ant. sedler'} . '</td>
     <td>' . $checksum . '</td>
-    <td>'. ($checksum >= 0
-                ? '<span style="color: darkgreen;">OK. Showed up to vote, but didn\'t vote.</span>'
-                : '<span style="color: red;">More votes then people who showed up. This should not happen.</span>') .'</td>
+    <td>' . ($checksum >= 0
+                ? '<span style="color: darkgreen;">OK. ' . $checksum . ' voters showed up to vote, but didn\'t vote.</span>'
+                : '<span style="color: red;">More votes (' . $ballots->{'Ant. sedler'} . ' ballots) then people who showed up (' . $ballots->{'Kryss i manntall'} . '). This should not happen.</span>') . '</td>
     ';
     };
 
 
     $html_BallotStuffing .= "<tr>
-    <th rowspan='2'>" . $obj->election . " - " . $obj->municipality . "</th>
-    " . $ballotStuffingRow('Pre-votes - ordinary', $ballotsPreOrdinary) . '
+    <th rowspan='3'>" . $obj->election . " - " . $obj->municipality . "</th>
+    " . $ballotStuffingRow('B2.1.1 - Pre-votes - ordinary', $ballotsPreOrdinary) . '
 </tr>
 <tr>
-    ' . $ballotStuffingRow('Pre-votes - late arrival', $ballotsPreOrdinary) . '
+    ' . $ballotStuffingRow('B2.2.1 - Pre-votes - late arrival', $ballotsPreOrdinary) . '
+</tr>
+<tr>
+    ' . ($ballotsMainFirstCounting == null ? '<td>C2.1 - Main votes - first counting</td><td>-</td>' : $ballotStuffingRow('C2.1 - Main votes - first counting', $ballotsMainFirstCounting)) . '
 </tr>
 
 ';
 
+    $html_BallotStuffing .= '<tr>
+<td colspan="6" style="background-color: lightgrey; min-height: 5px"></td>
+</tr>
+';
 
     $new_file = __DIR__ . '/docs/' . $new_path;
     if (!file_exists(dirname($new_file))) {
