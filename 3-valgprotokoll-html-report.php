@@ -21,6 +21,7 @@ $html = "<!DOCTYPE html>
 <style>
 table th {
 text-align: left;
+max-width: 300px;
 }
 table td {
 text-align: right;
@@ -52,6 +53,7 @@ $html_d1_4 = '<table>
 <td>Initial count ("Foreløpig")</td>
 <td>Final count ("Endelig")</td>
 <td>Discrepancy ("Avvik")</td>
+<td>Discrepancy %<br>(final - initial) / initial</td>
 </tr>
 ';
 $html_d2_4 = $html_d1_4;
@@ -82,18 +84,25 @@ foreach ($files as $file) {
     $html .= "</ul></li>\n";
 
 
+    $d1_4_numbers = $obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'};
+    $diff_percent = 100 * (($d1_4_numbers->{'Endelig'} - $d1_4_numbers->{'Foreløpig'}) / $d1_4_numbers->{'Foreløpig'});
     $html_d1_4 .= '<tr>
     <th>' . $obj->election . ' - ' . $obj->municipality . '</th>
-    <td>' . $obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'}->{'Foreløpig'} . '</td>
-    <td>' . $obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'}->{'Endelig'} . '</td>
-    <td>' . $obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'}->{'Avvik'} . '</td>
+    <td>' . $d1_4_numbers->{'Foreløpig'} . '</td>
+    <td>' . $d1_4_numbers->{'Endelig'} . '</td>
+    <td>' . $d1_4_numbers->{'Avvik'} . '</td>
+    <td style="' . ($diff_percent >= 1 ? 'color: red;' : '') . '">' . number_format($diff_percent, 2) . ' %</td>
+
 </tr>
 ';
+    $d2_4_numbers = $obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'};
+    $diff_percent = 100 * (($d2_4_numbers->{'Endelig'} - $d2_4_numbers->{'Foreløpig'}) / $d2_4_numbers->{'Foreløpig'});
     $html_d2_4 .= '<tr>
     <th>' . $obj->election . ' - ' . $obj->municipality . '</th>
-    <td>' . $obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'}->{'Foreløpig'} . '</td>
-    <td>' . $obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'}->{'Endelig'} . '</td>
-    <td>' . $obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'}->{'Avvik'} . '</td>
+    <td>' . $d2_4_numbers->{'Foreløpig'} . '</td>
+    <td>' . $d2_4_numbers->{'Endelig'} . '</td>
+    <td>' . $d2_4_numbers->{'Avvik'} . '</td>
+    <td style="' . ($diff_percent >= 1 ? 'color: red;' : '') . '">' . number_format($diff_percent, 2) . ' %</td>
 </tr>
 ';
 }
