@@ -62,9 +62,6 @@ $html .= "<h2>Merknader (Comments to discrepancy)</h2>
 <ul>\n";
 foreach ($files as $file) {
 
-    // => Parse this file. Line by line.
-    logInfo('Parsing [' . str_replace(__DIR__ . '/', '', $file) . '].');
-
     if ($file) {
         $obj = new stdClass();
     }
@@ -73,10 +70,16 @@ foreach ($files as $file) {
     if ($obj->error || $obj->documentType != 'valgprotokoll' || !isset($obj->election) || !isset($obj->municipality)) {
         continue;
     }
+    logInfo('Using [' . str_replace(__DIR__ . '/', '', $file) . '].');
 
     $summary_html .= '<li>' . $obj->election . ' - ' . $obj->municipality . "</li>\n";
 
-    $html .= '<li>' . $obj->election . ' - ' . $obj->municipality . "\n"
+    $new_path =  str_replace('.json', '.html', str_replace('data-store/json/', '', str_replace(__DIR__ . '/', '', $file)));
+    $electionHtml = '
+<a href="../">Tilbake</a>
+
+<h1>' . $obj->election . ' - ' . $obj->municipality . "</h1>\n";
+    $html .= '<li><a href="'.$new_path . '">' . $obj->election . ' - ' . $obj->municipality . "</a>\n"
         . "<ul>\n";
     foreach ($obj->comments as $commentType => $comments) {
         $html .= "<li><b>$commentType: </b>" . implode("<br>", $comments) . "</li>\n";
@@ -87,7 +90,7 @@ foreach ($files as $file) {
     $d1_4_numbers = $obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'};
     $diff_percent = 100 * (($d1_4_numbers->{'Endelig'} - $d1_4_numbers->{'Foreløpig'}) / $d1_4_numbers->{'Foreløpig'});
     $html_d1_4 .= '<tr>
-    <th>' . $obj->election . ' - ' . $obj->municipality . '</th>
+    <th><a href="'.$new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a></th>
     <td>' . $d1_4_numbers->{'Foreløpig'} . '</td>
     <td>' . $d1_4_numbers->{'Endelig'} . '</td>
     <td>' . $d1_4_numbers->{'Avvik'} . '</td>
@@ -98,13 +101,20 @@ foreach ($files as $file) {
     $d2_4_numbers = $obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'};
     $diff_percent = 100 * (($d2_4_numbers->{'Endelig'} - $d2_4_numbers->{'Foreløpig'}) / $d2_4_numbers->{'Foreløpig'});
     $html_d2_4 .= '<tr>
-    <th>' . $obj->election . ' - ' . $obj->municipality . '</th>
+    <th><a href="'.$new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a></th>
     <td>' . $d2_4_numbers->{'Foreløpig'} . '</td>
     <td>' . $d2_4_numbers->{'Endelig'} . '</td>
     <td>' . $d2_4_numbers->{'Avvik'} . '</td>
     <td style="' . (($diff_percent >= 1 || $diff_percent <= -1) ? 'color: red;' : '') . '">' . number_format($diff_percent, 2) . ' %</td>
 </tr>
 ';
+    $new_file = __DIR__ . '/docs/' . $new_path;
+    if (!file_exists(dirname($new_file))) {
+        echo '-- Creating [' . dirname($new_file) . "\n";
+        mkdir(dirname($new_file), 0777, true);
+    }
+
+    file_put_contents($new_file, $electionHtml);
 }
 
 $html .= "</ul>\n\n";
