@@ -46,6 +46,7 @@ $html .= "Created by <a href='https://twitter.com/hallny'>@hallny</a> / <a href=
 $html .= "<a href='https://github.com/HNygard/valgprotokoller/blob/master/data-store/urls.txt'>Source - URL list</a> -\n";
 $html .= "<a href='https://github.com/elections-no/elections-no.github.io/tree/master/docs/2019'>Source - Elections.no</a> -\n";
 $html .= "<a href='https://github.com/HNygard/valgprotokoller'>Source code for this report</a> (Github)<br>\n";
+$html .= "<br><br><a href='ballot-stuffing.html'>Ballot stuffing</a>\n\n";
 $html .= '<h2>Summary</h2>
 <ul>-----SUMMARY-----HERE-----</ul>
 
@@ -74,6 +75,19 @@ $html_d2_4 = $html_d1_4;
 
 $html .= "<h2>Merknader (Comments to discrepancy)</h2>
 <ul>\n";
+
+$html_BallotStuffing = htmlHeading('Ballot stuffing - Norwegian elections 2019') . "
+<a href='./'>Back to overview page</a>
+<h1>Ballot stuffing</h1>
+<i>Ballot stuffing is to put more than one ballot in the ballot box. Since the Norwegian elections in 2019 had two
+election in one, the only control number is the number of total people that voted. Most people vote in the
+local election (municipality) and not the regional election (county). By blindly adding extra ballots in the 
+regional election, you would have a good chance of adding extra votes without being noticed.</i><br><br>
+
+<i>This overview will show you data on the issue to check if this might happen to the Norwegian elections.</i>
+
+<table>
+";
 
 $number_if_large_diff = function ($numbers, $text) {
     global $partyNameShorten;
@@ -157,7 +171,7 @@ foreach ($files as $file) {
 
     $new_path = str_replace('.json', '.html', str_replace('data-store/json/', '', str_replace(__DIR__ . '/', '', $file)));
     $electionHtml = htmlHeading($obj->municipality . ' - ' . $obj->election . ' - Valgprotokoll') . '
-<a href="../../">Tilbake</a>
+<a href="../../">Back to overview page</a>
 
 <h1>' . $obj->election . ' - ' . $obj->municipality . "</h1>\n";
 
@@ -173,7 +187,7 @@ foreach ($files as $file) {
     }
     $html .= "</ul></li>\n";
 
-
+    // :: Individual election pages
     $partyLargeDiscrepancies_D1_4 = '';
     $electionHtml .= "<h2>D1.4 Discrepancy between initial and final counting of pre-election-day votes (\"Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler\")</h2>\n";
     $electionHtml .= $d1_4_heading;
@@ -199,6 +213,7 @@ foreach ($files as $file) {
         . str_replace("\n", '<br>', implode("<br><br>", $obj->comments->{'D2.5 Merknad'})) . "</div>\n\n";
 
 
+    // :: D1.4 and D2.4 summary page
     $d1_4_numbers = $obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'};
     $html_d1_4 .= $d1_4_d2_4_row($d1_4_numbers,
         '<a href="' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a>',
@@ -207,6 +222,36 @@ foreach ($files as $file) {
     $html_d2_4 .= $d1_4_d2_4_row($d2_4_numbers,
         '<a href="' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a>',
         '<td style="text-align: left;">' . str_replace("\n", ",\n", trim($partyLargeDiscrepancies_D2_4)) . '</td>');
+
+    // :: Ballot stuffing
+    // Ballot count contain:
+    // - Kryss i manntall - Number of voters
+    // - Ant. sedler - Number of ballots after election
+    $ballotsPreOrdinary = $obj->numbers->{'B2.1.1 Behandlede ordinære forhåndsstemmesedler'}->{'Total antall behandlede forhåndsstemmesedler'};
+    $ballotsPreLate = $obj->numbers->{'B2.2.1 Behandlede sent innkomne forhåndsstemmesedler'}->{'Total antall sent innkomne forhåndsstemmesedler'};
+
+    $ballotStuffingRow = function ($text, $ballots) {
+        $checksum = $ballots->{'Kryss i manntall'} - $ballots->{'Ant. sedler'};
+        return "<td>$text</td>
+    <td>" . $ballots->{'Kryss i manntall'} . '</td>
+    <td>' . $ballots->{'Ant. sedler'} . '</td>
+    <td>' . $checksum . '</td>
+    <td>'. ($checksum >= 0
+                ? '<span style="color: darkgreen;">OK. Showed up to vote, but didn\'t vote.</span>'
+                : '<span style="color: red;">More votes then people who showed up. This should not happen.</span>') .'</td>
+    ';
+    };
+
+
+    $html_BallotStuffing .= "<tr>
+    <th rowspan='2'>" . $obj->election . " - " . $obj->municipality . "</th>
+    " . $ballotStuffingRow('Pre-votes - ordinary', $ballotsPreOrdinary) . '
+</tr>
+<tr>
+    ' . $ballotStuffingRow('Pre-votes - late arrival', $ballotsPreOrdinary) . '
+</tr>
+
+';
 
 
     $new_file = __DIR__ . '/docs/' . $new_path;
@@ -227,6 +272,10 @@ $html = str_replace('-----SUMMARY-----HERE-----', $summary_html, $html);
 $html = str_replace('----D1.4-TABLE---', $html_d1_4, $html);
 $html = str_replace('----D2.4-TABLE---', $html_d2_4, $html);
 file_put_contents(__DIR__ . '/docs/index.html', $html);
+
+$html_BallotStuffing .= "</table>";
+file_put_contents(__DIR__ . '/docs/ballot-stuffing.html', $html_BallotStuffing);
+
 
 function str_starts_with($haystack, $needle) {
     return substr($haystack, 0, strlen($needle)) == $needle;
