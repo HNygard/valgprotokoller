@@ -24,9 +24,17 @@ function htmlHeading($title = 'Valgprotokoller') {
 table th {
 text-align: left;
 max-width: 300px;
+border: 1px solid lightgrey;
+padding: 2px;
 }
 table td {
 text-align: right;
+border: 1px solid lightgrey;
+padding: 2px;
+
+}
+table {
+border-collapse: collapse;
 }
 </style>";
 }
@@ -67,7 +75,27 @@ $html_d2_4 = $html_d1_4;
 $html .= "<h2>Merknader (Comments to discrepancy)</h2>
 <ul>\n";
 
-$d1_4_d2_4_row = function ($numbers, $text) {
+$number_if_large_diff = function ($numbers, $text) {
+    global $partyNameShorten;
+    if (str_contains($text, 'Totalt antall partifordelte stemmesedler')) {
+        return '';
+    }
+
+    if ($numbers->{'Foreløpig'} != 0) {
+        $diff_percent = 100 * (($numbers->{'Endelig'} - $numbers->{'Foreløpig'}) / $numbers->{'Foreløpig'});
+        $formattedNumber = number_format($diff_percent, 2);
+
+        if (($diff_percent >= 1 || $diff_percent <= -1)) {
+            return "\n<span style='color: red;'>" . $formattedNumber . ' %</span> ' . $partyNameShorten($text);
+        }
+        return '';
+    }
+    elseif ($numbers->{'Endelig'} != 0) {
+        return "\n<span style='color: red;'>∞</span> " . $partyNameShorten($text);
+    }
+};
+
+$d1_4_d2_4_row = function ($numbers, $text, $append = '') {
 
     if ($numbers->{'Foreløpig'} != 0) {
         $diff_percent = 100 * (($numbers->{'Endelig'} - $numbers->{'Foreløpig'}) / $numbers->{'Foreløpig'});
@@ -84,9 +112,33 @@ $d1_4_d2_4_row = function ($numbers, $text) {
     <td>' . $numbers->{'Endelig'} . '</td>
     <td>' . $numbers->{'Avvik'} . '</td>
     <td style="' . (($diff_percent >= 1 || $diff_percent <= -1) ? 'color: red;' : '') . '">' . $formattedNumber . ' %</td>
-
+' . $append . '
 </tr>
 ';
+};
+
+$partyNameShorten = function ($text) {
+    $party = array(
+        'Liberalistene' => 'Lib',
+        'Kristelig Folkeparti' => 'KRF',
+        'SV - Sosialistisk Venstreparti' => 'SV',
+        'Venstre' => 'V',
+        'Rødt' => 'R',
+        'Fremskrittspartiet' => 'FRP',
+        'Pensjonistpartiet' => 'PP',
+        'Demokratene' => 'Dem',
+        'Miljøpartiet De Grønne' => 'MDG',
+        'Folkeaksjonen Nei til mer bompenger' => 'FNB',
+        'Norges Kommunistiske Parti' => 'NKP',
+        'Piratpartiet' => 'Piratp',
+        'Arbeiderpartiet' => 'AP',
+        'Nei til bompenger i Tromsø' => 'Bom Trømsø'
+    );
+
+    if (isset($party[$text])) {
+        return $party[$text];
+    }
+    return $text;
 };
 
 foreach ($files as $file) {
@@ -105,49 +157,56 @@ foreach ($files as $file) {
 
     $new_path = str_replace('.json', '.html', str_replace('data-store/json/', '', str_replace(__DIR__ . '/', '', $file)));
     $electionHtml = htmlHeading($obj->municipality . ' - ' . $obj->election . ' - Valgprotokoll') . '
-<a href="../">Tilbake</a>
+<a href="../../">Tilbake</a>
 
 <h1>' . $obj->election . ' - ' . $obj->municipality . "</h1>\n";
 
     if (isset($obj->url)) {
         $electionHtml .= 'Kilde: <a href="' . $obj->url . '">' . $obj->url . '</a>';
     }
-
-    $html .= '<li><a href="' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . "</a>\n"
-        . "<ul>\n";
+    elseif (str_contains()) {
+        $html .= '<li><a href="' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . "</a>\n"
+            . "<ul>\n";
+    }
     foreach ($obj->comments as $commentType => $comments) {
         $html .= "<li><b>$commentType: </b>" . implode("<br>", $comments) . "</li>\n";
     }
     $html .= "</ul></li>\n";
 
 
-    $d1_4_numbers = $obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'};
-    $html_d1_4 .= $d1_4_d2_4_row($d1_4_numbers, '<a href="' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a>');
-    $d2_4_numbers = $obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'};
-    $html_d2_4 .= $d1_4_d2_4_row($d2_4_numbers, '<a href="' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a>');
-
-
+    $partyLargeDiscrepancies_D1_4 = '';
     $electionHtml .= "<h2>D1.4 Discrepancy between initial and final counting of pre-election-day votes (\"Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler\")</h2>\n";
     $electionHtml .= $d1_4_heading;
-    foreach ($obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'} as $place => $numbers) {
-        $electionHtml .= $d1_4_d2_4_row($numbers, $place);
+    foreach ($obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'} as $party => $numbers) {
+        $electionHtml .= $d1_4_d2_4_row($numbers, $party);
+        $partyLargeDiscrepancies_D1_4 .= $number_if_large_diff($numbers, $party);
     }
     $electionHtml .= "</table>\n\n";
-
     $electionHtml .= "<h3>Comments to D1.4 ('D1.5 Merknad')</h3>\n";
     $electionHtml .= "<div style='background-color: lightgray; margin-left: 0.5em; padding: 1em;'>"
         . str_replace("\n", '<br>', implode("<br><br>", $obj->comments->{'D1.5 Merknad'})) . "</div>\n\n";
 
+    $partyLargeDiscrepancies_D2_4 = '';
     $electionHtml .= "<h2>D2.4 Discrepancy between initial and final counting of ordinary votes (\"Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler\")</h2>\n";
     $electionHtml .= $d1_4_heading;
-    foreach ($obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'} as $place => $numbers) {
-        $electionHtml .= $d1_4_d2_4_row($numbers, $place);
+    foreach ($obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'} as $party => $numbers) {
+        $electionHtml .= $d1_4_d2_4_row($numbers, $party);
+        $partyLargeDiscrepancies_D2_4 .= $number_if_large_diff($numbers, $party);
     }
     $electionHtml .= "</table>\n\n";
-
     $electionHtml .= "<h3>Comments to D2.4 ('D2.5 Merknad')</h3>\n";
     $electionHtml .= "<div style='background-color: lightgray; margin-left: 0.5em; padding: 1em;'>"
         . str_replace("\n", '<br>', implode("<br><br>", $obj->comments->{'D2.5 Merknad'})) . "</div>\n\n";
+
+
+    $d1_4_numbers = $obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'};
+    $html_d1_4 .= $d1_4_d2_4_row($d1_4_numbers,
+        '<a href="' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a>',
+        '<td style="text-align: left;">' . str_replace("\n", ",\n", trim($partyLargeDiscrepancies_D1_4)) . '</td>');
+    $d2_4_numbers = $obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'};
+    $html_d2_4 .= $d1_4_d2_4_row($d2_4_numbers,
+        '<a href="' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a>',
+        '<td style="text-align: left;">' . str_replace("\n", ",\n", trim($partyLargeDiscrepancies_D2_4)) . '</td>');
 
 
     $new_file = __DIR__ . '/docs/' . $new_path;
