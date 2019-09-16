@@ -250,7 +250,7 @@ foreach ($files as $file) {
 
 
     $html_BallotStuffing .= "<tr>
-    <th rowspan='3'>" . $obj->election . " - " . $obj->municipality . "</th>
+    <th rowspan='3'><a href='" . $new_path . "'>" . $obj->election . " - " . $obj->municipality . "</a></th>
     " . $ballotStuffingRow('B2.1.1 - Pre-votes - ordinary', $ballotsPreOrdinary) . '
 </tr>
 <tr>
