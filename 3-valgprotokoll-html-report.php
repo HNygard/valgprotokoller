@@ -60,6 +60,21 @@ $html_d2_4 = $html_d1_4;
 
 $html .= "<h2>Merknader (Comments to discrepancy)</h2>
 <ul>\n";
+
+$d1_4_d2_4_row = function($numbers, $text) {
+    $diff_percent = 100 * (($numbers->{'Endelig'} - $numbers->{'Foreløpig'}) / $numbers->{'Foreløpig'});
+
+    return '<tr>
+    <th>'.$text.'</th>
+    <td>' . $numbers->{'Foreløpig'} . '</td>
+    <td>' . $numbers->{'Endelig'} . '</td>
+    <td>' . $numbers->{'Avvik'} . '</td>
+    <td style="' . (($diff_percent >= 1 || $diff_percent <= -1) ? 'color: red;' : '') . '">' . number_format($diff_percent, 2) . ' %</td>
+
+</tr>
+';
+};
+
 foreach ($files as $file) {
 
     if ($file) {
@@ -88,26 +103,10 @@ foreach ($files as $file) {
 
 
     $d1_4_numbers = $obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'};
-    $diff_percent = 100 * (($d1_4_numbers->{'Endelig'} - $d1_4_numbers->{'Foreløpig'}) / $d1_4_numbers->{'Foreløpig'});
-    $html_d1_4 .= '<tr>
-    <th><a href="'.$new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a></th>
-    <td>' . $d1_4_numbers->{'Foreløpig'} . '</td>
-    <td>' . $d1_4_numbers->{'Endelig'} . '</td>
-    <td>' . $d1_4_numbers->{'Avvik'} . '</td>
-    <td style="' . (($diff_percent >= 1 || $diff_percent <= -1) ? 'color: red;' : '') . '">' . number_format($diff_percent, 2) . ' %</td>
-
-</tr>
-';
+    $html_d1_4 .= $d1_4_d2_4_row($d1_4_numbers, '<a href="'.$new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a>');
     $d2_4_numbers = $obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'};
-    $diff_percent = 100 * (($d2_4_numbers->{'Endelig'} - $d2_4_numbers->{'Foreløpig'}) / $d2_4_numbers->{'Foreløpig'});
-    $html_d2_4 .= '<tr>
-    <th><a href="'.$new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a></th>
-    <td>' . $d2_4_numbers->{'Foreløpig'} . '</td>
-    <td>' . $d2_4_numbers->{'Endelig'} . '</td>
-    <td>' . $d2_4_numbers->{'Avvik'} . '</td>
-    <td style="' . (($diff_percent >= 1 || $diff_percent <= -1) ? 'color: red;' : '') . '">' . number_format($diff_percent, 2) . ' %</td>
-</tr>
-';
+    $html_d2_4 .= $d1_4_d2_4_row($d2_4_numbers, '<a href="'.$new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a>');
+
     $new_file = __DIR__ . '/docs/' . $new_path;
     if (!file_exists(dirname($new_file))) {
         echo '-- Creating [' . dirname($new_file) . "\n";
