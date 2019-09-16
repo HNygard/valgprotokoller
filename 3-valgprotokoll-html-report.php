@@ -91,7 +91,7 @@ foreach ($files as $file) {
     <td>' . $d1_4_numbers->{'Foreløpig'} . '</td>
     <td>' . $d1_4_numbers->{'Endelig'} . '</td>
     <td>' . $d1_4_numbers->{'Avvik'} . '</td>
-    <td style="' . ($diff_percent >= 1 ? 'color: red;' : '') . '">' . number_format($diff_percent, 2) . ' %</td>
+    <td style="' . (($diff_percent >= 1 || $diff_percent <= -1) ? 'color: red;' : '') . '">' . number_format($diff_percent, 2) . ' %</td>
 
 </tr>
 ';
@@ -102,7 +102,7 @@ foreach ($files as $file) {
     <td>' . $d2_4_numbers->{'Foreløpig'} . '</td>
     <td>' . $d2_4_numbers->{'Endelig'} . '</td>
     <td>' . $d2_4_numbers->{'Avvik'} . '</td>
-    <td style="' . ($diff_percent >= 1 ? 'color: red;' : '') . '">' . number_format($diff_percent, 2) . ' %</td>
+    <td style="' . (($diff_percent >= 1 || $diff_percent <= -1) ? 'color: red;' : '') . '">' . number_format($diff_percent, 2) . ' %</td>
 </tr>
 ';
 }
