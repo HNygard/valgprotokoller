@@ -11,11 +11,13 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errconte
 });
 
 $files = getDirContents(__DIR__ . '/data-store/json');
-$html = "<!DOCTYPE html>
+
+function htmlHeading($title = 'Valgprotokoller') {
+    return "<!DOCTYPE html>
 <html>
 <head>
   <meta charset=\"UTF-8\">
-  <title>Valgprotokoller</title>
+  <title>$title</title>
 </head>
 <body>
 <style>
@@ -26,7 +28,10 @@ max-width: 300px;
 table td {
 text-align: right;
 }
-</style>
+</style>";
+}
+
+$html = htmlHeading() . "
 
 <h1>Election protocol (\"Valgprotokoller\" / \"Valgstyrets møtebok\")</h1>\n";
 $html .= "Created by <a href='https://twitter.com/hallny'>@hallny</a> / <a href='https://norske-postlister.no'>Norske-postlister.no</a><br>\n";
@@ -47,7 +52,7 @@ $html .= '<h2>Summary</h2>
 ';
 $summary_html = '';
 
-$html_d1_4 = '<table>
+$d1_4_heading = '<table>
 <tr>
 <th>Election - Municipality</th>
 <td>Initial count ("Foreløpig")</td>
@@ -56,20 +61,29 @@ $html_d1_4 = '<table>
 <td>Discrepancy %<br>(final - initial) / initial</td>
 </tr>
 ';
+$html_d1_4 = $d1_4_heading;
 $html_d2_4 = $html_d1_4;
 
 $html .= "<h2>Merknader (Comments to discrepancy)</h2>
 <ul>\n";
 
-$d1_4_d2_4_row = function($numbers, $text) {
-    $diff_percent = 100 * (($numbers->{'Endelig'} - $numbers->{'Foreløpig'}) / $numbers->{'Foreløpig'});
+$d1_4_d2_4_row = function ($numbers, $text) {
+
+    if ($numbers->{'Foreløpig'} != 0) {
+        $diff_percent = 100 * (($numbers->{'Endelig'} - $numbers->{'Foreløpig'}) / $numbers->{'Foreløpig'});
+        $formattedNumber = number_format($diff_percent, 2);
+    }
+    else {
+        $diff_percent = 0;
+        $formattedNumber = '<i>N/A</i>';
+    }
 
     return '<tr>
-    <th>'.$text.'</th>
+    <th>' . $text . '</th>
     <td>' . $numbers->{'Foreløpig'} . '</td>
     <td>' . $numbers->{'Endelig'} . '</td>
     <td>' . $numbers->{'Avvik'} . '</td>
-    <td style="' . (($diff_percent >= 1 || $diff_percent <= -1) ? 'color: red;' : '') . '">' . number_format($diff_percent, 2) . ' %</td>
+    <td style="' . (($diff_percent >= 1 || $diff_percent <= -1) ? 'color: red;' : '') . '">' . $formattedNumber . ' %</td>
 
 </tr>
 ';
@@ -89,12 +103,17 @@ foreach ($files as $file) {
 
     $summary_html .= '<li>' . $obj->election . ' - ' . $obj->municipality . "</li>\n";
 
-    $new_path =  str_replace('.json', '.html', str_replace('data-store/json/', '', str_replace(__DIR__ . '/', '', $file)));
-    $electionHtml = '
+    $new_path = str_replace('.json', '.html', str_replace('data-store/json/', '', str_replace(__DIR__ . '/', '', $file)));
+    $electionHtml = htmlHeading($obj->municipality . ' - ' . $obj->election . ' - Valgprotokoll') . '
 <a href="../">Tilbake</a>
 
 <h1>' . $obj->election . ' - ' . $obj->municipality . "</h1>\n";
-    $html .= '<li><a href="'.$new_path . '">' . $obj->election . ' - ' . $obj->municipality . "</a>\n"
+
+    if (isset($obj->url)) {
+        $electionHtml .= 'Kilde: <a href="' . $obj->url . '">' . $obj->url . '</a>';
+    }
+
+    $html .= '<li><a href="' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . "</a>\n"
         . "<ul>\n";
     foreach ($obj->comments as $commentType => $comments) {
         $html .= "<li><b>$commentType: </b>" . implode("<br>", $comments) . "</li>\n";
@@ -103,9 +122,33 @@ foreach ($files as $file) {
 
 
     $d1_4_numbers = $obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'};
-    $html_d1_4 .= $d1_4_d2_4_row($d1_4_numbers, '<a href="'.$new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a>');
+    $html_d1_4 .= $d1_4_d2_4_row($d1_4_numbers, '<a href="' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a>');
     $d2_4_numbers = $obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'};
-    $html_d2_4 .= $d1_4_d2_4_row($d2_4_numbers, '<a href="'.$new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a>');
+    $html_d2_4 .= $d1_4_d2_4_row($d2_4_numbers, '<a href="' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a>');
+
+
+    $electionHtml .= "<h2>D1.4 Discrepancy between initial and final counting of pre-election-day votes (\"Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler\")</h2>\n";
+    $electionHtml .= $d1_4_heading;
+    foreach ($obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'} as $place => $numbers) {
+        $electionHtml .= $d1_4_d2_4_row($numbers, $place);
+    }
+    $electionHtml .= "</table>\n\n";
+
+    $electionHtml .= "<h3>Comments to D1.4 ('D1.5 Merknad')</h3>\n";
+    $electionHtml .= "<div style='background-color: lightgray; margin-left: 0.5em; padding: 1em;'>"
+        . str_replace("\n", '<br>', implode("<br><br>", $obj->comments->{'D1.5 Merknad'})) . "</div>\n\n";
+
+    $electionHtml .= "<h2>D2.4 Discrepancy between initial and final counting of ordinary votes (\"Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler\")</h2>\n";
+    $electionHtml .= $d1_4_heading;
+    foreach ($obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'} as $place => $numbers) {
+        $electionHtml .= $d1_4_d2_4_row($numbers, $place);
+    }
+    $electionHtml .= "</table>\n\n";
+
+    $electionHtml .= "<h3>Comments to D2.4 ('D2.5 Merknad')</h3>\n";
+    $electionHtml .= "<div style='background-color: lightgray; margin-left: 0.5em; padding: 1em;'>"
+        . str_replace("\n", '<br>', implode("<br><br>", $obj->comments->{'D2.5 Merknad'})) . "</div>\n\n";
+
 
     $new_file = __DIR__ . '/docs/' . $new_path;
     if (!file_exists(dirname($new_file))) {
