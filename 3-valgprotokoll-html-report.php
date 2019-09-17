@@ -12,6 +12,19 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errconte
 
 $files = getDirContents(__DIR__ . '/data-store/json');
 
+$entitiesArray = json_decode(file_get_contents(__DIR__ . '/entities.json'))->entities;
+$entitiesArray2 = json_decode(file_get_contents(__DIR__ . '/entitiesNonExisting.json'))->entities;
+$entity_id__to__obj = array();
+$entity_name__to__entity_id = array();
+foreach ($entitiesArray as $entity) {
+    $entity_id__to__obj[$entity->entityId] = $entity;
+    $entity_name__to__entity_id[$entity->name] = $entity->entityId;
+}
+foreach ($entitiesArray2 as $entity) {
+    $entity_id__to__obj[$entity->entityId] = $entity;
+    $entity_name__to__entity_id[$entity->name] = $entity->entityId;
+}
+
 function htmlHeading($title = 'Valgprotokoller') {
     return "<!DOCTYPE html>
 <html>
@@ -155,6 +168,10 @@ $partyNameShorten = function ($text) {
     return $text;
 };
 
+function getNewPath($file) {
+    return str_replace('.json', '.html', str_replace('data-store/json/', '', str_replace(__DIR__ . '/', '', $file)));
+}
+
 foreach ($files as $file) {
 
     if ($file) {
@@ -167,9 +184,16 @@ foreach ($files as $file) {
     }
     logInfo('Using [' . str_replace(__DIR__ . '/', '', $file) . '].');
 
+    $name = $obj->municipality;
+    $name = str_replace('Aurskog -Høland', 'Aurskog-Høland', $name);
+    $name = str_replace('Unjárga - Nesseby', 'Nesseby', $name);
+    $name = str_replace('Porsanger - Porságu - Porsanki', 'Porsanger', $name);
+    $obj->file = $file;
+    $entity_id__to__obj[$entity_name__to__entity_id[$name . ' kommune']]->elections[] = $obj;
+
     $summary_html .= '<li>' . $obj->election . ' - ' . $obj->municipality . "</li>\n";
 
-    $new_path = str_replace('.json', '.html', str_replace('data-store/json/', '', str_replace(__DIR__ . '/', '', $file)));
+    $new_path = getNewPath($file);
     $electionHtml = htmlHeading($obj->municipality . ' - ' . $obj->election . ' - Valgprotokoll') . '
 <a href="../../">Back to overview page</a>
 
@@ -288,6 +312,52 @@ file_put_contents(__DIR__ . '/docs/index.html', $html);
 
 $html_BallotStuffing .= "</table>";
 file_put_contents(__DIR__ . '/docs/ballot-stuffing.html', $html_BallotStuffing);
+
+
+$html_entities = htmlHeading('Municipality overview - Valgprotokoller') . '
+
+<h1>Status overview of "valgprotokoll" per municipality</h1>
+<i>Status per entity (municipality/county). Which files are we missing?</i>
+
+<table>
+
+';
+foreach ($entity_id__to__obj as $entity) {
+
+    $elections = array(
+        '<td>-</td>',
+        '<td>-</td>',
+        '<td>-</td>'
+    );
+    if (isset($entity->elections)) {
+        foreach ($entity->elections as $election) {
+            if ($election->election == 'Kommunestyrevalget 2019' && $elections[0] == '<td>-</td>') {
+                $elections[0] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a></td>';
+            }
+            elseif ($election->election == 'Fylkestingsvalget 2019' && $elections[1] == '<td>-</td>') {
+                $elections[1] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a></td>';
+            }
+            else {
+                var_dump($election);
+                throw new Exception('Unknown election: ' . $election->election);
+            }
+        }
+    }
+
+    $html_entities .= '
+
+                    <tr>
+        <th> ' . $entity->name . '</th>
+                ' . implode("\n", $elections) . '
+    </tr>
+                ';
+}
+
+$html_entities .= '
+</table>
+
+                ';
+file_put_contents(__DIR__ . '/docs/status-files.html', $html_entities);
 
 
 function str_starts_with($haystack, $needle) {
