@@ -199,12 +199,41 @@ foreach ($files as $file) {
 
 <h1>' . $obj->election . ' - ' . $obj->municipality . "</h1>\n";
 
-    if (isset($obj->url)) {
+    if (isset($obj->url) && $obj->url != '<missing>') {
+        $obj->url2 = $obj->url;
         $electionHtml .= 'Kilde: <a href="' . $obj->url . '">' . $obj->url . '</a>';
     }
-    elseif (str_contains()) {
-        $html .= '<li><a href="' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . "</a>\n"
-            . "<ul>\n";
+    elseif (str_contains($obj->localSource, 'elections-no.github.io')) {
+        // Example localSource
+        // data-store/pdfs/elections-no.github.io-docs-2019-Agder-Bykle kommune, Agder fylke - kommunestyrevalget4222_2019-09-10.pdf.layout.txt
+        $link = $obj->localSource;
+        foreach (array(
+                     'Agder',
+                     'Innlandet',
+                     'Viken',
+                     'Vestland',
+                     'Rogaland',
+                     'More_og_Romsdal',
+                     'Nordland',
+                     'Trondelag',
+                     'Troms_og_Finnmark',
+                     'Vestfold_og_Telemark'
+                 ) as $county) {
+            $link = str_replace(
+                'data-store/pdfs/elections-no.github.io-docs-2019-' . $county . '-',
+                'https://github.com/elections-no/elections-no.github.io/blob/master/docs/2019/' . $county . '/',
+                $link
+            );
+        }
+        $link = str_replace('.layout.txt', '', $link);
+        if (!str_starts_with($link, 'https://')) {
+            throw new Exception('Unknown link: ' . $link);
+        }
+        $obj->url2 = $link;
+        $electionHtml .= 'Kilde: <a href="' . $link . '">' . $link . '</a>';
+    }
+    else {
+        throw new Exception('Unknown source: ' . $obj->localSource);
     }
     foreach ($obj->comments as $commentType => $comments) {
         $html .= "<li><b>$commentType: </b>" . implode("<br>", $comments) . "</li>\n";
@@ -332,10 +361,14 @@ foreach ($entity_id__to__obj as $entity) {
     if (isset($entity->elections)) {
         foreach ($entity->elections as $election) {
             if ($election->election == 'Kommunestyrevalget 2019' && $elections[0] == '<td>-</td>') {
-                $elections[0] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a></td>';
+                $elections[0] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
+                    . chr(10)
+                    . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
             }
             elseif ($election->election == 'Fylkestingsvalget 2019' && $elections[1] == '<td>-</td>') {
-                $elections[1] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a></td>';
+                $elections[1] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
+                    . chr(10)
+                    . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
             }
             else {
                 var_dump($election);
