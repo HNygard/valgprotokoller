@@ -356,7 +356,7 @@ foreach ($entity_id__to__obj as $entity) {
     $elections = array(
         '<td>-</td>',
         '<td>-</td>',
-        '<td>-</td>'
+        '<td style="color: darkgreen">OK, all elections found and read.</td>'
     );
     if (isset($entity->elections)) {
         foreach ($entity->elections as $election) {
@@ -375,6 +375,43 @@ foreach ($entity_id__to__obj as $entity) {
                 throw new Exception('Unknown election: ' . $election->election);
             }
         }
+    }
+
+    if ($elections[0] == '<td>-</td>' || $elections[1] == '<td>-</td>') {
+        if (isset($entity->mimesBronnUrl)) {
+            $tags = 'valgprotokoll_2019';
+            $mimesLink =
+                // http://alaveteli.org/docs/developers/api/#starting-new-requests-programmatically
+                '<a target="_blank" href="https://www.mimesbronn.no/new/' . htmlentities($entity->mimesBronnUrl, ENT_QUOTES)
+                . '?title=' . urlencode('Valgprotokoll 2019, ' . $entity->name)
+                . '&tags=' . urlencode($tags)
+                . '&body=' . urlencode(
+                    'Kjære ' . $entity->name . chr(10)
+                    . chr(10)
+                    . 'Jeg ønsker innsyn i valgprotokoll 2019 for fylkestingsvalget og kommunestyrevalget. Ofte kalt "Valgprotokoll for valgstyret"'
+                    . ' eller "Valgstyrets møtebok". Jeg ønsker at den er maskinlesbar, altså ikke innskannet (slik de signerte ofte er). '
+                    . 'Dette fordi vi skal lese ut data fra den.'
+                    . chr(10) . chr(10)
+                    . 'Søker altså innsyn i:' . chr(10)
+                    . '1. Valgprotokoll kommunestyrevalget 2019 - ' . $entity->name . chr(10)
+                    . '2. Valgprotokoll fylkestingsvalg 2019 - ' . $entity->name . chr(10)
+                    . chr(10) . chr(10)
+                    . 'Ønsker også svar på følgende:' . chr(10)
+                    . '1. Ble foreløpig opptelling utført manuelt eller med dataprogram?' . chr(10)
+                    . '2. Ble endelig opptelling utført manuelt eller med dataprogram?' . chr(10)
+                    . '3. Hvor mange opptellinger og omtellinger ble foretatt totalt?' . chr(10)
+                    . '4. Hvis flere enn foreløpig og endelig, hvordan ble disse utført (manuelt/data?) og hvorfor ble de utført?' . chr(10)
+                    . 'Dersom det er ulikt svar for de ulike valgskretsene, så svar for hver enkelt krets.' . chr(10) . chr(10)
+                    . 'Takk!'
+                    . chr(10) . chr(10)
+                )
+                . '">'
+                . 'Søk innsyn i dokumentet via Mimes Brønn</a>' . chr(10);
+        }
+        else {
+            $mimesLink = 'Mangler Mimes Brønn-kobling.';
+        }
+        $elections[2] = '<td>' . $mimesLink . '</td>';
     }
 
     $html_entities .= '
