@@ -171,6 +171,11 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         $obj->downloadTime = null;
     }
 
+    $pdfInfo = str_replace('.layout.txt','.pdfinfo.txt', $file);
+    if (file_exists($pdfInfo)) {
+        $obj->pdfMetaData = file_get_contents($pdfInfo);
+    }
+
     $file_content = file_get_contents($file);
 
     if (strlen(trim($file_content)) == 0) {

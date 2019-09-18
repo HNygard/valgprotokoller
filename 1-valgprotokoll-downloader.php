@@ -58,6 +58,12 @@ function downloadUrls_parseTxt($lines) {
             $pdfLines = file($cache_name . '.layout.txt', FILE_IGNORE_NEW_LINES);
         }
 
+        if (!file_exists($cache_name . '.pdfinfo.txt')) {
+            $pdfinfoOutput = '';
+            exec('pdfinfo "' . $cache_name . '"', $pdfinfoOutput);
+            file_put_contents($cache_name . '.pdfinfo.txt', implode(chr(10), $pdfinfoOutput));
+        }
+
         if (!isset($lines_found[$line])) {
             // Removes any duplicates to keep it clean.
             $lines_found[$line] = '';

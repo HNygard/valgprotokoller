@@ -147,13 +147,14 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
-    "errorMessage": "Undefined offset: 1750\n\n#0 2-valgprotokoll-parser.php(823): {closure}(8, 'Undefined offse...', '...', 823, Array)\n#1 2-valgprotokoll-parser.php(532): readComments(Object(stdClass), Array, 1750, 'C4.6 Merknad', '(\\xC3\\x85rsak til evt...', 'C4.7 Antall ste...')\n#2 2-valgprotokoll-parser.php(59): parseFile_andWriteToDisk(Object(stdClass), '...')\n#3 {main}",
+    "errorMessage": "Undefined offset: 1750\n\n#0 2-valgprotokoll-parser.php(828): {closure}(8, 'Undefined offse...', '...', 828, Array)\n#1 2-valgprotokoll-parser.php(537): readComments(Object(stdClass), Array, 1750, 'C4.6 Merknad', '(\\xC3\\x85rsak til evt...', 'C4.7 Antall ste...')\n#2 2-valgprotokoll-parser.php(59): parseFile_andWriteToDisk(Object(stdClass), '...')\n#3 {main}",
     "otherSources": [
         {
             "localSource": "data-store/pdfs/www.ulstein.kommune.no-_f-p34-i9988a095-5011-416a-82b6-612ca34171cd-motebok-kommunestyrevalet-2019.pdf.pdf.layout.txt",
             "url": "https://www.ulstein.kommune.no/_f/p34/i9988a095-5011-416a-82b6-612ca34171cd/motebok-kommunestyrevalet-2019.pdf",
             "downloadTime": "2019-09-14 13:25:40",
-            "municipalNameFromUrl": "Ulstein"
+            "municipalNameFromUrl": "Ulstein",
+            "pdfMetaData": "Creator:        JasperReports Library version 5.6.1\nProducer:       iText 2.1.7 by 1T3XT\nCreationDate:   Tue Sep 10 18:27:27 2019 CEST\nModDate:        Tue Sep 10 18:27:27 2019 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          32\nEncrypted:      no\nPage size:      595 x 842 pts (A4)\nPage rot:       0\nFile size:      235347 bytes\nOptimized:      no\nPDF version:    1.4"
         }
     ]
 }
