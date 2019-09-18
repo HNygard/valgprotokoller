@@ -25,6 +25,8 @@ foreach ($entitiesArray2 as $entity) {
     $entity_name__to__entity_id[$entity->name] = $entity->entityId;
 }
 
+$mimesBronnStatus = (array)json_decode(file_get_contents(__DIR__ . '/data-store/mimesbronn-result/result.json'));
+
 function htmlHeading($title = 'Valgprotokoller') {
     return "<!DOCTYPE html>
 <html>
@@ -412,6 +414,13 @@ foreach ($entity_id__to__obj as $entity) {
                 )
                 . '">'
                 . 'Søk innsyn i dokumentet via Mimes Brønn</a>' . chr(10);
+
+            if (isset($mimesBronnStatus[$entity->mimesBronnUrl])) {
+                $mimesLink = '<span style="font-size: 0.6em;">' . $mimesLink . "</span>\n";
+                foreach ($mimesBronnStatus[$entity->mimesBronnUrl] as $mimesObj) {
+                    $mimesLink .= '<br><a href="' . $mimesObj->url . '">' . $mimesObj->display_status . "</a>\n";
+                }
+            }
         }
         else {
             $mimesLink = 'Mangler Mimes Brønn-kobling.';
