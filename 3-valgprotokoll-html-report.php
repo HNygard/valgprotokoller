@@ -92,12 +92,17 @@ $html .= "<h2>Merknader (Comments to discrepancy)</h2>
 $html_BallotStuffing = htmlHeading('Ballot stuffing - Norwegian elections 2019') . "
 <a href='./'>Back to overview page</a>
 <h1>Ballot stuffing</h1>
-<i>Ballot stuffing is to put more than one ballot in the ballot box. Since the Norwegian elections in 2019 had two
-election in one, the only control number is the number of total people that voted. Most people vote in the
-local election (municipality) and not the regional election (county). By blindly adding extra ballots in the 
-regional election, you would have a good chance of adding extra votes without being noticed.</i><br><br>
+<i>Ballot stuffing is to put more than one ballot in the ballot box OR people monitoring or handling ballots/ballot boxes
+adds ballots.. Since the Norwegian elections in 2019 had two election in one, the only control number is the number of
+total people that voted. Most people vote in the local election (municipality) and not the regional election (county).
+By blindly adding extra ballots in the regional election, you would have a good chance of adding extra votes without 
+being noticed.</i><br><br>
 
-<i>This overview will show you data on the issue to check if this might happen to the Norwegian elections.</i>
+<i>This overview will show you data on the issue to check if this might happen to the Norwegian elections.</i><br><br>
+
+<i>The election in Evenes did notice:<br>
+- <a href='https://www.evenes.kommune.no/startsiden/nyhetsarkiv/5596-pressemelding.html'>(Norwegian) Evenes municipality - Press release - Election board recommands not approving the election for municipality</a></i><br>
+- <a href='https://www.vg.no/nyheter/innenriks/i/GGKOBJ/anbefaler-at-kommunevalg-ikke-godkjennes'>(Norwegian) VG.no - Anbefaler at kommunevalg ikke godkjennes</a></i>
 
 <table>
 ";
@@ -296,8 +301,8 @@ foreach ($files as $file) {
     <td>' . $ballots->{'Ant. sedler'} . '</td>
     <td>' . $checksum . '</td>
     <td>' . ($checksum >= 0
-                ? '<span style="color: darkgreen;">OK. ' . $checksum . ' voters showed up to vote, but didn\'t vote.</span>'
-                : '<span style="color: red;">More votes (' . $ballots->{'Ant. sedler'} . ' ballots) then people who showed up (' . $ballots->{'Kryss i manntall'} . '). This should not happen.</span>') . '</td>
+                ? '<span style="color: darkgreen;">OK. ' . $checksum . ' voters crossed out in census, but didn\'t vote.</span>'
+                : '<span style="color: red;">More votes (' . $ballots->{'Ant. sedler'} . ' ballots) then people who was crossed out in census (' . $ballots->{'Kryss i manntall'} . '). This should not happen.</span>') . '</td>
     ';
     };
 
