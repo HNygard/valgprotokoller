@@ -351,6 +351,19 @@ file_put_contents(__DIR__ . '/docs/ballot-stuffing.html', $html_BallotStuffing);
 
 
 $html_entities = htmlHeading('Municipality overview - Valgprotokoller') . '
+<style>
+        .innsyn-success {
+            color: #62b356;
+        }
+
+        .innsyn-waiting {
+            color: #f4a03e;
+        }
+
+        .innsyn-failed {
+            color: #e04b4b;
+        }
+</style>
 
 <h1>Status overview of "valgprotokoll" per municipality</h1>
 <i>Status per entity (municipality/county). Which files are we missing?</i>

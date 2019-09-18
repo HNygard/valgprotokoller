@@ -1,8 +1,72 @@
 {
+    "fla_kommune": [
+        {
+            "mimes_bronn_entity_url": "fla_kommune",
+            "display_status": "<i class=\"fas fa-question\" title=\"internal_review\"></i> Venter p&aring; behandling av klage.",
+            "tags": [
+                [
+                    "valgprotokoll_2019",
+                    null
+                ]
+            ],
+            "url": "https://www.mimesbronn.no/request/valgprotokoll_2019_fla_kommune",
+            "events": [],
+            "files": [],
+            "last_updated": "2019-09-18T22:49:12+02:00",
+            "cache_key": "_request_valgprotokoll_2019_fla_kommune"
+        }
+    ],
+    "hobol_kommune": [
+        {
+            "mimes_bronn_entity_url": "hobol_kommune",
+            "display_status": "<i class=\"fas fa-question\" title=\"not_held\"></i> Har ikke informasjonen.",
+            "tags": [
+                [
+                    "valgprotokoll_2019",
+                    null
+                ]
+            ],
+            "url": "https://www.mimesbronn.no/request/valgprotokoll_2019_hobol_kommune",
+            "events": [],
+            "files": [],
+            "last_updated": "2019-09-18T22:55:29+02:00",
+            "cache_key": "_request_valgprotokoll_2019_hobol_kommune"
+        }
+    ],
+    "molde_kommune": [
+        {
+            "mimes_bronn_entity_url": "molde_kommune",
+            "display_status": "<span class=\"innsyn-success\"><i class=\"fas fa-check\"></i> Vellykket.</span>",
+            "tags": [
+                [
+                    "valgprotokoll_2019",
+                    null
+                ]
+            ],
+            "url": "https://www.mimesbronn.no/request/valgprotokoll_2019_molde_kommune",
+            "events": [],
+            "files": [
+                {
+                    "fileName": "Valgstyrets m tebok 1506 2019 09 11 Kommunestyrevalget.pdf",
+                    "fileSize": "328K",
+                    "fileType": "application/pdf",
+                    "url": "https://www.mimesbronn.no/request/2198/response/8908/attach/2/Valgstyrets m tebok 1506 2019 09 11 Kommunestyrevalget.pdf"
+                },
+                {
+                    "fileName": "Valgstyrets m tebok 1506 2019 09 11 Fylkestingsvalget.pdf",
+                    "fileSize": "153K",
+                    "fileType": "application/pdf",
+                    "url": "https://www.mimesbronn.no/request/2198/response/8908/attach/3/Valgstyrets m tebok 1506 2019 09 11 Fylkestingsvalget.pdf"
+                }
+            ],
+            "last_updated": "2019-09-18T15:44:37+02:00",
+            "cache_key": "_request_valgprotokoll_2019_molde_kommune"
+        }
+    ],
     "hamar_kommune": [
         {
             "mimes_bronn_entity_url": "hamar_kommune",
-            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; kategorisering.</span>",
+            "display_status": "<span class=\"innsyn-success\"><i class=\"fas fa-check\"></i> Vellykket.</span>",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -25,7 +89,7 @@
                     "url": "https://www.mimesbronn.no/request/2155/response/8906/attach/4/Valgstyrets m tebok Fylkestingsvalget 2019.pdf"
                 }
             ],
-            "last_updated": "2019-09-18T14:50:28+02:00",
+            "last_updated": "2019-09-18T22:50:49+02:00",
             "cache_key": "_request_valgprotokoll_2019_hamar_kommune"
         }
     ],
@@ -56,7 +120,7 @@
     "kongsberg_kommune": [
         {
             "mimes_bronn_entity_url": "kongsberg_kommune",
-            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; kategorisering.</span>",
+            "display_status": "<span class=\"innsyn-success\"><i class=\"fas fa-check\"></i> Vellykket.</span>",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -97,14 +161,14 @@
                     "url": "https://www.mimesbronn.no/request/2196/response/8904/attach/7/Valgstyrets m tebok 3006 2019 09 10 1.pdf"
                 }
             ],
-            "last_updated": "2019-09-18T14:04:56+02:00",
+            "last_updated": "2019-09-18T22:57:29+02:00",
             "cache_key": "_request_valgprotokoll_2019_kongsberg_kom"
         }
     ],
     "kristiansand_kommune": [
         {
             "mimes_bronn_entity_url": "kristiansand_kommune",
-            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; kategorisering.</span>",
+            "display_status": "<span class=\"innsyn-success\"><i class=\"fas fa-check\"></i> Delvis vellykket.</span>",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -133,14 +197,14 @@
                     "url": "https://www.mimesbronn.no/request/2174/response/8903/attach/5/Valgstyrets m tebok Kristiansand fylke 2019.pdf"
                 }
             ],
-            "last_updated": "2019-09-18T13:05:08+02:00",
+            "last_updated": "2019-09-18T22:52:01+02:00",
             "cache_key": "_request_valgprotokoll_2019_kristiansand"
         }
     ],
     "ski_kommune": [
         {
             "mimes_bronn_entity_url": "ski_kommune",
-            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; kategorisering.</span>",
+            "display_status": "<i class=\"fas fa-question\" title=\"not_held\"></i> Har ikke informasjonen.",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -150,14 +214,14 @@
             "url": "https://www.mimesbronn.no/request/valgprotokoll_2019_ski_kommune",
             "events": [],
             "files": [],
-            "last_updated": "2019-09-18T13:00:15+02:00",
+            "last_updated": "2019-09-18T22:53:23+02:00",
             "cache_key": "_request_valgprotokoll_2019_ski_kommune"
         }
     ],
     "as_kommune": [
         {
             "mimes_bronn_entity_url": "as_kommune",
-            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; kategorisering.</span>",
+            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; svar.</span>",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -174,14 +238,14 @@
                     "url": "https://www.mimesbronn.no/request/2151/response/8847/attach/2/image002.png"
                 }
             ],
-            "last_updated": "2019-09-18T12:56:08+02:00",
+            "last_updated": "2019-09-18T23:03:00+02:00",
             "cache_key": "_request_valgprotokoll_2019_as_kommune"
         }
     ],
     "sandnes_kommune": [
         {
             "mimes_bronn_entity_url": "sandnes_kommune",
-            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; kategorisering.</span>",
+            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; svar.</span>",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -191,7 +255,7 @@
             "url": "https://www.mimesbronn.no/request/valgprotokoll_2019_sandnes_kommu",
             "events": [],
             "files": [],
-            "last_updated": "2019-09-18T12:52:37+02:00",
+            "last_updated": "2019-09-18T23:02:29+02:00",
             "cache_key": "_request_valgprotokoll_2019_sandnes_kommu"
         },
         {
@@ -230,7 +294,7 @@
     "grimstad_kommune": [
         {
             "mimes_bronn_entity_url": "grimstad_kommune",
-            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; kategorisering.</span>",
+            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; svar.</span>",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -247,7 +311,7 @@
                     "url": "https://www.mimesbronn.no/request/2170/response/8894/attach/3/image001.jpg"
                 }
             ],
-            "last_updated": "2019-09-18T11:14:05+02:00",
+            "last_updated": "2019-09-18T23:03:22+02:00",
             "cache_key": "_request_valgprotokoll_2019_grimstad_komm"
         }
     ],
@@ -661,36 +725,6 @@
             "cache_key": "_request_valgprotokoll_2019_alesund_kommu"
         }
     ],
-    "molde_kommune": [
-        {
-            "mimes_bronn_entity_url": "molde_kommune",
-            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; kategorisering.</span>",
-            "tags": [
-                [
-                    "valgprotokoll_2019",
-                    null
-                ]
-            ],
-            "url": "https://www.mimesbronn.no/request/valgprotokoll_2019_molde_kommune",
-            "events": [],
-            "files": [
-                {
-                    "fileName": "Valgstyrets m tebok 1506 2019 09 11 Kommunestyrevalget.pdf",
-                    "fileSize": "328K",
-                    "fileType": "application/pdf",
-                    "url": "https://www.mimesbronn.no/request/2198/response/8908/attach/2/Valgstyrets m tebok 1506 2019 09 11 Kommunestyrevalget.pdf"
-                },
-                {
-                    "fileName": "Valgstyrets m tebok 1506 2019 09 11 Fylkestingsvalget.pdf",
-                    "fileSize": "153K",
-                    "fileType": "application/pdf",
-                    "url": "https://www.mimesbronn.no/request/2198/response/8908/attach/3/Valgstyrets m tebok 1506 2019 09 11 Fylkestingsvalget.pdf"
-                }
-            ],
-            "last_updated": "2019-09-18T15:41:26+02:00",
-            "cache_key": "_request_valgprotokoll_2019_molde_kommune"
-        }
-    ],
     "drammen_kommune": [
         {
             "mimes_bronn_entity_url": "drammen_kommune",
@@ -1044,23 +1078,6 @@
             "cache_key": "_request_valgprotokoll_2019_bo_kommune_te"
         }
     ],
-    "fla_kommune": [
-        {
-            "mimes_bronn_entity_url": "fla_kommune",
-            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; kategorisering.</span>",
-            "tags": [
-                [
-                    "valgprotokoll_2019",
-                    null
-                ]
-            ],
-            "url": "https://www.mimesbronn.no/request/valgprotokoll_2019_fla_kommune",
-            "events": [],
-            "files": [],
-            "last_updated": "2019-09-18T15:40:04+02:00",
-            "cache_key": "_request_valgprotokoll_2019_fla_kommune"
-        }
-    ],
     "nord_aurdal_kommune": [
         {
             "mimes_bronn_entity_url": "nord_aurdal_kommune",
@@ -1202,23 +1219,6 @@
             ],
             "last_updated": "2019-09-18T00:16:27+02:00",
             "cache_key": "_request_valgprotokoll_2019_vestby_kommun"
-        }
-    ],
-    "hobol_kommune": [
-        {
-            "mimes_bronn_entity_url": "hobol_kommune",
-            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; svar.</span>",
-            "tags": [
-                [
-                    "valgprotokoll_2019",
-                    null
-                ]
-            ],
-            "url": "https://www.mimesbronn.no/request/valgprotokoll_2019_hobol_kommune",
-            "events": [],
-            "files": [],
-            "last_updated": "2019-09-18T00:17:39+02:00",
-            "cache_key": "_request_valgprotokoll_2019_hobol_kommune"
         }
     ],
     "sokndal_kommune": [
