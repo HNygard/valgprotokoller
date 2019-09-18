@@ -18,7 +18,8 @@ $additional_urls = array(// Also fetch these FOI requests
 );
 
 $a = getMimesBronn2($cacheTimeSeconds, $cache_location, 'valgprotokoll_2019', $additional_urls);
-file_put_contents(__DIR__ . '/data-store/mimesbronn-result/result.json', json_encode($a, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
+
+$urls = '';
 foreach($a as $entityId => $array) {
     foreach($array as $obj) {
         $display_status = $obj->display_status;
@@ -33,8 +34,26 @@ foreach($a as $entityId => $array) {
         $display_status = str_replace('&aelig;', 'ae', $display_status);
 
         logInfo(str_pad($entityId, 25) . ' - ' . $display_status);
+
+
+        $urls .= '# ---- ' . $entityId . ' ---- ' . $obj->url . "\n";
+        foreach ($obj->files as $file) {
+            $file->url =  'https://www.mimesbronn.no' . $file->baseUrl;
+            unset($file->baseUrl);
+
+            if ($file->fileType == 'image/jpeg' || $file->fileType == 'image/png') {
+                continue;
+            }
+            logInfo('   File: ' . $file->fileName);
+            $urls .= '# File - ' . $file->fileName . "\n";
+            $urls .= $file->url . "\n\n";
+        }
+        $urls .= "\n";
     }
 }
+file_put_contents(__DIR__ . '/data-store/mimesbronn-result/urls.txt', $urls);
+file_put_contents(__DIR__ . '/data-store/mimesbronn-result/result.json', json_encode($a, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
+
 
 function getMimesBronn2($cacheTimeSeconds, $cache_location, $mimesbronn_tag, $additional_urls = array()) {
     $mimesBronn = getMimesBronnListHack($cacheTimeSeconds, $cache_location, $additional_urls, $mimesbronn_tag);
