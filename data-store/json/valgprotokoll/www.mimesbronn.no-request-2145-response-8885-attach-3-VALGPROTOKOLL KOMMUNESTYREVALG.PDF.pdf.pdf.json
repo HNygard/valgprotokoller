@@ -1,0 +1,13 @@
+{
+    "localSource": "data-store/pdfs/www.mimesbronn.no-request-2145-response-8885-attach-3-VALGPROTOKOLL KOMMUNESTYREVALG.PDF.pdf.pdf.layout.txt",
+    "url": "https://www.mimesbronn.no/request/2145/response/8885/attach/3/VALGPROTOKOLL KOMMUNESTYREVALG.PDF.pdf",
+    "downloadTime": "2019-09-18 16:08:25",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "18.09.2019 09:06:55",
+    "election": "Kommunestyrevalget 2019",
+    "heading": "Valgprotokoll for valgstyret i Klepp kommune, Rogaland fylke",
+    "errorMessage": "Did not find expected value on line [5].\nExpected ... : Kommunestyre- og fylkestingsvalget 2019\nActual ..... : Kommunestyre- og fylkestingsvalget                       2019\n\n#0 2-valgprotokoll-parser.php(301): assertLine_trim(Array, 5, 'Kommunestyre- o...')\n#1 2-valgprotokoll-parser.php(59): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}

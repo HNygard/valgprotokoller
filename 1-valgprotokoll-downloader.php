@@ -70,6 +70,9 @@ function downloadUrls_parseTxt($lines) {
 file_put_contents(__DIR__ . '/data-store/urls.txt', $clean_file);
 
 
+$lines = file(__DIR__ . '/data-store/mimesbronn-result/urls.txt');
+downloadUrls_parseTxt($lines);
+
 function str_starts_with($haystack, $needle) {
     return substr($haystack, 0, strlen($needle)) == $needle;
 }
