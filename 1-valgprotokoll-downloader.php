@@ -15,49 +15,56 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errconte
     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
 });
 
-$clean_file = '';
-$lines_found = array();
 
 $cache_dir_pdfs = __DIR__ . '/data-store/pdfs/';
+
 $lines = file(__DIR__ . '/data-store/urls.txt');
-foreach ($lines as $line) {
-    $line = trim($line);
-    if (str_starts_with($line, '#') || empty($line)) {
-        $clean_file .= $line . "\n";
-        continue;
-    }
+$clean_file = downloadUrls_parseTxt($lines);
+function downloadUrls_parseTxt($lines) {
+    global $cache_dir_pdfs;
 
-    // :: Download file if it is not already cached
-    $cache_name = str_replace('https://', '', $line);
-    $cache_name = str_replace('/', '-', $cache_name);
-    $cache_name = $cache_dir_pdfs . $cache_name . '.pdf';
-    if (!file_exists($cache_name)) {
-        $data = getUrlUsingCurl($line);
-        file_put_contents($cache_name, $data);
+    $clean_file = '';
+    $lines_found = array();
+    foreach ($lines as $line) {
+        $line = trim($line);
+        if (str_starts_with($line, '#') || empty($line)) {
+            $clean_file .= $line . "\n";
+            continue;
+        }
 
-        // :: Save some meta data
-        $obj = new stdClass();
-        $obj->url = $line;
-        $obj->downloadTime = date('Y-m-d H:i:s');
-        file_put_contents($cache_name . '.json', json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES));
-    }
+        // :: Download file if it is not already cached
+        $cache_name = str_replace('https://', '', $line);
+        $cache_name = str_replace('/', '-', $cache_name);
+        $cache_name = $cache_dir_pdfs . $cache_name . '.pdf';
+        if (!file_exists($cache_name)) {
+            $data = getUrlUsingCurl($line);
+            file_put_contents($cache_name, $data);
 
-    // :: Read PDF into TXT file
-    // Keeping layout as this is important for tables.
-    if (!file_exists($cache_name . '.layout.txt')) {
-        $pdfLines = '';
-        exec('pdftotext -layout "' . $cache_name . '" -', $pdfLines);
-        file_put_contents($cache_name . '.layout.txt', implode(chr(10), $pdfLines));
-    }
-    else {
-        $pdfLines = file($cache_name . '.layout.txt', FILE_IGNORE_NEW_LINES);
-    }
+            // :: Save some meta data
+            $obj = new stdClass();
+            $obj->url = $line;
+            $obj->downloadTime = date('Y-m-d H:i:s');
+            file_put_contents($cache_name . '.json', json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES));
+        }
 
-    if (!isset($lines_found[$line])) {
-        // Removes any duplicates to keep it clean.
-        $lines_found[$line] = '';
-        $clean_file .= $line . "\n";
+        // :: Read PDF into TXT file
+        // Keeping layout as this is important for tables.
+        if (!file_exists($cache_name . '.layout.txt')) {
+            $pdfLines = '';
+            exec('pdftotext -layout "' . $cache_name . '" -', $pdfLines);
+            file_put_contents($cache_name . '.layout.txt', implode(chr(10), $pdfLines));
+        }
+        else {
+            $pdfLines = file($cache_name . '.layout.txt', FILE_IGNORE_NEW_LINES);
+        }
+
+        if (!isset($lines_found[$line])) {
+            // Removes any duplicates to keep it clean.
+            $lines_found[$line] = '';
+            $clean_file .= $line . "\n";
+        }
     }
+    return $clean_file;
 }
 
 file_put_contents(__DIR__ . '/data-store/urls.txt', $clean_file);
