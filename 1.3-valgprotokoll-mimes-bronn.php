@@ -11,6 +11,8 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errconte
     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
 });
 
+
+// :: Download data from Mimes Brønn
 $cacheTimeSeconds = 3600;
 $cache_location = __DIR__ . '/data-store/mimesbronn-cache';
 
@@ -20,9 +22,42 @@ $additional_urls = array(// Also fetch these FOI requests
 $a = getMimesBronn2($cacheTimeSeconds, $cache_location, 'valgprotokoll_2019', $additional_urls);
 ksort($a);
 
+
+// :: Read manual file
+// Format:
+// # <mimes brønn URL>
+// Tekst
+// Tekst
+//
+// # Next item
+
+$svar = file(__DIR__ . '/data-store/mimesbronn-result/svar.txt');
+$answers_to_questions = array();
+$current_svar = '';
+$current_url = '';
+foreach ($svar as $line) {
+    $line = trim($line);
+    if (str_starts_with($line, '#')) {
+        if (!empty($current_svar)) {
+            $answers_to_questions[$current_url] = trim($current_svar);
+        }
+        $current_svar = '';
+        $current_url = trim(substr($line, 1));
+        $current_url = explode('#incoming', $current_url)[0];
+        $current_url = explode('?nocache', $current_url)[0];
+    }
+    else {
+        $current_svar .= $line . "\n";
+    }
+}
+if (!empty($current_svar)) {
+    $answers_to_questions[$current_url] = trim($current_svar);
+}
+
+
 $urls = '';
-foreach($a as $entityId => $array) {
-    foreach($array as $obj) {
+foreach ($a as $entityId => $array) {
+    foreach ($array as $obj) {
         $display_status = $obj->display_status;
         $display_status = str_replace('<span class="innsyn-success"><i class="fas fa-check"></i> ', '', $display_status);
         $display_status = str_replace('<span class="innsyn-failed"><i class="fas fa-window-close"></i> ', '', $display_status);
@@ -34,12 +69,12 @@ foreach($a as $entityId => $array) {
         $display_status = str_replace('&aring;', 'aa', $display_status);
         $display_status = str_replace('&aelig;', 'ae', $display_status);
 
-        logInfo(str_pad($entityId, 25) . ' - ' . $display_status);
+        logInfo(str_pad($entityId, 25) . ' - ' . $display_status .' - ' .$obj->url);
 
 
         $urls .= '# ---- ' . $entityId . ' ---- ' . $obj->url . "\n";
         foreach ($obj->files as $file) {
-            $file->url =  'https://www.mimesbronn.no' . $file->baseUrl;
+            $file->url = 'https://www.mimesbronn.no' . $file->baseUrl;
             unset($file->baseUrl);
 
             if ($file->fileType == 'image/jpeg' || $file->fileType == 'image/png') {
@@ -50,11 +85,20 @@ foreach($a as $entityId => $array) {
             $urls .= $file->url . "\n\n";
         }
         $urls .= "\n";
+
+        if (isset($answers_to_questions[$obj->url])) {
+            $obj->answerToQuestions = $answers_to_questions[$obj->url];
+            unset($answers_to_questions[$obj->url]);
+        }
     }
 }
 file_put_contents(__DIR__ . '/data-store/mimesbronn-result/urls.txt', $urls);
 file_put_contents(__DIR__ . '/data-store/mimesbronn-result/result.json', json_encode($a, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
 
+if (!empty($answers_to_questions)) {
+    var_dump($answers_to_questions);
+    throw new Exception('URL mismatch on ' . count($answers_to_questions) . '!');
+}
 
 function getMimesBronn2($cacheTimeSeconds, $cache_location, $mimesbronn_tag, $additional_urls = array()) {
     $mimesBronn = getMimesBronnListHack($cacheTimeSeconds, $cache_location, $additional_urls, $mimesbronn_tag);

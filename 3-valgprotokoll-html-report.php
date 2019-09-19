@@ -432,6 +432,9 @@ foreach ($entity_id__to__obj as $entity) {
                 $mimesLink = '<span style="font-size: 0.6em;">' . $mimesLink . "</span>\n";
                 foreach ($mimesBronnStatus[$entity->mimesBronnUrl] as $mimesObj) {
                     $mimesLink .= '<br><a href="' . $mimesObj->url . '">' . $mimesObj->display_status . "</a>\n";
+                    if (isset($mimesObj->answerToQuestions)) {
+                        $mimesLink .= "</td>\n<td style='text-align: left'>" . nl2br(htmlentities($mimesObj->answerToQuestions, ENT_QUOTES));
+                    }
                 }
             }
         }
