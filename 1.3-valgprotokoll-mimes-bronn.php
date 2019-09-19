@@ -18,6 +18,7 @@ $additional_urls = array(// Also fetch these FOI requests
 );
 
 $a = getMimesBronn2($cacheTimeSeconds, $cache_location, 'valgprotokoll_2019', $additional_urls);
+ksort($a);
 
 $urls = '';
 foreach($a as $entityId => $array) {
