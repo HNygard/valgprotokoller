@@ -139,6 +139,24 @@
                 "Ant. sedler": 55
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1992
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 18
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 2037,
+                "Ant. sedler": 2010
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Bygdalista i Gausdal": {
                 "Foreløpig": 96,
@@ -246,6 +264,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
     "otherSources": [
         {
             "localSource": "data-store/pdfs/elections-no.github.io-docs-2019-Innlandet-Gausdal kommune, Innlandet fylke - kommune 3441_2019-09-10.pdf.layout.txt"

@@ -138,6 +138,20 @@
                 "Ant. sedler": 89
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "GodkjenteBlanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 53
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 3102,
+                "Ant. sedler": 3111
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Arbeiderpartiet": {
                 "Foreløpig": 1011,
@@ -283,6 +297,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
     "otherSources": [
         {
             "localSource": "data-store/pdfs/http:--www.kvalsund.kommune.no-getfile.php-4542300.747.ikqinqzuakupuk-Valgstyretsm%C3%B8tebok2019.pdf.pdf.layout.txt",

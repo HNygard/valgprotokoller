@@ -138,6 +138,24 @@
                 "Ant. sedler": 40
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 2148
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 32
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 2185,
+                "Ant. sedler": 2180
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Arbeiderpartiet": {
                 "Foreløpig": 395,
@@ -284,5 +302,6 @@
             "Matrand — valgtingsstemmer ordinære:\nGodkjent"
         ]
     },
-    "foretattForeløpigOpptellingHosStemmestyrene": false
+    "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true
 }

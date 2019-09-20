@@ -138,6 +138,24 @@
                 "Ant. sedler": 42
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1228
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 11
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 1243,
+                "Ant. sedler": 1239
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Høgre": {
                 "Foreløpig": 124,
@@ -269,5 +287,6 @@
             ""
         ]
     },
-    "foretattForeløpigOpptellingHosStemmestyrene": false
+    "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true
 }

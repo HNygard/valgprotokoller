@@ -138,6 +138,24 @@
                 "Ant. sedler": 48
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 2802
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 14
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 4
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 2847,
+                "Ant. sedler": 2820
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Arbeiderpartiet": {
                 "Foreløpig": 198,
@@ -280,6 +298,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
     "otherSources": [
         {
             "localSource": "data-store/pdfs/www.gjerdrum.kommune.no-contentassets-ef39faffb77a4ddfaba692040395a0d0-valgstyrets_motebok_3032_2019-09-11.pdf.pdf.layout.txt",

@@ -135,6 +135,24 @@
                 "Ant. sedler": 50
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 2260
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 68
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 2660,
+                "Ant. sedler": 2328
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Demokratene": {
                 "Foreløpig": 1,
@@ -337,6 +355,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
     "otherSources": [
         {
             "localSource": "data-store/pdfs/elections-no.github.io-docs-2019-Innlandet-Trysil kommune, Innlandet fylke - fylke 3421_2019-09-10.pdf.layout.txt",

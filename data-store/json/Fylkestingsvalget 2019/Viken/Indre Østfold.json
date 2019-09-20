@@ -138,6 +138,24 @@
                 "Ant. sedler": 238
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 12400
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 403
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 14209,
+                "Ant. sedler": 12804
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Alliansen": {
                 "Foreløpig": 45,
@@ -374,6 +392,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
     "otherSources": [
         {
             "localSource": "data-store/pdfs/elections-no.github.io-docs-2019-Viken-Indre Østfold kommune, Viken fylke - Fylkestingsvalget.pdf.layout.txt",

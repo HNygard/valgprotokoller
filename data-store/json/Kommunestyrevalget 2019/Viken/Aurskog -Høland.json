@@ -138,6 +138,24 @@
                 "Ant. sedler": 73
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 6510
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 67
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 6631,
+                "Ant. sedler": 6577
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Arbeiderpartiet": {
                 "Foreløpig": 824,
@@ -292,6 +310,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
     "otherSources": [
         {
             "localSource": "data-store/pdfs/elections-no.github.io-docs-2019-Viken-Aurskog -Høland kommune, Viken fylke - kommune.pdf.layout.txt",

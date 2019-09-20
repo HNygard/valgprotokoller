@@ -138,6 +138,24 @@
                 "Ant. sedler": 34
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 400
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 3
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 403,
+                "Ant. sedler": 403
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Arbeidarpartiet": {
                 "Foreløpig": 42,
@@ -244,5 +262,6 @@
             ""
         ]
     },
-    "foretattForeløpigOpptellingHosStemmestyrene": false
+    "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true
 }

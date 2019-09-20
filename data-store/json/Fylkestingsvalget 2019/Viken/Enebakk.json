@@ -138,6 +138,24 @@
                 "Ant. sedler": 73
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 3583
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 69
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 3
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 4183,
+                "Ant. sedler": 3655
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Alliansen": {
                 "Foreløpig": 0,
@@ -374,5 +392,6 @@
             "Kirkebygden — valgtingsstemmer ordinære:\nok"
         ]
     },
-    "foretattForeløpigOpptellingHosStemmestyrene": false
+    "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true
 }

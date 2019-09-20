@@ -56,8 +56,8 @@ foreach ($files as $file) {
 
 //    if (!str_contains(strtolower($file), 'ski.kommune.no') && !str_contains(strtolower($file), 'aukra')
 //        && !str_contains(strtolower($file), 'trysil')
-//        && !str_contains(strtolower($file), 'sande')
-//
+//        && !str_contains(strtolower($file), 'evenes')
+//        && !str_contains(strtolower($file), 'vestnes')
 //    ) {
 //        continue;
 //    }
@@ -524,12 +524,44 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     }
 
     // C3 Stemmegivninger - valgting
-    // C4 Foreløpig opptelling hos valgstyret
-    // C4.1 - C4.3 Valgtingsstemmesedler i urne
+
+    $i = assertLine_trim($lines, $i, 'C3 Stemmegivninger - valgting');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    // Skip
+    while ($lines[$i] != 'C4 Foreløpig opptelling hos valgstyret') {
+        $i++;
+    }
+
+    $i = assertLine_trim($lines, $i, 'C4 Foreløpig opptelling hos valgstyret');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    if ($lines[$i + 1] == 'Foreløpig opptelling av valgtingsstemmesedler er foretatt hos stemmestyrene') {
+        // C4.1 - C4.3 Valgtingsstemmesedler i urne
+        // Foreløpig opptelling av valgtingsstemmesedler er foretatt hos stemmestyrene
+        $obj->foretattForeløpigOpptellingHosValgstyret = false;
+        $i = assertLine_trim($lines, $i, 'C4.1 - C4.3 Valgtingsstemmesedler i urne');
+        $i = assertLine_trim($lines, $i, 'Foreløpig opptelling av valgtingsstemmesedler er foretatt hos stemmestyrene');
+    }
+    else {
+        // C4 Foreløpig opptelling hos valgstyret
+        // C4.1 - C4.3 Valgtingsstemmesedler i urne
+        $obj->foretattForeløpigOpptellingHosValgstyret = true;
+
+        $current_heading = 'C4.1 Antall valgtingsstemmesedler i urne';
+        $text_heading = null;
+        $column_heading = null;
+        $column1 = 'Kryss i manntall';
+        $column2 = 'Ant. sedler';
+        $sum_row1 = null;
+        $sum_row2 = null;
+        $table_ending = 'C4.2 Partifordelte valgtingsstemmesedler i urne';
+        $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
+        $i = assertLine_trim($lines, $i, $table_ending);
+
+    }
+
     // C4.4 Antall stemmesedler i særskilt omslag
     // C4.5 Partifordelte stemmesedler i særskilt omslag
     // C4.6 Merknad
-    $i = assertLine_trim($lines, $i, 'C3 Stemmegivninger - valgting');
     // Skip
     while ($lines[$i] != 'C4.6 Merknad') {
         $i++;
@@ -768,6 +800,10 @@ function readTableRow($lines, $i, $header_length, array $start_of_row_keywords, 
 
     $row_line = str_replace("\n", '', $row_line);
     $row_line = trim($row_line);
+
+    if (!isset($match)) {
+        throw new Exception('Didn\'t find the row: ' . chr(10) . $row_line);
+    }
 
     return $returnFunction($i, $row_lines, $row_line, $match);
 }

@@ -139,6 +139,20 @@
                 "Ant. sedler": 66
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "GodkjenteBlanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 29
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 6
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 2528,
+                "Ant. sedler": 2525
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Kristelig Folkeparti": {
                 "Foreløpig": 24,
@@ -281,6 +295,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
     "otherSources": [
         {
             "localSource": "data-store/pdfs/elections-no.github.io-docs-2019-Vestfold_og_Telemark-Nome kommune, Vestfold og Telemark fylke - kommune.pdf.layout.txt",

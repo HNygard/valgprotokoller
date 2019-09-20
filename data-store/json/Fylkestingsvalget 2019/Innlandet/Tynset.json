@@ -138,6 +138,24 @@
                 "Ant. sedler": 58
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 2001
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 15
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 2
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 2232,
+                "Ant. sedler": 2018
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Demokratene": {
                 "Foreløpig": 1,
@@ -343,6 +361,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
     "otherSources": [
         {
             "localSource": "data-store/pdfs/www.tynset.kommune.no-_f-p1-ic713338a-bfbe-49a2-97e7-7248a172c04a-valgstyrets-motebok-fylkestingsvalget-2019.pdf.pdf.layout.txt",

@@ -138,6 +138,24 @@
                 "Ant. sedler": 67
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1486
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 18
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 1508,
+                "Ant. sedler": 1504
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Senterpartiet": {
                 "Foreløpig": 171,
@@ -261,6 +279,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
     "otherSources": [
         {
             "localSource": "data-store/pdfs/http:--www.nordreisa.kommune.no-getfile.php-4541112.1386.ail7z7s7atkq7w-Valgstyrets_m%C3%B8tebok_5428_2019-09-11.pdf.pdf.layout.txt",

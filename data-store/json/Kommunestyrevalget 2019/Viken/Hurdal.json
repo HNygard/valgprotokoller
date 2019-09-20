@@ -139,6 +139,24 @@
                 "Ant. sedler": 31
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1015
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 7
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 5
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 1027,
+                "Ant. sedler": 1027
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Høyre": {
                 "Foreløpig": 40,
@@ -290,5 +308,6 @@
             "Hele kommunen — valgtingsstemmer ordinære:\nAntall kryss i manntall stemmer med antall sedler. 4 sedler er oversett ved urnetelling."
         ]
     },
-    "foretattForeløpigOpptellingHosStemmestyrene": false
+    "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true
 }

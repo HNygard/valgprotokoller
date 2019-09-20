@@ -138,6 +138,20 @@
                 "Ant. sedler": 56
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "GodkjenteBlanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 38
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 2466,
+                "Ant. sedler": 2183
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Fremskrittspartiet": {
                 "Foreløpig": 29,
@@ -351,6 +365,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
     "otherSources": [
         {
             "localSource": "data-store/pdfs/elections-no.github.io-docs-2019-Trondelag-Midtre_Gauldal_kommune_fylkestingsvalg.pdf.layout.txt",

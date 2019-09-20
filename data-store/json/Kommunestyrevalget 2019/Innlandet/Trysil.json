@@ -138,6 +138,24 @@
                 "Ant. sedler": 55
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 2620
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 25
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 2
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 2660,
+                "Ant. sedler": 2647
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Arbeiderpartiet": {
                 "Foreløpig": 317,
@@ -280,6 +298,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
     "otherSources": [
         {
             "localSource": "data-store/pdfs/www.trysil.kommune.no-politikk-valg-Documents-Kommunestyre%20-%20Valgstyrets_m%C3%B8tebok_3421_2019-09-10.pdf.pdf.layout.txt",

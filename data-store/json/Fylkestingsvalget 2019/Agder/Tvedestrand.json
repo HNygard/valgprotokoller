@@ -134,6 +134,24 @@
                 "Ant. sedler": 63
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1797
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 32
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 2001,
+                "Ant. sedler": 1829
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "SV - Sosialistisk Venstreparti": {
                 "Foreløpig": 24,
@@ -345,5 +363,6 @@
             ""
         ]
     },
-    "foretattForeløpigOpptellingHosStemmestyrene": false
+    "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true
 }

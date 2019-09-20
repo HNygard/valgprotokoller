@@ -134,6 +134,20 @@
                 "Ant. sedler": 24
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "GodkjenteBlanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 313
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 3
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 22209,
+                "Ant. sedler": 20773
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Høyre": {
                 "Foreløpig": 2338,
@@ -353,5 +367,6 @@
             "Vennerød — valgtingsstemmer ordinære:\nAvvik skyldes tellefeil."
         ]
     },
-    "foretattForeløpigOpptellingHosStemmestyrene": false
+    "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true
 }

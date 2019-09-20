@@ -139,6 +139,24 @@
                 "Ant. sedler": 15
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 301
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 3
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 305,
+                "Ant. sedler": 305
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Tverrpolitisk liste": {
                 "Foreløpig": 25,
@@ -261,6 +279,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
     "otherSources": [
         {
             "localSource": "data-store/pdfs/elections-no.github.io-docs-2019-Troms_og_Finnmark-Unjárga - Nesseby kommune, Troms og Finnmark - kommunestyret.pdf.layout.txt",

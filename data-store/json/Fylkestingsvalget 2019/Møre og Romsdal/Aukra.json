@@ -2,6 +2,7 @@
     "localSource": "data-store/pdfs/elections-no.github.io-docs-2019-More_og_Romsdal-Aukra_kommune_fylkestingsvalet.pdf.layout.txt",
     "url": "<missing>",
     "downloadTime": null,
+    "pdfMetaData": "Creator:        JasperReports Library version 5.6.1\nProducer:       iText 2.1.7 by 1T3XT\nCreationDate:   Tue Sep 10 17:23:12 2019 CEST\nModDate:        Tue Sep 10 17:53:41 2019 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          15\nEncrypted:      no\nPage size:      595 x 842 pts (A4)\nPage rot:       0\nFile size:      155492 bytes\nOptimized:      yes\nPDF version:    1.4",
     "language": "nn-NO",
     "languageName": "Norwegian, Nynorsk",
     "documentType": "valgprotokoll",
@@ -135,6 +136,24 @@
             "Total antall sent innkomne forhåndsstemmesedler": {
                 "Kryss i manntall": 42,
                 "Ant. sedler": 37
+            }
+        },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1006
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 23
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 1243,
+                "Ant. sedler": 1029
             }
         },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
@@ -358,5 +377,6 @@
             "Hele kommunen — valtingsstemmer ordinære:\nTeljing 1 og 2 viser same resultat. Avvik mellom førebels og endeleg teljing 1 og 2. Teljing 2 vert godkjend."
         ]
     },
-    "foretattForeløpigOpptellingHosStemmestyrene": false
+    "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true
 }

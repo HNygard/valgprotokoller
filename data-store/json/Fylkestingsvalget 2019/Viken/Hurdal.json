@@ -138,6 +138,24 @@
                 "Ant. sedler": 30
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 901
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 20
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 1027,
+                "Ant. sedler": 922
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Alliansen": {
                 "Foreløpig": 1,
@@ -371,6 +389,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
     "otherSources": [
         {
             "localSource": "data-store/pdfs/www.hurdal.kommune.no-siteassets-20-pdf-dokumenter-valgstyrets_motebok_3037_2019-09-10-3.pdf.pdf.layout.txt",

@@ -139,6 +139,24 @@
                 "Ant. sedler": 62
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1989
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 20
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 4
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 2017,
+                "Ant. sedler": 2013
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Arbeiderpartiet": {
                 "Foreløpig": 304,
@@ -271,6 +289,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
     "otherSources": [
         {
             "localSource": "data-store/pdfs/elections-no.github.io-docs-2019-Troms_og_Finnmark-Vadsø kommune, Troms og Finnmark fylke - Kommunestyrevalget.pdf.layout.txt",

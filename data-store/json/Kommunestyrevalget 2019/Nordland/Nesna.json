@@ -138,6 +138,24 @@
                 "Ant. sedler": 20
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 612
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 4
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 621,
+                "Ant. sedler": 617
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "SV - Sosialistisk Venstreparti": {
                 "Foreløpig": 41,
@@ -250,6 +268,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
     "otherSources": [
         {
             "localSource": "data-store/pdfs/www.nesna.kommune.no-filarkiv-politikk-kommunestyre-255-valgstyrets-motebok-1828-2019-09-11.pdf.layout.txt",

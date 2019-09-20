@@ -138,6 +138,24 @@
                 "Ant. sedler": 10
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 560
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 4
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 565,
+                "Ant. sedler": 564
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Fremskrittspartiet": {
                 "Foreløpig": 10,
@@ -249,5 +267,6 @@
             "Hele kommunen — valgtingsstemmer ordinære:\nFeil i telling i kretsen"
         ]
     },
-    "foretattForeløpigOpptellingHosStemmestyrene": false
+    "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true
 }

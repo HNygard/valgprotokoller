@@ -138,6 +138,24 @@
                 "Ant. sedler": 23
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1273
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 65
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 1522,
+                "Ant. sedler": 1338
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Alliansen": {
                 "Foreløpig": 1,
@@ -370,5 +388,6 @@
             "Hele kommunen — valgtingsstemmer ordinære:\nDifferanse på 5 stemmer iforhold til urnetellingen."
         ]
     },
-    "foretattForeløpigOpptellingHosStemmestyrene": false
+    "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true
 }

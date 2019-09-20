@@ -138,6 +138,24 @@
                 "Ant. sedler": 248
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 13925
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 218
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 19
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 14209,
+                "Ant. sedler": 14162
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Senterpartiet": {
                 "Foreløpig": 1782,
@@ -304,6 +322,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
     "otherSources": [
         {
             "localSource": "data-store/pdfs/iok.custompublish.com-getfile.php-4540976.2491.bii7nmjtktp7iu-Valgstyrets+m%C3%B8tebok+-+kommunestyret.pdf.pdf.layout.txt",

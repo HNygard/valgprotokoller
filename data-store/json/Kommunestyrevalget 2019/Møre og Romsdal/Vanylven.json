@@ -137,6 +137,20 @@
                 "Kryss i manntall": 42,
                 "Ant. sedler": 42
             }
+        },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "GodkjenteBlanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 7
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 1218,
+                "Ant. sedler": 1215
+            }
         }
     },
     "comments": {
@@ -148,5 +162,6 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
-    "errorMessage": "Undefined offset: 1442\n\n#0 2-valgprotokoll-parser.php(881): {closure}(8, 'Undefined offse...', '...', 881, Array)\n#1 2-valgprotokoll-parser.php(545): readComments(Object(stdClass), Array, 1442, 'C4.6 Merknad', '(\\xC3\\x85rsak til evt...', 'C4.7 Antall ste...')\n#2 2-valgprotokoll-parser.php(67): parseFile_andWriteToDisk(Object(stdClass), '...')\n#3 {main}"
+    "foretattForeløpigOpptellingHosValgstyret": true,
+    "errorMessage": "Undefined offset: 1442\n\n#0 2-valgprotokoll-parser.php(917): {closure}(8, 'Undefined offse...', '...', 917, Array)\n#1 2-valgprotokoll-parser.php(577): readComments(Object(stdClass), Array, 1442, 'C4.6 Merknad', '(\\xC3\\x85rsak til evt...', 'C4.7 Antall ste...')\n#2 2-valgprotokoll-parser.php(67): parseFile_andWriteToDisk(Object(stdClass), '...')\n#3 {main}"
 }

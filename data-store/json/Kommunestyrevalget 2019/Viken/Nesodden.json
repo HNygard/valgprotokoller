@@ -139,6 +139,24 @@
                 "Ant. sedler": 218
             }
         },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 6541
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 63
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 10
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 6609,
+                "Ant. sedler": 6614
+            }
+        },
         "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
             "Fremskrittspartiet": {
                 "Foreløpig": 227,
@@ -292,6 +310,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
     "otherSources": [
         {
             "localSource": "data-store/pdfs/elections-no.github.io-docs-2019-Viken-Nesodden kommune, viken fylke - Kommunestyrevalget.pdf.layout.txt",
