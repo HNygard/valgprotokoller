@@ -44,7 +44,7 @@ foreach ($files as $file) {
 
     if (!file_exists($cache_name . '.pdfinfo.txt')) {
         $pdfinfoOutput = '';
-        exec('pdfinfo "' . $cache_name . '"', $pdfinfoOutput);
+        exec('pdfinfo "' . $file . '"', $pdfinfoOutput);
         file_put_contents($cache_name . '.pdfinfo.txt', implode(chr(10), $pdfinfoOutput));
     }
 }
