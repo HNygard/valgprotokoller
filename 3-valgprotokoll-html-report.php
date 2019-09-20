@@ -118,24 +118,34 @@ $number_if_large_diff = function ($numbers, $text) {
         return '';
     }
 
+    $diff = $numbers->{'Endelig'} - $numbers->{'Foreløpig'};
+    $diffHtml = " (<span style='color: blue;'>$diff votes</span>)\n";
     if ($numbers->{'Foreløpig'} != 0) {
-        $diff_percent = 100 * (($numbers->{'Endelig'} - $numbers->{'Foreløpig'}) / $numbers->{'Foreløpig'});
+        $diff_percent = 100 * (($diff) / $numbers->{'Foreløpig'});
         $formattedNumber = number_format($diff_percent, 2);
 
         if (($diff_percent >= 1 || $diff_percent <= -1)) {
-            return "\n<span style='color: red;'>" . $formattedNumber . ' %</span> ' . $partyNameShorten($text);
+            return "\n<span style='color: red;'>" . $formattedNumber . ' %</span> '
+                . $partyNameShorten($text)
+                . $diffHtml;
+        }
+        if (abs($diff) >= 40) {
+            return "\n<span style='color: orange;'>" . $formattedNumber . ' %</span> '
+                . $partyNameShorten($text)
+                . $diffHtml;
         }
         return '';
     }
     elseif ($numbers->{'Endelig'} != 0) {
-        return "\n<span style='color: red;'>∞</span> " . $partyNameShorten($text);
+        return "\n<span style='color: red;'>∞</span> " . $partyNameShorten($text) . $diffHtml;
     }
 };
 
 $d1_4_d2_4_row = function ($numbers, $text, $append = '') {
 
+    $diff = $numbers->{'Endelig'} - $numbers->{'Foreløpig'};
     if ($numbers->{'Foreløpig'} != 0) {
-        $diff_percent = 100 * (($numbers->{'Endelig'} - $numbers->{'Foreløpig'}) / $numbers->{'Foreløpig'});
+        $diff_percent = 100 * (($diff) / $numbers->{'Foreløpig'});
         $formattedNumber = number_format($diff_percent, 2);
     }
     else {
@@ -147,7 +157,7 @@ $d1_4_d2_4_row = function ($numbers, $text, $append = '') {
     <th>' . $text . '</th>
     <td>' . $numbers->{'Foreløpig'} . '</td>
     <td>' . $numbers->{'Endelig'} . '</td>
-    <td>' . $numbers->{'Avvik'} . '</td>
+    <td' . (abs($diff) > 40 ? ' style="color: orange;"' : '') . '>' . $numbers->{'Avvik'} . '</td>
     <td style="' . (($diff_percent >= 1 || $diff_percent <= -1) ? 'color: red;' : '') . '">' . $formattedNumber . ' %</td>
 ' . $append . '
 </tr>
@@ -372,6 +382,22 @@ foreach ($files as $file) {
         echo '-- Creating [' . dirname($new_file) . "\n";
         mkdir(dirname($new_file), 0777, true);
     }
+
+
+    // TODO:
+    // [ ] B2.1.3 Merknad - Merknader til B2.1.1 + B2.1.2
+    // [ ] B2.2.3 Merknad - Merknader til B2.2.1 + B2.2.2
+
+    // [ ] Parse - two col - 'C2.1 Antall valgtingsstemmesedler i urne'
+    // [ ] C2.3 Merknad fra stemmestyret - Merknader til 'C2.1 og C2.2'
+
+    // [ ] Parse - two col - 'C4.4 Antall stemmesedler i særskilt omslag'
+    // [ ] C4.6 Merknad - Merknader til C4.4 og C4.5
+
+    // [ ] Parse - two col - 'C4.7 Antall stemmesedler i beredskapskonvolutt'
+    // [ ] C4.9 Merknad
+
+    // [ ] Parse - multi col - 'C1 Oversikt over stemmer mottatt i alle kretser'
 
     file_put_contents($new_file, $electionHtml);
 }
