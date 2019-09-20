@@ -54,6 +54,14 @@ foreach ($files as $file) {
         continue;
     }
 
+//    if (!str_contains(strtolower($file), 'ski.kommune.no') && !str_contains(strtolower($file), 'aukra')
+//        && !str_contains(strtolower($file), 'trysil')
+//        && !str_contains(strtolower($file), 'sande')
+//
+//    ) {
+//        continue;
+//    }
+
     $obj = new stdClass();
     try {
         parseFile_andWriteToDisk($obj, $file);
@@ -171,7 +179,7 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         $obj->downloadTime = null;
     }
 
-    $pdfInfo = str_replace('.layout.txt','.pdfinfo.txt', $file);
+    $pdfInfo = str_replace('.layout.txt', '.pdfinfo.txt', $file);
     if (file_exists($pdfInfo)) {
         $obj->pdfMetaData = file_get_contents($pdfInfo);
     }
@@ -213,7 +221,7 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         return;
     }
     if (str_contains(substr($file_content, 0, 100), 'Valprotokoll for fylkesvalstyret')
-    || str_contains(substr($file_content, 0, 100), 'Valgprotokoll for fylkesvalgstyret')) {
+        || str_contains(substr($file_content, 0, 100), 'Valgprotokoll for fylkesvalgstyret')) {
         $obj->documentType = 'valgprotokoll-fylkesvalgstyret';
         $obj->error = false;
         logInfo('Ignoring. Valkesvalgstyret.');
@@ -605,6 +613,46 @@ function parseFile_andWriteToDisk(&$obj, $file) {
 
     // D2 Valgtingsstemmer
     // D2.1 Opptalte valgtingsstemmesedler
+    $current_heading = 'D2.1 Opptalte valgtingsstemmesedler';
+    $column1 = 'Godkjente';
+    $column2 = 'Blanke';
+    $column3 = 'Forkastet';
+    $column4 = 'Total';
+
+    $i = assertLine_trim($lines, $i, $continue_until);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = assertLine_trim($lines, $i, $current_heading);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    regexAssertAndReturnMatch('/^Type \s* ' . $column1 . ' \s* ' . $column2 . ' \s* ' . $column3 . ' \s* ' . $column4 . '$/', trim($lines[$i++]));
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $obj->numbers[$current_heading] = array();
+    foreach (array(
+                 'Ordinære',
+                 'Særskilt',
+                 'Beredskap',
+                 'Fremmede',
+                 'Total antall opptalte valgtingsstemmesedler'
+             ) as $keyWord) {
+        if (
+            ($keyWord == 'Beredskap' && !str_contains($lines[$i], $keyWord))
+            || ($keyWord == 'Fremmede' && !str_contains($lines[$i], $keyWord))
+        ) {
+            // Optional
+            continue;
+        }
+
+        $match = regexAssertAndReturnMatch('/^(' . $keyWord . ') \s* ([0-9]* ?[0-9]+) \s* ([0-9]* ?[0-9]+) \s* ([0-9]* ?[0-9]+) \s* ([0-9]* ?[0-9]+)$/', trim($lines[$i++]));
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $obj->numbers[$current_heading][$match[1]] = array(
+            $column1 => cleanFormattedNumber($match[2]),
+            $column2 => cleanFormattedNumber($match[3]),
+            $column3 => cleanFormattedNumber($match[4]),
+            $column4 => cleanFormattedNumber($match[5]),
+        );
+    }
+    $i = assertLine_trim($lines, $i, 'D2.2 Forkastede valgtingsstemmesedler');
+
+
     // D2.2 Forkastede valgtingsstemmesedler
     // D2.3 Godkjente valgtingsstemmesedler fordelt på parti
     while ($lines[$i] != 'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler') {
@@ -637,15 +685,20 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     }
     $i++;
 
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
 
     $unknown_lines = false;
     for (; $i < count($lines); $i++) {
         $unknown_lines = true;
+        //echo '[' . $i . '] ' . $lines[$i] . "\n";
     }
 
     if ($unknown_lines) {
         logError('Unknown lines in [' . str_replace(__DIR__ . '/', '', $file) . '].');
         // TODO: throw exception here!
+
     }
 
     return;

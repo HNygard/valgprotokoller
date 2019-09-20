@@ -11,5 +11,5 @@
     "reportGenerated": "10.09.2019 18:25:47",
     "election": "Fylkestingsvalget 2019",
     "heading": "Valgprotokoll for valgstyret i Levanger kommune, Trøndelag fylke",
-    "errorMessage": "Did not find expected value on line [5].\nExpected ... : Kommunestyre- og fylkestingsvalget 2019\nActual ..... : Kommunestyre- og fylkestingsvalget 2019                                                     Levanger kommune\n\n#0 2-valgprotokoll-parser.php(306): assertLine_trim(Array, 5, 'Kommunestyre- o...')\n#1 2-valgprotokoll-parser.php(59): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+    "errorMessage": "Did not find expected value on line [5].\nExpected ... : Kommunestyre- og fylkestingsvalget 2019\nActual ..... : Kommunestyre- og fylkestingsvalget 2019                                                     Levanger kommune\n\n#0 2-valgprotokoll-parser.php(313): assertLine_trim(Array, 5, 'Kommunestyre- o...')\n#1 2-valgprotokoll-parser.php(66): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
 }

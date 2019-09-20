@@ -249,6 +249,32 @@
                 "Avvik": -4
             }
         },
+        "D2.1 Opptalte valgtingsstemmesedler": {
+            "Ordinære": {
+                "Godkjente": 22113,
+                "Blanke": 287,
+                "Forkastet": 11,
+                "Total": 22411
+            },
+            "Særskilt": {
+                "Godkjente": 5,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 5
+            },
+            "Beredskap": {
+                "Godkjente": 0,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 0
+            },
+            "Total antall opptalte valgtingsstemmesedler": {
+                "Godkjente": 22118,
+                "Blanke": 287,
+                "Forkastet": 11,
+                "Total": 22416
+            }
+        },
         "D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler": {
             "Alliansen": {
                 "Foreløpig": 114,
@@ -389,11 +415,5 @@
             "Greverud — valgtingsstemmer ordinære:\nok"
         ]
     },
-    "foretattForeløpigOpptellingHosStemmestyrene": true,
-    "otherSources": [
-        {
-            "localSource": "data-store/pdfs/elections-no.github.io-docs-2019-Viken-Nordre Follo kommune, Viken fylke - Fylkestingsvalget3020_2019-09-12.pdf.layout.txt",
-            "url": "<missing>"
-        }
-    ]
+    "foretattForeløpigOpptellingHosStemmestyrene": true
 }
