@@ -10,5 +10,5 @@
     "reportGenerated": "18.09.2019 09:06:55",
     "election": "Kommunestyrevalget 2019",
     "heading": "Valgprotokoll for valgstyret i Klepp kommune, Rogaland fylke",
-    "errorMessage": "Did not find expected value on line [5].\nExpected ... : Kommunestyre- og fylkestingsvalget 2019\nActual ..... : Kommunestyre- og fylkestingsvalget                       2019\n\n#0 2-valgprotokoll-parser.php(326): assertLine_trim(Array, 5, 'Kommunestyre- o...')\n#1 2-valgprotokoll-parser.php(67): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+    "errorMessage": "Did not find expected value on line [7].\nExpected ... : Valgprotokoll for valgstyret - Kommunestyrevalget 2019\nActual ..... : Valgprotokoll for valgstyret - Kommunestyrevalget       2019\n\n#0 2-valgprotokoll-parser.php(341): assertLine_trim(Array, 7, 'Valgprotokoll f...')\n#1 2-valgprotokoll-parser.php(79): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
 }

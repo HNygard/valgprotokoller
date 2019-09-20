@@ -54,6 +54,18 @@ foreach ($files as $file) {
         continue;
     }
 
+    if (isset($argv[1]) && $argv[1] != 'throw') {
+        $file_stripped = str_replace(__DIR__ . '/data-store/pdfs/', '', $file);
+        $file2 = $argv[1];
+        $file2 = str_replace('http://', '', $file2);
+        $file2 = str_replace('https://', '', $file2);
+        $file2 = str_replace('/', '-', $file2);
+        if (!str_contains($file_stripped, $file2)
+            && !str_contains($file_stripped, str_replace('%20', ' ', $file2))) {
+            continue;
+        }
+    }
+
 //    if (!str_contains(strtolower($file), 'ski.kommune.no') && !str_contains(strtolower($file), 'aukra')
 //        && !str_contains(strtolower($file), 'trysil')
 //        && !str_contains(strtolower($file), 'evenes')
@@ -89,7 +101,8 @@ foreach ($files as $file) {
             if (file_exists($file_info_file)) {
                 $file_info = json_decode(file_get_contents($file_info_file));
 
-                if ($file_info->url == $argv[1]) {
+                if ($file_info->url == $argv[1]
+                    || $file_info->url == str_replace('%20', '', $argv[1])) {
                     throw $e;
                 }
             }
