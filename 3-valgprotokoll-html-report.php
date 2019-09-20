@@ -27,6 +27,11 @@ foreach ($entitiesArray2 as $entity) {
 
 $mimesBronnStatus = (array)json_decode(file_get_contents(__DIR__ . '/data-store/mimesbronn-result/result.json'));
 
+$entity_merging = array(
+    'Skedsmo kommune' => 'Lillestrøm kommune'
+);
+
+
 function htmlHeading($title = 'Valgprotokoller') {
     return "<!DOCTYPE html>
 <html>
@@ -473,6 +478,10 @@ foreach ($entity_id__to__obj as $entity) {
     if ($anyMissing) {
         $elections[2] = '<td>Missing election(s).</td>';
     }
+    if (isset($entity_merging[$entity->name])) {
+        $elections[2] = '<td style="color: darkgreen">Merged with [' . $entity_merging[$entity->name] . ']</td>';
+        $anyMissing = false;
+    }
 
     if (isset($entity->mimesBronnUrl)) {
         $tags = 'valgprotokoll_2019';
@@ -511,7 +520,8 @@ foreach ($entity_id__to__obj as $entity) {
 
             foreach ($mimesBronnStatus[$entity->mimesBronnUrl] as $mimesObj) {
                 $mimesLink .= '<br><a href="' . $mimesObj->url . '">' . $mimesObj->display_status . "</a>\n";
-                if (str_contains($mimesObj->display_status, 'Vellykket') && $anyMissing) {
+                if (str_contains($mimesObj->display_status, 'Vellykket')
+                    && $anyMissing) {
                     $mimesLink .= "<br><span style='color: red'>Success but not parsed.</span>\n";
                     $mimesLink .= '<pre style="display: block; max-width: 100px;">';
                     foreach ($mimesObj->files as $file) {
