@@ -74,7 +74,10 @@ $html .= '<h2>Summary</h2>
 ----D2.4-TABLE---
 
 ';
-$summary_html = '';
+$summaryData = array(
+    'Fylkestingsvalget 2019' => 0,
+    'Kommunestyrevalget 2019' => 0
+);
 
 $d1_4_heading = '<table>
 <tr>
@@ -198,7 +201,7 @@ foreach ($files as $file) {
     $obj->file = $file;
     $entity_id__to__obj[$entity_name__to__entity_id[$name . ' kommune']]->elections[] = $obj;
 
-    $summary_html .= '<li>' . $obj->election . ' - ' . $obj->municipality . "</li>\n";
+    $summaryData[$obj->election]++;
 
     $new_path = getNewPath($file);
     $electionHtml = htmlHeading($obj->municipality . ' - ' . $obj->election . ' - Valgprotokoll') . '
@@ -378,6 +381,11 @@ $html .= "</ul>\n\n";
 $html_d1_4 .= '</table>';
 $html_d2_4 .= '</table>';
 
+
+$summary_html = '';
+foreach ($summaryData as $election => $num) {
+    $summary_html .= '<li><b>' . $election . ':</b> ' . $num . " kommuner</li>\n";
+}
 $html = str_replace('-----SUMMARY-----HERE-----', $summary_html, $html);
 $html = str_replace('----D1.4-TABLE---', $html_d1_4, $html);
 $html = str_replace('----D2.4-TABLE---', $html_d2_4, $html);
