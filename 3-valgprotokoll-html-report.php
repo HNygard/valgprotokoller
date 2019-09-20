@@ -298,30 +298,67 @@ foreach ($files as $file) {
 
     $ballotStuffingRow = function ($text, $ballots) {
         $checksum = $ballots->{'Kryss i manntall'} - $ballots->{'Ant. sedler'};
+
+        $color = (str_contains($text, 'Main-votes') || str_contains($text, 'Key figur'))
+            ? 'red'
+            : '';
+        $extraText = $color == 'red' ? ' This should not happen.' : ' Pre-votes: OK.';
+
         return "<td>$text</td>
     <td>" . $ballots->{'Kryss i manntall'} . '</td>
     <td>' . $ballots->{'Ant. sedler'} . '</td>
     <td>' . $checksum . '</td>
     <td>' . ($checksum >= 0
                 ? '<span style="color: darkgreen;">OK. ' . $checksum . ' voters crossed out in census, but didn\'t vote.</span>'
-                : '<span style="color: red;">More votes (' . $ballots->{'Ant. sedler'} . ' ballots) then people who was crossed out in census (' . $ballots->{'Kryss i manntall'} . '). This should not happen.</span>') . '</td>
+                : '<span style="color: ' . $color . ';">More votes (' . $ballots->{'Ant. sedler'} . ' ballots) then people who was'
+                . ' crossed out in census (' . $ballots->{'Kryss i manntall'} . ').' . $extraText . '</span>') . '</td>
     ';
     };
 
 
+    $total = new stdClass();
+    $total->{'Kryss i manntall'} = $obj->keyfigures_totaltAntallKryssIManntallet;
+    $total->{'Ant. sedler'} = $obj->keyfigures_totaltAntallGodkjenteStemmesedler;
+
+    if ($obj->foretattForeløpigOpptellingHosValgstyret) {
+        $d4_1_numbers = $obj->numbers
+            ->{'C4.1 Antall valgtingsstemmesedler i urne'}
+            ->{'Total antall valgtingstemmesedler i urne'};
+        $ballotsMainFirstCount = $d4_1_numbers;
+        $totalKryssIManntallMainVotes = $d4_1_numbers->{'Kryss i manntall'};
+    }
+    else {
+        $totalKryssIManntallMainVotes = $ballotsMainFirstCounting->{'Kryss i manntall'};
+    }
+
+
+    $d2_1_numbers = $obj->numbers->{'D2.1 Opptalte valgtingsstemmesedler'}->{'Total antall opptalte valgtingsstemmesedler'};
+    $ballotsMainFinalCount = new stdClass();
+    $ballotsMainFinalCount->{'Kryss i manntall'} = $totalKryssIManntallMainVotes;
+    // TODO: should we also add forkastet?
+    $ballotsMainFinalCount->{'Ant. sedler'} = $d2_1_numbers->{'Godkjente'};
+
     $html_BallotStuffing .= "<tr>
-    <th rowspan='3'><a href='" . $new_path . "'>" . $obj->election . " - " . $obj->municipality . "</a></th>
+    <th rowspan='6'><a href='" . $new_path . "'>" . $obj->election . " - " . $obj->municipality . "</a></th>
+        " . $ballotStuffingRow('Key figures', $total) . "
+</tr>
+<tr>
     " . $ballotStuffingRow('B2.1.1 - Pre-votes - ordinary', $ballotsPreOrdinary) . '
 </tr>
 <tr>
     ' . $ballotStuffingRow('B2.2.1 - Pre-votes - late arrival', $ballotsPreOrdinary) . '
 </tr>
 <tr>
-    ' . ($ballotsMainFirstCounting == null ? '<td>C2.1 - Main votes - first counting</td><td>-</td>' : $ballotStuffingRow('C2.1 - Main votes - first counting', $ballotsMainFirstCounting)) . '
+    ' . ($ballotsMainFirstCounting == null ? '<td>C2.1 - Main votes - prelim counting stemmestyret</td><td>-</td>' : $ballotStuffingRow('C2.1 - Main votes - prelim counting stemmestyret', $ballotsMainFirstCounting)) . '
+</tr>
+<tr>
+    ' . $ballotStuffingRow('C4.2 - Main-votes - prelim counting valgstyret', $ballotsMainFirstCount) . '
+</tr>
+<tr>
+    ' . $ballotStuffingRow('D2.1 - Main-votes - final counting', $ballotsMainFinalCount) . '
 </tr>
 
 ';
-
     $html_BallotStuffing .= '<tr>
 <td colspan="6" style="background-color: lightgrey; min-height: 5px"></td>
 </tr>
