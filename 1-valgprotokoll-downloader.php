@@ -36,6 +36,10 @@ function downloadUrls_parseTxt($lines) {
         $cache_name = str_replace('https://', '', $line);
         $cache_name = str_replace('/', '-', $cache_name);
         $cache_name = $cache_dir_pdfs . $cache_name . '.pdf';
+        if (file_exists(str_replace('%20', ' ' , $cache_name))) {
+            $cache_name = str_replace('%20', ' ', $cache_name);
+        }
+
         if (!file_exists($cache_name)) {
             $data = getUrlUsingCurl($line);
             file_put_contents($cache_name, $data);

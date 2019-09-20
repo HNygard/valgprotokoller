@@ -513,6 +513,11 @@ foreach ($entity_id__to__obj as $entity) {
                 $mimesLink .= '<br><a href="' . $mimesObj->url . '">' . $mimesObj->display_status . "</a>\n";
                 if (str_contains($mimesObj->display_status, 'Vellykket') && $anyMissing) {
                     $mimesLink .= "<br><span style='color: red'>Success but not parsed.</span>\n";
+                    $mimesLink .= '<pre style="display: block; max-width: 100px;">';
+                    foreach ($mimesObj->files as $file) {
+                        $mimesLink .= 'php 2-valgprotokoll-parser.php "' . $file->url . "\"\n";
+                    }
+                    $mimesLink .= '</pre>';
                 }
 
                 if (isset($mimesObj->answerToQuestions)) {

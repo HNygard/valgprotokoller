@@ -83,6 +83,18 @@ foreach ($files as $file) {
 
         logErrorWithStacktrace('Error parsing [' . $file . '].', $e);
 
+
+        if (isset($argv[1]) && $argv[1] != 'throw') {
+            $file_info_file = str_replace('.layout.txt', '.json', $file);
+            if (file_exists($file_info_file)) {
+                $file_info = json_decode(file_get_contents($file_info_file));
+
+                if ($file_info->url == $argv[1]) {
+                    throw $e;
+                }
+            }
+        }
+
         if (isset($argv[1]) && $argv[1] == 'throw' && $obj->documentType == 'valgprotokoll') {
             throw $e;
         }

@@ -69,12 +69,12 @@ foreach ($a as $entityId => $array) {
         $display_status = str_replace('&aring;', 'aa', $display_status);
         $display_status = str_replace('&aelig;', 'ae', $display_status);
 
-        logInfo(str_pad($entityId, 25) . ' - ' . $display_status .' - ' .$obj->url);
+        logInfo(str_pad($entityId, 25) . ' - ' . $display_status . ' - ' . $obj->url);
 
 
         $urls .= '# ---- ' . $entityId . ' ---- ' . $obj->url . "\n";
         foreach ($obj->files as $file) {
-            $file->url = 'https://www.mimesbronn.no' . $file->baseUrl;
+            $file->url = 'https://www.mimesbronn.no' . str_replace(' ', '%20', $file->baseUrl);
             unset($file->baseUrl);
 
             if ($file->fileType == 'image/jpeg' || $file->fileType == 'image/png') {
