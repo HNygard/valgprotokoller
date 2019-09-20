@@ -2,6 +2,7 @@
     "localSource": "data-store/pdfs/elections-no.github.io-docs-2019-More_og_Romsdal-Ulstein_kommune_kommunestyrevalet.pdf.layout.txt",
     "url": "<missing>",
     "downloadTime": null,
+    "pdfMetaData": "Creator:        JasperReports Library version 5.6.1\nProducer:       iText 2.1.7 by 1T3XT\nCreationDate:   Tue Sep 10 18:27:27 2019 CEST\nModDate:        Tue Sep 10 18:27:27 2019 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          32\nEncrypted:      no\nPage size:      595 x 842 pts (A4)\nPage rot:       0\nFile size:      234795 bytes\nOptimized:      no\nPDF version:    1.4",
     "language": "nn-NO",
     "languageName": "Norwegian, Nynorsk",
     "documentType": "valgprotokoll",
@@ -147,7 +148,7 @@
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
-    "errorMessage": "Undefined offset: 1750\n\n#0 2-valgprotokoll-parser.php(880): {closure}(8, 'Undefined offse...', '...', 880, Array)\n#1 2-valgprotokoll-parser.php(544): readComments(Object(stdClass), Array, 1750, 'C4.6 Merknad', '(\\xC3\\x85rsak til evt...', 'C4.7 Antall ste...')\n#2 2-valgprotokoll-parser.php(66): parseFile_andWriteToDisk(Object(stdClass), '...')\n#3 {main}",
+    "errorMessage": "Undefined offset: 1750\n\n#0 2-valgprotokoll-parser.php(881): {closure}(8, 'Undefined offse...', '...', 881, Array)\n#1 2-valgprotokoll-parser.php(545): readComments(Object(stdClass), Array, 1750, 'C4.6 Merknad', '(\\xC3\\x85rsak til evt...', 'C4.7 Antall ste...')\n#2 2-valgprotokoll-parser.php(67): parseFile_andWriteToDisk(Object(stdClass), '...')\n#3 {main}",
     "otherSources": [
         {
             "localSource": "data-store/pdfs/www.ulstein.kommune.no-_f-p34-i9988a095-5011-416a-82b6-612ca34171cd-motebok-kommunestyrevalet-2019.pdf.pdf.layout.txt",

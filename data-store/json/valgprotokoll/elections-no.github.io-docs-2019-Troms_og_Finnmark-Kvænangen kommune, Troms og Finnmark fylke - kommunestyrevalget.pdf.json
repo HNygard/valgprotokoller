@@ -2,10 +2,11 @@
     "localSource": "data-store/pdfs/elections-no.github.io-docs-2019-Troms_og_Finnmark-Kvænangen kommune, Troms og Finnmark fylke - kommunestyrevalget.pdf.layout.txt",
     "url": "<missing>",
     "downloadTime": null,
+    "pdfMetaData": "Creator:        Xerox WorkCentre 7775\nProducer:       Xerox WorkCentre 7775\nCreationDate:   Wed Sep 11 12:02:33 2019 CEST\nModDate:        Wed Sep 11 11:19:16 2019 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          24\nEncrypted:      no\nPage size:      842 x 595 pts (A4)\nPage rot:       270\nFile size:      1745185 bytes\nOptimized:      yes\nPDF version:    1.4",
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
     "error": true,
     "reportGenerated": "10.09.2019 18:37:19",
-    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\\s*$\nLine ...... :     * VALG\n\n#0 2-valgprotokoll-parser.php(299): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '    * VALG')\n#1 2-valgprotokoll-parser.php(66): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\\s*$\nLine ...... :     * VALG\n\n#0 2-valgprotokoll-parser.php(300): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '    * VALG')\n#1 2-valgprotokoll-parser.php(67): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
 }
