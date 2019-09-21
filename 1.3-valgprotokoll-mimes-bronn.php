@@ -13,7 +13,7 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errconte
 
 
 // :: Download data from Mimes Brønn
-$cacheTimeSeconds = 3600;
+$cacheTimeSeconds = 60 * 60 * 4;
 $cache_location = __DIR__ . '/data-store/mimesbronn-cache';
 
 $additional_urls = array(// Also fetch these FOI requests
