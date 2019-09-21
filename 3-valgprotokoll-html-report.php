@@ -259,7 +259,7 @@ foreach ($files as $file) {
             throw new Exception('Unknown link: ' . $link);
         }
         $pdfLink = $link;
-        $pdfName = $link;
+        $pdfName = htmlentities(urldecode(basename($link)), ENT_QUOTES);
         $pdfOriginal = null;
     }
     else {
