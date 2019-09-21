@@ -226,7 +226,13 @@ foreach ($files as $file) {
 
     if (isset($obj->url) && $obj->url != '<missing>') {
         $obj->url2 = $obj->url;
-        $electionHtml .= 'Kilde: <a href="' . $obj->url . '">' . $obj->url . '</a>';
+        $urlLocal = '../../data-store/pdfs/' . str_replace('docs/data-store/pdfs/', '', $obj->localSource);
+        $electionHtml .= 'Source: <a rel="nofollow" href="'
+             . str_replace('.layout.txt', '', $urlLocal) . '">'
+            . htmlentities(basename($obj->url2), ENT_QUOTES)
+            . '</a> (click to view PDF)'
+            . ' [<a href="' . $urlLocal . '" rel="nofollow">as text</a>]<br>' . chr(10);
+        $electionHtml .= 'Original source: <a href="' . $obj->url . '" rel="nofollow">' . $obj->url . '</a>';
     }
     elseif (str_contains($obj->localSource, 'elections-no.github.io')) {
         // Example localSource
