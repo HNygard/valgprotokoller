@@ -124,7 +124,9 @@ $number_if_large_diff = function ($numbers, $text) {
     }
 
     $diff = $numbers->{'Endelig'} - $numbers->{'Foreløpig'};
-    $diffHtml = " (<span style='color: blue;'>$diff votes</span>)\n";
+    $diffSign = $diff > 0 ? '+' : '';
+    $diffStyle = abs($diff) > 40 ? " style='color: blue;'" : '';
+    $diffHtml = " (<span$diffStyle>$diffSign$diff votes</span>)\n";
     if ($numbers->{'Foreløpig'} != 0) {
         $diff_percent = 100 * (($diff) / $numbers->{'Foreløpig'});
         $formattedNumber = number_format($diff_percent, 2);
@@ -135,7 +137,7 @@ $number_if_large_diff = function ($numbers, $text) {
                 . $diffHtml;
         }
         if (abs($diff) >= 40) {
-            return "\n<span style='color: orange;'>" . $formattedNumber . ' %</span> '
+            return "\n<span style='color: #5b5700;'>" . $formattedNumber . ' %</span> '
                 . $partyNameShorten($text)
                 . $diffHtml;
         }
@@ -162,7 +164,9 @@ $d1_4_d2_4_row = function ($numbers, $text, $append = '') {
     <th>' . $text . '</th>
     <td>' . $numbers->{'Foreløpig'} . '</td>
     <td>' . $numbers->{'Endelig'} . '</td>
-    <td' . (abs($diff) > 40 ? ' style="color: orange;"' : '') . '>' . $numbers->{'Avvik'} . '</td>
+    <td' . (abs($diff) > 40 ? ' style="color: blue;"' : '') . '>'
+        . (($numbers->{'Avvik'} > 0) ? '+' : '')
+        . $numbers->{'Avvik'} . '</td>
     <td style="' . (($diff_percent >= 1 || $diff_percent <= -1) ? 'color: red;' : '') . '">' . $formattedNumber . ' %</td>
 ' . $append . '
 </tr>
