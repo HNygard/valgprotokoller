@@ -33,7 +33,8 @@ $entity_merging = array(
     'Hobøl kommune' => 'Indre Østfold kommune',
     'Tysfjord kommune' => array('Nye Narvik', 'Nye Hamarøy'),
     'Snillfjord kommune' => array('Orkland kommune', 'Heim kommune', 'Hitra kommune'),
-    'Ballangen kommune' => 'Narvik kommune'
+    'Ballangen kommune' => 'Narvik kommune',
+    'Hemne kommune' => 'Heim kommune'
 );
 
 
