@@ -34,7 +34,7 @@ foreach ($kommunale_domener as $line) {
     }
 }
 
-$lines = file(__DIR__ . '/data-store/nynorsk/nynorsk-til-bokmål.csv');
+$lines = file(__DIR__ . '/docs/data-store/nynorsk/nynorsk-til-bokmål.csv');
 $nynorskToBokmaal = array();
 foreach ($lines as $line) {
     if (empty(trim($line))) {
@@ -48,14 +48,14 @@ foreach ($lines as $line) {
 
 $files_written = array();
 
-$files = getDirContents(__DIR__ . '/data-store/pdfs');
+$files = getDirContents(__DIR__ . '/docs/data-store/pdfs');
 foreach ($files as $file) {
     if (!str_ends_with($file, '.layout.txt')) {
         continue;
     }
 
     if (isset($argv[1]) && $argv[1] != 'throw') {
-        $file_stripped = str_replace(__DIR__ . '/data-store/pdfs/', '', $file);
+        $file_stripped = str_replace(__DIR__ . '/docs/data-store/pdfs/', '', $file);
         $file2 = $argv[1];
         $file2 = str_replace('http://', '', $file2);
         $file2 = str_replace('https://', '', $file2);
@@ -115,7 +115,7 @@ foreach ($files as $file) {
 
 
     if (isset($obj->election) && isset($obj->county)) {
-        $data_dir = __DIR__ . '/data-store/json/' . $obj->election . '/' . $obj->county;
+        $data_dir = __DIR__ . '/docs/data-store/json/' . $obj->election . '/' . $obj->county;
         if (!file_exists($data_dir)) {
             mkdir($data_dir, 0777, true);
         }
@@ -136,7 +136,7 @@ foreach ($files as $file) {
         $files_written[$json_file] = $obj;
     }
     elseif (isset($obj->documentType)) {
-        $data_dir = __DIR__ . '/data-store/json/' . $obj->documentType . '/';
+        $data_dir = __DIR__ . '/docs/data-store/json/' . $obj->documentType . '/';
         if (!file_exists($data_dir)) {
             mkdir($data_dir, 0777, true);
         }
@@ -149,7 +149,7 @@ foreach ($files as $file) {
         );
     }
     elseif ($obj->error && $obj->errorMessage == 'No content. Might contain scanned image.') {
-        $data_dir = __DIR__ . '/data-store/json/error-no-content';
+        $data_dir = __DIR__ . '/docs/data-store/json/error-no-content';
         if (!file_exists($data_dir)) {
             mkdir($data_dir, 0777, true);
         }
@@ -159,7 +159,7 @@ foreach ($files as $file) {
         );
     }
     elseif ($obj->error) {
-        $data_dir = __DIR__ . '/data-store/json/error';
+        $data_dir = __DIR__ . '/docs/data-store/json/error';
         if (!file_exists($data_dir)) {
             mkdir($data_dir, 0777, true);
         }
@@ -257,7 +257,7 @@ function parseFile_andWriteToDisk(&$obj, $file) {
      * DIDN'T WORK - Should maybe pre clean these type of file instead of cluttering the code
      *  if (str_starts_with(trim($file_content), '* VALG')) {
          // Remove some stuff at the beginning of the file.
-         // data-store/pdfs/elections-no.github.io-docs-2019-Troms_og_Finnmark-Kvænangen kommune, Troms og Finnmark fylke - kommunestyrevalget.pdf.layout.txt
+         // docs/data-store/pdfs/elections-no.github.io-docs-2019-Troms_og_Finnmark-Kvænangen kommune, Troms og Finnmark fylke - kommunestyrevalget.pdf.layout.txt
          logInfo('Removing "* VALG" from first line.');
          $file_content = trim(substr(trim($file_content), strlen('* VALG')));
      }*/

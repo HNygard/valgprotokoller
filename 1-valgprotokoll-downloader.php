@@ -2,7 +2,7 @@
 /**
  * Download 'valgprotokoll' from different sources.
  *
- * 1. Read data-store/urls.txt
+ * 1. Read docs/data-store/urls.txt
  * 2. Download all PDFs we haven't downloaded yet.
  * 3. Use 'pdftotext' to parse PDFs and get ready for regex.
  * 4. Parser magic. Regex and such.
@@ -16,9 +16,9 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errconte
 });
 
 
-$cache_dir_pdfs = __DIR__ . '/data-store/pdfs/';
+$cache_dir_pdfs = __DIR__ . '/docs/data-store/pdfs/';
 
-$lines = file(__DIR__ . '/data-store/urls.txt');
+$lines = file(__DIR__ . '/docs/data-store/urls.txt');
 $clean_file = downloadUrls_parseTxt($lines);
 function downloadUrls_parseTxt($lines) {
     global $cache_dir_pdfs;
@@ -77,10 +77,10 @@ function downloadUrls_parseTxt($lines) {
     return $clean_file;
 }
 
-file_put_contents(__DIR__ . '/data-store/urls.txt', $clean_file);
+file_put_contents(__DIR__ . '/docs/data-store/urls.txt', $clean_file);
 
 
-$lines = file(__DIR__ . '/data-store/mimesbronn-result/urls.txt');
+$lines = file(__DIR__ . '/docs/data-store/mimesbronn-result/urls.txt');
 downloadUrls_parseTxt($lines);
 
 function str_starts_with($haystack, $needle) {

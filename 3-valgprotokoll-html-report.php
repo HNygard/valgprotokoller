@@ -10,7 +10,7 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errconte
     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
 });
 
-$files = getDirContents(__DIR__ . '/data-store/json');
+$files = getDirContents(__DIR__ . '/docs/data-store/json');
 
 $entitiesArray = json_decode(file_get_contents(__DIR__ . '/entities.json'))->entities;
 $entitiesArray2 = json_decode(file_get_contents(__DIR__ . '/entitiesNonExisting.json'))->entities;
@@ -25,7 +25,7 @@ foreach ($entitiesArray2 as $entity) {
     $entity_name__to__entity_id[$entity->name] = $entity->entityId;
 }
 
-$mimesBronnStatus = (array)json_decode(file_get_contents(__DIR__ . '/data-store/mimesbronn-result/result.json'));
+$mimesBronnStatus = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/mimesbronn-result/result.json'));
 
 $entity_merging = array(
     'Skedsmo kommune' => 'Lillestrøm kommune'
@@ -63,7 +63,7 @@ $html = htmlHeading() . "
 
 <h1>Election protocol (\"Valgprotokoller\" / \"Valgstyrets møtebok\")</h1>\n";
 $html .= "Created by <a href='https://twitter.com/hallny'>@hallny</a> / <a href='https://norske-postlister.no'>Norske-postlister.no</a><br>\n";
-$html .= "<a href='https://github.com/HNygard/valgprotokoller/blob/master/data-store/urls.txt'>Source - URL list</a> -\n";
+$html .= "<a href='https://github.com/HNygard/valgprotokoller/blob/master/docs/data-store/urls.txt'>Source - URL list</a> -\n";
 $html .= "<a href='https://github.com/elections-no/elections-no.github.io/tree/master/docs/2019'>Source - Elections.no</a> -\n";
 $html .= "<a href='https://github.com/HNygard/valgprotokoller'>Source code for this report</a> (Github)<br>\n";
 $html .= "<br><br><a href='ballot-stuffing.html'>Ballot stuffing</a>\n\n";
@@ -194,7 +194,7 @@ $partyNameShorten = function ($text) {
 };
 
 function getNewPath($file) {
-    return str_replace('.json', '.html', str_replace('data-store/json/', '', str_replace(__DIR__ . '/', '', $file)));
+    return str_replace('.json', '.html', str_replace('docs/data-store/json/', '', str_replace(__DIR__ . '/', '', $file)));
 }
 
 foreach ($files as $file) {
@@ -230,7 +230,7 @@ foreach ($files as $file) {
     }
     elseif (str_contains($obj->localSource, 'elections-no.github.io')) {
         // Example localSource
-        // data-store/pdfs/elections-no.github.io-docs-2019-Agder-Bykle kommune, Agder fylke - kommunestyrevalget4222_2019-09-10.pdf.layout.txt
+        // docs/data-store/pdfs/elections-no.github.io-docs-2019-Agder-Bykle kommune, Agder fylke - kommunestyrevalget4222_2019-09-10.pdf.layout.txt
         $link = $obj->localSource;
         foreach (array(
                      'Agder',
@@ -245,7 +245,7 @@ foreach ($files as $file) {
                      'Vestfold_og_Telemark'
                  ) as $county) {
             $link = str_replace(
-                'data-store/pdfs/elections-no.github.io-docs-2019-' . $county . '-',
+                'docs/data-store/pdfs/elections-no.github.io-docs-2019-' . $county . '-',
                 'https://github.com/elections-no/elections-no.github.io/blob/master/docs/2019/' . $county . '/',
                 $link
             );

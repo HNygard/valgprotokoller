@@ -14,7 +14,7 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errconte
 
 // :: Download data from Mimes Brønn
 $cacheTimeSeconds = 60 * 60 * 4;
-$cache_location = __DIR__ . '/data-store/mimesbronn-cache';
+$cache_location = __DIR__ . '/docs/data-store/mimesbronn-cache';
 
 $additional_urls = array(// Also fetch these FOI requests
 );
@@ -31,7 +31,7 @@ ksort($a);
 //
 // # Next item
 
-$svar = file(__DIR__ . '/data-store/mimesbronn-result/svar.txt');
+$svar = file(__DIR__ . '/docs/data-store/mimesbronn-result/svar.txt');
 $answers_to_questions = array();
 $current_svar = '';
 $current_url = '';
@@ -92,8 +92,8 @@ foreach ($a as $entityId => $array) {
         }
     }
 }
-file_put_contents(__DIR__ . '/data-store/mimesbronn-result/urls.txt', $urls);
-file_put_contents(__DIR__ . '/data-store/mimesbronn-result/result.json', json_encode($a, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
+file_put_contents(__DIR__ . '/docs/data-store/mimesbronn-result/urls.txt', $urls);
+file_put_contents(__DIR__ . '/docs/data-store/mimesbronn-result/result.json', json_encode($a, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
 
 if (!empty($answers_to_questions)) {
     var_dump($answers_to_questions);

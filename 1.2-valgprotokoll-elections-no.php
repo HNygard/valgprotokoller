@@ -17,7 +17,7 @@ exec($command, $find);
 logInfo("Command output\n" . implode("\n", $find));
 
 $data_dir = __DIR__ . '/elections-no.github.io/docs/2019/';
-$cache_dir_pdfs = __DIR__ . '/data-store/pdfs/';
+$cache_dir_pdfs = __DIR__ . '/docs/data-store/pdfs/';
 
 $files = getDirContents($data_dir);
 foreach ($files as $file) {
@@ -29,7 +29,7 @@ foreach ($files as $file) {
     $cache_name = str_replace(__DIR__ . '/', '', $file);
     logInfo('Reading [' . $cache_name . ']');
     $cache_name = str_replace('/', '-', $cache_name);
-    $cache_name = __DIR__ . '/data-store/pdfs/' . $cache_name;
+    $cache_name = __DIR__ . '/docs/data-store/pdfs/' . $cache_name;
 
     // :: Read PDF into TXT file
     // Keeping layout as this is important for tables.
