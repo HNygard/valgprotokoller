@@ -224,15 +224,12 @@ foreach ($files as $file) {
 
 <h1>' . $obj->election . ' - ' . $obj->municipality . "</h1>\n";
 
+    $urlLocal = '../../data-store/pdfs/' . str_replace('docs/data-store/pdfs/', '', $obj->localSource);
     if (isset($obj->url) && $obj->url != '<missing>') {
         $obj->url2 = $obj->url;
-        $urlLocal = '../../data-store/pdfs/' . str_replace('docs/data-store/pdfs/', '', $obj->localSource);
-        $electionHtml .= 'Source: <a rel="nofollow" href="'
-             . str_replace('.layout.txt', '', $urlLocal) . '">'
-            . htmlentities(basename($obj->url2), ENT_QUOTES)
-            . '</a> (click to view PDF)'
-            . ' [<a href="' . $urlLocal . '" rel="nofollow">as text</a>]<br>' . chr(10);
-        $electionHtml .= 'Original source: <a href="' . $obj->url . '" rel="nofollow">' . $obj->url . '</a>';
+        $pdfLink = str_replace('.layout.txt', '', $urlLocal);
+        $pdfName = htmlentities(urldecode(basename($obj->url2)), ENT_QUOTES);
+        $pdfOriginal = $obj->url;
     }
     elseif (str_contains($obj->localSource, 'elections-no.github.io')) {
         // Example localSource
@@ -256,16 +253,29 @@ foreach ($files as $file) {
                 $link
             );
         }
+        $link = str_replace('https://github.com/elections-no/elections-no.github.io/blob/master/docs', 'https://elections.no/docs', $link);
         $link = str_replace('.layout.txt', '', $link);
         if (!str_starts_with($link, 'https://')) {
             throw new Exception('Unknown link: ' . $link);
         }
-        $obj->url2 = $link;
-        $electionHtml .= 'Kilde: <a href="' . $link . '">' . $link . '</a>';
+        $pdfLink = $link;
+        $pdfName = $link;
+        $pdfOriginal = null;
     }
     else {
         throw new Exception('Unknown source: ' . $obj->localSource);
     }
+    $obj->url2 = $pdfLink;
+
+    $electionHtml .= 'Source: <a rel="nofollow" href="'
+        . $pdfLink . '">'
+        . $pdfName
+        . '</a> (click to view PDF)'
+        . ' [<a href="' . $urlLocal . '" rel="nofollow">as text</a>]<br>' . chr(10);
+    if ($pdfOriginal != null) {
+        $electionHtml .= 'Original source: <a href="' . $obj->url . '" rel="nofollow">' . $obj->url . '</a>';
+    }
+
     foreach ($obj->comments as $commentType => $comments) {
         $html .= "<li><b>$commentType: </b>" . implode("<br>", $comments) . "</li>\n";
     }
