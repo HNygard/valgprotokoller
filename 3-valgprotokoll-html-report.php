@@ -28,7 +28,12 @@ foreach ($entitiesArray2 as $entity) {
 $mimesBronnStatus = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/mimesbronn-result/result.json'));
 
 $entity_merging = array(
-    'Skedsmo kommune' => 'Lillestrøm kommune'
+    'Skedsmo kommune' => 'Lillestrøm kommune',
+    'Spydeberg kommune' => 'Indre Østfold kommune',
+    'Hobøl kommune' => 'Indre Østfold kommune',
+    'Tysfjord kommune' => array('Nye Narvik', 'Nye Hamarøy'),
+    'Snillfjord kommune' => array('Orkland kommune', 'Heim kommune', 'Hitra kommune'),
+    'Ballangen kommune' => 'Narvik kommune'
 );
 
 
@@ -500,7 +505,10 @@ foreach ($entity_id__to__obj as $entity) {
         $elections[2] = '<td>Missing election(s).</td>';
     }
     if (isset($entity_merging[$entity->name])) {
-        $elections[2] = '<td style="color: darkgreen">Merged with [' . $entity_merging[$entity->name] . ']</td>';
+        $new_name = is_array($entity_merging[$entity->name])
+            ? implode(', ', $entity_merging[$entity->name])
+            : $entity_merging[$entity->name];
+        $elections[2] = '<td style="color: darkgreen">Merged other municipality. New is [' . $new_name . ']</td>';
         $anyMissing = false;
     }
 
