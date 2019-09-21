@@ -270,8 +270,9 @@ foreach ($files as $file) {
     $electionHtml .= 'Source: <a rel="nofollow" href="'
         . $pdfLink . '">'
         . $pdfName
-        . '</a> (click to view PDF)'
-        . ' [<a href="' . $urlLocal . '" rel="nofollow">as text</a>]<br>' . chr(10);
+        . '</a> (click to view PDF)' . chr(10)
+        . ' [<a href="' . $urlLocal . '" rel="nofollow">as text</a>]' . chr(10)
+        . ' [<a href="' . str_replace(__DIR__ . '/docs/', '../../', $file) . '" rel="nofollow">as JSON</a>]<br>' . chr(10);
     if ($pdfOriginal != null) {
         $electionHtml .= 'Original source: <a href="' . $obj->url . '" rel="nofollow">' . $obj->url . '</a>';
     }
