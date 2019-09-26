@@ -941,6 +941,7 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         $current_party = 'NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL';
         $obj->e1_1_listestemmetall_og_mandater = array();
         $unknown_lines_e1_1 = array();
+        $kommunestyrerepresentanter = null;
         while ($lines[$i] != 'Mandatene ble fordelt som følger:') {
             if (str_contains($lines[$i], '. div ')) {
                 regexAssertAndReturnMatch('/^\s*[0-9]*\. div\s*[0-9\.]*\s\s*\s[0-9, ]*\s*$/', $lines[$i++]);
@@ -954,24 +955,32 @@ function parseFile_andWriteToDisk(&$obj, $file) {
                 $i = removeLineIfPresent_andEmpty($lines, $i);
 
                 $match = regexAssertAndReturnMatch('/^\s*Antall stemmesedler x antall kst\.repr\.= ([0-9]*) x ([0-9]*)\s\s*\s([0-9]*)$/', $lines[$i++]);
-                $current_party->stemmesedler = $match[1];
-                $current_party->kommunestyrerepresentanter = $match[2];
-                $current_party->sedler_ganger_kst_repr = $match[3];
+                $current_party->stemmesedler = cleanFormattedNumber($match[1]);
+                $current_party->kommunestyrerepresentanter = cleanFormattedNumber($match[2]);
+                $current_party->sedler_ganger_kst_repr = cleanFormattedNumber($match[3]);
                 $i = removeLineIfPresent_andEmpty($lines, $i);
 
                 $match = regexAssertAndReturnMatch('/^\s*Mottatt:\s\s*\s([0-9]*)$/', $lines[$i++]);
-                $current_party->slengere_mottatt = $match[1];
+                $current_party->slengere_mottatt = cleanFormattedNumber($match[1]);
                 $i = removeLineIfPresent_andEmpty($lines, $i);
 
                 regexAssertAndReturnMatch('/^\s*Slengere:\s*$/', $lines[$i++]);
                 $i = removeLineIfPresent_andEmpty($lines, $i);
 
                 $match = regexAssertAndReturnMatch('/^\s*Avgitt:\s\s*\s([0-9]*)$/', $lines[$i++]);
-                $current_party->slengere_avgitt = $match[1];
+                $current_party->slengere_avgitt = cleanFormattedNumber($match[1]);
                 $i = removeLineIfPresent_andEmpty($lines, $i);
 
                 $match = regexAssertAndReturnMatch('/^\s*Listestemmetall:\s\s*\s([0-9]*)$/', $lines[$i++]);
-                $current_party->listestemmetall = $match[1];
+                $current_party->listestemmetall = cleanFormattedNumber($match[1]);
+
+                // :: Consistency check
+                if ($kommunestyrerepresentanter != null && $current_party->kommunestyrerepresentanter != $kommunestyrerepresentanter) {
+                    var_dump($obj->e1_1_listestemmetall_og_mandater);
+                    var_dump($current_party);
+                    throw new Exception('Different kommunestyrerepresentanter.');
+                }
+                $kommunestyrerepresentanter = $current_party->kommunestyrerepresentanter;
             }
             else {
                 $unknown_lines_e1_1[] = $lines[$i++];
