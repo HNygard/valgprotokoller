@@ -86,7 +86,6 @@ foreach ($files as $file) {
         $dir = __DIR__;
         $dir_last = __DIR__;
         while (dirname($dir) != $dir_last) {
-            echo dirname($dir) . " -- " . $dir_last . "\n";
             $obj->errorMessage = str_replace(dirname($dir), '', $obj->errorMessage);
             $dir_last = dirname($dir);
             $dir = dirname($dir);
@@ -734,8 +733,41 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     $continue_until = 'D3 Totaloversikt over antall stemmesedler fordelt på parti';
     $i = readComments($obj, $lines, $i, $merknad_heading, $merknad_reason, $continue_until);
 
-
     // D3 Totaloversikt over antall stemmesedler fordelt på parti
+    if (str_contains($obj->election, 'Kommunestyrevalget')) {
+        // E Valgoppgjør
+        // E1 Mandatfordeling
+        // E1.1 Beregning av listestemmetall og antall mandater til listene
+        // Mandatene ble fordelt som følger:
+
+        while ($lines[$i] != 'Mandatene ble fordelt som følger:') {
+            // Skip
+            $i++;
+        }
+
+        $current_heading = 'Mandatene ble fordelt som følger:';
+        $text_heading = 'Mandat nr.:';
+        $column_heading = null;
+        $column1 = 'Parti:';
+        $column2 = 'Kvotient:';
+        $sum_row1 = null;
+        $sum_row2 = null;
+        $table_ending = 'E2 Kandidatkåring';
+        $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
+        $i = assertLine_trim($lines, $i, $table_ending);
+
+        // Move it do a sensible key
+        $obj->mandatFordelingEndelig = $obj->numbers[$current_heading];
+        unset($obj->numbers[$current_heading]);
+
+        // E2 Kandidatkåring
+        // E2.1 Beregning av stemmetillegg og personstemmer
+        // E2.2 Valgte representanter og vararepresentanter
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        assertLine_trim($lines, $i, 'E2.1 Beregning av stemmetillegg og personstemmer');
+    }
+
+
     while ($lines[$i] != 'Øvrige medlemmer:') {
         // Skip
         $i++;
@@ -761,47 +793,49 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     return;
 }
 
-function readTableRow($lines, $i, $header_length, array $start_of_row_keywords, $table_ending, $rowRegex, $returnFunction) {
+function readTableRow($lines, $i, $header_length, $start_of_row_keywords, $table_ending, $rowRegex, $returnFunction) {
     // One line.
     $row_lines = array($lines[$i++]);
 
-    // :: Line 2
+    if ($start_of_row_keywords != 'one_line_for_each') {
+        // :: Line 2
 
-    $start_with_keyword = false;
-    foreach ($start_of_row_keywords as $keyword) {
-        if (str_starts_with(trim($lines[$i]), $keyword)) {
-            $start_with_keyword = true;
+        $start_with_keyword = false;
+        foreach ($start_of_row_keywords as $keyword) {
+            if (str_starts_with(trim($lines[$i]), $keyword)) {
+                $start_with_keyword = true;
+            }
         }
-    }
-    if (
-        // Stop picking up lines, if there are empty lines
-        strlen($lines[$i]) > 3
+        if (
+            // Stop picking up lines, if there are empty lines
+            strlen($lines[$i]) > 3
 
-        // Is the next line a key word?
-        && !$start_with_keyword
+            // Is the next line a key word?
+            && !$start_with_keyword
 
-        // This is not the last line?
-        && !str_starts_with(trim($lines[$i]), $table_ending)) {
-        $row_lines[] = str_replace("\r", '', $lines[$i++]);
-    }
-
-    // :: Line 3
-
-    foreach ($start_of_row_keywords as $keyword) {
-        if (str_starts_with(trim($lines[$i]), $keyword)) {
-            $start_with_keyword = true;
+            // This is not the last line?
+            && !str_starts_with(trim($lines[$i]), $table_ending)) {
+            $row_lines[] = str_replace("\r", '', $lines[$i++]);
         }
-    }
-    if (
-        // Stop picking up lines, if there are empty lines
-        strlen($lines[$i]) > 3
 
-        // Is the next line a key word?
-        && !$start_with_keyword
+        // :: Line 3
 
-        // This is not the last line?
-        && !str_starts_with(trim($lines[$i]), $table_ending)) {
-        $row_lines[] = str_replace("\r", '', $lines[$i++]);
+        foreach ($start_of_row_keywords as $keyword) {
+            if (str_starts_with(trim($lines[$i]), $keyword)) {
+                $start_with_keyword = true;
+            }
+        }
+        if (
+            // Stop picking up lines, if there are empty lines
+            strlen($lines[$i]) > 3
+
+            // Is the next line a key word?
+            && !$start_with_keyword
+
+            // This is not the last line?
+            && !str_starts_with(trim($lines[$i]), $table_ending)) {
+            $row_lines[] = str_replace("\r", '', $lines[$i++]);
+        }
     }
 
 
@@ -856,20 +890,46 @@ function readTable_twoColumns(&$obj, &$lines, $i, $current_heading, $text_headin
         regexAssertAndReturnMatch('/^' . $text_heading . '\s*' . $column1 . '\s*' . $column2 . '$/', trim($lines[$i++]));
     }
     while (!str_starts_with(trim($lines[$i]), $table_ending)) {
-        $row = readTableRow($lines, $i, $header_length, array(), $table_ending,
-            '/^(.*)\s+\s\s(([0-9]* ?[0-9]+)|(\—))\s\s\s+([0-9]* ?[0-9]+)\s*$/',
-            function ($i, $row_lines, $row_line, $match) {
+
+        $rowRegex = '/^(.*)\s+\s\s(([0-9]* ?[0-9]+)|(\—))\s\s\s+([0-9]* ?[0-9]+)\s*$/';
+        $returnFunction = function ($i, $row_lines, $row_line, $match) {
+            return array(
+                'i' => $i,
+                'line' => $row_lines,
+                'text' => $row_line,
+                'numberColumn1' => cleanFormattedNumber($match[2]),
+                'numberColumn2' => cleanFormattedNumber($match[5])
+            );
+        };
+        $start_of_row_keywords = array();
+        if ($text_heading == 'Mandat nr.:') {
+            // Not the normal name/party and two number columns
+            //     Number       Party        Number
+            $rowRegex = '/^\s*(([0-9]* ?[0-9]+)|(\—))\s+\s\s(.*)\s\s\s+([0-9]* ?[0-9]* ?[0-9]+,[0-9]*)\s*$/';
+            $returnFunction = function ($i, $row_lines, $row_line, $match) {
+                var_dump($match);
                 return array(
                     'i' => $i,
                     'line' => $row_lines,
-                    'text' => $row_line,
-                    'numberColumn1' => $match[2],
-                    'numberColumn2' => $match[5]
+                    'text' => cleanFormattedNumber($row_line),
+                    'numberColumn1' => trim($match[4]),
+                    'numberColumn2' => (float)str_replace(',', '.', cleanFormattedNumber($match[5]))
                 );
-            });
+            };
+            $start_of_row_keywords = "one_line_for_each";
+
+            if (str_contains($lines[$i], $text_heading)) {
+                // -> Next page. New heading.
+                regexAssertAndReturnMatch('/^' . $text_heading . '\s*' . $column1 . '\s*' . $column2 . '$/', trim($lines[$i++]));
+            }
+        }
+
+        $row = readTableRow($lines, $i, $header_length, $start_of_row_keywords, $table_ending,
+            $rowRegex,
+            $returnFunction);
         $obj->numbers[$current_heading][$row['text']] = array(
-            $column1 => cleanFormattedNumber($row['numberColumn1']),
-            $column2 => cleanFormattedNumber($row['numberColumn2'])
+            str_replace(':', '', $column1) => $row['numberColumn1'],
+            str_replace(':', '', $column2) => $row['numberColumn2']
         );
         $i = $row['i'];
     }

@@ -10,5 +10,5 @@
     "reportGenerated": "11.09.2019 07:22:36",
     "election": "Kommunestyrevalget 2019",
     "heading": "Valgprotokoll for valgstyret i Heim kommune, Trøndelag fylke",
-    "errorMessage": "Did not find expected value on line [5].\nExpected ... : Kommunestyre- og fylkestingsvalget 2019\nActual ..... : Kommunestyre- og fylkestingsvalget                       2019\n\n#0 2-valgprotokoll-parser.php(339): assertLine_trim(Array, 5, 'Kommunestyre- o...')\n#1 2-valgprotokoll-parser.php(79): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+    "errorMessage": "Did not find expected value on line [5].\nExpected ... : Kommunestyre- og fylkestingsvalget 2019\nActual ..... : Kommunestyre- og fylkestingsvalget                       2019\n\n#0 2-valgprotokoll-parser.php(338): assertLine_trim(Array, 5, 'Kommunestyre- o...')\n#1 2-valgprotokoll-parser.php(79): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
 }
