@@ -978,6 +978,9 @@ function parseFile_andWriteToDisk(&$obj, $file) {
             }
             $i = removeLineIfPresent_andEmpty($lines, $i);
         }
+        if (!is_string($current_party)) {
+            $obj->e1_1_listestemmetall_og_mandater[] = $current_party;
+        }
         if (count($unknown_lines_e1_1) > 0) {
             throw new Exception('Unknown line in E1.1: ' . chr(10) . implode(chr(10), $unknown_lines_e1_1));
         }
