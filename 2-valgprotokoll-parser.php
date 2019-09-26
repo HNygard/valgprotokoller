@@ -738,8 +738,9 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         // E Valgoppgjør
         // E1 Mandatfordeling
         // E1.1 Beregning av listestemmetall og antall mandater til listene
-        // Mandatene ble fordelt som følger:
 
+
+        // Mandatene ble fordelt som følger:
         while ($lines[$i] != 'Mandatene ble fordelt som følger:') {
             // Skip
             $i++;
