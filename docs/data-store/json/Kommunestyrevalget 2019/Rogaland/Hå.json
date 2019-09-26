@@ -331,7 +331,8 @@
             "sedler_ganger_kst_repr": 1881,
             "slengere_mottatt": 16,
             "slengere_avgitt": 5,
-            "listestemmetall": 1892
+            "listestemmetall": 1892,
+            "listestemmetall_simulated_initial_counting": 1892
         },
         {
             "name": "Senterpartiet",
@@ -340,7 +341,8 @@
             "sedler_ganger_kst_repr": 46827,
             "slengere_mottatt": 329,
             "slengere_avgitt": 338,
-            "listestemmetall": 46818
+            "listestemmetall": 46818,
+            "listestemmetall_simulated_initial_counting": 46785
         },
         {
             "name": "Partiet De Kristne",
@@ -349,7 +351,8 @@
             "sedler_ganger_kst_repr": 5808,
             "slengere_mottatt": 9,
             "slengere_avgitt": 24,
-            "listestemmetall": 5793
+            "listestemmetall": 5793,
+            "listestemmetall_simulated_initial_counting": 5793
         },
         {
             "name": "Framstegspartiet",
@@ -358,7 +361,8 @@
             "sedler_ganger_kst_repr": 27753,
             "slengere_mottatt": 170,
             "slengere_avgitt": 138,
-            "listestemmetall": 27785
+            "listestemmetall": 27785,
+            "listestemmetall_simulated_initial_counting": 27719
         },
         {
             "name": "Raudt",
@@ -367,7 +371,8 @@
             "sedler_ganger_kst_repr": 2937,
             "slengere_mottatt": 20,
             "slengere_avgitt": 19,
-            "listestemmetall": 2938
+            "listestemmetall": 2938,
+            "listestemmetall_simulated_initial_counting": 2938
         },
         {
             "name": "Arbeidarpartiet",
@@ -376,7 +381,8 @@
             "sedler_ganger_kst_repr": 23364,
             "slengere_mottatt": 194,
             "slengere_avgitt": 189,
-            "listestemmetall": 23369
+            "listestemmetall": 23369,
+            "listestemmetall_simulated_initial_counting": 23402
         },
         {
             "name": "Høgre",
@@ -385,7 +391,8 @@
             "sedler_ganger_kst_repr": 41118,
             "slengere_mottatt": 286,
             "slengere_avgitt": 276,
-            "listestemmetall": 41128
+            "listestemmetall": 41128,
+            "listestemmetall_simulated_initial_counting": 41095
         },
         {
             "name": "Kristeleg Folkeparti",
@@ -394,7 +401,8 @@
             "sedler_ganger_kst_repr": 61116,
             "slengere_mottatt": 270,
             "slengere_avgitt": 359,
-            "listestemmetall": 61027
+            "listestemmetall": 61027,
+            "listestemmetall_simulated_initial_counting": 60994
         },
         {
             "name": "SV - Sosialistisk Venstreparti",
@@ -403,7 +411,8 @@
             "sedler_ganger_kst_repr": 7524,
             "slengere_mottatt": 49,
             "slengere_avgitt": 32,
-            "listestemmetall": 7541
+            "listestemmetall": 7541,
+            "listestemmetall_simulated_initial_counting": 7541
         },
         {
             "name": "Hå-lista",
@@ -412,7 +421,8 @@
             "sedler_ganger_kst_repr": 77385,
             "slengere_mottatt": 367,
             "slengere_avgitt": 330,
-            "listestemmetall": 77422
+            "listestemmetall": 77422,
+            "listestemmetall_simulated_initial_counting": 77521
         }
     ],
     "mandatFordelingEndelig": {
@@ -560,5 +570,17 @@
         "Liberalistene": 0,
         "Partiet De Kristne": 0,
         "Raudt": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeidarpartiet": 3,
+        "Framstegspartiet": 3,
+        "Hå-lista": 9,
+        "Høgre": 5,
+        "Kristeleg Folkeparti": 7,
+        "Liberalistene": 0,
+        "Partiet De Kristne": 0,
+        "Raudt": 0,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Senterpartiet": 5
     }
 }

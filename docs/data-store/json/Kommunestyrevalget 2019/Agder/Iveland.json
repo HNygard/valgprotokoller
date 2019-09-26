@@ -277,7 +277,8 @@
             "sedler_ganger_kst_repr": 1054,
             "slengere_mottatt": 17,
             "slengere_avgitt": 0,
-            "listestemmetall": 1071
+            "listestemmetall": 1071,
+            "listestemmetall_simulated_initial_counting": 1071
         },
         {
             "name": "Senterpartiet",
@@ -286,7 +287,8 @@
             "sedler_ganger_kst_repr": 4318,
             "slengere_mottatt": 40,
             "slengere_avgitt": 52,
-            "listestemmetall": 4306
+            "listestemmetall": 4306,
+            "listestemmetall_simulated_initial_counting": 4306
         },
         {
             "name": "Høyre",
@@ -295,7 +297,8 @@
             "sedler_ganger_kst_repr": 2618,
             "slengere_mottatt": 32,
             "slengere_avgitt": 34,
-            "listestemmetall": 2616
+            "listestemmetall": 2616,
+            "listestemmetall_simulated_initial_counting": 2616
         },
         {
             "name": "Kristelig Folkeparti",
@@ -304,7 +307,8 @@
             "sedler_ganger_kst_repr": 2601,
             "slengere_mottatt": 27,
             "slengere_avgitt": 34,
-            "listestemmetall": 2594
+            "listestemmetall": 2594,
+            "listestemmetall_simulated_initial_counting": 2577
         },
         {
             "name": "Arbeiderpartiet",
@@ -313,7 +317,8 @@
             "sedler_ganger_kst_repr": 1496,
             "slengere_mottatt": 19,
             "slengere_avgitt": 15,
-            "listestemmetall": 1500
+            "listestemmetall": 1500,
+            "listestemmetall_simulated_initial_counting": 1500
         }
     ],
     "mandatFordelingEndelig": {
@@ -392,5 +397,12 @@
         "Kristelig Folkeparti": 4,
         "Arbeiderpartiet": 2,
         "Fremskrittspartiet": 1
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 2,
+        "Fremskrittspartiet": 1,
+        "Høyre": 4,
+        "Kristelig Folkeparti": 4,
+        "Senterpartiet": 6
     }
 }

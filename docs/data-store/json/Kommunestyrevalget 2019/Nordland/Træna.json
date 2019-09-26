@@ -257,7 +257,8 @@
             "sedler_ganger_kst_repr": 1815,
             "slengere_mottatt": 31,
             "slengere_avgitt": 19,
-            "listestemmetall": 1827
+            "listestemmetall": 1827,
+            "listestemmetall_simulated_initial_counting": 1827
         },
         {
             "name": "Helsepartiet",
@@ -266,7 +267,8 @@
             "sedler_ganger_kst_repr": 121,
             "slengere_mottatt": 2,
             "slengere_avgitt": 14,
-            "listestemmetall": 109
+            "listestemmetall": 109,
+            "listestemmetall_simulated_initial_counting": 109
         },
         {
             "name": "Fellesliste for Senterpartiet og Kristelig Folkeparti",
@@ -275,7 +277,8 @@
             "sedler_ganger_kst_repr": 770,
             "slengere_mottatt": 26,
             "slengere_avgitt": 26,
-            "listestemmetall": 770
+            "listestemmetall": 770,
+            "listestemmetall_simulated_initial_counting": 770
         }
     ],
     "mandatFordelingEndelig": {
@@ -325,6 +328,11 @@
         }
     },
     "e1_mandatPerParty": {
+        "Arbeiderpartiet": 8,
+        "Fellesliste for Senterpartiet og Kristelig Folkeparti": 3,
+        "Helsepartiet": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
         "Arbeiderpartiet": 8,
         "Fellesliste for Senterpartiet og Kristelig Folkeparti": 3,
         "Helsepartiet": 0

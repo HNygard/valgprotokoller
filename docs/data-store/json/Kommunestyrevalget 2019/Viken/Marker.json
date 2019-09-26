@@ -267,7 +267,8 @@
             "sedler_ganger_kst_repr": 3255,
             "slengere_mottatt": 19,
             "slengere_avgitt": 28,
-            "listestemmetall": 3246
+            "listestemmetall": 3246,
+            "listestemmetall_simulated_initial_counting": 3246
         },
         {
             "name": "Arbeiderpartiet",
@@ -276,7 +277,8 @@
             "sedler_ganger_kst_repr": 14028,
             "slengere_mottatt": 48,
             "slengere_avgitt": 36,
-            "listestemmetall": 14040
+            "listestemmetall": 14040,
+            "listestemmetall_simulated_initial_counting": 14061
         },
         {
             "name": "Senterpartiet",
@@ -285,7 +287,8 @@
             "sedler_ganger_kst_repr": 17577,
             "slengere_mottatt": 43,
             "slengere_avgitt": 43,
-            "listestemmetall": 17577
+            "listestemmetall": 17577,
+            "listestemmetall_simulated_initial_counting": 17577
         },
         {
             "name": "Høyre",
@@ -294,7 +297,8 @@
             "sedler_ganger_kst_repr": 4788,
             "slengere_mottatt": 19,
             "slengere_avgitt": 22,
-            "listestemmetall": 4785
+            "listestemmetall": 4785,
+            "listestemmetall_simulated_initial_counting": 4785
         }
     ],
     "mandatFordelingEndelig": {
@@ -387,6 +391,12 @@
         "Senterpartiet": 9,
         "Arbeiderpartiet": 7,
         "Høyre": 3,
+        "Venstre": 2
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 7,
+        "Høyre": 3,
+        "Senterpartiet": 9,
         "Venstre": 2
     }
 }

@@ -297,7 +297,8 @@
             "sedler_ganger_kst_repr": 8946,
             "slengere_mottatt": 211,
             "slengere_avgitt": 285,
-            "listestemmetall": 8872
+            "listestemmetall": 8872,
+            "listestemmetall_simulated_initial_counting": 8872
         },
         {
             "name": "Senterpartiet",
@@ -306,7 +307,8 @@
             "sedler_ganger_kst_repr": 6615,
             "slengere_mottatt": 144,
             "slengere_avgitt": 232,
-            "listestemmetall": 6527
+            "listestemmetall": 6527,
+            "listestemmetall_simulated_initial_counting": 6527
         },
         {
             "name": "Venstre",
@@ -315,7 +317,8 @@
             "sedler_ganger_kst_repr": 2457,
             "slengere_mottatt": 231,
             "slengere_avgitt": 76,
-            "listestemmetall": 2612
+            "listestemmetall": 2612,
+            "listestemmetall_simulated_initial_counting": 2612
         },
         {
             "name": "Kristeleg Folkeparti",
@@ -324,7 +327,8 @@
             "sedler_ganger_kst_repr": 7581,
             "slengere_mottatt": 189,
             "slengere_avgitt": 264,
-            "listestemmetall": 7506
+            "listestemmetall": 7506,
+            "listestemmetall_simulated_initial_counting": 7506
         },
         {
             "name": "Framstegspartiet",
@@ -333,7 +337,8 @@
             "sedler_ganger_kst_repr": 2352,
             "slengere_mottatt": 88,
             "slengere_avgitt": 52,
-            "listestemmetall": 2388
+            "listestemmetall": 2388,
+            "listestemmetall_simulated_initial_counting": 2388
         },
         {
             "name": "SV - Sosialistisk Venstreparti",
@@ -342,7 +347,8 @@
             "sedler_ganger_kst_repr": 2142,
             "slengere_mottatt": 81,
             "slengere_avgitt": 44,
-            "listestemmetall": 2179
+            "listestemmetall": 2179,
+            "listestemmetall_simulated_initial_counting": 2179
         },
         {
             "name": "Arbeidarpartiet",
@@ -351,7 +357,8 @@
             "sedler_ganger_kst_repr": 8085,
             "slengere_mottatt": 210,
             "slengere_avgitt": 201,
-            "listestemmetall": 8094
+            "listestemmetall": 8094,
+            "listestemmetall_simulated_initial_counting": 8094
         }
     ],
     "mandatFordelingEndelig": {
@@ -448,5 +455,14 @@
         "Venstre": 1,
         "Framstegspartiet": 1,
         "SV - Sosialistisk Venstreparti": 1
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeidarpartiet": 5,
+        "Framstegspartiet": 1,
+        "Høgre": 5,
+        "Kristeleg Folkeparti": 4,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Senterpartiet": 4,
+        "Venstre": 1
     }
 }

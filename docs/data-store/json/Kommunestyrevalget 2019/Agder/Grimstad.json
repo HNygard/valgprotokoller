@@ -350,7 +350,8 @@
             "sedler_ganger_kst_repr": 31815,
             "slengere_mottatt": 494,
             "slengere_avgitt": 398,
-            "listestemmetall": 31911
+            "listestemmetall": 31911,
+            "listestemmetall_simulated_initial_counting": 31841
         },
         {
             "name": "Arbeiderpartiet",
@@ -359,7 +360,8 @@
             "sedler_ganger_kst_repr": 78750,
             "slengere_mottatt": 583,
             "slengere_avgitt": 617,
-            "listestemmetall": 78716
+            "listestemmetall": 78716,
+            "listestemmetall_simulated_initial_counting": 78681
         },
         {
             "name": "Kristelig Folkeparti",
@@ -368,7 +370,8 @@
             "sedler_ganger_kst_repr": 59360,
             "slengere_mottatt": 373,
             "slengere_avgitt": 308,
-            "listestemmetall": 59425
+            "listestemmetall": 59425,
+            "listestemmetall_simulated_initial_counting": 59425
         },
         {
             "name": "Fremskrittspartiet",
@@ -377,7 +380,8 @@
             "sedler_ganger_kst_repr": 37940,
             "slengere_mottatt": 207,
             "slengere_avgitt": 109,
-            "listestemmetall": 38038
+            "listestemmetall": 38038,
+            "listestemmetall_simulated_initial_counting": 38003
         },
         {
             "name": "Miljøpartiet De Grønne",
@@ -386,7 +390,8 @@
             "sedler_ganger_kst_repr": 19005,
             "slengere_mottatt": 152,
             "slengere_avgitt": 136,
-            "listestemmetall": 19021
+            "listestemmetall": 19021,
+            "listestemmetall_simulated_initial_counting": 19021
         },
         {
             "name": "Liberalistene",
@@ -395,7 +400,8 @@
             "sedler_ganger_kst_repr": 875,
             "slengere_mottatt": 10,
             "slengere_avgitt": 0,
-            "listestemmetall": 885
+            "listestemmetall": 885,
+            "listestemmetall_simulated_initial_counting": 885
         },
         {
             "name": "Partiet De Kristne",
@@ -404,7 +410,8 @@
             "sedler_ganger_kst_repr": 4935,
             "slengere_mottatt": 21,
             "slengere_avgitt": 12,
-            "listestemmetall": 4944
+            "listestemmetall": 4944,
+            "listestemmetall_simulated_initial_counting": 4944
         },
         {
             "name": "Rødt",
@@ -413,7 +420,8 @@
             "sedler_ganger_kst_repr": 8295,
             "slengere_mottatt": 70,
             "slengere_avgitt": 39,
-            "listestemmetall": 8326
+            "listestemmetall": 8326,
+            "listestemmetall_simulated_initial_counting": 8326
         },
         {
             "name": "Senterpartiet",
@@ -422,7 +430,8 @@
             "sedler_ganger_kst_repr": 37170,
             "slengere_mottatt": 267,
             "slengere_avgitt": 355,
-            "listestemmetall": 37082
+            "listestemmetall": 37082,
+            "listestemmetall_simulated_initial_counting": 37082
         },
         {
             "name": "SV - Sosialistisk Venstreparti",
@@ -431,7 +440,8 @@
             "sedler_ganger_kst_repr": 18130,
             "slengere_mottatt": 254,
             "slengere_avgitt": 207,
-            "listestemmetall": 18177
+            "listestemmetall": 18177,
+            "listestemmetall_simulated_initial_counting": 18247
         },
         {
             "name": "Høyre",
@@ -440,7 +450,8 @@
             "sedler_ganger_kst_repr": 79380,
             "slengere_mottatt": 369,
             "slengere_avgitt": 619,
-            "listestemmetall": 79130
+            "listestemmetall": 79130,
+            "listestemmetall_simulated_initial_counting": 79095
         }
     ],
     "mandatFordelingEndelig": {
@@ -597,5 +608,18 @@
         "Rødt": 1,
         "Liberalistene": 0,
         "Partiet De Kristne": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 7,
+        "Fremskrittspartiet": 4,
+        "Høyre": 7,
+        "Kristelig Folkeparti": 6,
+        "Liberalistene": 0,
+        "Miljøpartiet De Grønne": 2,
+        "Partiet De Kristne": 0,
+        "Rødt": 1,
+        "SV - Sosialistisk Venstreparti": 2,
+        "Senterpartiet": 3,
+        "Venstre": 3
     }
 }

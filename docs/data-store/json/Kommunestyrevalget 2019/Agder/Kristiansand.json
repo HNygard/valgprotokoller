@@ -413,7 +413,8 @@
             "sedler_ganger_kst_repr": 533281,
             "slengere_mottatt": 724,
             "slengere_avgitt": 1063,
-            "listestemmetall": 532942
+            "listestemmetall": 532942,
+            "listestemmetall_simulated_initial_counting": 532090
         },
         {
             "name": "Helsepartiet",
@@ -422,7 +423,8 @@
             "sedler_ganger_kst_repr": 17537,
             "slengere_mottatt": 48,
             "slengere_avgitt": 24,
-            "listestemmetall": 17561
+            "listestemmetall": 17561,
+            "listestemmetall_simulated_initial_counting": 17419
         },
         {
             "name": "Høyre",
@@ -431,7 +433,8 @@
             "sedler_ganger_kst_repr": 704746,
             "slengere_mottatt": 1544,
             "slengere_avgitt": 1311,
-            "listestemmetall": 704979
+            "listestemmetall": 704979,
+            "listestemmetall_simulated_initial_counting": 701855
         },
         {
             "name": "Kristelig Folkeparti",
@@ -440,7 +443,8 @@
             "sedler_ganger_kst_repr": 456601,
             "slengere_mottatt": 1076,
             "slengere_avgitt": 1072,
-            "listestemmetall": 456605
+            "listestemmetall": 456605,
+            "listestemmetall_simulated_initial_counting": 454759
         },
         {
             "name": "Partiet De Kristne",
@@ -449,7 +453,8 @@
             "sedler_ganger_kst_repr": 69438,
             "slengere_mottatt": 230,
             "slengere_avgitt": 208,
-            "listestemmetall": 69460
+            "listestemmetall": 69460,
+            "listestemmetall_simulated_initial_counting": 68892
         },
         {
             "name": "Liberalistene",
@@ -458,7 +463,8 @@
             "sedler_ganger_kst_repr": 12567,
             "slengere_mottatt": 60,
             "slengere_avgitt": 31,
-            "listestemmetall": 12596
+            "listestemmetall": 12596,
+            "listestemmetall_simulated_initial_counting": 12596
         },
         {
             "name": "Pensjonistpartiet",
@@ -467,7 +473,8 @@
             "sedler_ganger_kst_repr": 44446,
             "slengere_mottatt": 72,
             "slengere_avgitt": 17,
-            "listestemmetall": 44501
+            "listestemmetall": 44501,
+            "listestemmetall_simulated_initial_counting": 44643
         },
         {
             "name": "Rødt",
@@ -476,7 +483,8 @@
             "sedler_ganger_kst_repr": 114310,
             "slengere_mottatt": 499,
             "slengere_avgitt": 437,
-            "listestemmetall": 114372
+            "listestemmetall": 114372,
+            "listestemmetall_simulated_initial_counting": 114017
         },
         {
             "name": "Senterpartiet",
@@ -485,7 +493,8 @@
             "sedler_ganger_kst_repr": 182825,
             "slengere_mottatt": 612,
             "slengere_avgitt": 810,
-            "listestemmetall": 182627
+            "listestemmetall": 182627,
+            "listestemmetall_simulated_initial_counting": 182343
         },
         {
             "name": "SV - Sosialistisk Venstreparti",
@@ -494,7 +503,8 @@
             "sedler_ganger_kst_repr": 243601,
             "slengere_mottatt": 956,
             "slengere_avgitt": 1159,
-            "listestemmetall": 243398
+            "listestemmetall": 243398,
+            "listestemmetall_simulated_initial_counting": 243256
         },
         {
             "name": "Tverrpolitisk Folkeliste For Hele Kristiansand",
@@ -503,7 +513,8 @@
             "sedler_ganger_kst_repr": 218041,
             "slengere_mottatt": 631,
             "slengere_avgitt": 777,
-            "listestemmetall": 217895
+            "listestemmetall": 217895,
+            "listestemmetall_simulated_initial_counting": 217185
         },
         {
             "name": "Venstre",
@@ -512,7 +523,8 @@
             "sedler_ganger_kst_repr": 131847,
             "slengere_mottatt": 567,
             "slengere_avgitt": 601,
-            "listestemmetall": 131813
+            "listestemmetall": 131813,
+            "listestemmetall_simulated_initial_counting": 127908
         },
         {
             "name": "Fremskrittspartiet",
@@ -521,7 +533,8 @@
             "sedler_ganger_kst_repr": 219603,
             "slengere_mottatt": 621,
             "slengere_avgitt": 515,
-            "listestemmetall": 219709
+            "listestemmetall": 219709,
+            "listestemmetall_simulated_initial_counting": 217295
         },
         {
             "name": "Arbeiderpartiet",
@@ -530,7 +543,8 @@
             "sedler_ganger_kst_repr": 727750,
             "slengere_mottatt": 1859,
             "slengere_avgitt": 1651,
-            "listestemmetall": 727958
+            "listestemmetall": 727958,
+            "listestemmetall_simulated_initial_counting": 738466
         },
         {
             "name": "Miljøpartiet De Grønne",
@@ -539,7 +553,8 @@
             "sedler_ganger_kst_repr": 299336,
             "slengere_mottatt": 1200,
             "slengere_avgitt": 1023,
-            "listestemmetall": 299513
+            "listestemmetall": 299513,
+            "listestemmetall_simulated_initial_counting": 301643
         }
     ],
     "mandatFordelingEndelig": {
@@ -844,6 +859,23 @@
         "Pensjonistpartiet": 1,
         "Helsepartiet": 0,
         "Liberalistene": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 13,
+        "Demokratene": 10,
+        "Fremskrittspartiet": 4,
+        "Helsepartiet": 0,
+        "Høyre": 13,
+        "Kristelig Folkeparti": 8,
+        "Liberalistene": 0,
+        "Miljøpartiet De Grønne": 6,
+        "Partiet De Kristne": 1,
+        "Pensjonistpartiet": 1,
+        "Rødt": 2,
+        "SV - Sosialistisk Venstreparti": 4,
+        "Senterpartiet": 3,
+        "Tverrpolitisk Folkeliste For Hele Kristiansand": 4,
+        "Venstre": 2
     },
     "otherSources": [
         {

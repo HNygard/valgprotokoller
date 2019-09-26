@@ -1007,6 +1007,14 @@ function parseFile_andWriteToDisk(&$obj, $file) {
                     var_dump($current_party);
                     throw new Exception('Multiplication is hard. This should not happen.');
                 }
+
+                // :: Do it in reverse for initial counting
+                $current_party->listestemmetall_simulated_initial_counting =
+                    (
+                        ($partyNumbers_D1_4_pre_election_votes['Foreløpig'] + $partyNumbers_D2_4_pre_election_votes['Foreløpig'])
+                        * $current_party->kommunestyrerepresentanter
+                    ) + $current_party->slengere_mottatt - $current_party->slengere_avgitt;
+
             }
             else {
                 $unknown_lines_e1_1[] = $lines[$i++];
@@ -1080,13 +1088,7 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     }
 
     if (isset($obj->e1_1_listestemmetall_og_mandater)) {
-        $runSettlement = function ($kommunestyrerepresentanter, $parti_og_listestemmetall) {
-            $settlement_data = new stdClass();
-            $settlement_data->numberOfSeats = $kommunestyrerepresentanter;
-            $settlement_data->voteTotals = array();
-            foreach ($parti_og_listestemmetall as $party) {
-                $settlement_data->voteTotals[$party->name] = $party->listestemmetall;
-            }
+        $runSettlement = function ($kommunestyrerepresentanter, $settlement_data) {
             file_put_contents('/tmp/election-data.json', json_encode($settlement_data, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES));
             if (file_exists('/tmp/election-output.json')) {
                 unlink('/tmp/election-output.json');
@@ -1095,7 +1097,21 @@ function parseFile_andWriteToDisk(&$obj, $file) {
             //var_dump($pdfinfoOutput);
             return json_decode(file_get_contents('/tmp/election-output.json'));
         };
-        $outputData = $runSettlement($kommunestyrerepresentanter, $obj->e1_1_listestemmetall_og_mandater);
+        $settlement_data = new stdClass();
+        $settlement_data->numberOfSeats = $kommunestyrerepresentanter;
+        $settlement_data->voteTotals = array();
+        foreach ($obj->e1_1_listestemmetall_og_mandater as $party) {
+            $settlement_data->voteTotals[$party->name] = $party->listestemmetall;
+        }
+        $outputData = $runSettlement($kommunestyrerepresentanter, $settlement_data);
+
+        $settlement_data2 = new stdClass();
+        $settlement_data2->numberOfSeats = $kommunestyrerepresentanter;
+        $settlement_data2->voteTotals = array();
+        foreach ($obj->e1_1_listestemmetall_og_mandater as $party) {
+            $settlement_data2->voteTotals[$party->name] = $party->listestemmetall_simulated_initial_counting;
+        }
+        $outputData_initial = $runSettlement($kommunestyrerepresentanter, $settlement_data2);
 
         // :: Consistency check of settlement.py vs Valgprotokoll
         foreach ($outputData->party_seats as $partyName => $partySeats) {
@@ -1126,6 +1142,11 @@ function parseFile_andWriteToDisk(&$obj, $file) {
             $obj->e1_mandatPerParty[$partyName] = $partySeats;
         }
 
+        // :: Add simulated initial counting
+        $obj->e1_mandatPerParty_simulated_initial_counting = array();
+        foreach($outputData_initial->party_seats as $partyName => $partySeats) {
+            $obj->e1_mandatPerParty_simulated_initial_counting[$partyName] = $partySeats;
+        }
     }
 
 

@@ -303,7 +303,8 @@
             "sedler_ganger_kst_repr": 1800,
             "slengere_mottatt": 105,
             "slengere_avgitt": 49,
-            "listestemmetall": 1856
+            "listestemmetall": 1856,
+            "listestemmetall_simulated_initial_counting": 1856
         },
         {
             "name": "Senterpartiet",
@@ -312,7 +313,8 @@
             "sedler_ganger_kst_repr": 28800,
             "slengere_mottatt": 119,
             "slengere_avgitt": 248,
-            "listestemmetall": 28671
+            "listestemmetall": 28671,
+            "listestemmetall_simulated_initial_counting": 28696
         },
         {
             "name": "Fremskrittspartiet",
@@ -321,7 +323,8 @@
             "sedler_ganger_kst_repr": 3975,
             "slengere_mottatt": 66,
             "slengere_avgitt": 20,
-            "listestemmetall": 4021
+            "listestemmetall": 4021,
+            "listestemmetall_simulated_initial_counting": 4021
         },
         {
             "name": "Kristelig Folkeparti",
@@ -330,7 +333,8 @@
             "sedler_ganger_kst_repr": 4400,
             "slengere_mottatt": 98,
             "slengere_avgitt": 24,
-            "listestemmetall": 4474
+            "listestemmetall": 4474,
+            "listestemmetall_simulated_initial_counting": 4474
         },
         {
             "name": "SV - Sosialistisk Venstreparti",
@@ -339,7 +343,8 @@
             "sedler_ganger_kst_repr": 1750,
             "slengere_mottatt": 17,
             "slengere_avgitt": 37,
-            "listestemmetall": 1730
+            "listestemmetall": 1730,
+            "listestemmetall_simulated_initial_counting": 1730
         },
         {
             "name": "Høyre",
@@ -348,7 +353,8 @@
             "sedler_ganger_kst_repr": 4500,
             "slengere_mottatt": 54,
             "slengere_avgitt": 50,
-            "listestemmetall": 4504
+            "listestemmetall": 4504,
+            "listestemmetall_simulated_initial_counting": 4504
         },
         {
             "name": "Arbeiderpartiet",
@@ -357,7 +363,8 @@
             "sedler_ganger_kst_repr": 20350,
             "slengere_mottatt": 100,
             "slengere_avgitt": 119,
-            "listestemmetall": 20331
+            "listestemmetall": 20331,
+            "listestemmetall_simulated_initial_counting": 20331
         },
         {
             "name": "Bygdelista for Midtre Gauldal",
@@ -366,7 +373,8 @@
             "sedler_ganger_kst_repr": 12150,
             "slengere_mottatt": 146,
             "slengere_avgitt": 158,
-            "listestemmetall": 12138
+            "listestemmetall": 12138,
+            "listestemmetall_simulated_initial_counting": 12138
         }
     ],
     "mandatFordelingEndelig": {
@@ -479,6 +487,16 @@
         "Kristelig Folkeparti": 1,
         "Fremskrittspartiet": 1,
         "SV - Sosialistisk Venstreparti": 0,
+        "Venstre": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 7,
+        "Bygdelista for Midtre Gauldal": 4,
+        "Fremskrittspartiet": 1,
+        "Høyre": 2,
+        "Kristelig Folkeparti": 1,
+        "SV - Sosialistisk Venstreparti": 0,
+        "Senterpartiet": 10,
         "Venstre": 0
     },
     "otherSources": [

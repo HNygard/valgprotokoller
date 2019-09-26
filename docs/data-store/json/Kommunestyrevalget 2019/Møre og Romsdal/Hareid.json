@@ -289,7 +289,8 @@
             "sedler_ganger_kst_repr": 8253,
             "slengere_mottatt": 131,
             "slengere_avgitt": 178,
-            "listestemmetall": 8206
+            "listestemmetall": 8206,
+            "listestemmetall_simulated_initial_counting": 8206
         },
         {
             "name": "Folkelista for Hareid kommune",
@@ -298,7 +299,8 @@
             "sedler_ganger_kst_repr": 13083,
             "slengere_mottatt": 156,
             "slengere_avgitt": 291,
-            "listestemmetall": 12948
+            "listestemmetall": 12948,
+            "listestemmetall_simulated_initial_counting": 12927
         },
         {
             "name": "Framstegspartiet",
@@ -307,7 +309,8 @@
             "sedler_ganger_kst_repr": 16317,
             "slengere_mottatt": 142,
             "slengere_avgitt": 95,
-            "listestemmetall": 16364
+            "listestemmetall": 16364,
+            "listestemmetall_simulated_initial_counting": 16385
         },
         {
             "name": "Høgre",
@@ -316,7 +319,8 @@
             "sedler_ganger_kst_repr": 5040,
             "slengere_mottatt": 119,
             "slengere_avgitt": 96,
-            "listestemmetall": 5063
+            "listestemmetall": 5063,
+            "listestemmetall_simulated_initial_counting": 5063
         },
         {
             "name": "Kristeleg Folkeparti",
@@ -325,7 +329,8 @@
             "sedler_ganger_kst_repr": 3087,
             "slengere_mottatt": 113,
             "slengere_avgitt": 50,
-            "listestemmetall": 3150
+            "listestemmetall": 3150,
+            "listestemmetall_simulated_initial_counting": 3150
         },
         {
             "name": "Venstre",
@@ -334,7 +339,8 @@
             "sedler_ganger_kst_repr": 6342,
             "slengere_mottatt": 183,
             "slengere_avgitt": 134,
-            "listestemmetall": 6391
+            "listestemmetall": 6391,
+            "listestemmetall_simulated_initial_counting": 6370
         }
     ],
     "mandatFordelingEndelig": {
@@ -430,5 +436,13 @@
         "Venstre": 3,
         "Høgre": 2,
         "Kristeleg Folkeparti": 1
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeidarpartiet": 3,
+        "Folkelista for Hareid kommune": 5,
+        "Framstegspartiet": 7,
+        "Høgre": 2,
+        "Kristeleg Folkeparti": 1,
+        "Venstre": 3
     }
 }

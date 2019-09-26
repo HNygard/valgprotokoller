@@ -278,7 +278,8 @@
             "sedler_ganger_kst_repr": 3740,
             "slengere_mottatt": 78,
             "slengere_avgitt": 89,
-            "listestemmetall": 3729
+            "listestemmetall": 3729,
+            "listestemmetall_simulated_initial_counting": 3729
         },
         {
             "name": "Høyre",
@@ -287,7 +288,8 @@
             "sedler_ganger_kst_repr": 3145,
             "slengere_mottatt": 58,
             "slengere_avgitt": 74,
-            "listestemmetall": 3129
+            "listestemmetall": 3129,
+            "listestemmetall_simulated_initial_counting": 3129
         },
         {
             "name": "Senterpartiet",
@@ -296,7 +298,8 @@
             "sedler_ganger_kst_repr": 2703,
             "slengere_mottatt": 63,
             "slengere_avgitt": 55,
-            "listestemmetall": 2711
+            "listestemmetall": 2711,
+            "listestemmetall_simulated_initial_counting": 2711
         },
         {
             "name": "Rødt",
@@ -305,7 +308,8 @@
             "sedler_ganger_kst_repr": 2295,
             "slengere_mottatt": 60,
             "slengere_avgitt": 53,
-            "listestemmetall": 2302
+            "listestemmetall": 2302,
+            "listestemmetall_simulated_initial_counting": 2302
         },
         {
             "name": "SV - Sosialistisk Venstreparti",
@@ -314,7 +318,8 @@
             "sedler_ganger_kst_repr": 1751,
             "slengere_mottatt": 47,
             "slengere_avgitt": 35,
-            "listestemmetall": 1763
+            "listestemmetall": 1763,
+            "listestemmetall_simulated_initial_counting": 1763
         }
     ],
     "mandatFordelingEndelig": {
@@ -393,5 +398,12 @@
         "Senterpartiet": 3,
         "Rødt": 3,
         "SV - Sosialistisk Venstreparti": 2
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 5,
+        "Høyre": 4,
+        "Rødt": 3,
+        "SV - Sosialistisk Venstreparti": 2,
+        "Senterpartiet": 3
     }
 }

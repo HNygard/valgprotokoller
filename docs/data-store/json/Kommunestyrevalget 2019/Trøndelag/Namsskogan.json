@@ -270,7 +270,8 @@
             "sedler_ganger_kst_repr": 1014,
             "slengere_mottatt": 52,
             "slengere_avgitt": 35,
-            "listestemmetall": 1031
+            "listestemmetall": 1031,
+            "listestemmetall_simulated_initial_counting": 1031
         },
         {
             "name": "Arbeiderpartiet",
@@ -279,7 +280,8 @@
             "sedler_ganger_kst_repr": 3835,
             "slengere_mottatt": 47,
             "slengere_avgitt": 80,
-            "listestemmetall": 3802
+            "listestemmetall": 3802,
+            "listestemmetall_simulated_initial_counting": 3802
         },
         {
             "name": "Senterpartiet",
@@ -288,7 +290,8 @@
             "sedler_ganger_kst_repr": 1443,
             "slengere_mottatt": 46,
             "slengere_avgitt": 41,
-            "listestemmetall": 1448
+            "listestemmetall": 1448,
+            "listestemmetall_simulated_initial_counting": 1448
         },
         {
             "name": "SV - Sosialistisk Venstreparti",
@@ -297,7 +300,8 @@
             "sedler_ganger_kst_repr": 481,
             "slengere_mottatt": 38,
             "slengere_avgitt": 27,
-            "listestemmetall": 492
+            "listestemmetall": 492,
+            "listestemmetall_simulated_initial_counting": 492
         }
     ],
     "mandatFordelingEndelig": {
@@ -359,5 +363,11 @@
         "Senterpartiet": 3,
         "Optimum": 2,
         "SV - Sosialistisk Venstreparti": 1
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 7,
+        "Optimum": 2,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Senterpartiet": 3
     }
 }

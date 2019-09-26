@@ -390,7 +390,8 @@
             "sedler_ganger_kst_repr": 305730,
             "slengere_mottatt": 997,
             "slengere_avgitt": 625,
-            "listestemmetall": 306102
+            "listestemmetall": 306102,
+            "listestemmetall_simulated_initial_counting": 305457
         },
         {
             "name": "By- og Landlista",
@@ -399,7 +400,8 @@
             "sedler_ganger_kst_repr": 33669,
             "slengere_mottatt": 111,
             "slengere_avgitt": 94,
-            "listestemmetall": 33686
+            "listestemmetall": 33686,
+            "listestemmetall_simulated_initial_counting": 33772
         },
         {
             "name": "Fremskrittspartiet",
@@ -408,7 +410,8 @@
             "sedler_ganger_kst_repr": 138976,
             "slengere_mottatt": 197,
             "slengere_avgitt": 226,
-            "listestemmetall": 138947
+            "listestemmetall": 138947,
+            "listestemmetall_simulated_initial_counting": 138818
         },
         {
             "name": "Høyre",
@@ -417,7 +420,8 @@
             "sedler_ganger_kst_repr": 251206,
             "slengere_mottatt": 551,
             "slengere_avgitt": 489,
-            "listestemmetall": 251268
+            "listestemmetall": 251268,
+            "listestemmetall_simulated_initial_counting": 251053
         },
         {
             "name": "Kristelig Folkeparti",
@@ -426,7 +430,8 @@
             "sedler_ganger_kst_repr": 33841,
             "slengere_mottatt": 178,
             "slengere_avgitt": 95,
-            "listestemmetall": 33924
+            "listestemmetall": 33924,
+            "listestemmetall_simulated_initial_counting": 33795
         },
         {
             "name": "Kystpartiet",
@@ -435,7 +440,8 @@
             "sedler_ganger_kst_repr": 10965,
             "slengere_mottatt": 68,
             "slengere_avgitt": 16,
-            "listestemmetall": 11017
+            "listestemmetall": 11017,
+            "listestemmetall_simulated_initial_counting": 11017
         },
         {
             "name": "Liberalistene",
@@ -444,7 +450,8 @@
             "sedler_ganger_kst_repr": 7525,
             "slengere_mottatt": 25,
             "slengere_avgitt": 10,
-            "listestemmetall": 7540
+            "listestemmetall": 7540,
+            "listestemmetall_simulated_initial_counting": 7540
         },
         {
             "name": "Miljøpartiet De Grønne",
@@ -453,7 +460,8 @@
             "sedler_ganger_kst_repr": 119368,
             "slengere_mottatt": 390,
             "slengere_avgitt": 444,
-            "listestemmetall": 119314
+            "listestemmetall": 119314,
+            "listestemmetall_simulated_initial_counting": 118626
         },
         {
             "name": "Nei til bompenger i Tromsø",
@@ -462,7 +470,8 @@
             "sedler_ganger_kst_repr": 140696,
             "slengere_mottatt": 199,
             "slengere_avgitt": 282,
-            "listestemmetall": 140613
+            "listestemmetall": 140613,
+            "listestemmetall_simulated_initial_counting": 138506
         },
         {
             "name": "Partiet De Kristne",
@@ -471,7 +480,8 @@
             "sedler_ganger_kst_repr": 5461,
             "slengere_mottatt": 13,
             "slengere_avgitt": 12,
-            "listestemmetall": 5462
+            "listestemmetall": 5462,
+            "listestemmetall_simulated_initial_counting": 5462
         },
         {
             "name": "Rødt",
@@ -480,7 +490,8 @@
             "sedler_ganger_kst_repr": 83549,
             "slengere_mottatt": 482,
             "slengere_avgitt": 353,
-            "listestemmetall": 83678
+            "listestemmetall": 83678,
+            "listestemmetall_simulated_initial_counting": 83291
         },
         {
             "name": "Senterpartiet",
@@ -489,7 +500,8 @@
             "sedler_ganger_kst_repr": 177289,
             "slengere_mottatt": 284,
             "slengere_avgitt": 331,
-            "listestemmetall": 177242
+            "listestemmetall": 177242,
+            "listestemmetall_simulated_initial_counting": 176640
         },
         {
             "name": "SV - Sosialistisk Venstreparti",
@@ -498,7 +510,8 @@
             "sedler_ganger_kst_repr": 259677,
             "slengere_mottatt": 592,
             "slengere_avgitt": 1136,
-            "listestemmetall": 259133
+            "listestemmetall": 259133,
+            "listestemmetall_simulated_initial_counting": 254618
         },
         {
             "name": "Venstre",
@@ -507,7 +520,8 @@
             "sedler_ganger_kst_repr": 50955,
             "slengere_mottatt": 293,
             "slengere_avgitt": 267,
-            "listestemmetall": 50981
+            "listestemmetall": 50981,
+            "listestemmetall_simulated_initial_counting": 48616
         }
     ],
     "mandatFordelingEndelig": {
@@ -699,6 +713,22 @@
         "Kystpartiet": 0,
         "Liberalistene": 0,
         "Partiet De Kristne": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 8,
+        "By- og Landlista": 1,
+        "Fremskrittspartiet": 4,
+        "Høyre": 7,
+        "Kristelig Folkeparti": 1,
+        "Kystpartiet": 0,
+        "Liberalistene": 0,
+        "Miljøpartiet De Grønne": 3,
+        "Nei til bompenger i Tromsø": 4,
+        "Partiet De Kristne": 0,
+        "Rødt": 2,
+        "SV - Sosialistisk Venstreparti": 7,
+        "Senterpartiet": 5,
+        "Venstre": 1
     },
     "otherSources": [
         {

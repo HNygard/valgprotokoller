@@ -339,7 +339,8 @@
             "sedler_ganger_kst_repr": 87699,
             "slengere_mottatt": 164,
             "slengere_avgitt": 217,
-            "listestemmetall": 87646
+            "listestemmetall": 87646,
+            "listestemmetall_simulated_initial_counting": 87646
         },
         {
             "name": "Folkeaksjonen Nei til mer bompenger",
@@ -348,7 +349,8 @@
             "sedler_ganger_kst_repr": 54735,
             "slengere_mottatt": 69,
             "slengere_avgitt": 107,
-            "listestemmetall": 54697
+            "listestemmetall": 54697,
+            "listestemmetall_simulated_initial_counting": 54615
         },
         {
             "name": "Fremskrittspartiet",
@@ -357,7 +359,8 @@
             "sedler_ganger_kst_repr": 95694,
             "slengere_mottatt": 184,
             "slengere_avgitt": 190,
-            "listestemmetall": 95688
+            "listestemmetall": 95688,
+            "listestemmetall_simulated_initial_counting": 95688
         },
         {
             "name": "Høyre",
@@ -366,7 +369,8 @@
             "sedler_ganger_kst_repr": 152520,
             "slengere_mottatt": 325,
             "slengere_avgitt": 253,
-            "listestemmetall": 152592
+            "listestemmetall": 152592,
+            "listestemmetall_simulated_initial_counting": 152715
         },
         {
             "name": "Miljøpartiet De Grønne",
@@ -375,7 +379,8 @@
             "sedler_ganger_kst_repr": 18614,
             "slengere_mottatt": 55,
             "slengere_avgitt": 61,
-            "listestemmetall": 18608
+            "listestemmetall": 18608,
+            "listestemmetall_simulated_initial_counting": 18608
         },
         {
             "name": "Rødt",
@@ -384,7 +389,8 @@
             "sedler_ganger_kst_repr": 8282,
             "slengere_mottatt": 37,
             "slengere_avgitt": 13,
-            "listestemmetall": 8306
+            "listestemmetall": 8306,
+            "listestemmetall_simulated_initial_counting": 8265
         },
         {
             "name": "Senterpartiet",
@@ -393,7 +399,8 @@
             "sedler_ganger_kst_repr": 53751,
             "slengere_mottatt": 152,
             "slengere_avgitt": 170,
-            "listestemmetall": 53733
+            "listestemmetall": 53733,
+            "listestemmetall_simulated_initial_counting": 53733
         },
         {
             "name": "Venstre",
@@ -402,7 +409,8 @@
             "sedler_ganger_kst_repr": 14391,
             "slengere_mottatt": 60,
             "slengere_avgitt": 38,
-            "listestemmetall": 14413
+            "listestemmetall": 14413,
+            "listestemmetall_simulated_initial_counting": 14413
         },
         {
             "name": "Kristelig Folkeparti",
@@ -411,7 +419,8 @@
             "sedler_ganger_kst_repr": 34809,
             "slengere_mottatt": 113,
             "slengere_avgitt": 144,
-            "listestemmetall": 34778
+            "listestemmetall": 34778,
+            "listestemmetall_simulated_initial_counting": 34983
         },
         {
             "name": "SV - Sosialistisk Venstreparti",
@@ -420,7 +429,8 @@
             "sedler_ganger_kst_repr": 20336,
             "slengere_mottatt": 96,
             "slengere_avgitt": 62,
-            "listestemmetall": 20370
+            "listestemmetall": 20370,
+            "listestemmetall_simulated_initial_counting": 20370
         }
     ],
     "mandatFordelingEndelig": {
@@ -600,5 +610,17 @@
         "Miljøpartiet De Grønne": 1,
         "Venstre": 1,
         "Rødt": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 7,
+        "Folkeaksjonen Nei til mer bompenger": 4,
+        "Fremskrittspartiet": 7,
+        "Høyre": 12,
+        "Kristelig Folkeparti": 3,
+        "Miljøpartiet De Grønne": 1,
+        "Rødt": 0,
+        "SV - Sosialistisk Venstreparti": 2,
+        "Senterpartiet": 4,
+        "Venstre": 1
     }
 }

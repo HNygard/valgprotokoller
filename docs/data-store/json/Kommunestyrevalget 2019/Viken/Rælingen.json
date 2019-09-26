@@ -342,7 +342,8 @@
             "sedler_ganger_kst_repr": 28210,
             "slengere_mottatt": 36,
             "slengere_avgitt": 17,
-            "listestemmetall": 28229
+            "listestemmetall": 28229,
+            "listestemmetall_simulated_initial_counting": 28159
         },
         {
             "name": "Arbeiderpartiet",
@@ -351,7 +352,8 @@
             "sedler_ganger_kst_repr": 128170,
             "slengere_mottatt": 113,
             "slengere_avgitt": 204,
-            "listestemmetall": 128079
+            "listestemmetall": 128079,
+            "listestemmetall_simulated_initial_counting": 128184
         },
         {
             "name": "SV - Sosialistisk Venstreparti",
@@ -360,7 +362,8 @@
             "sedler_ganger_kst_repr": 14630,
             "slengere_mottatt": 74,
             "slengere_avgitt": 87,
-            "listestemmetall": 14617
+            "listestemmetall": 14617,
+            "listestemmetall_simulated_initial_counting": 14617
         },
         {
             "name": "Høyre",
@@ -369,7 +372,8 @@
             "sedler_ganger_kst_repr": 61460,
             "slengere_mottatt": 61,
             "slengere_avgitt": 112,
-            "listestemmetall": 61409
+            "listestemmetall": 61409,
+            "listestemmetall_simulated_initial_counting": 61409
         },
         {
             "name": "Kristelig Folkeparti",
@@ -378,7 +382,8 @@
             "sedler_ganger_kst_repr": 7315,
             "slengere_mottatt": 38,
             "slengere_avgitt": 24,
-            "listestemmetall": 7329
+            "listestemmetall": 7329,
+            "listestemmetall_simulated_initial_counting": 7434
         },
         {
             "name": "Rødt",
@@ -387,7 +392,8 @@
             "sedler_ganger_kst_repr": 7735,
             "slengere_mottatt": 33,
             "slengere_avgitt": 19,
-            "listestemmetall": 7749
+            "listestemmetall": 7749,
+            "listestemmetall_simulated_initial_counting": 7749
         },
         {
             "name": "Venstre",
@@ -396,7 +402,8 @@
             "sedler_ganger_kst_repr": 9730,
             "slengere_mottatt": 51,
             "slengere_avgitt": 27,
-            "listestemmetall": 9754
+            "listestemmetall": 9754,
+            "listestemmetall_simulated_initial_counting": 9754
         },
         {
             "name": "Senterpartiet",
@@ -405,7 +412,8 @@
             "sedler_ganger_kst_repr": 20615,
             "slengere_mottatt": 75,
             "slengere_avgitt": 45,
-            "listestemmetall": 20645
+            "listestemmetall": 20645,
+            "listestemmetall_simulated_initial_counting": 20645
         },
         {
             "name": "Helsepartiet",
@@ -414,7 +422,8 @@
             "sedler_ganger_kst_repr": 5460,
             "slengere_mottatt": 35,
             "slengere_avgitt": 2,
-            "listestemmetall": 5493
+            "listestemmetall": 5493,
+            "listestemmetall_simulated_initial_counting": 5493
         },
         {
             "name": "Miljøpartiet De Grønne",
@@ -423,7 +432,8 @@
             "sedler_ganger_kst_repr": 12810,
             "slengere_mottatt": 66,
             "slengere_avgitt": 45,
-            "listestemmetall": 12831
+            "listestemmetall": 12831,
+            "listestemmetall_simulated_initial_counting": 12831
         }
     ],
     "mandatFordelingEndelig": {
@@ -579,5 +589,17 @@
         "Rødt": 1,
         "Kristelig Folkeparti": 1,
         "Helsepartiet": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 16,
+        "Fremskrittspartiet": 3,
+        "Helsepartiet": 0,
+        "Høyre": 7,
+        "Kristelig Folkeparti": 1,
+        "Miljøpartiet De Grønne": 2,
+        "Rødt": 1,
+        "SV - Sosialistisk Venstreparti": 2,
+        "Senterpartiet": 2,
+        "Venstre": 1
     }
 }

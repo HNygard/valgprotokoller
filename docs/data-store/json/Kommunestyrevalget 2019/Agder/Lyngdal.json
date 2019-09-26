@@ -304,7 +304,8 @@
             "sedler_ganger_kst_repr": 5215,
             "slengere_mottatt": 48,
             "slengere_avgitt": 45,
-            "listestemmetall": 5218
+            "listestemmetall": 5218,
+            "listestemmetall_simulated_initial_counting": 5183
         },
         {
             "name": "Arbeiderpartiet",
@@ -313,7 +314,8 @@
             "sedler_ganger_kst_repr": 24080,
             "slengere_mottatt": 306,
             "slengere_avgitt": 334,
-            "listestemmetall": 24052
+            "listestemmetall": 24052,
+            "listestemmetall_simulated_initial_counting": 24052
         },
         {
             "name": "Senterpartiet",
@@ -322,7 +324,8 @@
             "sedler_ganger_kst_repr": 31290,
             "slengere_mottatt": 444,
             "slengere_avgitt": 587,
-            "listestemmetall": 31147
+            "listestemmetall": 31147,
+            "listestemmetall_simulated_initial_counting": 31147
         },
         {
             "name": "Venstre",
@@ -331,7 +334,8 @@
             "sedler_ganger_kst_repr": 7000,
             "slengere_mottatt": 323,
             "slengere_avgitt": 98,
-            "listestemmetall": 7225
+            "listestemmetall": 7225,
+            "listestemmetall_simulated_initial_counting": 7225
         },
         {
             "name": "Fremskrittspartiet",
@@ -340,7 +344,8 @@
             "sedler_ganger_kst_repr": 20020,
             "slengere_mottatt": 257,
             "slengere_avgitt": 192,
-            "listestemmetall": 20085
+            "listestemmetall": 20085,
+            "listestemmetall_simulated_initial_counting": 20120
         },
         {
             "name": "Kristelig Folkeparti",
@@ -349,7 +354,8 @@
             "sedler_ganger_kst_repr": 38045,
             "slengere_mottatt": 397,
             "slengere_avgitt": 495,
-            "listestemmetall": 37947
+            "listestemmetall": 37947,
+            "listestemmetall_simulated_initial_counting": 37947
         },
         {
             "name": "Høyre",
@@ -358,7 +364,8 @@
             "sedler_ganger_kst_repr": 50225,
             "slengere_mottatt": 580,
             "slengere_avgitt": 604,
-            "listestemmetall": 50201
+            "listestemmetall": 50201,
+            "listestemmetall_simulated_initial_counting": 49816
         }
     ],
     "mandatFordelingEndelig": {
@@ -511,5 +518,14 @@
         "Fremskrittspartiet": 4,
         "Venstre": 1,
         "Rødt": 1
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 5,
+        "Fremskrittspartiet": 4,
+        "Høyre": 10,
+        "Kristelig Folkeparti": 8,
+        "Rødt": 1,
+        "Senterpartiet": 6,
+        "Venstre": 1
     }
 }

@@ -308,7 +308,8 @@
             "sedler_ganger_kst_repr": 9671,
             "slengere_mottatt": 45,
             "slengere_avgitt": 76,
-            "listestemmetall": 9640
+            "listestemmetall": 9640,
+            "listestemmetall_simulated_initial_counting": 9640
         },
         {
             "name": "Senterpartiet",
@@ -317,7 +318,8 @@
             "sedler_ganger_kst_repr": 6783,
             "slengere_mottatt": 33,
             "slengere_avgitt": 50,
-            "listestemmetall": 6766
+            "listestemmetall": 6766,
+            "listestemmetall_simulated_initial_counting": 6747
         },
         {
             "name": "Rødt",
@@ -326,7 +328,8 @@
             "sedler_ganger_kst_repr": 722,
             "slengere_mottatt": 13,
             "slengere_avgitt": 11,
-            "listestemmetall": 724
+            "listestemmetall": 724,
+            "listestemmetall_simulated_initial_counting": 724
         },
         {
             "name": "SV - Sosialistisk Venstreparti",
@@ -335,7 +338,8 @@
             "sedler_ganger_kst_repr": 3553,
             "slengere_mottatt": 66,
             "slengere_avgitt": 53,
-            "listestemmetall": 3566
+            "listestemmetall": 3566,
+            "listestemmetall_simulated_initial_counting": 3566
         },
         {
             "name": "Tverrpolitisk liste i Porsanger TLP",
@@ -344,7 +348,8 @@
             "sedler_ganger_kst_repr": 6726,
             "slengere_mottatt": 66,
             "slengere_avgitt": 67,
-            "listestemmetall": 6725
+            "listestemmetall": 6725,
+            "listestemmetall_simulated_initial_counting": 6725
         },
         {
             "name": "Arbeiderpartiet",
@@ -353,7 +358,8 @@
             "sedler_ganger_kst_repr": 10469,
             "slengere_mottatt": 92,
             "slengere_avgitt": 92,
-            "listestemmetall": 10469
+            "listestemmetall": 10469,
+            "listestemmetall_simulated_initial_counting": 10469
         },
         {
             "name": "Fremskrittspartiet",
@@ -362,7 +368,8 @@
             "sedler_ganger_kst_repr": 1520,
             "slengere_mottatt": 9,
             "slengere_avgitt": 12,
-            "listestemmetall": 1517
+            "listestemmetall": 1517,
+            "listestemmetall_simulated_initial_counting": 1517
         },
         {
             "name": "Venstre",
@@ -371,7 +378,8 @@
             "sedler_ganger_kst_repr": 608,
             "slengere_mottatt": 44,
             "slengere_avgitt": 7,
-            "listestemmetall": 645
+            "listestemmetall": 645,
+            "listestemmetall_simulated_initial_counting": 626
         }
     ],
     "mandatFordelingEndelig": {
@@ -460,6 +468,16 @@
         "SV - Sosialistisk Venstreparti": 2,
         "Fremskrittspartiet": 1,
         "Rødt": 0,
+        "Venstre": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 5,
+        "Fremskrittspartiet": 1,
+        "Høyre": 5,
+        "Rødt": 0,
+        "SV - Sosialistisk Venstreparti": 2,
+        "Senterpartiet": 3,
+        "Tverrpolitisk liste i Porsanger TLP": 3,
         "Venstre": 0
     },
     "otherSources": [
