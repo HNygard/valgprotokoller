@@ -997,6 +997,16 @@ function parseFile_andWriteToDisk(&$obj, $file) {
                         . ' for party [' . $current_party->name . '].');
                 }
 
+                // :: Consistency check - E1.1 - Just to make sure I got this right :-)
+                if ($current_party->stemmesedler * $current_party->kommunestyrerepresentanter != $current_party->sedler_ganger_kst_repr) {
+                    var_dump($current_party);
+                    throw new Exception('Multiplication is hard. This should not happen.');
+                }
+                if ($current_party->sedler_ganger_kst_repr + $current_party->slengere_mottatt - $current_party->slengere_avgitt
+                    != $current_party->listestemmetall) {
+                    var_dump($current_party);
+                    throw new Exception('Multiplication is hard. This should not happen.');
+                }
             }
             else {
                 $unknown_lines_e1_1[] = $lines[$i++];
