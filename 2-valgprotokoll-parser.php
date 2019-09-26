@@ -1121,6 +1121,11 @@ function parseFile_andWriteToDisk(&$obj, $file) {
             }
         }
 
+        // :: Add parties with 0 for consistency
+        foreach($outputData->party_seats as $partyName => $partySeats) {
+            $obj->e1_mandatPerParty[$partyName] = $partySeats;
+        }
+
     }
 
 
