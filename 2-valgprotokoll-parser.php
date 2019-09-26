@@ -17,6 +17,198 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errconte
     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
 });
 
+$alle_partier = array(
+    // Known values for this table. Improves reading.
+    'Demokratene',
+    'Liberalistene',
+    'Senterpartiet',
+    'Høyre',
+    'Høgre',
+    'Pensjonistpartiet',
+    'Rødt',
+    'Raudt',
+    'Kristelig Folkeparti',
+    'Kristeleg Folkeparti',
+    'Arbeiderpartiet',
+    'Arbeidarpartiet',
+    'Fremskrittspartiet',
+    'Framstegspartiet',
+    'Partiet De Kristne',
+    'Miljøpartiet De Grønne',
+    'Miljøpartiet Dei Grøne',
+    'SV - Sosialistisk Venstreparti',
+    'Venstre',
+    'Helsepartiet',
+
+    'Nordmørslista',
+    'Tverrpolitisk Folkeliste For Hele Kristiansand',
+    'Xtra-lista',
+    'Tverrpolitisk liste for Fremskrittspartiet, Høyre og Venstre',
+    'Bygdalista i Gausdal',
+    'By- og Landlista',
+
+    // From https://valgresultat.no/api/2019/ko
+    'Alliansen',
+    'Árja',
+    'Folkeaksjonen Nei til mer bompenger',
+    'Kystpartiet',
+    'Norges Kommunistiske Parti',
+    'Piratpartiet',
+    'Samefolkets Parti',
+    'Ap og KrF samarbeidet',
+    'Arbeiderpartiet og Kristelig Folkeparti',
+    'Arbeiderpartiet-Senterpartiet-Kvitsøylisten',
+    'Askøylisten',
+    'By- og bygdelista',
+    'Beiarn Bygdeliste',
+    'Bygdelista i Austrheim',
+    'Bindalslista',
+    'BedreLarvik',
+    'Blanke',
+    'Buviklista',
+    'Bygdelista for Flå',
+    'Bygdalista',
+    'Bygdelista i Stange',
+    'Bygdalista i Vågå',
+    'Utsira Bygdeliste',
+    'Bygdelista i Vang',
+    'Bygdeliste',
+    'Bygdelista for Midtre Gauldal',
+    'Bygdelista for Nordre Land',
+    'Borgerlig fellesliste',
+    'Bygdalista i Skjåk',
+    'Bygdeliste for Tau og nordbygda',
+    'Bygdelista Våler i Solør',
+    'Bygdelista',
+    'Bygdalista',
+    'By- og Landlista ',
+    'Bymiljølista',
+    'By og land - tverrpolitisk liste',
+    'Bypartiet',
+    'Seter kretsliste',
+    'Dovrelista',
+    'Det Rette Parti',
+    'Deanu Sámelistu - Samelista i Tana',
+    'Evenes Tverrpolitiske Liste',
+    'Flakstad distriktsliste',
+    'Framtida Holtålen',
+    'Fellesliste for Høyre og Fremskrittspartiet',
+    'Fellesliste Høyre - Venstre',
+    'Feministisk Initiativ',
+    'Felleslista',
+    'Felleslista Kristelig folkeparti/Frie borgerlige',
+    'Utsira Fellesliste',
+    'Folkelista for Etnedal',
+    'Folkelista for Hareid kommune',
+    'Folkelista',
+    'FOLKELISTA',
+    'Folkestyre ',
+    'Folkets Røst by og bygdeliste',
+    'Fremskrittspartiet og Sirdalslisten',
+    'Felleslista SV - Sosialistisk Venstreparti og RØDT',
+    'SV - Sosialistisk Venstreparti og Rødt',
+    'Felleslista for Værøy',
+    'Gran Bygdeliste',
+    'Kautokeino Fastboendes liste',
+    'Gratangen Fellespolitiske Liste',
+    'Glad i Hurdal',
+    'Gildeskållista',
+    'Grue Bygdeliste',
+    'Halsalista',
+    'Hemsedal Bygdeliste',
+    'Herøy Bygdeliste',
+    'Hattfjelldal Bygdeliste',
+    'Heimlista',
+    'Høyre og Fremskrittspartiet',
+    'Høyre, Kristelig Folkeparti og Venstre',
+    'Hå-lista',
+    'Hemnes lista',
+    'Hovelista',
+    'Hemnes samfunnsdemokratiske folkeparti',
+    'Hinnøysiden Tverrpolitiske liste',
+    'Kautokeino Flyttsameliste',
+    'Karmøylista',
+    'Karasjok lista',
+    'Karlsøy Fellesliste',
+    'Kongsberglista',
+    'Johttiidsámiid listu',
+    'Kommunelista',
+    'Venstre/ Kristelig Folkeparti',
+    'Bjoa Bygdeliste',
+    'Kvænangen Bygdeliste',
+    'Lofotlista (ja til kommunesammenslåing)',
+    'Lomslista',
+    'Lyngen Tverrpolitiske liste',
+    'Melhuslista, Tverrpolitisk liste for hele Melhus kommune',
+    'Meråker Tverrpolitiske Bygdeliste',
+    'Bygdelista i Moskenes',
+    'Melbu og omegn samarbeidsliste',
+    'Moskenes Fellesliste',
+    'Nannestad bygdeliste',
+    'Nye Bygdelista',
+    'Nes bygdeliste',
+    'Nærmiljølista Ottestad',
+    'Nei til bompenger i Tromsø',
+    'Nei til bomring ',
+    'Ny Kurs',
+    'Optimum',
+    'Samhold Lyngen',
+    'Rødøy fellesliste',
+    'Røst Samarbeidsliste',
+    'Ringsaklista',
+    'Felleslista for Sosialistisk Venstreparti og Rødt',
+    'Røroslista',
+    'Sammen For Sarpsborg',
+    'Sámeálbmot Listu',
+    'Saltdalslista',
+    'Samfunnsdemokratane',
+    'Samlingslista',
+    'Samarbeidslisten',
+    'Småbylista Orkland',
+    'Samarbeidslista i Røyrvik',
+    'Sosialdemokratene Hemnes',
+    'Sentrumslista',
+    'Selvstendighetspartiet',
+    'Senjalista',
+    'Sentrumslista',
+    'Høyre og Kristelig Folkeparti',
+    'Sammen for Bamble',
+    'Sør-Fron Bygdaliste',
+    'Samlingslista',
+    'Søndre Land Bygdeliste',
+    'Setesdalslista',
+    'Samlingslista',
+    'Sør-Odal Bygdeliste',
+    'Sokndal Listo',
+    'Solrenningslista',
+    'Sotralista',
+    'Fellesliste for Senterpartiet og Kristelig Folkeparti',
+    'Samlingslista, Sp og uavhengige',
+    'Liste for Rødt, Senterpartiet og partiuavhengige fiskere',
+    'Smøla til Trøndelag',
+    'Hvaler Styrbord',
+    'SV - Sosialistisk Venstreparti og Miljøpartiet De Grønne',
+    'Sosialistisk Fellesliste av SV og Raudt',
+    'Fellesliste SV - Sosialistisk Venstreparti og Rødt',
+    'Fellesliste for SV - Sosialistisk Venstreparti og Rødt',
+    'Tverrpolitisk liste',
+    'Tverrpolitisk liste i Porsanger TLP',
+    'Tverrpolitisk liste for Giske',
+    'Tverrpolitisk Kommuneliste',
+    'Tverrpolitisk liste Sømna',
+    'Tverrpolitisk seniorliste',
+    'Lebesby Tverrpolitiske liste',
+    'Tverrpolitisk Liste for Gratangen',
+    'TVERRPOLITISK KVAMSØY SANDSØY VOKSA',
+    'Sulalista',
+    'Vegalista',
+    'Volda-lista',
+    'Værøylista',
+    'Vefsn tverrpolitiske parti',
+    'Venstre/ Miljøpartiet De Grønne',
+    'Ålesundlista Tverrpolitisk liste for Ålesund',
+);
+
 $kommunale_domener = file(__DIR__ . '/kommunale-domener.csv');
 $domain_to_name = array();
 foreach ($kommunale_domener as $line) {
@@ -637,24 +829,9 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     $column2 = 'Endelig';
     $column3 = 'Avvik';
     $table_ending = 'D1.5 Merknad';
-    $start_of_row_keywords_partier = array(
-        // Known values for this table. Improves reading.
-        'Demokratene',
-        'Liberalistene',
-        'Senterpartiet',
-        'Høyre',
-        'Pensjonistpartiet',
-        'Rødt',
-        'Kristelig Folkeparti',
-        'Arbeiderpartiet',
-        'Fremskrittspartiet',
-        'Partiet De Kristne',
-        'Miljøpartiet De Grønne',
-        'SV - Sosialistisk Venstreparti',
-        'Venstre',
-        'Helsepartiet',
-        'Totalt antall partifordelte stemmesedler',
-    );
+    global $alle_partier;
+    $start_of_row_keywords_partier = $alle_partier;
+    $start_of_row_keywords_partier[] = 'Totalt antall partifordelte stemmesedler';
     $i = readTable_threeColumns($obj, $lines, $i, $current_heading,
         $text_heading, $column1, $column2, $column3, $table_ending,
         $start_of_row_keywords_partier);
@@ -739,11 +916,70 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         // E1 Mandatfordeling
         // E1.1 Beregning av listestemmetall og antall mandater til listene
 
-
-        // Mandatene ble fordelt som følger:
-        while ($lines[$i] != 'Mandatene ble fordelt som følger:') {
+        while ($lines[$i] != 'E1.1 Beregning av listestemmetall og antall mandater til listene') {
             // Skip
             $i++;
+        }
+        assertLine_trim($lines, $i++, 'E1.1 Beregning av listestemmetall og antall mandater til listene');
+
+        // This next section contains:
+        //      <party name>
+        // Antall stemmesedler x antall kst.repr.= <NUM> x <NUM OF SEATS>                    <RESULT>
+        //
+        //                                            Mottatt:                               <NUM>
+        // Slengere:
+        //                                            Avgitt:                                <NUM>
+        // Listestemmetall:                                                                  <NUM>
+        //
+        // 1. div                                                                    <NUM>   <NUM>
+        // 2. div                                                                    <NUM>   <NUM>
+        // X. div                                                                    <NUM>   <NUM>
+        // ...
+
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+
+        $current_party = 'NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL';
+        $obj->e1_1_listestemmetall_og_mandater = array();
+        $unknown_lines_e1_1 = array();
+        while ($lines[$i] != 'Mandatene ble fordelt som følger:') {
+            if (str_contains($lines[$i], '. div ')) {
+                regexAssertAndReturnMatch('/^\s*[0-9]*\. div\s*[0-9\.]*\s\s*\s[0-9, ]*\s*$/', $lines[$i++]);
+            }
+            elseif (in_array(trim($lines[$i]), $alle_partier)) {
+                if (!is_string($current_party)) {
+                    $obj->e1_1_listestemmetall_og_mandater[] = $current_party;
+                }
+                $current_party = new stdClass();
+                $current_party->name = trim($lines[$i++]);
+                $i = removeLineIfPresent_andEmpty($lines, $i);
+
+                $match = regexAssertAndReturnMatch('/^\s*Antall stemmesedler x antall kst\.repr\.= ([0-9]*) x ([0-9]*)\s\s*\s([0-9]*)$/', $lines[$i++]);
+                $current_party->stemmesedler = $match[1];
+                $current_party->kommunestyrerepresentanter = $match[2];
+                $current_party->sedler_ganger_kst_repr = $match[3];
+                $i = removeLineIfPresent_andEmpty($lines, $i);
+
+                $match = regexAssertAndReturnMatch('/^\s*Mottatt:\s\s*\s([0-9]*)$/', $lines[$i++]);
+                $current_party->slengere_mottatt = $match[1];
+                $i = removeLineIfPresent_andEmpty($lines, $i);
+
+                regexAssertAndReturnMatch('/^\s*Slengere:\s*$/', $lines[$i++]);
+                $i = removeLineIfPresent_andEmpty($lines, $i);
+
+                $match = regexAssertAndReturnMatch('/^\s*Avgitt:\s\s*\s([0-9]*)$/', $lines[$i++]);
+                $current_party->slengere_avgitt = $match[1];
+                $i = removeLineIfPresent_andEmpty($lines, $i);
+
+                $match = regexAssertAndReturnMatch('/^\s*Listestemmetall:\s\s*\s([0-9]*)$/', $lines[$i++]);
+                $current_party->listestemmetall = $match[1];
+            }
+            else {
+                $unknown_lines_e1_1[] = $lines[$i++];
+            }
+            $i = removeLineIfPresent_andEmpty($lines, $i);
+        }
+        if (count($unknown_lines_e1_1) > 0) {
+            throw new Exception('Unknown line in E1.1: ' . chr(10) . implode(chr(10), $unknown_lines_e1_1));
         }
 
         $current_heading = 'Mandatene ble fordelt som følger:';
@@ -908,7 +1144,6 @@ function readTable_twoColumns(&$obj, &$lines, $i, $current_heading, $text_headin
             //     Number       Party        Number
             $rowRegex = '/^\s*(([0-9]* ?[0-9]+)|(\—))\s+\s\s(.*)\s\s\s+([0-9]* ?[0-9]* ?[0-9]+,[0-9]*)\s*$/';
             $returnFunction = function ($i, $row_lines, $row_line, $match) {
-                var_dump($match);
                 return array(
                     'i' => $i,
                     'line' => $row_lines,

@@ -230,7 +230,12 @@
             }
         },
         "D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler": {
-            "Kristeleg FolkepartiArbeidarpartiet": {
+            "Kristeleg Folkeparti": {
+                "Foreløpig": 163,
+                "Endelig": 163,
+                "Avvik": 0
+            },
+            "Arbeidarpartiet": {
                 "Foreløpig": 406,
                 "Endelig": 406,
                 "Avvik": 0
@@ -298,6 +303,71 @@
     },
     "foretattForeløpigOpptellingHosStemmestyrene": true,
     "foretattForeløpigOpptellingHosValgstyret": false,
+    "e1_1_listestemmetall_og_mandater": [
+        {
+            "name": "Kristeleg Folkeparti",
+            "stemmesedler": "224",
+            "kommunestyrerepresentanter": "33",
+            "sedler_ganger_kst_repr": "7392",
+            "slengere_mottatt": "248",
+            "slengere_avgitt": "126",
+            "listestemmetall": "7514"
+        },
+        {
+            "name": "Arbeidarpartiet",
+            "stemmesedler": "565",
+            "kommunestyrerepresentanter": "33",
+            "sedler_ganger_kst_repr": "18645",
+            "slengere_mottatt": "574",
+            "slengere_avgitt": "469",
+            "listestemmetall": "18750"
+        },
+        {
+            "name": "SV - Sosialistisk Venstreparti",
+            "stemmesedler": "398",
+            "kommunestyrerepresentanter": "33",
+            "sedler_ganger_kst_repr": "13134",
+            "slengere_mottatt": "522",
+            "slengere_avgitt": "336",
+            "listestemmetall": "13320"
+        },
+        {
+            "name": "Venstre",
+            "stemmesedler": "161",
+            "kommunestyrerepresentanter": "33",
+            "sedler_ganger_kst_repr": "5313",
+            "slengere_mottatt": "405",
+            "slengere_avgitt": "97",
+            "listestemmetall": "5621"
+        },
+        {
+            "name": "Miljøpartiet Dei Grøne",
+            "stemmesedler": "173",
+            "kommunestyrerepresentanter": "33",
+            "sedler_ganger_kst_repr": "5709",
+            "slengere_mottatt": "173",
+            "slengere_avgitt": "111",
+            "listestemmetall": "5771"
+        },
+        {
+            "name": "Høgre",
+            "stemmesedler": "469",
+            "kommunestyrerepresentanter": "33",
+            "sedler_ganger_kst_repr": "15477",
+            "slengere_mottatt": "480",
+            "slengere_avgitt": "380",
+            "listestemmetall": "15577"
+        },
+        {
+            "name": "Framstegspartiet",
+            "stemmesedler": "778",
+            "kommunestyrerepresentanter": "33",
+            "sedler_ganger_kst_repr": "25674",
+            "slengere_mottatt": "585",
+            "slengere_avgitt": "307",
+            "listestemmetall": "25952"
+        }
+    ],
     "mandatFordelingEndelig": {
         "1": {
             "Parti": "Senterpartiet",

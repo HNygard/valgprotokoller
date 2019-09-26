@@ -162,7 +162,12 @@
                 "Endelig": 66,
                 "Avvik": 0
             },
-            "HelsepartietFellesliste for Senterpartiet og Kristelig Folkeparti": {
+            "Helsepartiet": {
+                "Foreløpig": 5,
+                "Endelig": 5,
+                "Avvik": 0
+            },
+            "Fellesliste for Senterpartiet og Kristelig Folkeparti": {
                 "Foreløpig": 25,
                 "Endelig": 25,
                 "Avvik": 0
@@ -244,6 +249,26 @@
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
     "foretattForeløpigOpptellingHosValgstyret": true,
+    "e1_1_listestemmetall_og_mandater": [
+        {
+            "name": "Arbeiderpartiet",
+            "stemmesedler": "165",
+            "kommunestyrerepresentanter": "11",
+            "sedler_ganger_kst_repr": "1815",
+            "slengere_mottatt": "31",
+            "slengere_avgitt": "19",
+            "listestemmetall": "1827"
+        },
+        {
+            "name": "Helsepartiet",
+            "stemmesedler": "11",
+            "kommunestyrerepresentanter": "11",
+            "sedler_ganger_kst_repr": "121",
+            "slengere_mottatt": "2",
+            "slengere_avgitt": "14",
+            "listestemmetall": "109"
+        }
+    ],
     "mandatFordelingEndelig": {
         "1": {
             "Parti": "Arbeiderpartiet",

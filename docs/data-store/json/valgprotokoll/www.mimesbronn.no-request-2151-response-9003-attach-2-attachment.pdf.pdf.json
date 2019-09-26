@@ -8,5 +8,5 @@
     "documentType": "valgprotokoll",
     "error": true,
     "reportGenerated": "10.09.2019 19:19:06",
-    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\\s*$\nLine ...... :               Ås kommune                         Service og kommunikasjon\n\n#0 2-valgprotokoll-parser.php(324): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '              \\xC3...')\n#1 2-valgprotokoll-parser.php(79): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\\s*$\nLine ...... :               Ås kommune                         Service og kommunikasjon\n\n#0 2-valgprotokoll-parser.php(516): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '              \\xC3...')\n#1 2-valgprotokoll-parser.php(271): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
 }

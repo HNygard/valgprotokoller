@@ -220,7 +220,12 @@
                 "Endelig": 115,
                 "Avvik": 0
             },
-            "SenterpartietKristeleg Folkeparti": {
+            "Senterpartiet": {
+                "Foreløpig": 86,
+                "Endelig": 86,
+                "Avvik": 0
+            },
+            "Kristeleg Folkeparti": {
                 "Foreløpig": 27,
                 "Endelig": 27,
                 "Avvik": 0
@@ -264,6 +269,44 @@
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
     "foretattForeløpigOpptellingHosValgstyret": true,
+    "e1_1_listestemmetall_og_mandater": [
+        {
+            "name": "Arbeidarpartiet",
+            "stemmesedler": "157",
+            "kommunestyrerepresentanter": "13",
+            "sedler_ganger_kst_repr": "2041",
+            "slengere_mottatt": "60",
+            "slengere_avgitt": "69",
+            "listestemmetall": "2032"
+        },
+        {
+            "name": "Senterpartiet",
+            "stemmesedler": "111",
+            "kommunestyrerepresentanter": "13",
+            "sedler_ganger_kst_repr": "1443",
+            "slengere_mottatt": "63",
+            "slengere_avgitt": "51",
+            "listestemmetall": "1455"
+        },
+        {
+            "name": "Kristeleg Folkeparti",
+            "stemmesedler": "34",
+            "kommunestyrerepresentanter": "13",
+            "sedler_ganger_kst_repr": "442",
+            "slengere_mottatt": "11",
+            "slengere_avgitt": "23",
+            "listestemmetall": "430"
+        },
+        {
+            "name": "Høgre",
+            "stemmesedler": "154",
+            "kommunestyrerepresentanter": "13",
+            "sedler_ganger_kst_repr": "2002",
+            "slengere_mottatt": "41",
+            "slengere_avgitt": "36",
+            "listestemmetall": "2007"
+        }
+    ],
     "mandatFordelingEndelig": {
         "1": {
             "Parti": "Arbeidarpartiet",
