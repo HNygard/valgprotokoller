@@ -1009,6 +1009,20 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         $obj->mandatFordelingEndelig = $obj->numbers[$current_heading];
         unset($obj->numbers[$current_heading]);
 
+        $obj->e1_mandatPerParty = array();
+        foreach ($obj->mandatFordelingEndelig as $party) {
+            // Name fixups. Some long names...
+            $party['Parti'] = str_replace('Tverrpolitisk liste for Fremskrittspartiet, Høyre', 'Tverrpolitisk liste for Fremskrittspartiet, Høyre og Venstre', $party['Parti']);
+            $party['Parti'] = str_replace('Liste for Rødt, Senterpartiet og partiuavhengige', 'Liste for Rødt, Senterpartiet og partiuavhengige fiskere', $party['Parti']);
+            $party['Parti'] = str_replace('Melhuslista, Tverrpolitisk liste for hele Melhus', 'Melhuslista, Tverrpolitisk liste for hele Melhus kommune', $party['Parti']);
+            $party['Parti'] = str_replace('Fellesliste for Senterpartiet og Kristelig', 'Fellesliste for Senterpartiet og Kristelig Folkeparti', $party['Parti']);
+
+            if (!isset($obj->e1_mandatPerParty[$party['Parti']])) {
+                $obj->e1_mandatPerParty[$party['Parti']] = 0;
+            }
+            $obj->e1_mandatPerParty[$party['Parti']]++;
+        }
+
         // E2 Kandidatkåring
         // E2.1 Beregning av stemmetillegg og personstemmer
         // E2.2 Valgte representanter og vararepresentanter
@@ -1038,6 +1052,48 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         // TODO: throw exception here!
 
     }
+
+    if (isset($obj->e1_1_listestemmetall_og_mandater)) {
+        $settlement_data = new stdClass();
+        $settlement_data->numberOfSeats = $kommunestyrerepresentanter;
+        $settlement_data->voteTotals = array();
+        foreach ($obj->e1_1_listestemmetall_og_mandater as $party) {
+            $settlement_data->voteTotals[$party->name] = $party->listestemmetall;
+        }
+        file_put_contents('/tmp/election-data.json', json_encode($settlement_data, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES));
+        if (file_exists('/tmp/election-output.json')) {
+            unlink('/tmp/election-output.json');
+        }
+        exec('python3 Election-stuff/settlement.py "/tmp/election-data.json" "/tmp/election-output.json"', $pdfinfoOutput);
+        //var_dump($pdfinfoOutput);
+        $outputData = json_decode(file_get_contents('/tmp/election-output.json'));
+
+        // :: Consistency check of settlement.py vs Valgprotokoll
+        foreach ($outputData->party_seats as $partyName => $partySeats) {
+            if (!isset($obj->e1_mandatPerParty[$partyName]) && $partySeats == 0) {
+                continue;
+            }
+
+            if (!isset($obj->e1_mandatPerParty[$partyName])
+                || $obj->e1_mandatPerParty[$partyName] != $partySeats) {
+                var_dump($obj->e1_mandatPerParty);
+                var_dump($outputData->party_seats);
+                exit('Inconsistencies in settlement.py for party [' . $partyName . ']'
+                    . ' in [' . $obj->election . ', ' . $obj->municipality . ']. Missing in E1.1 or different.');
+            }
+        }
+        $outputData->party_seats = (array)$outputData->party_seats;
+        foreach ($obj->e1_mandatPerParty as $partyName => $partySeats) {
+            if (!isset($outputData->party_seats[$partyName])) {
+                var_dump($obj->e1_mandatPerParty);
+                var_dump($outputData->party_seats);
+                exit('Inconsistencies in settlement.py for party [' . $partyName . ']'
+                    . ' in [' . $obj->election . ', ' . $obj->municipality . ']. Missing in settlement.py or different.');
+            }
+        }
+
+    }
+
 
     return;
 }
