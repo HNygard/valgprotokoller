@@ -1009,10 +1009,10 @@ function parseFile_andWriteToDisk(&$obj, $file) {
                 }
 
                 // :: Do it in reverse for initial counting
+                $current_party->stemmesedler_initial_counting = $partyNumbers_D1_4_pre_election_votes['Foreløpig'] + $partyNumbers_D2_4_pre_election_votes['Foreløpig'];
                 $current_party->listestemmetall_simulated_initial_counting =
                     (
-                        ($partyNumbers_D1_4_pre_election_votes['Foreløpig'] + $partyNumbers_D2_4_pre_election_votes['Foreløpig'])
-                        * $current_party->kommunestyrerepresentanter
+                        $current_party->stemmesedler_initial_counting * $current_party->kommunestyrerepresentanter
                     ) + $current_party->slengere_mottatt - $current_party->slengere_avgitt;
 
             }

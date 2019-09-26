@@ -295,40 +295,102 @@ foreach ($files as $file) {
     $html .= "</ul></li>\n";
 
     // :: Individual election pages
-    $partyLargeDiscrepancies_D1_4 = '';
+    $partyLargeDiscrepancies_D1_4 = array();
     $electionHtml .= "<h2>D1.4 Discrepancy between initial and final counting of pre-election-day votes (\"Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler\")</h2>\n";
     $electionHtml .= $d1_4_heading;
     foreach ($obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'} as $party => $numbers) {
         $electionHtml .= $d1_4_d2_4_row($numbers, $party);
-        $partyLargeDiscrepancies_D1_4 .= $number_if_large_diff($numbers, $party);
+        $partyLargeDiscrepancies_D1_4[] = $number_if_large_diff($numbers, $party);
     }
     $electionHtml .= "</table>\n\n";
     $electionHtml .= "<h3>Comments to D1.4 ('D1.5 Merknad')</h3>\n";
     $electionHtml .= "<div style='background-color: lightgray; margin-left: 0.5em; padding: 1em;'>"
         . str_replace("\n", '<br>', implode("<br><br>", $obj->comments->{'D1.5 Merknad'})) . "</div>\n\n";
 
-    $partyLargeDiscrepancies_D2_4 = '';
+    $partyLargeDiscrepancies_D2_4 = array();
     $electionHtml .= "<h2>D2.4 Discrepancy between initial and final counting of ordinary votes (\"Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler\")</h2>\n";
     $electionHtml .= $d1_4_heading;
     foreach ($obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'} as $party => $numbers) {
         $electionHtml .= $d1_4_d2_4_row($numbers, $party);
-        $partyLargeDiscrepancies_D2_4 .= $number_if_large_diff($numbers, $party);
+        $partyLargeDiscrepancies_D2_4[$party] = $number_if_large_diff($numbers, $party);
     }
     $electionHtml .= "</table>\n\n";
     $electionHtml .= "<h3>Comments to D2.4 ('D2.5 Merknad')</h3>\n";
     $electionHtml .= "<div style='background-color: lightgray; margin-left: 0.5em; padding: 1em;'>"
         . str_replace("\n", '<br>', implode("<br><br>", $obj->comments->{'D2.5 Merknad'})) . "</div>\n\n";
 
+    // :: Mandates based on D1.4 and D2.4
+    $partyLargeDiscrepancies_E1_1 = array();
+    $electionHtml .= "<h2>E1.1 Seats to each political party (\"Beregning av listestemmetall og antall mandater til listene\") vs simulated seats based on initial counting (D1.4)</h2>\n";
+    if (!isset($obj->e1_mandatPerParty)) {
+        $electionHtml .= '<i>Not available in this election.</i>';
+    }
+    else {
+        $electionHtml .= '<table>
+<tr>
+<th>Party</th>
+<td>Simulated seats - Initial count ("Foreløpig")</td>
+<td>Actual seats - Final count ("Endelig")</td>
+<td>Discrepancy ("Avvik")</td>
+</tr>';
+        foreach ($obj->e1_mandatPerParty as $partyName => $partySeats) {
+            $current_paarty = null;
+            foreach ($obj->e1_1_listestemmetall_og_mandater as $party) {
+                if ($party->name == $partyName) {
+                    $current_paarty = $party;
+                }
+            };
+
+            $diff = $partySeats - $obj->e1_mandatPerParty_simulated_initial_counting->{$partyName};
+            $diffColor = $diff > 0 ? ' style="color: green;"' : '';
+            $diffColor = $diff < 0 ? ' style="color: red;"' : $diffColor;
+
+            $diff_votes = $current_paarty->stemmesedler - $current_paarty->stemmesedler_initial_counting;
+            $diff_percent_votes = $diff_votes / $current_paarty->stemmesedler_initial_counting;
+
+            $electionHtml .= '<tr>
+    <th>' . $partyName . '</th>
+    <td>
+    ' . $obj->e1_mandatPerParty_simulated_initial_counting->{$partyName} . ' seats<br>
+    (' . $current_paarty->stemmesedler_initial_counting . ' votes)
+    </td>
+    <td>
+    ' . $partySeats . ' seats<br>
+    (' . $current_paarty->stemmesedler . ' votes)
+    </td>
+    <td> <span' . ($diffColor) . '>'
+                . (($diff > 0) ? '+' : '')
+                . $diff . ($diff != 0 ? ' seats' : '') . '</span><br>
+      <span' . (abs($diff_votes) > 40 ? ' style="color: blue;"' : '') . '>'
+                . (($diff_votes > 0) ? '+' : '')
+                . $diff_votes . ' votes</span>, 
+    <span style="' . (($diff_percent_votes >= 1 || $diff_percent_votes <= -1) ? 'color: red;' : '') . '">' . number_format($diff_percent_votes, 2) . ' %</span>
+    
+    </td>
+</tr>
+';
+            if ($diff != 0) {
+                $partyLargeDiscrepancies_E1_1[] = $partyNameShorten($partyName) . ': ' . '<span ' . $diffColor . '>' . (($diff > 0) ? '+' : '') . $diff . ' seats changed from initial to final counting.</span>';
+            }
+        }
+        $electionHtml .= "</table>\n\n";
+    }
 
     // :: D1.4 and D2.4 summary page
+
+    $partyLargeDiscrepancies_E1_1 = (count($partyLargeDiscrepancies_E1_1) > 0)
+        ? chr(10) . '<br>Pre+Main votes:<br>' . implode("\n<br>", $partyLargeDiscrepancies_E1_1)
+        : '';
+
     $d1_4_numbers = $obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'};
     $html_d1_4 .= $d1_4_d2_4_row($d1_4_numbers,
         '<a href="' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a>',
-        '<td style="text-align: left;">' . str_replace("\n", ",\n", trim($partyLargeDiscrepancies_D1_4)) . '</td>');
+        '<td style="text-align: left;">' . str_replace("\n", ",\n", trim(implode('', $partyLargeDiscrepancies_D1_4))) . $partyLargeDiscrepancies_E1_1 . '</td>');
     $d2_4_numbers = $obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'}->{'Totalt antall partifordelte stemmesedler'};
     $html_d2_4 .= $d1_4_d2_4_row($d2_4_numbers,
         '<a href="' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a>',
-        '<td style="text-align: left;">' . str_replace("\n", ",\n", trim($partyLargeDiscrepancies_D2_4)) . '</td>');
+        '<td style="text-align: left;">' . str_replace("\n", ",\n", trim(implode('', $partyLargeDiscrepancies_D2_4))) . $partyLargeDiscrepancies_E1_1 . '</td>');
+
 
     // :: Ballot stuffing
     // Ballot count contain:
