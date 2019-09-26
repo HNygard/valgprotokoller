@@ -974,13 +974,29 @@ function parseFile_andWriteToDisk(&$obj, $file) {
                 $match = regexAssertAndReturnMatch('/^\s*Listestemmetall:\s\s*\s([0-9]*)$/', $lines[$i++]);
                 $current_party->listestemmetall = cleanFormattedNumber($match[1]);
 
-                // :: Consistency check
+                // :: Consistency check - kommunestyrerep
                 if ($kommunestyrerepresentanter != null && $current_party->kommunestyrerepresentanter != $kommunestyrerepresentanter) {
                     var_dump($obj->e1_1_listestemmetall_og_mandater);
                     var_dump($current_party);
                     throw new Exception('Different kommunestyrerepresentanter.');
                 }
                 $kommunestyrerepresentanter = $current_party->kommunestyrerepresentanter;
+
+                // :: Consistency check - votes in final counting
+                $partyNumbers_D1_4_pre_election_votes = $obj->numbers['D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'][$current_party->name];
+                $partyNumbers_D2_4_pre_election_votes = $obj->numbers['D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'][$current_party->name];
+                if (
+                    ($partyNumbers_D1_4_pre_election_votes['Endelig'] + $partyNumbers_D2_4_pre_election_votes['Endelig'])
+                    != $current_party->stemmesedler
+                ) {
+                    var_dump($current_party);
+                    var_dump($partyNumbers_D1_4_pre_election_votes);
+                    var_dump($partyNumbers_D2_4_pre_election_votes);
+                    throw new Exception('Inconsistency in ["stemmesedler" in E1.1][' . $current_party->stemmesedler . ']'
+                        . ' vs [D1.4 + D2.4][' . $partyNumbers_D1_4_pre_election_votes['Endelig'] . ' + ' . $partyNumbers_D2_4_pre_election_votes['Endelig'] . ']'
+                        . ' for party [' . $current_party->name . '].');
+                }
+
             }
             else {
                 $unknown_lines_e1_1[] = $lines[$i++];
@@ -1054,7 +1070,7 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     }
 
     if (isset($obj->e1_1_listestemmetall_og_mandater)) {
-        $runSettlement = function($kommunestyrerepresentanter, $parti_og_listestemmetall) {
+        $runSettlement = function ($kommunestyrerepresentanter, $parti_og_listestemmetall) {
             $settlement_data = new stdClass();
             $settlement_data->numberOfSeats = $kommunestyrerepresentanter;
             $settlement_data->voteTotals = array();
