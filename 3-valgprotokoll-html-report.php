@@ -595,7 +595,27 @@ foreach ($files as $file) {
     // :: Klage
     if ($avvik_forelopig_endelig || count($ballotStuffingErrors) > 0) {
         $klageType = '';
-        $klage = 'TITTEL:
+
+        $entity = $entity_id__to__obj[$entity_name__to__entity_id[$name . ' kommune']];
+        if (isset($entity->mimesBronnUrl)) {
+            $tags = 'valgprotokoll_2019 valgprotokoll_klage';
+            $mimesLink =
+                // http://alaveteli.org/docs/developers/api/#starting-new-requests-programmatically
+                '<a target="_blank" href="https://www.mimesbronn.no/new/' . htmlentities($entity->mimesBronnUrl, ENT_QUOTES)
+                . '?title=' . urlencode('Klage på valgprotokoll 2019, ' . $obj->municipality . ' - ' . $obj->election)
+                . '&tags=' . urlencode($tags)
+                . '">'
+                . 'Send klage via Mimes Brønn</a>' . chr(10);
+        }
+        else {
+            $mimesLink = 'Mangler Mimes Brønn-kobling.';
+        }
+
+
+        $klage = $mimesLink . '
+(Dette eposten har feil emne. Korrekt tittel står under)        
+        
+TITTEL:
 Klage på "Valgprotokoll for valgstyret - ' . $obj->election . '" for ' . $obj->municipality . '
 
 KLAGE:
@@ -716,7 +736,7 @@ I "Valgprotokoll for valgstyret - ' . $obj->election . '" [2] for ' . $obj->muni
                 }
             }
             $klage .= '
-Det er tydelig at man ikke har sett på avvikene mellom foreløpig telling og endelig telling. Dette bryter mot hele grunnlaget for valgforskrifts-endringen i § 37a [5].
+Det er tydelig at man ikke har sett på avvikene mellom foreløpig telling og endelig telling. Dette bryter mot hele grunnlaget for valgforskrifts-endringen i § 37a [3].
 
 “Manuell foreløpig opptelling er ikke ment som en erstatning for gjennomføring av tekniske og fysiske sikkerhetstiltak i opptellingen. '
                 . 'Det er derimot ingen IT-systemer som er uten sårbarheter, og det er umulig å garantere at en programvare er fullstendig sikker.'
@@ -736,7 +756,7 @@ Det er tydelig at man ikke har sett på avvikene mellom foreløpig telling og en
 
 ';
         if ($avvik_forelopig_endelig) {
-            $klage .= 'Mange av avvikene i ' . $obj->municipality . ' er overraskende store. Ser man på valgdagsstemmene i Oslo [6] så er gjennomsnittlig avvik på 0.35%, det at man i ' . $obj->municipality . ' sine valgprotokoller i tillegg ikke har forklart avvikene gjør at man ikke kan akseptere resultatene som er presentert.
+            $klage .= 'Mange av avvikene i ' . $obj->municipality . ' er overraskende store. Ser man på valgdagsstemmene i Oslo [4] så er gjennomsnittlig avvik på 0.35%, det at man i ' . $obj->municipality . ' sine valgprotokoller i tillegg ikke har forklart avvikene gjør at man ikke kan akseptere resultatene som er presentert.
 
 ';
         }
@@ -753,16 +773,12 @@ Twitter: @hallny
         $klage .= '
 
 [1]: https://lovdata.no/dokument/SF/forskrift/2003-01-02-5#KAPITTEL_9
-[2]: https://elections.no/docs/2019/Vestland/Valgstyrets-motebok-fylke2.PDF
-[5]: https://elections.no/docs/veileder_for_manuell_opptelling.pdf
-[6]: https://github.com/elections-no/elections-no.github.io/blob/master/docs/2019/Oslo/election-day.csv
+[2]: ' . str_replace(__DIR__ . '/docs/', 'https://hnygard.github.io/valgprotokoller/', $new_file) . '
+[3]: https://elections.no/docs/veileder_for_manuell_opptelling.pdf
+' . ($avvik_forelopig_endelig ? '[4]: https://github.com/elections-no/elections-no.github.io/blob/master/docs/2019/Oslo/election-day.csv' : '') . '
 
 
 
-
-TODO:
-- Fiks linker
-- Skriv link til valgprotokoll-oversiktene
 
 ';
 
