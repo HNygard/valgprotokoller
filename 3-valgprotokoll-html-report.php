@@ -315,6 +315,7 @@ foreach ($files as $file) {
     $html .= "</ul></li>\n";
 
     // :: Individual election pages
+    $avvik_forelopig_endelig_comments = array();
     $partyLargeDiscrepancies_D1_4 = array();
     $partyLargeDiscrepancies_D1_4_klage = array();
     $electionHtml .= "<h2>D1.4 Discrepancy between initial and final counting of pre-election-day votes (\"Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler\")</h2>\n";
@@ -785,10 +786,12 @@ $klagerFjernet = array(
     'Bergen - Kommunestyrevalget 2019.html' => 'Allerede påklaget.',
     'Evenes - Kommunestyrevalget 2019.html' => 'Allerede utvidet behandling og omtelling.',
 
-    'Haugesund - Kommunestyrevalget 2019.html' => 'Små avvik. Skannet to ganger. Sliter med avvik i sedler vs manntall pga to valg.',
-    'Fauske - Fylkestingsvalget 2019.html' => 'Små avvik. Skannet to ganger. OK kommentarer, selv om skanning er brukt to ganger.',
     'Frogn - Fylkestingsvalget 2019.html' => 'Større avvik på Piratpartiet. Skannet to ganger. Sliter med avvik i sedler vs manntall pga to valg.',
-    'Aukra - Fylkestingsvalget 2019.html' => 'Større avvik på Venstre. Kommentert.'
+    'Aukra - Fylkestingsvalget 2019.html' => 'Større avvik på Venstre. Kommentert.',
+
+    // Kanskje:
+    'Haugesund - Kommunestyrevalget 2019.html' => 'Små avvik. Skanning.',
+    'Fauske - Fylkestingsvalget 2019.html' => 'Avvik på 1 stemme på to små partier. Utkjør 11-12 % for disse partiene. Kommentar: "OK"',
 
 );
 
