@@ -673,7 +673,7 @@ I "Valgprotokoll for valgstyret - ' . $obj->election . '" [2] for ' . $obj->muni
 
 ';
             if (count($partyLargeDiscrepancies_D1_4_klage) > 0) {
-                $klage .= "I D1.4 kan man se på avvikene på forhåndsstemmer, avvikene var for noen partier overraskende store. Årsaken til dette er ikke forklart.\n\n<b>";
+                $klage .= "I D1.4 kan man se på avvikene på forhåndsstemmer, avvikene var for noen partier overraskende store. Årsaken til dette og måten det er kontrollert på er ikke forklart.\n\n<b>";
 
                 // - Norges Kommunistiske Parti mistet nærmest 86.7% av stemmene sine
                 // - Folkeaksjonen Nei til mer bompenger økte med 5.7%
@@ -683,7 +683,7 @@ I "Valgprotokoll for valgstyret - ' . $obj->election . '" [2] for ' . $obj->muni
                 $klage .= "</b>\n";
             }
             if (count($partyLargeDiscrepancies_D2_4_klage) > 0) {
-                $klage .= "I D2.4 kan man se på avvikene på valgdagsstemmene, avvikene var for noen partier er sjokkerende store. Årsaken til dette er ikke forklart.\n\n<b>";
+                $klage .= "I D2.4 kan man se på avvikene på valgdagsstemmene, avvikene var for noen partier er sjokkerende store. Årsaken til dette og måten det er kontrollert på  er ikke forklart.\n\n<b>";
 
                 // - Norges Kommunistiske Parti mistet nærmest 86.7% av stemmene sine
                 // - Folkeaksjonen Nei til mer bompenger økte med 5.7%
@@ -774,7 +774,11 @@ TODO:
 
 
 $klagerGjennomgatt = array(
-    'Haugesund - Fylkestingsvalget 2019.html' => 'Relativt små avvik. Større avvik på FRP. Ellers lite reelle merknader.'
+    'Haugesund - Fylkestingsvalget 2019.html' => 'Relativt små avvik. Større avvik på FRP. Ellers lite reelle merknader.',
+    'Stavanger - Fylkestingsvalget 2019.html' => 'Avvik på mange prosenter for mange parti. Eneste kommentar "Feiltelling i foreløpig telling.". Ingen forklaring av kontrollmetode.',
+    'Stavanger - Kommunestyrevalget 2019.html' => 'Avvik på mange prosenter for mange parti. Sparsommelige kommentarer. Flest av "Feiltelling i foreløpig telling". Ingen forklaring av kontrollmetode.',
+    'Steinkjer - Fylkestingsvalget 2019.html' => 'Avvik på mange prosenter for mange parti. Kommentarer av type "Stemmestyret har telt 5 sedler for lite". Ingen forklaring av kontrollmetode.',
+    'Steinkjer - Kommunestyrevalget 2019.html' => 'Avvik på mange prosenter for mange parti. Kommentarer av type "Stemmestyret har telt 5 sedler for lite". Ingen forklaring av kontrollmetode.'
 );
 $klagerFjernet = array(
     'Bergen - Fylkestingsvalget 2019.html' => 'Allerede klaget.',
