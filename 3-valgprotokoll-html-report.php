@@ -405,7 +405,9 @@ foreach ($files as $file) {
         $ballotsMainFirstCounting = null;
     }
 
-    $ballotStuffingRow = function ($text, $ballots) {
+    $ballotStuffingErrors = array();
+    $ballotStuffingErrorsComments = array();
+    $ballotStuffingRow = function ($text, $textNor, $ballots, $comments) {
         $checksum = $ballots->{'Kryss i manntall'} - $ballots->{'Ant. sedler'};
 
         $color = (str_contains($text, 'Main-votes') || str_contains($text, 'Key figur'))
@@ -413,14 +415,29 @@ foreach ($files as $file) {
             : '';
         $extraText = $color == 'red' ? ' This should not happen.' : ' Pre-votes: OK.';
 
+        if ($comments != null) {
+            global $obj;
+            $comments2 = $comments . ":\n" . implode("\n", $obj->comments->$comments);
+        }
+        else {
+            $comments2 = '';
+        }
+
+        if ($checksum < 0 && $color == 'red') {
+            global $ballotStuffingErrors;
+            $ballotStuffingErrors[] = $textNor . ': Flere antall stemmesedler (' . $ballots->{'Ant. sedler'} . ') enn antall kryss i manntall (' . $ballots->{'Kryss i manntall'} . ')';
+            $ballotStuffingErrorsComments[] = $comments2;
+        }
+
         return "<td>$text</td>
     <td>" . $ballots->{'Kryss i manntall'} . '</td>
     <td>' . $ballots->{'Ant. sedler'} . '</td>
     <td>' . $checksum . '</td>
-    <td>' . ($checksum >= 0
+    <td style="text-align: left;">' . ($checksum >= 0
                 ? '<span style="color: darkgreen;">OK. ' . $checksum . ' voters crossed out in census, but didn\'t vote.</span>'
                 : '<span style="color: ' . $color . ';">More votes (' . $ballots->{'Ant. sedler'} . ' ballots) then people who was'
                 . ' crossed out in census (' . $ballots->{'Kryss i manntall'} . ').' . $extraText . '</span>') . '</td>
+    <td style="max-width: 300px; text-align: left; font-size: 0.4em;">' . nl2br($comments2) . '</td>
     ';
     };
 
@@ -429,12 +446,13 @@ foreach ($files as $file) {
     $total->{'Kryss i manntall'} = $obj->keyfigures_totaltAntallKryssIManntallet;
     $total->{'Ant. sedler'} = $obj->keyfigures_totaltAntallGodkjenteStemmesedler;
 
+    $ballotsMainFirstCount = null;
     if ($obj->foretattForeløpigOpptellingHosValgstyret) {
-        $d4_1_numbers = $obj->numbers
+        $c4_1_numbers = $obj->numbers
             ->{'C4.1 Antall valgtingsstemmesedler i urne'}
             ->{'Total antall valgtingstemmesedler i urne'};
-        $ballotsMainFirstCount = $d4_1_numbers;
-        $totalKryssIManntallMainVotes = $d4_1_numbers->{'Kryss i manntall'};
+        $ballotsMainFirstCount = $c4_1_numbers;
+        $totalKryssIManntallMainVotes = $c4_1_numbers->{'Kryss i manntall'};
     }
     else {
         $totalKryssIManntallMainVotes = $ballotsMainFirstCounting->{'Kryss i manntall'};
@@ -449,22 +467,56 @@ foreach ($files as $file) {
 
     $html_BallotStuffing .= "<tr>
     <th rowspan='6'><a href='" . $new_path . "'>" . $obj->election . " - " . $obj->municipality . "</a></th>
-        " . $ballotStuffingRow('Key figures', $total) . "
+        " . $ballotStuffingRow(
+            'Key figures',
+            'Totalt',
+            $total,
+            null
+        ) . "
 </tr>
 <tr>
-    " . $ballotStuffingRow('B2.1.1 - Pre-votes - ordinary', $ballotsPreOrdinary) . '
+    " . $ballotStuffingRow(
+            'B2.1.1 - Pre-votes - ordinary',
+            'B2.1.1 - Forhåndsstemmer - ordinære',
+            $ballotsPreOrdinary,
+            'B2.1.3 Merknad'
+        ) . '
 </tr>
 <tr>
-    ' . $ballotStuffingRow('B2.2.1 - Pre-votes - late arrival', $ballotsPreLate) . '
+    ' . $ballotStuffingRow(
+            'B2.2.1 - Pre-votes - late arrival',
+            'B2.2.1 - Forhåndsstemmer - sent innkomme',
+            $ballotsPreLate,
+            'B2.2.3 Merknad'
+        ) . '
 </tr>
 <tr>
-    ' . ($ballotsMainFirstCounting == null ? '<td>C2.1 - Main votes - prelim counting stemmestyret</td><td>-</td>' : $ballotStuffingRow('C2.1 - Main votes - prelim counting stemmestyret', $ballotsMainFirstCounting)) . '
+    ' . ($ballotsMainFirstCounting == null
+            ? '<td>C2.1 - Main votes - prelim counting stemmestyret</td><td>-</td>'
+            : $ballotStuffingRow(
+                'C2.1 - Main votes - prelim counting stemmestyret',
+                'C2.1 - Valgtingsstemmer - foreløpig opptelling stemmestyret',
+                $ballotsMainFirstCounting,
+                'C2.3 Merknad fra stemmestyret'
+            )) . '
 </tr>
 <tr>
-    ' . $ballotStuffingRow('C4.2 - Main-votes - prelim counting valgstyret', $ballotsMainFirstCount) . '
+    ' . ($ballotsMainFirstCount == null
+            ? '<td>C4.1 - Main-votes - prelim counting valgstyret</td><td>-</td>'
+            : $ballotStuffingRow(
+                'C4.1 - Main-votes - prelim counting valgstyret',
+                'C4.1 - Valgtingsstemmer - foreløpig opptelling valgstyret',
+                $ballotsMainFirstCount,
+                'C4.3 Merknad'
+            )) . '
 </tr>
 <tr>
-    ' . $ballotStuffingRow('D2.1 - Main-votes - final counting', $ballotsMainFinalCount) . '
+    ' . $ballotStuffingRow(
+            'D2.1 - Main-votes - final counting',
+            'D2.1 - Valgtingsstemmer - endelig opptelling',
+            $ballotsMainFinalCount,
+            'D2.5 Merknad'
+        ) . '
 </tr>
 
 ';
