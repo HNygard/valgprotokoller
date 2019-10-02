@@ -695,8 +695,9 @@ I "Valgprotokoll for valgstyret - ' . $obj->election . '" [2] for ' . $obj->muni
             }
 
             if (count($partyLargeDiscrepancies_E1_1_klage) > 0) {
+                $klageType .= ' + avvikMandat';
                 $klage .= "I E1.1 kan man se mandatfordelingen i endelig opptelling. Dersom man beregner dette for foreløpig opptelling "
-                    ."også, så kan man se at mandater har byttet party. I og med at avvik i D1.4/D2.4 ikke er forklart, er heller ikke mandatendringen blitt forklart.\n\n<b>";
+                    . "også, så kan man se at mandater har byttet party. I og med at avvik i D1.4/D2.4 ikke er forklart, er heller ikke mandatendringen blitt forklart.\n\n<b>";
 
                 // - Norges Kommunistiske Parti mistet nærmest 86.7% av stemmene sine
                 // - Folkeaksjonen Nei til mer bompenger økte med 5.7%
@@ -709,12 +710,12 @@ I "Valgprotokoll for valgstyret - ' . $obj->election . '" [2] for ' . $obj->muni
 
 ';
             ksort($avvik_forelopig_endelig_comments);
-            foreach($avvik_forelopig_endelig_comments as $commentType => $comments) {
-                foreach($comments as $comment) {
+            foreach ($avvik_forelopig_endelig_comments as $commentType => $comments) {
+                foreach ($comments as $comment) {
                     $klage .= "<b>- $commentType:</b>\n$comment\n\n";
                 }
             }
-            $klage .='
+            $klage .= '
 Det er tydelig at man ikke har sett på avvikene mellom foreløpig telling og endelig telling. Dette bryter mot hele grunnlaget for valgforskrifts-endringen i § 37a [5].
 
 “Manuell foreløpig opptelling er ikke ment som en erstatning for gjennomføring av tekniske og fysiske sikkerhetstiltak i opptellingen. '
@@ -779,7 +780,14 @@ $klagerGjennomgatt = array(
     'Stavanger - Fylkestingsvalget 2019.html' => 'Avvik på mange prosenter for mange parti. Eneste kommentar "Feiltelling i foreløpig telling.". Ingen forklaring av kontrollmetode.',
     'Stavanger - Kommunestyrevalget 2019.html' => 'Avvik på mange prosenter for mange parti. Sparsommelige kommentarer. Flest av "Feiltelling i foreløpig telling". Ingen forklaring av kontrollmetode.',
     'Steinkjer - Fylkestingsvalget 2019.html' => 'Avvik på mange prosenter for mange parti. Kommentarer av type "Stemmestyret har telt 5 sedler for lite". Ingen forklaring av kontrollmetode.',
-    'Steinkjer - Kommunestyrevalget 2019.html' => 'Avvik på mange prosenter for mange parti. Kommentarer av type "Stemmestyret har telt 5 sedler for lite". Ingen forklaring av kontrollmetode.'
+    'Steinkjer - Kommunestyrevalget 2019.html' => 'Avvik på mange prosenter for mange parti. Kommentarer av type "Stemmestyret har telt 5 sedler for lite". Ingen forklaring av kontrollmetode.',
+    'Ullensaker - Fylkestingsvalget 2019.html' => 'Avvik på mange prosenter for mange parti. Fleste kommentarer er "feil ved manuell telling". Ingen forklaring av kontrollmetode.',
+    'Ullensaker - Kommunestyrevalget 2019.html' => '47 stemmer avvik på FRP. Kommentarer som "Feil ved manuell telling". Ingen forklaring av kontrollmetode.',
+    'Aurskog -Høland - Kommunestyrevalget 2019.html' => 'Rødt har fått mer stemmer i både forhånd og valgdag. Kommentarer: "Antatt feiltelling". Ingen forklaring av kontrollmetode.',
+    'Bærum - Kommunestyrevalget 2019.html' => 'Store avvik på AP og FRP. Er kommentert som "Vi har skannet to ganger og er sikre på at feilen ligger i den manuelle tellingen.". Ingen forklaring utover det.',
+
+    'Hammerfest - Kommunestyrevalget 2019.html' => '!!!  Må sjekke avvik stemmesedler om det skal være med: !!! Stemmeavvik på AP. Avvik i antall stemmesedler vs manntall.'
+        . ' Ikke forklart (?). Korrigert i endelig opptelling. Avvik AP ikke kommentert.'
 );
 $klagerFjernet = array(
     'Bergen - Fylkestingsvalget 2019.html' => 'Allerede klaget.',
@@ -788,6 +796,8 @@ $klagerFjernet = array(
 
     'Frogn - Fylkestingsvalget 2019.html' => 'Større avvik på Piratpartiet. Skannet to ganger. Sliter med avvik i sedler vs manntall pga to valg.',
     'Aukra - Fylkestingsvalget 2019.html' => 'Større avvik på Venstre. Kommentert.',
+    'Tønsberg - Kommunestyrevalget 2019.html' => 'Kun -4 stemmer på Partiet De kristne. Ingen forklaring av avviket.',
+    'Berlevåg - Fylkestingsvalget 2019.html' => 'KRF fikk +1 stemme. Utgjorde 50% ekstra.',
 
     // Kanskje:
     'Haugesund - Kommunestyrevalget 2019.html' => 'Små avvik. Skanning.',
@@ -818,7 +828,7 @@ foreach ($klager as $klage => $klageType) {
         $klager_html .= 'Fjernet: ' . $klagerFjernet[$klage] . '<br>';
     }
     else {
-        $klager_html .= '<input type="text" value="'.$klage . '"> ikke gjennomgått<br>';
+        $klager_html .= '<input type="text" value="' . $klage . '"> ikke gjennomgått<br>';
     }
     $klager_html .= "</td>\n";
     $klager_html .= "</tr>\n";
