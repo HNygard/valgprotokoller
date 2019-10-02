@@ -40,6 +40,8 @@ $entity_merging = array(
 );
 
 
+$klager = array();
+
 function htmlHeading($title = 'Valgprotokoller') {
     return "<!DOCTYPE html>
 <html>
@@ -154,6 +156,24 @@ $number_if_large_diff = function ($numbers, $text) {
     elseif ($numbers->{'Endelig'} != 0) {
         return "\n<span style='color: red;'>∞</span> " . $partyNameShorten($text) . $diffHtml;
     }
+};
+$number_if_large_diff_klage = function ($numbers, $text) {
+    global $partyNameShorten;
+
+    $diff = $numbers->{'Endelig'} - $numbers->{'Foreløpig'};
+    $diffSign = $diff > 0 ? '+' : '';
+    if ($numbers->{'Foreløpig'} != 0) {
+        $diff_percent = 100 * (($diff) / $numbers->{'Foreløpig'});
+        $formattedNumber = number_format($diff_percent, 2);
+
+        if (($diff_percent >= 1 || $diff_percent <= -1)) {
+            return $partyNameShorten($text) . ': Stort prosentavvik mellom foreløpig og endelig. Avvik på ' . $diffSign . $formattedNumber . '% (' . $diffSign . $diff . ' stemmer).';
+        }
+        if (abs($diff) >= 40) {
+            return $partyNameShorten($text) . ': Stort antall stemmer mellom foreløpig og endelig. Avvik på ' . $diffSign . $diff . ' stemmer.';
+        }
+    }
+    return '';
 };
 
 $d1_4_d2_4_row = function ($numbers, $text, $append = '') {
@@ -296,11 +316,17 @@ foreach ($files as $file) {
 
     // :: Individual election pages
     $partyLargeDiscrepancies_D1_4 = array();
+    $partyLargeDiscrepancies_D1_4_klage = array();
     $electionHtml .= "<h2>D1.4 Discrepancy between initial and final counting of pre-election-day votes (\"Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler\")</h2>\n";
     $electionHtml .= $d1_4_heading;
     foreach ($obj->numbers->{'D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler'} as $party => $numbers) {
         $electionHtml .= $d1_4_d2_4_row($numbers, $party);
         $partyLargeDiscrepancies_D1_4[] = $number_if_large_diff($numbers, $party);
+        $klageNum = $number_if_large_diff_klage($numbers, $party);
+        if (!empty($klageNum)) {
+            $partyLargeDiscrepancies_D1_4_klage[] = $klageNum;
+            $avvik_forelopig_endelig_comments['D1.5 Merknad'] = $obj->comments->{'D1.5 Merknad'};
+        }
     }
     $electionHtml .= "</table>\n\n";
     $electionHtml .= "<h3>Comments to D1.4 ('D1.5 Merknad')</h3>\n";
@@ -308,11 +334,17 @@ foreach ($files as $file) {
         . str_replace("\n", '<br>', implode("<br><br>", $obj->comments->{'D1.5 Merknad'})) . "</div>\n\n";
 
     $partyLargeDiscrepancies_D2_4 = array();
+    $partyLargeDiscrepancies_D2_4_klage = array();
     $electionHtml .= "<h2>D2.4 Discrepancy between initial and final counting of ordinary votes (\"Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler\")</h2>\n";
     $electionHtml .= $d1_4_heading;
     foreach ($obj->numbers->{'D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler'} as $party => $numbers) {
         $electionHtml .= $d1_4_d2_4_row($numbers, $party);
         $partyLargeDiscrepancies_D2_4[$party] = $number_if_large_diff($numbers, $party);
+        $klageNum = $number_if_large_diff_klage($numbers, $party);
+        if (!empty($klageNum)) {
+            $partyLargeDiscrepancies_D2_4_klage[] = $klageNum;
+            $avvik_forelopig_endelig_comments['D2.5 Merknad'] = $obj->comments->{'D2.5 Merknad'};
+        }
     }
     $electionHtml .= "</table>\n\n";
     $electionHtml .= "<h3>Comments to D2.4 ('D2.5 Merknad')</h3>\n";
@@ -321,6 +353,7 @@ foreach ($files as $file) {
 
     // :: Mandates based on D1.4 and D2.4
     $partyLargeDiscrepancies_E1_1 = array();
+    $partyLargeDiscrepancies_E1_1_klage = array();
     $electionHtml .= "<h2>E1.1 Seats to each political party (\"Beregning av listestemmetall og antall mandater til listene\") vs simulated seats based on initial counting (D1.4)</h2>\n";
     if (!isset($obj->e1_mandatPerParty)) {
         $electionHtml .= '<i>Not available in this election.</i>';
@@ -371,10 +404,14 @@ foreach ($files as $file) {
 ';
             if ($diff != 0) {
                 $partyLargeDiscrepancies_E1_1[] = $partyNameShorten($partyName) . ': ' . '<span ' . $diffColor . '>' . (($diff > 0) ? '+' : '') . $diff . ' seats changed from initial to final counting.</span>';
+                $partyLargeDiscrepancies_E1_1_klage[] = $partyNameShorten($partyName) . ': ' . (($diff > 0) ? '+' : '') . $diff . ' mandat i endring fra foreløig til endelig opptelling.';
             }
         }
         $electionHtml .= "</table>\n\n";
     }
+    $avvik_forelopig_endelig = count($partyLargeDiscrepancies_D1_4_klage) > 0
+        || count($partyLargeDiscrepancies_D2_4_klage) > 0
+        || count($partyLargeDiscrepancies_E1_1_klage) > 0;
 
     // :: D1.4 and D2.4 summary page
 
@@ -418,15 +455,19 @@ foreach ($files as $file) {
         if ($comments != null) {
             global $obj;
             $comments2 = $comments . ":\n" . implode("\n", $obj->comments->$comments);
+            $textNor .= ' (avvik skal forklares i ' . $comments . ')';
         }
         else {
             $comments2 = '';
         }
 
         if ($checksum < 0 && $color == 'red') {
-            global $ballotStuffingErrors;
-            $ballotStuffingErrors[] = $textNor . ': Flere antall stemmesedler (' . $ballots->{'Ant. sedler'} . ') enn antall kryss i manntall (' . $ballots->{'Kryss i manntall'} . ')';
-            $ballotStuffingErrorsComments[] = $comments2;
+            global $ballotStuffingErrors, $ballotStuffingErrorsComments;
+            $ballotStuffingErrors[$textNor] = 'Flere antall stemmesedler (' . $ballots->{'Ant. sedler'} . ') enn antall kryss i manntall (' . $ballots->{'Kryss i manntall'} . ').'
+                . ' ' . abs($checksum) . ' flere stemmesedler enn det skulle vært.';
+            if ($comments != null) {
+                $ballotStuffingErrorsComments[$comments] = $obj->comments->$comments;
+            }
         }
 
         return "<td>$text</td>
@@ -548,7 +589,192 @@ foreach ($files as $file) {
     // [ ] Parse - multi col - 'C1 Oversikt over stemmer mottatt i alle kretser'
 
     file_put_contents($new_file, $electionHtml);
+
+
+    // :: Klage
+    if ($avvik_forelopig_endelig || count($ballotStuffingErrors) > 0) {
+        $klageType = '';
+        $klage = 'TITTEL:
+Klage på "Valgprotokoll for valgstyret - ' . $obj->election . '" for ' . $obj->municipality . '
+
+KLAGE:
+Resultatene som er presentert i disse dokumentene følger ikke kravene til Valgforskriften og kan derfor ikke godkjennes.
+
+';
+        $both = count($ballotStuffingErrors) > 0 && $avvik_forelopig_endelig;
+        if ($both) {
+            $klage .= 'Klage er todelt:
+- Avvik i antall sedler i stemme urne opp mot manntall
+- Avvik mellom foreløpig og endelig opptelling
+
+
+';
+        }
+
+
+        // ----- AVVIK ballot stuffing
+        if (count($ballotStuffingErrors)) {
+            $klageType .= 'ballotStuffing';
+            if ($both) {
+                $klage .= "AVVIK STEMMESEDLER\n\n";
+            }
+
+            $klage .= 'Det er avvik mellom antall sedler i stemmeurne og antall kryss i manntall. Dette er ikke forklart i merknadsfeltene.
+            
+            ';
+
+            foreach ($ballotStuffingErrors as $stuffingErrorType => $stuffingError) {
+                if ($stuffingErrorType == 'Totalt') {
+                    continue;
+                }
+                $klage .= "- $stuffingErrorType\n$stuffingError\n\n";
+            }
+
+            if (isset($ballotStuffingErrors['Totalt'])) {
+                $klage .= $ballotStuffingErrors['Totalt'] . "\n\n";
+            }
+
+            $klage .= "Merknader:\n";
+            if (count($ballotStuffingErrorsComments) == 0) {
+                $klage .= "Ingen merknader på dette.\n";
+            }
+            foreach ($ballotStuffingErrorsComments as $stuffingErrorType => $stuffingError) {
+                foreach ($stuffingError as $comment) {
+                    $klage .= "- $stuffingErrorType:\n" . str_replace("\n", ' ', $comment) . "\n\n";
+                }
+            }
+            $klage .= "\n\n";
+        }
+
+        // ----- AVVIK foreløpig vs endelig
+        if ($avvik_forelopig_endelig) {
+            if (!empty($klageType)) {
+                $klageType .= ' + ';
+            }
+            $klageType .= 'avvikForeløpigEndelig';
+            if ($both) {
+                $klage .= "AVVIK MELLOM FORELØPIG OG ENDELIG\n\n";
+            }
+
+
+            /*
+            count($partyLargeDiscrepancies_D1_4_klage) > 0
+            || count($partyLargeDiscrepancies_D2_4_klage) > 0
+            || count($partyLargeDiscrepancies_E1_1_klage) > 0;
+            */
+
+            $klage .= 'I følge "§ 41.Fastsetting av formular" av Valgforskriften [1] så er "Valgmyndighetene er forpliktet til å benytte fastsatte formularer".
+
+I "D1.5 Merknad" og "D2.5 Merknad" så skal man føre opp:
+"(Årsak til evt. differanse mellom foreløpig og endelig opptelling av forhåndsstemmer.)"
+"(Årsak til evt. differanse mellom foreløpig og endelig opptelling av valgtingsstemmer)"
+
+I "Valgprotokoll for valgstyret - ' . $obj->election . '" [2] for ' . $obj->municipality . ' så har ikke dette blitt gjort.
+
+';
+            if (count($partyLargeDiscrepancies_D1_4_klage) > 0) {
+                $klage .= "I D1.4 kan man se på avvikene på forhåndsstemmer, avvikene var for noen partier overraskende store. Årsaken til dette er ikke forklart.\n\n";
+
+                // - Norges Kommunistiske Parti mistet nærmest 86.7% av stemmene sine
+                // - Folkeaksjonen Nei til mer bompenger økte med 5.7%
+                foreach ($partyLargeDiscrepancies_D1_4_klage as $text) {
+                    $klage .= "- $text\n";
+                }
+                $klage .= "\n";
+            }
+            if (count($partyLargeDiscrepancies_D2_4_klage) > 0) {
+                $klage .= "I D2.4 kan man se på avvikene på valgdagsstemmene, avvikene var for noen partier er sjokkerende store. Årsaken til dette er ikke forklart.\n\n";
+
+                // - Norges Kommunistiske Parti mistet nærmest 86.7% av stemmene sine
+                // - Folkeaksjonen Nei til mer bompenger økte med 5.7%
+                foreach ($partyLargeDiscrepancies_D2_4_klage as $text) {
+                    $klage .= "- $text\n";
+                }
+                $klage .= "\n";
+            }
+
+            if (count($partyLargeDiscrepancies_E1_1_klage) > 0) {
+                $klage .= "I E1.1 kan man se mandatfordelingen i endelig opptelling. Dersom man beregner dette for foreløpig opptelling "
+                    ."også, så kan man se at mandater har byttet party. I og med at avvik i D1.4/D2.4 ikke er forklart, er heller ikke mandatendringen blitt forklart.\n\n";
+
+                // - Norges Kommunistiske Parti mistet nærmest 86.7% av stemmene sine
+                // - Folkeaksjonen Nei til mer bompenger økte med 5.7%
+                foreach ($partyLargeDiscrepancies_E1_1_klage as $text) {
+                    $klage .= "- $text\n";
+                }
+            }
+
+            $klage .= 'De merknadene som er der tyder også på at man ikke så på avvikene fra manuell telling og/eller har ikke forklart hvilke kontrollmetoder som er utført for å påvise feil ved foreløpig opptelling. Eksempler:
+
+';
+            foreach($avvik_forelopig_endelig_comments as $commentType => $comments) {
+                foreach($comments as $comment) {
+                    $klage .= "- $commentType:\n$comment\n\n";
+                }
+            }
+            $klage .='
+Det er tydelig at man ikke har sett på avvikene mellom foreløpig telling og endelig telling. Dette bryter mot hele grunnlaget for valgforskrifts-endringen i § 37a [5].
+
+“Manuell foreløpig opptelling er ikke ment som en erstatning for gjennomføring av tekniske og fysiske sikkerhetstiltak i opptellingen. '
+                . 'Det er derimot ingen IT-systemer som er uten sårbarheter, og det er umulig å garantere at en programvare er fullstendig sikker.'
+                . ' Å forskriftsfeste et krav om at den foreløpige opptellingen skal skje manuelt vil i større grad enn med dagens regelverk sikre to '
+                . 'uavhengige opptellinger og derigjennom et korrekt opptellingsresultat. I tillegg vil to uavhengige opptellinger bidra til å gi '
+                . 'legitimitet til valggjennomføringen. Manuell telling er en opptellingsmåte som er enkel å forstå og observere både for valgstyret '
+                . 'som er ansvarlige for opptellingen, og for velgerne som skal være sikre på at valgresultatet er korrekt.”
+
+';
+        }
+        if ($both) {
+            $klage .= "OPPSUMMERING\n\n";
+        }
+
+
+        $klage .= 'Basert på det over er ikke “Valgprotokoll for valgstyret - ' . $obj->election . '” [2] for ' . $obj->municipality . ' i henhold til Valgforskriften [1].
+
+';
+        if ($avvik_forelopig_endelig) {
+            $klage .= 'Mange av avvikene i ' . $obj->municipality . ' er overraskende store. Ser man på valgdagsstemmene i Oslo [6] så er gjennomsnittlig avvik på 0.35%, det at man i ' . $obj->municipality . ' sine valgprotokoller i tillegg ikke har forklart avvikene gjør at man ikke kan akseptere resultatene som er presentert.
+
+';
+        }
+        $klage .= 'Mvh
+
+Hallvard Nygård
+Twitter: @hallny
+
+';
+
+        $klage .= '
+
+[1]: https://lovdata.no/dokument/SF/forskrift/2003-01-02-5#KAPITTEL_9
+[2]: https://elections.no/docs/2019/Vestland/Valgstyrets-motebok-fylke2.PDF
+[5]: https://elections.no/docs/veileder_for_manuell_opptelling.pdf
+[6]: https://github.com/elections-no/elections-no.github.io/blob/master/docs/2019/Oslo/election-day.csv
+
+
+
+
+TODO:
+- Fiks linker
+- Skriv link til valgprotokoll-oversiktene
+
+';
+
+        file_put_contents(__DIR__ . '/docs/klager/' . $obj->municipality . ' - ' . $obj->election . '.html',
+            htmlHeading('Klage - ' . $obj->municipality . ' - ' . $obj->election)
+            . '<style>body { white-space: pre-line; } </style>'
+            . $klage);
+        $klager[$obj->municipality . ' - ' . $obj->election . '.html'] = $klageType;
+    }
 }
+
+$klager_html = htmlHeading('Klager');
+ksort($klager);
+foreach ($klager as $klage => $klageType) {
+    $klager_html .= '<a href="./' . $klage . '">' . $klage . '</a> - ' . $klageType . '<br>';
+}
+file_put_contents(__DIR__ . '/docs/klager/index.html', $klager_html);
+
 
 $html .= "</ul>\n\n";
 
