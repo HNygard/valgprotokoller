@@ -159,9 +159,12 @@
         ],
         "B2.2.3 Merknad": [
             "Ikkje alle som har avgitt røyst i fylkestingsvalet."
+        ],
+        "C4.3 Merknad": [
+            "Avviket skuldast feil i urnetelling frå røystestyret."
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
     "foretattForeløpigOpptellingHosValgstyret": true,
-    "errorMessage": "Undefined offset: 712\n\n#0 2-valgprotokoll-parser.php(1361): {closure}(8, 'Undefined offse...', '...', 1361, Array)\n#1 2-valgprotokoll-parser.php(793): readComments(Object(stdClass), Array, 712, 'C4.6 Merknad', '(\\xC3\\x85rsak til evt...', 'C4.7 Antall ste...')\n#2 2-valgprotokoll-parser.php(271): parseFile_andWriteToDisk(Object(stdClass), '...')\n#3 {main}"
+    "errorMessage": "Undefined offset: 712\n\n#0 2-valgprotokoll-parser.php(1375): {closure}(8, 'Undefined offse...', '...', 1375, Array)\n#1 2-valgprotokoll-parser.php(807): readComments(Object(stdClass), Array, 712, 'C4.6 Merknad', '(\\xC3\\x85rsak til evt...', 'C4.7 Antall ste...')\n#2 2-valgprotokoll-parser.php(271): parseFile_andWriteToDisk(Object(stdClass), '...')\n#3 {main}"
 }

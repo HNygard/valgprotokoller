@@ -748,6 +748,7 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         $i++;
     }
 
+    // C4 Foreløpig opptelling hos valgstyret
     $i = assertLine_trim($lines, $i, 'C4 Foreløpig opptelling hos valgstyret');
     $i = removeLineIfPresent_andEmpty($lines, $i);
     if ($lines[$i + 1] == 'Foreløpig opptelling av valgtingsstemmesedler er foretatt hos stemmestyrene') {
@@ -758,8 +759,9 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         $i = assertLine_trim($lines, $i, 'Foreløpig opptelling av valgtingsstemmesedler er foretatt hos stemmestyrene');
     }
     else {
-        // C4 Foreløpig opptelling hos valgstyret
-        // C4.1 - C4.3 Valgtingsstemmesedler i urne
+        // C4.1 Antall valgtingsstemmesedler i urne
+        // C4.2 Partifordelte valgtingsstemmesedler i urne
+        // C4.3 Merknad
         $obj->foretattForeløpigOpptellingHosValgstyret = true;
 
         $current_heading = 'C4.1 Antall valgtingsstemmesedler i urne';
@@ -772,7 +774,19 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         $table_ending = 'C4.2 Partifordelte valgtingsstemmesedler i urne';
         $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
         $i = assertLine_trim($lines, $i, $table_ending);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
 
+        // Skip
+        while ($lines[$i] != 'C4.3 Merknad') {
+            $i++;
+        }
+
+        // ---- Table - C4.3 Merknad
+        $merknad_heading = 'C4.3 Merknad';
+        $merknad_reason = '(Årsak til evt. differanse mellom kryss i manntall (C4.1) og foreløpig opptelling (C4.2) og evt. andre forhold)';
+        $continue_until = 'C4.4 Antall stemmesedler i særskilt omslag';
+        $i = readComments($obj, $lines, $i, $merknad_heading, $merknad_reason, $continue_until);
     }
 
     // C4.4 Antall stemmesedler i særskilt omslag
