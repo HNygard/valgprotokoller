@@ -455,7 +455,7 @@ foreach ($files as $file) {
     " . $ballotStuffingRow('B2.1.1 - Pre-votes - ordinary', $ballotsPreOrdinary) . '
 </tr>
 <tr>
-    ' . $ballotStuffingRow('B2.2.1 - Pre-votes - late arrival', $ballotsPreOrdinary) . '
+    ' . $ballotStuffingRow('B2.2.1 - Pre-votes - late arrival', $ballotsPreLate) . '
 </tr>
 <tr>
     ' . ($ballotsMainFirstCounting == null ? '<td>C2.1 - Main votes - prelim counting stemmestyret</td><td>-</td>' : $ballotStuffingRow('C2.1 - Main votes - prelim counting stemmestyret', $ballotsMainFirstCounting)) . '
