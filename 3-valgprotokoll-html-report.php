@@ -621,7 +621,7 @@ Resultatene som er presentert i disse dokumentene følger ikke kravene til Valgf
 
             $klage .= 'Det er avvik mellom antall sedler i stemmeurne og antall kryss i manntall. Dette er ikke forklart i merknadsfeltene.
             
-            ';
+            <b>';
 
             foreach ($ballotStuffingErrors as $stuffingErrorType => $stuffingError) {
                 if ($stuffingErrorType == 'Totalt') {
@@ -643,7 +643,7 @@ Resultatene som er presentert i disse dokumentene følger ikke kravene til Valgf
                     $klage .= "- $stuffingErrorType:\n" . str_replace("\n", ' ', $comment) . "\n\n";
                 }
             }
-            $klage .= "\n\n";
+            $klage .= "</b>\n\n";
         }
 
         // ----- AVVIK foreløpig vs endelig
@@ -673,29 +673,29 @@ I "Valgprotokoll for valgstyret - ' . $obj->election . '" [2] for ' . $obj->muni
 
 ';
             if (count($partyLargeDiscrepancies_D1_4_klage) > 0) {
-                $klage .= "I D1.4 kan man se på avvikene på forhåndsstemmer, avvikene var for noen partier overraskende store. Årsaken til dette er ikke forklart.\n\n";
+                $klage .= "I D1.4 kan man se på avvikene på forhåndsstemmer, avvikene var for noen partier overraskende store. Årsaken til dette er ikke forklart.\n\n<b>";
 
                 // - Norges Kommunistiske Parti mistet nærmest 86.7% av stemmene sine
                 // - Folkeaksjonen Nei til mer bompenger økte med 5.7%
                 foreach ($partyLargeDiscrepancies_D1_4_klage as $text) {
                     $klage .= "- $text\n";
                 }
-                $klage .= "\n";
+                $klage .= "</b>\n";
             }
             if (count($partyLargeDiscrepancies_D2_4_klage) > 0) {
-                $klage .= "I D2.4 kan man se på avvikene på valgdagsstemmene, avvikene var for noen partier er sjokkerende store. Årsaken til dette er ikke forklart.\n\n";
+                $klage .= "I D2.4 kan man se på avvikene på valgdagsstemmene, avvikene var for noen partier er sjokkerende store. Årsaken til dette er ikke forklart.\n\n<b>";
 
                 // - Norges Kommunistiske Parti mistet nærmest 86.7% av stemmene sine
                 // - Folkeaksjonen Nei til mer bompenger økte med 5.7%
                 foreach ($partyLargeDiscrepancies_D2_4_klage as $text) {
                     $klage .= "- $text\n";
                 }
-                $klage .= "\n";
+                $klage .= "</b>\n";
             }
 
             if (count($partyLargeDiscrepancies_E1_1_klage) > 0) {
                 $klage .= "I E1.1 kan man se mandatfordelingen i endelig opptelling. Dersom man beregner dette for foreløpig opptelling "
-                    ."også, så kan man se at mandater har byttet party. I og med at avvik i D1.4/D2.4 ikke er forklart, er heller ikke mandatendringen blitt forklart.\n\n";
+                    ."også, så kan man se at mandater har byttet party. I og med at avvik i D1.4/D2.4 ikke er forklart, er heller ikke mandatendringen blitt forklart.\n\n<b>";
 
                 // - Norges Kommunistiske Parti mistet nærmest 86.7% av stemmene sine
                 // - Folkeaksjonen Nei til mer bompenger økte med 5.7%
@@ -704,12 +704,13 @@ I "Valgprotokoll for valgstyret - ' . $obj->election . '" [2] for ' . $obj->muni
                 }
             }
 
-            $klage .= 'De merknadene som er der tyder også på at man ikke så på avvikene fra manuell telling og/eller har ikke forklart hvilke kontrollmetoder som er utført for å påvise feil ved foreløpig opptelling. Eksempler:
+            $klage .= '</b>De merknadene som er der tyder også på at man ikke så på avvikene fra manuell telling og/eller har ikke forklart hvilke kontrollmetoder som er utført for å påvise feil ved foreløpig opptelling. Eksempler:
 
 ';
+            ksort($avvik_forelopig_endelig_comments);
             foreach($avvik_forelopig_endelig_comments as $commentType => $comments) {
                 foreach($comments as $comment) {
-                    $klage .= "- $commentType:\n$comment\n\n";
+                    $klage .= "<b>- $commentType:</b>\n$comment\n\n";
                 }
             }
             $klage .='
@@ -737,6 +738,9 @@ Det er tydelig at man ikke har sett på avvikene mellom foreløpig telling og en
 
 ';
         }
+
+        $klage .= "Jeg ber om at saksnummer sendes i retur så fort dette dokumentet er journalført.\n\n";
+
         $klage .= 'Mvh
 
 Hallvard Nygård
@@ -768,11 +772,51 @@ TODO:
     }
 }
 
+
+$klagerGjennomgatt = array(
+    'Haugesund - Fylkestingsvalget 2019.html' => 'Relativt små avvik. Større avvik på FRP. Ellers lite reelle merknader.'
+);
+$klagerFjernet = array(
+    'Bergen - Fylkestingsvalget 2019.html' => 'Allerede klaget.',
+    'Bergen - Kommunestyrevalget 2019.html' => 'Allerede påklaget.',
+    'Evenes - Kommunestyrevalget 2019.html' => 'Allerede utvidet behandling og omtelling.',
+
+    'Haugesund - Kommunestyrevalget 2019.html' => 'Små avvik. Skannet to ganger. Sliter med avvik i sedler vs manntall pga to valg.',
+    'Fauske - Fylkestingsvalget 2019.html' => 'Små avvik. Skannet to ganger. OK kommentarer, selv om skanning er brukt to ganger.',
+    'Frogn - Fylkestingsvalget 2019.html' => 'Større avvik på Piratpartiet. Skannet to ganger. Sliter med avvik i sedler vs manntall pga to valg.',
+    'Aukra - Fylkestingsvalget 2019.html' => 'Større avvik på Venstre. Kommentert.'
+
+);
+
 $klager_html = htmlHeading('Klager');
 ksort($klager);
+$klager_html .= "<table>\n";
 foreach ($klager as $klage => $klageType) {
-    $klager_html .= '<a href="./' . $klage . '">' . $klage . '</a> - ' . $klageType . '<br>';
+    $klager_html .= "<tr>\n    <td style='text-align: left'>";
+    if (isset($klagerFjernet[$klage])) {
+        $klager_html .= "<span style='text-decoration: line-through'>";
+    }
+    $klager_html .= '<a href="./' . $klage . '">' . $klage . '</a> - ' . $klageType . "<br>";
+    if (isset($klagerFjernet[$klage])) {
+        $klager_html .= "</span>";
+    }
+    $klager_html .= "</td>\n";
+
+    $klager_html .= "    <td style='text-align: left'>";
+    if (isset($klagerGjennomgatt[$klage])) {
+        $klager_html .= 'Gjennomgått: ' . $klagerGjennomgatt[$klage] . '<br>';
+
+    }
+    elseif (isset($klagerFjernet[$klage])) {
+        $klager_html .= 'Fjernet: ' . $klagerFjernet[$klage] . '<br>';
+    }
+    else {
+        $klager_html .= '<input type="text" value="'.$klage . '"> ikke gjennomgått<br>';
+    }
+    $klager_html .= "</td>\n";
+    $klager_html .= "</tr>\n";
 }
+$klager_html .= "</table>\n";
 file_put_contents(__DIR__ . '/docs/klager/index.html', $klager_html);
 
 
