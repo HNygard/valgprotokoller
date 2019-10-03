@@ -245,8 +245,10 @@ foreach ($files as $file) {
     $name = str_replace('Aurskog -Høland', 'Aurskog-Høland', $name);
     $name = str_replace('Unjárga - Nesseby', 'Nesseby', $name);
     $name = str_replace('Porsanger - Porságu - Porsanki', 'Porsanger', $name);
+    $name2 = $name . ' kommune';
+    $name2 = str_replace('Ullensvang kommune', 'Ullensvang herad', $name2);
     $obj->file = $file;
-    $entity_id__to__obj[$entity_name__to__entity_id[$name . ' kommune']]->elections[] = $obj;
+    $entity_id__to__obj[$entity_name__to__entity_id[$name2]]->elections[] = $obj;
 
     $summaryData[$obj->election]++;
 
@@ -596,7 +598,7 @@ foreach ($files as $file) {
     if ($avvik_forelopig_endelig || count($ballotStuffingErrors) > 0) {
         $klageType = '';
 
-        $entity = $entity_id__to__obj[$entity_name__to__entity_id[$name . ' kommune']];
+        $entity = $entity_id__to__obj[$entity_name__to__entity_id[$name2]];
         if (isset($entity->mimesBronnUrl)) {
             $tags = 'valgprotokoll_2019 valgprotokoll_klage';
             $mimesLink =
@@ -814,6 +816,7 @@ $klagerFjernet = array(
     'Aukra - Fylkestingsvalget 2019.html' => 'Større avvik på Venstre. Kommentert.',
     'Tønsberg - Kommunestyrevalget 2019.html' => 'Kun -4 stemmer på Partiet De kristne. Ingen forklaring av avviket.',
     'Berlevåg - Fylkestingsvalget 2019.html' => 'KRF fikk +1 stemme. Utgjorde 50% ekstra.',
+    'Ullensvang - Fylkestingsvalget 2019.html' => 'Lite avvik. Ca kommentert tror jeg.',
 
     // Kanskje:
     'Haugesund - Kommunestyrevalget 2019.html' => 'Små avvik. Skanning.',
