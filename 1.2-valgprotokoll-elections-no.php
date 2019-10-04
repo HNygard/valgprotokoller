@@ -10,7 +10,6 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errconte
 });
 
 
-// TODO: git submodule update
 $command = 'git submodule update --remote elections-no.github.io';
 logInfo('Exec: ' . $command);
 exec($command, $find);

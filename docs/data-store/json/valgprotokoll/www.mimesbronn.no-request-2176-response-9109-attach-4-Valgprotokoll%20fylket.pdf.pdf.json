@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs/www.mimesbronn.no-request-2176-response-9109-attach-4-Valgprotokoll%20fylket.pdf.pdf.layout.txt",
+    "url": "https://www.mimesbronn.no/request/2176/response/9109/attach/4/Valgprotokoll%20fylket.pdf",
+    "downloadTime": "2019-10-04 19:29:34",
+    "pdfMetaData": "Creator:\n\nCreationDate:   Wed Sep 11 11:12:43 2019 CEST\nModDate:        Wed Sep 11 14:54:43 2019 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          14\nEncrypted:      no\nPage size:      594 x 840.96 pts\nPage rot:       0\nFile size:      499029 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "10.09.2019 17:41:29",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\\s*$\nLine ...... : j   vALs\n\n#0 2-valgprotokoll-parser.php(516): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', 'j   vALs')\n#1 2-valgprotokoll-parser.php(271): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
