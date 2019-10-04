@@ -794,24 +794,31 @@ Twitter: @hallny
 
 
 $klagerGjennomgatt = array(
-    'Haugesund - Fylkestingsvalget 2019.html' => 'Relativt små avvik. Større avvik på FRP. Ellers lite reelle merknader.',
-    'Stavanger - Fylkestingsvalget 2019.html' => 'Avvik på mange prosenter for mange parti. Eneste kommentar "Feiltelling i foreløpig telling.". Ingen forklaring av kontrollmetode.',
-    'Stavanger - Kommunestyrevalget 2019.html' => 'Avvik på mange prosenter for mange parti. Sparsommelige kommentarer. Flest av "Feiltelling i foreløpig telling". Ingen forklaring av kontrollmetode.',
     'Steinkjer - Fylkestingsvalget 2019.html' => 'Avvik på mange prosenter for mange parti. Kommentarer av type "Stemmestyret har telt 5 sedler for lite". Ingen forklaring av kontrollmetode.',
     'Steinkjer - Kommunestyrevalget 2019.html' => 'Avvik på mange prosenter for mange parti. Kommentarer av type "Stemmestyret har telt 5 sedler for lite". Ingen forklaring av kontrollmetode.',
     'Ullensaker - Fylkestingsvalget 2019.html' => 'Avvik på mange prosenter for mange parti. Fleste kommentarer er "feil ved manuell telling". Ingen forklaring av kontrollmetode.',
     'Ullensaker - Kommunestyrevalget 2019.html' => '47 stemmer avvik på FRP. Kommentarer som "Feil ved manuell telling". Ingen forklaring av kontrollmetode.',
-    'Aurskog -Høland - Kommunestyrevalget 2019.html' => 'Rødt har fått mer stemmer i både forhånd og valgdag. Kommentarer: "Antatt feiltelling". Ingen forklaring av kontrollmetode.',
-    'Bærum - Kommunestyrevalget 2019.html' => 'Store avvik på AP og FRP. Er kommentert som "Vi har skannet to ganger og er sikre på at feilen ligger i den manuelle tellingen.". Ingen forklaring utover det.',
 
     'Hammerfest - Kommunestyrevalget 2019.html' => '!!!  Må sjekke avvik stemmesedler om det skal være med: !!! Stemmeavvik på AP. Avvik i antall stemmesedler vs manntall.'
         . ' Ikke forklart (?). Korrigert i endelig opptelling. Avvik AP ikke kommentert.'
 );
+$klagerSendt = array(
+    'Stavanger - Fylkestingsvalget 2019.html' => 'Avvik på mange prosenter for mange parti. Eneste kommentar "Feiltelling i foreløpig telling.". Ingen forklaring av kontrollmetode.',
+    'Stavanger - Kommunestyrevalget 2019.html' => 'Avvik på mange prosenter for mange parti. Sparsommelige kommentarer. Flest av "Feiltelling i foreløpig telling". Ingen forklaring av kontrollmetode.',
+    'Haugesund - Fylkestingsvalget 2019.html' => 'Relativt små avvik. Større avvik på FRP. Ellers lite reelle merknader.',
+    'Bærum - Kommunestyrevalget 2019.html' => 'Store avvik på AP og FRP. Er kommentert som "Vi har skannet to ganger og er sikre på at feilen ligger i den manuelle tellingen.". Ingen forklaring utover det.',
+    'Aurskog -Høland - Kommunestyrevalget 2019.html' => 'Rødt har fått mer stemmer i både forhånd og valgdag. Kommentarer: "Antatt feiltelling". Ingen forklaring av kontrollmetode.',
+
+
+);
 $klagerFjernet = array(
+    // Andre har klaget
     'Bergen - Fylkestingsvalget 2019.html' => 'Allerede klaget.',
     'Bergen - Kommunestyrevalget 2019.html' => 'Allerede påklaget.',
     'Evenes - Kommunestyrevalget 2019.html' => 'Allerede utvidet behandling og omtelling.',
+    'Gjøvik - Kommunestyrevalget 2019.html' => 'Allerede påklaget - https://innsyn.gjovik.kommune.no/wfinnsyn.ashx?response=mote&moteid=423&',
 
+    // Andre
     'Frogn - Fylkestingsvalget 2019.html' => 'Større avvik på Piratpartiet. Skannet to ganger. Sliter med avvik i sedler vs manntall pga to valg.',
     'Aukra - Fylkestingsvalget 2019.html' => 'Større avvik på Venstre. Kommentert.',
     'Tønsberg - Kommunestyrevalget 2019.html' => 'Kun -4 stemmer på Partiet De kristne. Ingen forklaring av avviket.',
@@ -842,6 +849,9 @@ foreach ($klager as $klage => $klageType) {
     if (isset($klagerGjennomgatt[$klage])) {
         $klager_html .= 'Gjennomgått: ' . $klagerGjennomgatt[$klage] . '<br>';
 
+    }
+    elseif (isset($klagerSendt[$klage])) {
+        $klager_html .= 'Klage sendt: ' . $klagerSendt[$klage] . '<br>';
     }
     elseif (isset($klagerFjernet[$klage])) {
         $klager_html .= 'Fjernet: ' . $klagerFjernet[$klage] . '<br>';
