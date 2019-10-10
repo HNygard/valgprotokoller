@@ -185,7 +185,7 @@
     "askim_kommune": [
         {
             "mimes_bronn_entity_url": "askim_kommune",
-            "display_status": "<i class=\"fas fa-question\" title=\"internal_review\"></i> Venter p&aring; kategorisering.",
+            "display_status": "<i class=\"fas fa-question\" title=\"not_held\"></i> Har ikke informasjonen.",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -195,14 +195,14 @@
             "url": "https://www.mimesbronn.no/request/valgprotokoll_2019_askim_kommune",
             "events": [],
             "files": [],
-            "last_updated": "2019-10-07T10:19:49+02:00",
+            "last_updated": "2019-10-07T22:52:36+02:00",
             "cache_key": "_request_valgprotokoll_2019_askim_kommune"
         }
     ],
     "aurskog_holand_kommune": [
         {
             "mimes_bronn_entity_url": "aurskog_holand_kommune",
-            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; svar.</span>",
+            "display_status": "<span class=\"innsyn-failed\"><i class=\"fas fa-window-close\"></i> Avsl&aring;tt</span>",
             "tags": [
                 [
                     "valgprotokoll_klage",
@@ -215,15 +215,22 @@
             ],
             "url": "https://www.mimesbronn.no/request/klage_pa_valgprotokoll_2019_aurs",
             "events": [],
-            "files": [],
-            "last_updated": "2019-10-04T23:30:52+02:00",
+            "files": [
+                {
+                    "fileName": "attachment.pdf",
+                    "fileSize": "237K",
+                    "fileType": "application/pdf",
+                    "url": "https://www.mimesbronn.no/request/2256/response/9154/attach/2/attachment.pdf"
+                }
+            ],
+            "last_updated": "2019-10-10T22:14:27+02:00",
             "cache_key": "_request_klage_pa_valgprotokoll_2019_aurs"
         }
     ],
     "baerum_kommune": [
         {
             "mimes_bronn_entity_url": "baerum_kommune",
-            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; svar.</span>",
+            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Forsinket.</span>",
             "tags": [
                 [
                     "valgprotokoll_klage",
@@ -314,7 +321,7 @@
     "bodo_kommune": [
         {
             "mimes_bronn_entity_url": "bodo_kommune",
-            "display_status": "<i class=\"fas fa-question\" title=\"internal_review\"></i> Venter p&aring; kategorisering.",
+            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; kategorisering.</span>",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -341,10 +348,23 @@
                     "fileSize": "760K",
                     "fileType": "application/pdf",
                     "url": "https://www.mimesbronn.no/request/2193/response/9122/attach/5/Valgprotokoll%20Fylkestingsvalget%202019%201.pdf"
+                },
+                {
+                    "fileName": "Valgprotokoll Fylkestingsvalget 2019 1.pdf",
+                    "fileSize": "760K",
+                    "fileType": "application/pdf",
+                    "url": "https://www.mimesbronn.no/request/2193/response/9145/attach/2/Valgprotokoll%20Fylkestingsvalget%202019%201.pdf"
+                },
+                {
+                    "fileName": "Valgprotokoll Kommunestyrevalget 2019.pdf",
+                    "fileSize": "3.0M",
+                    "fileType": "application/pdf",
+                    "url": "https://www.mimesbronn.no/request/2193/response/9145/attach/3/Valgprotokoll%20Kommunestyrevalget%202019.pdf"
                 }
             ],
-            "last_updated": "2019-10-07T09:05:55+02:00",
-            "cache_key": "_request_valgprotokoll_2019_bodo_kommune"
+            "last_updated": "2019-10-09T09:47:35+02:00",
+            "cache_key": "_request_valgprotokoll_2019_bodo_kommune",
+            "answerToQuestions": "1. Opptellingen ble foretatt i henholde til valglovens bestemmelser om manuell opptelling.\n2. Endelig opptelling bel foretatt med hjelp av skannere og direktoratets program for opptelling.\n3. Det ble foretatt foreløpig og endelig telling. I tillegg ble det foretatt kontrolltelling og stikkprøvetelling på en enkelte stemmekretser.\n4. Tellingene ble foretatt i henhold til direktoratets regler for opptelling ved hjelp av skanner."
         }
     ],
     "drammen_kommune": [
@@ -676,7 +696,7 @@
     "gjovik_kommune": [
         {
             "mimes_bronn_entity_url": "gjovik_kommune",
-            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; kategorisering.</span>",
+            "display_status": "<span class=\"innsyn-success\"><i class=\"fas fa-check\"></i> Vellykket.</span>",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -705,7 +725,7 @@
                     "url": "https://www.mimesbronn.no/request/2157/response/9120/attach/2/Valgstyrets%20m%20tebok%20fylkestingsvalget%20Gj%20vik%20kommune%20usignert.pdf"
                 }
             ],
-            "last_updated": "2019-10-07T08:36:07+02:00",
+            "last_updated": "2019-10-07T21:02:21+02:00",
             "cache_key": "_request_valgprotokoll_2019_gjovik_kommun",
             "answerToQuestions": "1. Foreløpig telling skal etter loven gjennomføres som manuell telling.\nManuell telling av foreløpig telling ble gjennomført manuelt i alle de sju\nstemmekretsene\n\n2. Endelig telling ble gjennomført ved bruk av skanner\n\n3. Loven krever at alle sedler skal telles i to omganger. Alle sedler til\nbåde kommunestyrevalget og fylketingsvalget er telt minimum tre ganger.\n\n4. Vi forholder oss kun til foreløpig og endelig telling. Det kan telles\nmange ganger både foreløpig og endelig for å være å sikker som mulig på et\nkorrekt resultat, men det vil bare være ett resultat pr. telling som vises\ni møteboka.\n---\nAng. spørsmål:\n\"Alle sedler til både kommunestyrevalget og fylketingsvalget er telt minimum tre ganger.\"\nBle de da telt manuelt 1 gang og maskinelt 2 ganger?\n---\nVedr. opptelling.\n\nAlle sedler til kommunestyre- og fylkestingsvalget er som del av foreløpig\ntelling telt manuelt minimum to ganger. Prosessen er slik at hver bunke\ntelles og kontrolltelles. Ved avvik telles ytterligere en gang slik at det\nda kan være telt i alt tre ganger før registrering i valgsystemet som\nresultater fra foreløpig telling. I vår kommune legges sedlene deretter\ntilbake i urnen som forsegles og fraktes til endelig telling (fintelling)\nmed hjelp av skannere. Her skannes (maskintelles) det minimum 1 gang.\nDette vurderes ut ifra differanse mellom foreløpig og endelig telling.\nOpptellingsresultatene fra årets valg viser at det er minimale endringer\nfra foreløpig telling til endelig telling og det er i hovedsak derfor\nvalgt å maskintelle en gang.\n\nSedlene til fylkestingsvalget fraktes til fylkesvalgstyret for endelig\ntelling (maskintelling).\n---\nDere foretok en ny opptelling 23.09.2019. Hvordan ble denne utført? Manuelt? Maskinell? Hvem utførte det?\n---\nOmtellingen ble gjennomført på den måten Valgstyret besluttet i sitt møte\n18.09.2019\nhttps://innsyn.gjovik.kommune.no/wfinnsyn.ashx?response=mote&moteid=423&"
         }
@@ -885,7 +905,7 @@
     "haugesund_kommune": [
         {
             "mimes_bronn_entity_url": "haugesund_kommune",
-            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; svar.</span>",
+            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; kategorisering.</span>",
             "tags": [
                 [
                     "valgprotokoll_klage",
@@ -904,9 +924,15 @@
                     "fileSize": "4K",
                     "fileType": "image/png",
                     "url": "https://www.mimesbronn.no/request/2254/response/9101/attach/3/image001.png"
+                },
+                {
+                    "fileName": "image001.png",
+                    "fileSize": "4K",
+                    "fileType": "image/png",
+                    "url": "https://www.mimesbronn.no/request/2254/response/9155/attach/3/image001.png"
                 }
             ],
-            "last_updated": "2019-10-04T23:31:15+02:00",
+            "last_updated": "2019-10-10T23:05:58+02:00",
             "cache_key": "_request_klage_pa_valgprotokoll_2019_haug"
         },
         {
@@ -1824,7 +1850,7 @@
     "nittedal_kommune": [
         {
             "mimes_bronn_entity_url": "nittedal_kommune",
-            "display_status": "<i class=\"fas fa-question\" title=\"internal_review\"></i> Venter p&aring; behandling av klage.",
+            "display_status": "<i class=\"fas fa-question\" title=\"internal_review\"></i> Venter p&aring; kategorisering.",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -1859,7 +1885,7 @@
                     "url": "https://www.mimesbronn.no/request/2237/response/9096/attach/4/image004.png"
                 }
             ],
-            "last_updated": "2019-10-03T22:41:15+02:00",
+            "last_updated": "2019-10-09T13:00:17+02:00",
             "cache_key": "_request_valgprotokoll_2019_nittedal_komm"
         }
     ],
@@ -2031,7 +2057,7 @@
     "porsgrunn_kommune": [
         {
             "mimes_bronn_entity_url": "porsgrunn_kommune",
-            "display_status": "<i class=\"fas fa-question\" title=\"internal_review\"></i> Venter p&aring; kategorisering.",
+            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Sv&aelig;rt forsinket.</span>",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -2072,14 +2098,14 @@
                     "url": "https://www.mimesbronn.no/request/2167/response/9129/attach/3/M%20tebok2019.pdf"
                 }
             ],
-            "last_updated": "2019-10-07T15:34:32+02:00",
+            "last_updated": "2019-10-07T18:45:27+02:00",
             "cache_key": "_request_valgprotokoll_2019_porsgrunn_kom"
         }
     ],
     "rade_kommune": [
         {
             "mimes_bronn_entity_url": "rade_kommune",
-            "display_status": "<i class=\"fas fa-question\" title=\"internal_review\"></i> Venter p&aring; behandling av klage.",
+            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Sv&aelig;rt forsinket.</span>",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -2088,9 +2114,23 @@
             ],
             "url": "https://www.mimesbronn.no/request/valgprotokoll_2019_rade_kommune",
             "events": [],
-            "files": [],
-            "last_updated": "2019-10-03T22:28:30+02:00",
-            "cache_key": "_request_valgprotokoll_2019_rade_kommune"
+            "files": [
+                {
+                    "fileName": "image001.png",
+                    "fileSize": "7K",
+                    "fileType": "image/png",
+                    "url": "https://www.mimesbronn.no/request/2211/response/9147/attach/3/image001.png"
+                },
+                {
+                    "fileName": "image002.png",
+                    "fileSize": "7K",
+                    "fileType": "image/png",
+                    "url": "https://www.mimesbronn.no/request/2211/response/9147/attach/4/image002.png"
+                }
+            ],
+            "last_updated": "2019-10-10T23:15:57+02:00",
+            "cache_key": "_request_valgprotokoll_2019_rade_kommune",
+            "answerToQuestions": "1.       Foreløpig opptelling ble utført i hht. valgforskriftens § 37a, manuell telling.\n2.       Endelig opptelling ble gjort gjennom elektronisk valgadministrativt system (EVA)\n3.       Vi hadde 1 foreløpig telling for hver kategori og 1 endelig telling for hver kategori.\n4.       Her er det ikke noe å tilføye."
         }
     ],
     "rakkestad_kommune": [
@@ -2127,7 +2167,7 @@
     "randaberg_kommune": [
         {
             "mimes_bronn_entity_url": "randaberg_kommune",
-            "display_status": "<i class=\"fas fa-question\" title=\"internal_review\"></i> Venter p&aring; behandling av klage.",
+            "display_status": "<i class=\"fas fa-question\" title=\"internal_review\"></i> Venter p&aring; kategorisering.",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -2160,9 +2200,33 @@
                     "fileSize": "431K",
                     "fileType": "application/pdf",
                     "url": "https://www.mimesbronn.no/request/2184/response/9075/attach/2/Svar%20Tilbakemelding%20Innsyn%20valgprotokoll%202019.PDF.pdf"
+                },
+                {
+                    "fileName": "Utkast til valgstyrets valgprotokoll 2019.PDF.pdf",
+                    "fileSize": "5.5M",
+                    "fileType": "application/pdf",
+                    "url": "https://www.mimesbronn.no/request/2184/response/9141/attach/2/Utkast%20til%20valgstyrets%20valgprotokoll%202019.PDF.pdf"
+                },
+                {
+                    "fileName": "Utkast til valgstyrets valgprotokoll 2019.PDF.pdf",
+                    "fileSize": "12.8M",
+                    "fileType": "application/pdf",
+                    "url": "https://www.mimesbronn.no/request/2184/response/9141/attach/3/Utkast%20til%20valgstyrets%20valgprotokoll%202019.PDF.pdf"
+                },
+                {
+                    "fileName": "Svar Klage over innsyn Valgprotokoll 2019.PDF.pdf",
+                    "fileSize": "434K",
+                    "fileType": "application/pdf",
+                    "url": "https://www.mimesbronn.no/request/2184/response/9141/attach/4/Svar%20Klage%20over%20innsyn%20Valgprotokoll%202019.PDF.pdf"
+                },
+                {
+                    "fileName": "Svar Tilbakemelding Innsyn valgprotokoll 2019.PDF.pdf",
+                    "fileSize": "431K",
+                    "fileType": "application/pdf",
+                    "url": "https://www.mimesbronn.no/request/2184/response/9141/attach/5/Svar%20Tilbakemelding%20Innsyn%20valgprotokoll%202019.PDF.pdf"
                 }
             ],
-            "last_updated": "2019-10-03T22:18:57+02:00",
+            "last_updated": "2019-10-08T13:42:13+02:00",
             "cache_key": "_request_valgprotokoll_2019_randaberg_kom",
             "answerToQuestions": "1. Ble foreløpig opptelling utført manuelt eller med dataprogram? - Foreløpig opptelling er lovpålagt å være\nmanuell.\n2. Ble endelig opptelling utført manuelt eller med dataprogram? - Endelig opptelling ble foretatt maskinelt.\n3. Hvor mange opptellinger og omtellinger ble foretatt totalt? - De to lovpålagte ble foretatt.\n4. Hvis flere enn foreløpig og endelig, hvordan ble disse utført (manuelt/data?) og hvorfor ble de utført? - Se\nsvar på forrige spørsmål.\nDersom det er ulikt svar for de ulike valgskretsene, så svar for hver enkelt krets. - Randaberg\nkommune har en valgkrets. Oversikt over alle valgkretsene i Norge er offentlig tilgjengelig."
         }
@@ -2187,7 +2251,7 @@
     "rygge_kommune": [
         {
             "mimes_bronn_entity_url": "rygge_kommune",
-            "display_status": "<i class=\"fas fa-question\" title=\"internal_review\"></i> Venter p&aring; behandling av klage.",
+            "display_status": "<i class=\"fas fa-question\" title=\"internal_review\"></i> Venter p&aring; kategorisering.",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -2196,8 +2260,33 @@
             ],
             "url": "https://www.mimesbronn.no/request/valgprotokoll_2019_rygge_kommune",
             "events": [],
-            "files": [],
-            "last_updated": "2019-10-03T22:47:48+02:00",
+            "files": [
+                {
+                    "fileName": "3002 Moss kommune kommunestyrevalget 2019 protokoll for valgstyret.pdf",
+                    "fileSize": "339K",
+                    "fileType": "application/pdf",
+                    "url": "https://www.mimesbronn.no/request/2210/response/9132/attach/3/3002%20Moss%20kommune%20kommunestyrevalget%202019%20protokoll%20for%20valgstyret.pdf"
+                },
+                {
+                    "fileName": "3002 Moss kommune kommunestyrevalget 2019 protokoll for valgstyret.docx",
+                    "fileSize": "6.5M",
+                    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                    "url": "https://www.mimesbronn.no/request/2210/response/9132/attach/4/3002%20Moss%20kommune%20kommunestyrevalget%202019%20protokoll%20for%20valgstyret.docx"
+                },
+                {
+                    "fileName": "3002 Moss kommune fylkestingsvalget 2019 protokoll for valgstyret.docx.pdf",
+                    "fileSize": "157K",
+                    "fileType": "application/pdf",
+                    "url": "https://www.mimesbronn.no/request/2210/response/9134/attach/3/3002%20Moss%20kommune%20fylkestingsvalget%202019%20protokoll%20for%20valgstyret.docx.pdf"
+                },
+                {
+                    "fileName": "3002 Moss kommune fylkestingsvalget 2019 protokoll for valgstyret.docx",
+                    "fileSize": "1.4M",
+                    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                    "url": "https://www.mimesbronn.no/request/2210/response/9134/attach/4/3002%20Moss%20kommune%20fylkestingsvalget%202019%20protokoll%20for%20valgstyret.docx"
+                }
+            ],
+            "last_updated": "2019-10-08T12:18:39+02:00",
             "cache_key": "_request_valgprotokoll_2019_rygge_kommune"
         }
     ],
@@ -2240,7 +2329,7 @@
     "sandnes_kommune": [
         {
             "mimes_bronn_entity_url": "sandnes_kommune",
-            "display_status": "<span class=\"innsyn-success\"><i class=\"fas fa-check\"></i> Vellykket.</span>",
+            "display_status": "<span class=\"innsyn-success\"><i class=\"fas fa-check\"></i> Venter p&aring; kategorisering.</span>",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -2261,9 +2350,21 @@
                     "fileSize": "323K",
                     "fileType": "application/pdf",
                     "url": "https://www.mimesbronn.no/request/2146/response/9105/attach/4/19%2003754%2010%20Svar%20p%20innsyn%20etter%20Offentleglova%20Valgprotokoll%202019%20Sandnes%20kommune%2017461429%202%201.PDF.pdf"
+                },
+                {
+                    "fileName": "Valgstyrets m tebok 1108 2019 09 11.fylkesting.pdf",
+                    "fileSize": "158K",
+                    "fileType": "application/pdf",
+                    "url": "https://www.mimesbronn.no/request/2146/response/9131/attach/3/Valgstyrets%20m%20tebok%201108%202019%2009%2011.fylkesting.pdf"
+                },
+                {
+                    "fileName": "Valgstyrets m tebok 1108 2019 09 11.kommunestyre.pdf",
+                    "fileSize": "356K",
+                    "fileType": "application/pdf",
+                    "url": "https://www.mimesbronn.no/request/2146/response/9131/attach/4/Valgstyrets%20m%20tebok%201108%202019%2009%2011.kommunestyre.pdf"
                 }
             ],
-            "last_updated": "2019-10-04T23:30:28+02:00",
+            "last_updated": "2019-10-08T08:14:50+02:00",
             "cache_key": "_request_valgprotokoll_2019_sandnes"
         },
         {
@@ -2347,7 +2448,7 @@
     "sirdal_kommune": [
         {
             "mimes_bronn_entity_url": "sirdal_kommune",
-            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; kategorisering.</span>",
+            "display_status": "<span class=\"innsyn-success\"><i class=\"fas fa-check\"></i> Vellykket.</span>",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -2394,7 +2495,7 @@
                     "url": "https://www.mimesbronn.no/request/2176/response/9119/attach/4/Valgstyrets%20m%20tebok%204228%202019%2009%2010.pdf"
                 }
             ],
-            "last_updated": "2019-10-07T07:27:40+02:00",
+            "last_updated": "2019-10-07T21:01:42+02:00",
             "cache_key": "_request_valgprotokoll_2019_sirdal_kommun",
             "answerToQuestions": "Vi telte alle foreløpige tellinger manuelt og endelige tellinger ble\nskannet."
         }
@@ -2608,7 +2709,7 @@
     "stange_kommune": [
         {
             "mimes_bronn_entity_url": "stange_kommune",
-            "display_status": "<i class=\"fas fa-question\" title=\"internal_review\"></i> Venter p&aring; kategorisering.",
+            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; kategorisering.</span>",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -2617,15 +2718,22 @@
             ],
             "url": "https://www.mimesbronn.no/request/valgprotokoll_2019_stange_kommun",
             "events": [],
-            "files": [],
-            "last_updated": "2019-10-07T10:27:48+02:00",
+            "files": [
+                {
+                    "fileName": "Valgstyrets m tebok 3413 2019 10 09.pdf",
+                    "fileSize": "267K",
+                    "fileType": "application/pdf",
+                    "url": "https://www.mimesbronn.no/request/2156/response/9144/attach/2/Valgstyrets%20m%20tebok%203413%202019%2010%2009.pdf"
+                }
+            ],
+            "last_updated": "2019-10-09T08:43:29+02:00",
             "cache_key": "_request_valgprotokoll_2019_stange_kommun"
         }
     ],
     "stavanger_kommune": [
         {
             "mimes_bronn_entity_url": "stavanger_kommune",
-            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; svar.</span>",
+            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Forsinket.</span>",
             "tags": [
                 [
                     "valgprotokoll_klage",
@@ -2644,7 +2752,7 @@
         },
         {
             "mimes_bronn_entity_url": "stavanger_kommune",
-            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Venter p&aring; svar.</span>",
+            "display_status": "<span class=\"innsyn-waiting\"><i class=\"far fa-clock\"></i> Forsinket.</span>",
             "tags": [
                 [
                     "valgprotokoll_klage",
@@ -2762,7 +2870,7 @@
     "strand_kommune": [
         {
             "mimes_bronn_entity_url": "strand_kommune",
-            "display_status": "<i class=\"fas fa-question\" title=\"internal_review\"></i> Venter p&aring; behandling av klage.",
+            "display_status": "<i class=\"fas fa-question\" title=\"internal_review\"></i> Venter p&aring; kategorisering.",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -2771,9 +2879,29 @@
             ],
             "url": "https://www.mimesbronn.no/request/valgprotokoll_2019_strand_kommun",
             "events": [],
-            "files": [],
-            "last_updated": "2019-10-06T22:49:38+02:00",
-            "cache_key": "_request_valgprotokoll_2019_strand_kommun"
+            "files": [
+                {
+                    "fileName": "Svar p sp rsm l om innsyn Valgprotokoll 2019 1.pdf",
+                    "fileSize": "286K",
+                    "fileType": "application/pdf",
+                    "url": "https://www.mimesbronn.no/request/2186/response/9146/attach/3/Svar%20p%20sp%20rsm%20l%20om%20innsyn%20Valgprotokoll%202019%201.pdf"
+                },
+                {
+                    "fileName": "Valgstyrets m tebok FYLKESTINGSVALGET 2019.pdf",
+                    "fileSize": "147K",
+                    "fileType": "application/pdf",
+                    "url": "https://www.mimesbronn.no/request/2186/response/9146/attach/4/Valgstyrets%20m%20tebok%20FYLKESTINGSVALGET%202019.pdf"
+                },
+                {
+                    "fileName": "Valgstyrets m tebok KOMMUNESTYREVALGET 2019.pdf",
+                    "fileSize": "242K",
+                    "fileType": "application/pdf",
+                    "url": "https://www.mimesbronn.no/request/2186/response/9146/attach/5/Valgstyrets%20m%20tebok%20KOMMUNESTYREVALGET%202019.pdf"
+                }
+            ],
+            "last_updated": "2019-10-09T11:00:51+02:00",
+            "cache_key": "_request_valgprotokoll_2019_strand_kommun",
+            "answerToQuestions": "1. Foreløpig opptelling ble utført manuelt.\n2. Endelig opptelling ble utført maskinelt, med skanner og datasystemet EVA.\n3. Stemmesedler i Strand er talt fire ganger: En gang i krets, der det kun er totalt antall\nsedler som blir protkollert, ikke fordelt på partier. Deretter teller to personer samme\nsedler manuelt, fordelt på parti (foreløpig telling) og til slutt en maskinell opptelling.\n4. Det var ikke stort avvik mellom manuell og maskinell telling, derfor ble det ikke utført\nkontrolltelling. Valgstyret hadde på forhånd bestemt at en eventuell kontrolltelling\nskulle utføres maskinelt, og at et avvik på to promille av mottatte stemmer skulle\nvurderes som «stort avvik».\n5. Det er kun foreløpig og endelig telling sentralt i kommunen, derfor ikke ulike svar fra\nhver enkelt krets."
         }
     ],
     "suldal_kommune": [
@@ -3113,7 +3241,7 @@
     "vang_kommune": [
         {
             "mimes_bronn_entity_url": "vang_kommune",
-            "display_status": "<i class=\"fas fa-question\" title=\"internal_review\"></i> Venter p&aring; kategorisering.",
+            "display_status": "<span class=\"innsyn-success\"><i class=\"fas fa-check\"></i> Vellykket.</span>",
             "tags": [
                 [
                     "valgprotokoll_2019",
@@ -3136,8 +3264,9 @@
                     "url": "https://www.mimesbronn.no/request/2161/response/9126/attach/3/Valgstyrets%20m%20tebok%203454%202019%2010%2007.pdf"
                 }
             ],
-            "last_updated": "2019-10-07T10:32:28+02:00",
-            "cache_key": "_request_valgprotokoll_2019_vang_kommune"
+            "last_updated": "2019-10-07T18:52:06+02:00",
+            "cache_key": "_request_valgprotokoll_2019_vang_kommune",
+            "answerToQuestions": "1. Ble foreløpig opptelling utført manuelt eller med dataprogram? - manuelt\n2. Ble endelig opptelling utført manuelt eller med dataprogram? - manuelt\n3. Hvor mange opptellinger og omtellinger ble foretatt totalt? 4.\n4. Hvis flere enn foreløpig og endelig, hvordan ble disse utført (manuelt/data?) og hvorfor ble de utført? En ekstra endelig telling, registrert på data for kvalitetssikring."
         }
     ],
     "vestby_kommune": [
