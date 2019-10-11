@@ -238,12 +238,27 @@ foreach ($lines as $line) {
     $nynorskToBokmaal[$nynorskString] = $bokmaalString;
 }
 
+// Path contains:
+$ignore_files = array(
+    // Svarbrev
+    'www.mimesbronn.no-request-2184-response-8887-attach-4-Svar Innsyn Valgprotokoll 2019 Randaberg kommune.PDF',
+    'www.mimesbronn.no-request-2184-response-9141-attach-5-Svar%20Tilbakemelding%20Innsyn%20valgprotokoll%202019.PDF',
+    'www.mimesbronn.no-request-2184-response-9075-attach-2-Svar%20Tilbakemelding%20Innsyn%20valgprotokoll%202019.PDF.',
+    'www.mimesbronn.no-request-2184-response-9141-attach-4-Svar%20Klage%20over%20innsyn%20Valgprotokoll%202019.PDF',
+);
+
 $files_written = array();
 
 $files = getDirContents(__DIR__ . '/docs/data-store/pdfs');
 foreach ($files as $file) {
     if (!str_ends_with($file, '.layout.txt')) {
         continue;
+    }
+
+    foreach($ignore_files as $ignore_file) {
+        if (str_contains($file, $ignore_file)) {
+            continue 2;
+        }
     }
 
     if (isset($argv[1]) && $argv[1] != 'throw') {
@@ -497,6 +512,18 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     $file_content = preg_replace('/\n\n\n/', "\n\n", $file_content);
     $file_content = preg_replace('/\n\n\n/', "\n\n", $file_content);
     $file_content = preg_replace('/\n\n\n/', "\n\n", $file_content);
+
+
+    // Clean up Randaberg.
+    foreach(array('Kommunestyre- og fylkestingsvalget                       2019' => 'Kommunestyre- og fylkestingsvalget 2019') as $to_be_replace => $replace_with) {
+        $file_content = str_replace($to_be_replace, $replace_with, $file_content);
+    }
+    $file_content = str_replace('C2.1 Antall valgtingsstemmesedler    i urne', 'C2.1 Antall valgtingsstemmesedler i urne', $file_content);
+    $file_content = str_replace('C4.1 - C4.3 Valgtingsstemmesedler                i urne', 'C4.1 - C4.3 Valgtingsstemmesedler i urne', $file_content);
+    $file_content = str_replace('Valgprotokoll for valgstyret - Kommunestyrevalget       2019', 'Valgprotokoll for valgstyret - Kommunestyrevalget 2019', $file_content);
+    $file_content = str_replace('C2.1 Antall valgtingsstemmesedler                i urne', 'C2.1 Antall valgtingsstemmesedler i urne', $file_content);
+    $file_content = str_replace('C4.1 - C4.3 Valgtingsstemmesedler    i urne', 'C4.1 - C4.3 Valgtingsstemmesedler i urne', $file_content);
+
 
     // Split into array and start counter.
     $lines_untrimmed = explode("\n", $file_content);
