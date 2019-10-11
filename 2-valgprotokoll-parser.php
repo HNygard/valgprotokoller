@@ -245,6 +245,7 @@ $ignore_files = array(
     'www.mimesbronn.no-request-2184-response-9141-attach-5-Svar%20Tilbakemelding%20Innsyn%20valgprotokoll%202019.PDF',
     'www.mimesbronn.no-request-2184-response-9075-attach-2-Svar%20Tilbakemelding%20Innsyn%20valgprotokoll%202019.PDF.',
     'www.mimesbronn.no-request-2184-response-9141-attach-4-Svar%20Klage%20over%20innsyn%20Valgprotokoll%202019.PDF',
+    'www.mimesbronn.no-request-2145-response-8885-attach-4-attachment.pdf',
 );
 
 $files_written = array();
