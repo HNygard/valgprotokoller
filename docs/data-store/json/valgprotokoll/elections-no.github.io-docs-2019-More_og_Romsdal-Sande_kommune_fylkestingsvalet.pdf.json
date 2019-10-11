@@ -8,5 +8,5 @@
     "documentType": "valgprotokoll",
     "error": true,
     "reportGenerated": "10.09.2019 17:02:10",
-    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\\s*$\nLine ...... : VALG\n\n#0 2-valgprotokoll-parser.php(516): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', 'VALG')\n#1 2-valgprotokoll-parser.php(271): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\\s*$\nLine ...... : VALG\n\n#0 2-valgprotokoll-parser.php(543): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', 'VALG')\n#1 2-valgprotokoll-parser.php(286): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
 }
