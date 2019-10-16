@@ -256,7 +256,7 @@ foreach ($files as $file) {
         continue;
     }
 
-    foreach($ignore_files as $ignore_file) {
+    foreach ($ignore_files as $ignore_file) {
         if (str_contains($file, $ignore_file)) {
             continue 2;
         }
@@ -516,7 +516,14 @@ function parseFile_andWriteToDisk(&$obj, $file) {
 
 
     // Clean up Randaberg.
-    foreach(array('Kommunestyre- og fylkestingsvalget                       2019' => 'Kommunestyre- og fylkestingsvalget 2019') as $to_be_replace => $replace_with) {
+    foreach (array(
+                 'Kommunestyre- og fylkestingsvalget                       2019' => 'Kommunestyre- og fylkestingsvalget 2019',
+                 'Total antall valgtingstemmesedler   i urne' => 'Total antall valgtingstemmesedler i urne  ',
+                 'Total antall valgtingstemmesedler               i urne' => 'Total antall valgtingstemmesedler i urne               ',
+                 'C4.1 Antall valgtingsstemmesedler    i urne' => 'C4.1 Antall valgtingsstemmesedler i urne',
+                 'C4.2 Partifordelte valgtingsstemmesedler                  i urne' => 'C4.2 Partifordelte valgtingsstemmesedler i urne',
+
+             ) as $to_be_replace => $replace_with) {
         $file_content = str_replace($to_be_replace, $replace_with, $file_content);
     }
     $file_content = str_replace('C2.1 Antall valgtingsstemmesedler    i urne', 'C2.1 Antall valgtingsstemmesedler i urne', $file_content);
@@ -657,7 +664,11 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     $sum_row1 = 'Godkjente forhåndsstemmegivninger (skal være lik sum av B2.1.1 og B2.2.1)';
     $sum_row2 = 'Totalt antall forhåndsstemmegivninger';
     $table_ending = $sum_row1;
-    $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
+    $start_of_row_keywords = array(
+        //'Godkjente forhåndsstemmegivninger (skal være lik sum av B2.1.1 og B2.2.1)',
+        //'Totalt antall forhåndsstemmegivninger',
+    );
+    $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending, $start_of_row_keywords);
 
     // Headings
     $i = assertLine_trim($lines, $i, 'B2 Foreløpig opptelling av forhåndsstemmesedler');
@@ -701,7 +712,13 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     $sum_row1 = null;
     $sum_row2 = null;
     $table_ending = 'B2.2.2 Partifordelte sent innkomne forhåndsstemmesedler';
-    $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
+    $start_of_row_keywords = array(
+        'Godkjente',
+        'Blanke',
+        'Tvilsomme',
+        'Total antall sent innkomne forhåndsstemmesedler',
+    );
+    $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending, $start_of_row_keywords);
 
 
     // ---- Table - B2.2.2 Partifordelte sent innkomne forhåndsstemmesedler
@@ -747,8 +764,13 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         $sum_row1 = null;
         $sum_row2 = null;
         $table_ending = 'C2.2 Partifordelte Valgtingsstemmesedler';
-
-        $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
+        $start_of_row_keywords = array(
+            'Godkjente',
+            'Blanke',
+            'Tvilsomme',
+            'Total antall valgtingstemmesedler i urne'
+        );
+        $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending, $start_of_row_keywords);
 
         // ---- Table - C2.2 Partifordelte Valgtingsstemmesedler
         $i = assertLine_trim($lines, $i, 'C2.2 Partifordelte Valgtingsstemmesedler');
@@ -1180,13 +1202,13 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         }
 
         // :: Add parties with 0 for consistency
-        foreach($outputData->party_seats as $partyName => $partySeats) {
+        foreach ($outputData->party_seats as $partyName => $partySeats) {
             $obj->e1_mandatPerParty[$partyName] = $partySeats;
         }
 
         // :: Add simulated initial counting
         $obj->e1_mandatPerParty_simulated_initial_counting = array();
-        foreach($outputData_initial->party_seats as $partyName => $partySeats) {
+        foreach ($outputData_initial->party_seats as $partyName => $partySeats) {
             $obj->e1_mandatPerParty_simulated_initial_counting[$partyName] = $partySeats;
         }
     }
@@ -1208,6 +1230,10 @@ function readTableRow($lines, $i, $header_length, $start_of_row_keywords, $table
                 $start_with_keyword = true;
             }
         }
+        if (trim($row_lines[0]) == '' && $start_with_keyword) {
+            $row_lines[] = str_replace("\r", '', $lines[$i++]);
+        }
+
         if (
             // Stop picking up lines, if there are empty lines
             strlen($lines[$i]) > 3
@@ -1263,6 +1289,10 @@ function readTableRow($lines, $i, $header_length, $start_of_row_keywords, $table
     $row_line = trim($row_line);
 
     if (!isset($match)) {
+        echo '10 last lines: '.chr(10);
+        for ($j = $i - 10; $j <= $i; $j++) {
+            echo 'lines[' . $j . ']: ' . $lines[$j] . chr(10);
+        }
         throw new Exception('Didn\'t find the row: ' . chr(10) . $row_line);
     }
 
@@ -1271,7 +1301,7 @@ function readTableRow($lines, $i, $header_length, $start_of_row_keywords, $table
 
 function readTable_twoColumns(&$obj, &$lines, $i, $current_heading, $text_heading, $column_heading,
                               $column1, $column2,
-                              $sum_row1, $sum_row2, $table_ending) {
+                              $sum_row1, $sum_row2, $table_ending, $start_of_row_keywords = array()) {
     $obj->numbers[$current_heading] = array();
     $i = assertLine_trim($lines, $i, $current_heading);
     $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -1303,7 +1333,6 @@ function readTable_twoColumns(&$obj, &$lines, $i, $current_heading, $text_headin
                 'numberColumn2' => cleanFormattedNumber($match[5])
             );
         };
-        $start_of_row_keywords = array();
         if ($text_heading == 'Mandat nr.:') {
             // Not the normal name/party and two number columns
             //     Number       Party        Number

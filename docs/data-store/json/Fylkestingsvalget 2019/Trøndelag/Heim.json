@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "11.09.2019 07:21:08",
     "election": "Fylkestingsvalget 2019",
     "heading": "Valgprotokoll for valgstyret i Heim kommune, Trøndelag fylke",
@@ -113,7 +113,11 @@
             }
         },
         "B2.2.1 Behandlede sent innkomne forhåndsstemmesedler": {
-            "GodkjenteBlanke": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 43
+            },
+            "Blanke": {
                 "Kryss i manntall": "—",
                 "Ant. sedler": 2
             },
@@ -126,7 +130,210 @@
                 "Ant. sedler": 46
             }
         },
-        "C4.1 Antall valgtingsstemmesedler i urne": []
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "GodkjenteBlanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 57
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 2393,
+                "Ant. sedler": 2039
+            }
+        },
+        "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
+            "Fremskrittspartiet": {
+                "Foreløpig": 38,
+                "Endelig": 38,
+                "Avvik": 0
+            },
+            "Pensjonistpartiet": {
+                "Foreløpig": 13,
+                "Endelig": 13,
+                "Avvik": 0
+            },
+            "Piratpartiet": {
+                "Foreløpig": 1,
+                "Endelig": 1,
+                "Avvik": 0
+            },
+            "Helsepartiet": {
+                "Foreløpig": 1,
+                "Endelig": 1,
+                "Avvik": 0
+            },
+            "Senterpartiet": {
+                "Foreløpig": 189,
+                "Endelig": 188,
+                "Avvik": -1
+            },
+            "Partiet De Kristne": {
+                "Foreløpig": 4,
+                "Endelig": 4,
+                "Avvik": 0
+            },
+            "Miljøpartiet De Grønne": {
+                "Foreløpig": 22,
+                "Endelig": 22,
+                "Avvik": 0
+            },
+            "SV - Sosialistisk Venstreparti": {
+                "Foreløpig": 20,
+                "Endelig": 20,
+                "Avvik": 0
+            },
+            "Rødt": {
+                "Foreløpig": 36,
+                "Endelig": 36,
+                "Avvik": 0
+            },
+            "Liberalistene": {
+                "Foreløpig": 1,
+                "Endelig": 1,
+                "Avvik": 0
+            },
+            "Arbeiderpartiet": {
+                "Foreløpig": 236,
+                "Endelig": 235,
+                "Avvik": -1
+            },
+            "Venstre": {
+                "Foreløpig": 13,
+                "Endelig": 13,
+                "Avvik": 0
+            },
+            "Demokratene": {
+                "Foreløpig": 2,
+                "Endelig": 2,
+                "Avvik": 0
+            },
+            "Høyre": {
+                "Foreløpig": 96,
+                "Endelig": 96,
+                "Avvik": 0
+            },
+            "Kristelig Folkeparti": {
+                "Foreløpig": 13,
+                "Endelig": 13,
+                "Avvik": 0
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 685,
+                "Endelig": 683,
+                "Avvik": -2
+            }
+        },
+        "D2.1 Opptalte valgtingsstemmesedler": {
+            "Ordinære": {
+                "Godkjente": 1983,
+                "Blanke": 57,
+                "Forkastet": 0,
+                "Total": 2040
+            },
+            "Særskilt": {
+                "Godkjente": 0,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 0
+            },
+            "Beredskap": {
+                "Godkjente": 0,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 0
+            },
+            "Total antall opptalte valgtingsstemmesedler": {
+                "Godkjente": 1983,
+                "Blanke": 57,
+                "Forkastet": 0,
+                "Total": 2040
+            }
+        },
+        "D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler": {
+            "Fremskrittspartiet": {
+                "Foreløpig": 106,
+                "Endelig": 106,
+                "Avvik": 0
+            },
+            "Pensjonistpartiet": {
+                "Foreløpig": 39,
+                "Endelig": 39,
+                "Avvik": 0
+            },
+            "Piratpartiet": {
+                "Foreløpig": 6,
+                "Endelig": 6,
+                "Avvik": 0
+            },
+            "Helsepartiet": {
+                "Foreløpig": 8,
+                "Endelig": 8,
+                "Avvik": 0
+            },
+            "Senterpartiet": {
+                "Foreløpig": 694,
+                "Endelig": 694,
+                "Avvik": 0
+            },
+            "Partiet De Kristne": {
+                "Foreløpig": 7,
+                "Endelig": 7,
+                "Avvik": 0
+            },
+            "Miljøpartiet De Grønne": {
+                "Foreløpig": 58,
+                "Endelig": 58,
+                "Avvik": 0
+            },
+            "SV - Sosialistisk Venstreparti": {
+                "Foreløpig": 26,
+                "Endelig": 26,
+                "Avvik": 0
+            },
+            "Rødt": {
+                "Foreløpig": 57,
+                "Endelig": 57,
+                "Avvik": 0
+            },
+            "Liberalistene": {
+                "Foreløpig": 4,
+                "Endelig": 4,
+                "Avvik": 0
+            },
+            "Arbeiderpartiet": {
+                "Foreløpig": 681,
+                "Endelig": 682,
+                "Avvik": 1
+            },
+            "Venstre": {
+                "Foreløpig": 17,
+                "Endelig": 17,
+                "Avvik": 0
+            },
+            "Demokratene": {
+                "Foreløpig": 3,
+                "Endelig": 3,
+                "Avvik": 0
+            },
+            "Høyre": {
+                "Foreløpig": 220,
+                "Endelig": 220,
+                "Avvik": 0
+            },
+            "Kristelig Folkeparti": {
+                "Foreløpig": 56,
+                "Endelig": 56,
+                "Avvik": 0
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 1982,
+                "Endelig": 1983,
+                "Avvik": 1
+            }
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -134,9 +341,23 @@
         ],
         "B2.2.3 Merknad": [
             "Ok"
+        ],
+        "C4.3 Merknad": [
+            ""
+        ],
+        "C4.6 Merknad": [
+            ""
+        ],
+        "C4.9 Merknad": [
+            ""
+        ],
+        "D1.5 Merknad": [
+            ""
+        ],
+        "D2.5 Merknad": [
+            "Halsa — valgtingsstemmer             ordinære :\nFeil urnetelling."
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
-    "foretattForeløpigOpptellingHosValgstyret": true,
-    "errorMessage": "Did not find expected value on line [317].\nExpected ... : C4.1 Antall valgtingsstemmesedler i urne\nActual ..... : C4.1 Antall valgtingsstemmesedler    i urne\n\n#0 2-valgprotokoll-parser.php(1275): assertLine_trim(Array, 317, 'C4.1 Antall val...')\n#1 2-valgprotokoll-parser.php(802): readTable_twoColumns(Object(stdClass), Array, 317, 'C4.1 Antall val...', NULL, NULL, 'Kryss i manntal...', 'Ant. sedler', NULL, NULL, 'C4.2 Partiforde...')\n#2 2-valgprotokoll-parser.php(286): parseFile_andWriteToDisk(Object(stdClass), '...')\n#3 {main}"
+    "foretattForeløpigOpptellingHosValgstyret": true
 }

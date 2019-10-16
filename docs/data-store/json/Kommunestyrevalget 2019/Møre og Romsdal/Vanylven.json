@@ -166,5 +166,5 @@
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
     "foretattForeløpigOpptellingHosValgstyret": true,
-    "errorMessage": "Undefined offset: 1442\n\n#0 2-valgprotokoll-parser.php(1402): {closure}(8, 'Undefined offse...', '...', 1402, Array)\n#1 2-valgprotokoll-parser.php(834): readComments(Object(stdClass), Array, 1442, 'C4.6 Merknad', '(\\xC3\\x85rsak til evt...', 'C4.7 Antall ste...')\n#2 2-valgprotokoll-parser.php(286): parseFile_andWriteToDisk(Object(stdClass), '...')\n#3 {main}"
+    "errorMessage": "Undefined offset: 1442\n\n#0 2-valgprotokoll-parser.php(1422): {closure}(8, 'Undefined offse...', '...', 1422, Array)\n#1 2-valgprotokoll-parser.php(855): readComments(Object(stdClass), Array, 1442, 'C4.6 Merknad', '(\\xC3\\x85rsak til evt...', 'C4.7 Antall ste...')\n#2 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#3 {main}"
 }
