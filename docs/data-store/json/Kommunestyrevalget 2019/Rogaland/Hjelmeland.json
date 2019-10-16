@@ -6,7 +6,7 @@
     "language": "nn-NO",
     "languageName": "Norwegian, Nynorsk",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "23.09.2019 10:41:57",
     "election": "Kommunestyrevalget 2019",
     "heading": "Valgprotokoll for valgstyret i Hjelmeland kommune, Rogaland fylke",
@@ -155,6 +155,106 @@
                 "Kryss i manntall": 1036,
                 "Ant. sedler": 1034
             }
+        },
+        "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
+            "Kristeleg Folkeparti": {
+                "Foreløpig": 27,
+                "Endelig": 27,
+                "Avvik": 0
+            },
+            "SV - Sosialistisk Venstreparti": {
+                "Foreløpig": 17,
+                "Endelig": 17,
+                "Avvik": 0
+            },
+            "Arbeidarpartiet": {
+                "Foreløpig": 45,
+                "Endelig": 44,
+                "Avvik": -1
+            },
+            "Miljøpartiet Dei Grøne": {
+                "Foreløpig": 17,
+                "Endelig": 17,
+                "Avvik": 0
+            },
+            "Høgre": {
+                "Foreløpig": 64,
+                "Endelig": 64,
+                "Avvik": 0
+            },
+            "Senterpartiet": {
+                "Foreløpig": 125,
+                "Endelig": 125,
+                "Avvik": 0
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 295,
+                "Endelig": 294,
+                "Avvik": -1
+            }
+        },
+        "D2.1 Opptalte valgtingsstemmesedler": {
+            "Ordinære": {
+                "Godkjente": 1021,
+                "Blanke": 12,
+                "Forkastet": 1,
+                "Total": 1034
+            },
+            "Særskilt": {
+                "Godkjente": 1,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 1
+            },
+            "Fremmede": {
+                "Godkjente": 18,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 18
+            },
+            "Total antall opptalte valgtingsstemmesedler": {
+                "Godkjente": 1040,
+                "Blanke": 12,
+                "Forkastet": 1,
+                "Total": 1053
+            }
+        },
+        "D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler": {
+            "Kristeleg Folkeparti": {
+                "Foreløpig": 117,
+                "Endelig": 117,
+                "Avvik": 0
+            },
+            "SV - Sosialistisk Venstreparti": {
+                "Foreløpig": 59,
+                "Endelig": 59,
+                "Avvik": 0
+            },
+            "Arbeidarpartiet": {
+                "Foreløpig": 127,
+                "Endelig": 129,
+                "Avvik": 2
+            },
+            "Miljøpartiet Dei Grøne": {
+                "Foreløpig": 46,
+                "Endelig": 46,
+                "Avvik": 0
+            },
+            "Høgre": {
+                "Foreløpig": 183,
+                "Endelig": 183,
+                "Avvik": 0
+            },
+            "Senterpartiet": {
+                "Foreløpig": 505,
+                "Endelig": 506,
+                "Avvik": 1
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 1037,
+                "Endelig": 1040,
+                "Avvik": 3
+            }
         }
     },
     "comments": {
@@ -166,9 +266,182 @@
         ],
         "C4.3 Merknad": [
             "Avvik i manuell telling grunna samanklistra setlar."
+        ],
+        "C4.6 Merknad": [
+            "Røyster i særskilt omslag vert ikkje registret med kryss i manntal hos kretsane."
+        ],
+        "C4.9 Merknad": [
+            "Framandrøyster vert ikkje registrert med kryss i manntal hos kretsane."
+        ],
+        "D1.5 Merknad": [
+            "Hele kommunen — førehandsstemmer ordinære:\nTellefeil manuell telling for AP. Kontrolltelt til å samsvare med skanning."
+        ],
+        "D2.5 Merknad": [
+            ""
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
     "foretattForeløpigOpptellingHosValgstyret": true,
-    "errorMessage": "Undefined offset: 1167\n\n#0 2-valgprotokoll-parser.php(1439): {closure}(8, 'Undefined offse...', '...', 1439, Array)\n#1 2-valgprotokoll-parser.php(864): readComments(Object(stdClass), Array, 1167, 'C4.6 Merknad', '(\\xC3\\x85rsak til evt...', 'C4.7 Antall ste...')\n#2 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#3 {main}"
+    "e1_1_listestemmetall_og_mandater": [
+        {
+            "name": "Kristeleg Folkeparti",
+            "stemmesedler": 144,
+            "kommunestyrerepresentanter": 19,
+            "sedler_ganger_kst_repr": 2736,
+            "slengere_mottatt": 51,
+            "slengere_avgitt": 68,
+            "listestemmetall": 2719,
+            "stemmesedler_initial_counting": 144,
+            "listestemmetall_simulated_initial_counting": 2719
+        },
+        {
+            "name": "SV - Sosialistisk Venstreparti",
+            "stemmesedler": 76,
+            "kommunestyrerepresentanter": 19,
+            "sedler_ganger_kst_repr": 1444,
+            "slengere_mottatt": 40,
+            "slengere_avgitt": 50,
+            "listestemmetall": 1434,
+            "stemmesedler_initial_counting": 76,
+            "listestemmetall_simulated_initial_counting": 1434
+        },
+        {
+            "name": "Arbeidarpartiet",
+            "stemmesedler": 173,
+            "kommunestyrerepresentanter": 19,
+            "sedler_ganger_kst_repr": 3287,
+            "slengere_mottatt": 103,
+            "slengere_avgitt": 75,
+            "listestemmetall": 3315,
+            "stemmesedler_initial_counting": 172,
+            "listestemmetall_simulated_initial_counting": 3296
+        },
+        {
+            "name": "Miljøpartiet Dei Grøne",
+            "stemmesedler": 63,
+            "kommunestyrerepresentanter": 19,
+            "sedler_ganger_kst_repr": 1197,
+            "slengere_mottatt": 44,
+            "slengere_avgitt": 15,
+            "listestemmetall": 1226,
+            "stemmesedler_initial_counting": 63,
+            "listestemmetall_simulated_initial_counting": 1226
+        },
+        {
+            "name": "Høgre",
+            "stemmesedler": 247,
+            "kommunestyrerepresentanter": 19,
+            "sedler_ganger_kst_repr": 4693,
+            "slengere_mottatt": 120,
+            "slengere_avgitt": 73,
+            "listestemmetall": 4740,
+            "stemmesedler_initial_counting": 247,
+            "listestemmetall_simulated_initial_counting": 4740
+        },
+        {
+            "name": "Senterpartiet",
+            "stemmesedler": 631,
+            "kommunestyrerepresentanter": 19,
+            "sedler_ganger_kst_repr": 11989,
+            "slengere_mottatt": 116,
+            "slengere_avgitt": 193,
+            "listestemmetall": 11912,
+            "stemmesedler_initial_counting": 630,
+            "listestemmetall_simulated_initial_counting": 11893
+        }
+    ],
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 8508.571429
+        },
+        "2": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 3970.666667
+        },
+        "3": {
+            "Parti": "Høgre",
+            "Kvotient": 3385.714286
+        },
+        "4": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 2382.4
+        },
+        "5": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 2367.857143
+        },
+        "6": {
+            "Parti": "Kristeleg Folkeparti",
+            "Kvotient": 1942.142857
+        },
+        "7": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1701.714286
+        },
+        "8": {
+            "Parti": "Høgre",
+            "Kvotient": 1580
+        },
+        "9": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1323.555556
+        },
+        "10": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 1105
+        },
+        "11": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1082.909091
+        },
+        "12": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 1024.285714
+        },
+        "13": {
+            "Parti": "Høgre",
+            "Kvotient": 948
+        },
+        "14": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 916.307692
+        },
+        "15": {
+            "Parti": "Kristeleg Folkeparti",
+            "Kvotient": 906.333333
+        },
+        "16": {
+            "Parti": "Miljøpartiet Dei Grøne",
+            "Kvotient": 875.714286
+        },
+        "17": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 794.133333
+        },
+        "18": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 700.705882
+        },
+        "19": {
+            "Parti": "Høgre",
+            "Kvotient": 677.142857
+        }
+    },
+    "e1_mandatPerParty": {
+        "Senterpartiet": 9,
+        "Høgre": 4,
+        "Arbeidarpartiet": 2,
+        "Kristeleg Folkeparti": 2,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Miljøpartiet Dei Grøne": 1
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeidarpartiet": 2,
+        "Høgre": 4,
+        "Kristeleg Folkeparti": 2,
+        "Miljøpartiet Dei Grøne": 1,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Senterpartiet": 9
+    }
 }

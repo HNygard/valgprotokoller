@@ -6,7 +6,7 @@
     "language": "nn-NO",
     "languageName": "Norwegian, Nynorsk",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "10.09.2019 17:37:34",
     "election": "Kommunestyrevalget 2019",
     "heading": "Valgprotokoll for valgstyret i Tysnes kommune, Vestland fylke",
@@ -155,6 +155,96 @@
                 "Kryss i manntall": 1088,
                 "Ant. sedler": 1081
             }
+        },
+        "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
+            "Senterpartiet": {
+                "Foreløpig": 136,
+                "Endelig": 136,
+                "Avvik": 0
+            },
+            "Kristeleg Folkeparti": {
+                "Foreløpig": 30,
+                "Endelig": 30,
+                "Avvik": 0
+            },
+            "Framstegspartiet": {
+                "Foreløpig": 43,
+                "Endelig": 43,
+                "Avvik": 0
+            },
+            "Høgre": {
+                "Foreløpig": 206,
+                "Endelig": 206,
+                "Avvik": 0
+            },
+            "Arbeidarpartiet": {
+                "Foreløpig": 111,
+                "Endelig": 111,
+                "Avvik": 0
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 526,
+                "Endelig": 526,
+                "Avvik": 0
+            }
+        },
+        "D2.1 Opptalte valgtingsstemmesedler": {
+            "Ordinære": {
+                "Godkjente": 1070,
+                "Blanke": 9,
+                "Forkastet": 2,
+                "Total": 1081
+            },
+            "Særskilt": {
+                "Godkjente": 0,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 0
+            },
+            "Fremmede": {
+                "Godkjente": 0,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 0
+            },
+            "Total antall opptalte valgtingsstemmesedler": {
+                "Godkjente": 1070,
+                "Blanke": 9,
+                "Forkastet": 2,
+                "Total": 1081
+            }
+        },
+        "D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler": {
+            "Senterpartiet": {
+                "Foreløpig": 270,
+                "Endelig": 270,
+                "Avvik": 0
+            },
+            "Kristeleg Folkeparti": {
+                "Foreløpig": 59,
+                "Endelig": 59,
+                "Avvik": 0
+            },
+            "Framstegspartiet": {
+                "Foreløpig": 102,
+                "Endelig": 102,
+                "Avvik": 0
+            },
+            "Høgre": {
+                "Foreløpig": 418,
+                "Endelig": 418,
+                "Avvik": 0
+            },
+            "Arbeidarpartiet": {
+                "Foreløpig": 221,
+                "Endelig": 221,
+                "Avvik": 0
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 1070,
+                "Endelig": 1070,
+                "Avvik": 0
+            }
         }
     },
     "comments": {
@@ -166,9 +256,177 @@
         ],
         "C4.3 Merknad": [
             "Foreløpig teljing viste at det var telt 4 setlar for lite i urneteljing."
+        ],
+        "C4.6 Merknad": [
+            ""
+        ],
+        "C4.9 Merknad": [
+            ""
+        ],
+        "D1.5 Merknad": [
+            ""
+        ],
+        "D2.5 Merknad": [
+            ""
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
     "foretattForeløpigOpptellingHosValgstyret": true,
-    "errorMessage": "Undefined offset: 1199\n\n#0 2-valgprotokoll-parser.php(1439): {closure}(8, 'Undefined offse...', '...', 1439, Array)\n#1 2-valgprotokoll-parser.php(864): readComments(Object(stdClass), Array, 1199, 'C4.6 Merknad', '(\\xC3\\x85rsak til evt...', 'C4.7 Antall ste...')\n#2 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#3 {main}"
+    "e1_1_listestemmetall_og_mandater": [
+        {
+            "name": "Senterpartiet",
+            "stemmesedler": 406,
+            "kommunestyrerepresentanter": 21,
+            "sedler_ganger_kst_repr": 8526,
+            "slengere_mottatt": 219,
+            "slengere_avgitt": 197,
+            "listestemmetall": 8548,
+            "stemmesedler_initial_counting": 406,
+            "listestemmetall_simulated_initial_counting": 8548
+        },
+        {
+            "name": "Kristeleg Folkeparti",
+            "stemmesedler": 89,
+            "kommunestyrerepresentanter": 21,
+            "sedler_ganger_kst_repr": 1869,
+            "slengere_mottatt": 41,
+            "slengere_avgitt": 41,
+            "listestemmetall": 1869,
+            "stemmesedler_initial_counting": 89,
+            "listestemmetall_simulated_initial_counting": 1869
+        },
+        {
+            "name": "Framstegspartiet",
+            "stemmesedler": 145,
+            "kommunestyrerepresentanter": 21,
+            "sedler_ganger_kst_repr": 3045,
+            "slengere_mottatt": 65,
+            "slengere_avgitt": 40,
+            "listestemmetall": 3070,
+            "stemmesedler_initial_counting": 145,
+            "listestemmetall_simulated_initial_counting": 3070
+        },
+        {
+            "name": "Høgre",
+            "stemmesedler": 624,
+            "kommunestyrerepresentanter": 21,
+            "sedler_ganger_kst_repr": 13104,
+            "slengere_mottatt": 202,
+            "slengere_avgitt": 236,
+            "listestemmetall": 13070,
+            "stemmesedler_initial_counting": 624,
+            "listestemmetall_simulated_initial_counting": 13070
+        },
+        {
+            "name": "Arbeidarpartiet",
+            "stemmesedler": 332,
+            "kommunestyrerepresentanter": 21,
+            "sedler_ganger_kst_repr": 6972,
+            "slengere_mottatt": 114,
+            "slengere_avgitt": 127,
+            "listestemmetall": 6959,
+            "stemmesedler_initial_counting": 332,
+            "listestemmetall_simulated_initial_counting": 6959
+        }
+    ],
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Høgre",
+            "Kvotient": 9335.714286
+        },
+        "2": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 6105.714286
+        },
+        "3": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 4970.714286
+        },
+        "4": {
+            "Parti": "Høgre",
+            "Kvotient": 4356.666667
+        },
+        "5": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 2849.333333
+        },
+        "6": {
+            "Parti": "Høgre",
+            "Kvotient": 2614
+        },
+        "7": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 2319.666667
+        },
+        "8": {
+            "Parti": "Framstegspartiet",
+            "Kvotient": 2192.857143
+        },
+        "9": {
+            "Parti": "Høgre",
+            "Kvotient": 1867.142857
+        },
+        "10": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1709.6
+        },
+        "11": {
+            "Parti": "Høgre",
+            "Kvotient": 1452.222222
+        },
+        "12": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 1391.8
+        },
+        "13": {
+            "Parti": "Kristeleg Folkeparti",
+            "Kvotient": 1335
+        },
+        "14": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1221.142857
+        },
+        "15": {
+            "Parti": "Høgre",
+            "Kvotient": 1188.181818
+        },
+        "16": {
+            "Parti": "Framstegspartiet",
+            "Kvotient": 1023.333333
+        },
+        "17": {
+            "Parti": "Høgre",
+            "Kvotient": 1005.384615
+        },
+        "18": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 994.142857
+        },
+        "19": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 949.777778
+        },
+        "20": {
+            "Parti": "Høgre",
+            "Kvotient": 871.333333
+        },
+        "21": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 777.090909
+        }
+    },
+    "e1_mandatPerParty": {
+        "Høgre": 8,
+        "Senterpartiet": 6,
+        "Arbeidarpartiet": 4,
+        "Framstegspartiet": 2,
+        "Kristeleg Folkeparti": 1
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeidarpartiet": 4,
+        "Framstegspartiet": 2,
+        "Høgre": 8,
+        "Kristeleg Folkeparti": 1,
+        "Senterpartiet": 6
+    }
 }

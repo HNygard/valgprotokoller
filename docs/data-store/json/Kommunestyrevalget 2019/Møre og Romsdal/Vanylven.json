@@ -6,7 +6,7 @@
     "language": "nn-NO",
     "languageName": "Norwegian, Nynorsk",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "10.09.2019 19:59:52",
     "election": "Kommunestyrevalget 2019",
     "heading": "Valgprotokoll for valgstyret i Vanylven kommune, Møre og Romsdal fylke",
@@ -155,6 +155,116 @@
                 "Kryss i manntall": 1218,
                 "Ant. sedler": 1215
             }
+        },
+        "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
+            "Venstre": {
+                "Foreløpig": 95,
+                "Endelig": 95,
+                "Avvik": 0
+            },
+            "Helsepartiet": {
+                "Foreløpig": 78,
+                "Endelig": 78,
+                "Avvik": 0
+            },
+            "Høgre": {
+                "Foreløpig": 66,
+                "Endelig": 66,
+                "Avvik": 0
+            },
+            "Senterpartiet": {
+                "Foreløpig": 68,
+                "Endelig": 68,
+                "Avvik": 0
+            },
+            "Framstegspartiet": {
+                "Foreløpig": 67,
+                "Endelig": 67,
+                "Avvik": 0
+            },
+            "Kristeleg Folkeparti": {
+                "Foreløpig": 49,
+                "Endelig": 49,
+                "Avvik": 0
+            },
+            "Arbeidarpartiet": {
+                "Foreløpig": 91,
+                "Endelig": 91,
+                "Avvik": 0
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 514,
+                "Endelig": 514,
+                "Avvik": 0
+            }
+        },
+        "D2.1 Opptalte valgtingsstemmesedler": {
+            "Ordinære": {
+                "Godkjente": 1208,
+                "Blanke": 7,
+                "Forkastet": 0,
+                "Total": 1215
+            },
+            "Særskilt": {
+                "Godkjente": 0,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 0
+            },
+            "Fremmede": {
+                "Godkjente": 18,
+                "Blanke": 1,
+                "Forkastet": 0,
+                "Total": 19
+            },
+            "Total antall opptalte valgtingsstemmesedler": {
+                "Godkjente": 1226,
+                "Blanke": 8,
+                "Forkastet": 0,
+                "Total": 1234
+            }
+        },
+        "D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler": {
+            "Venstre": {
+                "Foreløpig": 278,
+                "Endelig": 278,
+                "Avvik": 0
+            },
+            "Helsepartiet": {
+                "Foreløpig": 119,
+                "Endelig": 119,
+                "Avvik": 0
+            },
+            "Høgre": {
+                "Foreløpig": 153,
+                "Endelig": 153,
+                "Avvik": 0
+            },
+            "Senterpartiet": {
+                "Foreløpig": 219,
+                "Endelig": 219,
+                "Avvik": 0
+            },
+            "Framstegspartiet": {
+                "Foreløpig": 144,
+                "Endelig": 144,
+                "Avvik": 0
+            },
+            "Kristeleg Folkeparti": {
+                "Foreløpig": 128,
+                "Endelig": 128,
+                "Avvik": 0
+            },
+            "Arbeidarpartiet": {
+                "Foreløpig": 185,
+                "Endelig": 185,
+                "Avvik": 0
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 1226,
+                "Endelig": 1226,
+                "Avvik": 0
+            }
         }
     },
     "comments": {
@@ -166,9 +276,203 @@
         ],
         "C4.3 Merknad": [
             ""
+        ],
+        "C4.6 Merknad": [
+            ""
+        ],
+        "C4.9 Merknad": [
+            ""
+        ],
+        "D1.5 Merknad": [
+            ""
+        ],
+        "D2.5 Merknad": [
+            ""
         ]
     },
     "foretattForeløpigOpptellingHosStemmestyrene": false,
     "foretattForeløpigOpptellingHosValgstyret": true,
-    "errorMessage": "Undefined offset: 1442\n\n#0 2-valgprotokoll-parser.php(1439): {closure}(8, 'Undefined offse...', '...', 1439, Array)\n#1 2-valgprotokoll-parser.php(864): readComments(Object(stdClass), Array, 1442, 'C4.6 Merknad', '(\\xC3\\x85rsak til evt...', 'C4.7 Antall ste...')\n#2 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#3 {main}"
+    "e1_1_listestemmetall_og_mandater": [
+        {
+            "name": "Venstre",
+            "stemmesedler": 373,
+            "kommunestyrerepresentanter": 21,
+            "sedler_ganger_kst_repr": 7833,
+            "slengere_mottatt": 256,
+            "slengere_avgitt": 385,
+            "listestemmetall": 7704,
+            "stemmesedler_initial_counting": 373,
+            "listestemmetall_simulated_initial_counting": 7704
+        },
+        {
+            "name": "Helsepartiet",
+            "stemmesedler": 197,
+            "kommunestyrerepresentanter": 21,
+            "sedler_ganger_kst_repr": 4137,
+            "slengere_mottatt": 196,
+            "slengere_avgitt": 126,
+            "listestemmetall": 4207,
+            "stemmesedler_initial_counting": 197,
+            "listestemmetall_simulated_initial_counting": 4207
+        },
+        {
+            "name": "Høgre",
+            "stemmesedler": 219,
+            "kommunestyrerepresentanter": 21,
+            "sedler_ganger_kst_repr": 4599,
+            "slengere_mottatt": 141,
+            "slengere_avgitt": 189,
+            "listestemmetall": 4551,
+            "stemmesedler_initial_counting": 219,
+            "listestemmetall_simulated_initial_counting": 4551
+        },
+        {
+            "name": "Senterpartiet",
+            "stemmesedler": 287,
+            "kommunestyrerepresentanter": 21,
+            "sedler_ganger_kst_repr": 6027,
+            "slengere_mottatt": 257,
+            "slengere_avgitt": 169,
+            "listestemmetall": 6115,
+            "stemmesedler_initial_counting": 287,
+            "listestemmetall_simulated_initial_counting": 6115
+        },
+        {
+            "name": "Framstegspartiet",
+            "stemmesedler": 211,
+            "kommunestyrerepresentanter": 21,
+            "sedler_ganger_kst_repr": 4431,
+            "slengere_mottatt": 136,
+            "slengere_avgitt": 81,
+            "listestemmetall": 4486,
+            "stemmesedler_initial_counting": 211,
+            "listestemmetall_simulated_initial_counting": 4486
+        },
+        {
+            "name": "Kristeleg Folkeparti",
+            "stemmesedler": 177,
+            "kommunestyrerepresentanter": 21,
+            "sedler_ganger_kst_repr": 3717,
+            "slengere_mottatt": 132,
+            "slengere_avgitt": 117,
+            "listestemmetall": 3732,
+            "stemmesedler_initial_counting": 177,
+            "listestemmetall_simulated_initial_counting": 3732
+        },
+        {
+            "name": "Arbeidarpartiet",
+            "stemmesedler": 276,
+            "kommunestyrerepresentanter": 21,
+            "sedler_ganger_kst_repr": 5796,
+            "slengere_mottatt": 130,
+            "slengere_avgitt": 181,
+            "listestemmetall": 5745,
+            "stemmesedler_initial_counting": 276,
+            "listestemmetall_simulated_initial_counting": 5745
+        }
+    ],
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Venstre",
+            "Kvotient": 5502.857143
+        },
+        "2": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 4367.857143
+        },
+        "3": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 4103.571429
+        },
+        "4": {
+            "Parti": "Høgre",
+            "Kvotient": 3250.714286
+        },
+        "5": {
+            "Parti": "Framstegspartiet",
+            "Kvotient": 3204.285714
+        },
+        "6": {
+            "Parti": "Helsepartiet",
+            "Kvotient": 3005
+        },
+        "7": {
+            "Parti": "Kristeleg Folkeparti",
+            "Kvotient": 2665.714286
+        },
+        "8": {
+            "Parti": "Venstre",
+            "Kvotient": 2568
+        },
+        "9": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 2038.333333
+        },
+        "10": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 1915
+        },
+        "11": {
+            "Parti": "Venstre",
+            "Kvotient": 1540.8
+        },
+        "12": {
+            "Parti": "Høgre",
+            "Kvotient": 1517
+        },
+        "13": {
+            "Parti": "Framstegspartiet",
+            "Kvotient": 1495.333333
+        },
+        "14": {
+            "Parti": "Helsepartiet",
+            "Kvotient": 1402.333333
+        },
+        "15": {
+            "Parti": "Kristeleg Folkeparti",
+            "Kvotient": 1244
+        },
+        "16": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1223
+        },
+        "17": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 1149
+        },
+        "18": {
+            "Parti": "Venstre",
+            "Kvotient": 1100.571429
+        },
+        "19": {
+            "Parti": "Høgre",
+            "Kvotient": 910.2
+        },
+        "20": {
+            "Parti": "Framstegspartiet",
+            "Kvotient": 897.2
+        },
+        "21": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 873.571429
+        }
+    },
+    "e1_mandatPerParty": {
+        "Venstre": 4,
+        "Senterpartiet": 4,
+        "Arbeidarpartiet": 3,
+        "Høgre": 3,
+        "Framstegspartiet": 3,
+        "Helsepartiet": 2,
+        "Kristeleg Folkeparti": 2
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeidarpartiet": 3,
+        "Framstegspartiet": 3,
+        "Helsepartiet": 2,
+        "Høgre": 3,
+        "Kristeleg Folkeparti": 2,
+        "Senterpartiet": 4,
+        "Venstre": 4
+    }
 }
