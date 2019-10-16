@@ -522,6 +522,7 @@ function parseFile_andWriteToDisk(&$obj, $file) {
                  'Total antall valgtingstemmesedler               i urne' => 'Total antall valgtingstemmesedler i urne               ',
                  'C4.1 Antall valgtingsstemmesedler    i urne' => 'C4.1 Antall valgtingsstemmesedler i urne',
                  'C4.2 Partifordelte valgtingsstemmesedler                  i urne' => 'C4.2 Partifordelte valgtingsstemmesedler i urne',
+                 'C4.2 Partifordelte valgtingsstemmesedler      i urne' => 'C4.2 Partifordelte valgtingsstemmesedler i urne',
 
              ) as $to_be_replace => $replace_with) {
         $file_content = str_replace($to_be_replace, $replace_with, $file_content);
@@ -665,8 +666,8 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     $sum_row2 = 'Totalt antall forhåndsstemmegivninger';
     $table_ending = $sum_row1;
     $start_of_row_keywords = array(
-        //'Godkjente forhåndsstemmegivninger (skal være lik sum av B2.1.1 og B2.2.1)',
-        //'Totalt antall forhåndsstemmegivninger',
+        'Godkjente forhåndsstemmegivninger (skal være lik sum av B2.1.1 og B2.2.1)',
+        'Totalt antall forhåndsstemmegivninger',
     );
     $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending, $start_of_row_keywords);
 
@@ -822,7 +823,13 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         $sum_row1 = null;
         $sum_row2 = null;
         $table_ending = 'C4.2 Partifordelte valgtingsstemmesedler i urne';
-        $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
+        $start_of_row_keywords = array(
+            'Godkjente',
+            'Blanke',
+            'Tvilsomme',
+            'Total antall valgtingstemmesedler i urne'
+        );
+        $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending, $start_of_row_keywords);
         $i = assertLine_trim($lines, $i, $table_ending);
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
