@@ -684,7 +684,13 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     $sum_row1 = null;
     $sum_row2 = null;
     $table_ending = 'B2.1.2 Partifordelte forhåndsstemmesedler';
-    $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
+    $start_of_row_keywords = array(
+        'Godkjente',
+        'Blanke',
+        'Tvilsomme',
+        'Total antall behandlede forhåndsstemmesedler',
+    );
+    $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending, $start_of_row_keywords);
 
     // ---- Table - B2.1.2 Partifordelte forhåndsstemmesedler
     $i = assertLine_trim($lines, $i, 'B2.1.2 Partifordelte forhåndsstemmesedler');
