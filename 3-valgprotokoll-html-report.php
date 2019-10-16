@@ -38,7 +38,7 @@ $entity_merging = array(
     'Snillfjord kommune' => array('Orkland kommune', 'Heim kommune', 'Hitra kommune'),
     'Ballangen kommune' => 'Narvik kommune',
     'Hemne kommune' => 'Heim kommune',
-    'Rømskog kommune' => 'Aurskog-Høland kommune'
+    'Rømskog kommune' => 'Aurskog-Høland kommune',
 );
 
 
@@ -805,7 +805,18 @@ $klagerGjennomgatt = array(
     'Ullensaker - Kommunestyrevalget 2019.html' => '47 stemmer avvik på FRP. Kommentarer som "Feil ved manuell telling". Ingen forklaring av kontrollmetode.',
 
     'Hammerfest - Kommunestyrevalget 2019.html' => '!!!  Må sjekke avvik stemmesedler om det skal være med: !!! Stemmeavvik på AP. Avvik i antall stemmesedler vs manntall.'
-        . ' Ikke forklart (?). Korrigert i endelig opptelling. Avvik AP ikke kommentert.'
+        . ' Ikke forklart (?). Korrigert i endelig opptelling. Avvik AP ikke kommentert.',
+
+    'Eidsvoll - Fylkestingsvalget 2019.html' => 'Bør påklages. Avviket i stemmer stort og ikke gjengitt på forklarlig måte.',
+    'Eigersund - Fylkestingsvalget 2019.html' => 'Bør påklages. 50 ekstra stemmer. Stor prosent. Forklart som tellefeil og noe om bunker. Kontrollmetoder ikke forklart.',
+
+    'Fredrikstad - Kommunestyrevalget 2019.html' => 'Bør påklages. Mandatendring og større avvik på andre parti. Ikke forklart.',
+    'Færder - Fylkestingsvalget 2019.html' => 'Kanskje. Mange forskjellig avvik. Inkludert 2 avvik som kansellerer hverandre.',
+    'Færder - Kommunestyrevalget 2019.html' => 'Kanskje. Mange merknader og mange kansellerende avvik. Se også det andre valget i samme kommune.',
+    'Gausdal - Kommunestyrevalget 2019.html' => 'Stort prosentavvik i liten kommune. Ingen merknad.',
+    'Grimstad - Fylkestingsvalget 2019.html' => 'Kanskje. Kontrollmetoder ikke forklart. Avviket er forklart.',
+
+
 );
 $klagerSendt = array(
     'Stavanger - Fylkestingsvalget 2019.html' => 'Avvik på mange prosenter for mange parti. Eneste kommentar "Feiltelling i foreløpig telling.". Ingen forklaring av kontrollmetode.',
@@ -829,10 +840,17 @@ $klagerFjernet = array(
     'Tønsberg - Kommunestyrevalget 2019.html' => 'Kun -4 stemmer på Partiet De kristne. Ingen forklaring av avviket.',
     'Berlevåg - Fylkestingsvalget 2019.html' => 'KRF fikk +1 stemme. Utgjorde 50% ekstra.',
     'Ullensvang - Fylkestingsvalget 2019.html' => 'Lite avvik. Ca kommentert tror jeg.',
+    'Fauske - Fylkestingsvalget 2019.html' => 'Avvik på 1 stemme på to små partier. Utkjør 11-12 % for disse partiene. Kommentar: "OK"',
 
     // Kanskje:
     'Haugesund - Kommunestyrevalget 2019.html' => 'Små avvik. Skanning.',
-    'Fauske - Fylkestingsvalget 2019.html' => 'Avvik på 1 stemme på to små partier. Utkjør 11-12 % for disse partiene. Kommentar: "OK"',
+
+
+    'Eidskog - Kommunestyrevalget 2019.html' => '1 stemme avvik på lite parti. Klagegrunnlag for lite.',
+    'Eigersund - Kommunestyrevalget 2019.html' => '1-2 stemmer avvik på små parti. Klagegrunnlag for lite.',
+    'Flekkefjord - Fylkestingsvalget 2019.html' => '1 stemme avvik på lite parti. Klagegrunnlag for lite.',
+    'Flekkefjord - Kommunestyrevalget 2019.html' => '1-2 stemmer avvik på små parti. Klagegrunnlag for lite.',
+    'Fredrikstad - Fylkestingsvalget 2019.html' => '1-2 stemmer avvik på små parti. Klagegrunnlag for lite.',
 
 );
 
