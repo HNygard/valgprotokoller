@@ -42,7 +42,7 @@ $entity_merging = array(
 );
 
 $county_sums = array();
-$addCountySums = function($county, $party, $numbers) {
+$addCountySums = function ($county, $party, $numbers) {
     global $county_sums;
     if (!isset($county_sums[$county])) {
         $county_sums[$county] = array();
@@ -740,7 +740,7 @@ I "Valgprotokoll for valgstyret - ' . $obj->election . '" [2] for ' . $obj->muni
             if (count($partyLargeDiscrepancies_E1_1_klage) > 0) {
                 $klageType .= ' + avvikMandat';
                 $klage .= "I E1.1 kan man se mandatfordelingen i endelig opptelling. Dersom man beregner dette for foreløpig opptelling "
-                    . "også, så kan man se at mandater har byttet party. I og med at avvik i D1.4/D2.4 ikke er forklart, er heller ikke mandatendringen blitt forklart.\n\n<b>";
+                    . "også, så kan man se at mandater har byttet parti. I og med at avvik i D1.4/D2.4 ikke er forklart, er heller ikke mandatendringen blitt forklart.\n\n<b>";
 
                 // - Norges Kommunistiske Parti mistet nærmest 86.7% av stemmene sine
                 // - Folkeaksjonen Nei til mer bompenger økte med 5.7%
@@ -816,7 +816,7 @@ Twitter: @hallny
 
 $html .= "<h2>Fylkesoversikt</h2>\n";
 $html .= "<table>\n";
-foreach($county_sums as $county => $county_sum) {
+foreach ($county_sums as $county => $county_sum) {
     $html .= "<tr>\n";
     $html .= "<td>$county</td>\n";
     $html .= "<td style='text-align: left;'>\n";
@@ -846,7 +846,6 @@ $klagerGjennomgatt_skalKlages = array(
     'Eidsvoll - Fylkestingsvalget 2019.html' => 'Bør påklages. Avviket i stemmer stort og ikke gjengitt på forklarlig måte.',
     'Eigersund - Fylkestingsvalget 2019.html' => 'Bør påklages. 50 ekstra stemmer. Stor prosent. Forklart som tellefeil og noe om bunker. Kontrollmetoder ikke forklart.',
 
-    'Fredrikstad - Kommunestyrevalget 2019.html' => 'Bør påklages. Mandatendring og større avvik på andre parti. Ikke forklart.',
     'Færder - Fylkestingsvalget 2019.html' => 'Kanskje. Mange forskjellig avvik. Inkludert 2 avvik som kansellerer hverandre.',
     'Færder - Kommunestyrevalget 2019.html' => 'Kanskje. Mange merknader og mange kansellerende avvik. Se også det andre valget i samme kommune.',
     'Gausdal - Kommunestyrevalget 2019.html' => 'Stort prosentavvik i liten kommune. Ingen merknad.',
@@ -872,7 +871,7 @@ $klagerSendt = array(
     'Haugesund - Fylkestingsvalget 2019.html' => 'Relativt små avvik. Større avvik på FRP. Ellers lite reelle merknader.',
     'Bærum - Kommunestyrevalget 2019.html' => 'Store avvik på AP og FRP. Er kommentert som "Vi har skannet to ganger og er sikre på at feilen ligger i den manuelle tellingen.". Ingen forklaring utover det.',
     'Aurskog -Høland - Kommunestyrevalget 2019.html' => 'Rødt har fått mer stemmer i både forhånd og valgdag. Kommentarer: "Antatt feiltelling". Ingen forklaring av kontrollmetode.',
-
+    'Fredrikstad - Kommunestyrevalget 2019.html' => 'Bør påklages. Mandatendring og større avvik på andre parti. Ikke forklart.',
 
 );
 $klagerFjernet = array(
@@ -914,7 +913,7 @@ $klagerFjernet = array(
     'Suldal - Fylkestingsvalget 2019.html' => '',
     'Søndre Land - Fylkestingsvalget 2019.html' => '',
     'Sør-Varanger - Kommunestyrevalget 2019.html' => '',
-'Tvedestrand - Fylkestingsvalget 2019.html' => '',
+    'Tvedestrand - Fylkestingsvalget 2019.html' => '',
     'Tvedestrand - Kommunestyrevalget 2019.html' => '',
     'Tynset - Fylkestingsvalget 2019.html' => '',
     'Tynset - Kommunestyrevalget 2019.html' => '',
@@ -931,7 +930,7 @@ $klagerFjernet = array(
     'Hamar - Kommunestyrevalget 2019.html' => '',
     'Hamarøy - Fylkestingsvalget 2019.html' => '',
     'Hitra - Fylkestingsvalget 2019.html' => '',
-    'Hitra - Kommunestyrevalget 2019.html '=> '',
+    'Hitra - Kommunestyrevalget 2019.html ' => '',
     'Hjelmeland - Fylkestingsvalget 2019.html' => '',
     'Hol - Kommunestyrevalget 2019.html' => '',
     'Holmestrand - Fylkestingsvalget 2019.html' => '',
@@ -941,21 +940,27 @@ $klagerFjernet = array(
     'Hå - Fylkestingsvalget 2019.html' => '',
     'Indre Østfold - Kommunestyrevalget 2019.html' => '',
     'Kongsberg - Kommunestyrevalget 2019.html' => '',
-    'Kristiansund - Fylkestingsvalget 2019.html'=> 'Kommentert. Virker som de har skannet og telt manuelt to ganger.',
+    'Kristiansund - Fylkestingsvalget 2019.html' => 'Kommentert. Virker som de har skannet og telt manuelt to ganger.',
     'Kristiansund - Kommunestyrevalget 2019.html' => 'Kommentert. Også skrevet stikkprøvekontroll. Bra!',
     'Kvæfjord - Kommunestyrevalget 2019.html' => '',
     'Marker - Fylkestingsvalget 2019.html' => '',
-'Molde - Fylkestingsvalget 2019.html' => '',
+    'Molde - Fylkestingsvalget 2019.html' => '',
     'Moss - Kommunestyrevalget 2019.html' => '',
     'Oppdal - Fylkestingsvalget 2019.html' => '',
     'Oppdal - Kommunestyrevalget 2019.html' => '',
     'Orkland - Fylkestingsvalget 2019.html' => 'Kommentert. OK.',
     'Orkland - Kommunestyrevalget 2019.html' => '',
     'Porsanger - Porságu - Porsanki - Kommunestyrevalget 2019.html' => '',
+    'Sandefjord - Kommunestyrevalget 2019.html' => 'Kommentert og forklart. Noen stemmer tatt med som ikke skulle med.',
+    'Sarpsborg - Fylkestingsvalget 2019.html' => 'Godt forklart i forbindelse med innsynshenvendelsen.',
+    'Sandnes - Kommunestyrevalget 2019.html' => 'Forsåvidt forklart. Ikke den beste, men la gå.',
+    'Sandnes - Fylkestingsvalget 2019.html' => 'Flere stemmer på endelig. Fordelt utover flere partier.',
+    'Nord-Aurdal%20-%20Kommunestyrevalget%202019.html' => 'Kun ballot stuffing i foreløpig opptelling.'
 );
 
 $klager_html = htmlHeading('Klager');
 ksort($klager);
+$klager_html .= "<style>.fjernet, .fjernet a { color: lightgrey; }</style>\n\n";
 $klager_html .= "<table>\n";
 foreach ($klager as $klage => $klageType) {
     $klager_html .= "<tr>\n    <td style='text-align: left'>";
@@ -963,7 +968,7 @@ foreach ($klager as $klage => $klageType) {
         $klager_html .= "<span style='text-decoration: line-through; color: red'>";
     }
     if (isset($klagerFjernet[$klage])) {
-        $klager_html .= "<span style='text-decoration: line-through'>";
+        $klager_html .= "<span style='text-decoration: line-through' class='fjernet'>";
     }
     $klager_html .= '<a href="./' . $klage . '">' . $klage . '</a> - ' . $klageType . "<br>";
     if (isset($klagerFjernet[$klage]) || isset($klagerGjennomgatt_skalKlages[$klage])) {
