@@ -471,7 +471,7 @@ foreach ($files as $file) {
     $ballotStuffingRow = function ($text, $textNor, $ballots, $comments) {
         $checksum = $ballots->{'Kryss i manntall'} - $ballots->{'Ant. sedler'};
 
-        $color = (str_contains($text, 'Main-votes') || str_contains($text, 'Key figur'))
+        $color = (str_contains($text, 'Main-votes') || str_contains($text, 'Key figur')) && !str_contains($text, 'prelim')
             ? 'red'
             : '';
         $extraText = $color == 'red' ? ' This should not happen.' : ' Pre-votes: OK.';
