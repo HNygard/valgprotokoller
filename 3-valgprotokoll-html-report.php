@@ -880,6 +880,7 @@ $klagerSendt = array(
     'Bærum - Kommunestyrevalget 2019.html' => 'Store avvik på AP og FRP. Er kommentert som "Vi har skannet to ganger og er sikre på at feilen ligger i den manuelle tellingen.". Ingen forklaring utover det.',
     'Aurskog -Høland - Kommunestyrevalget 2019.html' => 'Rødt har fått mer stemmer i både forhånd og valgdag. Kommentarer: "Antatt feiltelling". Ingen forklaring av kontrollmetode.',
     'Fredrikstad - Kommunestyrevalget 2019.html' => 'Bør påklages. Mandatendring og større avvik på andre parti. Ikke forklart.',
+    'Kongsberg - Fylkestingsvalget 2019.html' => 'Større stemmeavvik og prosent. Ikke forklart spesifikt.',
 
 );
 $klagerFjernet = array(
@@ -963,12 +964,13 @@ $klagerFjernet = array(
     'Sarpsborg - Fylkestingsvalget 2019.html' => 'Godt forklart i forbindelse med innsynshenvendelsen.',
     'Sandnes - Kommunestyrevalget 2019.html' => 'Forsåvidt forklart. Ikke den beste, men la gå.',
     'Sandnes - Fylkestingsvalget 2019.html' => 'Flere stemmer på endelig. Fordelt utover flere partier.',
-    'Nord-Aurdal%20-%20Kommunestyrevalget%202019.html' => 'Kun ballot stuffing i foreløpig opptelling.',
-    'Strand%20-%20Kommunestyrevalget%202019.html' => 'Kun ballot stuffing i foreløpig opptelling.',
+    'Nord-Aurdal - Kommunestyrevalget 2019.html' => 'Kun ballot stuffing i foreløpig opptelling.',
+    'Strand - Kommunestyrevalget 2019.html' => 'Kun ballot stuffing i foreløpig opptelling.',
+    'Nesodden - Kommunestyrevalget 2019.html' => '',
 
 
     // Fremmed stemmesedler ikke tatt med
-    'Nordreisa%20-%20Kommunestyrevalget%202019.html' => 'Ikke diff hvis fremmede stemmesedler er tatt med.',
+    'Nordreisa - Kommunestyrevalget 2019.html' => 'Ikke diff hvis fremmede stemmesedler er tatt med.',
 );
 
 $klager_html = htmlHeading('Klager');
