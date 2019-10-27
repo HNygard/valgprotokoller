@@ -641,7 +641,9 @@ foreach ($files as $file) {
         }
 
 
-        $klage = $mimesLink . '
+        $klage =
+            '<a href="../' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a><br>'.
+            $mimesLink . '
 (Dette eposten har feil emne. Korrekt tittel står under)        
         
 TITTEL:
