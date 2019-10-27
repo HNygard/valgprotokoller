@@ -41,6 +41,20 @@ $entity_merging = array(
     'Rømskog kommune' => 'Aurskog-Høland kommune',
 );
 
+$county_sums = array();
+$addCountySums = function($county, $party, $numbers) {
+    global $county_sums;
+    if (!isset($county_sums[$county])) {
+        $county_sums[$county] = array();
+    }
+    if (!isset($county_sums[$county][$party])) {
+        $county_sums[$county][$party] = new stdClass();
+        $county_sums[$county][$party]->{'Foreløpig'} = 0;
+        $county_sums[$county][$party]->{'Endelig'} = 0;
+    }
+    $county_sums[$county][$party]->{'Foreløpig'} += $numbers->{'Foreløpig'};
+    $county_sums[$county][$party]->{'Endelig'} += $numbers->{'Endelig'};
+};
 
 $klager = array();
 
@@ -129,7 +143,7 @@ being noticed.</i><br><br>
 <table>
 ";
 
-$number_if_large_diff = function ($numbers, $text) {
+$number_if_large_diff = function ($numbers, $text, $blue_limit = 40) {
     global $partyNameShorten;
     if (str_contains($text, 'Totalt antall partifordelte stemmesedler')) {
         return '';
@@ -137,7 +151,7 @@ $number_if_large_diff = function ($numbers, $text) {
 
     $diff = $numbers->{'Endelig'} - $numbers->{'Foreløpig'};
     $diffSign = $diff > 0 ? '+' : '';
-    $diffStyle = abs($diff) > 40 ? " style='color: blue;'" : '';
+    $diffStyle = abs($diff) > $blue_limit ? " style='color: blue;'" : '';
     $diffHtml = " (<span$diffStyle>$diffSign$diff votes</span>)\n";
     if ($numbers->{'Foreløpig'} != 0) {
         $diff_percent = 100 * (($diff) / $numbers->{'Foreløpig'});
@@ -148,7 +162,7 @@ $number_if_large_diff = function ($numbers, $text) {
                 . $partyNameShorten($text)
                 . $diffHtml;
         }
-        if (abs($diff) >= 40) {
+        if (abs($diff) >= $blue_limit) {
             return "\n<span style='color: #5b5700;'>" . $formattedNumber . ' %</span> '
                 . $partyNameShorten($text)
                 . $diffHtml;
@@ -335,6 +349,7 @@ foreach ($files as $file) {
             $partyLargeDiscrepancies_D1_4_klage[] = $klageNum;
             $avvik_forelopig_endelig_comments['D1.5 Merknad'] = $obj->comments->{'D1.5 Merknad'};
         }
+        $addCountySums($obj->county, $party, $numbers);
     }
     $electionHtml .= "</table>\n\n";
     $electionHtml .= "<h3>Comments to D1.4 ('D1.5 Merknad')</h3>\n";
@@ -353,6 +368,7 @@ foreach ($files as $file) {
             $partyLargeDiscrepancies_D2_4_klage[] = $klageNum;
             $avvik_forelopig_endelig_comments['D2.5 Merknad'] = $obj->comments->{'D2.5 Merknad'};
         }
+        $addCountySums($obj->county, $party, $numbers);
     }
     $electionHtml .= "</table>\n\n";
     $electionHtml .= "<h3>Comments to D2.4 ('D2.5 Merknad')</h3>\n";
@@ -798,7 +814,27 @@ Twitter: @hallny
 }
 
 
-$klagerGjennomgatt = array(
+$html .= "<h2>Fylkesoversikt</h2>\n";
+$html .= "<table>\n";
+foreach($county_sums as $county => $county_sum) {
+    $html .= "<tr>\n";
+    $html .= "<td>$county</td>\n";
+    $html .= "<td style='text-align: left;'>\n";
+    $large_diffs = array();
+    foreach ($county_sum as $party => $numbers) {
+        $large_diffs[] = $number_if_large_diff($numbers, $party, 300);
+
+    }
+    $html .= implode($large_diffs, "\n");
+    $html .= "</td>\n";
+    $html .= "</tr>\n";
+}
+$html .= "</table>\n";
+
+
+$klagerGjennomgatt_skalKlages = array(
+    'Gjesdal - Kommunestyrevalget 2019.html' => 'Små avvik i stemmer og prosent, men har endret mandat.',
+
     'Steinkjer - Fylkestingsvalget 2019.html' => 'Avvik på mange prosenter for mange parti. Kommentarer av type "Stemmestyret har telt 5 sedler for lite". Ingen forklaring av kontrollmetode.',
     'Steinkjer - Kommunestyrevalget 2019.html' => 'Avvik på mange prosenter for mange parti. Kommentarer av type "Stemmestyret har telt 5 sedler for lite". Ingen forklaring av kontrollmetode.',
     'Ullensaker - Fylkestingsvalget 2019.html' => 'Avvik på mange prosenter for mange parti. Fleste kommentarer er "feil ved manuell telling". Ingen forklaring av kontrollmetode.',
@@ -861,6 +897,9 @@ $klagerFjernet = array(
     'Fredrikstad - Fylkestingsvalget 2019.html' => '1-2 stemmer avvik på små parti. Klagegrunnlag for lite.',
     'Asker - Kommunestyrevalget 2019.html' => '1-4 stmemer avvik på små parti. Klagegrunnlag for lite.',
 
+    // 1-4 stmemer avvik på små parti. Klagegrunnlag for lite.
+    'Gjesdal - Fylkestingsvalget 2019.html' => '',
+    'Gjøvik - Fylkestingsvalget 2019.html' => '',
 
 );
 
@@ -869,18 +908,21 @@ ksort($klager);
 $klager_html .= "<table>\n";
 foreach ($klager as $klage => $klageType) {
     $klager_html .= "<tr>\n    <td style='text-align: left'>";
+    if (isset($klagerGjennomgatt_skalKlages[$klage])) {
+        $klager_html .= "<span style='text-decoration: line-through; color: red'>";
+    }
     if (isset($klagerFjernet[$klage])) {
         $klager_html .= "<span style='text-decoration: line-through'>";
     }
     $klager_html .= '<a href="./' . $klage . '">' . $klage . '</a> - ' . $klageType . "<br>";
-    if (isset($klagerFjernet[$klage])) {
+    if (isset($klagerFjernet[$klage]) || isset($klagerGjennomgatt_skalKlages[$klage])) {
         $klager_html .= "</span>";
     }
     $klager_html .= "</td>\n";
 
     $klager_html .= "    <td style='text-align: left'>";
-    if (isset($klagerGjennomgatt[$klage])) {
-        $klager_html .= 'Gjennomgått: ' . $klagerGjennomgatt[$klage] . '<br>';
+    if (isset($klagerGjennomgatt_skalKlages[$klage])) {
+        $klager_html .= 'Gjennomgått, skal klages: ' . $klagerGjennomgatt_skalKlages[$klage] . '<br>';
 
     }
     elseif (isset($klagerSendt[$klage])) {
