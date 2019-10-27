@@ -815,10 +815,23 @@ $klagerGjennomgatt = array(
     'Færder - Kommunestyrevalget 2019.html' => 'Kanskje. Mange merknader og mange kansellerende avvik. Se også det andre valget i samme kommune.',
     'Gausdal - Kommunestyrevalget 2019.html' => 'Stort prosentavvik i liten kommune. Ingen merknad.',
     'Grimstad - Fylkestingsvalget 2019.html' => 'Kanskje. Kontrollmetoder ikke forklart. Avviket er forklart.',
+    'Arendal - Fylkestingsvalget 2019.html' => 'Stort avvik på enkeltparti. Stort avvik på antall stemmer. Ingen informasjon om kontrolltiltak. Kun at maskinell er kjørt dobbelt.',
+    'Arendal - Kommunestyrevalget 2019.html' => 'Stort avvik i stemmer og prosent. Ingen informasjon om kontrolltilak. Dobbelkjørt maskinell er eneste nevnte.',
+    'Asker - Fylkestingsvalget 2019.html' => 'Stort avvik i stemmer og prosent. Ingen informasjon om kontrolltiltak.',
+    'Bodø - Fylkestingsvalget 2019.html' => 'Forhåndsstemmer: OK. Valgting: Stort avvik i stemmer og prosent. Ingen informasjon om kontrolltiltak. Maskin kjørt to ganger.',
+    'Bodø - Kommunestyrevalget 2019.html' => 'Stort avvik i stemmer og prosent. Ingen informasjon om kontrolltiltak. Maskin kjørt to ganger.',
+
 
 
 );
 $klagerSendt = array(
+    // Andre har klaget
+    'Bergen - Fylkestingsvalget 2019.html' => 'Allerede klaget.',
+    'Bergen - Kommunestyrevalget 2019.html' => 'Allerede påklaget.',
+    'Evenes - Kommunestyrevalget 2019.html' => 'Allerede utvidet behandling og omtelling.',
+    'Gjøvik - Kommunestyrevalget 2019.html' => 'Allerede påklaget - https://innsyn.gjovik.kommune.no/wfinnsyn.ashx?response=mote&moteid=423&',
+
+    // Mine
     'Stavanger - Fylkestingsvalget 2019.html' => 'Avvik på mange prosenter for mange parti. Eneste kommentar "Feiltelling i foreløpig telling.". Ingen forklaring av kontrollmetode.',
     'Stavanger - Kommunestyrevalget 2019.html' => 'Avvik på mange prosenter for mange parti. Sparsommelige kommentarer. Flest av "Feiltelling i foreløpig telling". Ingen forklaring av kontrollmetode.',
     'Haugesund - Fylkestingsvalget 2019.html' => 'Relativt små avvik. Større avvik på FRP. Ellers lite reelle merknader.',
@@ -828,11 +841,6 @@ $klagerSendt = array(
 
 );
 $klagerFjernet = array(
-    // Andre har klaget
-    'Bergen - Fylkestingsvalget 2019.html' => 'Allerede klaget.',
-    'Bergen - Kommunestyrevalget 2019.html' => 'Allerede påklaget.',
-    'Evenes - Kommunestyrevalget 2019.html' => 'Allerede utvidet behandling og omtelling.',
-    'Gjøvik - Kommunestyrevalget 2019.html' => 'Allerede påklaget - https://innsyn.gjovik.kommune.no/wfinnsyn.ashx?response=mote&moteid=423&',
 
     // Andre
     'Frogn - Fylkestingsvalget 2019.html' => 'Større avvik på Piratpartiet. Skannet to ganger. Sliter med avvik i sedler vs manntall pga to valg.',
@@ -851,6 +859,8 @@ $klagerFjernet = array(
     'Flekkefjord - Fylkestingsvalget 2019.html' => '1 stemme avvik på lite parti. Klagegrunnlag for lite.',
     'Flekkefjord - Kommunestyrevalget 2019.html' => '1-2 stemmer avvik på små parti. Klagegrunnlag for lite.',
     'Fredrikstad - Fylkestingsvalget 2019.html' => '1-2 stemmer avvik på små parti. Klagegrunnlag for lite.',
+    'Asker - Kommunestyrevalget 2019.html' => '1-4 stmemer avvik på små parti. Klagegrunnlag for lite.',
+
 
 );
 
