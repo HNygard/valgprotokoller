@@ -858,7 +858,6 @@ $klagerGjennomgatt_skalKlages = array(
     'Bodø - Kommunestyrevalget 2019.html' => 'Stort avvik i stemmer og prosent. Ingen informasjon om kontrolltiltak. Maskin kjørt to ganger.',
 
 
-
 );
 $klagerSendt = array(
     // Andre har klaget
@@ -900,7 +899,59 @@ $klagerFjernet = array(
     // 1-4 stmemer avvik på små parti. Klagegrunnlag for lite.
     'Gjesdal - Fylkestingsvalget 2019.html' => '',
     'Gjøvik - Fylkestingsvalget 2019.html' => '',
-
+    'Rakkestad - Kommunestyrevalget 2019.html' => '',
+    'Randaberg - Fylkestingsvalget 2019.html' => '',
+    'Randaberg - Kommunestyrevalget 2019.html' => '',
+    'Ringsaker - Fylkestingsvalget 2019.html' => '',
+    'Rælingen - Fylkestingsvalget 2019.html' => '',
+    'Rælingen - Kommunestyrevalget 2019.html' => '',
+    'Røst - Kommunestyrevalget 2019.html' => '',
+    'Sirdal - Fylkestingsvalget 2019.html' => '',
+    'Sirdal - Kommunestyrevalget 2019.html' => '',
+    'Sola - Fylkestingsvalget 2019.html' => '',
+    'Stange - Kommunestyrevalget 2019.html' => '',
+    'Strand - Fylkestingsvalget 2019.html' => '',
+    'Suldal - Fylkestingsvalget 2019.html' => '',
+    'Søndre Land - Fylkestingsvalget 2019.html' => '',
+    'Sør-Varanger - Kommunestyrevalget 2019.html' => '',
+'Tvedestrand - Fylkestingsvalget 2019.html' => '',
+    'Tvedestrand - Kommunestyrevalget 2019.html' => '',
+    'Tynset - Fylkestingsvalget 2019.html' => '',
+    'Tynset - Kommunestyrevalget 2019.html' => '',
+    'Vadsø - Kommunestyrevalget 2019.html' => '',
+    'Vestnes - Fylkestingsvalget 2019.html' => '',
+    'Vestre Toten - Kommunestyrevalget 2019.html' => '',
+    'Volda - Fylkestingsvalget 2019.html' => '',
+    'Volda - Kommunestyrevalget 2019.html' => '',
+    'Ørland - Kommunestyrevalget 2019.html' => '',
+    'Ørsta - Fylkestingsvalget 2019.html' => '',
+    'Ørsta - Kommunestyrevalget 2019.html' => '',
+    'Halden - Kommunestyrevalget 2019.html' => '',
+    'Hamar - Fylkestingsvalget 2019.html' => '',
+    'Hamar - Kommunestyrevalget 2019.html' => '',
+    'Hamarøy - Fylkestingsvalget 2019.html' => '',
+    'Hitra - Fylkestingsvalget 2019.html' => '',
+    'Hitra - Kommunestyrevalget 2019.html '=> '',
+    'Hjelmeland - Fylkestingsvalget 2019.html' => '',
+    'Hol - Kommunestyrevalget 2019.html' => '',
+    'Holmestrand - Fylkestingsvalget 2019.html' => '',
+    'Holmestrand - Kommunestyrevalget 2019.html' => 'Faktisk kommentar.',
+    'Hurdal - Fylkestingsvalget 2019.html' => '',
+    'Hurdal - Kommunestyrevalget 2019.html' => '',
+    'Hå - Fylkestingsvalget 2019.html' => '',
+    'Indre Østfold - Kommunestyrevalget 2019.html' => '',
+    'Kongsberg - Kommunestyrevalget 2019.html' => '',
+    'Kristiansund - Fylkestingsvalget 2019.html'=> 'Kommentert. Virker som de har skannet og telt manuelt to ganger.',
+    'Kristiansund - Kommunestyrevalget 2019.html' => 'Kommentert. Også skrevet stikkprøvekontroll. Bra!',
+    'Kvæfjord - Kommunestyrevalget 2019.html' => '',
+    'Marker - Fylkestingsvalget 2019.html' => '',
+'Molde - Fylkestingsvalget 2019.html' => '',
+    'Moss - Kommunestyrevalget 2019.html' => '',
+    'Oppdal - Fylkestingsvalget 2019.html' => '',
+    'Oppdal - Kommunestyrevalget 2019.html' => '',
+    'Orkland - Fylkestingsvalget 2019.html' => 'Kommentert. OK.',
+    'Orkland - Kommunestyrevalget 2019.html' => '',
+    'Porsanger - Porságu - Porsanki - Kommunestyrevalget 2019.html' => '',
 );
 
 $klager_html = htmlHeading('Klager');
@@ -929,7 +980,7 @@ foreach ($klager as $klage => $klageType) {
         $klager_html .= 'Klage sendt: ' . $klagerSendt[$klage] . '<br>';
     }
     elseif (isset($klagerFjernet[$klage])) {
-        $klager_html .= 'Fjernet: ' . $klagerFjernet[$klage] . '<br>';
+        $klager_html .= 'Gjennomgått, fjernet: ' . $klagerFjernet[$klage] . '<br>';
     }
     else {
         $klager_html .= '<input type="text" value="' . $klage . '"> ikke gjennomgått<br>';
