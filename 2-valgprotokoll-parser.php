@@ -875,8 +875,33 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     // OR
     // C4.7 Antall fremmede stemmesedler
     // C4.8 Partifordelte fremmede stemmesedler
-    $i = assertLine_trim($lines, $i, $continue_until);
-    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    if (str_contains($file_content, 'C4.7 Antall fremmede stemmesedler')) {
+        $current_heading = 'C4.7 Antall fremmede stemmesedler';
+        $text_heading = null;
+        $column_heading = null;
+        $column1 = 'Kryss i manntall';
+        $column2 = 'Ant. sedler';
+        $sum_row1 = null;
+        $sum_row2 = null;
+        $table_ending = 'C4.8 Partifordelte fremmede stemmesedler';
+        $start_of_row_keywords = array(
+            'Godkjente',
+            'Blanke',
+            'Tvilsomme',
+            'Total antall fremmedstemmesedler'
+        );
+        $i = readTable_twoColumns($obj, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending, $start_of_row_keywords);
+        $i = assertLine_trim($lines, $i, $table_ending);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+    }
+    else {
+        $i = assertLine_trim($lines, $i, $continue_until);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+    }
+
+
     // Skip
     while ($lines[$i] != 'C4.9 Merknad') {
         $i++;

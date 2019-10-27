@@ -522,6 +522,12 @@ foreach ($files as $file) {
     else {
         $totalKryssIManntallMainVotes = $ballotsMainFirstCounting->{'Kryss i manntall'};
     }
+    if (isset($obj->numbers->{'C4.7 Antall fremmede stemmesedler'})) {
+        $totalKryssIManntallMainVotes += $obj->numbers->{'C4.7 Antall fremmede stemmesedler'}->{'Total antall fremmedstemmesedler'}->{'Kryss i manntall'};
+        if ($ballotsMainFirstCount != null) {
+            $ballotsMainFirstCount->{'Kryss i manntall'} += $obj->numbers->{'C4.7 Antall fremmede stemmesedler'}->{'Total antall fremmedstemmesedler'}->{'Kryss i manntall'};
+        }
+    }
 
 
     $d2_1_numbers = $obj->numbers->{'D2.1 Opptalte valgtingsstemmesedler'}->{'Total antall opptalte valgtingsstemmesedler'};
@@ -955,7 +961,12 @@ $klagerFjernet = array(
     'Sarpsborg - Fylkestingsvalget 2019.html' => 'Godt forklart i forbindelse med innsynshenvendelsen.',
     'Sandnes - Kommunestyrevalget 2019.html' => 'Forsåvidt forklart. Ikke den beste, men la gå.',
     'Sandnes - Fylkestingsvalget 2019.html' => 'Flere stemmer på endelig. Fordelt utover flere partier.',
-    'Nord-Aurdal%20-%20Kommunestyrevalget%202019.html' => 'Kun ballot stuffing i foreløpig opptelling.'
+    'Nord-Aurdal%20-%20Kommunestyrevalget%202019.html' => 'Kun ballot stuffing i foreløpig opptelling.',
+    'Strand%20-%20Kommunestyrevalget%202019.html' => 'Kun ballot stuffing i foreløpig opptelling.',
+
+
+    // Fremmed stemmesedler ikke tatt med
+    'Nordreisa%20-%20Kommunestyrevalget%202019.html' => 'Ikke diff hvis fremmede stemmesedler er tatt med.',
 );
 
 $klager_html = htmlHeading('Klager');
