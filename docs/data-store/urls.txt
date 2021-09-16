@@ -1,3 +1,5 @@
+### Election 2019
+
 # Bergen kommune, downloaded by @pati_gallardo
 # https://twitter.com/pati_gallardo/status/1172498903268306945
 # https://twitter.com/pati_gallardo/status/1172498905017344000
@@ -173,9 +175,25 @@ https://www.lillestrom.kommune.no/Templates/eDemokrati/Services/DokumentHandlerS
 https://nyttinnsyn.sola.kommune.no/wfdocument.aspx?journalpostid=2019030459&dokid=1463172&versjon=1&variant=A&
 https://nyttinnsyn.sola.kommune.no/wfdocument.aspx?journalpostid=2019030459&dokid=1463173&versjon=1&variant=A&
 
-# Mimes Brønn
+# Data from Valgdirektoratet
+#https://www.mimesbronn.no/request/2257/response/9186/attach/4/Forelopig%20endelig%20tellinger%20Kommunestyrevalget%202019%20Data%20fra%2008%2010%202019.CSV.txt
+#https://www.mimesbronn.no/request/2257/response/9186/attach/3/Forelopig%20endelig%20kontrolltellinger%20Fylkestingsvalget%202019%20Data%20fra%2008%2010%202019.CSV.txt
+
+# From FOI request in Mimes Brønn
 https://opengov.360online.com/Meetings/sandnes/File/Details/17450164.PDF?fileName=Valgstyrets_m%C3%B8tebok_1108_2019-09-11.kommunestyre&fileSize=359811
 https://opengov.360online.com/Meetings/sandnes/File/Details/17450171.PDF?fileName=Valgstyrets_m%C3%B8tebok_1108_2019-09-11.fylkesting&fileSize=157815
 https://www.nyeheim.no/EsaFile?id=1959857
 https://www.nyeheim.no/EsaFile?id=1959859
 https://innsyn.gjovik.kommune.no/wfdocument.ashx?journalpostid=2019063216&dokid=1655057&versjon=1&variant=A&
+
+
+# https://valgmedarbeiderportalen-2019.valg.no/moeteboeker
+# 1 - Download recursive:
+#     wget --recursive --force-directories --level=2 --timestamping -e robots=off https://valgmedarbeiderportalen-2019.valg.no/moeteboeker
+# 2 - Find the small files (might be parsable):
+#     find valgmedarbeiderportalen-2019.valg.no/umbraco/surface/document/downloadByName/ -type f -size -1000k |sort > urls2.txt
+# 3 - Add list here
+
+#
+# find valgmedarbeiderportalen-2019.valg.no/umbraco/surface/document/downloadByName/ -type f -size -400k -print0 |xargs -0 -n1 pdfinfo|grep Jasper
+#
