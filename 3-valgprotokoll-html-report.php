@@ -107,8 +107,9 @@ $html .= '<h2>Summary</h2>
 
 ';
 $summaryData = array(
-    'Fylkestingsvalget 2019' => 0,
-    'Kommunestyrevalget 2019' => 0
+//    'Fylkestingsvalget 2019' => 0,
+//    'Kommunestyrevalget 2019' => 0,
+    'Stortingsvalget 2021' => 0,
 );
 
 $d1_4_heading = '<table>
@@ -256,6 +257,9 @@ foreach ($files as $file) {
     if ($obj->error || $obj->documentType != 'valgprotokoll' || !isset($obj->election) || !isset($obj->municipality)) {
         continue;
     }
+    if ($obj->election == 'Fylkestingsvalget 2019' || $obj->election == 'Kommunestyrevalget 2019') {
+        continue;
+    }
     logInfo('Using [' . str_replace(__DIR__ . '/', '', $file) . '].');
 
     $name = $obj->municipality;
@@ -278,7 +282,7 @@ foreach ($files as $file) {
 
 <h1>' . $obj->election . ' - ' . $obj->municipality . "</h1>\n";
 
-    $urlLocal = '../../data-store/pdfs/' . str_replace('docs/data-store/pdfs/', '', $obj->localSource);
+    $urlLocal = '../../data-store/pdfs-2021/' . str_replace('docs/data-store/pdfs-2021/', '', $obj->localSource);
     if (isset($obj->url) && $obj->url != '<missing>') {
         $obj->url2 = $obj->url;
         $pdfLink = str_replace('.layout.txt', '', $urlLocal);
@@ -1072,6 +1076,11 @@ foreach ($entity_id__to__obj as $entity) {
                     . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
             }
             elseif ($election->election == 'Fylkestingsvalget 2019' && $elections[1] == '<td>-</td>') {
+                $elections[1] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
+                    . chr(10)
+                    . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
+            }
+            elseif ($election->election == 'Stortingsvalget 2021' && $elections[1] == '<td>-</td>') {
                 $elections[1] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
                     . chr(10)
                     . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
