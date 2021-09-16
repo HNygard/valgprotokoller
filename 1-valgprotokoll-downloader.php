@@ -16,9 +16,9 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errconte
 });
 
 
-$cache_dir_pdfs = __DIR__ . '/docs/data-store/pdfs/';
+$cache_dir_pdfs = __DIR__ . '/docs/data-store/pdfs-2021/';
 
-$lines = file(__DIR__ . '/docs/data-store/urls.txt');
+$lines = file(__DIR__ . '/docs/data-store/urls-election-2021.txt');
 $clean_file = downloadUrls_parseTxt($lines);
 function downloadUrls_parseTxt($lines) {
     global $cache_dir_pdfs;
