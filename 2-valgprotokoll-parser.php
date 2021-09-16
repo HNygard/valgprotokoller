@@ -250,7 +250,7 @@ $ignore_files = array(
 
 $files_written = array();
 
-$files = getDirContents(__DIR__ . '/docs/data-store/pdfs');
+$files = getDirContents(__DIR__ . '/docs/data-store/pdfs-2021');
 foreach ($files as $file) {
     if (!str_ends_with($file, '.layout.txt')) {
         continue;
@@ -263,7 +263,7 @@ foreach ($files as $file) {
     }
 
     if (isset($argv[1]) && $argv[1] != 'throw') {
-        $file_stripped = str_replace(__DIR__ . '/docs/data-store/pdfs/', '', $file);
+        $file_stripped = str_replace(__DIR__ . '/docs/data-store/pdfs-2021/', '', $file);
         $file2 = $argv[1];
         $file2 = str_replace('http://', '', $file2);
         $file2 = str_replace('https://', '', $file2);
@@ -549,7 +549,7 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         return;
     }
 
-    $match = regexAssertAndReturnMatch('/^\s*((Fylkestingsvalget|Kommunestyrevalget) [0-9]*)\s*$/', $lines[$i++]);
+    $match = regexAssertAndReturnMatch('/^\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\s*$/', $lines[$i++]);
     $obj->election = $match[1];
 
     $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -563,7 +563,12 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     $obj->heading = 'Valgprotokoll for valgstyret i ' . trim($lines[$i++]);
 
     // --- START page 2
-    $i = assertLine_trim($lines, $i, 'Kommunestyre- og fylkestingsvalget 2019');
+    if ($obj->election == 'Stortingsvalget 2021') {
+        $i = assertLine_trim($lines, $i, 'Stortingsvalget 2021');
+    }
+    else {
+        $i = assertLine_trim($lines, $i, 'Kommunestyre- og fylkestingsvalget 2019');
+    }
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = assertLine_trim($lines, $i, 'Valgprotokoll for valgstyret - ' . $obj->election);
     $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -571,8 +576,15 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     $match = regexAssertAndReturnMatch('/^Kommune: \s*([A-Za-zÆØÅæøåá\- ]*)\s*$/', $lines[$i++]);
     $obj->municipality = trim($match[1]);
     $i = removeLineIfPresent_andEmpty($lines, $i);
-    $match = regexAssertAndReturnMatch('/^Fylke: \s*([A-Za-zÆØÅæøå ]*)\s*$/', $lines[$i++]);
-    $obj->county = trim($match[1]);
+    if ($obj->election == 'Stortingsvalget 2021') {
+        $match = regexAssertAndReturnMatch('/^Valgdistrikt: \s*([A-Za-zÆØÅæøå ]*)\s*$/', $lines[$i++]);
+        $obj->county = trim($match[1]);
+    }
+    else {
+        $match = regexAssertAndReturnMatch('/^Fylke: \s*([A-Za-zÆØÅæøå ]*)\s*$/', $lines[$i++]);
+        $obj->county = trim($match[1]);
+    }
+
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $match = regexAssertAndReturnMatch('/^År: \s*([0-9]*)\s*$/', $lines[$i++]);
     $obj->electionYear = $match[1];
@@ -808,11 +820,13 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     // C4 Foreløpig opptelling hos valgstyret
     $i = assertLine_trim($lines, $i, 'C4 Foreløpig opptelling hos valgstyret');
     $i = removeLineIfPresent_andEmpty($lines, $i);
-    if ($lines[$i + 1] == 'Foreløpig opptelling av valgtingsstemmesedler er foretatt hos stemmestyrene') {
+    if ($lines[$i + 1] == 'Foreløpig opptelling av valgtingsstemmesedler er foretatt hos stemmestyrene'
+    || $lines[$i + 2] == 'Foreløpig opptelling av valgtingsstemmesedler er foretatt hos stemmestyrene') {
         // C4.1 - C4.3 Valgtingsstemmesedler i urne
         // Foreløpig opptelling av valgtingsstemmesedler er foretatt hos stemmestyrene
         $obj->foretattForeløpigOpptellingHosValgstyret = false;
         $i = assertLine_trim($lines, $i, 'C4.1 - C4.3 Valgtingsstemmesedler i urne');
+        $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = assertLine_trim($lines, $i, 'Foreløpig opptelling av valgtingsstemmesedler er foretatt hos stemmestyrene');
     }
     else {
