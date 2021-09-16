@@ -24,6 +24,7 @@ foreach ($entitiesArray2 as $entity) {
     $entity_id__to__obj[$entity->entityId] = $entity;
     $entity_name__to__entity_id[$entity->name] = $entity->entityId;
 }
+$allComments = array();
 
 $mimesBronnStatus = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/mimesbronn-result/result.json'));
 
@@ -332,6 +333,9 @@ foreach ($files as $file) {
 
     foreach ($obj->comments as $commentType => $comments) {
         $html .= "<li><b>$commentType: </b>" . implode("<br>", $comments) . "</li>\n";
+        foreach ($comments as $comment123) {
+            $allComments[] = $comment123;
+        }
     }
     $html .= "</ul></li>\n";
 
@@ -1228,3 +1232,42 @@ function getDirContents($dir) {
     return $data_store_files;
 }
 
+function sortsortsort($a, $b) {
+    return strlen($a) - strlen($b);
+}
+
+usort($allComments, 'sortsortsort');
+
+foreach ($allComments as $comment) {
+//    echo strlen($comment) . '   ----   ' . $comment . chr(10) . chr(10);
+}
+
+$allComments2 = array();
+$allComments3 = array();
+foreach ($allComments as $comment) {
+    $comments = explode(':' . chr(10), $comment);
+    foreach ($comments as $comment2) {
+        $comment2 = trim($comment2);
+        $allComments2[] = $comment2;
+    }
+    if (!isset($allComments3[$comment2])) {
+        $allComments3[$comment2] = 0;
+    }
+    $allComments3[$comment2]++;
+}
+usort($allComments2, 'sortsortsort');
+
+arsort($allComments3);
+
+foreach ($allComments2 as $comment) {
+//    echo strlen($comment) . '   ----   ' . $comment . chr(10) . chr(10);
+}
+
+//var_dump($allComments3);
+
+foreach ($allComments3 as $comment => $count) {
+    if ($count <= 5) {
+        continue;
+    }
+//    echo str_pad($count, 3, " ", STR_PAD_LEFT) . 'x  "' . $comment . '"' . chr(10);
+}
