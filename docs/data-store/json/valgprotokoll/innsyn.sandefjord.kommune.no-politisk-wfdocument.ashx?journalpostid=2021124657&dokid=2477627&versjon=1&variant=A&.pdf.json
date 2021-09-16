@@ -1,0 +1,13 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/innsyn.sandefjord.kommune.no-politisk-wfdocument.ashx?journalpostid=2021124657&dokid=2477627&versjon=1&variant=A&.pdf.layout.txt",
+    "url": "https://innsyn.sandefjord.kommune.no/politisk/wfdocument.ashx?journalpostid=2021124657&dokid=2477627&versjon=1&variant=A&",
+    "downloadTime": "2021-09-16 23:10:10",
+    "municipalNameFromUrl": "Sandefjord",
+    "pdfMetaData": "Author:         _Websakdokbeh2\nCreator:        Canon iR-ADV C5550  PDF\nProducer:       PixEdit AS,  PixToolsLib Version 2.5.3.8\nCreationDate:   Tue Sep 14 19:54:29 2021 CEST\nModDate:        Tue Sep 14 19:18:26 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          18\nEncrypted:      no\nPage size:      595.2 x 841.44 pts\nPage rot:       0\nFile size:      905651 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 17:48:14",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : am\n\n#0 2-valgprotokoll-parser.php(552): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', 'am')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}

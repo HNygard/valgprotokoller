@@ -1,0 +1,13 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/www.gran.kommune.no-ato-p360-v1-1126743_2_1-pdf.1126743o7faf.pdf.pdf.layout.txt",
+    "url": "https://www.gran.kommune.no/ato/p360/v1/1126743_2_1-pdf.1126743o7faf.pdf",
+    "downloadTime": "2021-09-16 23:10:07",
+    "municipalNameFromUrl": "Gran",
+    "pdfMetaData": "Author:         siconvert\nProducer:       PixEdit AS,  PixToolsLib Version 2.6.3.2\nCreationDate:   Tue Sep 14 20:51:38 2021 CEST\nModDate:        Thu Sep 16 00:33:33 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          17\nEncrypted:      no\nPage size:      595.2 x 841.92 pts (A4)\nPage rot:       0\nFile size:      431360 bytes\nOptimized:      no\nPDF version:    1.7",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 19:10:09",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : $vALG\n\n#0 2-valgprotokoll-parser.php(552): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '$vALG')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
