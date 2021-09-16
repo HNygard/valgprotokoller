@@ -18,7 +18,8 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errconte
 
 $cache_dir_pdfs = __DIR__ . '/docs/data-store/pdfs-2021/';
 
-$lines = file(__DIR__ . '/docs/data-store/urls-election-2021.txt');
+$urlsTxtFileName = __DIR__ . '/docs/data-store/urls-election-2021.txt';
+$lines = file($urlsTxtFileName);
 $clean_file = downloadUrls_parseTxt($lines);
 function downloadUrls_parseTxt($lines) {
     global $cache_dir_pdfs;
@@ -77,11 +78,11 @@ function downloadUrls_parseTxt($lines) {
     return $clean_file;
 }
 
-file_put_contents(__DIR__ . '/docs/data-store/urls.txt', $clean_file);
+file_put_contents($urlsTxtFileName, $clean_file);
 
 
-$lines = file(__DIR__ . '/docs/data-store/mimesbronn-result/urls.txt');
-downloadUrls_parseTxt($lines);
+//$lines = file(__DIR__ . '/docs/data-store/mimesbronn-result/urls.txt');
+//downloadUrls_parseTxt($lines);
 
 function str_starts_with($haystack, $needle) {
     return substr($haystack, 0, strlen($needle)) == $needle;
