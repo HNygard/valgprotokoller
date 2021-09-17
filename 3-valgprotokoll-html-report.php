@@ -262,6 +262,7 @@ foreach ($files as $file) {
     }
     logInfo('Using [' . str_replace(__DIR__ . '/', '', $file) . '].');
 
+
     $name = $obj->municipality;
     $name = str_replace('Aurskog -Høland', 'Aurskog-Høland', $name);
     $name = str_replace('Unjárga - Nesseby', 'Nesseby', $name);
@@ -517,8 +518,18 @@ foreach ($files as $file) {
 
     $total = new stdClass();
     $total->{'Kryss i manntall'} = $obj->keyfigures_totaltAntallKryssIManntallet;
-    $total->{'Ant. sedler'} = $obj->keyfigures_totaltAntallGodkjenteStemmesedler;
+    $total->{'Ant. sedler'} = $obj->keyfigures_totaltAntallGodkjenteStemmesedler - $obj->keyfigures_totaltAntallForkastedeStemmegivninger;
 
+
+    /*
+     *
+    "keyfigures_totaltAntallGodkjenteForhåndsstemmegivninger": 1851,
+    "keyfigures_totaltAntallGodkjenteValgtingsstemmegivninger": 3994,
+    "keyfigures_totaltAntallForkastedeStemmegivninger": 0,
+    "keyfigures_totaltAntallGodkjenteStemmesedler": 5808,
+    "keyfigures_totaltAntallForkastedeStemmesedler": 12,
+    "numbers": {
+     */
     $ballotsMainFirstCount = null;
     if ($obj->foretattForeløpigOpptellingHosValgstyret) {
         $c4_1_numbers = $obj->numbers
