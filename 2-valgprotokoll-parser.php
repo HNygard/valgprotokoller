@@ -1181,7 +1181,7 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     }
 
 
-    while ($lines[$i] != 'Øvrige medlemmer:') {
+    while (isset($lines[$i]) && $lines[$i] != 'Øvrige medlemmer:') {
         // Skip
         $i++;
     }
