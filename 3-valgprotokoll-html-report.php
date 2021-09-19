@@ -1081,6 +1081,7 @@ foreach ($entity_id__to__obj as $entity) {
     );
     if (isset($entity->elections)) {
         foreach ($entity->elections as $election) {
+            /*
             if ($election->election == 'Kommunestyrevalget 2019' && $elections[0] == '<td>-</td>') {
                 $elections[0] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
                     . chr(10)
@@ -1088,6 +1089,12 @@ foreach ($entity_id__to__obj as $entity) {
             }
             elseif ($election->election == 'Fylkestingsvalget 2019' && $elections[1] == '<td>-</td>') {
                 $elections[1] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
+                    . chr(10)
+                    . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
+            }
+            */
+            if ($election->election == 'Sametingsvalget 2021' && $elections[0] == '<td>-</td>') {
+                $elections[0] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
                     . chr(10)
                     . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
             }
@@ -1103,7 +1110,8 @@ foreach ($entity_id__to__obj as $entity) {
         }
     }
 
-    $anyMissing = ($elections[0] == '<td>-</td>' || $elections[1] == '<td>-</td>');
+    //$anyMissing = ($elections[0] == '<td>-</td>' || $elections[1] == '<td>-</td>');
+    $anyMissing = ($elections[1] == '<td>-</td>');
     if ($anyMissing) {
         $elections[2] = '<td>Missing election(s).</td>';
     }
