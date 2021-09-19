@@ -586,7 +586,8 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     }
 
     $i = removeLineIfPresent_andEmpty($lines, $i);
-    $match = regexAssertAndReturnMatch('/^År: \s*([0-9]*)\s*$/', $lines[$i++]);
+    $yearLine = str_replace('2021.0', '2021', $lines[$i++]);
+    $match = regexAssertAndReturnMatch('/^År: \s*([0-9]*)\s*$/', $yearLine);
     $obj->electionYear = $match[1];
 
     $i = removeLineIfPresent_andEmpty($lines, $i);
