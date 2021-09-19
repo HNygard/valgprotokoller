@@ -17,6 +17,9 @@ $entitiesArray2 = json_decode(file_get_contents(__DIR__ . '/entitiesNonExisting.
 $entity_id__to__obj = array();
 $entity_name__to__entity_id = array();
 foreach ($entitiesArray as $entity) {
+    if(isset($entity->entityExistedToAndIncluding)) {
+        continue;
+    }
     $entity_id__to__obj[$entity->entityId] = $entity;
     $entity_name__to__entity_id[$entity->name] = $entity->entityId;
 }
