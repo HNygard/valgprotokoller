@@ -29,7 +29,8 @@ foreach ($entitiesArray2 as $entity) {
 }
 $allComments = array();
 
-$mimesBronnStatus = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/mimesbronn-result/result.json'));
+//$mimesBronnStatus = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/mimesbronn-result/result.json'));
+$mimesBronnStatus = array();
 
 $entity_merging = array(
     'Skedsmo kommune' => 'Lillestrøm kommune',
@@ -93,9 +94,9 @@ $html = htmlHeading() . "
 
 <h1>Election protocol (\"Valgprotokoller\" / \"Valgstyrets møtebok\")</h1>\n";
 $html .= "Created by <a href='https://twitter.com/hallny'>@hallny</a> / <a href='https://norske-postlister.no'>Norske-postlister.no</a><br>\n";
-$html .= "<a href='https://github.com/HNygard/valgprotokoller/blob/master/docs/data-store/urls.txt'>Source - URL list</a> -\n";
-$html .= "<a href='https://github.com/elections-no/elections-no.github.io/tree/master/docs/2019'>Source - Elections.no</a> -\n";
-$html .= "<a href='https://github.com/HNygard/valgprotokoller'>Source code for this report</a> (Github)<br>\n";
+$html .= "<a href='https://github.com/HNygard/valgprotokoller'>Source code for this report</a> (Github)\n";
+$html .= "<a href='https://github.com/HNygard/valgprotokoller/tree/master/docs/data-store/json/Stortingsvalget%202021'>Source data for this report</a> (JSON at Github) -\n";
+$html .= "<a href='https://github.com/HNygard/valgprotokoller/blob/master/docs/data-store/urls-election-2021.txt'>Source - URL list</a> (excludes those gotten from freedom of information requests)<br>\n";
 $html .= "<br><br><a href='ballot-stuffing.html'>Ballot stuffing</a>\n\n";
 $html .= '<h2>Summary</h2>
 <ul>-----SUMMARY-----HERE-----</ul>
@@ -1127,34 +1128,41 @@ foreach ($entity_id__to__obj as $entity) {
     }
 
     if (isset($entity->mimesBronnUrl)) {
-        $tags = 'valgprotokoll_2019';
+        $tags = 'valgprotokoll_2021';
+        $email = 'valgprotokoll_2021_' . $entity->entityId . '@offpost.no';
+        $name = 'Prosjekt Åpne Valgdata (' . $entity->municipalityNumber . ')';
         $mimesLink =
             // http://alaveteli.org/docs/developers/api/#starting-new-requests-programmatically
-            '<a target="_blank" href="https://www.mimesbronn.no/new/' . htmlentities($entity->mimesBronnUrl, ENT_QUOTES)
-            . '?title=' . urlencode('Valgprotokoll 2019, ' . $entity->name)
-            . '&tags=' . urlencode($tags)
+            '<a target="_blank" href="http://localhost:25081/start-thread.php'
+            . '?my_email=' . urlencode($email)
+            . '&my_name=' . urlencode($name)
+            . '&title=' . urlencode('Valgprotokoll 2021, ' . $entity->name)
+            . '&labels=' . urlencode($tags)
+            . '&entity_id=' . urlencode($entity->entityId)
+            . '&entity_title_prefix=' . urlencode($entity->name)
             . '&body=' . urlencode(
                 'Kjære ' . $entity->name . chr(10)
                 . chr(10)
-                . 'Jeg ønsker innsyn i valgprotokoll 2019 for fylkestingsvalget og kommunestyrevalget. Ofte kalt "Valgprotokoll for valgstyret"'
+                . 'Jeg ønsker innsyn i valgprotokoll for stortingsvalget 2021, og eventuell sametingsvalget 2021. Ofte kalt "Valgprotokoll for valgstyret"'
                 . ' eller "Valgstyrets møtebok". Jeg ønsker at den er maskinlesbar, altså ikke innskannet (slik de signerte ofte er). '
                 . 'Dette fordi vi skal lese ut data fra den.'
                 . chr(10) . chr(10)
                 . 'Søker altså innsyn i:' . chr(10)
-                . '1. Valgprotokoll kommunestyrevalget 2019 - ' . $entity->name . chr(10)
-                . '2. Valgprotokoll fylkestingsvalg 2019 - ' . $entity->name . chr(10)
+                . '1. Valgprotokoll Stortingsvalget 2021 - ' . $entity->name . chr(10)
+                . '2. Hvis dere har: Valgprotokoll Sametingsvalget 2021 - ' . $entity->name . chr(10)
                 . chr(10) . chr(10)
-                . 'Ønsker også svar på følgende:' . chr(10)
-                . '1. Ble foreløpig opptelling utført manuelt eller med dataprogram?' . chr(10)
-                . '2. Ble endelig opptelling utført manuelt eller med dataprogram?' . chr(10)
-                . '3. Hvor mange opptellinger og omtellinger ble foretatt totalt?' . chr(10)
-                . '4. Hvis flere enn foreløpig og endelig, hvordan ble disse utført (manuelt/data?) og hvorfor ble de utført?' . chr(10)
-                . 'Dersom det er ulikt svar for de ulike valgskretsene, så svar for hver enkelt krets.' . chr(10) . chr(10)
+//                . 'Ønsker også svar på følgende:' . chr(10)
+//                . '1. Ble foreløpig opptelling utført manuelt eller med dataprogram?' . chr(10)
+//                . '2. Ble endelig opptelling utført manuelt eller med dataprogram?' . chr(10)
+//                . '3. Hvor mange opptellinger og omtellinger ble foretatt totalt?' . chr(10)
+//                . '4. Hvis flere enn foreløpig og endelig, hvordan ble disse utført (manuelt/data?) og hvorfor ble de utført?' . chr(10)
+//                . 'Dersom det er ulikt svar for de ulike valgskretsene, så svar for hver enkelt krets.' . chr(10) . chr(10)
                 . 'Takk!'
                 . chr(10) . chr(10)
+                . 'Prosjekt Åpne Valgdata - https://hnygard.github.io/valgprotokoller/'
             )
             . '">'
-            . 'Søk innsyn i dokumentet via Mimes Brønn</a>' . chr(10);
+            . 'Søk innsyn via Email engine</a>' . chr(10);
 
         if (isset($mimesBronnStatus[$entity->mimesBronnUrl]) || $anyMissing) {
             $mimesLink = '<span style="font-size: 0.6em;">' . $mimesLink . "</span>\n";
