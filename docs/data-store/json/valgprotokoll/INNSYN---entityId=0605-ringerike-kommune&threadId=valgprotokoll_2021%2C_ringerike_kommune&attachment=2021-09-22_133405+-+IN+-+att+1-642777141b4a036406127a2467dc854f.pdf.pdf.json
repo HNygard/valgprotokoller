@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=0605-ringerike-kommune&threadId=valgprotokoll_2021%2C_ringerike_kommune&attachment=2021-09-22_133405+-+IN+-+att+1-642777141b4a036406127a2467dc854f.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=0605-ringerike-kommune&threadId=valgprotokoll_2021%2C_ringerike_kommune&attachment=2021-09-22_133405+-+IN+-+att+1-642777141b4a036406127a2467dc854f.pdf",
+    "downloadTime": "2021-09-22 23:42:41",
+    "pdfMetaData": "Author:         svc_acos_dokbeh\nCreator:        Canon iR-ADV C5550  PDF\nProducer:       PixEdit AS,  PixToolsLib Version 2.6.4.7\nCreationDate:   Tue Sep 14 19:02:57 2021 CEST\nModDate:        Thu Sep 16 14:02:55 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          19\nEncrypted:      no\nPage size:      595.2 x 841.44 pts\nPage rot:       0\nFile size:      925848 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 19:05:18",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : # vAL6\n\n#0 2-valgprotokoll-parser.php(552): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '# vAL6')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
