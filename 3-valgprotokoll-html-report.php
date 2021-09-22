@@ -30,6 +30,9 @@ foreach ($entitiesArray2 as $entity) {
 $allComments = array();
 
 //$mimesBronnStatus = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/mimesbronn-result/result.json'));
+$entityFoiSent = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-sent.txt'));
+$entitySuccess = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-set-success-sent.txt'));
+
 $mimesBronnStatus = array();
 
 $entity_merging = array(
@@ -1165,25 +1168,11 @@ foreach ($entity_id__to__obj as $entity) {
             . '">'
             . 'Søk innsyn via Email engine</a>' . chr(10);
 
-        if (isset($mimesBronnStatus[$entity->entityId]) || $anyMissing) {
-            $mimesLink = '<span style="font-size: 0.6em;">' . $mimesLink . "</span>\n";
-        }
-        if (isset($mimesBronnStatus[$entity->entityId])) {
-
-            foreach ($mimesBronnStatus[$entity->entityId] as $mimesObj) {
-                $mimesLink .= '<br><a href="' . $mimesObj->url . '">' . $mimesObj->display_status . "</a>\n";
-                if (str_contains($mimesObj->display_status, 'Vellykket')
-                    && $anyMissing) {
-                    $mimesLink .= "<br><span style='color: red'>Success but not parsed.</span>\n";
-                    $mimesLink .= '<pre style="display: block; max-width: 100px;">';
-                    foreach ($mimesObj->files as $file) {
-                        $mimesLink .= 'php 2-valgprotokoll-parser.php "' . $file->url . "\"\n";
-                    }
-                    $mimesLink .= '</pre>';
-                }
-
-                if (isset($mimesObj->answerToQuestions)) {
-                    $mimesLink .= "</td>\n<td style='text-align: left'>" . nl2br(htmlentities($mimesObj->answerToQuestions, ENT_QUOTES));
+        if (in_array($entity->entityId, $entityFoiSent)) {
+            $mimesLink = "<span style=\"font-size: 0.6em;\">FOI request sent</span>\n";
+            foreach ($entitySuccess as $successUrl) {
+                if (str_starts_with($successUrl, $entity->entityId)) {
+                    $mimesLink .= '<br><a href="'.explode(':', $successUrl, 2)[1]."\">Set success</a>\n";
                 }
             }
         }
