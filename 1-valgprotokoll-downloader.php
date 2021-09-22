@@ -35,6 +35,7 @@ function downloadUrls_parseTxt($lines) {
 
         // :: Download file if it is not already cached
         $cache_name = str_replace('https://', '', $line);
+        $cache_name = str_replace('http://localhost:25081/file.php?', 'INNSYN---', $cache_name);
         $cache_name = str_replace('/', '-', $cache_name);
         $cache_name = $cache_dir_pdfs . $cache_name . '.pdf';
         if (file_exists(str_replace('%20', ' ' , $cache_name))) {
@@ -81,8 +82,8 @@ function downloadUrls_parseTxt($lines) {
 file_put_contents($urlsTxtFileName, $clean_file);
 
 
-//$lines = file(__DIR__ . '/docs/data-store/mimesbronn-result/urls.txt');
-//downloadUrls_parseTxt($lines);
+$lines = file(__DIR__ . '/docs/data-store/email-engine-result/urls.txt');
+downloadUrls_parseTxt($lines);
 
 function str_starts_with($haystack, $needle) {
     return substr($haystack, 0, strlen($needle)) == $needle;
