@@ -1127,7 +1127,7 @@ foreach ($entity_id__to__obj as $entity) {
         $anyMissing = false;
     }
 
-    if (isset($entity->mimesBronnUrl)) {
+    if (isset($entity->entityEmail)) {
         $tags = 'valgprotokoll_2021';
         $email = 'valgprotokoll_2021_' . $entity->entityId . '@offpost.no';
         $name = 'Prosjekt Åpne Valgdata (' . $entity->municipalityNumber . ')';
@@ -1140,6 +1140,7 @@ foreach ($entity_id__to__obj as $entity) {
             . '&labels=' . urlencode($tags)
             . '&entity_id=' . urlencode($entity->entityId)
             . '&entity_title_prefix=' . urlencode($entity->name)
+            . '&entity_email=' . urlencode($entity->entityEmail)
             . '&body=' . urlencode(
                 'Kjære ' . $entity->name . chr(10)
                 . chr(10)
@@ -1164,12 +1165,12 @@ foreach ($entity_id__to__obj as $entity) {
             . '">'
             . 'Søk innsyn via Email engine</a>' . chr(10);
 
-        if (isset($mimesBronnStatus[$entity->mimesBronnUrl]) || $anyMissing) {
+        if (isset($mimesBronnStatus[$entity->entityId]) || $anyMissing) {
             $mimesLink = '<span style="font-size: 0.6em;">' . $mimesLink . "</span>\n";
         }
-        if (isset($mimesBronnStatus[$entity->mimesBronnUrl])) {
+        if (isset($mimesBronnStatus[$entity->entityId])) {
 
-            foreach ($mimesBronnStatus[$entity->mimesBronnUrl] as $mimesObj) {
+            foreach ($mimesBronnStatus[$entity->entityId] as $mimesObj) {
                 $mimesLink .= '<br><a href="' . $mimesObj->url . '">' . $mimesObj->display_status . "</a>\n";
                 if (str_contains($mimesObj->display_status, 'Vellykket')
                     && $anyMissing) {
@@ -1188,7 +1189,7 @@ foreach ($entity_id__to__obj as $entity) {
         }
     }
     else {
-        $mimesLink = 'Mangler Mimes Brønn-kobling.';
+        $mimesLink = 'Mangler epost for innsyn.';
     }
     $elections[3] = '<td>' . $mimesLink . '</td>';
 
