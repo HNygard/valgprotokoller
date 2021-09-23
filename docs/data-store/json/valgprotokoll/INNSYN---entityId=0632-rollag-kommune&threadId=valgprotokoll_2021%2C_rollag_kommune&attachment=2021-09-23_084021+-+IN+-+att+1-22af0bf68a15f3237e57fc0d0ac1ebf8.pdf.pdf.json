@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=0632-rollag-kommune&threadId=valgprotokoll_2021%2C_rollag_kommune&attachment=2021-09-23_084021+-+IN+-+att+1-22af0bf68a15f3237e57fc0d0ac1ebf8.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=0632-rollag-kommune&threadId=valgprotokoll_2021%2C_rollag_kommune&attachment=2021-09-23_084021+-+IN+-+att+1-22af0bf68a15f3237e57fc0d0ac1ebf8.pdf",
+    "downloadTime": "2021-09-23 19:53:39",
+    "pdfMetaData": "Creator:        YSoft SafeQ 6\nProducer:       Y Soft Corporation\nCreationDate:   Wed Sep 15 07:48:33 2021 CEST\nModDate:        Wed Sep 15 07:48:33 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          15\nEncrypted:      no\nPage size:      599.05 x 840.95 pts\nPage rot:       0\nFile size:      5873231 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 18:07:58",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : VALG\n\n#0 2-valgprotokoll-parser.php(552): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', 'VALG')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
