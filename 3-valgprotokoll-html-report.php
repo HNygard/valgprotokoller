@@ -1183,6 +1183,10 @@ foreach ($entity_id__to__obj as $entity) {
                 }
             }
         }
+        elseif(!$anyMissing) {
+            // -> Finished else where
+            $mimesLink = '-';
+        }
     }
     else {
         $mimesLink = 'Mangler epost for innsyn.';
