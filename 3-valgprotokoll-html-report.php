@@ -279,6 +279,9 @@ foreach ($files as $file) {
     if ($obj->county == 'Viken') {
         $name2 = str_replace('Våler kommune', 'Våler kommune (Østfold)', $name2);
     }
+    if ($obj->county == 'Østfold') {
+        $name2 = str_replace('Våler kommune', 'Våler kommune (Østfold)', $name2);
+    }
     $obj->file = $file;
     $entity_id__to__obj[$entity_name__to__entity_id[$name2]]->elections[] = $obj;
 
@@ -1175,7 +1178,8 @@ foreach ($entity_id__to__obj as $entity) {
             $mimesLink = "<span style=\"font-size: 0.6em;\">FOI request sent</span>\n";
             foreach ($entitySuccess as $successUrl) {
                 if (str_starts_with($successUrl, $entity->entityId)) {
-                    $mimesLink .= '<br><a href="'.explode(':', $successUrl, 2)[1]."\">Set success</a>\n";
+                    $text = $anyMissing ? 'Missing, but set success anyway' : 'Election ok, set success';
+                    $mimesLink .= '<br><a href="'.explode(':', $successUrl, 2)[1]."\">$text</a>\n";
                 }
             }
         }
