@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=1416-hoyanger-kommune&threadId=valgprotokoll_2021%2C_h%C3%B8yanger_kommune&attachment=2021-09-27_101636+-+IN+-+att+1-d8362c957bf1e5d324c6c5859b95bbb8.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1416-hoyanger-kommune&threadId=valgprotokoll_2021%2C_h%C3%B8yanger_kommune&attachment=2021-09-27_101636+-+IN+-+att+1-d8362c957bf1e5d324c6c5859b95bbb8.pdf",
+    "downloadTime": "2021-09-27 22:43:01",
+    "pdfMetaData": "Author:         svc132\nProducer:       PixEdit AS,  PixToolsLib Version 2.6.0.6\nCreationDate:   Wed Sep 15 12:29:36 2021 CEST\nModDate:        Mon Sep 27 10:08:05 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          15\nEncrypted:      no\nPage size:      841.68 x 595.2 pts\nPage rot:       270\nFile size:      5563416 bytes\nOptimized:      no\nPDF version:    1.7",
+    "language": "nn-NO",
+    "languageName": "Norwegian, Nynorsk",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 17:58:15",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : ##vLs\n\n#0 2-valgprotokoll-parser.php(552): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '##vLs')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}

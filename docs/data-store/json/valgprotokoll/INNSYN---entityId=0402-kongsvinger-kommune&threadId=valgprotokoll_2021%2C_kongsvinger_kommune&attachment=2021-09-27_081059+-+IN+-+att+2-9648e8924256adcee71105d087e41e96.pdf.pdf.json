@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=0402-kongsvinger-kommune&threadId=valgprotokoll_2021%2C_kongsvinger_kommune&attachment=2021-09-27_081059+-+IN+-+att+2-9648e8924256adcee71105d087e41e96.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=0402-kongsvinger-kommune&threadId=valgprotokoll_2021%2C_kongsvinger_kommune&attachment=2021-09-27_081059+-+IN+-+att+2-9648e8924256adcee71105d087e41e96.pdf",
+    "downloadTime": "2021-09-27 22:42:59",
+    "pdfMetaData": "Subject:        PixEdit 8.1.8.3 Twain skannet bilde with Copyright CANON ELECTRONICS INC.  1.2.11407.01001, serial \"GF402133\", firmware \"1.18\",DR-G1130,Driver version 1.123,Protocol 2.0,182100 pages scanned,Memory,Rgb,A4,Jpeg,Q99,2480x3507 pixels at 300 DPI in 24 BPP from 2480x3507 pixels in driver,T126 C0.0 B0.0/Hedmark IKT on Twain version : 1.7.1.3/8077 MB RAM/Cpu 4/4/3576811902/Twain 2.0/1.123/kkscanner4,Pageside     Front\nAuthor:         kkscanner4\nCreator:        PixEdit Version 8.1.8.3, SN 357-68119-02, KEY Exxxx-xxxxx-xxxxx-xxxxx-xxxxx-xxxxC,www.pixedit.com\nProducer:       PixEdit AS,  PixToolsLib Version 2.1.9.16\nCreationDate:   Wed Sep 15 08:30:42 2021 CEST\nModDate:        Wed Sep 15 08:39:03 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          18\nEncrypted:      no\nPage size:      595.2 x 841.68 pts\nPage rot:       0\nFile size:      9868431 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 18:00:06",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : VALG\n\n#0 2-valgprotokoll-parser.php(552): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', 'VALG')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}

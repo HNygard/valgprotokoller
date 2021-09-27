@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=0529-vestre-toten-kommune&threadId=valgprotokoll_2021%2C_vestre_toten_kommune&attachment=2021-09-27_105057+-+IN+-+att+2-691071ab6e616b95f8dc0e76e9a7c918.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=0529-vestre-toten-kommune&threadId=valgprotokoll_2021%2C_vestre_toten_kommune&attachment=2021-09-27_105057+-+IN+-+att+2-691071ab6e616b95f8dc0e76e9a7c918.pdf",
+    "downloadTime": "2021-09-27 22:43:00",
+    "pdfMetaData": "Author:         administrator\nCreator:        Canon iR-ADV C5560  PDF\nProducer:       PixEdit AS,  PixToolsLib Version 2.6.5.14\nCreationDate:   Tue Sep 14 17:45:45 2021 CEST\nModDate:        Tue Sep 14 17:45:45 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          17\nEncrypted:      no\nPage size:      595.2 x 841.44 pts\nPage rot:       0\nFile size:      3091334 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 17:27:47",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : #tivALo\n\n#0 2-valgprotokoll-parser.php(552): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '#tivALo')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
