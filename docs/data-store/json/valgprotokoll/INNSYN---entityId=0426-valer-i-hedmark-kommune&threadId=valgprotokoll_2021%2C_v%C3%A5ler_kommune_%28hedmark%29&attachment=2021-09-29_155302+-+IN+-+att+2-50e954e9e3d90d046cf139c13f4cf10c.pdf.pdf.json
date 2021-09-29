@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=0426-valer-i-hedmark-kommune&threadId=valgprotokoll_2021%2C_v%C3%A5ler_kommune_%28hedmark%29&attachment=2021-09-29_155302+-+IN+-+att+2-50e954e9e3d90d046cf139c13f4cf10c.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=0426-valer-i-hedmark-kommune&threadId=valgprotokoll_2021%2C_v%C3%A5ler_kommune_%28hedmark%29&attachment=2021-09-29_155302+-+IN+-+att+2-50e954e9e3d90d046cf139c13f4cf10c.pdf",
+    "downloadTime": "2021-09-29 23:39:17",
+    "pdfMetaData": "Title:          SKM_C36821091609110\nAuthor:         svc_acos_dokbeh\nCreator:        KM_C368\nProducer:       PixEdit AS,  PixToolsLib Version 2.1.10.0\nCreationDate:   Thu Sep 16 10:11:15 2021 CEST\nModDate:        Wed Sep 29 10:10:58 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          16\nEncrypted:      no\nPage size:      595 x 841 pts\nPage rot:       0\nFile size:      948586 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "15.09.2021 08:31:28",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : %?VALG\n\n#0 2-valgprotokoll-parser.php(552): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '%?VALG')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}

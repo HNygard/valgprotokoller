@@ -282,6 +282,9 @@ foreach ($files as $file) {
     if ($obj->county == 'Østfold') {
         $name2 = str_replace('Våler kommune', 'Våler kommune (Østfold)', $name2);
     }
+    if ($obj->county == 'Møre og Romsdal') {
+        $name2 = str_replace('Sande kommune', 'Sande kommune (Møre og Romsdal)', $name2);
+    }
     $obj->file = $file;
     $entity_id__to__obj[$entity_name__to__entity_id[$name2]]->elections[] = $obj;
 
