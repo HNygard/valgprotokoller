@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=0829-kviteseid-kommune&threadId=valgprotokoll_2021%2C_kviteseid_kommune&attachment=2021-09-30_090746+-+IN+-+att+1-568ff5ffb4b48b3579317a86aed56a4d.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=0829-kviteseid-kommune&threadId=valgprotokoll_2021%2C_kviteseid_kommune&attachment=2021-09-30_090746+-+IN+-+att+1-568ff5ffb4b48b3579317a86aed56a4d.pdf",
+    "downloadTime": "2021-09-30 23:59:12",
+    "pdfMetaData": "Title:\nSubject:\nAuthor:\nCreator:        Aspose Ltd.\nProducer:       Aspose.PDF for .NET 18.11\nCreationDate:   Thu Sep 30 09:07:46 2021 CEST\nModDate:        Thu Sep 30 09:07:46 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          16\nEncrypted:      no\nPage size:      595.3 x 841.9 pts (A4)\nPage rot:       0\nFile size:      229088 bytes\nOptimized:      no\nPDF version:    1.7",
+    "language": "nn-NO",
+    "languageName": "Norwegian, Nynorsk",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "30.09.2021 09:00:45",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... :                  Kviteseid kommune\n\n#0 2-valgprotokoll-parser.php(552): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '               ...')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
