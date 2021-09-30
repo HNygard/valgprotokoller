@@ -32,6 +32,7 @@ $allComments = array();
 $entityFoiSent = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-sent.txt'));
 $entityFoiFinished = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-finished.txt'));
 $entitySuccess = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-set-success-sent.txt'));
+$entityOnlyOneOutgoing = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-only-one-email-outgoing.txt'));
 
 $mimesBronnStatus = array();
 
@@ -1188,6 +1189,10 @@ foreach ($entity_id__to__obj as $entity) {
                     $text = $anyMissing ? 'Missing, but set success anyway' : 'Election ok, set success';
                     $mimesLink .= '<br><a href="'.explode(':', $successUrl, 2)[1]."\">$text</a>\n";
                 }
+            }
+
+            if (in_array($entity->entityId, $entityOnlyOneOutgoing)) {
+                $mimesLink .= "<span style=\"font-size: 0.6em;\">Only one outgoing</span>\n";
             }
         }
         elseif(!$anyMissing) {
