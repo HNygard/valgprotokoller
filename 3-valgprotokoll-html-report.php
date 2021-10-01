@@ -122,7 +122,7 @@ $summaryData = array(
 
 $d1_4_heading = '<table>
 <tr>
-<th>Election - Municipality</th>
+<th>Political party</th>
 <td>Initial count ("Foreløpig")</td>
 <td>Final count ("Endelig")</td>
 <td>Discrepancy ("Avvik")</td>
