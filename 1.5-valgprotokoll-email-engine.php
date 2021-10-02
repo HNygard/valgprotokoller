@@ -20,6 +20,7 @@ $entityStatus = array();
 $entityFinished = array();
 $entityMarkOk = array();
 $entityOnlyOneOut = array();
+$entityLastAction = array();
 $obj = json_decode(file_get_contents('http://localhost:25081/api.php?label=valgprotokoll_2021'));
 foreach ($obj->matchingThreads as $thread) {
     if ($thread->sent) {
@@ -32,7 +33,9 @@ foreach ($obj->matchingThreads as $thread) {
     $out = 0;
     $in = 0;
 
+    $max = 0;
     foreach ($thread->emails as $email) {
+        $max = max($max, $email->timestamp_received);
         if ($email->email_type == 'IN') {
             $in++;
         }
@@ -54,6 +57,7 @@ foreach ($obj->matchingThreads as $thread) {
             $entityMarkOk[] = $thread->entity_id . ':' . $att->linkSetSuccess;
         }
     }
+    $entityLastAction[$thread->entity_id] = $thread->entity_id . ':' . $max;
 
     if ($out == 1 && $in == 0 && $thread->emails[0]->timestamp_received + 432000 < time()) {
         $entityOnlyOneOut[$thread->entity_id] = $thread->entity_id;
@@ -67,3 +71,4 @@ file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-finished.txt', implode("\n", $entityFinished));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-set-success-sent.txt', implode("\n", $entityMarkOk));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-only-one-email-outgoing.txt', implode("\n", $entityOnlyOneOut));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-last-action.txt', implode("\n", $entityLastAction));

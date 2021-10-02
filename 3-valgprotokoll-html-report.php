@@ -33,6 +33,7 @@ $entityFoiSent = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/ema
 $entityFoiFinished = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-finished.txt'));
 $entitySuccess = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-set-success-sent.txt'));
 $entityOnlyOneOutgoing = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-only-one-email-outgoing.txt'));
+$entityLastAction = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-last-action.txt'));
 
 $mimesBronnStatus = array();
 
@@ -1193,6 +1194,20 @@ foreach ($entity_id__to__obj as $entity) {
 
             if (in_array($entity->entityId, $entityOnlyOneOutgoing)) {
                 $mimesLink .= "<span style=\"font-size: 0.6em;\">Only one outgoing</span>\n";
+            }
+            foreach ($entityLastAction as $lastAction) {
+                if (str_starts_with($lastAction, $entity->entityId)) {
+                    $time = explode(':', $lastAction, 2)[1];
+                    $daysSince = round((time() - $time) / 86400);
+                    if ($daysSince < 7) {
+                        continue;
+                    }
+                    $mimesLink .= "<span style=\"font-size: 0.6em;\">"
+                        . "Last action: " . date('Y-m-d', $time) . " "
+                        . "Days: $daysSince "
+                        . ($daysSince >= 7 ? ' - 7 days limit' : ' - under 7 days')
+                        . "</span>\n";
+                }
             }
         }
         elseif(!$anyMissing) {
