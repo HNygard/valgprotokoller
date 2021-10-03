@@ -1006,6 +1006,24 @@ $klagerFjernet = array(
     'Strand - Kommunestyrevalget 2019.html' => 'Kun ballot stuffing i foreløpig opptelling.',
     'Nesodden - Kommunestyrevalget 2019.html' => '',
 
+    'Alstahaug - Stortingsvalget 2021.html' => '',
+    'Arendal - Stortingsvalget 2021.html' => '',
+    'Asker - Stortingsvalget 2021.html' => '',
+    'Evenes - Stortingsvalget 2021.html' => 'Forklart ok. 3 stk beredskapsstemmer tatt med.',
+    'Høyanger - Stortingsvalget 2021.html' => '',
+    'Jevnaker - Stortingsvalget 2021.html' => '',
+    'Kongsvinger - Stortingsvalget 2021.html' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+
 
     // Fremmed stemmesedler ikke tatt med
     'Nordreisa - Kommunestyrevalget 2019.html' => 'Ikke diff hvis fremmede stemmesedler er tatt med.',
