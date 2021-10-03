@@ -1049,6 +1049,13 @@ $klagerFjernet = array(
     'Bamble - Stortingsvalget 2021.html' => '',
     'Rendalen - Stortingsvalget 2021.html' => 'særskilt omslag lagt til i valgtingstemmer for å bevare anonymitet',
     'Drammen - Stortingsvalget 2021.html' => '',
+    'Eigersund - Stortingsvalget 2021.html' => '',
+    'Årdal - Stortingsvalget 2021.html' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
     '' => '',
     '' => '',
 
