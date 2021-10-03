@@ -662,6 +662,7 @@ foreach ($files as $file) {
     // :: Klage
     if ($avvik_forelopig_endelig || count($ballotStuffingErrors) > 0) {
         $klageType = '';
+        $klageSummary = array();
 
         $entity = $entity_id__to__obj[$entity_name__to__entity_id[$name2]];
         if (isset($entity->mimesBronnUrl)) {
@@ -718,10 +719,12 @@ Resultatene som er presentert i disse dokumentene følger ikke kravene til Valgf
                     continue;
                 }
                 $klage .= "- $stuffingErrorType\n$stuffingError\n\n";
+                $klageSummary[] = "$stuffingErrorType\n$stuffingError";
             }
 
             if (isset($ballotStuffingErrors['Totalt'])) {
                 $klage .= $ballotStuffingErrors['Totalt'] . "\n\n";
+                $klageSummary[] = $ballotStuffingErrors['Totalt'];
             }
 
             $klage .= "Merknader:\n";
@@ -769,6 +772,7 @@ I "Valgprotokoll for valgstyret - ' . $obj->election . '" [2] for ' . $obj->muni
                 // - Folkeaksjonen Nei til mer bompenger økte med 5.7%
                 foreach ($partyLargeDiscrepancies_D1_4_klage as $text) {
                     $klage .= "- $text\n";
+                    $klageSummary[] = $text;
                 }
                 $klage .= "</b>\n";
             }
@@ -779,6 +783,7 @@ I "Valgprotokoll for valgstyret - ' . $obj->election . '" [2] for ' . $obj->muni
                 // - Folkeaksjonen Nei til mer bompenger økte med 5.7%
                 foreach ($partyLargeDiscrepancies_D2_4_klage as $text) {
                     $klage .= "- $text\n";
+                    $klageSummary[] = $text;
                 }
                 $klage .= "</b>\n";
             }
@@ -792,6 +797,7 @@ I "Valgprotokoll for valgstyret - ' . $obj->election . '" [2] for ' . $obj->muni
                 // - Folkeaksjonen Nei til mer bompenger økte med 5.7%
                 foreach ($partyLargeDiscrepancies_E1_1_klage as $text) {
                     $klage .= "- $text\n";
+                    $klageSummary[] = $text;
                 }
             }
 
@@ -855,7 +861,11 @@ Twitter: @hallny
             htmlHeading('Klage - ' . $obj->municipality . ' - ' . $obj->election)
             . '<style>body { white-space: pre-line; } </style>'
             . $klage);
-        $klager[$obj->municipality . ' - ' . $obj->election . '.html'] = $klageType;
+        $klager[$obj->municipality . ' - ' . $obj->election . '.html'] =
+            array(
+                $klageType,
+                $klageSummary
+            );
     }
 }
 
@@ -1051,7 +1061,9 @@ $klager_html = htmlHeading('Klager');
 ksort($klager);
 $klager_html .= "<style>.fjernet, .fjernet a { color: lightgrey; }</style>\n\n";
 $klager_html .= "<table>\n";
-foreach ($klager as $klage => $klageType) {
+foreach ($klager as $klage => $klageArray) {
+    $klageType = $klageArray[0];
+    $klageSummary = $klageArray[1];
     $klager_html .= "<tr>\n    <td style='text-align: left'>";
     if (isset($klagerGjennomgatt_skalKlages[$klage])) {
         $klager_html .= "<span style='text-decoration: line-through; color: red'>";
@@ -1078,6 +1090,11 @@ foreach ($klager as $klage => $klageType) {
     }
     else {
         $klager_html .= '<input type="text" value="' . $klage . '"> ikke gjennomgått<br>';
+        $klager_html .= "<span style='font-size: 10px; text-align: left'>";
+        foreach($klageSummary as $text) {
+            $klager_html .= "<li>$text</li>\n";
+        }
+        $klager_html .= "</span>\n";
     }
     $klager_html .= "</td>\n";
     $klager_html .= "</tr>\n";
