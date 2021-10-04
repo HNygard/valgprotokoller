@@ -1,0 +1,15 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=2014-loppa-kommune&threadId=valgprotokoll_2021%2C_loppa_kommune&attachment=2021-10-04_115755+-+IN+-+att+2-89d08554809f1b1cf1a450e108579038.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=2014-loppa-kommune&threadId=valgprotokoll_2021%2C_loppa_kommune&attachment=2021-10-04_115755+-+IN+-+att+2-89d08554809f1b1cf1a450e108579038.pdf",
+    "downloadTime": "2021-10-04 16:16:48",
+    "pdfMetaData": "Creator:        JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb\nProducer:       iText 2.1.7 by 1T3XT\nCreationDate:   Mon Oct  4 11:51:23 2021 CEST\nModDate:        Mon Oct  4 11:51:23 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          14\nEncrypted:      no\nPage size:      595 x 842 pts (A4)\nPage rot:       0\nFile size:      149849 bytes\nOptimized:      no\nPDF version:    1.5",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "04.10.2021 11:51:19",
+    "election": "Stortingsvalget 2021",
+    "heading": "Valgprotokoll for valgstyret i Loppa kommune, Finnmark Finnmárku valgdistrikt",
+    "municipality": "Loppa",
+    "errorMessage": "No match for regex.\nRegex ..... : ^Valgdistrikt: \\s*([A-Za-zÆØÅæøå \\-]*)\\s*$\nLine ...... : Valgdistrikt:      Finnmark Finnmárku\n\n#0 2-valgprotokoll-parser.php(580): regexAssertAndReturnMatch('^Valgdistrikt:...', 'Valgdistrikt:  ...')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}

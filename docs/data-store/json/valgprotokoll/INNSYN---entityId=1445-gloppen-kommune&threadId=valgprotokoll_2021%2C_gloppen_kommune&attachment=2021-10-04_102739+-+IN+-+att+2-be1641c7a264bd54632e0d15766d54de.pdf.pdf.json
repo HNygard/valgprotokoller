@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=1445-gloppen-kommune&threadId=valgprotokoll_2021%2C_gloppen_kommune&attachment=2021-10-04_102739+-+IN+-+att+2-be1641c7a264bd54632e0d15766d54de.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1445-gloppen-kommune&threadId=valgprotokoll_2021%2C_gloppen_kommune&attachment=2021-10-04_102739+-+IN+-+att+2-be1641c7a264bd54632e0d15766d54de.pdf",
+    "downloadTime": "2021-10-04 16:16:48",
+    "pdfMetaData": "Title:          KM_C454e-20210915090626\nAuthor:         sNFpixedit\nCreator:        KM_C454e\nProducer:       PixEdit AS,  PixEdit Server Core Version 2.7.2.7\nCreationDate:   Wed Sep 15 10:06:26 2021 CEST\nModDate:        Wed Sep 15 09:18:08 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          15\nEncrypted:      no\nPage size:      595.2 x 841.68 pts\nPage rot:       0\nFile size:      7945406 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nn-NO",
+    "languageName": "Norwegian, Nynorsk",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 17:01:17",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : &#vAo\n\n#0 2-valgprotokoll-parser.php(552): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '&#vAo')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
