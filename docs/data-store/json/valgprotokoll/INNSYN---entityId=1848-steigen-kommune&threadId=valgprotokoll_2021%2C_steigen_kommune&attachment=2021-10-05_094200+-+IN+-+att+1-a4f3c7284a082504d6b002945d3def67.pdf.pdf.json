@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=1848-steigen-kommune&threadId=valgprotokoll_2021%2C_steigen_kommune&attachment=2021-10-05_094200+-+IN+-+att+1-a4f3c7284a082504d6b002945d3def67.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1848-steigen-kommune&threadId=valgprotokoll_2021%2C_steigen_kommune&attachment=2021-10-05_094200+-+IN+-+att+1-a4f3c7284a082504d6b002945d3def67.pdf",
+    "downloadTime": "2021-10-05 23:51:09",
+    "pdfMetaData": "Creator:        Canon iR-ADV C5550 III  PDF\nProducer:       Adobe PSL 1.3e for Canon\u0000\nCreationDate:   Wed Sep 29 15:14:28 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          16\nEncrypted:      no\nPage size:      595.2 x 841.44 pts\nPage rot:       0\nFile size:      935514 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "21.09.2021 16:12:45",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : &\n\n#0 2-valgprotokoll-parser.php(552): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '&')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
