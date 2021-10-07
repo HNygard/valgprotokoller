@@ -1,0 +1,10 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=1837-meloy-kommune&threadId=valgprotokoll_2021%2C_mel%C3%B8y_kommune&attachment=2021-10-07_104458+-+IN+-+att+3-f244bf47e166532a3f073224381fc109.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1837-meloy-kommune&threadId=valgprotokoll_2021%2C_mel%C3%B8y_kommune&attachment=2021-10-07_104458+-+IN+-+att+3-f244bf47e166532a3f073224381fc109.pdf",
+    "downloadTime": "2021-10-07 23:10:57",
+    "pdfMetaData": "Tagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          1\nEncrypted:      no\nPage size:      595 x 842 pts (A4)\nPage rot:       0\nFile size:      43077 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "error": true,
+    "errorMessage": "No match for regex.\nRegex ..... : ^([0-9]*\\.[0-9]*\\.[0-9]* [0-9]*:[0-9]*:[0-9]*) \\s* Valgprotokoll for valgstyret \\s* Side [0-9]*$m\nLine ...... : Kjære Meløy kommune\n\nJeg ønsker innsyn i valgprotokoll for stortingsvalget 2021, og eventuell sametingsvalget 2021. Ofte kalt \"Valgprotokoll for valgstyret\" eller\n\"Valgstyrets møtebok\". Jeg ønsker at den er maskinlesbar, altså ikke innskannet (slik de signerte ofte er). Dette fordi vi skal lese ut data fra\nden.\n\nSøker altså innsyn i:\n1. Valgprotokoll Stortingsvalget 2021 - Meløy kommune\n2. Hvis dere har: Valgprotokoll Sametingsvalget 2021 - Meløy kommune\n\n\nTakk!\n\nProsjekt Åpne Valgdata - https:hnygard.github.iovalgprotokoller\n\n\n#0 2-valgprotokoll-parser.php(492): regexAssertAndReturnMatch('^([0-9]*\\\\.[0-9...', 'Kj\\xC3\\xA6re Mel\\xC3\\xB8y k...')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
