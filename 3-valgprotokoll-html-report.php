@@ -684,7 +684,40 @@ foreach ($files as $file) {
         else {
             $mimesLink = 'Mangler Mimes Brønn-kobling.';
         }
+        $name = 'Hallvard Nygård for Twitteriatet for Valgkontroll (' . $entity->municipalityNumber . ')';
+        $mimesLink =
+            '<a target="_blank" href="http://localhost:25081/start-thread.php'
+            . '?my_email=' . urlencode('valgklage_' . $entity->entityId . '@offpost.no')
+            . '&my_name=' . urlencode($name)
+            . '&title=' . urlencode('Klage på Stortingsvalget 2021, ' . $entity->name)
+            . '&labels=' . urlencode('valgklage_2021 valgklage_2021_kommune')
+            . '&entity_id=' . urlencode($entity->entityId)
+            . '&entity_title_prefix=' . urlencode($entity->name)
+            . '&entity_email=' . urlencode($entity->entityEmail)
+            . '">'
+            . 'Klag via Email engine</a> [Kommune]' . chr(10)
 
+            . '<a target="_blank" href="http://localhost:25081/start-thread.php'
+            . '?my_email=' . urlencode('valgklage_fk_' . $entity->entityId . '@offpost.no')
+            . '&my_name=' . urlencode($name)
+            . '&title=' . urlencode('Klage på Stortingsvalget 2021, ' . $entity->name)
+            . '&labels=' . urlencode('valgklage_2021 valgklage_2021_fylkeskommune')
+            . '&entity_id=' . urlencode($entity->entityId)
+            . '&entity_title_prefix=' . urlencode($entity->name)
+            . '&entity_email=' . urlencode($entity->entityEmail)
+            . '">'
+            . 'Klag via Email engine</a> [Fylkeskommune]' . chr(10)
+
+            . '<a target="_blank" href="http://localhost:25081/start-thread.php'
+            . '?my_email=' . urlencode('valgklage_st_' . $entity->entityId . '@offpost.no')
+            . '&my_name=' . urlencode($name)
+            . '&title=' . urlencode('Klage på Stortingsvalget 2021, ' . $entity->name)
+            . '&labels=' . urlencode('valgklage_2021 valgklage_2021_stortinget')
+            . '&entity_id=' . urlencode($entity->entityId)
+            . '&entity_title_prefix=' . urlencode($entity->name)
+            . '&entity_email=' . urlencode($entity->entityEmail)
+            . '">'
+            . 'Klag via Email engine</a> [Stortinget]' . chr(10);
 
         $klage =
             '<a href="../' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a><br>'.
