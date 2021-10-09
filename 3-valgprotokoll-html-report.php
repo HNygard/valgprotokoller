@@ -684,7 +684,7 @@ foreach ($files as $file) {
         else {
             $mimesLink = 'Mangler Mimes Brønn-kobling.';
         }
-        $name = 'Hallvard Nygård for Twitteriatet for Valgkontroll (' . $entity->municipalityNumber . ')';
+        $name = 'Twitteriatet for Valgkontroll (' . $entity->municipalityNumber . ')';
         $mimesLink =
             '<a target="_blank" href="http://localhost:25081/start-thread.php'
             . '?my_email=' . urlencode('valgklage_' . $entity->entityId . '@offpost.no')
@@ -719,15 +719,42 @@ foreach ($files as $file) {
             . '">'
             . 'Klag via Email engine</a> [Stortinget]' . chr(10);
 
+
+        $klageStatus = '<table><tr>';
+        $myndigheter = array('kommune' , 'fylkeskommune', 'stortinget');
+        foreach ($myndigheter as $myndighet) {
+            $status = array(
+                '1 - Klage sent' => 'red',
+                '2 - Mottak bekreftet' => 'black',
+                '3.1 - Besvart med forklaring' => 'black',
+                '3.2 - Besvart med behandling i valgstyret' => 'black',
+                '3.3 - Avvist klage' => 'black',
+                '4 - Klage på avslag' => 'black',
+                '5 - Klagebehandling av avslag' => 'black',
+            );
+
+            $klageStatus .= "\n<td style='text-align: left;'><b>$myndighet</b>";
+            foreach ($status as $statusType => $statusColor) {
+                $klageStatus .= "<li style='color: $statusColor'>" . ($statusColor == 'green' ? '✓' : '✗') . "$statusType</li>";
+            }
+            $klageStatus .= "</td>\n\n";
+        }
+        $klageStatus .= "</tr></table>\n\n";
+
+        $title = 'Klage på "Valgprotokoll for valgstyret - ' . $obj->election . '" for ' . $obj->municipality ;
+
         $klage =
-            '<a href="../' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a><br>'.
-            $mimesLink . '
+            '<a href="../' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a><br>' .
+            $mimesLink . $klageStatus . '
 (Dette eposten har feil emne. Korrekt tittel står under)        
         
 TITTEL:
-Klage på "Valgprotokoll for valgstyret - ' . $obj->election . '" for ' . $obj->municipality . '
+<input type="text" value="' . str_replace('"', '', $title) . '" style="width: 500px;">
 
-KLAGE:
+---------
+
+' . $title . '
+
 Resultatene som er presentert i disse dokumentene følger ikke kravene til Valgforskriften og kan derfor ikke godkjennes.
 
 ';
@@ -870,7 +897,7 @@ Det er tydelig at man ikke har sett på avvikene mellom foreløpig telling og en
 
 ';
         if ($avvik_forelopig_endelig) {
-            $klage .= 'Mange av avvikene i ' . $obj->municipality . ' er overraskende store. Ser man på valgdagsstemmene i Oslo [4] så er gjennomsnittlig avvik på 0.35%, det at man i ' . $obj->municipality . ' sine valgprotokoller i tillegg ikke har forklart avvikene gjør at man ikke kan akseptere resultatene som er presentert.
+            $klage .= 'Mange av avvikene i ' . $obj->municipality . ' er overraskende store. Ser man på valgdagsstemmene i Oslo [4] så er avvik på 0,02%, det at man i ' . $obj->municipality . ' sine valgprotokoller i tillegg ikke har forklart avvikene gjør at man ikke kan akseptere resultatene som er presentert.
 
 ';
         }
@@ -879,17 +906,18 @@ Det er tydelig at man ikke har sett på avvikene mellom foreløpig telling og en
 
         $klage .= 'Mvh
 
-Hallvard Nygård
-Twitter: @hallny
+Twitteriatet for Valgkontroll
+
+Klage ført i penn av Hallvard Nygård [Twitter: @hallny]
 
 ';
 
         $klage .= '
 
 [1]: https://lovdata.no/dokument/SF/forskrift/2003-01-02-5#KAPITTEL_9
-[2]: ' . str_replace(__DIR__ . '/docs/', 'https://hnygard.github.io/valgprotokoller/', $new_file) . '
-[3]: https://elections.no/docs/veileder_for_manuell_opptelling.pdf
-' . ($avvik_forelopig_endelig ? '[4]: https://github.com/elections-no/elections-no.github.io/blob/master/docs/2019/Oslo/election-day.csv' : '') . '
+[2]: ' . str_replace(__DIR__ . '/docs/', 'https://hnygard.github.io/valgprotokoller/', $new_file) . "\n"
+. ($avvik_forelopig_endelig ? "[3]: https://www.regjeringen.no/no/dokumenter/veileder-om-manuell-forelopig-opptelling-etter-valgforskriften--37a/id2629412/\n" : '')
+. ($avvik_forelopig_endelig ? '[4]: https://hnygard.github.io/valgprotokoller/Stortingsvalget%202021/Oslo/Oslo.html' : '') . '
 
 
 
@@ -1108,7 +1136,10 @@ $klagerFjernet = array(
     'Grane - Stortingsvalget 2021.html' => '',
     'Giske - Stortingsvalget 2021.html' => '',
     'Kinn - Stortingsvalget 2021.html' => '',
-    '' => '',
+    'Hitra - Stortingsvalget 2021.html' => '',
+    'Nord-Fron - Stortingsvalget 2021.html' => '',
+    'Ringsaker - Stortingsvalget 2021.html' => '',
+    'Midtre Gauldal - Stortingsvalget 2021.html' => '',
     '' => '',
     '' => '',
     '' => '',
