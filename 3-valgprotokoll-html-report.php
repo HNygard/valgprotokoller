@@ -51,6 +51,14 @@ $entity_merging = array(
     'Rømskog kommune' => 'Aurskog-Høland kommune',
 );
 
+$entity_valgdistrikt = array(
+    'Hedmark' => array(
+        'entity_id' => 'innlandet-fylkeskommune',
+        'name' => 'Innlandet fylkeskommune',
+        'entity_email' => 'post@innlandetfylke.no',
+    )
+);
+
 $county_sums = array();
 $addCountySums = function ($county, $party, $numbers) {
     global $county_sums;
@@ -695,27 +703,35 @@ foreach ($files as $file) {
             . '&entity_title_prefix=' . urlencode($entity->name)
             . '&entity_email=' . urlencode($entity->entityEmail)
             . '">'
-            . 'Klag via Email engine</a> [Kommune]' . chr(10)
+            . 'Klag via Email engine</a> [Kommune]' . chr(10);
 
-            . '<a target="_blank" href="http://localhost:25081/start-thread.php'
-            . '?my_email=' . urlencode('valgklage_fk_' . $entity->entityId . '@offpost.no')
-            . '&my_name=' . urlencode($name)
-            . '&title=' . urlencode('Klage på Stortingsvalget 2021, ' . $entity->name)
-            . '&labels=' . urlencode('valgklage_2021 valgklage_2021_fylkeskommune')
-            . '&entity_id=' . urlencode($entity->entityId)
-            . '&entity_title_prefix=' . urlencode($entity->name)
-            . '&entity_email=' . urlencode($entity->entityEmail)
-            . '">'
-            . 'Klag via Email engine</a> [Fylkeskommune]' . chr(10)
+        if (isset($entity_valgdistrikt[$obj->county])) {
+            $mimesLink .=
+                '<a target="_blank" href="http://localhost:25081/start-thread.php'
+                . '?my_email=' . urlencode('valgklage_fk_' . $entity->entityId . '@offpost.no')
+                . '&my_name=' . urlencode($name . ', fylkeskommune')
+                . '&title=' . urlencode('Klage på Stortingsvalget 2021, ' . $entity->name)
+                . '&labels=' . urlencode('valgklage_2021 valgklage_2021_fylkeskommune')
+                . '&entity_id=' . urlencode($entity_valgdistrikt[$obj->county]['entity_id'])
+                . '&entity_title_prefix=' . urlencode($entity_valgdistrikt[$obj->county]['name'])
+                . '&entity_email=' . urlencode($entity_valgdistrikt[$obj->county]['entity_email'])
+                . '">'
+                . 'Klag via Email engine</a> [Fylkeskommune]' . chr(10);
+        }
+        else {
+            $mimesLink .= 'Klag via Email engine [Fylkeskommune] - ' . $obj->county . ' missing' . chr(10);
+        }
 
-            . '<a target="_blank" href="http://localhost:25081/start-thread.php'
+
+        $mimesLink .=
+            '<a target="_blank" href="http://localhost:25081/start-thread.php'
             . '?my_email=' . urlencode('valgklage_st_' . $entity->entityId . '@offpost.no')
-            . '&my_name=' . urlencode($name)
+            . '&my_name=' . urlencode($name . ', Stortinget')
             . '&title=' . urlencode('Klage på Stortingsvalget 2021, ' . $entity->name)
             . '&labels=' . urlencode('valgklage_2021 valgklage_2021_stortinget')
-            . '&entity_id=' . urlencode($entity->entityId)
-            . '&entity_title_prefix=' . urlencode($entity->name)
-            . '&entity_email=' . urlencode($entity->entityEmail)
+            . '&entity_id=stortinget'
+            . '&entity_title_prefix=Stortinget'
+            . '&entity_email=kontroll-konstitusjon@stortinget.no'
             . '">'
             . 'Klag via Email engine</a> [Stortinget]' . chr(10);
 
