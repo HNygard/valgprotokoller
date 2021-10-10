@@ -967,6 +967,8 @@ Det er tydelig at man ikke har sett på avvikene mellom foreløpig telling og en
 
         $klage .= "Jeg ber om at saksnummer sendes i retur så fort dette dokumentet er journalført.\n\n";
 
+        $klage .= "Jeg ber også om at eventuelle merknader fra behandling av valgprotkoollen hos kommune/fylkeskommune/Stortinget oversendes snarest.\n\n";
+
         $klage .= 'Mvh
 
 Twitteriatet for Valgkontroll
