@@ -969,7 +969,7 @@ Det er tydelig at man ikke har sett på avvikene mellom foreløpig telling og en
 
         $klage .= "Jeg ber om at saksnummer sendes i retur så fort dette dokumentet er journalført.\n\n";
 
-        $klage .= "Jeg ber også om at eventuelle merknader fra behandling av valgprotkoollen hos kommune/fylkeskommune/Stortinget oversendes snarest.\n\n";
+        $klage .= "Jeg ber også om at eventuelle merknader fra behandling av valgprotokollen hos kommune/fylkeskommune/Stortinget oversendes snarest.\n\n";
 
         $klage .= '---
 Mvh
@@ -1194,6 +1194,10 @@ $klagerFjernet = array(
     'Midtre Gauldal - Stortingsvalget 2021.html' => '',
     'Hareid - Stortingsvalget 2021.html' => 'Er forklart.',
     'Hå - Stortingsvalget 2021.html' => '',
+    'Tolga - Stortingsvalget 2021.html' => '"Differanse på 45 stemmer er sent innkomne forhåndsstemmer som er registrert og prøvd."',
+    '' => '',
+    '' => '',
+    '' => '',
     '' => '',
     '' => '',
     '' => '',
