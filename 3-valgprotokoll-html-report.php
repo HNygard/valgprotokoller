@@ -1354,6 +1354,7 @@ foreach ($entity_id__to__obj as $entity) {
         $anyMissing = false;
     }
 
+    $nameColor = 'black';
     if (isset($entity->entityEmail)) {
         $tags = 'valgprotokoll_2021';
         $email = 'valgprotokoll_2021_' . $entity->entityId . '@offpost.no';
@@ -1419,6 +1420,9 @@ foreach ($entity_id__to__obj as $entity) {
                         . "Days: $daysSince "
                         . ($daysSince >= 7 ? ' - 7 days limit' : ' - under 7 days')
                         . "</span>\n";
+                    if ($daysSince >= 7) {
+                        $nameColor = 'red';
+                    }
                 }
             }
         }
@@ -1435,7 +1439,7 @@ foreach ($entity_id__to__obj as $entity) {
     $html_entities .= '
 
                     <tr>
-        <th> ' . $entity->name . '</th>
+        <th style="color: ' . $nameColor . '"> ' . $entity->name . '</th>
                 ' . implode("\n", $elections) . '
     </tr>
                 ';
