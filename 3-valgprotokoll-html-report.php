@@ -726,6 +726,7 @@ foreach ($files as $file) {
             . '&entity_id=' . urlencode($entity->entityId)
             . '&entity_title_prefix=' . urlencode($entity->name)
             . '&entity_email=' . urlencode($entity->entityEmail)
+            . '&body=KLAGE_BODY_INN_HER'
             . '">'
             . 'Klag via Email engine</a> [Kommune]' . chr(10);
 
@@ -794,7 +795,7 @@ foreach ($files as $file) {
 
         $title = 'Klage på "Valgprotokoll for valgstyret - ' . $obj->election . '" for ' . $obj->municipality ;
 
-        $klage =
+        $klageStart =
             '<a href="../' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a><br>' .
             $mimesLink . $klageStatus . '
 (Dette eposten har feil emne. Korrekt tittel står under)        
@@ -804,7 +805,8 @@ TITTEL:
 
 ---------
 
-' . $title . '
+' ;
+        $klage = $title . '
 
 Resultatene som er presentert i disse dokumentene følger ikke kravene til Valgforskriften og kan derfor ikke godkjennes.
 
@@ -944,7 +946,7 @@ Det er tydelig at man ikke har sett på avvikene mellom foreløpig telling og en
         }
 
 
-        $klage .= 'Basert på det over er ikke “Valgprotokoll for valgstyret - ' . $obj->election . '” [2] for ' . $obj->municipality . ' i henhold til Valgforskriften [1].
+        $klage .= 'Basert på det over er ikke "Valgprotokoll for valgstyret - ' . $obj->election . '" [2] for ' . $obj->municipality . ' i henhold til Valgforskriften [1].
 
 ';
         if ($avvik_forelopig_endelig) {
@@ -975,10 +977,12 @@ Klage ført i penn av Hallvard Nygård [Twitter: @hallny]
 
 ';
 
+        $klageStart = str_replace('KLAGE_BODY_INN_HER', urlencode(strip_tags($klage)), $klageStart);
+
         file_put_contents(__DIR__ . '/docs/klager/' . $obj->municipality . ' - ' . $obj->election . '.html',
             htmlHeading('Klage - ' . $obj->municipality . ' - ' . $obj->election)
             . '<style>body { white-space: pre-line; } </style>'
-            . $klage);
+            . $klageStart . $klage);
         $klager[$obj->municipality . ' - ' . $obj->election . '.html'] =
             array(
                 $klageType,
