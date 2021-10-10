@@ -849,8 +849,8 @@ Resultatene som er presentert i disse dokumentene følger ikke kravene til Valgf
             }
 
             $klage .= 'Det er avvik mellom antall sedler i stemmeurne og antall kryss i manntall. Dette er ikke forklart i merknadsfeltene.
-            
-            <b>';
+
+<b>';
 
             foreach ($ballotStuffingErrors as $stuffingErrorType => $stuffingError) {
                 if ($stuffingErrorType == 'Totalt') {
@@ -861,13 +861,13 @@ Resultatene som er presentert i disse dokumentene følger ikke kravene til Valgf
             }
 
             if (isset($ballotStuffingErrors['Totalt'])) {
-                $klage .= $ballotStuffingErrors['Totalt'] . "\n\n";
+                $klage .= '- ' . $ballotStuffingErrors['Totalt'] . "\n\n";
                 $klageSummary[] = $ballotStuffingErrors['Totalt'];
             }
 
             $klage .= "Merknader:\n";
             if (count($ballotStuffingErrorsComments) == 0) {
-                $klage .= "Ingen merknader på dette.\n";
+                $klage .= "- Ingen merknader på dette.\n";
             }
             foreach ($ballotStuffingErrorsComments as $stuffingErrorType => $stuffingError) {
                 foreach ($stuffingError as $comment) {
