@@ -57,12 +57,22 @@ $entity_merging = array(
     'Rømskog kommune' => 'Aurskog-Høland kommune',
 );
 
+$innlandet = array(
+    'entity_id' => 'innlandet-fylkeskommune',
+    'name' => 'Innlandet fylkeskommune',
+    'entity_email' => 'post@innlandetfylke.no',
+);
+$viken = array(
+    'name' => 'Viken fylkeskommune',
+    'entity_id' => 'viken-fylkeskommune',
+    'entity_email' => 'post@viken.no'
+);
 $entity_valgdistrikt = array(
-    'Hedmark' => array(
-        'entity_id' => 'innlandet-fylkeskommune',
-        'name' => 'Innlandet fylkeskommune',
-        'entity_email' => 'post@innlandetfylke.no',
-    )
+    'Hedmark' => $innlandet,
+    'Oppland' => $innlandet,
+    'Akershus' => $viken,
+    'Buskerud' => $viken,
+    'Østfold' => $viken
 );
 
 $klagerSendt = array(
