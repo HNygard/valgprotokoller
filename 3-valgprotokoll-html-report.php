@@ -969,8 +969,8 @@ Det er tydelig at man ikke har sett på avvikene mellom foreløpig telling og en
 
         $klage .= "Jeg ber også om at eventuelle merknader fra behandling av valgprotkoollen hos kommune/fylkeskommune/Stortinget oversendes snarest.\n\n";
 
-        $klage .= 'Mvh
-
+        $klage .= '---
+Mvh
 Twitteriatet for Valgkontroll
 
 Klage ført i penn av Hallvard Nygård [Twitter: @hallny]
