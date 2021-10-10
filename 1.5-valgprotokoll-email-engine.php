@@ -14,6 +14,20 @@ $additional_urls = array(// Also fetch these FOI requests
 );
 
 
+function str_starts_with($haystack, $needle) {
+    return substr($haystack, 0, strlen($needle)) == $needle;
+}
+
+function str_ends_with($haystack, $needle) {
+    $length = strlen($needle);
+    return $length === 0 || substr($haystack, -$length) === $needle;
+}
+
+function str_contains($stack, $needle) {
+    return (strpos($stack, $needle) !== FALSE);
+}
+
+
 $url = array();
 
 $entityStatus = array();
@@ -72,3 +86,34 @@ file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-set-success-sent.txt', implode("\n", $entityMarkOk));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-only-one-email-outgoing.txt', implode("\n", $entityOnlyOneOut));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-last-action.txt', implode("\n", $entityLastAction));
+
+
+
+
+
+$klageKommune = array();
+$klageFylkeskommune = array();
+$klageStortinget = array();
+$obj = json_decode(file_get_contents('http://localhost:25081/api.php?label=valgklage_2021'));
+foreach ($obj->matchingThreads as $thread) {
+    $klage = new stdClass();
+
+    $firstEmail = $thread->emails[0];
+    $klage->klageSent = $firstEmail->timestamp_received;
+
+    foreach($thread->labels as $label) {
+        if ($label == 'valgklage_2021_kommune') {
+            $klageKommune[$thread->entity_id] = $klage;
+        }
+        if (str_starts_with($label, 'valgklage_2021_fylkeskommune:')) {
+            $klageFylkeskommune[str_replace('valgklage_2021_fylkeskommune:', '', $label)] = $klage;
+        }
+        if (str_starts_with($label, 'valgklage_2021_stortinget:')) {
+            $klageStortinget[str_replace('valgklage_2021_stortinget:', '', $label)] = $klage;
+        }
+    }
+}
+
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/klage-sendt-kommune.json', json_encode($klageKommune, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/klage-sendt-fylkeskommune.json', json_encode($klageFylkeskommune, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/klage-sendt-stortinget.json', json_encode($klageStortinget, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));

@@ -35,6 +35,12 @@ $entitySuccess = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/ema
 $entityOnlyOneOutgoing = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-only-one-email-outgoing.txt'));
 $entityLastAction = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-last-action.txt'));
 
+
+$klageJson = array();
+$klageJson['kommune'] = json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/klage-sendt-kommune.json'));
+$klageJson['fylkeskommune'] = json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/klage-sendt-fylkeskommune.json'));
+$klageJson['stortinget'] = json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/klage-sendt-stortinget.json'));
+
 $mimesBronnStatus = array();
 
 $entity_merging = array(
@@ -711,7 +717,7 @@ foreach ($files as $file) {
                 . '?my_email=' . urlencode('valgklage_fk_' . $entity->entityId . '@offpost.no')
                 . '&my_name=' . urlencode($name . ', fylkeskommune')
                 . '&title=' . urlencode('Klage på Stortingsvalget 2021, ' . $entity->name)
-                . '&labels=' . urlencode('valgklage_2021 valgklage_2021_fylkeskommune')
+                . '&labels=' . urlencode('valgklage_2021 valgklage_2021_fylkeskommune:' . $entity->entityId)
                 . '&entity_id=' . urlencode($entity_valgdistrikt[$obj->county]['entity_id'])
                 . '&entity_title_prefix=' . urlencode($entity_valgdistrikt[$obj->county]['name'])
                 . '&entity_email=' . urlencode($entity_valgdistrikt[$obj->county]['entity_email'])
@@ -728,7 +734,7 @@ foreach ($files as $file) {
             . '?my_email=' . urlencode('valgklage_st_' . $entity->entityId . '@offpost.no')
             . '&my_name=' . urlencode($name . ', Stortinget')
             . '&title=' . urlencode('Klage på Stortingsvalget 2021, ' . $entity->name)
-            . '&labels=' . urlencode('valgklage_2021 valgklage_2021_stortinget')
+            . '&labels=' . urlencode('valgklage_2021 valgklage_2021_stortinget:' . $entity->entityId)
             . '&entity_id=stortinget'
             . '&entity_title_prefix=Stortinget'
             . '&entity_email=kontroll-konstitusjon@stortinget.no'
@@ -748,6 +754,11 @@ foreach ($files as $file) {
                 '4 - Klage på avslag' => 'black',
                 '5 - Klagebehandling av avslag' => 'black',
             );
+
+            if (isset($klageJson[$myndighet]->{$entity->entityId})) {
+                $entityStatus = $klageJson[$myndighet]->{$entity->entityId};
+                $status['1 - Klage sent'] = isset($entityStatus->klageSent) ? 'green' : 'red';
+            }
 
             $klageStatus .= "\n<td style='text-align: left;'><b>$myndighet</b>";
             foreach ($status as $statusType => $statusColor) {
