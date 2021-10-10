@@ -750,6 +750,7 @@ foreach ($files as $file) {
                 . '&entity_id=' . urlencode($entity_valgdistrikt[$obj->county]['entity_id'])
                 . '&entity_title_prefix=' . urlencode($entity_valgdistrikt[$obj->county]['name'])
                 . '&entity_email=' . urlencode($entity_valgdistrikt[$obj->county]['entity_email'])
+                . '&body=KLAGE_BODY_INN_HER'
                 . '">'
                 . 'Klag via Email engine</a> [Fylkeskommune]' . chr(10);
         }
@@ -767,6 +768,7 @@ foreach ($files as $file) {
             . '&entity_id=stortinget'
             . '&entity_title_prefix=Stortinget'
             . '&entity_email=kontroll-konstitusjon@stortinget.no'
+            . '&body=KLAGE_BODY_INN_HER'
             . '">'
             . 'Klag via Email engine</a> [Stortinget]' . chr(10);
 
