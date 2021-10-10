@@ -67,12 +67,19 @@ $viken = array(
     'entity_id' => 'viken-fylkeskommune',
     'entity_email' => 'post@viken.no'
 );
+$vestland = array(
+    'name' => 'Vestland fylkeskommune',
+    'entity_id' => 'vestland-fylkeskommune',
+    'entity_email' => 'post@vlfk.no'
+);
 $entity_valgdistrikt = array(
     'Hedmark' => $innlandet,
     'Oppland' => $innlandet,
     'Akershus' => $viken,
     'Buskerud' => $viken,
-    'Østfold' => $viken
+    'Østfold' => $viken,
+    'Sogn og Fjordane' => $vestland,
+    'Hordaland' => $vestland
 );
 
 $klagerSendt = array(
