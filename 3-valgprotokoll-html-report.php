@@ -65,6 +65,24 @@ $entity_valgdistrikt = array(
     )
 );
 
+$klagerSendt = array(
+    // Andre har klaget
+    'Bergen - Fylkestingsvalget 2019.html' => 'Allerede klaget.',
+    'Bergen - Kommunestyrevalget 2019.html' => 'Allerede påklaget.',
+    'Evenes - Kommunestyrevalget 2019.html' => 'Allerede utvidet behandling og omtelling.',
+    'Gjøvik - Kommunestyrevalget 2019.html' => 'Allerede påklaget - https://innsyn.gjovik.kommune.no/wfinnsyn.ashx?response=mote&moteid=423&',
+
+    // Mine
+    'Stavanger - Fylkestingsvalget 2019.html' => 'Avvik på mange prosenter for mange parti. Eneste kommentar "Feiltelling i foreløpig telling.". Ingen forklaring av kontrollmetode.',
+    'Stavanger - Kommunestyrevalget 2019.html' => 'Avvik på mange prosenter for mange parti. Sparsommelige kommentarer. Flest av "Feiltelling i foreløpig telling". Ingen forklaring av kontrollmetode.',
+    'Haugesund - Fylkestingsvalget 2019.html' => 'Relativt små avvik. Større avvik på FRP. Ellers lite reelle merknader.',
+    'Bærum - Kommunestyrevalget 2019.html' => 'Store avvik på AP og FRP. Er kommentert som "Vi har skannet to ganger og er sikre på at feilen ligger i den manuelle tellingen.". Ingen forklaring utover det.',
+    'Aurskog -Høland - Kommunestyrevalget 2019.html' => 'Rødt har fått mer stemmer i både forhånd og valgdag. Kommentarer: "Antatt feiltelling". Ingen forklaring av kontrollmetode.',
+    'Fredrikstad - Kommunestyrevalget 2019.html' => 'Bør påklages. Mandatendring og større avvik på andre parti. Ikke forklart.',
+    'Kongsberg - Fylkestingsvalget 2019.html' => 'Større stemmeavvik og prosent. Ikke forklart spesifikt.',
+
+);
+
 $county_sums = array();
 $addCountySums = function ($county, $party, $numbers) {
     global $county_sums;
@@ -764,6 +782,12 @@ foreach ($files as $file) {
             foreach ($status as $statusType => $statusColor) {
                 $klageStatus .= "<li style='color: $statusColor'>" . ($statusColor == 'green' ? '✓' : '✗') . "$statusType</li>";
             }
+
+            if ($status['1 - Klage sent'] == 'green') {
+                $klageName = $obj->municipality . ' - ' . $obj->election . '.html';
+                $klagerSendt[$klageName] = (isset($klagerSendt[$klageName]) ? $klagerSendt[$klageName] . ', ' : '') . $myndighet;
+            }
+
             $klageStatus .= "</td>\n\n";
         }
         $klageStatus .= "</tr></table>\n\n";
@@ -1008,23 +1032,6 @@ $klagerGjennomgatt_skalKlages = array(
 
 
 );
-$klagerSendt = array(
-    // Andre har klaget
-    'Bergen - Fylkestingsvalget 2019.html' => 'Allerede klaget.',
-    'Bergen - Kommunestyrevalget 2019.html' => 'Allerede påklaget.',
-    'Evenes - Kommunestyrevalget 2019.html' => 'Allerede utvidet behandling og omtelling.',
-    'Gjøvik - Kommunestyrevalget 2019.html' => 'Allerede påklaget - https://innsyn.gjovik.kommune.no/wfinnsyn.ashx?response=mote&moteid=423&',
-
-    // Mine
-    'Stavanger - Fylkestingsvalget 2019.html' => 'Avvik på mange prosenter for mange parti. Eneste kommentar "Feiltelling i foreløpig telling.". Ingen forklaring av kontrollmetode.',
-    'Stavanger - Kommunestyrevalget 2019.html' => 'Avvik på mange prosenter for mange parti. Sparsommelige kommentarer. Flest av "Feiltelling i foreløpig telling". Ingen forklaring av kontrollmetode.',
-    'Haugesund - Fylkestingsvalget 2019.html' => 'Relativt små avvik. Større avvik på FRP. Ellers lite reelle merknader.',
-    'Bærum - Kommunestyrevalget 2019.html' => 'Store avvik på AP og FRP. Er kommentert som "Vi har skannet to ganger og er sikre på at feilen ligger i den manuelle tellingen.". Ingen forklaring utover det.',
-    'Aurskog -Høland - Kommunestyrevalget 2019.html' => 'Rødt har fått mer stemmer i både forhånd og valgdag. Kommentarer: "Antatt feiltelling". Ingen forklaring av kontrollmetode.',
-    'Fredrikstad - Kommunestyrevalget 2019.html' => 'Bør påklages. Mandatendring og større avvik på andre parti. Ikke forklart.',
-    'Kongsberg - Fylkestingsvalget 2019.html' => 'Større stemmeavvik og prosent. Ikke forklart spesifikt.',
-
-);
 $klagerFjernet = array(
 
     // Andre
@@ -1206,7 +1213,7 @@ foreach ($klager as $klage => $klageArray) {
 
     }
     elseif (isset($klagerSendt[$klage])) {
-        $klager_html .= 'Klage sendt: ' . $klagerSendt[$klage] . '<br>';
+        $klager_html .= '<span style="color: green";>✓ Klage sendt: ' . $klagerSendt[$klage] . '</span><br>';
     }
     elseif (isset($klagerFjernet[$klage])) {
         $klager_html .= 'Gjennomgått, fjernet: ' . $klagerFjernet[$klage] . '<br>';
