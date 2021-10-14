@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=0817-drangedal-kommune&threadId=valgprotokoll_2021%2C_drangedal_kommune&attachment=2021-10-11_150544+-+IN+-+att+1-980592d2ad85ea192cb243e44f43f785.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=0817-drangedal-kommune&threadId=valgprotokoll_2021%2C_drangedal_kommune&attachment=2021-10-11_150544+-+IN+-+att+1-980592d2ad85ea192cb243e44f43f785.pdf",
+    "downloadTime": "2021-10-14 22:11:21",
+    "pdfMetaData": "Producer:       iTextSharp™ 5.5.6 ©2000-2014 iText Group NV (AGPL-version)\nCreationDate:   Mon Oct 11 15:05:44 2021 CEST\nModDate:        Mon Oct 11 15:05:44 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          17\nEncrypted:      no\nPage size:      595.44 x 842.16 pts (A4)\nPage rot:       0\nFile size:      494908 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "05.10.2021 08:39:30",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... :              Drangedal kommune\n\n#0 2-valgprotokoll-parser.php(552): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '             Dr...')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
