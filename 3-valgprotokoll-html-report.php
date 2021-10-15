@@ -352,11 +352,15 @@ foreach ($files as $file) {
     }
     $obj->file = $file;
     $entity_id__to__obj[$entity_name__to__entity_id[$name2]]->elections[] = $obj;
+    $klager_html_navn = $name2 . ' - ' . $obj->election;
+    $klager_html_navn = str_replace(' herad', '', $klager_html_navn);
+    $klager_html_navn = str_replace(' kommune', '', $klager_html_navn);
+    $klager_html_navn = str_replace('  ', '', $klager_html_navn);
 
     $summaryData[$obj->election]++;
 
     $new_path = getNewPath($file);
-    $electionHtml = htmlHeading($obj->municipality . ' - ' . $obj->election . ' - Valgprotokoll') . '
+    $electionHtml = htmlHeading($klager_html_navn . ' - Valgprotokoll') . '
 <a href="../../">Back to overview page</a>
 
 <h1>' . $obj->election . ' - ' . $obj->municipality . "</h1>\n";
@@ -729,7 +733,7 @@ foreach ($files as $file) {
             $mimesLink =
                 // http://alaveteli.org/docs/developers/api/#starting-new-requests-programmatically
                 '<a target="_blank" href="https://www.mimesbronn.no/new/' . htmlentities($entity->mimesBronnUrl, ENT_QUOTES)
-                . '?title=' . urlencode('Klage på valgprotokoll 2019, ' . $obj->municipality . ' - ' . $obj->election)
+                . '?title=' . urlencode('Klage på valgprotokoll 2019, ' . $klager_html_navn)
                 . '&tags=' . urlencode($tags)
                 . '">'
                 . 'Send klage via Mimes Brønn</a>' . chr(10);
@@ -808,7 +812,7 @@ foreach ($files as $file) {
             }
 
             if ($status['1 - Klage sent'] == 'green') {
-                $klageName = $obj->municipality . ' - ' . $obj->election . '.html';
+                $klageName = $klager_html_navn . '.html';
                 $klagerSendt[$klageName] = (isset($klagerSendt[$klageName]) ? $klagerSendt[$klageName] . ', ' : '') . $myndighet;
             }
 
@@ -1004,11 +1008,11 @@ Klage ført i penn av Hallvard Nygård [Twitter: @hallny]
 
         $klageStart = str_replace('KLAGE_BODY_INN_HER', urlencode(strip_tags($klage)), $klageStart);
 
-        file_put_contents(__DIR__ . '/docs/klager/' . $obj->municipality . ' - ' . $obj->election . '.html',
-            htmlHeading('Klage - ' . $obj->municipality . ' - ' . $obj->election)
+        file_put_contents(__DIR__ . '/docs/klager/' . $klager_html_navn . '.html',
+            htmlHeading('Klage - ' . $klager_html_navn)
             . '<style>body { white-space: pre-line; } </style>'
             . $klageStart . $klage);
-        $klager[$obj->municipality . ' - ' . $obj->election . '.html'] =
+        $klager[$klager_html_navn . '.html'] =
             array(
                 $klageType,
                 $klageSummary
@@ -1162,7 +1166,6 @@ $klagerFjernet = array(
     'Malvik - Stortingsvalget 2021.html' => '',
     'Molde - Stortingsvalget 2021.html' => '',
     'Osterøy - Stortingsvalget 2021.html' => '',
-    'Sande - Stortingsvalget 2021.html' => '',
     'Sandefjord - Stortingsvalget 2021.html' => '',
     'Sarpsborg - Stortingsvalget 2021.html' => '',
     'Senja - Stortingsvalget 2021.html' => '',
@@ -1173,7 +1176,6 @@ $klagerFjernet = array(
     'Time - Stortingsvalget 2021.html' => '',
     'Tønsberg - Stortingsvalget 2021.html' => '',
     'Vang - Stortingsvalget 2021.html' => '',
-    'Våler - Stortingsvalget 2021.html' => '',
     'Vestre Toten - Stortingsvalget 2021.html' => '',
     'Øygarden - Stortingsvalget 2021.html' => '',
     'Bamble - Stortingsvalget 2021.html' => '',
@@ -1189,7 +1191,6 @@ $klagerFjernet = array(
     'Hammerfest - Stortingsvalget 2021.html' => '',
     'Hjartdal - Stortingsvalget 2021.html' => '',
     'Hamar - Stortingsvalget 2021.html' => '',
-    'Herøy - Stortingsvalget 2021.html' => '',
     'Ringerike - Stortingsvalget 2021.html' => '',
     'Sigdal - Stortingsvalget 2021.html' => '',
     'Sør-Odal - Stortingsvalget 2021.html' => '',
