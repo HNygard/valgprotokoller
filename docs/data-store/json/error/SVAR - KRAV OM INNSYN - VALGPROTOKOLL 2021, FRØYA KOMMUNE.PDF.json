@@ -1,7 +1,7 @@
 {
     "localSource": "docs/data-store/pdfs-2021/INNSYN-frøya/SVAR - KRAV OM INNSYN - VALGPROTOKOLL 2021, FRØYA KOMMUNE.PDF.layout.txt",
-    "url": "<missing>",
-    "downloadTime": null,
+    "url": "INNSYN-frøya",
+    "downloadTime": "2021-10-04 22:51:19",
     "error": true,
     "errorMessage": "No match for regex.\nRegex ..... : ^([0-9]*\\.[0-9]*\\.[0-9]* [0-9]*:[0-9]*:[0-9]*) \\s* Valgprotokoll for valgstyret \\s* Side [0-9]*$m\nLine ...... : Prosjekt Åpne Valgdata\n\n\n\n\nDeres ref.       Vår ref.                    Arkivkode              Sted, dato\n                 212031                     041                    Sistranda, 22.09.2021\n\n\nSVAR - KRAV OM INNSYN - VALGPROTOKOLL 2021, FRØYA KOMMUNE\n\nVedlagt dette brevet følger en pdf-versjon (ikke skannet) av Valgstyrets møtebok for Frøya\nkommune ifm Stortingsvalget 2021.\n\n\n\n\nMed hilsen\nFrøya kommune\n\nFrode Larsen\nVirksomhetsleder Servicesenteret\n\nDette dokumentet er elektronisk godkjent og har derfor ingen signatur.\n\n\n\n\nPostadresse         Besøksadresse    Telefon             Bankgiro          E-postadresse\nPostboks 152        Rådhusgata       72 46 32 00         4312.15.29999     postmottak@froya.kommune.no\n7261 Sistranda      7260 Sistranda\n\f\n\n#0 2-valgprotokoll-parser.php(492): regexAssertAndReturnMatch('^([0-9]*\\\\.[0-9...', 'Prosjekt \\xC3\\x85pne ...')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
 }
