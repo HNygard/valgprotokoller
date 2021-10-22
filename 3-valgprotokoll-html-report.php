@@ -34,7 +34,7 @@ $entityFoiFinished = explode("\n", file_get_contents(__DIR__ . '/docs/data-store
 $entitySuccess = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-set-success-sent.txt'));
 $entityOnlyOneOutgoing = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-only-one-email-outgoing.txt'));
 $entityLastAction = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-last-action.txt'));
-$mxRecords = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/json/mx-records-2021.json'));
+$mxRecords = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/json/mx-records-' . date('Y') .'.json'));
 
 $klageJson = array();
 $klageJson['kommune'] = json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/klage-sendt-kommune.json'));
@@ -1448,7 +1448,7 @@ foreach ($entity_id__to__obj as $entity) {
         $output = '';
         exec('dig ' . explode('@', $entity->entityEmail)[1] . ' MX +short', $output);
         $mxRecords[$entity->entityId] = $output;
-        file_put_contents(__DIR__ . '/docs/data-store/json/mx-records-2021.json', json_encode($mxRecords, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
+        file_put_contents(__DIR__ . '/docs/data-store/json/mx-records-' . date('Y') . '.json', json_encode($mxRecords, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
     }
     $html_entities .= '
 
