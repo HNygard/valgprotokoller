@@ -34,7 +34,7 @@ $entityFoiFinished = explode("\n", file_get_contents(__DIR__ . '/docs/data-store
 $entitySuccess = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-set-success-sent.txt'));
 $entityOnlyOneOutgoing = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-only-one-email-outgoing.txt'));
 $entityLastAction = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-last-action.txt'));
-
+$mxRecords = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/json/mx-records-2021.json'));
 
 $klageJson = array();
 $klageJson['kommune'] = json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/klage-sendt-kommune.json'));
@@ -312,6 +312,9 @@ foreach ($files as $file) {
     }
     $obj = json_decode(file_get_contents($file));
 
+    if (str_contains($file, 'mx-records')) {
+        continue;
+    }
     if ($obj->error || $obj->documentType != 'valgprotokoll' || !isset($obj->election) || !isset($obj->municipality)) {
         continue;
     }
@@ -1441,6 +1444,12 @@ foreach ($entity_id__to__obj as $entity) {
     }
     $elections[3] = '<td>' . $mimesLink . '</td>';
 
+    if(!isset($mxRecords[$entity->entityId])) {
+        $output = '';
+        exec('dig ' . explode('@', $entity->entityEmail)[1] . ' MX +short', $output);
+        $mxRecords[$entity->entityId] = $output;
+        file_put_contents(__DIR__ . '/docs/data-store/json/mx-records-2021.json', json_encode($mxRecords, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
+    }
     $html_entities .= '
 
                     <tr>
