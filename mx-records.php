@@ -20,6 +20,7 @@ $summary = array(
     'sing.no' => 0,
     'heimdalsecurity' => 0,
     'staysecuregroup' => 0,
+    'comendosystems' => 0,
 );
 $init = $summary;
 foreach($entitiesArray as $entity) {
@@ -65,6 +66,9 @@ foreach($entitiesArray as $entity) {
         }
         elseif (str_contains($record, 'staysecuregroup')) {
             $entries['staysecuregroup']++;
+        }
+        elseif (str_contains($record, 'comendosystems')) {
+            $entries['comendosystems']++;
         }
         elseif (str_contains($record, $entity->entityDomain)) {
             $entries['egen_domene']++;

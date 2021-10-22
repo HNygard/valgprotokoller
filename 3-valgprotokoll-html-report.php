@@ -1310,6 +1310,7 @@ $html_entities = htmlHeading('Municipality overview - Valgprotokoller') . '
 <table>
 
 ';
+$foiStatusPerEmailServerType = array();
 foreach ($entity_id__to__obj as $entity) {
 
     $elections = array(
@@ -1450,6 +1451,25 @@ foreach ($entity_id__to__obj as $entity) {
         $mxRecords[$entity->entityId] = $output;
         file_put_contents(__DIR__ . '/docs/data-store/json/mx-records-' . date('Y') . '.json', json_encode($mxRecords, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
     }
+    else {
+        // Read from mx-records.php output
+        $emailServerCombo = implode(', ', array_keys((array)$mxRecords[$entity->entityId]->emailServer));
+        if (!isset($foiStatusPerEmailServerType[$emailServerCombo])) {
+            $foiStatusPerEmailServerType[$emailServerCombo] = new stdClass();
+            $foiStatusPerEmailServerType[$emailServerCombo]->total = 0;
+            $foiStatusPerEmailServerType[$emailServerCombo]->foiFinished = 0;
+            $foiStatusPerEmailServerType[$emailServerCombo]->foiWaiting = 0;
+        }
+        $foiStatusPerEmailServerType[$emailServerCombo]->total++;
+
+        if (str_contains($mimesLink, 'FOI request finished')) {
+            $foiStatusPerEmailServerType[$emailServerCombo]->foiFinished++;
+        }
+        if (str_contains($mimesLink, 'FOI request sent')) {
+            $foiStatusPerEmailServerType[$emailServerCombo]->foiWaiting++;
+        }
+    }
+
     $html_entities .= '
 
                     <tr>
@@ -1461,8 +1481,43 @@ foreach ($entity_id__to__obj as $entity) {
 
 $html_entities .= '
 </table>
-
+<br><br><br>
                 ';
+
+
+ksort($foiStatusPerEmailServerType);
+$html_entities .= "\n\n<table>\n<tr><th>Email server combo</th>\n<td>Total</td>\n<td>FOI waiting</td>\n<td>FOI finished</td>\n<td>Without FOI request</td>\n</tr>";
+$tableSummary = new stdClass();
+$tableSummary->total = 0;
+$tableSummary->foiFinished = 0;
+$tableSummary->foiWaiting = 0;
+foreach($foiStatusPerEmailServerType as $emailServerType => $mailServerStatus) {
+    $tableSummary->total += $mailServerStatus->total;
+    $tableSummary->foiFinished += $mailServerStatus->foiFinished;
+    $tableSummary->foiWaiting += $mailServerStatus->foiWaiting;
+    $html_entities .= "\n<tr><td>$emailServerType</td>\n";
+    $html_entities .= "<td>" . $mailServerStatus->total . "</td>\n";
+    if ($mailServerStatus->foiWaiting == 0) {
+        $html_entities .= "<td>zero</td>\n";
+    }
+    else {
+        $html_entities .= "<td " . ($mailServerStatus->foiWaiting > 10 ? ' style="color: red"': '') . ">" . $mailServerStatus->foiWaiting . ' (' . round(100 * $mailServerStatus->foiWaiting / $mailServerStatus->total) . " %)</td>\n";
+    }
+    $html_entities .= "<td>" . $mailServerStatus->foiFinished . ' (' . round(100 * $mailServerStatus->foiFinished / $mailServerStatus->total) . " %)</td>\n";
+
+    $nonFoi = $mailServerStatus->total - $mailServerStatus->foiFinished - $mailServerStatus->foiWaiting;
+    $html_entities .= "<td>" . $nonFoi . ' (' . round(100 * $nonFoi / $mailServerStatus->total) . " %)</td>\n";
+    $html_entities .= "</tr>\n";
+}
+$html_entities .= "\n<tr><td>TOTAL</td>\n";
+$html_entities .= "<td>" . $tableSummary->total . "</td>\n";
+$html_entities .= "<td>" . $tableSummary->foiWaiting . ' (' . round(100 * $tableSummary->foiWaiting / $tableSummary->total) . " %)</td>\n";
+$html_entities .= "<td>" . $tableSummary->foiFinished . ' (' . round(100 * $tableSummary->foiFinished / $tableSummary->total) . " %)</td>\n";
+$nonFoi = $tableSummary->total - $tableSummary->foiFinished - $tableSummary->foiWaiting;
+$html_entities .= "<td>" . $nonFoi . ' (' . round(100 * $nonFoi / $tableSummary->total) . " %)</td>\n";
+$html_entities .= "</tr>\n";
+$html_entities .= '</table>';
+
 file_put_contents(__DIR__ . '/docs/status-files.html', $html_entities);
 
 
