@@ -115,6 +115,17 @@ $addCountySums = function ($county, $party, $numbers) {
     $county_sums[$county][$party]->{'Endelig'} += $numbers->{'Endelig'};
 };
 
+$profiles = json_decode(file_get_contents(__DIR__ . '/random-profiles-2021.json'));
+
+// :: Sanity check - must be unique
+$emails = array();
+foreacH($profiles as $profile) {
+    if (isset($emails[$profile->email])) {
+        throw new Exception('lalalal');
+    }
+    $emails[$profile->email] = $profile;
+}
+
 $klager = array();
 
 function htmlHeading($title = 'Valgprotokoller') {
@@ -1311,7 +1322,9 @@ $html_entities = htmlHeading('Municipality overview - Valgprotokoller') . '
 
 ';
 $foiStatusPerEmailServerType = array();
+$i = 0;
 foreach ($entity_id__to__obj as $entity) {
+    $i++;
 
     $elections = array(
         '<td>-</td>',
@@ -1434,6 +1447,51 @@ foreach ($entity_id__to__obj as $entity) {
                     }
                 }
             }
+
+
+            $randomProfile = $profiles[$i];
+            $email = $randomProfile->email;
+            $name = $randomProfile->firstName . $randomProfile->middleName . ' ' . $randomProfile->lastName;
+            // TODO
+            $initialSendDate = 'TODO';
+            $mimesLink .=
+                '<br><a target="_blank" href="http://localhost:25081/start-thread.php'
+                . '?my_email=' . urlencode($email)
+                . '&my_name=' . urlencode($name)
+                . '&title=' . urlencode('Innsynshenvendelse - Valgprotokoll 2021, ' . $entity->name . ' - klage på manglende svar')
+                . '&labels=' . urlencode($tags)
+                . '&entity_id=' . urlencode($entity->entityId)
+                . '&entity_title_prefix=' . urlencode($entity->name)
+                . '&entity_email=' . urlencode($entity->entityEmail)
+                . '&body=' . urlencode(
+                    'Klage til ' . $entity->name . chr(10)
+                    . chr(10)
+                    . 'Dere har ikke svart på vår epost av ' . $initialSendDate .'. '
+                    . 'Dette kan skyldes tekniske årsaker hos dere og vi forsøker å sende fra en ny epsotadresse. '
+                    . 'Dere bør sjekke deres epostsystem (f.eks. spammappe eller Microsoft Impersonation Insight). '
+                    . 'At dere ikke svarer er brudd på Offentleglova og vil bli klaget inn til Statsforvalteren.'
+                    . chr(10). chr(10)
+                    . 'Oppsummering av epostkorrespondanse:' . chr(10)
+                    // TODO:
+
+                    . chr(10). chr(10)
+                    . 'Fra original henvendelse:' . chr(10)
+                    . 'Jeg ønsker innsyn i valgprotokoll for stortingsvalget 2021, og eventuell sametingsvalget 2021. Ofte kalt "Valgprotokoll for valgstyret"'
+                    . ' eller "Valgstyrets møtebok". Jeg ønsker at den er maskinlesbar, altså ikke innskannet (slik de signerte ofte er). '
+                    . 'Dette fordi vi skal lese ut data fra den.'
+                    . chr(10) . chr(10)
+                    . 'Søker altså innsyn i:' . chr(10)
+                    . '1. Valgprotokoll Stortingsvalget 2021 - ' . $entity->name . chr(10)
+                    . '2. Hvis dere har: Valgprotokoll Sametingsvalget 2021 - ' . $entity->name . chr(10)
+                    . chr(10) . chr(10)
+                    . 'Ønsker svar på original henvendelse samt en forklaring på hvorfor dere avviser krav om innsyn ved ikke å svare.'
+                    . chr(10) . chr(10)
+                    . 'Takk!'
+                    . chr(10) . chr(10)
+                    . 'Prosjekt Åpne Valgdata (ved fiktivt navn ' . $name . ')'
+                )
+                . '">'
+                . 'Klage random profile via Email engine</a>' . chr(10);
         }
         elseif(!$anyMissing) {
             // -> Finished else where
