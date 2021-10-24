@@ -34,7 +34,9 @@ $entityStatus = array();
 $entityFinished = array();
 $entityMarkOk = array();
 $entityOnlyOneOut = array();
+$entityFirstAction = array();
 $entityLastAction = array();
+$entityEmails = array();
 $obj = json_decode(file_get_contents('http://localhost:25081/api.php?label=valgprotokoll_2021'));
 foreach ($obj->matchingThreads as $thread) {
     if ($thread->sent) {
@@ -47,9 +49,17 @@ foreach ($obj->matchingThreads as $thread) {
     $out = 0;
     $in = 0;
 
+    $timeNow = time();
+    $min = $timeNow;
     $max = 0;
     foreach ($thread->emails as $email) {
+        if (!isset($entityEmails[$thread->entity_id])) {
+            $entityEmails[$thread->entity_id] = array();
+        }
+        $entityEmails[$thread->entity_id][] = '- ' . date('Y-m-d H:i:s', $email->timestamp_received) .
+            ($email->email_type == 'IN' ? ' epost fra dere' : ' epost til dere');
         $max = max($max, $email->timestamp_received);
+        $min = min($min, $email->timestamp_received);
         if ($email->email_type == 'IN') {
             $in++;
         }
@@ -72,6 +82,9 @@ foreach ($obj->matchingThreads as $thread) {
         }
     }
     $entityLastAction[$thread->entity_id] = $thread->entity_id . ':' . $max;
+    if ($timeNow != $min) {
+        $entityFirstAction[$thread->entity_id] = $thread->entity_id . ':' . $min;
+    }
 
     if ($out == 1 && $in == 0 && $thread->emails[0]->timestamp_received + 432000 < time()) {
         $entityOnlyOneOut[$thread->entity_id] = $thread->entity_id;
@@ -85,7 +98,10 @@ file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-finished.txt', implode("\n", $entityFinished));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-set-success-sent.txt', implode("\n", $entityMarkOk));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-only-one-email-outgoing.txt', implode("\n", $entityOnlyOneOut));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-first-action.txt', implode("\n", $entityFirstAction));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-last-action.txt', implode("\n", $entityLastAction));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-emails.json', json_encode($entityEmails, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES));
+
 
 
 
@@ -98,8 +114,13 @@ $obj = json_decode(file_get_contents('http://localhost:25081/api.php?label=valgk
 foreach ($obj->matchingThreads as $thread) {
     $klage = new stdClass();
 
-    $firstEmail = $thread->emails[0];
-    $klage->klageSent = $firstEmail->timestamp_received;
+    if (isset($thread->emails[0])) {
+        $firstEmail = $thread->emails[0];
+        $klage->klageSent = $firstEmail->timestamp_received;
+    }
+    else {
+        $klage->klageSent = 0;
+    }
 
     foreach($thread->labels as $label) {
         if ($label == 'valgklage_2021_kommune') {

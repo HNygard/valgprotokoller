@@ -33,7 +33,9 @@ $entityFoiSent = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/ema
 $entityFoiFinished = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-finished.txt'));
 $entitySuccess = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-set-success-sent.txt'));
 $entityOnlyOneOutgoing = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-only-one-email-outgoing.txt'));
+$entityFirstAction = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-first-action.txt'));
 $entityLastAction = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-last-action.txt'));
+$entityEmails = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-emails.json'));
 $mxRecords = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/json/mx-records-' . date('Y') .'.json'));
 
 $klageJson = array();
@@ -1448,12 +1450,21 @@ foreach ($entity_id__to__obj as $entity) {
                 }
             }
 
+            $initialSendDate = 'N/A';
+            foreach ($entityFirstAction as $lastAction) {
+                if (str_starts_with($lastAction, $entity->entityId)) {
+                    $time = explode(':', $lastAction, 2)[1];
+                    $daysSince = round((time() - $time) / 86400);
+                    $initialSendDate = date('d.m.Y', $time) . ' (' . $daysSince . ' dager siden, sendt til "' .
+                       explode('@', $entity->entityEmail)[0].'")';
+                }
+            }
+
+            $entityEmail = (isset($entityEmails[$entity->entityId]) ? $entityEmails[$entity->entityId] : array());
 
             $randomProfile = $profiles[$i];
             $email = $randomProfile->email;
             $name = $randomProfile->firstName . $randomProfile->middleName . ' ' . $randomProfile->lastName;
-            // TODO
-            $initialSendDate = 'TODO';
             $mimesLink .=
                 '<br><a target="_blank" href="http://localhost:25081/start-thread.php'
                 . '?my_email=' . urlencode($email)
@@ -1472,7 +1483,7 @@ foreach ($entity_id__to__obj as $entity) {
                     . 'At dere ikke svarer er brudd på Offentleglova og vil bli klaget inn til Statsforvalteren.'
                     . chr(10). chr(10)
                     . 'Oppsummering av epostkorrespondanse:' . chr(10)
-                    // TODO:
+                    . implode("\n", $entityEmail)
 
                     . chr(10). chr(10)
                     . 'Fra original henvendelse:' . chr(10)
@@ -1484,11 +1495,11 @@ foreach ($entity_id__to__obj as $entity) {
                     . '1. Valgprotokoll Stortingsvalget 2021 - ' . $entity->name . chr(10)
                     . '2. Hvis dere har: Valgprotokoll Sametingsvalget 2021 - ' . $entity->name . chr(10)
                     . chr(10) . chr(10)
-                    . 'Ønsker svar på original henvendelse samt en forklaring på hvorfor dere avviser krav om innsyn ved ikke å svare.'
+                    . 'Ønsker svar på original henvendelse (over) samt en forklaring på hvorfor dere avviser krav om innsyn ved ikke å svare.'
                     . chr(10) . chr(10)
                     . 'Takk!'
                     . chr(10) . chr(10)
-                    . 'Prosjekt Åpne Valgdata (ved fiktivt navn ' . $name . ')'
+                    . 'Prosjekt Åpne Valgdata'
                 )
                 . '">'
                 . 'Klage random profile via Email engine</a>' . chr(10);
