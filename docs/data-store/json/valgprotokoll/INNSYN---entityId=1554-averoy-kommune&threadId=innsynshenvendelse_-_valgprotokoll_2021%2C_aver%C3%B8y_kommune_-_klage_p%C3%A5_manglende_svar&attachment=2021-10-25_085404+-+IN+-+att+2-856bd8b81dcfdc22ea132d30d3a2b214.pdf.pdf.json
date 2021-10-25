@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=1554-averoy-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_aver%C3%B8y_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-10-25_085404+-+IN+-+att+2-856bd8b81dcfdc22ea132d30d3a2b214.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1554-averoy-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_aver%C3%B8y_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-10-25_085404+-+IN+-+att+2-856bd8b81dcfdc22ea132d30d3a2b214.pdf",
+    "downloadTime": "2021-10-26 00:01:23",
+    "pdfMetaData": "Subject:        00001H\nAuthor:         54serkon6\nCreator:        Canon iR-ADV C5760  PDF\nProducer:       PixEdit AS,  PixEdit Version 8.2.0.40\nCreationDate:   Tue Sep 14 17:54:00 2021 CEST\nModDate:        Mon Oct 25 08:50:23 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          15\nEncrypted:      no\nPage size:      595.2 x 841.44 pts\nPage rot:       0\nFile size:      407020 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 17:05:17",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : &\n\n#0 2-valgprotokoll-parser.php(552): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '&')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}

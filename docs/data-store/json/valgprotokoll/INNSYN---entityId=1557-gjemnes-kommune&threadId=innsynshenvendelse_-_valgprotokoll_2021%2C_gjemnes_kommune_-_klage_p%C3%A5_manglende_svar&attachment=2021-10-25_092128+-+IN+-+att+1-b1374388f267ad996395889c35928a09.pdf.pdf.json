@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=1557-gjemnes-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_gjemnes_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-10-25_092128+-+IN+-+att+1-b1374388f267ad996395889c35928a09.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1557-gjemnes-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_gjemnes_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-10-25_092128+-+IN+-+att+1-b1374388f267ad996395889c35928a09.pdf",
+    "downloadTime": "2021-10-26 00:01:24",
+    "pdfMetaData": "Creator:        Xerox AltaLink C8070\nProducer:       Xerox AltaLink C8070\nCreationDate:   Tue Sep 14 18:20:30 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          15\nEncrypted:      no\nPage size:      842 x 596 pts (A4)\nPage rot:       270\nFile size:      3997450 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 17:01:37",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : *“VALG\n\n#0 2-valgprotokoll-parser.php(552): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '*\\xE2\\x80\\x9CVALG')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
