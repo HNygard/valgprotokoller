@@ -1483,7 +1483,7 @@ foreach ($entity_id__to__obj as $entity) {
                     . 'At dere ikke svarer er brudd på Offentleglova og vil bli klaget inn til Statsforvalteren.'
                     . chr(10). chr(10)
                     . 'Oppsummering av epostkorrespondanse:' . chr(10)
-                    . implode("\n", $entityEmail)
+                    . implode("\n", $entityEmail->emailsSummary)
 
                     . chr(10). chr(10)
                     . 'Fra original henvendelse:' . chr(10)

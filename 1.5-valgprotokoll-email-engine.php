@@ -54,12 +54,19 @@ foreach ($obj->matchingThreads as $thread) {
     $max = 0;
     foreach ($thread->emails as $email) {
         if (!isset($entityEmails[$thread->entity_id])) {
-            $entityEmails[$thread->entity_id] = array();
+            $entityEmails[$thread->entity_id] = new stdClass();
+            $entityEmails[$thread->entity_id]->emailsSummary = array();
+            $entityEmails[$thread->entity_id]->emails = array();
         }
-        $entityEmails[$thread->entity_id][] = '- ' . date('Y-m-d H:i:s', $email->timestamp_received) .
+        $entityEmails[$thread->entity_id]->emailsSummary[] = '- ' . date('Y-m-d H:i:s', $email->timestamp_received) .
             ($email->email_type == 'IN' ? ' epost fra dere' : ' epost til dere');
-        $max = max($max, $email->timestamp_received);
-        $min = min($min, $email->timestamp_received);
+
+        $email2 = new stdClass();
+        $email2->datetime_received = $email->datetime_received;
+        $email2->timestamp_received = $email->timestamp_received;
+        $email2->email_type = $email->email_type;
+        $entityEmails[$thread->entity_id]->emails[] = $email2;
+
         if ($email->email_type == 'IN') {
             $in++;
         }
@@ -81,10 +88,6 @@ foreach ($obj->matchingThreads as $thread) {
             $entityMarkOk[] = $thread->entity_id . ':' . $att->linkSetSuccess;
         }
     }
-    $entityLastAction[$thread->entity_id] = max($max, isset($entityLastAction[$thread->entity_id]) ? $entityLastAction[$thread->entity_id] : 0);
-    if ($timeNow != $min) {
-        $entityFirstAction[$thread->entity_id] = $thread->entity_id . ':' . $min;
-    }
 
     if ($out == 1 && $in == 0 && $thread->emails[0]->timestamp_received + 432000 < time()) {
         $entityOnlyOneOut[$thread->entity_id] = $thread->entity_id;
@@ -93,9 +96,19 @@ foreach ($obj->matchingThreads as $thread) {
 
 sort($url);
 
-$entityLastAction2 = array();
-foreach($entityLastAction as $entity_id => $max) {
-    $entityLastAction2[$entity_id] = $entity_id . ':' . $max;
+foreach($entityEmails as $entity_id => $entityEmail) {
+    $max = 0;
+    $min = $timeNow;
+
+    foreach($entityEmail->emails as $email) {
+        $max = max($max, $email->timestamp_received);
+        $min = min($min, $email->timestamp_received);
+    }
+    $entityLastAction[$entity_id] = $entity_id . ':' . $max;
+    if ($timeNow != $min) {
+        $entityFirstAction[$entity_id] = $entity_id . ':' . $min;
+    }
+
 }
 
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/urls.txt', implode("\n", $url));
