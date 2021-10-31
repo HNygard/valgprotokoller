@@ -81,7 +81,7 @@ foreach ($obj->matchingThreads as $thread) {
             $entityMarkOk[] = $thread->entity_id . ':' . $att->linkSetSuccess;
         }
     }
-    $entityLastAction[$thread->entity_id] = $thread->entity_id . ':' . $max;
+    $entityLastAction[$thread->entity_id] = max($max, isset($entityLastAction[$thread->entity_id]) ? $entityLastAction[$thread->entity_id] : 0);
     if ($timeNow != $min) {
         $entityFirstAction[$thread->entity_id] = $thread->entity_id . ':' . $min;
     }
@@ -93,13 +93,18 @@ foreach ($obj->matchingThreads as $thread) {
 
 sort($url);
 
+$entityLastAction2 = array();
+foreach($entityLastAction as $entity_id => $max) {
+    $entityLastAction2[$entity_id] = $entity_id . ':' . $max;
+}
+
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/urls.txt', implode("\n", $url));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-sent.txt', implode("\n", $entityStatus));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-finished.txt', implode("\n", $entityFinished));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-set-success-sent.txt', implode("\n", $entityMarkOk));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-only-one-email-outgoing.txt', implode("\n", $entityOnlyOneOut));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-first-action.txt', implode("\n", $entityFirstAction));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-last-action.txt', implode("\n", $entityLastAction));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-last-action.txt', implode("\n", $entityLastAction2));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-emails.json', json_encode($entityEmails, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES));
 
 
