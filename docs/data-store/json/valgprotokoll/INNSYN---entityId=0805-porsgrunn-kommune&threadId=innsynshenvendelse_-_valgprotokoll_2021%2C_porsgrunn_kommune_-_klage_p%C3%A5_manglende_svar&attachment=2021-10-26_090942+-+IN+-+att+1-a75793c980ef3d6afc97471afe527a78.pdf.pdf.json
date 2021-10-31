@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=0805-porsgrunn-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_porsgrunn_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-10-26_090942+-+IN+-+att+1-a75793c980ef3d6afc97471afe527a78.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=0805-porsgrunn-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_porsgrunn_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-10-26_090942+-+IN+-+att+1-a75793c980ef3d6afc97471afe527a78.pdf",
+    "downloadTime": "2021-10-31 21:48:46",
+    "pdfMetaData": "Producer:       iTextSharp™ 5.5.6 ©2000-2014 iText Group NV (AGPL-version)\nCreationDate:   Tue Oct 26 09:09:41 2021 CEST\nModDate:        Tue Oct 26 09:09:41 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          21\nEncrypted:      no\nPage size:      595.32 x 842.04 pts (A4)\nPage rot:       0\nFile size:      459628 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 19:23:22",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... :              Porsgrunn kommune\n\n#0 2-valgprotokoll-parser.php(552): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '             Po...')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}

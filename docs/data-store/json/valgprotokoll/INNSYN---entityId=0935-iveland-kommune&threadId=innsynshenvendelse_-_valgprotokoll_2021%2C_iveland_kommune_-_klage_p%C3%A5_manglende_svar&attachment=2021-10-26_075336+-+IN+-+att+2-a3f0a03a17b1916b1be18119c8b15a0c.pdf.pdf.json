@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=0935-iveland-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_iveland_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-10-26_075336+-+IN+-+att+2-a3f0a03a17b1916b1be18119c8b15a0c.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=0935-iveland-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_iveland_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-10-26_075336+-+IN+-+att+2-a3f0a03a17b1916b1be18119c8b15a0c.pdf",
+    "downloadTime": "2021-10-31 21:48:48",
+    "pdfMetaData": "Creator:        OmniPage CSDK 20\nProducer:       OmniPage OCR Service\nCreationDate:   Tue Sep 14 18:18:04 2021 CEST\nModDate:        Tue Oct 26 07:53:15 2021 CEST\nTagged:         yes\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          15\nEncrypted:      no\nPage size:      595.2 x 841.9 pts (A4)\nPage rot:       0\nFile size:      821748 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 17:38:22",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : *VALG\n\n#0 2-valgprotokoll-parser.php(552): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '*VALG')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
