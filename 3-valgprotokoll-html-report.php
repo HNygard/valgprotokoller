@@ -1503,6 +1503,8 @@ foreach ($entity_id__to__obj as $entity) {
                 )
                 . '">'
                 . 'Klage random profile via Email engine</a>' . chr(10);
+
+            $mimesLink .= (isset($mxRecords[$entity->entityId])) ? '<br>' . implode(', ', array_keys((array)$mxRecords[$entity->entityId]->emailServer)) : '';
         }
         elseif(!$anyMissing) {
             // -> Finished else where
