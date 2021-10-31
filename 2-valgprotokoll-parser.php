@@ -519,11 +519,13 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     foreach (array(
                  'Kommunestyre- og fylkestingsvalget                       2019' => 'Kommunestyre- og fylkestingsvalget 2019',
                  'Total antall valgtingstemmesedler   i urne' => 'Total antall valgtingstemmesedler i urne  ',
+                 'Total antall valgtingstemmesedler    i urne' => 'Total antall valgtingstemmesedler i urne  ',
                  'Total antall valgtingstemmesedler               i urne' => 'Total antall valgtingstemmesedler i urne               ',
                  'C4.1 Antall valgtingsstemmesedler    i urne' => 'C4.1 Antall valgtingsstemmesedler i urne',
+                 'C4.1 Antall valgtingsstemmesedler     i urne' => 'C4.1 Antall valgtingsstemmesedler i urne',
                  'C4.2 Partifordelte valgtingsstemmesedler                  i urne' => 'C4.2 Partifordelte valgtingsstemmesedler i urne',
                  'C4.2 Partifordelte valgtingsstemmesedler      i urne' => 'C4.2 Partifordelte valgtingsstemmesedler i urne',
-
+                 'C4.2 Partifordelte valgtingsstemmesedler       i urne' => 'C4.2 Partifordelte valgtingsstemmesedler i urne',
              ) as $to_be_replace => $replace_with) {
         $file_content = str_replace($to_be_replace, $replace_with, $file_content);
     }
