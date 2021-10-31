@@ -55,6 +55,7 @@ foreach ($obj->matchingThreads as $thread) {
     foreach ($thread->emails as $email) {
         if (!isset($entityEmails[$thread->entity_id])) {
             $entityEmails[$thread->entity_id] = new stdClass();
+            $entityEmails[$thread->entity_id]->threadCount = 0;
             $entityEmails[$thread->entity_id]->emailsSummary = array();
             $entityEmails[$thread->entity_id]->emails = array();
         }
@@ -89,6 +90,8 @@ foreach ($obj->matchingThreads as $thread) {
         }
     }
 
+    $entityEmails[$thread->entity_id]->threadCount++;
+
     if ($out == 1 && $in == 0 && $thread->emails[0]->timestamp_received + 432000 < time()) {
         $entityOnlyOneOut[$thread->entity_id] = $thread->entity_id;
     }
@@ -117,7 +120,7 @@ file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-set-success-sent.txt', implode("\n", $entityMarkOk));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-only-one-email-outgoing.txt', implode("\n", $entityOnlyOneOut));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-first-action.txt', implode("\n", $entityFirstAction));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-last-action.txt', implode("\n", $entityLastAction2));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-last-action.txt', implode("\n", $entityLastAction));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-emails.json', json_encode($entityEmails, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES));
 
 

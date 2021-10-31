@@ -1466,7 +1466,9 @@ foreach ($entity_id__to__obj as $entity) {
             $email = $randomProfile->email;
             $name = $randomProfile->firstName . $randomProfile->middleName . ' ' . $randomProfile->lastName;
             $mimesLink .=
-                '<br><a target="_blank" href="http://localhost:25081/start-thread.php'
+                '<br><a target="_blank"'
+                . ($entityEmail->threadCount > 1 ? ' style="display: none"' : '')
+                . ' href="http://localhost:25081/start-thread.php'
                 . '?my_email=' . urlencode($email)
                 . '&my_name=' . urlencode($name)
                 . '&title=' . urlencode('Innsynshenvendelse - Valgprotokoll 2021, ' . $entity->name . ' - klage på manglende svar')
