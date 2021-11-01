@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=1941-skjervoy-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_skjerv%C3%B8y_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-11-01_160523+-+IN+-+att+1-0220f17118a19d46f38adfbbbbce75c0.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1941-skjervoy-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_skjerv%C3%B8y_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-11-01_160523+-+IN+-+att+1-0220f17118a19d46f38adfbbbbce75c0.pdf",
+    "downloadTime": "2021-11-01 22:18:38",
+    "pdfMetaData": "Author:         pixedit\nCreator:        RICOH MP C6004ex\nProducer:       PixEdit AS,  PixEdit Server Core Version 2.7.2.7\nCreationDate:   Tue Sep 14 16:51:08 2021 CEST\nModDate:        Wed Sep 29 09:39:59 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          16\nEncrypted:      no\nPage size:      841.92 x 595.32 pts (A4)\nPage rot:       270\nFile size:      6751269 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 13:34:59",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : $#vALs\n\n#0 2-valgprotokoll-parser.php(554): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '$#vALs')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
