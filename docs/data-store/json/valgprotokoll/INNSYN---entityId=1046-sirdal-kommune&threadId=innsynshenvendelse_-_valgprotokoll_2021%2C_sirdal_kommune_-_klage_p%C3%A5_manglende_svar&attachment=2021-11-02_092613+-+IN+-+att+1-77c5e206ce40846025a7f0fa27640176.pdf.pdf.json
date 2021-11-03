@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=1046-sirdal-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_sirdal_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-11-02_092613+-+IN+-+att+1-77c5e206ce40846025a7f0fa27640176.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1046-sirdal-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_sirdal_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-11-02_092613+-+IN+-+att+1-77c5e206ce40846025a7f0fa27640176.pdf",
+    "downloadTime": "2021-11-04 00:19:27",
+    "pdfMetaData": "Subject:        FB29DE4F-01D8-4F35-B5E8-888A78A1E675 00001H\nAuthor:         ma\nCreator:        PixEdit Version 8.7.2.15, SN 357-82605-02, KEY Wxxxx-xxxxx-xxxxx-xxxxx-xxxxx-xxxxE\nProducer:       PixEdit AS,  PixEdit Version 8.7.2.15\nCreationDate:   Fri Oct  8 07:32:12 2021 CEST\nModDate:        Tue Oct 26 07:54:23 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          15\nEncrypted:      no\nPage size:      593.76 x 841.92 pts\nPage rot:       0\nFile size:      6133415 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 17:39:05",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : # vALso\n\n#0 2-valgprotokoll-parser.php(554): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '# vALso')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}

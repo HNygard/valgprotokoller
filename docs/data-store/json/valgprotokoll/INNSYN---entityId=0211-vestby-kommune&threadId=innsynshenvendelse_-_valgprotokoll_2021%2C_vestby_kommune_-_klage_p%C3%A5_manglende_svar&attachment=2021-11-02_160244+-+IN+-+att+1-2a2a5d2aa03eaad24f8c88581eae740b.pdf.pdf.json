@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=0211-vestby-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_vestby_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-11-02_160244+-+IN+-+att+1-2a2a5d2aa03eaad24f8c88581eae740b.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=0211-vestby-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_vestby_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-11-02_160244+-+IN+-+att+1-2a2a5d2aa03eaad24f8c88581eae740b.pdf",
+    "downloadTime": "2021-11-04 00:19:24",
+    "pdfMetaData": "Producer:       iTextSharp™ 5.5.6 ©2000-2014 iText Group NV (AGPL-version)\nCreationDate:   Tue Nov  2 16:02:43 2021 CET\nModDate:        Tue Nov  2 16:02:43 2021 CET\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          19\nEncrypted:      no\nPage size:      595.32 x 841.92 pts (A4)\nPage rot:       0\nFile size:      7062345 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "15.09.2021 11:00:43",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... :               Vestby kommune\n\n#0 2-valgprotokoll-parser.php(554): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '              V...')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}

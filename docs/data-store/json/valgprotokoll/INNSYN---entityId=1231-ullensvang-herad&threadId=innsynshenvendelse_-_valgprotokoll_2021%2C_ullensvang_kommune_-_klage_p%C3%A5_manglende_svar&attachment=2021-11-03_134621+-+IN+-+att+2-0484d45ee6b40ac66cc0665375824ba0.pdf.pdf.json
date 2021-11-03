@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=1231-ullensvang-herad&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_ullensvang_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-11-03_134621+-+IN+-+att+2-0484d45ee6b40ac66cc0665375824ba0.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1231-ullensvang-herad&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_ullensvang_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-11-03_134621+-+IN+-+att+2-0484d45ee6b40ac66cc0665375824ba0.pdf",
+    "downloadTime": "2021-11-04 00:19:28",
+    "pdfMetaData": "Title:          00206B3EA209210916105041\nAuthor:         __131501DOK_Server\nCreator:        KM_C558\nProducer:       PixEdit AS,  PixEdit Server Core Version 2.7.0.8\nCreationDate:   Thu Sep 16 11:50:42 2021 CEST\nModDate:        Wed Sep 29 11:01:02 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          17\nEncrypted:      no\nPage size:      595.08 x 841.68 pts\nPage rot:       0\nFile size:      4779933 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nn-NO",
+    "languageName": "Norwegian, Nynorsk",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 18:52:04",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : &#vALG\n\n#0 2-valgprotokoll-parser.php(554): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '&#vALG')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
