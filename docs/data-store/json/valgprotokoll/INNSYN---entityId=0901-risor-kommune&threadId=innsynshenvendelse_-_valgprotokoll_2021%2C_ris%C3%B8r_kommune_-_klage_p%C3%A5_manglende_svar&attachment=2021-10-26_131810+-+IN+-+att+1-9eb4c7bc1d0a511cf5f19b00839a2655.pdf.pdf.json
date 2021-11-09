@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=0901-risor-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_ris%C3%B8r_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-10-26_131810+-+IN+-+att+1-9eb4c7bc1d0a511cf5f19b00839a2655.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=0901-risor-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_ris%C3%B8r_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-10-26_131810+-+IN+-+att+1-9eb4c7bc1d0a511cf5f19b00839a2655.pdf",
+    "downloadTime": "2021-11-09 23:01:49",
+    "pdfMetaData": "Producer:       iTextSharp™ 5.5.6 ©2000-2014 iText Group NV (AGPL-version)\nCreationDate:   Tue Oct 26 13:18:10 2021 CEST\nModDate:        Tue Oct 26 13:18:10 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          16\nEncrypted:      no\nPage size:      612 x 792 pts (letter)\nPage rot:       0\nFile size:      406512 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "26.10.2021 13:13:23",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : Vi viser til Deres innsynsbegjæring vedrørende dokumentene som omhandler .\n\n#0 2-valgprotokoll-parser.php(554): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', 'Vi viser til De...')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
