@@ -13535,6 +13535,9 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2021-09-29 23:58:40 epost til dere",
+            "- 2021-10-08 00:01:00 epost til dere",
+            "- 2021-10-15 12:13:41 epost fra dere",
+            "- 2021-10-15 22:32:53 epost til dere",
             "- 2021-10-15 23:36:48 epost til dere",
             "- 2021-10-25 20:05:32 epost fra dere",
             "- 2021-10-25 20:43:57 epost til dere",
@@ -13544,6 +13547,21 @@
             {
                 "datetime_received": "2021-09-29 23:58:40",
                 "timestamp_received": 1632952720,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2021-10-08 00:01:00",
+                "timestamp_received": 1633644060,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2021-10-15 12:13:41",
+                "timestamp_received": 1634292821,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-10-15 22:32:53",
+                "timestamp_received": 1634329973,
                 "email_type": "OUT"
             },
             {
