@@ -41,6 +41,10 @@ function downloadUrls_parseTxt($lines) {
         if (file_exists(str_replace('%20', ' ' , $cache_name))) {
             $cache_name = str_replace('%20', ' ', $cache_name);
         }
+        if (!file_exists($cache_name)) {
+            $cache_name = str_replace('&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_', '', $cache_name);
+            $cache_name = str_replace('_-_klage_p%C3%A5_manglende_svar&', '', $cache_name);
+        }
 
         if (!file_exists($cache_name)) {
             $data = getUrlUsingCurl($line);

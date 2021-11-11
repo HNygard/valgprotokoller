@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=2023-gamvik-kommunegamvik_kommuneattachment=2021-11-08_134739+-+IN+-+att+2-695ecc70e893d4997cfdc5462d16864a.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=2023-gamvik-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_gamvik_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-11-08_134739+-+IN+-+att+2-695ecc70e893d4997cfdc5462d16864a.pdf",
+    "downloadTime": "2021-11-11 21:17:47",
+    "pdfMetaData": "Author:         pixedit\nCreator:        Hewlett-Packard MFP\nProducer:       PixEdit AS,  PixEdit Server Core Version 2.7.2.7\nCreationDate:   Fri Oct  8 13:45:10 2021 CEST\nModDate:        Fri Oct  8 13:45:10 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          15\nEncrypted:      no\nPage size:      841.92 x 595.32 pts (A4)\nPage rot:       270\nFile size:      392463 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 17:32:44",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... :               Stortig\n\n#0 2-valgprotokoll-parser.php(554): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '              S...')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}

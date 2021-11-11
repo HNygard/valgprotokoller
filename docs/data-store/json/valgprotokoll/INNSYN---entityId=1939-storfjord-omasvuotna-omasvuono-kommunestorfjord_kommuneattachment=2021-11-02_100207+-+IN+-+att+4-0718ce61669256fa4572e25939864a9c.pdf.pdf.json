@@ -1,0 +1,14 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=1939-storfjord-omasvuotna-omasvuono-kommunestorfjord_kommuneattachment=2021-11-02_100207+-+IN+-+att+4-0718ce61669256fa4572e25939864a9c.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1939-storfjord-omasvuotna-omasvuono-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_storfjord_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-11-02_100207+-+IN+-+att+4-0718ce61669256fa4572e25939864a9c.pdf",
+    "downloadTime": "2021-11-11 21:17:44",
+    "pdfMetaData": "Creator:        JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb\nProducer:       iText 2.1.7 by 1T3XT\nCreationDate:   Tue Nov  2 09:44:10 2021 CET\nModDate:        Tue Nov  2 09:44:10 2021 CET\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          15\nEncrypted:      no\nPage size:      595 x 842 pts (A4)\nPage rot:       0\nFile size:      151286 bytes\nOptimized:      no\nPDF version:    1.5",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "02.11.2021 09:44:06",
+    "election": "Stortingsvalget 2021",
+    "heading": "Valgprotokoll for valgstyret i Storfjord - Omasvuotna - Omasvuono kommune, Troms Romsa",
+    "errorMessage": "Did not find expected value on line [4].\nExpected ... : Stortingsvalget 2021\nActual ..... : valgdistrikt\n\n#0 2-valgprotokoll-parser.php(569): assertLine_trim(Array, 4, 'Stortingsvalget...')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
