@@ -8,5 +8,5 @@
     "documentType": "valgprotokoll",
     "error": true,
     "reportGenerated": "14.09.2021 19:23:22",
-    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... :              Porsgrunn kommune\n\n#0 2-valgprotokoll-parser.php(554): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '             Po...')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... :              Porsgrunn kommune\n\n#0 2-valgprotokoll-parser.php(548): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '             Po...')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
 }

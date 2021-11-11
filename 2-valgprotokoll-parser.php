@@ -545,12 +545,6 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     $i = 0;
 
     // --- START page 1
-    if (trim($lines[$i]) == 'Levanger kommune') {
-        $obj->error = true;
-        logInfo('Ignoring Levanger kommune.');
-        return;
-    }
-
     $match = regexAssertAndReturnMatch('/^\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\s*$/', $lines[$i++]);
     $obj->election = $match[1];
 

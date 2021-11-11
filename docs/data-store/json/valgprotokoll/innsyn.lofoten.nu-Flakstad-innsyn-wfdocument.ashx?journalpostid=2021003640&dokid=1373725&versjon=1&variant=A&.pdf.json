@@ -10,5 +10,5 @@
     "reportGenerated": "14.09.2021 17:41:46",
     "election": "Stortingsvalget 2021",
     "heading": "Valgprotokoll for valgstyret i Flakstad kommune, Nordland valgdistrikt",
-    "errorMessage": "No match for regex.\nRegex ..... : ^Kommune: \\s*([A-Za-zÆØÅæøåá\\- ]*)\\s*$\nLine ...... :  Kommune:            Flakstad\n\n#0 2-valgprotokoll-parser.php(578): regexAssertAndReturnMatch('^Kommune: \\\\s*(...', ' Kommune:      ...')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+    "errorMessage": "No match for regex.\nRegex ..... : ^Kommune: \\s*([A-Za-zÆØÅæøåá\\- ]*)\\s*$\nLine ...... :  Kommune:            Flakstad\n\n#0 2-valgprotokoll-parser.php(572): regexAssertAndReturnMatch('^Kommune: \\\\s*(...', ' Kommune:      ...')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
 }
