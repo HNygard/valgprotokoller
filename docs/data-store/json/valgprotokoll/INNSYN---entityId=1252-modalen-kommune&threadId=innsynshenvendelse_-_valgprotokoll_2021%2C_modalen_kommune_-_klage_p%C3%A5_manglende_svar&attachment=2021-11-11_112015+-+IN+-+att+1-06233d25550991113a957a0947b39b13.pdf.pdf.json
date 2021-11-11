@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=1252-modalen-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_modalen_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-11-11_112015+-+IN+-+att+1-06233d25550991113a957a0947b39b13.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1252-modalen-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_modalen_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-11-11_112015+-+IN+-+att+1-06233d25550991113a957a0947b39b13.pdf",
+    "downloadTime": "2021-11-11 20:48:37",
+    "pdfMetaData": "Creator:        OmniPage CSDK 20\nProducer:       OmniPage OCR Service\nCreationDate:   Thu Sep 16 10:40:02 2021 CEST\nModDate:        Thu Sep 16 10:40:02 2021 CEST\nTagged:         yes\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          15\nEncrypted:      no\nPage size:      594.95 x 841.9 pts (A4)\nPage rot:       0\nFile size:      5191289 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nn-NO",
+    "languageName": "Norwegian, Nynorsk",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 17:28:43",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... :                                            1692021\n\n#0 2-valgprotokoll-parser.php(554): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '               ...')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
