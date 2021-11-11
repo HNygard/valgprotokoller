@@ -82,7 +82,7 @@ foreach ($obj->matchingThreads as $thread) {
             continue;
         }
         foreach ($email->attachments as $att) {
-            if ($att->filetype != 'pdf') {
+            if ($att->filetype != 'pdf' && $att->filetype != 'UNKNOWN') {
                 continue;
             }
             $url[] = $att->link;

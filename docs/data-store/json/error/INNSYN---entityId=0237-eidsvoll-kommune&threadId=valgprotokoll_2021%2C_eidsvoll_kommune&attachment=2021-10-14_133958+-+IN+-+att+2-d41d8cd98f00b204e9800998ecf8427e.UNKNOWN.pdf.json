@@ -1,0 +1,8 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=0237-eidsvoll-kommune&threadId=valgprotokoll_2021%2C_eidsvoll_kommune&attachment=2021-10-14_133958+-+IN+-+att+2-d41d8cd98f00b204e9800998ecf8427e.UNKNOWN.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=0237-eidsvoll-kommune&threadId=valgprotokoll_2021%2C_eidsvoll_kommune&attachment=2021-10-14_133958+-+IN+-+att+2-d41d8cd98f00b204e9800998ecf8427e.UNKNOWN",
+    "downloadTime": "2021-11-11 21:58:08",
+    "pdfMetaData": "Tagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          1\nEncrypted:      no\nPage size:      595 x 842 pts (A4)\nPage rot:       0\nFile size:      66182 bytes\nOptimized:      no\nPDF version:    1.4",
+    "error": true,
+    "errorMessage": "No match for regex.\nRegex ..... : ^([0-9]*\\.[0-9]*\\.[0-9]* [0-9]*:[0-9]*:[0-9]*) \\s* Valgprotokoll for valgstyret \\s* Side [0-9]*$m\nLine ...... : Fra: Hanne Marie Moum Brun[Hanne.Marie.Moum.Brun@eidsvoll.kommune.no]\nSendt: 5. okt 2021 13:04:34\nTil: Postmottak SFOV\nTittel: 219007-2 Klage - Valgprotokoll 2021, Eidsvoll kommune\n\n\n\nSe vedlegg\n\n\n\nAvsender ønsket å legge inn klage om for sent sett forespørsel i arkivsystemet.\n\n\n\n\nMed vennlig hilsen\n\nHanne Brun, Regnskapssjef ‐ Regnskapsavdelingen\nTlf: 66 10 70 07 hanne.brun@eidsvoll.kommune.no\n\n\n#0 2-valgprotokoll-parser.php(492): regexAssertAndReturnMatch('^([0-9]*\\\\.[0-9...', 'Fra: Hanne Mari...')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}

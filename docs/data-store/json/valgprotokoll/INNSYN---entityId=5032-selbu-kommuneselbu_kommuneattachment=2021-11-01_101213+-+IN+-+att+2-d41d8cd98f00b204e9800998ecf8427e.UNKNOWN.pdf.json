@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=5032-selbu-kommuneselbu_kommuneattachment=2021-11-01_101213+-+IN+-+att+2-d41d8cd98f00b204e9800998ecf8427e.UNKNOWN.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=5032-selbu-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_selbu_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2021-11-01_101213+-+IN+-+att+2-d41d8cd98f00b204e9800998ecf8427e.UNKNOWN",
+    "downloadTime": "2021-11-11 21:58:10",
+    "pdfMetaData": "CreationDate:   D.00010101000000Z\nModDate:        D.00010101000000Z\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          16\nEncrypted:      no\nPage size:      595.92 x 843.84 pts\nPage rot:       0\nFile size:      452689 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 17:55:06",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : VALG\n\n#0 2-valgprotokoll-parser.php(548): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', 'VALG')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}

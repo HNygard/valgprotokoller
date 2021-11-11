@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=1833-rana-kommune&threadId=valgprotokoll_2021%2C_rana_kommune&attachment=2021-09-29_125722+-+IN+-+att+2-d41d8cd98f00b204e9800998ecf8427e.UNKNOWN.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1833-rana-kommune&threadId=valgprotokoll_2021%2C_rana_kommune&attachment=2021-09-29_125722+-+IN+-+att+2-d41d8cd98f00b204e9800998ecf8427e.UNKNOWN",
+    "downloadTime": "2021-11-11 21:58:09",
+    "pdfMetaData": "Subject:        00002H\nAuthor:         ephskann\nCreator:        PixEdit Version 8.6.0.6, SN 357-81579-02, KEY Kxxxx-xxxxx-xxxxx-xxxxx-xxxxx-xxxxE,www.pixedit.com\nProducer:       PixEdit AS,  PixEdit Version 8.6.0.6\nCreationDate:   Thu Sep 16 08:38:24 2021 CEST\nModDate:        Wed Sep 29 12:34:39 2021 CEST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          17\nEncrypted:      no\nPage size:      595.8 x 842.04 pts (A4)\nPage rot:       0\nFile size:      708595 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 18:52:05",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : #vLs\n\n#0 2-valgprotokoll-parser.php(548): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '#vLs')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
