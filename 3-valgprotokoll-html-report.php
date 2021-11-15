@@ -880,7 +880,7 @@ Resultatene som er presentert i disse dokumentene følger ikke kravene til Valgf
                 $klage .= "AVVIK STEMMESEDLER\n\n";
             }
 
-            $klage .= 'Det er avvik mellom antall sedler i stemmeurne og antall kryss i manntall. Dette er ikke forklart i merknadsfeltene.
+            $klage .= 'Det er avvik mellom antall sedler i stemmeurne og antall kryss i manntall. Dette er ikke forklart i merknadsfeltene. Feil med avkryssing i manntall er brudd på valgloven § 9-5 / §9-5a.
 
 <b>';
 
@@ -997,7 +997,9 @@ Det er tydelig at man ikke har sett på avvikene mellom foreløpig telling og en
         }
 
 
-        $klage .= 'Basert på det over er ikke "Valgprotokoll for valgstyret - ' . $obj->election . '" [2] for ' . $obj->municipality . ' i henhold til Valgforskriften [1].
+        $klage .= 'Basert på det over er ikke "Valgprotokoll for valgstyret - ' . $obj->election . '" [2] for ' . $obj->municipality . ' i henhold til '
+            . (count($ballotStuffingErrors) ? 'valgloven § 9-5 / §9-5a samt ' : '') . 'Valgforskriften [1].'
+            . '
 
 ';
         if ($avvik_forelopig_endelig) {
@@ -1014,7 +1016,10 @@ Det er tydelig at man ikke har sett på avvikene mellom foreløpig telling og en
 Mvh
 Twitteriatet for Valgkontroll
 
-Klage ført i penn av Hallvard Nygård [Twitter: @hallny]
+Klage ført i penn av Hallvard Nygård [Twitter: @hallny].
+
+Klager: Twitteriatet for Valgkontroll ved Hallvard Nygård
+Klage sendes og følges opp av: ' . $name . '
 
 ';
 
