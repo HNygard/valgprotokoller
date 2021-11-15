@@ -16,14 +16,19 @@ $entitiesArray = json_decode(file_get_contents(__DIR__ . '/entities.json'))->ent
 $entitiesArray2 = json_decode(file_get_contents(__DIR__ . '/entitiesNonExisting.json'))->entities;
 $entity_id__to__obj = array();
 $entity_name__to__entity_id = array();
+$i = 0;
 foreach ($entitiesArray as $entity) {
-    if(isset($entity->entityExistedToAndIncluding)) {
+    if (isset($entity->entityExistedToAndIncluding)) {
         continue;
     }
+    $i++;
+    $entity->i = $i;
     $entity_id__to__obj[$entity->entityId] = $entity;
     $entity_name__to__entity_id[$entity->name] = $entity->entityId;
 }
 foreach ($entitiesArray2 as $entity) {
+    $i++;
+    $entity->i = $i;
     $entity_id__to__obj[$entity->entityId] = $entity;
     $entity_name__to__entity_id[$entity->name] = $entity->entityId;
 }
@@ -118,12 +123,19 @@ $addCountySums = function ($county, $party, $numbers) {
 };
 
 $profiles = json_decode(file_get_contents(__DIR__ . '/random-profiles-2021.json'));
+$profilesKlage = json_decode(file_get_contents(__DIR__ . '/random-profiles-2021-klage.json'));
 
 // :: Sanity check - must be unique
 $emails = array();
 foreacH($profiles as $profile) {
     if (isset($emails[$profile->email])) {
         throw new Exception('lalalal');
+    }
+    $emails[$profile->email] = $profile;
+}
+foreacH($profilesKlage as $profile) {
+    if (isset($emails[$profile->email])) {
+        throw new Exception('Multiple of same profile: ' . json_encode($profile));
     }
     $emails[$profile->email] = $profile;
 }
@@ -749,23 +761,14 @@ foreach ($files as $file) {
         $klageSummary = array();
 
         $entity = $entity_id__to__obj[$entity_name__to__entity_id[$name2]];
-        if (isset($entity->mimesBronnUrl)) {
-            $tags = 'valgprotokoll_2019 valgprotokoll_klage';
-            $mimesLink =
-                // http://alaveteli.org/docs/developers/api/#starting-new-requests-programmatically
-                '<a target="_blank" href="https://www.mimesbronn.no/new/' . htmlentities($entity->mimesBronnUrl, ENT_QUOTES)
-                . '?title=' . urlencode('Klage på valgprotokoll 2019, ' . $klager_html_navn)
-                . '&tags=' . urlencode($tags)
-                . '">'
-                . 'Send klage via Mimes Brønn</a>' . chr(10);
-        }
-        else {
-            $mimesLink = 'Mangler Mimes Brønn-kobling.';
-        }
-        $name = 'Twitteriatet for Valgkontroll (' . $entity->municipalityNumber . ')';
+
+        $randomProfile = $profiles[$entity->i];
+        $email = $randomProfile->email;
+        $name = $randomProfile->firstName . $randomProfile->middleName . ' ' . $randomProfile->lastName;
+
         $mimesLink =
             '<a target="_blank" href="http://localhost:25081/start-thread.php'
-            . '?my_email=' . urlencode('valgklage_' . $entity->entityId . '@offpost.no')
+            . '?my_email=' . urlencode($email)
             . '&my_name=' . urlencode($name)
             . '&title=' . urlencode('Klage på Stortingsvalget 2021, ' . $entity->name)
             . '&labels=' . urlencode('valgklage_2021 valgklage_2021_kommune')
@@ -779,7 +782,7 @@ foreach ($files as $file) {
         if (isset($entity_valgdistrikt[$obj->county])) {
             $mimesLink .=
                 '<a target="_blank" href="http://localhost:25081/start-thread.php'
-                . '?my_email=' . urlencode('valgklage_fk_' . $entity->entityId . '@offpost.no')
+                . '?my_email=' . urlencode(str_replace('@', '_fk@', $email))
                 . '&my_name=' . urlencode($name . ', fylkeskommune')
                 . '&title=' . urlencode('Klage på Stortingsvalget 2021, ' . $entity->name)
                 . '&labels=' . urlencode('valgklage_2021 valgklage_2021_fylkeskommune:' . $entity->entityId)
@@ -797,7 +800,7 @@ foreach ($files as $file) {
 
         $mimesLink .=
             '<a target="_blank" href="http://localhost:25081/start-thread.php'
-            . '?my_email=' . urlencode('valgklage_st_' . $entity->entityId . '@offpost.no')
+            . '?my_email=' . urlencode(str_replace('@', '_st@', $email))
             . '&my_name=' . urlencode($name . ', Stortinget')
             . '&title=' . urlencode('Klage på Stortingsvalget 2021, ' . $entity->name)
             . '&labels=' . urlencode('valgklage_2021 valgklage_2021_stortinget:' . $entity->entityId)
@@ -1374,9 +1377,8 @@ $html_entities = htmlHeading('Municipality overview - Valgprotokoller') . '
 
 ';
 $foiStatusPerEmailServerType = array();
-$i = 0;
 foreach ($entity_id__to__obj as $entity) {
-    $i++;
+    $i = $entity->i;
 
     $elections = array(
         '<td>-</td>',
