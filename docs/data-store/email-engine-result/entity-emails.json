@@ -786,7 +786,10 @@
             "- 2021-10-10 18:03:55 epost til dere",
             "- 2021-10-25 00:19:40 epost til dere",
             "- 2021-11-12 20:22:00 epost til dere",
-            "- 2021-11-12 20:22:08 epost fra dere"
+            "- 2021-11-12 20:22:08 epost fra dere",
+            "- 2021-11-15 14:22:55 epost fra dere",
+            "- 2021-11-16 21:06:52 epost til dere",
+            "- 2021-11-16 21:07:00 epost fra dere"
         ],
         "emails": [
             {
@@ -822,6 +825,21 @@
             {
                 "datetime_received": "2021-11-12 20:22:08",
                 "timestamp_received": 1636744928,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-15 14:22:55",
+                "timestamp_received": 1636982575,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-16 21:06:52",
+                "timestamp_received": 1637093212,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2021-11-16 21:07:00",
+                "timestamp_received": 1637093220,
                 "email_type": "IN"
             }
         ]
@@ -981,7 +999,12 @@
             "- 2021-10-07 23:17:27 epost til dere",
             "- 2021-10-31 23:46:49 epost til dere",
             "- 2021-11-12 20:10:04 epost til dere",
-            "- 2021-11-12 20:10:11 epost fra dere"
+            "- 2021-11-12 20:10:11 epost fra dere",
+            "- 2021-11-15 10:03:26 epost fra dere",
+            "- 2021-11-16 10:22:10 epost fra dere",
+            "- 2021-11-16 10:22:52 epost fra dere",
+            "- 2021-11-16 21:28:54 epost til dere",
+            "- 2021-11-16 21:31:00 epost fra dere"
         ],
         "emails": [
             {
@@ -1012,6 +1035,31 @@
             {
                 "datetime_received": "2021-11-12 20:10:11",
                 "timestamp_received": 1636744211,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-15 10:03:26",
+                "timestamp_received": 1636967006,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-16 10:22:10",
+                "timestamp_received": 1637054530,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-16 10:22:52",
+                "timestamp_received": 1637054572,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-16 21:28:54",
+                "timestamp_received": 1637094534,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2021-11-16 21:31:00",
+                "timestamp_received": 1637094660,
                 "email_type": "IN"
             }
         ]
@@ -5207,7 +5255,9 @@
             "- 2021-10-10 18:31:15 epost til dere",
             "- 2021-10-26 00:12:07 epost til dere",
             "- 2021-11-11 22:46:29 epost til dere",
-            "- 2021-11-11 22:46:36 epost fra dere"
+            "- 2021-11-11 22:46:36 epost fra dere",
+            "- 2021-11-15 14:11:34 epost fra dere",
+            "- 2021-11-16 21:05:18 epost til dere"
         ],
         "emails": [
             {
@@ -5239,6 +5289,16 @@
                 "datetime_received": "2021-11-11 22:46:36",
                 "timestamp_received": 1636667196,
                 "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-15 14:11:34",
+                "timestamp_received": 1636981894,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-16 21:05:18",
+                "timestamp_received": 1637093118,
+                "email_type": "OUT"
             }
         ]
     },
@@ -7156,7 +7216,9 @@
             "- 2021-11-03 15:33:50 epost fra dere",
             "- 2021-11-10 23:59:44 epost til dere",
             "- 2021-11-12 08:25:29 epost fra dere",
-            "- 2021-11-12 11:48:34 epost til dere"
+            "- 2021-11-12 11:48:34 epost til dere",
+            "- 2021-11-16 09:03:30 epost fra dere",
+            "- 2021-11-16 21:18:00 epost til dere"
         ],
         "emails": [
             {
@@ -7197,6 +7259,16 @@
             {
                 "datetime_received": "2021-11-12 11:48:34",
                 "timestamp_received": 1636714114,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2021-11-16 09:03:30",
+                "timestamp_received": 1637049810,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-16 21:18:00",
+                "timestamp_received": 1637093880,
                 "email_type": "OUT"
             }
         ]
@@ -7438,7 +7510,11 @@
             "- 2021-11-11 00:10:35 epost fra dere",
             "- 2021-11-11 11:20:15 epost fra dere",
             "- 2021-11-11 12:06:22 epost til dere",
-            "- 2021-11-11 12:06:27 epost fra dere"
+            "- 2021-11-11 12:06:27 epost fra dere",
+            "- 2021-11-15 12:01:41 epost fra dere",
+            "- 2021-11-15 16:52:47 epost til dere",
+            "- 2021-11-16 09:16:17 epost fra dere",
+            "- 2021-11-16 21:21:50 epost til dere"
         ],
         "emails": [
             {
@@ -7485,6 +7561,26 @@
                 "datetime_received": "2021-11-11 12:06:27",
                 "timestamp_received": 1636628787,
                 "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-15 12:01:41",
+                "timestamp_received": 1636974101,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-15 16:52:47",
+                "timestamp_received": 1636991567,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2021-11-16 09:16:17",
+                "timestamp_received": 1637050577,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-16 21:21:50",
+                "timestamp_received": 1637094110,
+                "email_type": "OUT"
             }
         ]
     },
@@ -7546,7 +7642,9 @@
             "- 2021-10-10 18:46:54 epost til dere",
             "- 2021-11-02 23:37:35 epost til dere",
             "- 2021-11-12 20:03:22 epost til dere",
-            "- 2021-11-12 20:03:28 epost fra dere"
+            "- 2021-11-12 20:03:28 epost fra dere",
+            "- 2021-11-15 12:24:13 epost fra dere",
+            "- 2021-11-15 16:48:00 epost til dere"
         ],
         "emails": [
             {
@@ -7578,6 +7676,16 @@
                 "datetime_received": "2021-11-12 20:03:28",
                 "timestamp_received": 1636743808,
                 "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-15 12:24:13",
+                "timestamp_received": 1636975453,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-15 16:48:00",
+                "timestamp_received": 1636991280,
+                "email_type": "OUT"
             }
         ]
     },
@@ -7590,7 +7698,12 @@
             "- 2021-11-02 23:37:36 epost til dere",
             "- 2021-11-12 19:53:10 epost til dere",
             "- 2021-11-12 19:53:17 epost fra dere",
-            "- 2021-11-12 19:53:29 epost fra dere"
+            "- 2021-11-12 19:53:29 epost fra dere",
+            "- 2021-11-14 19:26:34 epost fra dere",
+            "- 2021-11-14 19:43:20 epost fra dere",
+            "- 2021-11-14 19:52:53 epost fra dere",
+            "- 2021-11-16 20:50:01 epost til dere",
+            "- 2021-11-16 20:50:08 epost fra dere"
         ],
         "emails": [
             {
@@ -7626,6 +7739,31 @@
             {
                 "datetime_received": "2021-11-12 19:53:29",
                 "timestamp_received": 1636743209,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-14 19:26:34",
+                "timestamp_received": 1636914394,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-14 19:43:20",
+                "timestamp_received": 1636915400,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-14 19:52:53",
+                "timestamp_received": 1636915973,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-16 20:50:01",
+                "timestamp_received": 1637092201,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2021-11-16 20:50:08",
+                "timestamp_received": 1637092208,
                 "email_type": "IN"
             }
         ]
@@ -7682,7 +7820,9 @@
             "- 2021-11-02 23:37:40 epost til dere",
             "- 2021-11-12 19:51:49 epost til dere",
             "- 2021-11-12 19:51:56 epost fra dere",
-            "- 2021-11-12 19:52:06 epost fra dere"
+            "- 2021-11-12 19:52:06 epost fra dere",
+            "- 2021-11-15 12:47:01 epost fra dere",
+            "- 2021-11-15 16:46:22 epost til dere"
         ],
         "emails": [
             {
@@ -7719,6 +7859,16 @@
                 "datetime_received": "2021-11-12 19:52:06",
                 "timestamp_received": 1636743126,
                 "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-15 12:47:01",
+                "timestamp_received": 1636976821,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-15 16:46:22",
+                "timestamp_received": 1636991182,
+                "email_type": "OUT"
             }
         ]
     },
@@ -9453,6 +9603,8 @@
             "- 2021-10-25 00:23:39 epost til dere",
             "- 2021-10-25 12:41:28 epost fra dere",
             "- 2021-11-12 19:38:59 epost til dere",
+            "- 2021-11-15 14:27:02 epost fra dere",
+            "- 2021-11-16 21:07:53 epost til dere",
             "- 2021-10-25 00:23:30 epost til dere",
             "- 2021-10-25 00:23:39 epost til dere",
             "- 2021-10-25 12:41:28 epost fra dere"
@@ -9491,6 +9643,16 @@
             {
                 "datetime_received": "2021-11-12 19:38:59",
                 "timestamp_received": 1636742339,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2021-11-15 14:27:02",
+                "timestamp_received": 1636982822,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-16 21:07:53",
+                "timestamp_received": 1637093273,
                 "email_type": "OUT"
             },
             {
@@ -10650,7 +10812,10 @@
             "- 2021-10-26 00:08:38 epost til dere",
             "- 2021-10-26 00:08:50 epost fra dere",
             "- 2021-11-12 19:36:57 epost til dere",
-            "- 2021-11-12 19:37:11 epost fra dere"
+            "- 2021-11-12 19:37:11 epost fra dere",
+            "- 2021-11-15 10:12:29 epost fra dere",
+            "- 2021-11-16 20:52:09 epost til dere",
+            "- 2021-11-16 20:52:22 epost fra dere"
         ],
         "emails": [
             {
@@ -10691,6 +10856,21 @@
             {
                 "datetime_received": "2021-11-12 19:37:11",
                 "timestamp_received": 1636742231,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-15 10:12:29",
+                "timestamp_received": 1636967549,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-16 20:52:09",
+                "timestamp_received": 1637092329,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2021-11-16 20:52:22",
+                "timestamp_received": 1637092342,
                 "email_type": "IN"
             }
         ]
@@ -13872,6 +14052,9 @@
             "- 2021-10-15 23:23:21 epost til dere",
             "- 2021-11-12 15:06:46 epost fra dere",
             "- 2021-11-12 15:13:28 epost til dere",
+            "- 2021-11-15 08:31:15 epost fra dere",
+            "- 2021-11-15 08:39:24 epost fra dere",
+            "- 2021-11-16 20:50:44 epost til dere",
             "- 2021-10-31 22:43:12 epost til dere",
             "- 2021-11-10 22:25:22 epost til dere",
             "- 2021-11-10 22:25:28 epost fra dere",
@@ -13901,6 +14084,21 @@
             {
                 "datetime_received": "2021-11-12 15:13:28",
                 "timestamp_received": 1636726408,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2021-11-15 08:31:15",
+                "timestamp_received": 1636961475,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-15 08:39:24",
+                "timestamp_received": 1636961964,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-16 20:50:44",
+                "timestamp_received": 1637092244,
                 "email_type": "OUT"
             },
             {
@@ -14010,7 +14208,11 @@
             "- 2021-11-10 23:01:12 epost fra dere",
             "- 2021-11-11 08:27:31 epost fra dere",
             "- 2021-11-11 12:03:02 epost til dere",
-            "- 2021-11-11 17:58:43 epost fra dere"
+            "- 2021-11-11 17:58:43 epost fra dere",
+            "- 2021-11-14 19:06:32 epost fra dere",
+            "- 2021-11-15 10:15:06 epost fra dere",
+            "- 2021-11-15 16:40:07 epost til dere",
+            "- 2021-11-16 09:15:07 epost fra dere"
         ],
         "emails": [
             {
@@ -14056,6 +14258,26 @@
             {
                 "datetime_received": "2021-11-11 17:58:43",
                 "timestamp_received": 1636649923,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-14 19:06:32",
+                "timestamp_received": 1636913192,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-15 10:15:06",
+                "timestamp_received": 1636967706,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2021-11-15 16:40:07",
+                "timestamp_received": 1636990807,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2021-11-16 09:15:07",
+                "timestamp_received": 1637050507,
                 "email_type": "IN"
             }
         ]
