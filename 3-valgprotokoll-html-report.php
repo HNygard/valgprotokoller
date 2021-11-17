@@ -1495,7 +1495,7 @@ foreach ($entity_id__to__obj as $entity) {
                 if (str_starts_with($lastAction, $entity->entityId)) {
                     $time = explode(':', $lastAction, 2)[1];
                     $daysSince = round((time() - $time) / 86400);
-                    if ($daysSince < 7) {
+                    if ($daysSince < 5) {
                         continue;
                     }
                     $mimesLink .= "<span style=\"font-size: 0.6em;\">"
