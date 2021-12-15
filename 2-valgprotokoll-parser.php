@@ -569,7 +569,7 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     $i = assertLine_trim($lines, $i, 'Valgprotokoll for valgstyret - ' . $obj->election);
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
-    $match = regexAssertAndReturnMatch('/^Kommune: \s*([A-Za-zÆØÅæøåá\- ]*)\s*$/', $lines[$i++]);
+    $match = regexAssertAndReturnMatch('/^Kommune: \s*([A-Za-zÆØÅæøåáKárášjohka\- ]*)\s*$/', $lines[$i++]);
     $obj->municipality = trim($match[1]);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     if ($obj->election == 'Stortingsvalget 2021') {

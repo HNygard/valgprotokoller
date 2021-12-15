@@ -364,6 +364,7 @@ foreach ($files as $file) {
     $name2 = str_replace('Raarvihke - Røyrvik kommune', 'Røyrvik kommune', $name2);
     $name2 = str_replace('Hábmer - Hamarøy kommune', 'Hamarøy kommune', $name2);
     $name2 = str_replace('Deatnu - Tana kommune', 'Tana kommune', $name2);
+    $name2 = str_replace('Kárášjohka - Karasjok kommune', 'Karasjok kommune', $name2);
     if ($obj->county == 'Viken') {
         $name2 = str_replace('Våler kommune', 'Våler kommune (Østfold)', $name2);
     }
