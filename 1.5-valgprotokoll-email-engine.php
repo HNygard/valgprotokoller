@@ -99,6 +99,11 @@ foreach ($obj->matchingThreads as $thread) {
 
 sort($url);
 
+$entityLastActionSummary = array();
+for ( $i = strtotime('2021-09-20'); $i <= time(); $i = $i + 86400 ) {
+    $entityLastActionSummary[date('Y-m-d', $i)] = 0;
+}
+
 foreach($entityEmails as $entity_id => $entityEmail) {
     $max = 0;
     $min = $timeNow;
@@ -112,7 +117,11 @@ foreach($entityEmails as $entity_id => $entityEmail) {
         $entityFirstAction[$entity_id] = $entity_id . ':' . $min;
     }
 
+    $entityLastActionSummary[date('Y-m-d', $max)] = isset($entityLastActionSummary[date('Y-m-d', $max)])
+        ? $entityLastActionSummary[date('Y-m-d', $max)] + 1
+        : 1;
 }
+
 
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/urls.txt', implode("\n", $url));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-sent.txt', implode("\n", $entityStatus));
@@ -123,6 +132,12 @@ file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-first-a
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-last-action.txt', implode("\n", $entityLastAction));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-emails.json', json_encode($entityEmails, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES));
 
+ksort($entityLastActionSummary);
+$entityLastActionSummary2 = array();
+foreach($entityLastActionSummary as $date => $num) {
+    $entityLastActionSummary2[] = $date .';'.$num;
+}
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-summary-last-action.csv', implode("\n", $entityLastActionSummary2));
 
 
 
