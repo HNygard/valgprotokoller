@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2021/INNSYN---entityId=1265-fedje-kommunefedje_kommuneattachment=2022-01-07_131505+-+IN+-+att+11-3d08f966b56056809e8e014c200f3340.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1265-fedje-kommune&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_fedje_kommune_-_klage_p%C3%A5_manglende_svar&attachment=2022-01-07_131505+-+IN+-+att+11-3d08f966b56056809e8e014c200f3340.pdf",
+    "downloadTime": "2022-01-26 00:06:31",
+    "pdfMetaData": "Author:         pixedit_user\nCreator:        OmniPage CSDK 20\nProducer:       PixEdit AS,  PixToolsLib Version 2.6.0.6\nCreationDate:   Wed Sep 15 08:36:10 2021 CEST\nModDate:        Wed Sep 15 10:43:01 2021 CEST\nTagged:         yes\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          15\nEncrypted:      no\nPage size:      594.95 x 841.9 pts (A4)\nPage rot:       0\nFile size:      4710700 bytes\nOptimized:      no\nPDF version:    1.4",
+    "language": "nn-NO",
+    "languageName": "Norwegian, Nynorsk",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2021 17:17:14",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... :                                            15.9.2021\n\n#0 2-valgprotokoll-parser.php(548): regexAssertAndReturnMatch('^\\\\s*((Fylkesti...', '               ...')\n#1 2-valgprotokoll-parser.php(287): parseFile_andWriteToDisk(Object(stdClass), '...')\n#2 {main}"
+}
