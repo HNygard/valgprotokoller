@@ -17,6 +17,8 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline) {
     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
 });
 
+$election_year = '2023';
+
 $alle_partier = array(
     // Known values for this table. Improves reading.
     'Demokratene',
@@ -250,7 +252,7 @@ $ignore_files = array(
 
 $files_written = array();
 
-$files = getDirContents(__DIR__ . '/docs/data-store/pdfs-2021');
+$files = getDirContents(__DIR__ . '/docs/data-store/pdfs-' . $election_year);
 foreach ($files as $file) {
     if (!str_ends_with($file, '.layout.txt')) {
         continue;
@@ -263,7 +265,7 @@ foreach ($files as $file) {
     }
 
     if (isset($argv[1]) && $argv[1] != 'throw') {
-        $file_stripped = str_replace(__DIR__ . '/docs/data-store/pdfs-2021/', '', $file);
+        $file_stripped = str_replace(__DIR__ . '/docs/data-store/pdfs-' . $election_year . '/', '', $file);
         $file2 = $argv[1];
         $file2 = str_replace('http://', '', $file2);
         $file2 = str_replace('https://', '', $file2);
@@ -1601,7 +1603,7 @@ function removeLineIfPresent_andEmpty($lines, $i) {
 
 function printChars($string) {
     for ($i = 0; $i < strlen($string); $i++) {
-        echo '[' . $i . '] ' . ord($string{$i}) . ' - ' . $string{$i} . "\n";
+        echo '[' . $i . '] ' . ord($string[$i]) . ' - ' . $string[$i] . "\n";
     }
 }
 
