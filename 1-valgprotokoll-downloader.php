@@ -15,14 +15,16 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline) {
     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
 });
 
+$election_year = '2023';
 
-$cache_dir_pdfs = __DIR__ . '/docs/data-store/pdfs-2021/';
 
-$urlsTxtFileName = __DIR__ . '/docs/data-store/urls-election-2021.txt';
+$cache_dir_pdfs = __DIR__ . '/docs/data-store/pdfs-' . $election_year . '/';
+
+$urlsTxtFileName = __DIR__ . '/docs/data-store/urls-election-' . $election_year . '.txt';
 $lines = file($urlsTxtFileName);
 $clean_file = downloadUrls_parseTxt($lines);
 function downloadUrls_parseTxt($lines) {
-    global $cache_dir_pdfs;
+    global $cache_dir_pdfs, $election_year;
 
     $clean_file = '';
     $lines_found = array();
@@ -38,11 +40,11 @@ function downloadUrls_parseTxt($lines) {
         $cache_name = str_replace('http://localhost:25081/file.php?', 'INNSYN---', $cache_name);
         $cache_name = str_replace('/', '-', $cache_name);
         $cache_name = $cache_dir_pdfs . $cache_name . '.pdf';
-        if (file_exists(str_replace('%20', ' ' , $cache_name))) {
+        if (file_exists(str_replace('%20', ' ', $cache_name))) {
             $cache_name = str_replace('%20', ' ', $cache_name);
         }
         if (!file_exists($cache_name)) {
-            $cache_name = str_replace('&threadId=innsynshenvendelse_-_valgprotokoll_2021%2C_', '', $cache_name);
+            $cache_name = str_replace('&threadId=innsynshenvendelse_-_valgprotokoll_' . $election_year . '%2C_', '', $cache_name);
             $cache_name = str_replace('_-_klage_p%C3%A5_manglende_svar&', '', $cache_name);
         }
 
@@ -86,7 +88,7 @@ function downloadUrls_parseTxt($lines) {
 file_put_contents($urlsTxtFileName, $clean_file);
 
 
-$lines = file(__DIR__ . '/docs/data-store/email-engine-result/urls.txt');
+$lines = file(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/urls.txt');
 downloadUrls_parseTxt($lines);
 
 function logDebug($string) {
