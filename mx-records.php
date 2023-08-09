@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * Run to create mx-records-<year>.json:
+ *     php 3-valgprotokoll-html-report.php
+ *
+ * Then fix it by running:
+ *     php mx-records.php
+ */
+
 set_error_handler(function ($errno, $errstr, $errfile, $errline) {
     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
 });
