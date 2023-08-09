@@ -675,6 +675,7 @@ foreach ($files as $file) {
     $ballotsMainFinalCount = new stdClass();
     $ballotsMainFinalCount->{'Kryss i manntall'} = $totalKryssIManntallMainVotes;
     // TODO: should we also add forkastet?
+    $ballotsMainFinalCount->{'Ant. sedler'} = $d2_1_numbers->{'Godkjente'} + $d2_1_numbers->{'Blanke'};
     $ballotsMainFinalCount->{'Ant. sedler'} = $d2_1_numbers->{'Godkjente'};
 
     $html_BallotStuffing .= "<tr>
@@ -1291,8 +1292,12 @@ $klagerFjernet = array(
     'Åsnes - Stortingsvalget 2021.html' => '',
     'Enebakk - Stortingsvalget 2021.html' => '8 diff stemmer av 5700. Så liten prosentvis selv om det var mange forskjellige partier.',
     'Rødøy - Stortingsvalget 2021.html' => '',
-    '' => '',
-    '' => '',
+    'Brønnøy - Stortingsvalget 2021.html' => '',
+    'Eidsvoll - Stortingsvalget 2021.html' => '',
+    'Melhus - Stortingsvalget 2021.html' => '',
+    'Råde - Stortingsvalget 2021.html' => '',
+    'Tana - Stortingsvalget 2021.html' => 'Forklart',
+    'Voss - Stortingsvalget 2021.html' => '',
     '' => '',
     '' => '',
     '' => '',
