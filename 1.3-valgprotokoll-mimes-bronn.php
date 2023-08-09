@@ -7,7 +7,7 @@
  * @author Hallvard Nygård, @hallny
  */
 
-set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errcontext) {
+set_error_handler(function ($errno, $errstr, $errfile, $errline) {
     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
 });
 
@@ -348,19 +348,6 @@ function getMimesBronnItemsFromHtmlHack($completeSearch) {
         $urls[$match] = 'https://www.mimesbronn.no' . $match . '.json';
     }
     return $urls;
-}
-
-function str_starts_with($haystack, $needle) {
-    return substr($haystack, 0, strlen($needle)) == $needle;
-}
-
-function str_ends_with($haystack, $needle) {
-    $length = strlen($needle);
-    return $length === 0 || substr($haystack, -$length) === $needle;
-}
-
-function str_contains($stack, $needle) {
-    return (strpos($stack, $needle) !== FALSE);
 }
 
 function logDebug($string) {

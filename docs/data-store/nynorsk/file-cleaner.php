@@ -294,19 +294,6 @@ function trimAllLines($file_content) {
     return implode("\n", $lines);
 }
 
-function str_starts_with($haystack, $needle) {
-    return substr($haystack, 0, strlen($needle)) == $needle;
-}
-
-function str_ends_with($haystack, $needle) {
-    $length = strlen($needle);
-    return $length === 0 || substr($haystack, -$length) === $needle;
-}
-
-function str_contains($stack, $needle) {
-    return (strpos($stack, $needle) !== FALSE);
-}
-
 function regexAssertAndReturnMatch($regex, $line) {
     preg_match($regex, $line, $matches);
     if (!isset($matches[0])) {

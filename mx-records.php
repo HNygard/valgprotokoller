@@ -1,12 +1,8 @@
 <?php
 
-set_error_handler(function ($errno, $errstr, $errfile, $errline, array $errcontext) {
+set_error_handler(function ($errno, $errstr, $errfile, $errline) {
     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
 });
-
-function str_contains($stack, $needle) {
-    return (strpos($stack, $needle) !== FALSE);
-}
 
 $mxRecords = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/json/mx-records-' . date('Y') . '.json'));
 $entitiesArray = json_decode(file_get_contents(__DIR__ . '/entities.json'))->entities;
