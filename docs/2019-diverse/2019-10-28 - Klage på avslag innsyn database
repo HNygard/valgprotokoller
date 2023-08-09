@@ -1,0 +1,177 @@
+SÆRIØST!?
+Mener dere at jeg skal spør ALLE kommuner og fylkeskommuner for å FÅ TILGANG TIL DATA OM VALG 2019?
+
+JEG ER KLAR til å spør, men er DERE KLAR FOR Å SVARE?
+Dere forstår at dere må besvare alle henvedelsene når de kommer fra kommunene og fylkeskommunene?
+
+I går sendte jeg 571 innsynshenvendelser til hele Norge. Jeg håndterer lett 400-500 til. BRING IT ON.
+
+Fra Veileder til offentleglova: "Det følgjer av offentleglova § 3 andre punktum at ein kan krevje innsyn «hos vedkomande organ”. (...) Dette inneber at ein kan krevje innsyn hos alle forvaltningsorgan som har det aktuelle dokumentet hos seg"
+
+----
+
+(Dere har misforstått deler av denne henvendelsen. Jeg søker IKKE innsyn i kildekode og arkitektur i DENNE henvendelsen. Det gjør jeg derimot i den andre angående kildekode. Vennligst hold disse separat)
+
+Denne henvendelsen gjelder:
+- Database for valg 2019, spesifikt EVA admin, spesifikt 113 tabeller
+
+Eksempler som ikke er ivaretatt på valgresultater.no eller i møtebøkene:
+1. ■■■■■ ■■■■■■■■ ■■■■■■■■■■■■.
+2. ■■■■ og ■■■■■■■■ mangler.
+3. ■■■■■■■■■■■ ■■■■■■■■ ■■■■■■■■. ■■■■■.
+
+Disse er sladdet. Dette for at dere skal holde fokus på ALLE dataene (slik jeg søker om) og ikke på de spesifiserte eksemplene og bruksområdene. Innsynshenvendelser trenger ikke å begrunnes med hvorfor man ønsker innsyn. Jeg vil heller at dere kommer med ALLE dataene i stedet for å gå rundt grøten og gi ut noen sterkt bearbeidede sammenstillinger her og der.
+
+Jeg ønsker SAMMENSTILLING (ref Offl §9) fra samtlige 113 tabeller:
+"Alle kan krevje innsyn i ei samanstilling av opplysningar som er elektronisk lagra i databasane til organet dersom samanstillinga kan gjerast med enkle framgangsmåtar."
+
+Under har jeg laget klar spørringene.
+
+select * from aarsakskode
+select * from access
+select * from affiliation
+select * from affiliation_vote_count
+select * from antall_stemmesedler_lagt_til_side
+select * from area_level
+select * from ballot_count
+select * from ballot_rejection
+select * from ballot_status
+select * from ballot
+select * from batch_status
+select * from batch
+select * from binary_data
+select * from borough
+select * from candidate_audit
+select * from candidate_rank
+select * from candidate_seat
+select * from candidate
+select * from candidate_vote_count
+select * from candidate_vote
+select * from cast_vote_batch
+select * from cast_vote_batch_member
+select * from cast_vote
+select * from certificate_revocation_list
+select * from configuration
+select * from contest_area
+select * from contest_rel_area
+select * from contest_report_text
+select * from contest_report
+select * from contest_status
+select * from contest_text
+select * from contest
+select * from contest_voting
+select * from count_qualifier
+select * from country
+select * from county_local_config_status
+select * from county_status
+select * from county
+select * from election
+select * from election_day
+select * from election_day_votings
+select * from election_event_locale
+select * from election_event_report
+select * from election_event_status
+select * from election_event_text
+select * from election_event
+select * from election_group
+select * from election_level
+select * from election_seat
+select * from election_settlement
+select * from election_text
+select * from election_type
+select * from election_vote_count_category
+select * from election_vote_count
+select * from eligibility
+select * from foreign_early_voting
+select * from key_domain
+select * from legacy_polling_district
+select * from leveling_seat_quotient
+select * from leveling_seat_settlement
+select * from leveling_seat_summary
+select * from leveling_seat
+select * from locale_text
+select * from locale
+select * from manual_contest_voting
+select * from marital_status
+select * from municipality
+select * from municipality_local_config_status
+select * from municipality_opening_hour
+select * from municipality_status
+select * from mv_area
+select * from mv_election_reporting_units
+select * from mv_election
+select * from opening_hours
+select * from operator_role
+select * from operator
+select * from party_category
+select * from party_contest_area
+select * from party
+select * from polling_district
+select * from polling_place
+select * from polling_place_voting
+select * from polling_station
+select * from proposer_role
+select * from proposer
+select * from report
+select * from report_count_category
+select * from reporting_unit_type
+select * from reporting_unit
+select * from responsibility
+select * from responsible_officer
+select * from role_access
+select * from role_area_level
+select * from role_include
+select * from role
+select * from scanning_config
+select * from settlement_number
+select * from settlement
+select * from signing_key
+select * from spes_reg_type
+select * from statuskode
+select * from text_id
+select * from valgnattrapport
+select * from vote_category
+select * from vote_count_category
+select * from vote_count_status
+select * from vote_count
+select * from voter_audit
+select * from voter_import_batch
+select * from voter
+select * from voting_category
+select * from voting_rejection
+select * from voting
+
+Dette er utdrag med ENKLE VIRKEMIDLER ref Offl §9.
+
+Jeg vet ikke hvilke tabeller som inneholder manntall eller personnavn. Manntallstabeller kan bli tatt bort. Personnavn ønskes ikke og disse kolonnnene kan bli tatt bort. Vennligst spesifiser tabellnavn og kolonnenavn for det dere tar bort.
+
+----
+
+Dere sier "Direktoratet har gjort en vurdering av tabellene". Jeg vil gjerne få tilsendt denne konkrete vurderingen dere har gjort. Og hvilket dokumentnr har denne vurderingen?
+
+Hvilke tabeller er unntatt med hvilken paragraf i Offentleglova?
+
+----
+
+Dere sier "Møtebøkene er tilgjengelige for allmenheten.". De er tilgjengelig, men ikke etter Offentleglova §9 om tilgang til database og maskinlesbare data. Signerte bøker er ikke maskinlesbart.
+
+Dette sa jeg også til dere i min forrige henvendelse om innsyn i database for valg 2019. Møtebok-publiseringen deres er irrelevant i sammenheng med denne henvendelsen.
+
+----
+
+"Merinnsyn i henhold til offentleglova § 11 er vurdert, jf vurderingen ovenfor."
+
+Hvordan er merinnsyn vurdert?
+
+----
+
+Deres TODO-liste er som følger:
+1. Send per tabell-oversikten til Hallvard (utvidet begrunnelse per tabell).
+2. Send over deres vudering av merinnsyn.
+3. Send data for tabeller som ikke treffer "avslås med hjemmel i offentleglova § 9, cfr §§ 3 og 4, og §§ 13 og 24 (3).".
+4. Vent på svar fra Hallvard. Han kommer med utvidet klage per tabell.
+5. Oversend klage til KMD.
+6. Få omgjøringsvedtak fra KMD.
+7. Gi ut alle data (unntatt manntall og personnavn).
+
+

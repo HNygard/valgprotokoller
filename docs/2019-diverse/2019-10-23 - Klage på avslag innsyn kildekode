@@ -1,0 +1,157 @@
+https://www.mimesbronn.no/request/kildekode_til_eva_admin#outgoing-5047
+---
+
+Kjære Valgdirektoratet
+
+Vær så snill å send denne videre til personen som vurderer innsynsklager.
+
+--------------------------------------------------------
+#### Klage på Valgdirektoratets manglende åpenhet rundt EVA Admin ####
+
+Ønsker å klage på Valgdirektoratets avslag på innsyn og åpenhet rundt EVA Admin. Direktoratet avviser innsyn med at dersom man får innsyn så kan man faktisk verifisere systemet. 
+
+"Med hjemmel i offentleglova paragraf 24 (3) gis det ikke innsyn i kildekoden slik som omsøkt. Valgdirektoratet vurderer at et merinnsyn i de deler av kildekoden som gjør det mulig å verifisere koden og faktisk kjøre den, vil lette gjennomføringen av straffbare handlinger. Det samme gjelder et merinnsyn i delene «admin-testing - integrasjonstester og funksjonelle tester», og «admin-other - verktøy og andre ting som ikke faller innenfor de to første kategoriene»."
+
+Dette er SVÆRT skremmende for oss som driver med IT-systemer. Det SVEKKER TILLITEN til valgene og Valgdirektoratet.
+
+Metoden som direktoratet benyttet kalles for 'security by obscurity', altså at kun mangel på informasjon hindrer inntregning og sikrer systemet. Dette er en SVÆRT usikker måte å bedrive noe så viktig som valg på. Metoden gir ikke reell sikkerhet og blir avvist av sikkerhetseksperter gang på gang.
+
+
+
+------
+## Mål 1: Korrekt og sikker valggjennomføring med tillit i befolkningen
+
+De siste 3 årene har Valgdirektoratets første mål vært "Korrekt og sikker valggjennomføring med tillit i befolkningen". 
+
+Fra tildelingsbrev 2019:
+"Avviklingen av valg i Norge har høy tillit i befolkningen. For å opprettholde den høye tilliten, er det viktig at kommunene får god støtte og opplæring, og at valgadministrasjonssystemet EVA er brukervennlig, sikkert og i samsvar med regelverket."
+
+For å opprettholde den høye tilliten, så må EVA Admin være sikkert. Å bedrive hemmelighold svekker tillit og peker på dårlig sikkerhet i systemt.
+
+
+
+------
+## Kildekoden som mangler
+
+Valgdirektoratet har allerede gitt ut noe kildekode. Det er meget bra. Det er tatt bort essensielle biter som gjør det vanskelig, men ikke umulig å kjøre og verifisere løsningen. Dette inkluderer tester for å verifisere koden ('admin-testing') og oppsett for å kjøre den ('admin-docker').
+
+De bitene som ikke er gitt ut inkluderer lite som har med sikkerhet. De kan trolig gjenskapes dersom man har nok tid. Per i dag er det få som gidder å gjøre det. Mest trolig kun de sikkerhetsmiljøene kaller 'NATION STATE ACTORS', altså fremmede makter med mye ressurser og tid som kan gjøre det. Privatpersoner og sikkerhetsfirma vil ikke ta fatt på oppgaven.
+
+Pakken 'admin-docker' inneholder trolig konfigurasjon som er ment for utvikling og testing. Dette er sannsynligvis ikke produksjonskonfigurasjon. Dette betyr at sikkerhetsmessig har denne pakken lite å si for hvordan systemet faktisk er satt opp.
+
+I senere avsnitt kommer jeg med konkret opplisting av de delene som er kjent at mangler. Jeg ønsker enkeltvis svar på hvorfor den delen blir unntatt offentligheten.
+
+
+
+------
+## Noen motsigelser
+
+"Valgdirektoratet ønsker størst mulig åpenhet om valg og valggjennomføring i Norge, og har derfor publisert blant annet kildekode, systemdokumentasjon og samsvarserklæring for alle tre applikasjonene for det elektroniske valgadministrasjonssystemet (EVA)."
+
+Dersom åpenhet er et mål, så bør ikke kildekode eller databaser holdes tilbake. Åpenhet er det Offentleglova. Dere jobber aktivit for tilbakehold og et lukket valg.
+
+"Valgdirektoratet vurderer at et merinnsyn i de deler av kildekoden som gjør det mulig å verifisere koden og faktisk kjøre den, vil lette gjennomføringen av straffbare handlinger"
+
+Dersom direktoratet mener systemet er så usikkert at man ikke kan gi ut deler som gjør at man kan verifisere koden og faktisk kjøre den, så er det noe ALVORLIG GALT. Man bør har sterkt svekket tillit til valget i Norge. Dette bør opp på dagsorden.
+
+
+
+------
+## Offentleglova paragraf 24 (3)
+
+Dere avviser med henvisning til Offentleglova paragraf 24 (3). Jeg ønsker utvidet begrunnelse for hvilke straffbare handlinger dere mener at jeg lettere kan utføre.
+
+
+
+------
+## Open source og e-valg
+
+Ved E-valg i 2011 ble kildekoden lagt ut. Dette ble annonsert lenge i forveien og var en viktig forutsetning. Åpen kildekode var viktig for at eksterne skulle kunne analysere og verifisere e-valg og koden bak. Det var viktig for tilitten til valget og det var viktig for den demokratiske prosessen. På samme måte er det viktig at kildekoden til EVA Admin også slippes. 
+
+Fant et sitat fra kommmunal- og regionaldeptarementet i forbindelse med slippet i 2011:
+
+- Tillit er avgjørende for det norske valgsystemet. Derfor er det viktig at alle som ønsker det, kan få innsyn i hvordan systemet virker. For å ivareta dette innsynet, publiserer departementet kildekoden til e-valgsystemet. Slik kan de som ønsker det, og er trenet i programmering, laste den ned og undersøke den, sier kommunikasjonssjef Liv Merete Wiker i kommunal- og regionaldepartementet.
+
+Allerede i 2009 ble det sagt at E-valg skulle ha åpen kildekode.
+
+Melding fra departementet:
+
+- Kildekoden i e-valløysinga vil være open og fritt tilgjengeleg for alle. Dette er viktig for å ivareta innsynet og openheita i valprosessen.
+
+Her er noen artikler fra den gang:
+- 2009: https://www.digi.no/artikler/ergogroup-skal-levere-losning-for-e-valg-2011/279783
+- 2009: https://www.adressa.no/forbruker/article1418890.ece
+- 2011: https://www.tu.no/artikler/mulig-e-valg-i-2011/240527
+
+Foreslår at Valgdirektoratet leser seg opp på kildekode og E-valg.
+
+
+
+------
+## Etterprøvbart valg
+
+Akkurat som valget og de metoder som benyttes for kontroll av valget så bør kildekoden for valget være etterprøvbart. Ved stikkprøvekontroll så lages det dokumentasjon som kan og bør ettergås etterpå. På link linje ønsker befolkningen at befolkningen selv skal kunne ettergå også kildekode som brukes i valget.
+
+
+
+------
+## Krav om utvidet begrunnelse
+
+Jeg krever at Valgdirektoratet begrunner sitt avslag mer nøye og per enkelt del som blir unntatt offenligheten.
+
+1. 'admin-testing'.
+
+Dette er tester som skal verifisere at systemet virker som det skal. De har ikke noe med produksjonskoden å gjøre.
+
+Hvordan kan innbyggere være sikre på at koden gjør det den skal uten testene som beviser det?
+Hvorfor tenker dere at tester er sensitivt og bør blir unntatt Offentligheten?
+Hvorfor er denne unntatt offenligheten etter Offentleglova paragraf 24 (3) med begrunnelse om lett straffbare handlinger?
+
+2. 'admin-docker'.
+
+Denne pakken inneholder konfigurasjon for å kunne kjøre en testinstans/utviklingsinstans av løsningen. Det vil være lettere å verifisere løsningen dersom man har denne.
+
+Hvorfor er denne unntatt offenligheten etter Offentleglova paragraf 24 (3) med begrunnelse om lett straffbare handlinger?
+Hvilke straffbare handlinger ser dere for dere at jeg eller andre kan utføre dersom vi har tilgang til en slik testinstans/utviklingsinstans?
+Hvorfor er denne konfigurasjonen sensitiv på noen måte?
+
+3. 'admin-other'.
+
+Deres beskrivelse: "verktøy og andre ting som ikke faller innenfor de to første kategoriene"
+Hvorfor er denne unntatt offenligheten etter Offentleglova paragraf 24 (3) med begrunnelse om lett straffbare handlinger?
+Hvorfor unnta støtteverktøy?
+
+4. admin-frontend - src/main/resources
+
+Hvorfor tar dere bort all 'form, farger og bilder' (CSS/"style sheets", bilder, ikoner)?
+Hva er begrunnelsen for det?
+I praksis tar dere bort brukergrensesnittet.
+Hva om man vil etterprøve brukervennligheten eller tilgjengeligheten i applikasjonen?
+
+5. admin-backend - src/main/resources
+
+Samme som for 'admin-frontend'. Hvor vil dere avvise tilgangen til brukergrensesnittet?
+I 'admin-backend' sin resource-mappe, så skulle det f.eks. ligget tekster til programmet. Bokmål og nynorsk. Begge mangler.
+Hva er sensitivt i tekstene? Hvilken informasjon gir dere til valgfunksjonærer?
+
+6. admin-frontend - src/main/webapp
+
+Mappen inneholder konfigurasjon som skal til for å teste og verifisere applikasjonen.
+Hvorfor er denne unntatt offentligheten?
+
+Filen " admin-frontend/src/main/webapp/WEB-INF/web.xml" inneholder over 200 linjer med konfigurasjon.
+
+7. Databaseskjema
+
+Databaseskjema og databasemigreringer ser ut til å være tatt bort. Noe lages sannsynligvis fra kildekoden, men det pekes også på at databasemigreinger ligger i egen mappe som sjekkes av Flyway ved oppstart.
+
+
+------
+
+Komplett historie for min innsynshenvendelse og all korrespondanse er tilgjengelig via Internett fra denne adressen: https://www.mimesbronn.no/request/kildekode_til_eva_admin
+
+
+--
+Mvh.
+Hallvard Nygård
+
