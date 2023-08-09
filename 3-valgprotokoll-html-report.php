@@ -41,7 +41,12 @@ $entityOnlyOneOutgoing = explode("\n", file_get_contents(__DIR__ . '/docs/data-s
 $entityFirstAction = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-first-action.txt'));
 $entityLastAction = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-last-action.txt'));
 $entityEmails = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-emails.json'));
-$mxRecords = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/json/mx-records-' . date('Y') .'.json'));
+if (file_exists(__DIR__ . '/docs/data-store/json/mx-records-' . date('Y') .'.json')) {
+    $mxRecords = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/json/mx-records-' . date('Y') . '.json'));
+}
+else {
+    $mxRecords = array();
+}
 
 $klageJson = array();
 $klageJson['kommune'] = json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/klage-sendt-kommune.json'));
