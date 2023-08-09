@@ -9,6 +9,7 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline) {
     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
 });
 
+$election_year = '2023';
 
 $additional_urls = array(// Also fetch these FOI requests
 );
@@ -23,7 +24,7 @@ $entityOnlyOneOut = array();
 $entityFirstAction = array();
 $entityLastAction = array();
 $entityEmails = array();
-$obj = json_decode(file_get_contents('http://localhost:25081/api.php?label=valgprotokoll_2021'));
+$obj = json_decode(file_get_contents('http://localhost:25081/api.php?label=valgprotokoll_' . $election_year));
 foreach ($obj->matchingThreads as $thread) {
     if ($thread->sent) {
         $entityStatus[$thread->entity_id] = $thread->entity_id;
@@ -86,7 +87,7 @@ foreach ($obj->matchingThreads as $thread) {
 sort($url);
 
 $entityLastActionSummary = array();
-for ( $i = strtotime('2021-09-20'); $i <= time(); $i = $i + 86400 ) {
+for ( $i = strtotime('2023-08-07'); $i <= time(); $i = $i + 86400 ) {
     $entityLastActionSummary[date('Y-m-d', $i)] = 0;
 }
 
@@ -109,21 +110,21 @@ foreach($entityEmails as $entity_id => $entityEmail) {
 }
 
 
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/urls.txt', implode("\n", $url));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-sent.txt', implode("\n", $entityStatus));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-finished.txt', implode("\n", $entityFinished));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-set-success-sent.txt', implode("\n", $entityMarkOk));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-only-one-email-outgoing.txt', implode("\n", $entityOnlyOneOut));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-first-action.txt', implode("\n", $entityFirstAction));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-last-action.txt', implode("\n", $entityLastAction));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-emails.json', json_encode($entityEmails, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/urls.txt', implode("\n", $url));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-status-sent.txt', implode("\n", $entityStatus));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-status-finished.txt', implode("\n", $entityFinished));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-set-success-sent.txt', implode("\n", $entityMarkOk));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-only-one-email-outgoing.txt', implode("\n", $entityOnlyOneOut));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-first-action.txt', implode("\n", $entityFirstAction));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-last-action.txt', implode("\n", $entityLastAction));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year.'/entity-emails.json', json_encode($entityEmails, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES));
 
 ksort($entityLastActionSummary);
 $entityLastActionSummary2 = array();
 foreach($entityLastActionSummary as $date => $num) {
     $entityLastActionSummary2[] = $date .';'.$num;
 }
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-summary-last-action.csv', implode("\n", $entityLastActionSummary2));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-summary-last-action.csv', implode("\n", $entityLastActionSummary2));
 
 
 
@@ -132,7 +133,7 @@ file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-summary
 $klageKommune = array();
 $klageFylkeskommune = array();
 $klageStortinget = array();
-$obj = json_decode(file_get_contents('http://localhost:25081/api.php?label=valgklage_2021'));
+$obj = json_decode(file_get_contents('http://localhost:25081/api.php?label=valgklage_' . $election_year));
 foreach ($obj->matchingThreads as $thread) {
     $klage = new stdClass();
 
@@ -144,19 +145,19 @@ foreach ($obj->matchingThreads as $thread) {
         $klage->klageSent = 0;
     }
 
-    foreach($thread->labels as $label) {
-        if ($label == 'valgklage_2021_kommune') {
+    foreach ($thread->labels as $label) {
+        if ($label == 'valgklage_' . $election_year . '_kommune') {
             $klageKommune[$thread->entity_id] = $klage;
         }
-        if (str_starts_with($label, 'valgklage_2021_fylkeskommune:')) {
-            $klageFylkeskommune[str_replace('valgklage_2021_fylkeskommune:', '', $label)] = $klage;
+        if (str_starts_with($label, 'valgklage_' . $election_year . '_fylkeskommune:')) {
+            $klageFylkeskommune[str_replace('valgklage_' . $election_year . '_fylkeskommune:', '', $label)] = $klage;
         }
-        if (str_starts_with($label, 'valgklage_2021_stortinget:')) {
-            $klageStortinget[str_replace('valgklage_2021_stortinget:', '', $label)] = $klage;
+        if (str_starts_with($label, 'valgklage_' . $election_year . '_stortinget:')) {
+            $klageStortinget[str_replace('valgklage_' . $election_year . '_stortinget:', '', $label)] = $klage;
         }
     }
 }
 
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/klage-sendt-kommune.json', json_encode($klageKommune, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/klage-sendt-fylkeskommune.json', json_encode($klageFylkeskommune, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result/klage-sendt-stortinget.json', json_encode($klageStortinget, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/klage-sendt-kommune.json', json_encode($klageKommune, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/klage-sendt-fylkeskommune.json', json_encode($klageFylkeskommune, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/klage-sendt-stortinget.json', json_encode($klageStortinget, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
