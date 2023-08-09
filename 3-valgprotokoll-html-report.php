@@ -10,6 +10,8 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline) {
     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
 });
 
+$election_year = '2023';
+
 $files = getDirContents(__DIR__ . '/docs/data-store/json');
 
 $entitiesArray = json_decode(file_get_contents(__DIR__ . '/entities.json'))->entities;
@@ -34,14 +36,14 @@ foreach ($entitiesArray2 as $entity) {
 }
 $allComments = array();
 
-$entityFoiSent = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-sent.txt'));
-$entityFoiFinished = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-status-finished.txt'));
-$entitySuccess = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-set-success-sent.txt'));
-$entityOnlyOneOutgoing = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-only-one-email-outgoing.txt'));
-$entityFirstAction = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-first-action.txt'));
-$entityLastAction = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-last-action.txt'));
-$entityEmails = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/entity-emails.json'));
-if (file_exists(__DIR__ . '/docs/data-store/json/mx-records-' . date('Y') .'.json')) {
+$entityFoiSent = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-status-sent.txt'));
+$entityFoiFinished = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-status-finished.txt'));
+$entitySuccess = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-set-success-sent.txt'));
+$entityOnlyOneOutgoing = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-only-one-email-outgoing.txt'));
+$entityFirstAction = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-first-action.txt'));
+$entityLastAction = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-last-action.txt'));
+$entityEmails = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-emails.json'));
+if (file_exists(__DIR__ . '/docs/data-store/json/mx-records-' . date('Y') . '.json')) {
     $mxRecords = (array)json_decode(file_get_contents(__DIR__ . '/docs/data-store/json/mx-records-' . date('Y') . '.json'));
 }
 else {
@@ -49,9 +51,9 @@ else {
 }
 
 $klageJson = array();
-$klageJson['kommune'] = json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/klage-sendt-kommune.json'));
-$klageJson['fylkeskommune'] = json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/klage-sendt-fylkeskommune.json'));
-$klageJson['stortinget'] = json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result/klage-sendt-stortinget.json'));
+$klageJson['kommune'] = json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/klage-sendt-kommune.json'));
+$klageJson['fylkeskommune'] = json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/klage-sendt-fylkeskommune.json'));
+$klageJson['stortinget'] = json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/klage-sendt-stortinget.json'));
 
 $mimesBronnStatus = array();
 
@@ -127,8 +129,8 @@ $addCountySums = function ($county, $party, $numbers) {
     $county_sums[$county][$party]->{'Endelig'} += $numbers->{'Endelig'};
 };
 
-$profiles = json_decode(file_get_contents(__DIR__ . '/random-profiles-2021.json'));
-$profilesKlage = json_decode(file_get_contents(__DIR__ . '/random-profiles-2021-klage.json'));
+$profiles = json_decode(file_get_contents(__DIR__ . '/random-profiles-' . $election_year . '.json'))->profiles;
+$profilesKlage = json_decode(file_get_contents(__DIR__ . '/random-profiles-' . $election_year . '-klage.json'))->profiles;
 
 // :: Sanity check - must be unique
 $emails = array();
@@ -179,8 +181,8 @@ $html = htmlHeading() . "
 <h1>Election protocol (\"Valgprotokoller\" / \"Valgstyrets møtebok\")</h1>\n";
 $html .= "Created by <a href='https://twitter.com/hallny'>@hallny</a> / <a href='https://norske-postlister.no'>Norske-postlister.no</a><br>\n";
 $html .= "<a href='https://github.com/HNygard/valgprotokoller'>Source code for this report</a> (Github)\n";
-$html .= "<a href='https://github.com/HNygard/valgprotokoller/tree/master/docs/data-store/json/Stortingsvalget%202021'>Source data for this report</a> (JSON at Github) -\n";
-$html .= "<a href='https://github.com/HNygard/valgprotokoller/blob/master/docs/data-store/urls-election-2021.txt'>Source - URL list</a> (excludes those gotten from freedom of information requests)<br>\n";
+$html .= "<a href='https://github.com/HNygard/valgprotokoller/tree/master/docs/data-store/json/Stortingsvalget%20$election_year'>Source data for this report</a> (JSON at Github) -\n";
+$html .= "<a href='https://github.com/HNygard/valgprotokoller/blob/master/docs/data-store/urls-election-$election_year.txt'>Source - URL list</a> (excludes those gotten from freedom of information requests)<br>\n";
 $html .= "<br><br><a href='ballot-stuffing.html'>Ballot stuffing</a>\n\n";
 $html .= '<h2>Summary</h2>
 <ul>-----SUMMARY-----HERE-----</ul>
@@ -197,7 +199,9 @@ $html .= '<h2>Summary</h2>
 $summaryData = array(
 //    'Fylkestingsvalget 2019' => 0,
 //    'Kommunestyrevalget 2019' => 0,
-    'Stortingsvalget 2021' => 0,
+    //'Stortingsvalget 2021' => 0,
+    'Fylkestingsvalget 2023' => 0,
+    'Kommunestyrevalget 2023' => 0,
 );
 
 $d1_4_heading = '<table>
@@ -215,7 +219,7 @@ $html_d2_4 = $html_d1_4;
 $html .= "<h2>Merknader (Comments to discrepancy)</h2>
 <ul>\n";
 
-$html_BallotStuffing = htmlHeading('Ballot stuffing - Norwegian elections 2019') . "
+$html_BallotStuffing = htmlHeading('Ballot stuffing - Norwegian elections ' . $election_year) . "
 <a href='./'>Back to overview page</a>
 <h1>Ballot stuffing</h1>
 <i>Ballot stuffing is to put more than one ballot in the ballot box OR people monitoring or handling ballots/ballot boxes
@@ -348,7 +352,10 @@ foreach ($files as $file) {
     if ($obj->error || $obj->documentType != 'valgprotokoll' || !isset($obj->election) || !isset($obj->municipality)) {
         continue;
     }
-    if ($obj->election == 'Fylkestingsvalget 2019' || $obj->election == 'Kommunestyrevalget 2019') {
+    if (
+        $obj->election == 'Fylkestingsvalget 2019'
+        || $obj->election == 'Kommunestyrevalget 2019'
+        || $obj->election == 'Stortingsvalget 2021') {
         continue;
     }
     logInfo('Using [' . str_replace(__DIR__ . '/', '', $file) . '].');
@@ -410,43 +417,12 @@ foreach ($files as $file) {
 
 <h1>' . $obj->election . ' - ' . $obj->municipality . "</h1>\n";
 
-    $urlLocal = '../../data-store/pdfs-2021/' . str_replace('docs/data-store/pdfs-2021/', '', $obj->localSource);
+    $urlLocal = '../../data-store/pdfs-' . $election_year . '/' . str_replace('docs/data-store/pdfs-' . $election_year . '/', '', $obj->localSource);
     if (isset($obj->url) && $obj->url != '<missing>') {
         $obj->url2 = $obj->url;
         $pdfLink = str_replace('.layout.txt', '', $urlLocal);
         $pdfName = htmlentities(urldecode(basename($obj->url2)), ENT_QUOTES);
         $pdfOriginal = $obj->url;
-    }
-    elseif (str_contains($obj->localSource, 'elections-no.github.io')) {
-        // Example localSource
-        // docs/data-store/pdfs/elections-no.github.io-docs-2019-Agder-Bykle kommune, Agder fylke - kommunestyrevalget4222_2019-09-10.pdf.layout.txt
-        $link = $obj->localSource;
-        foreach (array(
-                     'Agder',
-                     'Innlandet',
-                     'Viken',
-                     'Vestland',
-                     'Rogaland',
-                     'More_og_Romsdal',
-                     'Nordland',
-                     'Trondelag',
-                     'Troms_og_Finnmark',
-                     'Vestfold_og_Telemark'
-                 ) as $county) {
-            $link = str_replace(
-                'docs/data-store/pdfs/elections-no.github.io-docs-2019-' . $county . '-',
-                'https://github.com/elections-no/elections-no.github.io/blob/master/docs/2019/' . $county . '/',
-                $link
-            );
-        }
-        $link = str_replace('https://github.com/elections-no/elections-no.github.io/blob/master/docs', 'https://elections.no/docs', $link);
-        $link = str_replace('.layout.txt', '', $link);
-        if (!str_starts_with($link, 'https://')) {
-            throw new Exception('Unknown link: ' . $link);
-        }
-        $pdfLink = $link;
-        $pdfName = htmlentities(urldecode(basename($link)), ENT_QUOTES);
-        $pdfOriginal = null;
     }
     else {
         throw new Exception('Unknown source: ' . $obj->localSource);
@@ -783,8 +759,8 @@ foreach ($files as $file) {
             '<a target="_blank" href="http://localhost:25081/start-thread.php'
             . '?my_email=' . urlencode($email)
             . '&my_name=' . urlencode($name)
-            . '&title=' . urlencode('Klage på Stortingsvalget 2021, ' . $entity->name)
-            . '&labels=' . urlencode('valgklage_2021 valgklage_2021_kommune')
+            . '&title=' . urlencode('Klage på Stortingsvalget ' . $election_year . ', ' . $entity->name)
+            . '&labels=' . urlencode('valgklage_' . $election_year . ' valgklage_' . $election_year . '_kommune')
             . '&entity_id=' . urlencode($entity->entityId)
             . '&entity_title_prefix=' . urlencode($entity->name)
             . '&entity_email=' . urlencode($entity->entityEmail)
@@ -797,8 +773,8 @@ foreach ($files as $file) {
                 '<a target="_blank" href="http://localhost:25081/start-thread.php'
                 . '?my_email=' . urlencode(str_replace('@', '_fk@', $email))
                 . '&my_name=' . urlencode($name . ', fylkeskommune')
-                . '&title=' . urlencode('Klage på Stortingsvalget 2021, ' . $entity->name)
-                . '&labels=' . urlencode('valgklage_2021 valgklage_2021_fylkeskommune:' . $entity->entityId)
+                . '&title=' . urlencode('Klage på Stortingsvalget ' . $election_year . ', ' . $entity->name)
+                . '&labels=' . urlencode('valgklage_' . $election_year . ' valgklage_' . $election_year . '_fylkeskommune:' . $entity->entityId)
                 . '&entity_id=' . urlencode($entity_valgdistrikt[$obj->county]['entity_id'])
                 . '&entity_title_prefix=' . urlencode($entity_valgdistrikt[$obj->county]['name'])
                 . '&entity_email=' . urlencode($entity_valgdistrikt[$obj->county]['entity_email'])
@@ -815,8 +791,8 @@ foreach ($files as $file) {
             '<a target="_blank" href="http://localhost:25081/start-thread.php'
             . '?my_email=' . urlencode(str_replace('@', '_st@', $email))
             . '&my_name=' . urlencode($name . ', Stortinget')
-            . '&title=' . urlencode('Klage på Stortingsvalget 2021, ' . $entity->name)
-            . '&labels=' . urlencode('valgklage_2021 valgklage_2021_stortinget:' . $entity->entityId)
+            . '&title=' . urlencode('Klage på Stortingsvalget ' . $election_year . ', ' . $entity->name)
+            . '&labels=' . urlencode('valgklage_' . $election_year . ' valgklage_' . $election_year . '_stortinget:' . $entity->entityId)
             . '&entity_id=stortinget'
             . '&entity_title_prefix=Stortinget'
             . '&entity_email=kontroll-konstitusjon@stortinget.no'
@@ -1454,15 +1430,15 @@ foreach ($entity_id__to__obj as $entity) {
 
     $nameColor = 'black';
     if (isset($entity->entityEmail)) {
-        $tags = 'valgprotokoll_2021';
-        $email = 'valgprotokoll_2021_' . $entity->entityId . '@offpost.no';
+        $tags = 'valgprotokoll_' . $election_year;
+        $email = 'valgprotokoll_' . $election_year . '_' . $entity->entityId . '@offpost.no';
         $name = 'Prosjekt Åpne Valgdata (' . $entity->municipalityNumber . ')';
         $mimesLink =
             // http://alaveteli.org/docs/developers/api/#starting-new-requests-programmatically
             '<a target="_blank" href="http://localhost:25081/start-thread.php'
             . '?my_email=' . urlencode($email)
             . '&my_name=' . urlencode($name)
-            . '&title=' . urlencode('Valgprotokoll 2021, ' . $entity->name)
+            . '&title=' . urlencode('Valgprotokoll ' . $election_year . ', ' . $entity->name)
             . '&labels=' . urlencode($tags)
             . '&entity_id=' . urlencode($entity->entityId)
             . '&entity_title_prefix=' . urlencode($entity->name)
@@ -1545,7 +1521,7 @@ foreach ($entity_id__to__obj as $entity) {
                 . ' href="http://localhost:25081/start-thread.php'
                 . '?my_email=' . urlencode($email)
                 . '&my_name=' . urlencode($name)
-                . '&title=' . urlencode('Innsynshenvendelse - Valgprotokoll 2021, ' . $entity->name . ' - klage på manglende svar')
+                . '&title=' . urlencode('Innsynshenvendelse - Valgprotokoll ' . $election_year . ', ' . $entity->name . ' - klage på manglende svar')
                 . '&labels=' . urlencode($tags)
                 . '&entity_id=' . urlencode($entity->entityId)
                 . '&entity_title_prefix=' . urlencode($entity->name)
