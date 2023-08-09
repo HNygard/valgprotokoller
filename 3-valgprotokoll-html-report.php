@@ -1074,7 +1074,7 @@ foreach ($county_sums as $county => $county_sum) {
         $large_diffs[] = $number_if_large_diff($numbers, $party, 300);
 
     }
-    $html .= implode($large_diffs, "\n");
+    $html .= implode("\n", $large_diffs);
     $html .= "</td>\n";
     $html .= "</tr>\n";
 }
