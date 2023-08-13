@@ -779,7 +779,7 @@ foreach ($files as $file) {
 
 
         $klageStatus = '<table><tr>';
-        $myndigheter = array('kommune' , 'fylkeskommune', 'stortinget');
+        $myndigheter = array('kommune', 'fylkeskommune', 'stortinget');
         foreach ($myndigheter as $myndighet) {
             $status = array(
                 '1 - Klage sent' => 'red',
@@ -810,7 +810,7 @@ foreach ($files as $file) {
         }
         $klageStatus .= "</tr></table>\n\n";
 
-        $title = 'Klage på "Valgprotokoll for valgstyret - ' . $obj->election . '" for ' . $obj->municipality ;
+        $title = 'Klage på "Valgprotokoll for valgstyret - ' . $obj->election . '" for ' . $obj->municipality;
 
         $klageStart =
             '<a href="../' . $new_path . '">' . $obj->election . ' - ' . $obj->municipality . '</a><br>' .
@@ -822,7 +822,7 @@ TITTEL:
 
 ---------
 
-' ;
+';
         $klage = $title . '
 
 Resultatene som er presentert i disse dokumentene følger ikke kravene til Valgforskriften og kan derfor ikke godkjennes.
@@ -993,8 +993,8 @@ Klage sendes og følges opp av: ' . $name . '
 
 [1]: https://lovdata.no/dokument/SF/forskrift/2003-01-02-5#KAPITTEL_9
 [2]: ' . str_replace(__DIR__ . '/docs/', 'https://hnygard.github.io/valgprotokoller/', $new_file) . "\n"
-. ($avvik_forelopig_endelig ? "[3]: https://www.regjeringen.no/no/dokumenter/veileder-om-manuell-forelopig-opptelling-etter-valgforskriften--37a/id2629412/\n" : '')
-. ($avvik_forelopig_endelig ? '[4]: https://hnygard.github.io/valgprotokoller/Stortingsvalget%202021/Oslo/Oslo.html' : '') . '
+            . ($avvik_forelopig_endelig ? "[3]: https://www.regjeringen.no/no/dokumenter/veileder-om-manuell-forelopig-opptelling-etter-valgforskriften--37a/id2629412/\n" : '')
+            . ($avvik_forelopig_endelig ? '[4]: https://hnygard.github.io/valgprotokoller/Stortingsvalget%202021/Oslo/Oslo.html' : '') . '
 
 
 
@@ -1299,7 +1299,7 @@ foreach ($klager as $klage => $klageArray) {
     else {
         $klager_html .= '<input type="text" value="' . $klage . '"> ikke gjennomgått<br>';
         $klager_html .= "<span style='font-size: 10px; text-align: left'>";
-        foreach($klageSummary as $text) {
+        foreach ($klageSummary as $text) {
             $klager_html .= "<li>$text</li>\n";
         }
         $klager_html .= "</span>\n";
@@ -1407,7 +1407,7 @@ foreach ($entity_id__to__obj as $entity) {
 
     $nameColor = 'black';
     if (isset($entity->entityEmail)) {
-        $tags = 'valg_' . $election_year . ' valgprotokoll_' . $election_year . ' valgprotokoll_' . $election_year . '_'.$entity->municipalityNumber;
+        $tags = 'valg_' . $election_year . ' valgprotokoll_' . $election_year . ' valgprotokoll_' . $election_year . '_' . $entity->municipalityNumber;
         $email = 'valgprotokoll_' . $election_year . '_' . $entity->entityId . '@offpost.no';
         $name = 'Prosjekt Åpne Valgdata (' . $entity->municipalityNumber . ')';
         $mimesLink =
@@ -1445,7 +1445,7 @@ foreach ($entity_id__to__obj as $entity) {
             . 'Søk innsyn via Email engine</a>' . chr(10);
 
 
-        $tags = 'valg_' . $election_year . ' valginnsyn_1_' . $election_year . ' valginnsyn_1_' . $election_year . '_'.$entity->municipalityNumber;
+        $tags = 'valg_' . $election_year . ' valginnsyn_1_' . $election_year . ' valginnsyn_1_' . $election_year . '_' . $entity->municipalityNumber;
         $mimesLink .=
             // http://alaveteli.org/docs/developers/api/#starting-new-requests-programmatically
             ' -:- <a target="_blank" href="http://localhost:25081/start-thread.php'
@@ -1465,11 +1465,11 @@ foreach ($entity_id__to__obj as $entity) {
 2): I hvilken politisk sak ble dette vedtatt?
 
 3): Ved foreløpig opptelling (manuell opptelling), blir opptellingen gjort i valgkretsene?'
-.' Hvis det er opptelling i valgkretsene, hvordan overfører kommunen resultatet fra valgkretsene'
-.' inn til valgstyret/valgansvarlig/EVA Admin?
+                . ' Hvis det er opptelling i valgkretsene, hvordan overfører kommunen resultatet fra valgkretsene'
+                . ' inn til valgstyret/valgansvarlig/EVA Admin?
 
-4): Ved foreløpig opptelling (manuell opptelling), hvordan lagrer/arkiverer kommunen resultatet '.
-'fra opptellingen utenom EVA Admin? Papir? Digitalt dokument? SMS? Blir resultatet journalført?
+4): Ved foreløpig opptelling (manuell opptelling), hvordan lagrer/arkiverer kommunen resultatet ' .
+                'fra opptellingen utenom EVA Admin? Papir? Digitalt dokument? SMS? Blir resultatet journalført?
 
 5): Har kommunen rutiner for å kontrollere resultatet av foreløpig opptelling opp mot det som er synlig på valgresultat-siden til Valgdirektoratet (valgresultat dått no), i valgprotokoll, i medier og lignende?
 En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet.
@@ -1490,93 +1490,95 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
         if (in_array($entity->entityId, $entityFoiFinished)) {
             $mimesLink = "<span style=\"font-size: 0.6em;\">FOI request finished</span>\n";
         }
-        else if (in_array($entity->entityId, $entityFoiSent)) {
-            $mimesLink = "<span style=\"font-size: 0.6em;\">FOI request sent</span>\n";
-            foreach ($entitySuccess as $successUrl) {
-                if (str_starts_with($successUrl, $entity->entityId)) {
-                    $text = $anyMissing ? 'Missing, but set success anyway' : 'Election ok, set success';
-                    $mimesLink .= '<br><a href="'.explode(':', $successUrl, 2)[1]."\">$text</a>\n";
-                }
-            }
-
-            if (in_array($entity->entityId, $entityOnlyOneOutgoing)) {
-                $mimesLink .= "<span style=\"font-size: 0.6em;\">Only one outgoing</span>\n";
-            }
-            foreach ($entityLastAction as $lastAction) {
-                if (str_starts_with($lastAction, $entity->entityId)) {
-                    $time = explode(':', $lastAction, 2)[1];
-                    $daysSince = round((time() - $time) / 86400);
-                    if ($daysSince < 5) {
-                        continue;
-                    }
-                    $mimesLink .= "<span style=\"font-size: 0.6em;\">"
-                        . "Last action: " . date('Y-m-d', $time) . " "
-                        . "Days: $daysSince "
-                        . ($daysSince >= 7 ? ' - 7 days limit' : ' - under 7 days')
-                        . "</span>\n";
-                    if ($daysSince >= 7) {
-                        $nameColor = 'red';
+        else {
+            if (in_array($entity->entityId, $entityFoiSent)) {
+                $mimesLink = "<span style=\"font-size: 0.6em;\">FOI request sent</span>\n";
+                foreach ($entitySuccess as $successUrl) {
+                    if (str_starts_with($successUrl, $entity->entityId)) {
+                        $text = $anyMissing ? 'Missing, but set success anyway' : 'Election ok, set success';
+                        $mimesLink .= '<br><a href="' . explode(':', $successUrl, 2)[1] . "\">$text</a>\n";
                     }
                 }
-            }
 
-            $initialSendDate = 'N/A';
-            foreach ($entityFirstAction as $lastAction) {
-                if (str_starts_with($lastAction, $entity->entityId)) {
-                    $time = explode(':', $lastAction, 2)[1];
-                    $daysSince = round((time() - $time) / 86400);
-                    $initialSendDate = date('d.m.Y', $time) . ' (' . $daysSince . ' dager siden, sendt til "' .
-                       explode('@', $entity->entityEmail)[0].'")';
+                if (in_array($entity->entityId, $entityOnlyOneOutgoing)) {
+                    $mimesLink .= "<span style=\"font-size: 0.6em;\">Only one outgoing</span>\n";
                 }
+                foreach ($entityLastAction as $lastAction) {
+                    if (str_starts_with($lastAction, $entity->entityId)) {
+                        $time = explode(':', $lastAction, 2)[1];
+                        $daysSince = round((time() - $time) / 86400);
+                        if ($daysSince < 5) {
+                            continue;
+                        }
+                        $mimesLink .= "<span style=\"font-size: 0.6em;\">"
+                            . "Last action: " . date('Y-m-d', $time) . " "
+                            . "Days: $daysSince "
+                            . ($daysSince >= 7 ? ' - 7 days limit' : ' - under 7 days')
+                            . "</span>\n";
+                        if ($daysSince >= 7) {
+                            $nameColor = 'red';
+                        }
+                    }
+                }
+
+                $initialSendDate = 'N/A';
+                foreach ($entityFirstAction as $lastAction) {
+                    if (str_starts_with($lastAction, $entity->entityId)) {
+                        $time = explode(':', $lastAction, 2)[1];
+                        $daysSince = round((time() - $time) / 86400);
+                        $initialSendDate = date('d.m.Y', $time) . ' (' . $daysSince . ' dager siden, sendt til "' .
+                            explode('@', $entity->entityEmail)[0] . '")';
+                    }
+                }
+
+                $entityEmail = (isset($entityEmails[$entity->entityId]) ? $entityEmails[$entity->entityId] : array());
+
+                $mimesLink .=
+                    '<br><a target="_blank"'
+                    . ($entityEmail->threadCount > 1 ? ' style="display: none"' : '')
+                    . ' href="http://localhost:25081/start-thread.php'
+                    . '?my_profile=RANDOM'
+                    . '&title=' . urlencode('Innsynshenvendelse - Valgprotokoll ' . $election_year . ', ' . $entity->name . ' - klage på manglende svar')
+                    . '&labels=' . urlencode($tags)
+                    . '&entity_id=' . urlencode($entity->entityId)
+                    . '&entity_title_prefix=' . urlencode($entity->name)
+                    . '&entity_email=' . urlencode($entity->entityEmail)
+                    . '&body=' . urlencode(
+                        'Klage til ' . $entity->name . chr(10)
+                        . chr(10)
+                        . 'Dere har ikke svart på vår epost av ' . $initialSendDate . '. '
+                        . 'Dette kan skyldes tekniske årsaker hos dere og vi forsøker å sende fra en ny epsotadresse. '
+                        . 'Dere bør sjekke deres epostsystem (f.eks. spammappe eller Microsoft Impersonation Insight). '
+                        . 'At dere ikke svarer er brudd på Offentleglova og vil bli klaget inn til Statsforvalteren.'
+                        . chr(10) . chr(10)
+                        . 'Oppsummering av epostkorrespondanse:' . chr(10)
+                        . implode("\n", $entityEmail->emailsSummary)
+
+                        . chr(10) . chr(10)
+                        . 'Fra original henvendelse:' . chr(10)
+                        . 'Jeg ønsker innsyn i valgprotokoll for stortingsvalget 2021, og eventuell sametingsvalget 2021. Ofte kalt "Valgprotokoll for valgstyret"'
+                        . ' eller "Valgstyrets møtebok". Jeg ønsker at den er maskinlesbar, altså ikke innskannet (slik de signerte ofte er). '
+                        . 'Dette fordi vi skal lese ut data fra den.'
+                        . chr(10) . chr(10)
+                        . 'Søker altså innsyn i:' . chr(10)
+                        . '1. Valgprotokoll Stortingsvalget 2021 - ' . $entity->name . chr(10)
+                        . '2. Hvis dere har: Valgprotokoll Sametingsvalget 2021 - ' . $entity->name . chr(10)
+                        . chr(10) . chr(10)
+                        . 'Ønsker svar på original henvendelse (over) samt en forklaring på hvorfor dere avviser krav om innsyn ved ikke å svare.'
+                        . chr(10) . chr(10)
+                        . 'Takk!'
+                        . chr(10) . chr(10)
+                        . 'Prosjekt Åpne Valgdata'
+                    )
+                    . '">'
+                    . 'Klage random profile via Email engine</a>' . chr(10);
+
+                $mimesLink .= (isset($mxRecords[$entity->entityId])) ? '<br>' . implode(', ', array_keys((array)$mxRecords[$entity->entityId]->emailServer)) : '';
             }
-
-            $entityEmail = (isset($entityEmails[$entity->entityId]) ? $entityEmails[$entity->entityId] : array());
-
-            $mimesLink .=
-                '<br><a target="_blank"'
-                . ($entityEmail->threadCount > 1 ? ' style="display: none"' : '')
-                . ' href="http://localhost:25081/start-thread.php'
-                . '?my_profile=RANDOM'
-                . '&title=' . urlencode('Innsynshenvendelse - Valgprotokoll ' . $election_year . ', ' . $entity->name . ' - klage på manglende svar')
-                . '&labels=' . urlencode($tags)
-                . '&entity_id=' . urlencode($entity->entityId)
-                . '&entity_title_prefix=' . urlencode($entity->name)
-                . '&entity_email=' . urlencode($entity->entityEmail)
-                . '&body=' . urlencode(
-                    'Klage til ' . $entity->name . chr(10)
-                    . chr(10)
-                    . 'Dere har ikke svart på vår epost av ' . $initialSendDate .'. '
-                    . 'Dette kan skyldes tekniske årsaker hos dere og vi forsøker å sende fra en ny epsotadresse. '
-                    . 'Dere bør sjekke deres epostsystem (f.eks. spammappe eller Microsoft Impersonation Insight). '
-                    . 'At dere ikke svarer er brudd på Offentleglova og vil bli klaget inn til Statsforvalteren.'
-                    . chr(10). chr(10)
-                    . 'Oppsummering av epostkorrespondanse:' . chr(10)
-                    . implode("\n", $entityEmail->emailsSummary)
-
-                    . chr(10). chr(10)
-                    . 'Fra original henvendelse:' . chr(10)
-                    . 'Jeg ønsker innsyn i valgprotokoll for stortingsvalget 2021, og eventuell sametingsvalget 2021. Ofte kalt "Valgprotokoll for valgstyret"'
-                    . ' eller "Valgstyrets møtebok". Jeg ønsker at den er maskinlesbar, altså ikke innskannet (slik de signerte ofte er). '
-                    . 'Dette fordi vi skal lese ut data fra den.'
-                    . chr(10) . chr(10)
-                    . 'Søker altså innsyn i:' . chr(10)
-                    . '1. Valgprotokoll Stortingsvalget 2021 - ' . $entity->name . chr(10)
-                    . '2. Hvis dere har: Valgprotokoll Sametingsvalget 2021 - ' . $entity->name . chr(10)
-                    . chr(10) . chr(10)
-                    . 'Ønsker svar på original henvendelse (over) samt en forklaring på hvorfor dere avviser krav om innsyn ved ikke å svare.'
-                    . chr(10) . chr(10)
-                    . 'Takk!'
-                    . chr(10) . chr(10)
-                    . 'Prosjekt Åpne Valgdata'
-                )
-                . '">'
-                . 'Klage random profile via Email engine</a>' . chr(10);
-
-            $mimesLink .= (isset($mxRecords[$entity->entityId])) ? '<br>' . implode(', ', array_keys((array)$mxRecords[$entity->entityId]->emailServer)) : '';
-        }
-        elseif(!$anyMissing) {
-            // -> Finished else where
-            $mimesLink = '-';
+            elseif (!$anyMissing) {
+                // -> Finished else where
+                $mimesLink = '-';
+            }
         }
     }
     else {
@@ -1584,7 +1586,7 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
     }
     $elections[3] = '<td>' . $mimesLink . '</td>';
 
-    if(!isset($mxRecords[$entity->entityId])) {
+    if (!isset($mxRecords[$entity->entityId])) {
         $output = '';
         exec('dig ' . explode('@', $entity->entityEmail)[1] . ' MX +short', $output);
         $mxRecords[$entity->entityId] = $output;
@@ -1630,7 +1632,7 @@ $tableSummary = new stdClass();
 $tableSummary->total = 0;
 $tableSummary->foiFinished = 0;
 $tableSummary->foiWaiting = 0;
-foreach($foiStatusPerEmailServerType as $emailServerType => $mailServerStatus) {
+foreach ($foiStatusPerEmailServerType as $emailServerType => $mailServerStatus) {
     $tableSummary->total += $mailServerStatus->total;
     $tableSummary->foiFinished += $mailServerStatus->foiFinished;
     $tableSummary->foiWaiting += $mailServerStatus->foiWaiting;
@@ -1640,7 +1642,7 @@ foreach($foiStatusPerEmailServerType as $emailServerType => $mailServerStatus) {
         $html_entities .= "<td>zero</td>\n";
     }
     else {
-        $html_entities .= "<td " . ($mailServerStatus->foiWaiting > 10 ? ' style="color: red"': '') . ">" . $mailServerStatus->foiWaiting . ' (' . round(100 * $mailServerStatus->foiWaiting / $mailServerStatus->total) . " %)</td>\n";
+        $html_entities .= "<td " . ($mailServerStatus->foiWaiting > 10 ? ' style="color: red"' : '') . ">" . $mailServerStatus->foiWaiting . ' (' . round(100 * $mailServerStatus->foiWaiting / $mailServerStatus->total) . " %)</td>\n";
     }
     $html_entities .= "<td>" . $mailServerStatus->foiFinished . ' (' . round(100 * $mailServerStatus->foiFinished / $mailServerStatus->total) . " %)</td>\n";
 
@@ -1658,7 +1660,6 @@ $html_entities .= "</tr>\n";
 $html_entities .= '</table>';
 
 file_put_contents(__DIR__ . '/docs/status-files.html', $html_entities);
-
 
 
 function logDebug($string) {

@@ -58,11 +58,13 @@ foreach ($obj->matchingThreads as $thread) {
         if ($email->email_type == 'IN') {
             $in++;
         }
-        else if ($email->email_type == 'OUT') {
-            $out++;
-        }
         else {
-            throw new Exception('Unknown type: ' .$email->email_type);
+            if ($email->email_type == 'OUT') {
+                $out++;
+            }
+            else {
+                throw new Exception('Unknown type: ' . $email->email_type);
+            }
         }
 
         if (!isset($email->attachments)) {
@@ -87,15 +89,15 @@ foreach ($obj->matchingThreads as $thread) {
 sort($url);
 
 $entityLastActionSummary = array();
-for ( $i = strtotime('2023-08-07'); $i <= time(); $i = $i + 86400 ) {
+for ($i = strtotime('2023-08-07'); $i <= time(); $i = $i + 86400) {
     $entityLastActionSummary[date('Y-m-d', $i)] = 0;
 }
 
-foreach($entityEmails as $entity_id => $entityEmail) {
+foreach ($entityEmails as $entity_id => $entityEmail) {
     $max = 0;
     $min = $timeNow;
 
-    foreach($entityEmail->emails as $email) {
+    foreach ($entityEmail->emails as $email) {
         $max = max($max, $email->timestamp_received);
         $min = min($min, $email->timestamp_received);
     }
@@ -117,17 +119,14 @@ file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-only-one-email-outgoing.txt', implode("\n", $entityOnlyOneOut));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-first-action.txt', implode("\n", $entityFirstAction));
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-last-action.txt', implode("\n", $entityLastAction));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year.'/entity-emails.json', json_encode($entityEmails, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES));
+file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-emails.json', json_encode($entityEmails, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES));
 
 ksort($entityLastActionSummary);
 $entityLastActionSummary2 = array();
-foreach($entityLastActionSummary as $date => $num) {
-    $entityLastActionSummary2[] = $date .';'.$num;
+foreach ($entityLastActionSummary as $date => $num) {
+    $entityLastActionSummary2[] = $date . ';' . $num;
 }
 file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-summary-last-action.csv', implode("\n", $entityLastActionSummary2));
-
-
-
 
 
 $klageKommune = array();
