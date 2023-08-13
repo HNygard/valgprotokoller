@@ -129,24 +129,7 @@ $addCountySums = function ($county, $party, $numbers) {
     $county_sums[$county][$party]->{'Endelig'} += $numbers->{'Endelig'};
 };
 
-$profiles = json_decode(file_get_contents(__DIR__ . '/random-profiles-' . $election_year . '.json'))->profiles;
-$profilesKlage = json_decode(file_get_contents(__DIR__ . '/random-profiles-' . $election_year . '-klage.json'))->profiles;
-
 // :: Sanity check - must be unique
-$emails = array();
-foreacH($profiles as $profile) {
-    if (isset($emails[$profile->email])) {
-        throw new Exception('lalalal');
-    }
-    $emails[$profile->email] = $profile;
-}
-foreacH($profilesKlage as $profile) {
-    if (isset($emails[$profile->email])) {
-        throw new Exception('Multiple of same profile: ' . json_encode($profile));
-    }
-    $emails[$profile->email] = $profile;
-}
-
 $klager = array();
 
 function htmlHeading($title = 'Valgprotokoller') {
@@ -751,16 +734,11 @@ foreach ($files as $file) {
 
         $entity = $entity_id__to__obj[$entity_name__to__entity_id[$name2]];
 
-        $randomProfile = $profiles[$entity->i];
-        $email = $randomProfile->email;
-        $name = $randomProfile->firstName . $randomProfile->middleName . ' ' . $randomProfile->lastName;
-
         $mimesLink =
             '<a target="_blank" href="http://localhost:25081/start-thread.php'
-            . '?my_email=' . urlencode($email)
-            . '&my_name=' . urlencode($name)
+            . '?my_profile=RANDOM'
             . '&title=' . urlencode('Klage på Stortingsvalget ' . $election_year . ', ' . $entity->name)
-            . '&labels=' . urlencode('valgklage_' . $election_year . ' valgklage_' . $election_year . '_kommune')
+            . '&labels=' . urlencode('valgklage_' . $election_year . ' valgklage_' . $election_year . '_kommune valgklage_' . $election_year . '_' . $entity->municipalityNumber)
             . '&entity_id=' . urlencode($entity->entityId)
             . '&entity_title_prefix=' . urlencode($entity->name)
             . '&entity_email=' . urlencode($entity->entityEmail)
@@ -771,8 +749,7 @@ foreach ($files as $file) {
         if (isset($entity_valgdistrikt[$obj->county])) {
             $mimesLink .=
                 '<a target="_blank" href="http://localhost:25081/start-thread.php'
-                . '?my_email=' . urlencode(str_replace('@', '_fk@', $email))
-                . '&my_name=' . urlencode($name . ', fylkeskommune')
+                . '?my_profile=RANDOM'
                 . '&title=' . urlencode('Klage på Stortingsvalget ' . $election_year . ', ' . $entity->name)
                 . '&labels=' . urlencode('valgklage_' . $election_year . ' valgklage_' . $election_year . '_fylkeskommune:' . $entity->entityId)
                 . '&entity_id=' . urlencode($entity_valgdistrikt[$obj->county]['entity_id'])
@@ -1430,7 +1407,7 @@ foreach ($entity_id__to__obj as $entity) {
 
     $nameColor = 'black';
     if (isset($entity->entityEmail)) {
-        $tags = 'valgprotokoll_' . $election_year;
+        $tags = 'valgprotokoll_' . $election_year . ' valgprotokoll_' . $election_year . '_'.$entity->municipalityNumber;
         $email = 'valgprotokoll_' . $election_year . '_' . $entity->entityId . '@offpost.no';
         $name = 'Prosjekt Åpne Valgdata (' . $entity->municipalityNumber . ')';
         $mimesLink =
@@ -1555,15 +1532,11 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
 
             $entityEmail = (isset($entityEmails[$entity->entityId]) ? $entityEmails[$entity->entityId] : array());
 
-            $randomProfile = $profiles[$i];
-            $email = $randomProfile->email;
-            $name = $randomProfile->firstName . $randomProfile->middleName . ' ' . $randomProfile->lastName;
             $mimesLink .=
                 '<br><a target="_blank"'
                 . ($entityEmail->threadCount > 1 ? ' style="display: none"' : '')
                 . ' href="http://localhost:25081/start-thread.php'
-                . '?my_email=' . urlencode($email)
-                . '&my_name=' . urlencode($name)
+                . '?my_profile=RANDOM'
                 . '&title=' . urlencode('Innsynshenvendelse - Valgprotokoll ' . $election_year . ', ' . $entity->name . ' - klage på manglende svar')
                 . '&labels=' . urlencode($tags)
                 . '&entity_id=' . urlencode($entity->entityId)
