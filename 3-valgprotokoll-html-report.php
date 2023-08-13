@@ -738,7 +738,7 @@ foreach ($files as $file) {
             '<a target="_blank" href="http://localhost:25081/start-thread.php'
             . '?my_profile=RANDOM'
             . '&title=' . urlencode('Klage på Stortingsvalget ' . $election_year . ', ' . $entity->name)
-            . '&labels=' . urlencode('valgklage_' . $election_year . ' valgklage_' . $election_year . '_kommune valgklage_' . $election_year . '_' . $entity->municipalityNumber)
+            . '&labels=' . urlencode('valg_' . $election_year . ' valgklage_' . $election_year . ' valgklage_' . $election_year . '_kommune valgklage_' . $election_year . '_' . $entity->municipalityNumber)
             . '&entity_id=' . urlencode($entity->entityId)
             . '&entity_title_prefix=' . urlencode($entity->name)
             . '&entity_email=' . urlencode($entity->entityEmail)
@@ -751,7 +751,7 @@ foreach ($files as $file) {
                 '<a target="_blank" href="http://localhost:25081/start-thread.php'
                 . '?my_profile=RANDOM'
                 . '&title=' . urlencode('Klage på Stortingsvalget ' . $election_year . ', ' . $entity->name)
-                . '&labels=' . urlencode('valgklage_' . $election_year . ' valgklage_' . $election_year . '_fylkeskommune:' . $entity->entityId)
+                . '&labels=' . urlencode('valg_' . $election_year . ' valgklage_' . $election_year . ' valgklage_' . $election_year . '_fylkeskommune:' . $entity->entityId)
                 . '&entity_id=' . urlencode($entity_valgdistrikt[$obj->county]['entity_id'])
                 . '&entity_title_prefix=' . urlencode($entity_valgdistrikt[$obj->county]['name'])
                 . '&entity_email=' . urlencode($entity_valgdistrikt[$obj->county]['entity_email'])
@@ -1407,7 +1407,7 @@ foreach ($entity_id__to__obj as $entity) {
 
     $nameColor = 'black';
     if (isset($entity->entityEmail)) {
-        $tags = 'valgprotokoll_' . $election_year . ' valgprotokoll_' . $election_year . '_'.$entity->municipalityNumber;
+        $tags = 'valg_' . $election_year . ' valgprotokoll_' . $election_year . ' valgprotokoll_' . $election_year . '_'.$entity->municipalityNumber;
         $email = 'valgprotokoll_' . $election_year . '_' . $entity->entityId . '@offpost.no';
         $name = 'Prosjekt Åpne Valgdata (' . $entity->municipalityNumber . ')';
         $mimesLink =
