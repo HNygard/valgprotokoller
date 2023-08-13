@@ -1467,6 +1467,49 @@ foreach ($entity_id__to__obj as $entity) {
             . '">'
             . 'Søk innsyn via Email engine</a>' . chr(10);
 
+
+        $tags = 'valg_' . $election_year . ' valginnsyn_1_' . $election_year . ' valginnsyn_1_' . $election_year . '_'.$entity->municipalityNumber;
+        $mimesLink .=
+            // http://alaveteli.org/docs/developers/api/#starting-new-requests-programmatically
+            ' -:- <a target="_blank" href="http://localhost:25081/start-thread.php'
+            . '?my_profile=RANDOM'
+            . '&title=' . urlencode('Innsyn valggjennomføring, ' . $entity->name)
+            . '&labels=' . urlencode($tags)
+            . '&entity_id=' . urlencode($entity->entityId)
+            . '&entity_title_prefix=' . urlencode($entity->name)
+            . '&entity_email=' . urlencode($entity->entityEmail)
+            . '&body=' . urlencode(
+                'Kjære ' . $entity->name . chr(10)
+                . chr(10)
+                . 'Ønsker innsyn i valggjennomføringen deres nå i 2023.
+
+1): Vil kommunen foreta maskinell eller manuell endelig telling av valgresultatet?
+
+2): I hvilken politisk sak ble dette vedtatt?
+
+3): Ved foreløpig opptelling (manuell opptelling), blir opptellingen gjort i valgkretsene?'
+.' Hvis det er opptelling i valgkretsene, hvordan overfører kommunen resultatet fra valgkretsene'
+.' inn til valgstyret/valgansvarlig/EVA Admin?
+
+4): Ved foreløpig opptelling (manuell opptelling), hvordan lagrer/arkiverer kommunen resultatet '.
+'fra opptellingen utenom EVA Admin? Papir? Digitalt dokument? SMS? Blir resultatet journalført?
+
+5): Har kommunen rutiner for å kontrollere resultatet av foreløpig opptelling opp mot det som er synlig på valgresultat-siden til Valgdirektoratet (valgresultat dått no), i valgprotokoll, i medier og lignende?
+En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet.
+
+6): Tilsvarende som 4) for endelig opptelling (maskinell eller manuell).
+Hvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Blir resultatet journalført?
+
+7): Tilsvarende som 5) for endelig opptelling (maskinell eller manuell).
+Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir publisert?'
+                . chr(10) . chr(10)
+                . 'Takk!'
+                . chr(10) . chr(10)
+                . 'Prosjekt Åpne Valgdata - https://hnygard.github.io/valgprotokoller/'
+            )
+            . '">'
+            . 'Søk innsyn i spørsmål via Email engine</a>' . chr(10);
+
         if (in_array($entity->entityId, $entityFoiFinished)) {
             $mimesLink = "<span style=\"font-size: 0.6em;\">FOI request finished</span>\n";
         }
