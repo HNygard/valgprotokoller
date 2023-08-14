@@ -15,118 +15,127 @@ $additional_urls = array(// Also fetch these FOI requests
 );
 
 
-$url = array();
+fetchAndSave('http://localhost:25081/api.php?label=valgprotokoll_' . $election_year, true, 'entity');
+function fetchAndSave($url2, $saveUrl, $resultPrefix) {
 
-$entityStatus = array();
-$entityFinished = array();
-$entityMarkOk = array();
-$entityOnlyOneOut = array();
-$entityFirstAction = array();
-$entityLastAction = array();
-$entityEmails = array();
-$obj = json_decode(file_get_contents('http://localhost:25081/api.php?label=valgprotokoll_' . $election_year));
-foreach ($obj->matchingThreads as $thread) {
-    if ($thread->sent) {
-        $entityStatus[$thread->entity_id] = $thread->entity_id;
-    }
-    if ($thread->archived) {
-        $entityFinished[$thread->entity_id] = $thread->entity_id;
-    }
+    $url = array();
 
-    $out = 0;
-    $in = 0;
+    $entityStatus = array();
+    $entityFinished = array();
+    $entityMarkOk = array();
+    $entityOnlyOneOut = array();
+    $entityFirstAction = array();
+    $entityLastAction = array();
+    $entityEmails = array();
 
-    $timeNow = time();
-    $min = $timeNow;
-    $max = 0;
-    foreach ($thread->emails as $email) {
-        if (!isset($entityEmails[$thread->entity_id])) {
-            $entityEmails[$thread->entity_id] = new stdClass();
-            $entityEmails[$thread->entity_id]->threadCount = 0;
-            $entityEmails[$thread->entity_id]->emailsSummary = array();
-            $entityEmails[$thread->entity_id]->emails = array();
+    echo 'GET ' . $url2 . chr(10);
+    $obj = json_decode(file_get_contents($url2));
+    foreach ($obj->matchingThreads as $thread) {
+        if ($thread->sent) {
+            $entityStatus[$thread->entity_id] = $thread->entity_id;
         }
-        $entityEmails[$thread->entity_id]->emailsSummary[] = '- ' . date('Y-m-d H:i:s', $email->timestamp_received) .
-            ($email->email_type == 'IN' ? ' epost fra dere' : ' epost til dere');
-
-        $email2 = new stdClass();
-        $email2->datetime_received = $email->datetime_received;
-        $email2->timestamp_received = $email->timestamp_received;
-        $email2->email_type = $email->email_type;
-        $entityEmails[$thread->entity_id]->emails[] = $email2;
-
-        if ($email->email_type == 'IN') {
-            $in++;
+        if ($thread->archived) {
+            $entityFinished[$thread->entity_id] = $thread->entity_id;
         }
-        else {
-            if ($email->email_type == 'OUT') {
-                $out++;
+
+        $out = 0;
+        $in = 0;
+
+        $timeNow = time();
+        $min = $timeNow;
+        $max = 0;
+        foreach ($thread->emails as $email) {
+            if (!isset($entityEmails[$thread->entity_id])) {
+                $entityEmails[$thread->entity_id] = new stdClass();
+                $entityEmails[$thread->entity_id]->threadCount = 0;
+                $entityEmails[$thread->entity_id]->emailsSummary = array();
+                $entityEmails[$thread->entity_id]->emails = array();
+            }
+            $entityEmails[$thread->entity_id]->emailsSummary[] = '- ' . date('Y-m-d H:i:s', $email->timestamp_received) .
+                ($email->email_type == 'IN' ? ' epost fra dere' : ' epost til dere');
+
+            $email2 = new stdClass();
+            $email2->datetime_received = $email->datetime_received;
+            $email2->timestamp_received = $email->timestamp_received;
+            $email2->email_type = $email->email_type;
+            $entityEmails[$thread->entity_id]->emails[] = $email2;
+
+            if ($email->email_type == 'IN') {
+                $in++;
             }
             else {
-                throw new Exception('Unknown type: ' . $email->email_type);
+                if ($email->email_type == 'OUT') {
+                    $out++;
+                }
+                else {
+                    throw new Exception('Unknown type: ' . $email->email_type);
+                }
             }
-        }
 
-        if (!isset($email->attachments)) {
-            continue;
-        }
-        foreach ($email->attachments as $att) {
-            if ($att->filetype != 'pdf' && $att->filetype != 'UNKNOWN') {
+            if (!isset($email->attachments)) {
                 continue;
             }
-            $url[] = $att->link;
-            $entityMarkOk[] = $thread->entity_id . ':' . $att->linkSetSuccess;
+            foreach ($email->attachments as $att) {
+                if ($att->filetype != 'pdf' && $att->filetype != 'UNKNOWN') {
+                    continue;
+                }
+                $url[] = $att->link;
+                $entityMarkOk[] = $thread->entity_id . ':' . $att->linkSetSuccess;
+            }
+        }
+
+        $entityEmails[$thread->entity_id]->threadCount++;
+
+        if ($out == 1 && $in == 0 && $thread->emails[0]->timestamp_received + 432000 < time()) {
+            $entityOnlyOneOut[$thread->entity_id] = $thread->entity_id;
         }
     }
 
-    $entityEmails[$thread->entity_id]->threadCount++;
+    sort($url);
 
-    if ($out == 1 && $in == 0 && $thread->emails[0]->timestamp_received + 432000 < time()) {
-        $entityOnlyOneOut[$thread->entity_id] = $thread->entity_id;
-    }
-}
-
-sort($url);
-
-$entityLastActionSummary = array();
-for ($i = strtotime('2023-08-07'); $i <= time(); $i = $i + 86400) {
-    $entityLastActionSummary[date('Y-m-d', $i)] = 0;
-}
-
-foreach ($entityEmails as $entity_id => $entityEmail) {
-    $max = 0;
-    $min = $timeNow;
-
-    foreach ($entityEmail->emails as $email) {
-        $max = max($max, $email->timestamp_received);
-        $min = min($min, $email->timestamp_received);
-    }
-    $entityLastAction[$entity_id] = $entity_id . ':' . $max;
-    if ($timeNow != $min) {
-        $entityFirstAction[$entity_id] = $entity_id . ':' . $min;
+    $entityLastActionSummary = array();
+    for ($i = strtotime('2023-08-07'); $i <= time(); $i = $i + 86400) {
+        $entityLastActionSummary[date('Y-m-d', $i)] = 0;
     }
 
-    $entityLastActionSummary[date('Y-m-d', $max)] = isset($entityLastActionSummary[date('Y-m-d', $max)])
-        ? $entityLastActionSummary[date('Y-m-d', $max)] + 1
-        : 1;
+    foreach ($entityEmails as $entity_id => $entityEmail) {
+        $max = 0;
+        $min = $timeNow;
+
+        foreach ($entityEmail->emails as $email) {
+            $max = max($max, $email->timestamp_received);
+            $min = min($min, $email->timestamp_received);
+        }
+        $entityLastAction[$entity_id] = $entity_id . ':' . $max;
+        if ($timeNow != $min) {
+            $entityFirstAction[$entity_id] = $entity_id . ':' . $min;
+        }
+
+        $entityLastActionSummary[date('Y-m-d', $max)] = isset($entityLastActionSummary[date('Y-m-d', $max)])
+            ? $entityLastActionSummary[date('Y-m-d', $max)] + 1
+            : 1;
+    }
+
+
+    global $election_year;
+    if ($saveUrl) {
+        file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/urls.txt', implode("\n", $url));
+    }
+    file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/' . $resultPrefix . '-status-sent.txt', implode("\n", $entityStatus));
+    file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/' . $resultPrefix . '-status-finished.txt', implode("\n", $entityFinished));
+    file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/' . $resultPrefix . '-set-success-sent.txt', implode("\n", $entityMarkOk));
+    file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/' . $resultPrefix . '-only-one-email-outgoing.txt', implode("\n", $entityOnlyOneOut));
+    file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/' . $resultPrefix . '-first-action.txt', implode("\n", $entityFirstAction));
+    file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/' . $resultPrefix . '-last-action.txt', implode("\n", $entityLastAction));
+    file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/' . $resultPrefix . '-emails.json', json_encode($entityEmails, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES));
+
+    ksort($entityLastActionSummary);
+    $entityLastActionSummary2 = array();
+    foreach ($entityLastActionSummary as $date => $num) {
+        $entityLastActionSummary2[] = $date . ';' . $num;
+    }
+    file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-summary-last-action.csv', implode("\n", $entityLastActionSummary2));
 }
-
-
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/urls.txt', implode("\n", $url));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-status-sent.txt', implode("\n", $entityStatus));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-status-finished.txt', implode("\n", $entityFinished));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-set-success-sent.txt', implode("\n", $entityMarkOk));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-only-one-email-outgoing.txt', implode("\n", $entityOnlyOneOut));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-first-action.txt', implode("\n", $entityFirstAction));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-last-action.txt', implode("\n", $entityLastAction));
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-emails.json', json_encode($entityEmails, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES));
-
-ksort($entityLastActionSummary);
-$entityLastActionSummary2 = array();
-foreach ($entityLastActionSummary as $date => $num) {
-    $entityLastActionSummary2[] = $date . ';' . $num;
-}
-file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-summary-last-action.csv', implode("\n", $entityLastActionSummary2));
 
 
 $klageKommune = array();
