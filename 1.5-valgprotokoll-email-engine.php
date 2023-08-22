@@ -16,6 +16,7 @@ $additional_urls = array(// Also fetch these FOI requests
 
 
 fetchAndSave('http://localhost:25081/api.php?label=valgprotokoll_' . $election_year, true, 'entity');
+fetchAndSave('http://localhost:25081/api.php?label=valginnsyn_1_' . $election_year, true, 'valginnsyn_1');
 function fetchAndSave($url2, $saveUrl, $resultPrefix) {
 
     $url = array();
@@ -44,13 +45,13 @@ function fetchAndSave($url2, $saveUrl, $resultPrefix) {
         $timeNow = time();
         $min = $timeNow;
         $max = 0;
+        if (!isset($entityEmails[$thread->entity_id])) {
+            $entityEmails[$thread->entity_id] = new stdClass();
+            $entityEmails[$thread->entity_id]->threadCount = 0;
+            $entityEmails[$thread->entity_id]->emailsSummary = array();
+            $entityEmails[$thread->entity_id]->emails = array();
+        }
         foreach ($thread->emails as $email) {
-            if (!isset($entityEmails[$thread->entity_id])) {
-                $entityEmails[$thread->entity_id] = new stdClass();
-                $entityEmails[$thread->entity_id]->threadCount = 0;
-                $entityEmails[$thread->entity_id]->emailsSummary = array();
-                $entityEmails[$thread->entity_id]->emails = array();
-            }
             $entityEmails[$thread->entity_id]->emailsSummary[] = '- ' . date('Y-m-d H:i:s', $email->timestamp_received) .
                 ($email->email_type == 'IN' ? ' epost fra dere' : ' epost til dere');
 
@@ -141,7 +142,9 @@ function fetchAndSave($url2, $saveUrl, $resultPrefix) {
 $klageKommune = array();
 $klageFylkeskommune = array();
 $klageStortinget = array();
-$obj = json_decode(file_get_contents('http://localhost:25081/api.php?label=valgklage_' . $election_year));
+$url2 = 'http://localhost:25081/api.php?label=valgklage_' . $election_year;
+echo 'GET ' . $url2 . chr(10);
+$obj = json_decode(file_get_contents($url2));
 foreach ($obj->matchingThreads as $thread) {
     $klage = new stdClass();
 
