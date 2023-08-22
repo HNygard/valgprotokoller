@@ -55,6 +55,8 @@ $klageJson['kommune'] = json_decode(file_get_contents(__DIR__ . '/docs/data-stor
 $klageJson['fylkeskommune'] = json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/klage-sendt-fylkeskommune.json'));
 $klageJson['stortinget'] = json_decode(file_get_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/klage-sendt-stortinget.json'));
 
+$valggjennomforing_sporsmaal_sent = explode("\n", file_get_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/valginnsyn_1-status-sent.txt'));
+
 $mimesBronnStatus = array();
 
 $entity_merging = array(
@@ -1446,7 +1448,7 @@ foreach ($entity_id__to__obj as $entity) {
 
 
         $tags = 'valg_' . $election_year . ' valginnsyn_1_' . $election_year . ' valginnsyn_1_' . $election_year . '_' . $entity->municipalityNumber;
-        $mimesLink .=
+        $email_engine_valgsporsmaal =
             // http://alaveteli.org/docs/developers/api/#starting-new-requests-programmatically
             ' -:- <a target="_blank" href="http://localhost:25081/start-thread.php'
             . '?my_profile=RANDOM'
@@ -1580,6 +1582,12 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
                 $mimesLink = '-';
             }
         }
+
+        if (in_array($entity->entityId, $valggjennomforing_sporsmaal_sent)) {
+            $email_engine_valgsporsmaal =  "<span style=\"font-size: 0.6em;\">Valgspørsmål request sent</span>\n";
+        }
+
+        $mimesLink .= $email_engine_valgsporsmaal;
     }
     else {
         $mimesLink = 'Mangler epost for innsyn.';
