@@ -120,7 +120,7 @@ function fetchAndSave($url2, $saveUrl, $resultPrefix) {
 
     global $election_year;
     if ($saveUrl) {
-        file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/urls.txt', implode("\n", $url));
+        file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/' . $resultPrefix . '-urls.txt', implode("\n", $url));
     }
     file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/' . $resultPrefix . '-status-sent.txt', implode("\n", $entityStatus));
     file_put_contents(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/' . $resultPrefix . '-status-finished.txt', implode("\n", $entityFinished));
