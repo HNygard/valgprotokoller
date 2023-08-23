@@ -18,6 +18,7 @@ $additional_urls = array(// Also fetch these FOI requests
 fetchAndSave('http://localhost:25081/api.php?label=valgprotokoll_' . $election_year, true, 'entity');
 fetchAndSave('http://localhost:25081/api.php?label=valginnsyn_1_' . $election_year, true, 'valginnsyn_1');
 function fetchAndSave($url2, $saveUrl, $resultPrefix) {
+    global $election_year;
 
     $url = array();
 
@@ -73,16 +74,40 @@ function fetchAndSave($url2, $saveUrl, $resultPrefix) {
                 }
             }
 
-            if (!isset($email->attachments)) {
-                continue;
+            $folder = __DIR__ . '/email-engine-data-store/' . $election_year . '/' . $thread->entity_id . '/' . $thread->thread_id;
+            if (!file_exists($folder)) {
+                mkdir($folder, 0777, true);
             }
-            foreach ($email->attachments as $att) {
-                if ($att->filetype != 'pdf' && $att->filetype != 'UNKNOWN') {
-                    continue;
+            if (!file_exists($folder . '/' . $email->id . '.html')) {
+                echo 'GET ' . $email->link . chr(10);
+                file_put_contents($folder . '/' . $email->id . '.html', file_get_contents($email->link));
+            }
+            if (isset($email->attachments)) {
+                foreach ($email->attachments as $att) {
+                    if ($att->filetype != 'pdf' && $att->filetype != 'UNKNOWN') {
+                        continue;
+                    }
+
+                    if (!file_exists($folder . '/' . $att->location . '.pdf')) {
+                        echo 'GET ' . $att->link . chr(10);
+                        file_put_contents($folder . '/' . $att->location . '.pdf', file_get_contents($att->link));
+
+                    }
                 }
-                $url[] = $att->link;
-                $entityMarkOk[] = $thread->entity_id . ':' . $att->linkSetSuccess;
+
             }
+
+            if (isset($email->attachments)) {
+                foreach ($email->attachments as $att) {
+                    if ($att->filetype != 'pdf' && $att->filetype != 'UNKNOWN') {
+                        continue;
+                    }
+                    $url[] = $att->link;
+                    $entityMarkOk[] = $thread->entity_id . ':' . $att->linkSetSuccess;
+                }
+            }
+
+
         }
 
         $entityEmails[$thread->entity_id]->threadCount++;
