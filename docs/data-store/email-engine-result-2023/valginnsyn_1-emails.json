@@ -291,13 +291,25 @@
     "0229-enebakk-kommune": {
         "threadCount": 1,
         "emailsSummary": [
-            "- 2023-08-14 00:00:26 epost til dere"
+            "- 2023-08-14 00:00:26 epost til dere",
+            "- 2023-08-22 23:47:02 epost til dere",
+            "- 2023-08-23 08:36:59 epost fra dere"
         ],
         "emails": [
             {
                 "datetime_received": "2023-08-14 00:00:26",
                 "timestamp_received": 1691964026,
                 "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:47:02",
+                "timestamp_received": 1692740822,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 08:36:59",
+                "timestamp_received": 1692772619,
+                "email_type": "IN"
             }
         ]
     },
@@ -323,12 +335,18 @@
     "0233-nittedal-kommune": {
         "threadCount": 1,
         "emailsSummary": [
-            "- 2023-08-14 00:00:28 epost til dere"
+            "- 2023-08-14 00:00:28 epost til dere",
+            "- 2023-08-22 23:44:49 epost til dere"
         ],
         "emails": [
             {
                 "datetime_received": "2023-08-14 00:00:28",
                 "timestamp_received": 1691964028,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:44:49",
+                "timestamp_received": 1692740689,
                 "email_type": "OUT"
             }
         ]
@@ -337,7 +355,9 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-08-14 00:00:29 epost til dere",
-            "- 2023-08-14 00:00:40 epost fra dere"
+            "- 2023-08-14 00:00:40 epost fra dere",
+            "- 2023-08-22 23:44:30 epost til dere",
+            "- 2023-08-22 23:44:41 epost fra dere"
         ],
         "emails": [
             {
@@ -348,6 +368,16 @@
             {
                 "datetime_received": "2023-08-14 00:00:40",
                 "timestamp_received": 1691964040,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-08-22 23:44:30",
+                "timestamp_received": 1692740670,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:44:41",
+                "timestamp_received": 1692740681,
                 "email_type": "IN"
             }
         ]
@@ -375,7 +405,9 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-08-14 00:02:21 epost til dere",
-            "- 2023-08-14 00:02:32 epost fra dere"
+            "- 2023-08-14 00:02:32 epost fra dere",
+            "- 2023-08-22 23:40:14 epost til dere",
+            "- 2023-08-22 23:40:27 epost fra dere"
         ],
         "emails": [
             {
@@ -387,6 +419,16 @@
                 "datetime_received": "2023-08-14 00:02:32",
                 "timestamp_received": 1691964152,
                 "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-08-22 23:40:14",
+                "timestamp_received": 1692740414,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:40:27",
+                "timestamp_received": 1692740427,
+                "email_type": "IN"
             }
         ]
     },
@@ -394,7 +436,9 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-08-14 00:02:21 epost til dere",
-            "- 2023-08-14 00:02:35 epost fra dere"
+            "- 2023-08-14 00:02:35 epost fra dere",
+            "- 2023-08-22 23:40:48 epost til dere",
+            "- 2023-08-22 23:41:01 epost fra dere"
         ],
         "emails": [
             {
@@ -406,6 +450,16 @@
                 "datetime_received": "2023-08-14 00:02:35",
                 "timestamp_received": 1691964155,
                 "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-08-22 23:40:48",
+                "timestamp_received": 1692740448,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:41:01",
+                "timestamp_received": 1692740461,
+                "email_type": "IN"
             }
         ]
     },
@@ -413,7 +467,9 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-08-14 00:02:22 epost til dere",
-            "- 2023-08-14 00:02:33 epost fra dere"
+            "- 2023-08-14 00:02:33 epost fra dere",
+            "- 2023-08-22 23:41:14 epost til dere",
+            "- 2023-08-22 23:41:26 epost fra dere"
         ],
         "emails": [
             {
@@ -424,6 +480,16 @@
             {
                 "datetime_received": "2023-08-14 00:02:33",
                 "timestamp_received": 1691964153,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-08-22 23:41:14",
+                "timestamp_received": 1692740474,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:41:26",
+                "timestamp_received": 1692740486,
                 "email_type": "IN"
             }
         ]
@@ -950,8 +1016,16 @@
     },
     "0602-drammen-kommune": {
         "threadCount": 1,
-        "emailsSummary": [],
-        "emails": []
+        "emailsSummary": [
+            "- 2023-08-22 22:16:08 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 22:16:08",
+                "timestamp_received": 1692735368,
+                "email_type": "IN"
+            }
+        ]
     },
     "0604-kongsberg-kommune": {
         "threadCount": 1,
@@ -1164,8 +1238,16 @@
     },
     "0701-horten-kommune": {
         "threadCount": 1,
-        "emailsSummary": [],
-        "emails": []
+        "emailsSummary": [
+            "- 2023-08-23 14:39:04 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-23 14:39:04",
+                "timestamp_received": 1692794344,
+                "email_type": "IN"
+            }
+        ]
     },
     "0704-tonsberg-kommune": {
         "threadCount": 1,
@@ -1512,6 +1594,346 @@
             }
         ]
     },
+    "0906-arendal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:18:09 epost til dere",
+            "- 2023-08-23 09:15:51 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:18:09",
+                "timestamp_received": 1692739089,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 09:15:51",
+                "timestamp_received": 1692774951,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "0911-gjerstad-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:49 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:49",
+                "timestamp_received": 1692739549,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "0912-vegarshei-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:49 epost til dere",
+            "- 2023-08-23 14:39:00 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:49",
+                "timestamp_received": 1692739549,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 14:39:00",
+                "timestamp_received": 1692794340,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "0914-tvedestrand-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:50 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:50",
+                "timestamp_received": 1692739550,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "0919-froland-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:50 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:50",
+                "timestamp_received": 1692739550,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "0926-lillesand-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:51 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:51",
+                "timestamp_received": 1692739551,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "0928-birkenes-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:51 epost til dere",
+            "- 2023-08-23 12:35:44 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:51",
+                "timestamp_received": 1692739551,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 12:35:44",
+                "timestamp_received": 1692786944,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "0929-amli-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:52 epost til dere",
+            "- 2023-08-23 10:10:35 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:52",
+                "timestamp_received": 1692739552,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 10:10:35",
+                "timestamp_received": 1692778235,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "0935-iveland-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:52 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:52",
+                "timestamp_received": 1692739552,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "0937-evje-og-hornnes-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:52 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:52",
+                "timestamp_received": 1692739552,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "0938-bygland-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:53 epost til dere",
+            "- 2023-08-23 11:35:42 epost fra dere",
+            "- 2023-08-23 15:07:45 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:53",
+                "timestamp_received": 1692739553,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 11:35:42",
+                "timestamp_received": 1692783342,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-08-23 15:07:45",
+                "timestamp_received": 1692796065,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "0940-valle-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:53 epost til dere",
+            "- 2023-08-23 12:02:33 epost fra dere",
+            "- 2023-08-23 12:52:04 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:53",
+                "timestamp_received": 1692739553,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 12:02:33",
+                "timestamp_received": 1692784953,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-08-23 12:52:04",
+                "timestamp_received": 1692787924,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "0941-bykle-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:53 epost til dere",
+            "- 2023-08-23 11:40:09 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:53",
+                "timestamp_received": 1692739553,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 11:40:09",
+                "timestamp_received": 1692783609,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1001-kristiansand-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:54 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:54",
+                "timestamp_received": 1692739554,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1003-farsund-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:54 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:54",
+                "timestamp_received": 1692739554,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1004-flekkefjord-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:55 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:55",
+                "timestamp_received": 1692739555,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1014-vennesla-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:55 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:55",
+                "timestamp_received": 1692739555,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1026-aseral-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:56 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:56",
+                "timestamp_received": 1692739556,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1032-lyngdal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:56 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:56",
+                "timestamp_received": 1692739556,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1034-haegebostad-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:57 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:57",
+                "timestamp_received": 1692739557,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1037-kvinesdal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:57 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:57",
+                "timestamp_received": 1692739557,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1046-sirdal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:57 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:57",
+                "timestamp_received": 1692739557,
+                "email_type": "OUT"
+            }
+        ]
+    },
     "1101-eigersund-kommune": {
         "threadCount": 1,
         "emailsSummary": [
@@ -1551,6 +1973,51 @@
             }
         ]
     },
+    "1106-haugesund-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:58 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:58",
+                "timestamp_received": 1692739558,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1111-sokndal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:58 epost til dere",
+            "- 2023-08-23 09:11:19 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:58",
+                "timestamp_received": 1692739558,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 09:11:19",
+                "timestamp_received": 1692774679,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1112-lund-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:58 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:58",
+                "timestamp_received": 1692739558,
+                "email_type": "OUT"
+            }
+        ]
+    },
     "1114-bjerkreim-kommune": {
         "threadCount": 1,
         "emailsSummary": [
@@ -1567,6 +2034,45 @@
                 "datetime_received": "2023-08-11 13:38:23",
                 "timestamp_received": 1691753903,
                 "email_type": "IN"
+            }
+        ]
+    },
+    "1119-ha-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:25:59 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:25:59",
+                "timestamp_received": 1692739559,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1120-klepp-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:00 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:00",
+                "timestamp_received": 1692739560,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1121-time-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:00 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:00",
+                "timestamp_received": 1692739560,
+                "email_type": "OUT"
             }
         ]
     },
@@ -1598,6 +2104,64 @@
                 "datetime_received": "2023-08-17 09:13:14",
                 "timestamp_received": 1692256394,
                 "email_type": "IN"
+            }
+        ]
+    },
+    "1124-sola-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:00 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:00",
+                "timestamp_received": 1692739560,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1127-randaberg-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:01 epost til dere",
+            "- 2023-08-23 16:02:06 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:01",
+                "timestamp_received": 1692739561,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 16:02:06",
+                "timestamp_received": 1692799326,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1130-strand-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:01 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:01",
+                "timestamp_received": 1692739561,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1133-hjelmeland-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:02 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:02",
+                "timestamp_received": 1692739562,
+                "email_type": "OUT"
             }
         ]
     },
@@ -1887,6 +2451,582 @@
             }
         ]
     },
+    "1231-ullensvang-herad": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:02 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:02",
+                "timestamp_received": 1692739562,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1232-eidfjord-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:02 epost til dere",
+            "- 2023-08-23 09:37:09 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:02",
+                "timestamp_received": 1692739562,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 09:37:09",
+                "timestamp_received": 1692776229,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1233-ulvik-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:03 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:03",
+                "timestamp_received": 1692739563,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1235-voss-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:03 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:03",
+                "timestamp_received": 1692739563,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1238-kvam-herad": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:04 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:04",
+                "timestamp_received": 1692739564,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1242-samnanger-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:04 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:04",
+                "timestamp_received": 1692739564,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1244-austevoll-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:05 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:05",
+                "timestamp_received": 1692739565,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1247-askoy-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:05 epost til dere",
+            "- 2023-08-22 23:26:05 epost til dere",
+            "- 2023-08-22 23:26:05 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:05",
+                "timestamp_received": 1692739565,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:26:05",
+                "timestamp_received": 1692739565,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:26:05",
+                "timestamp_received": 1692739565,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1251-vaksdal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:38 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:38",
+                "timestamp_received": 1692739598,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1252-modalen-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:09 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:09",
+                "timestamp_received": 1692739569,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1253-osteroy-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:10 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:10",
+                "timestamp_received": 1692739570,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1259-oygarden-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:10 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:10",
+                "timestamp_received": 1692739570,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1264-austrheim-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:10 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:10",
+                "timestamp_received": 1692739570,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1265-fedje-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:11 epost til dere",
+            "- 2023-08-23 09:55:14 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:11",
+                "timestamp_received": 1692739571,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 09:55:14",
+                "timestamp_received": 1692777314,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1266-masfjorden-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:12 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:12",
+                "timestamp_received": 1692739572,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1411-gulen-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:12 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:12",
+                "timestamp_received": 1692739572,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1412-solund-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:12 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:12",
+                "timestamp_received": 1692739572,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1413-hyllestad-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:13 epost til dere",
+            "- 2023-08-22 23:26:21 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:13",
+                "timestamp_received": 1692739573,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:26:21",
+                "timestamp_received": 1692739581,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1416-hoyanger-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:13 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:13",
+                "timestamp_received": 1692739573,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1417-vik-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:14 epost til dere",
+            "- 2023-08-22 23:26:22 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:14",
+                "timestamp_received": 1692739574,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:26:22",
+                "timestamp_received": 1692739582,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1420-sogndal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:14 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:14",
+                "timestamp_received": 1692739574,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1421-aurland-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:45 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:45",
+                "timestamp_received": 1692739605,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1422-laerdal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:15 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:15",
+                "timestamp_received": 1692739575,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1424-ardal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:16 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:16",
+                "timestamp_received": 1692739576,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1426-luster-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:16 epost til dere",
+            "- 2023-08-23 11:03:48 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:16",
+                "timestamp_received": 1692739576,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 11:03:48",
+                "timestamp_received": 1692781428,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1428-askvoll-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:17 epost til dere",
+            "- 2023-08-23 13:47:49 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:17",
+                "timestamp_received": 1692739577,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 13:47:49",
+                "timestamp_received": 1692791269,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1429-fjaler-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:49 epost til dere",
+            "- 2023-08-23 13:16:40 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:49",
+                "timestamp_received": 1692739729,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 13:16:40",
+                "timestamp_received": 1692789400,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1438-bremanger-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:49 epost til dere",
+            "- 2023-08-22 23:29:16 epost fra dere",
+            "- 2023-08-23 13:39:31 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:49",
+                "timestamp_received": 1692739729,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:29:16",
+                "timestamp_received": 1692739756,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-08-23 13:39:31",
+                "timestamp_received": 1692790771,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1445-gloppen-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:50 epost til dere",
+            "- 2023-08-23 09:00:13 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:50",
+                "timestamp_received": 1692739730,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 09:00:13",
+                "timestamp_received": 1692774013,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1449-stryn-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:51 epost til dere",
+            "- 2023-08-22 23:29:16 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:51",
+                "timestamp_received": 1692739731,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:29:16",
+                "timestamp_received": 1692739756,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1502-molde-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:51 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:51",
+                "timestamp_received": 1692739731,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1504-alesund-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:51 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:51",
+                "timestamp_received": 1692739731,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1505-kristiansund-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:52 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:52",
+                "timestamp_received": 1692739732,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1511-vanylven-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:52 epost til dere",
+            "- 2023-08-22 23:29:07 epost fra dere",
+            "- 2023-08-23 08:34:14 epost fra dere",
+            "- 2023-08-23 11:16:42 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:52",
+                "timestamp_received": 1692739732,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:29:07",
+                "timestamp_received": 1692739747,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-08-23 08:34:14",
+                "timestamp_received": 1692772454,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-08-23 11:16:42",
+                "timestamp_received": 1692782202,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1514-sande-i-more-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:53 epost til dere",
+            "- 2023-08-22 23:29:07 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:53",
+                "timestamp_received": 1692739733,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:29:07",
+                "timestamp_received": 1692739747,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1515-heroy-i-more-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:53 epost til dere",
+            "- 2023-08-22 23:29:07 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:53",
+                "timestamp_received": 1692739733,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:29:07",
+                "timestamp_received": 1692739747,
+                "email_type": "IN"
+            }
+        ]
+    },
     "1516-ulstein-kommune": {
         "threadCount": 2,
         "emailsSummary": [
@@ -1959,6 +3099,2145 @@
                 "datetime_received": "2023-08-10 00:16:12",
                 "timestamp_received": 1691619372,
                 "email_type": "IN"
+            }
+        ]
+    },
+    "1520-orsta-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:54 epost til dere",
+            "- 2023-08-22 23:29:08 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:54",
+                "timestamp_received": 1692739734,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:29:08",
+                "timestamp_received": 1692739748,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1525-stranda-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:54 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:54",
+                "timestamp_received": 1692739734,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1528-sykkylven-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:54 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:54",
+                "timestamp_received": 1692739734,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1531-sula-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:55 epost til dere",
+            "- 2023-08-23 13:59:38 epost fra dere",
+            "- 2023-08-23 14:27:57 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:55",
+                "timestamp_received": 1692739735,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 13:59:38",
+                "timestamp_received": 1692791978,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-08-23 14:27:57",
+                "timestamp_received": 1692793677,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1532-giske-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:55 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:55",
+                "timestamp_received": 1692739735,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1535-vestnes-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:56 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:56",
+                "timestamp_received": 1692739736,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1539-rauma-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:56 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:56",
+                "timestamp_received": 1692739736,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1547-aukra-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:56 epost til dere",
+            "- 2023-08-23 08:20:19 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:56",
+                "timestamp_received": 1692739736,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 08:20:19",
+                "timestamp_received": 1692771619,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1554-averoy-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:57 epost til dere",
+            "- 2023-08-23 10:24:09 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:57",
+                "timestamp_received": 1692739737,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 10:24:09",
+                "timestamp_received": 1692779049,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1557-gjemnes-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:57 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:57",
+                "timestamp_received": 1692739737,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1560-tingvoll-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:58 epost til dere",
+            "- 2023-08-23 17:16:01 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:58",
+                "timestamp_received": 1692739738,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 17:16:01",
+                "timestamp_received": 1692803761,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1563-sunndal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:58 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:58",
+                "timestamp_received": 1692739738,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1566-surnadal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:59 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:59",
+                "timestamp_received": 1692739739,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1567-rindal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:59 epost til dere",
+            "- 2023-08-23 08:15:32 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:59",
+                "timestamp_received": 1692739739,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 08:15:32",
+                "timestamp_received": 1692771332,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1573-smola-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:28:59 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:28:59",
+                "timestamp_received": 1692739739,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1576-aure-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:00 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:00",
+                "timestamp_received": 1692739740,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1578-fjord-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:00 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:00",
+                "timestamp_received": 1692739740,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1579-hustadvika-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:01 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:01",
+                "timestamp_received": 1692739741,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1804-bodo-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:12 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:12",
+                "timestamp_received": 1692739752,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1805-narvik-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:02 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:02",
+                "timestamp_received": 1692739742,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1811-bindal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:17 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:17",
+                "timestamp_received": 1692739757,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1812-somna-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:18 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:18",
+                "timestamp_received": 1692739758,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1813-bronnoy-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:18 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:18",
+                "timestamp_received": 1692739758,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1815-vega-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:18 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:18",
+                "timestamp_received": 1692739758,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1816-vevelstad-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:19 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:19",
+                "timestamp_received": 1692739759,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1818-heroy-i-nordland-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:19 epost til dere",
+            "- 2023-08-22 23:29:31 epost fra dere",
+            "- 2023-08-23 10:10:17 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:19",
+                "timestamp_received": 1692739759,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:29:31",
+                "timestamp_received": 1692739771,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-08-23 10:10:17",
+                "timestamp_received": 1692778217,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1820-alstahaug-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:19 epost til dere",
+            "- 2023-08-22 23:29:31 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:19",
+                "timestamp_received": 1692739759,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:29:31",
+                "timestamp_received": 1692739771,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1822-leirfjord-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:20 epost til dere",
+            "- 2023-08-22 23:29:31 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:20",
+                "timestamp_received": 1692739760,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:29:31",
+                "timestamp_received": 1692739771,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1824-vefsn-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:20 epost til dere",
+            "- 2023-08-23 06:16:23 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:20",
+                "timestamp_received": 1692739760,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 06:16:23",
+                "timestamp_received": 1692764183,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1825-grane-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:21 epost til dere",
+            "- 2023-08-22 23:29:34 epost fra dere",
+            "- 2023-08-23 08:01:39 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:21",
+                "timestamp_received": 1692739761,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:29:34",
+                "timestamp_received": 1692739774,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-08-23 08:01:39",
+                "timestamp_received": 1692770499,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1826-hattfjelldal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:21 epost til dere",
+            "- 2023-08-22 23:29:35 epost fra dere",
+            "- 2023-08-23 09:16:32 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:21",
+                "timestamp_received": 1692739761,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:29:35",
+                "timestamp_received": 1692739775,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-08-23 09:16:32",
+                "timestamp_received": 1692774992,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1827-donna-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:21 epost til dere",
+            "- 2023-08-23 12:44:38 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:21",
+                "timestamp_received": 1692739761,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 12:44:38",
+                "timestamp_received": 1692787478,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1828-nesna-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:22 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:22",
+                "timestamp_received": 1692739762,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1832-hemnes-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:22 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:22",
+                "timestamp_received": 1692739762,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1833-rana-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:22 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:22",
+                "timestamp_received": 1692739762,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1834-luroy-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:23 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:23",
+                "timestamp_received": 1692739763,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1835-traena-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:24 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:24",
+                "timestamp_received": 1692739764,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1836-rodoy-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:24 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:24",
+                "timestamp_received": 1692739764,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1837-meloy-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:24 epost til dere",
+            "- 2023-08-22 23:29:32 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:24",
+                "timestamp_received": 1692739764,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:29:32",
+                "timestamp_received": 1692739772,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1838-gildeskal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:24 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:24",
+                "timestamp_received": 1692739764,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1840-saltdal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:25 epost til dere",
+            "- 2023-08-22 23:29:29 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:25",
+                "timestamp_received": 1692739765,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:29:29",
+                "timestamp_received": 1692739769,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1841-fauske-fuosko-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:26 epost til dere",
+            "- 2023-08-23 10:42:29 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:26",
+                "timestamp_received": 1692739766,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 10:42:29",
+                "timestamp_received": 1692780149,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1845-sorfold-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:26 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:26",
+                "timestamp_received": 1692739766,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1848-steigen-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:29:27 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:29:27",
+                "timestamp_received": 1692739767,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1849-hamaroy-habmer-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:28 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:28",
+                "timestamp_received": 1692739828,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1851-lodingen-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:29 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:29",
+                "timestamp_received": 1692739829,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1852-tjeldsund-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:30 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:30",
+                "timestamp_received": 1692739830,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1853-evenes-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:31 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:31",
+                "timestamp_received": 1692739831,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1856-rost-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:31 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:31",
+                "timestamp_received": 1692739831,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1857-vaeroy-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:31 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:31",
+                "timestamp_received": 1692739831,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1859-flakstad-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:32 epost til dere",
+            "- 2023-08-22 23:30:53 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:32",
+                "timestamp_received": 1692739832,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:30:53",
+                "timestamp_received": 1692739853,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1860-vestvagoy-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:32 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:32",
+                "timestamp_received": 1692739832,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1865-vagan-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:33 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:33",
+                "timestamp_received": 1692739833,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1866-hadsel-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:33 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:33",
+                "timestamp_received": 1692739833,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1867-bo-i-vesteralen-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:33 epost til dere",
+            "- 2023-08-22 23:30:41 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:33",
+                "timestamp_received": 1692739833,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:30:41",
+                "timestamp_received": 1692739841,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1868-oksnes-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:34 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:34",
+                "timestamp_received": 1692739834,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1870-sortland-suorta-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:34 epost til dere",
+            "- 2023-08-22 23:30:42 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:34",
+                "timestamp_received": 1692739834,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:30:42",
+                "timestamp_received": 1692739842,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1871-andoy-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:34 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:34",
+                "timestamp_received": 1692739834,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1874-moskenes-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:35 epost til dere",
+            "- 2023-08-22 23:30:43 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:35",
+                "timestamp_received": 1692739835,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:30:43",
+                "timestamp_received": 1692739843,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1902-tromso-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:35 epost til dere",
+            "- 2023-08-22 23:30:40 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:35",
+                "timestamp_received": 1692739835,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:30:40",
+                "timestamp_received": 1692739840,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1903-harstad-harsttak-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:36 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:36",
+                "timestamp_received": 1692739836,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1911-kvaefjord-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:36 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:36",
+                "timestamp_received": 1692739836,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1917-ibestad-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:36 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:36",
+                "timestamp_received": 1692739836,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1919-gratangen-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:37 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:37",
+                "timestamp_received": 1692739837,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1920-loabak-lavangen-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:37 epost til dere",
+            "- 2023-08-23 09:38:33 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:37",
+                "timestamp_received": 1692739837,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 09:38:33",
+                "timestamp_received": 1692776313,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1922-bardu-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:38 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:38",
+                "timestamp_received": 1692739838,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1923-salangen-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:38 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:38",
+                "timestamp_received": 1692739838,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1924-malselv-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:39 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:39",
+                "timestamp_received": 1692739839,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1925-sorreisa-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:42 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:42",
+                "timestamp_received": 1692739842,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1926-dyroy-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:42 epost til dere",
+            "- 2023-08-23 08:30:34 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:42",
+                "timestamp_received": 1692739842,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 08:30:34",
+                "timestamp_received": 1692772234,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1933-balsfjord-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:43 epost til dere",
+            "- 2023-08-23 11:14:17 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:43",
+                "timestamp_received": 1692739843,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 11:14:17",
+                "timestamp_received": 1692782057,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1936-karlsoy-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:59 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:59",
+                "timestamp_received": 1692739859,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1938-lyngen-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:44 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:44",
+                "timestamp_received": 1692739844,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1939-storfjord-omasvuotna-omasvuono-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:45 epost til dere",
+            "- 2023-08-23 10:08:56 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:45",
+                "timestamp_received": 1692739845,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 10:08:56",
+                "timestamp_received": 1692778136,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1940-gaivuotna-kafjord-kaivuono-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:30:45 epost til dere",
+            "- 2023-08-23 11:16:26 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:30:45",
+                "timestamp_received": 1692739845,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 11:16:26",
+                "timestamp_received": 1692782186,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "1941-skjervoy-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:05 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:05",
+                "timestamp_received": 1692739925,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1942-nordreisa-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:08 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:08",
+                "timestamp_received": 1692739928,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1943-kvaenangen-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:08 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:08",
+                "timestamp_received": 1692739928,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "2002-vardo-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:09 epost til dere",
+            "- 2023-08-22 23:32:38 epost til dere",
+            "- 2023-08-23 09:06:12 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:09",
+                "timestamp_received": 1692739929,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:32:38",
+                "timestamp_received": 1692739958,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 09:06:12",
+                "timestamp_received": 1692774372,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "2003-vadso-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:10 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:10",
+                "timestamp_received": 1692739930,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "2004-hammerfest-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:10 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:10",
+                "timestamp_received": 1692739930,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "2012-alta-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:12 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:12",
+                "timestamp_received": 1692739932,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "2014-loppa-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:11 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:11",
+                "timestamp_received": 1692739931,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "2015-hasvik-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:12 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:12",
+                "timestamp_received": 1692739932,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "2018-masoy-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:12 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:12",
+                "timestamp_received": 1692739932,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "2019-nordkapp-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:13 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:13",
+                "timestamp_received": 1692739933,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "2020-porsanger-porsangu-porsanki-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:13 epost til dere",
+            "- 2023-08-23 10:12:13 epost fra dere",
+            "- 2023-08-23 14:28:10 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:13",
+                "timestamp_received": 1692739933,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 10:12:13",
+                "timestamp_received": 1692778333,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-08-23 14:28:10",
+                "timestamp_received": 1692793690,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "2021-kara?johka-karasjok-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:14 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:14",
+                "timestamp_received": 1692739934,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "2022-lebesby-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:14 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:14",
+                "timestamp_received": 1692739934,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "2023-gamvik-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:14 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:14",
+                "timestamp_received": 1692739934,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "2024-berlevag-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:15 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:15",
+                "timestamp_received": 1692739935,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "2025-deatnu-tana-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:15 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:15",
+                "timestamp_received": 1692739935,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "2027-unjarga-nesseby-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:15 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:15",
+                "timestamp_received": 1692739935,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "2028-batsfjord-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:16 epost til dere",
+            "- 2023-08-23 08:02:19 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:16",
+                "timestamp_received": 1692739936,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 08:02:19",
+                "timestamp_received": 1692770539,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "2030-sor-varanger-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:16 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:16",
+                "timestamp_received": 1692739936,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "3014-indre-ostfold-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:17 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:17",
+                "timestamp_received": 1692739937,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "3020-nordrefollo-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:17 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:17",
+                "timestamp_received": 1692739937,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "3030-lillestrom-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:17 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:17",
+                "timestamp_received": 1692739937,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "3817-midt-telemark-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:18 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:18",
+                "timestamp_received": 1692739938,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "4205-lindesnes-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:18 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:18",
+                "timestamp_received": 1692739938,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "4602-kinn-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:18 epost til dere",
+            "- 2023-08-22 23:32:46 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:18",
+                "timestamp_received": 1692739938,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:32:46",
+                "timestamp_received": 1692739966,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "4624-bjornafjorden-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:19 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:19",
+                "timestamp_received": 1692739939,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "4631-alver-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:20 epost til dere",
+            "- 2023-08-23 12:46:07 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:20",
+                "timestamp_received": 1692739940,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 12:46:07",
+                "timestamp_received": 1692787567,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "4647-sunnfjord-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:20 epost til dere",
+            "- 2023-08-23 08:06:34 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:20",
+                "timestamp_received": 1692739940,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 08:06:34",
+                "timestamp_received": 1692770794,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "4649-stad-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:20 epost til dere",
+            "- 2023-08-22 23:32:48 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:20",
+                "timestamp_received": 1692739940,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:32:48",
+                "timestamp_received": 1692739968,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "5001-trondheim-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:20 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:20",
+                "timestamp_received": 1692739940,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5004-steinkjer-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:21 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:21",
+                "timestamp_received": 1692739941,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5007-namsos-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:21 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:21",
+                "timestamp_received": 1692739941,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5013-hitra-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:21 epost til dere",
+            "- 2023-08-22 23:32:22 epost til dere",
+            "- 2023-08-23 10:53:13 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:21",
+                "timestamp_received": 1692739941,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:32:22",
+                "timestamp_received": 1692739942,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 10:53:13",
+                "timestamp_received": 1692780793,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "5014-froya-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:22 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:22",
+                "timestamp_received": 1692739942,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5015-orland-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:23 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:23",
+                "timestamp_received": 1692739943,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5018-afjord-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:23 epost til dere",
+            "- 2023-08-22 23:32:23 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:23",
+                "timestamp_received": 1692739943,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:32:23",
+                "timestamp_received": 1692739943,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5020-osen-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:24 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:24",
+                "timestamp_received": 1692739944,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5021-oppdal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:24 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:24",
+                "timestamp_received": 1692739944,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5022-rennebu-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:24 epost til dere",
+            "- 2023-08-22 23:32:25 epost til dere",
+            "- 2023-08-23 11:30:44 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:24",
+                "timestamp_received": 1692739944,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:32:25",
+                "timestamp_received": 1692739945,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 11:30:44",
+                "timestamp_received": 1692783044,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "5025-roros-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:25 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:25",
+                "timestamp_received": 1692739945,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5026-holtalen-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:26 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:26",
+                "timestamp_received": 1692739946,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5027-midtre-gauldal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:26 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:26",
+                "timestamp_received": 1692739946,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5028-melhus-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:26 epost til dere",
+            "- 2023-08-22 23:32:27 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:26",
+                "timestamp_received": 1692739946,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:32:27",
+                "timestamp_received": 1692739947,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5029-skaun-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:27 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:27",
+                "timestamp_received": 1692739947,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5031-malvik-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:28 epost til dere",
+            "- 2023-08-23 09:19:51 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:28",
+                "timestamp_received": 1692739948,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 09:19:51",
+                "timestamp_received": 1692775191,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "5032-selbu-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:28 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:28",
+                "timestamp_received": 1692739948,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5033-tydal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:29 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:29",
+                "timestamp_received": 1692739949,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5034-meraker-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:29 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:29",
+                "timestamp_received": 1692739949,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5035-stjordal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:29 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:29",
+                "timestamp_received": 1692739949,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5036-frosta-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:30 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:30",
+                "timestamp_received": 1692739950,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5037-levanger-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:30 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:30",
+                "timestamp_received": 1692739950,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5038-verdal-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:31 epost til dere",
+            "- 2023-08-23 10:44:45 epost fra dere",
+            "- 2023-08-23 12:46:42 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:31",
+                "timestamp_received": 1692739951,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 10:44:45",
+                "timestamp_received": 1692780285,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-08-23 12:46:42",
+                "timestamp_received": 1692787602,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "5041-snasa-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:31 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:31",
+                "timestamp_received": 1692739951,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5042-lierne-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:31 epost til dere",
+            "- 2023-08-23 12:54:27 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:31",
+                "timestamp_received": 1692739951,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 12:54:27",
+                "timestamp_received": 1692788067,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "5043-raarvihke-royrvik-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:32 epost til dere",
+            "- 2023-08-22 23:32:32 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:32",
+                "timestamp_received": 1692739952,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-22 23:32:32",
+                "timestamp_received": 1692739952,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5044-namsskogan-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:33 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:33",
+                "timestamp_received": 1692739953,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5045-grong-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:32:34 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:32:34",
+                "timestamp_received": 1692739954,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5046-hoylandet-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:34:04 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:34:04",
+                "timestamp_received": 1692740044,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5052-leka-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:34:04 epost til dere",
+            "- 2023-08-23 09:38:24 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:34:04",
+                "timestamp_received": 1692740044,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 09:38:24",
+                "timestamp_received": 1692776304,
+                "email_type": "IN"
+            }
+        ]
+    },
+    "5053-inderoy-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:34:05 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:34:05",
+                "timestamp_received": 1692740045,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5054-indrefosen-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:34:05 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:34:05",
+                "timestamp_received": 1692740045,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5055-heim-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:34:06 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:34:06",
+                "timestamp_received": 1692740046,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5059-orkland-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:34:07 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:34:07",
+                "timestamp_received": 1692740047,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5060-naroysund-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:34:08 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:34:08",
+                "timestamp_received": 1692740048,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "5421-senja-kommune": {
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:34:09 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:34:09",
+                "timestamp_received": 1692740049,
+                "email_type": "OUT"
             }
         ]
     }
