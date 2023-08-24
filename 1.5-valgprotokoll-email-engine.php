@@ -74,7 +74,7 @@ function fetchAndSave($url2, $saveUrl, $resultPrefix) {
                 }
             }
 
-            $folder = __DIR__ . '/email-engine-data-store/' . $election_year . '/' . $thread->entity_id . '/' . $thread->thread_id;
+            $folder = __DIR__ . '/email-engine-data-store/raw-' . $election_year . '/' . $thread->entity_id . '/' . $thread->thread_id;
             if (!file_exists($folder)) {
                 mkdir($folder, 0777, true);
             }
