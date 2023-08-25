@@ -32,6 +32,15 @@ foreach ($files as $file) {
             throw new Exception('Finish reason not stop: ' . $file);
         }
         var_dump($obj->choices[0]->message->content);
+
+        $answer_file = str_replace('/raw-', '/answer-', $file);
+        if (!file_exists($answer_file)) {
+            $dir = dirname($answer_file);
+            if (!file_exists($dir)) {
+                mkdir($dir, 0777, true);
+            }
+            file_put_contents($answer_file . '.extract', $obj->choices[0]->message->content);
+        }
         //exit;
     }
 }
