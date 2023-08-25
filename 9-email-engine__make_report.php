@@ -14,14 +14,14 @@ foreach ($files as $file) {
         $lines = explode("\n", file_get_contents($file));
         $output_started = false;
         $output = '';
-        foreach($lines as $line) {
+        foreach ($lines as $line) {
             if ($line == '--------------- OUTPUT') {
                 $output_started = true;
             }
-            elseif($line == '---------------') {
+            elseif ($line == '---------------') {
                 $output_started = false;
             }
-            elseif($output_started) {
+            elseif ($output_started) {
                 $output .= "\n" . $line;
             }
         }
@@ -31,15 +31,34 @@ foreach ($files as $file) {
             var_dump($obj);
             throw new Exception('Finish reason not stop: ' . $file);
         }
-        var_dump($obj->choices[0]->message->content);
+        #var_dump($obj->choices[0]->message->content);
 
-        $answer_file = str_replace('/raw-', '/answer-', $file);
+        $answer_file = str_replace('/raw-', '/answer-', $file . '.extract');
         if (!file_exists($answer_file)) {
             $dir = dirname($answer_file);
             if (!file_exists($dir)) {
                 mkdir($dir, 0777, true);
             }
-            file_put_contents($answer_file . '.extract', $obj->choices[0]->message->content);
+            file_put_contents($answer_file, $obj->choices[0]->message->content);
+        }
+
+        $lines = explode("\n", file_get_contents($answer_file));
+        foreach ($lines as $line) {
+            if (str_starts_with($line, '{')
+                || str_starts_with(trim($line), '"any_answers_found":')
+                || str_starts_with(trim($line), '"answer1":')
+                || str_starts_with(trim($line), '"answer2":')
+                || str_starts_with(trim($line), '"answer3":')
+                || str_starts_with(trim($line), '"answer4":')
+                || str_starts_with(trim($line), '"answer5":')
+                || str_starts_with(trim($line), '"answer6":')
+                || str_starts_with(trim($line), '"answer7":')
+                || str_starts_with($line, '}')) {
+                continue;
+            }
+            var_dump($line);
+            var_dump($obj->choices[0]->message->content);
+            throw new Exception('Buggy JSON: ' . $answer_file);
         }
         //exit;
     }
