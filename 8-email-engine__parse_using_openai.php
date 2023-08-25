@@ -28,6 +28,8 @@ foreach ($files as $file) {
             echo $output.chr(10);
             exit;
         }
+
+
     }
 }
 
