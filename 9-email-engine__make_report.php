@@ -8,6 +8,40 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline) {
 $election_year = '2023';
 
 
+$html = '<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Spørsmål om valggjennomføring - GPT3.5 output</title>
+</head>
+<body>
+<style>
+table th {
+text-align: left;
+max-width: 300px;
+border: 1px solid lightgrey;
+padding: 2px;
+}
+table td {
+border: 1px solid lightgrey;
+padding: 2px;
+
+}
+table {
+border-collapse: collapse;
+}
+</style>
+
+<h1>Spørsmål om valggjennomføring - GPT3.5 output</h1>
+
+<table>
+
+    <tr>
+        <th>Kommune og epostID</th>
+        <td>GPT3.5 promt for å hente ut svar av innkommende epost</td>
+    </tr>
+
+';
 $files = getDirContents(__DIR__ . '/email-engine-data-store/raw-' . $election_year);
 foreach ($files as $file) {
     if (str_ends_with($file, ' - IN.openaitxt')) {
@@ -61,8 +95,20 @@ foreach ($files as $file) {
             throw new Exception('Buggy JSON: ' . $answer_file);
         }
         //exit;
+
+        $html .= '
+        
+        <tr>
+            <th style="">' . str_replace('/', "<br>\n", str_replace(__DIR__ . '/email-engine-data-store/answer-2023/', '', $answer_file)) . '</th>
+            <td style=""><pre style="max-width: 900px;  overflow-x: scroll">' . file_get_contents($answer_file) . '</pre></td>
+        </tr>
+        
+        ';
     }
 }
+$html .= '</table>';
+
+file_put_contents(__DIR__ . '/docs/valggjenomforing-sporreundersokelse-' . $election_year . '.html', $html);
 
 
 function getDirContents($dir) {
