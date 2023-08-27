@@ -38,7 +38,8 @@ border-collapse: collapse;
 
     <tr>
         <th>Kommune og epostID</th>
-        <td>GPT3.5 promt for å hente ut svar av innkommende epost</td>
+        <td>Output fra <a href="https://github.com/HNygard/valgprotokoller/blob/master/openai-docker-python/src/main.py">GPT3.5 prompt</a> for å hente ut svar av innkommende epost</td>
+        <td>Output fra <a href="https://github.com/HNygard/valgprotokoller/blob/master/openai-docker-python/src/main2.py">GPT3.5 prompt</a> for analysere svarene</td>
     </tr>
 
 ';
