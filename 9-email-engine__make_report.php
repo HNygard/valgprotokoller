@@ -42,29 +42,12 @@ border-collapse: collapse;
     </tr>
 
 ';
+
 $files = getDirContents(__DIR__ . '/email-engine-data-store/raw-' . $election_year);
 foreach ($files as $file) {
     if (str_ends_with($file, ' - IN.openaitxt')) {
-        $lines = explode("\n", file_get_contents($file));
-        $output_started = false;
-        $output = '';
-        foreach ($lines as $line) {
-            if ($line == '--------------- OUTPUT') {
-                $output_started = true;
-            }
-            elseif ($line == '---------------') {
-                $output_started = false;
-            }
-            elseif ($output_started) {
-                $output .= "\n" . $line;
-            }
-        }
+        $obj = readOpenaiDockerOutput($file);
 
-        $obj = json_decode($output);
-        if (!isset($obj->choices) || $obj->choices[0]->finish_reason != 'stop') {
-            var_dump($obj);
-            throw new Exception('Finish reason not stop: ' . $file);
-        }
         #var_dump($obj->choices[0]->message->content);
 
         $answer_file = str_replace('/raw-', '/answer-', $file . '.extract');
@@ -96,11 +79,21 @@ foreach ($files as $file) {
         }
         //exit;
 
+        $answer_file2 = str_replace('/raw-', '/answer-', $file . '.extract.analyze');
+        if (file_exists($answer_file2)) {
+            $obj2 = readOpenaiDockerOutput($answer_file2);
+            $answers2 = $obj2->choices[0]->message->content;
+        }
+        else {
+            $answers2 = '<i>Not available. Rerun scripts.</i>';
+        }
+
         $html .= '
         
         <tr>
             <th style="">' . str_replace('/', "<br>\n", str_replace(__DIR__ . '/email-engine-data-store/answer-2023/', '', $answer_file)) . '</th>
             <td style=""><pre style="max-width: 900px;  overflow-x: scroll">' . file_get_contents($answer_file) . '</pre></td>
+            <td style=""><pre style="max-width: 900px;  overflow-x: scroll">' . $answers2 . '</pre></td>
         </tr>
         
         ';
@@ -111,6 +104,29 @@ $html .= '</table>';
 file_put_contents(__DIR__ . '/docs/valggjenomforing-sporreundersokelse-' . $election_year . '.html', $html);
 
 
+function readOpenaiDockerOutput($file) {
+    $lines = explode("\n", file_get_contents($file));
+    $output_started = false;
+    $output = '';
+    foreach ($lines as $line) {
+        if ($line == '--------------- OUTPUT') {
+            $output_started = true;
+        }
+        elseif ($line == '---------------') {
+            $output_started = false;
+        }
+        elseif ($output_started) {
+            $output .= "\n" . $line;
+        }
+    }
+
+    $obj = json_decode($output);
+    if (!isset($obj->choices) || $obj->choices[0]->finish_reason != 'stop') {
+        var_dump($obj);
+        throw new Exception('Finish reason not stop: ' . $file);
+    }
+    return $obj;
+}
 function getDirContents($dir) {
     $command = 'find "' . $dir . '"';
     exec($command, $find);
