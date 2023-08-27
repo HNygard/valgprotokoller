@@ -1,8 +1,18 @@
 
 from pathlib import Path
 import json
+import os
+import sys
 
 import openai
+prompt = os.environ.get("PROMPT", None)
+if prompt == 'answers-to-result':
+    import main2
+    sys.exit()
+
+if prompt != 'email-to-answers':
+    raise ValueError(f'Unknown prompt: {prompt}')
+
 print("------ openai-docker-python ------")
 txt = Path('/api-key/openai-api-key.txt').read_text()
 

@@ -1,9 +1,13 @@
 from pathlib import Path
-txt = Path('/api-key/openai-api-key.txt').read_text()
+import json
 
 import openai
-openai.api_key = txt
 
+print("------ openai-docker-python ------")
+txt = Path('/api-key/openai-api-key.txt').read_text()
+
+inputTxt = Path('/input.txt').read_text()
+openai.api_key = txt
 
 #print ("Models")
 #models = openai.Model.list()
@@ -11,7 +15,8 @@ openai.api_key = txt
 #    print(f" - {model.id}")
 
 
-chat_completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[
+print ("Chat completion")
+messages=[
 
     {"role": "system", "content": """
 
@@ -47,25 +52,7 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
     {"role": "user", "content": """
 The following answers was given:
 
-1. Den endelige opptellingen utføres maskinelt for Halden kommune.
-
-2. Det ble vedtatt i Valgstyret 02.02.2023 i PS 2023/4.
-
-3. Foreløpig manuell opptelling foregår ute i valgkretsene og fraktes sikret inn for
-endelig opptelling hos valgansvarlige /valgstyret.
-
-4. Resultatet fra valget fremkommer i valgprotokollene til kommunestyrevalget og
-fylkestingsvalget. Disse skrives ut fra EVA systemet og lagres i vårt sak- og
-arkivsystem Elements.
-
-5. Vi har 4 medlemmer i stemmestyrene som har ansvaret for den foreløpige
-opptellingen. Det er rutine på at stemmestyret kontrollerer hverandre ved innlegging
-av tallene i EVA.
-
-6. Resultatet fremkommer i valgprotokollene som hentes ut av EVA og lagres i vårt
-sak- og arkivsystem Elements.
-
-7. Vi er 2 valgansvarlige som har ansvaret for å legge inn tallene for den endelige  opptellingen og har rutine på å kontrollere hverandre.
+""" + inputTxt + """
 
 """},
 
@@ -123,8 +110,15 @@ sak- og arkivsystem Elements.
         "final_counting__process_for_control_type": "...",
      }
      
-     """},
-])
+"""},
+
+]
+print("--------------- INPUT")
+print(json.dumps(messages, indent=4))
+
+chat_completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=messages)
+
+print("--------------- OUTPUT")
 print(chat_completion)
 print("---------------")
 print(chat_completion.choices[0].message.content)

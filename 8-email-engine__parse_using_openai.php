@@ -29,6 +29,25 @@ foreach ($files as $file) {
             exit;
         }
 
+        // Extracted by 9-email-engine__make_report.php
+        $answer_file = str_replace('/raw-', '/answer-', $file_txt . '.extract');
+        $answer_file2 = str_replace('/raw-', '/answer-', $file_txt . '.extract.analyze');
+        if (file_exists($answer_file) && !file_exists($answer_file2)) {
+            echo file_get_contents($answer_file);
+            echo chr(10);
+            echo chr(10);
+            echo chr(10);
+            echo chr(10);
+            echo chr(10);
+
+
+            echo 'TEXT-parse-OpenAI: ' . $answer_file . chr(10);
+            $output = analyzeUsingOpenAI($answer_file);
+            file_put_contents($answer_file2, $output);
+
+            echo $output.chr(10);
+            exit;
+        }
 
     }
 }
@@ -36,6 +55,24 @@ foreach ($files as $file) {
 
 function parseUsingOpenAI($file) {
     $command = 'docker run '
+        . '-e PROMPT=email-to-answers '
+        . '-v $(pwd)/openai-docker-python/openai-api-key.txt:/api-key/openai-api-key.txt '
+        . '-v "' . $file . '":/input.txt '
+        . '-v $(pwd)/openai-docker-python/src:/app openai-docker-python';
+    echo '  cmd: ' . $command . chr(10);
+    exec($command, $lines);
+
+    $output = '';
+    foreach ($lines as $line) {
+        $output .= $line . chr(10);
+    }
+
+    return $output;
+}
+
+function analyzeUsingOpenAI($file) {
+    $command = 'docker run '
+        . '-e PROMPT=answers-to-result '
         . '-v $(pwd)/openai-docker-python/openai-api-key.txt:/api-key/openai-api-key.txt '
         . '-v "' . $file . '":/input.txt '
         . '-v $(pwd)/openai-docker-python/src:/app openai-docker-python';
