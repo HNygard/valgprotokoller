@@ -1,0 +1,69 @@
+------ openai-docker-python ------
+Chat completion
+--------------- INPUT
+[
+    {
+        "role": "system",
+        "content": "\n\nYou parse answers from questionnaire and analyze the answers. You output to JSON.\n\nQuestions are numbered you don't need to repeat the question in JSON. Give them an ID.\n\nFrom the answers, extract other useful data point as JSON properties.\n\n    "
+    },
+    {
+        "role": "user",
+        "content": "\n\nThe following questions was asked:\n\n1): Vil kommunen foreta maskinell eller manuell endelig\u00a0telling av valgresultatet?\n\n2): I hvilken politisk sak ble dette vedtatt?\n\n3): Ved forel\u00f8pig opptelling (manuell opptelling), blir opptellingen gjort i valgkretsene? Hvis det er opptelling i valgkretsene, hvordan overf\u00f8rer kommunen resultatet fra valgkretsene inn til valgstyret/valgansvarlig/EVA Admin?\n\n4): Ved forel\u00f8pig opptelling (manuell opptelling), hvordan lagrer/arkiverer kommunen resultatet fra opptellingen utenom EVA Admin? Papir? Digitalt dokument? SMS? Blir resultatet journalf\u00f8rt?\n\n5): Har kommunen rutiner for \u00e5 kontrollere resultatet av forel\u00f8pig opptelling opp mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet (valgresultat d\u00e5tt no), i valgprotokoll, i medier og lignende?\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet.\n\n6): Tilsvarende som 4) for endelig opptelling (maskinell eller manuell).\nHvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Blir resultatet journalf\u00f8rt?\n\n7): Tilsvarende som 5) for endelig opptelling (maskinell eller manuell).\nHar kommunen rutiner for kontroll av endelig opptelling mot resultat som blir publisert?\n\n"
+    },
+    {
+        "role": "user",
+        "content": "\nThe following answers was given:\n\n{\n  \"any_answers_found\": true,\n  \"answer1\": \"Bokn kommune foretar manuell opptelling b\u00e5de ved forel\u00f8pig og endeleg opptelling.\",\n  \"answer2\": \"Grunna \u00f8konomiske omsyn (unng\u00e5 \u00e5 kj\u00f8pe og drifte dyrt oppteljingsutstyr) har Bokn kommune ikkje sett seg r\u00e5d til \u00e5 skaffe skanner med lisensar og utstyr for \u00e5 telje opp ca. 500 r\u00f8ystesetlar. Her avventer kommunen eit eventuelt p\u00e5legg dersom dette skulle komme fr\u00e5 direktoratet til mindre kommunar.\",\n  \"answer3\": \"Bokn kommune har ein valkrets og alt blir talt opp sentralt (p\u00e5 kommunehuset) og deretter lagt inn i EVA. Valansvarleg og valstyret har oppsyn med oppteljinga.\",\n  \"answer4\": \"Resultat av manuell forel\u00f8pig oppteljing etter valet blir lagt i EVA og tatt ut p\u00e5 papir til endeleg oppteljing og protokoll er ferdigstilt. Blir ikkje journalf\u00f8rt.\",\n  \"answer5\": \"Resultat av alle oppteljingar blir kontrollert 2 gonger av 2 sett valpersonell i tillegg til at valansvarlig og nettredakt\u00f8r kontrollerer mot Valdirektoratet si nettside. Vi kontrollerer ingen andre medier da dei hentar (skal hente) opplysningane p\u00e5 valdirektoratet sine sider.\",\n  \"answer6\": \"Resultat fr\u00e5 endeleg oppteljing blir lagt inn i EVA, journalf\u00f8rt i sak-arkivsystemet og i tillegg oppbevart i papir pakka i ei forsegla urne saman med r\u00f8ystesetlar og manntal til neste val er gjennomf\u00f8rt.\",\n  \"answer7\": \"Se svar under pkt. 5.\"\n}\n\n"
+    },
+    {
+        "role": "user",
+        "content": "Add answers to JSON. Question 1 to 7.\n     \n     Also add root level JSON properties with answers to the following questions about the answers:\n     \n     final_counting_type - Enum: I sp\u00f8rsm\u00e5l 1, var endelig opptelling \"maskinell opptelling\" eller \"manuell opptelling\"?\n     \n     counting_type_decision_date - Date: I sp\u00f8rsm\u00e5l 2, hent ut dato for eventuelt vedtak.\n     counting_type_decision_case_number - String: I sp\u00f8rsm\u00e5l 2, hent ut saksnummer for eventuelt vedtak.\n     \n     prelimitary_counting__any_counting_in_valgkrets - boolean: I sp\u00f8rsm\u00e5l 3, er det opptelling i valgkretsene?\n     prelimitary_counting__transfer_to_eva__do_they_answer - boolean: I sp\u00f8rsm\u00e5l 3, svarer de p\u00e5 hvordan resultatet overf\u00f8res til valgstyret/valgansvarlig/EVA Admin?\n     prelimitary_counting__transfer_to_eva__type - string: I sp\u00f8rsm\u00e5l 3, hvordan overf\u00f8rer de resultatet til valgstyret/valgansvarlig/EVA Admin?\n     \n     prelimitary_counting__is_stored - boolean: I sp\u00f8rsm\u00e5l 4, lagrer de noe i arkivet?\n     prelimitary_counting__what_is_stored - string: I sp\u00f8rsm\u00e5l 4, hva lagrer de?\n     prelimitary_counting__storage_method - string: I sp\u00f8rsm\u00e5l 4, hvordan lagres det?\n     \n     prelimitary_counting__process_for_control - boolean: I sp\u00f8rsm\u00e5l 5, har de rutiner for \u00e5 kontrollere resultatet?\n     prelimitary_counting__process_for_control_type - string: I sp\u00f8rsm\u00e5l 5, oppsummer eventuelle rutiner for \u00e5 kontrollere resultatet?\n     \n     final_counting__is_stored - boolean: I sp\u00f8rsm\u00e5l 6, lagrer de noe i arkivet?\n     final_counting__what_is_stored - string: I sp\u00f8rsm\u00e5l 6, hva lagrer de?\n     final_counting__storage_method - string: I sp\u00f8rsm\u00e5l 6, hvordan lagres det?\n     \n     final_counting__process_for_control - boolean: I sp\u00f8rsm\u00e5l 7, har de rutiner for \u00e5 kontrollere resultatet?\n     final_counting__process_for_control_type - string: I sp\u00f8rsm\u00e5l 7, oppsummer eventuelle rutiner for \u00e5 kontrollere resultatet?\n     \n     Example JSON:\n     {\n        \"answer1\": \"...\",\n        \"answer2\": \"...\",\n        \"answer3\": \"...\",\n        \"answer4\": \"...\",\n        \"answer5\": \"...\",\n        \"answer6\": \"...\",\n        \"answer7\": \"...\"\n        \"final_counting_type\": \"[maskinell|manuell]\",\n        \"counting_type_decision_date\": \"1970-01-01\",\n        \"counting_type_decision_case_number\": \"...\",\n        \"prelimitary_counting__any_counting_in_valgkrets\": true/false,\n        \"prelimitary_counting__transfer_to_eva__do_they_answer\": true/false,\n        \"prelimitary_counting__transfer_to_eva__type\": \"...\",\n        \"prelimitary_counting__is_stored\": true/false,\n        \"prelimitary_counting__what_is_stored\": \"...\",\n        \"prelimitary_counting__storage_method\": \"...\",\n        \"prelimitary_counting__process_for_control\": true/false,\n        \"prelimitary_counting__process_for_control_type\": \"...\",\n        \"final_counting__is_stored\": true/false,\n        \"final_counting__what_is_stored\": \"...\",\n        \"final_counting__storage_method\": \"...\",\n        \"final_counting__process_for_control\": true/false,\n        \"final_counting__process_for_control_type\": \"...\",\n     }\n     \n"
+    }
+]
+--------------- OUTPUT
+{
+  "id": "chatcmpl-7s5QYCdjLtOVh7wpsgNvxqf0MNb1y",
+  "object": "chat.completion",
+  "created": 1693124930,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"answer1\": \"Bokn kommune foretar manuell opptelling b\u00e5de ved forel\u00f8pig og endeleg opptelling.\",\n  \"answer2\": \"Grunna \u00f8konomiske omsyn (unng\u00e5 \u00e5 kj\u00f8pe og drifte dyrt oppteljingsutstyr) har Bokn kommune ikkje sett seg r\u00e5d til \u00e5 skaffe skanner med lisensar og utstyr for \u00e5 telje opp ca. 500 r\u00f8ystesetlar. Her avventer kommunen eit eventuelt p\u00e5legg dersom dette skulle komme fr\u00e5 direktoratet til mindre kommunar.\",\n  \"answer3\": \"Bokn kommune har ein valkrets og alt blir talt opp sentralt (p\u00e5 kommunehuset) og deretter lagt inn i EVA. Valansvarleg og valstyret har oppsyn med oppteljinga.\",\n  \"answer4\": \"Resultat av manuell forel\u00f8pig oppteljing etter valet blir lagt i EVA og tatt ut p\u00e5 papir til endeleg oppteljing og protokoll er ferdigstilt. Blir ikkje journalf\u00f8rt.\",\n  \"answer5\": \"Resultat av alle oppteljingar blir kontrollert 2 gonger av 2 sett valpersonell i tillegg til at valansvarlig og nettredakt\u00f8r kontrollerer mot Valdirektoratet si nettside. Vi kontrollerer ingen andre medier da dei hentar (skal hente) opplysningane p\u00e5 valdirektoratet sine sider.\",\n  \"answer6\": \"Resultat fr\u00e5 endeleg oppteljing blir lagt inn i EVA, journalf\u00f8rt i sak-arkivsystemet og i tillegg oppbevart i papir pakka i ei forsegla urne saman med r\u00f8ystesetlar og manntal til neste val er gjennomf\u00f8rt.\",\n  \"answer7\": \"Se svar under pkt. 5.\",\n  \"final_counting_type\": \"manuell\",\n  \"counting_type_decision_date\": null,\n  \"counting_type_decision_case_number\": null,\n  \"prelimitary_counting__any_counting_in_valgkrets\": false,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n  \"prelimitary_counting__transfer_to_eva__type\": \"Resultatet blir lagt inn i EVA etter opptellingen\",\n  \"prelimitary_counting__is_stored\": true,\n  \"prelimitary_counting__what_is_stored\": \"Resultat av manuell forel\u00f8pig oppteljing\",\n  \"prelimitary_counting__storage_method\": \"Papir\",\n  \"prelimitary_counting__process_for_control\": true,\n  \"prelimitary_counting__process_for_control_type\": \"Resultat av alle oppteljingar blir kontrollert 2 gonger av 2 sett valpersonell i tillegg til at valansvarlig og nettredakt\u00f8r kontrollerer mot Valdirektoratet si nettside\",\n  \"final_counting__is_stored\": true,\n  \"final_counting__what_is_stored\": \"Resultat fr\u00e5 endeleg oppteljing\",\n  \"final_counting__storage_method\": \"Digitalt og p\u00e5 papir\",\n  \"final_counting__process_for_control\": true,\n  \"final_counting__process_for_control_type\": \"Resultat fr\u00e5 endeleg oppteljing blir kontrollert mot resultat som blir publisert\"\n}"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1800,
+    "completion_tokens": 797,
+    "total_tokens": 2597
+  }
+}
+---------------
+{
+  "answer1": "Bokn kommune foretar manuell opptelling både ved foreløpig og endeleg opptelling.",
+  "answer2": "Grunna økonomiske omsyn (unngå å kjøpe og drifte dyrt oppteljingsutstyr) har Bokn kommune ikkje sett seg råd til å skaffe skanner med lisensar og utstyr for å telje opp ca. 500 røystesetlar. Her avventer kommunen eit eventuelt pålegg dersom dette skulle komme frå direktoratet til mindre kommunar.",
+  "answer3": "Bokn kommune har ein valkrets og alt blir talt opp sentralt (på kommunehuset) og deretter lagt inn i EVA. Valansvarleg og valstyret har oppsyn med oppteljinga.",
+  "answer4": "Resultat av manuell foreløpig oppteljing etter valet blir lagt i EVA og tatt ut på papir til endeleg oppteljing og protokoll er ferdigstilt. Blir ikkje journalført.",
+  "answer5": "Resultat av alle oppteljingar blir kontrollert 2 gonger av 2 sett valpersonell i tillegg til at valansvarlig og nettredaktør kontrollerer mot Valdirektoratet si nettside. Vi kontrollerer ingen andre medier da dei hentar (skal hente) opplysningane på valdirektoratet sine sider.",
+  "answer6": "Resultat frå endeleg oppteljing blir lagt inn i EVA, journalført i sak-arkivsystemet og i tillegg oppbevart i papir pakka i ei forsegla urne saman med røystesetlar og manntal til neste val er gjennomført.",
+  "answer7": "Se svar under pkt. 5.",
+  "final_counting_type": "manuell",
+  "counting_type_decision_date": null,
+  "counting_type_decision_case_number": null,
+  "prelimitary_counting__any_counting_in_valgkrets": false,
+  "prelimitary_counting__transfer_to_eva__do_they_answer": true,
+  "prelimitary_counting__transfer_to_eva__type": "Resultatet blir lagt inn i EVA etter opptellingen",
+  "prelimitary_counting__is_stored": true,
+  "prelimitary_counting__what_is_stored": "Resultat av manuell foreløpig oppteljing",
+  "prelimitary_counting__storage_method": "Papir",
+  "prelimitary_counting__process_for_control": true,
+  "prelimitary_counting__process_for_control_type": "Resultat av alle oppteljingar blir kontrollert 2 gonger av 2 sett valpersonell i tillegg til at valansvarlig og nettredaktør kontrollerer mot Valdirektoratet si nettside",
+  "final_counting__is_stored": true,
+  "final_counting__what_is_stored": "Resultat frå endeleg oppteljing",
+  "final_counting__storage_method": "Digitalt og på papir",
+  "final_counting__process_for_control": true,
+  "final_counting__process_for_control_type": "Resultat frå endeleg oppteljing blir kontrollert mot resultat som blir publisert"
+}
