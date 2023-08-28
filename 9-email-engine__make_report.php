@@ -83,7 +83,12 @@ foreach ($files as $file) {
         $answer_file2 = str_replace('/raw-', '/answer-', $file . '.extract.analyze');
         if (file_exists($answer_file2)) {
             $obj2 = readOpenaiDockerOutput($answer_file2);
-            $answers2 = $obj2->choices[0]->message->content;
+            if (json_decode($obj2->choices[0]->message->content) != null) {
+                $answers2 = json_encode(json_decode($obj2->choices[0]->message->content), JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE);
+            }
+            else {
+                $answers2 = $obj2->choices[0]->message->content;
+            }
         }
         else {
             $answers2 = '<i>Not available. Rerun scripts.</i>';
