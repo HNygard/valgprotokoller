@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n  \"any_answers_found\": true,\n  \"answer1\": \"V\u00e5g\u00e5 kommune vil nytte manuell telling av r\u00f8ystesetlar.\",\n  \"answer2\": \"V\u00e5g\u00e5 kommune har ikkje noko politisk vedtak p\u00e5 dette.\",\n  \"answer3\": \"I V\u00e5g\u00e5 kommune er opptelling sentralt samlet.\",\n  \"answer4\": \"Vi nytter kun EVA Admin for lagring av f\u00f8rebels opptelling.\",\n  \"answer5\": \"V\u00e5g\u00e5 kommune har rutiner for kontroll av f\u00f8rebels opptelling slik at det samsvarer med det resultatet som vert offentleg.\",\n  \"answer6\": \"V\u00e5g\u00e5 kommune journalf\u00f8rer m\u00f8teb\u00f8kene for stemmestyra og valstyret og den endelege opptellinga i v\u00e5re journalsystem. Dette blir publisert.\",\n  \"answer7\": \"V\u00e5g\u00e5 kommune har rutiner for kontroll av endeleg opptelling slik at det samsvarer med det resultatet som vert offentleg.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"V\u00e5g\u00e5 kommune vil nytte manuell telling av r\u00f8ystesetlar.\",\n    \"answer2\": \"V\u00e5g\u00e5 kommune har ikkje noko politisk vedtak p\u00e5 dette.\",\n    \"answer3\": \"I V\u00e5g\u00e5 kommune er opptelling sentralt samlet.\",\n    \"answer4\": \"Vi nytter kun EVA Admin for lagring av f\u00f8rebels opptelling\",\n    \"answer5\": \"V\u00e5g\u00e5 kommune har rutiner for kontroll av f\u00f8rebels opptelling slik at det samsvarer med det resultatet som vert offentleg.\",\n    \"answer6\": \"V\u00e5g\u00e5 kommune journalf\u00f8rer m\u00f8teb\u00f8kene for stemmestyra og valstyret og den endelege opptellinga i v\u00e5re journalsystem. Dette blir publisert.\",\n    \"answer7\": \"V\u00e5g\u00e5 kommune har rutiner for kontroll av endeleg opptelling slik at det samsvarer med det resultatet som vert offentleg.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s58CGNvMq6yZsJ3t26xeCbhD5VGp",
+  "id": "chatcmpl-7sZQgqTt7K3c6rNxwnGRU1wDG41fU",
   "object": "chat.completion",
-  "created": 1693123792,
+  "created": 1693240258,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"answer1\": \"V\u00e5g\u00e5 kommune vil nytte manuell telling av r\u00f8ystesetlar.\",\n  \"answer2\": \"V\u00e5g\u00e5 kommune har ikkje noko politisk vedtak p\u00e5 dette.\",\n  \"answer3\": \"I V\u00e5g\u00e5 kommune er opptelling sentralt samlet.\",\n  \"answer4\": \"Vi nytter kun EVA Admin for lagring av f\u00f8rebels opptelling.\",\n  \"answer5\": \"V\u00e5g\u00e5 kommune har rutiner for kontroll av f\u00f8rebels opptelling slik at det samsvarer med det resultatet som vert offentleg.\",\n  \"answer6\": \"V\u00e5g\u00e5 kommune journalf\u00f8rer m\u00f8teb\u00f8kene for stemmestyra og valstyret og den endelege opptellinga i v\u00e5re journalsystem. Dette blir publisert.\",\n  \"answer7\": \"V\u00e5g\u00e5 kommune har rutiner for kontroll av endeleg opptelling slik at det samsvarer med det resultatet som vert offentleg.\",\n  \"final_counting_type\": \"manuell\",\n  \"counting_type_decision_date\": null,\n  \"counting_type_decision_case_number\": null,\n  \"prelimitary_counting__any_counting_in_valgkrets\": false,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n  \"prelimitary_counting__transfer_to_eva__type\": null,\n  \"prelimitary_counting__is_stored\": false,\n  \"prelimitary_counting__what_is_stored\": null,\n  \"prelimitary_counting__storage_method\": null,\n  \"prelimitary_counting__process_for_control\": true,\n  \"prelimitary_counting__process_for_control_type\": \"V\u00e5g\u00e5 kommune har rutiner for kontroll av f\u00f8rebels opptelling slik at det samsvarer med det resultatet som vert offentleg.\",\n  \"final_counting__is_stored\": true,\n  \"final_counting__what_is_stored\": \"m\u00f8teb\u00f8ker for stemmestyra og valgstyret og den endelege opptellinga\",\n  \"final_counting__storage_method\": \"Journal i system\",\n  \"final_counting__process_for_control\": true,\n  \"final_counting__process_for_control_type\": \"V\u00e5g\u00e5 kommune har rutiner for kontroll av endeleg opptelling slik at det samsvarer med det resultatet som vert offentleg.\"\n}"
+        "content": "{\n    \"answer1\": \"V\u00e5g\u00e5 kommune vil nytte manuell telling av r\u00f8ystesetlar.\",\n    \"answer2\": \"V\u00e5g\u00e5 kommune har ikkje noko politisk vedtak p\u00e5 dette.\",\n    \"answer3\": \"I V\u00e5g\u00e5 kommune er opptelling sentralt samlet.\",\n    \"answer4\": \"Vi nytter kun EVA Admin for lagring av f\u00f8rebels opptelling\",\n    \"answer5\": \"V\u00e5g\u00e5 kommune har rutiner for kontroll av f\u00f8rebels opptelling slik at det samsvarer med det resultatet som vert offentleg.\",\n    \"answer6\": \"V\u00e5g\u00e5 kommune journalf\u00f8rer m\u00f8teb\u00f8kene for stemmestyra og valstyret og den endelege opptellinga i v\u00e5re journalsystem. Dette blir publisert.\",\n    \"answer7\": \"V\u00e5g\u00e5 kommune har rutiner for kontroll av endeleg opptelling slik at det samsvarer med det resultatet som vert offentleg.\",\n    \"final_counting_type\": \"manuell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"N/A\",\n    \"prelimitary_counting__is_stored\": false,\n    \"prelimitary_counting__what_is_stored\": \"N/A\",\n    \"prelimitary_counting__storage_method\": \"N/A\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"V\u00e5g\u00e5 kommune har rutiner for kontroll av f\u00f8rebels opptelling slik at det samsvarer med det resultatet som vert offentleg.\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"m\u00f8teb\u00f8ker for stemmestyra og valgstyret, endeleg opptelling\",\n    \"final_counting__storage_method\": \"journalsystem\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"V\u00e5g\u00e5 kommune har rutiner for kontroll av endeleg opptelling slik at det samsvarer med det resultatet som vert offentleg.\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
     "prompt_tokens": 1582,
-    "completion_tokens": 555,
-    "total_tokens": 2137
+    "completion_tokens": 559,
+    "total_tokens": 2141
   }
 }
 ---------------
 {
-  "answer1": "Vågå kommune vil nytte manuell telling av røystesetlar.",
-  "answer2": "Vågå kommune har ikkje noko politisk vedtak på dette.",
-  "answer3": "I Vågå kommune er opptelling sentralt samlet.",
-  "answer4": "Vi nytter kun EVA Admin for lagring av førebels opptelling.",
-  "answer5": "Vågå kommune har rutiner for kontroll av førebels opptelling slik at det samsvarer med det resultatet som vert offentleg.",
-  "answer6": "Vågå kommune journalfører møtebøkene for stemmestyra og valstyret og den endelege opptellinga i våre journalsystem. Dette blir publisert.",
-  "answer7": "Vågå kommune har rutiner for kontroll av endeleg opptelling slik at det samsvarer med det resultatet som vert offentleg.",
-  "final_counting_type": "manuell",
-  "counting_type_decision_date": null,
-  "counting_type_decision_case_number": null,
-  "prelimitary_counting__any_counting_in_valgkrets": false,
-  "prelimitary_counting__transfer_to_eva__do_they_answer": false,
-  "prelimitary_counting__transfer_to_eva__type": null,
-  "prelimitary_counting__is_stored": false,
-  "prelimitary_counting__what_is_stored": null,
-  "prelimitary_counting__storage_method": null,
-  "prelimitary_counting__process_for_control": true,
-  "prelimitary_counting__process_for_control_type": "Vågå kommune har rutiner for kontroll av førebels opptelling slik at det samsvarer med det resultatet som vert offentleg.",
-  "final_counting__is_stored": true,
-  "final_counting__what_is_stored": "møtebøker for stemmestyra og valgstyret og den endelege opptellinga",
-  "final_counting__storage_method": "Journal i system",
-  "final_counting__process_for_control": true,
-  "final_counting__process_for_control_type": "Vågå kommune har rutiner for kontroll av endeleg opptelling slik at det samsvarer med det resultatet som vert offentleg."
+    "answer1": "Vågå kommune vil nytte manuell telling av røystesetlar.",
+    "answer2": "Vågå kommune har ikkje noko politisk vedtak på dette.",
+    "answer3": "I Vågå kommune er opptelling sentralt samlet.",
+    "answer4": "Vi nytter kun EVA Admin for lagring av førebels opptelling",
+    "answer5": "Vågå kommune har rutiner for kontroll av førebels opptelling slik at det samsvarer med det resultatet som vert offentleg.",
+    "answer6": "Vågå kommune journalfører møtebøkene for stemmestyra og valstyret og den endelege opptellinga i våre journalsystem. Dette blir publisert.",
+    "answer7": "Vågå kommune har rutiner for kontroll av endeleg opptelling slik at det samsvarer med det resultatet som vert offentleg.",
+    "final_counting_type": "manuell",
+    "counting_type_decision_date": null,
+    "counting_type_decision_case_number": null,
+    "prelimitary_counting__any_counting_in_valgkrets": false,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": true,
+    "prelimitary_counting__transfer_to_eva__type": "N/A",
+    "prelimitary_counting__is_stored": false,
+    "prelimitary_counting__what_is_stored": "N/A",
+    "prelimitary_counting__storage_method": "N/A",
+    "prelimitary_counting__process_for_control": true,
+    "prelimitary_counting__process_for_control_type": "Vågå kommune har rutiner for kontroll av førebels opptelling slik at det samsvarer med det resultatet som vert offentleg.",
+    "final_counting__is_stored": true,
+    "final_counting__what_is_stored": "møtebøker for stemmestyra og valgstyret, endeleg opptelling",
+    "final_counting__storage_method": "journalsystem",
+    "final_counting__process_for_control": true,
+    "final_counting__process_for_control_type": "Vågå kommune har rutiner for kontroll av endeleg opptelling slik at det samsvarer med det resultatet som vert offentleg."
 }

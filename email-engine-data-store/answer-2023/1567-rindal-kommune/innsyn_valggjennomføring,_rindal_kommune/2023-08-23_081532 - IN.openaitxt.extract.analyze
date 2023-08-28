@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n  \"any_answers_found\": true,\n  \"answer1\": \"kommunen benytter maskinell telling\",\n  \"answer2\": \"Valgstyret i 2019\",\n  \"answer3\": \"Opptelling skjer sentralt samlet\",\n  \"answer4\": \"resultatene blir registrert inn i EVA. Protokoller arkiveres og journalf\u00f8res (digitalt)\",\n  \"answer5\": \"Det blir sjekket etter opptelling, men ikke loggf\u00f8rt\",\n  \"answer6\": \"resultatene blir registrert inn i EVA. Protokoller arkiveres og journalf\u00f8res (digitalt)\",\n  \"answer7\": \"Ikke ut over pkt 5\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"kommunen benytter maskinell telling\",\n    \"answer2\": \"Valgstyret i 2019.\",\n    \"answer3\": \"Opptelling skjer sentralt samlet\",\n    \"answer4\": \"resultatene blir registrert inn i EVA. Protokoller arkiveres og journalf\u00f8res (digitalt)\",\n    \"answer5\": \"Det blir sjekket etter opptelling, men ikke loggf\u00f8rt.\",\n    \"answer6\": \"resultatene blir registrert inn i EVA. Protokoller arkiveres og journalf\u00f8res (digitalt)\",\n    \"answer7\": \"Ikke ut over pkt 5.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s5cUxVIuHEEa58zQobI8RHq7SbDU",
+  "id": "chatcmpl-7sZdbOmKBKqwgJ0F8oT93Xp8WJI8T",
   "object": "chat.completion",
-  "created": 1693125670,
+  "created": 1693241059,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"answer1\": \"kommunen benytter maskinell telling\",\n  \"answer2\": \"Valgstyret i 2019\",\n  \"answer3\": \"Opptelling skjer sentralt samlet\",\n  \"answer4\": \"resultatene blir registrert inn i EVA. Protokoller arkiveres og journalf\u00f8res (digitalt)\",\n  \"answer5\": \"Det blir sjekket etter opptelling, men ikke loggf\u00f8rt\",\n  \"answer6\": \"resultatene blir registrert inn i EVA. Protokoller arkiveres og journalf\u00f8res (digitalt)\",\n  \"answer7\": \"Ikke ut over pkt 5\",\n  \"final_counting_type\": \"maskinell\",\n  \"counting_type_decision_date\": null,\n  \"counting_type_decision_case_number\": null,\n  \"prelimitary_counting__any_counting_in_valgkrets\": false,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n  \"prelimitary_counting__transfer_to_eva__type\": \"Ikke relevant\",\n  \"prelimitary_counting__is_stored\": true,\n  \"prelimitary_counting__what_is_stored\": \"Protokoller\",\n  \"prelimitary_counting__storage_method\": \"Digitalt\",\n  \"prelimitary_counting__process_for_control\": true,\n  \"prelimitary_counting__process_for_control_type\": \"Resultatet blir sjekket etter opptelling\",\n  \"final_counting__is_stored\": true,\n  \"final_counting__what_is_stored\": \"Resultater og protokoller\",\n  \"final_counting__storage_method\": \"Digitalt\",\n  \"final_counting__process_for_control\": true,\n  \"final_counting__process_for_control_type\": \"Resultatet blir sjekket etter opptelling\"\n}"
+        "content": "{\n    \"answer1\": \"kommunen benytter maskinell telling\",\n    \"answer2\": \"Valgstyret i 2019.\",\n    \"answer3\": \"Opptelling skjer sentralt samlet\",\n    \"answer4\": \"resultatene blir registrert inn i EVA. Protokoller arkiveres og journalf\u00f8res (digitalt)\",\n    \"answer5\": \"Det blir sjekket etter opptelling, men ikke loggf\u00f8rt.\",\n    \"answer6\": \"resultatene blir registrert inn i EVA. Protokoller arkiveres og journalf\u00f8res (digitalt)\",\n    \"answer7\": \"Ikke ut over pkt 5.\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n    \"prelimitary_counting__transfer_to_eva__type\": null,\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"Protokoller\",\n    \"prelimitary_counting__storage_method\": \"Digitalt\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Sjekket etter opptelling, men ikke loggf\u00f8rt\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"Protokoller\",\n    \"final_counting__storage_method\": \"Digitalt\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Sjekket etter opptelling, men ikke loggf\u00f8rt\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
     "prompt_tokens": 1498,
-    "completion_tokens": 414,
-    "total_tokens": 1912
+    "completion_tokens": 416,
+    "total_tokens": 1914
   }
 }
 ---------------
 {
-  "answer1": "kommunen benytter maskinell telling",
-  "answer2": "Valgstyret i 2019",
-  "answer3": "Opptelling skjer sentralt samlet",
-  "answer4": "resultatene blir registrert inn i EVA. Protokoller arkiveres og journalføres (digitalt)",
-  "answer5": "Det blir sjekket etter opptelling, men ikke loggført",
-  "answer6": "resultatene blir registrert inn i EVA. Protokoller arkiveres og journalføres (digitalt)",
-  "answer7": "Ikke ut over pkt 5",
-  "final_counting_type": "maskinell",
-  "counting_type_decision_date": null,
-  "counting_type_decision_case_number": null,
-  "prelimitary_counting__any_counting_in_valgkrets": false,
-  "prelimitary_counting__transfer_to_eva__do_they_answer": true,
-  "prelimitary_counting__transfer_to_eva__type": "Ikke relevant",
-  "prelimitary_counting__is_stored": true,
-  "prelimitary_counting__what_is_stored": "Protokoller",
-  "prelimitary_counting__storage_method": "Digitalt",
-  "prelimitary_counting__process_for_control": true,
-  "prelimitary_counting__process_for_control_type": "Resultatet blir sjekket etter opptelling",
-  "final_counting__is_stored": true,
-  "final_counting__what_is_stored": "Resultater og protokoller",
-  "final_counting__storage_method": "Digitalt",
-  "final_counting__process_for_control": true,
-  "final_counting__process_for_control_type": "Resultatet blir sjekket etter opptelling"
+    "answer1": "kommunen benytter maskinell telling",
+    "answer2": "Valgstyret i 2019.",
+    "answer3": "Opptelling skjer sentralt samlet",
+    "answer4": "resultatene blir registrert inn i EVA. Protokoller arkiveres og journalføres (digitalt)",
+    "answer5": "Det blir sjekket etter opptelling, men ikke loggført.",
+    "answer6": "resultatene blir registrert inn i EVA. Protokoller arkiveres og journalføres (digitalt)",
+    "answer7": "Ikke ut over pkt 5.",
+    "final_counting_type": "maskinell",
+    "counting_type_decision_date": null,
+    "counting_type_decision_case_number": null,
+    "prelimitary_counting__any_counting_in_valgkrets": false,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": false,
+    "prelimitary_counting__transfer_to_eva__type": null,
+    "prelimitary_counting__is_stored": true,
+    "prelimitary_counting__what_is_stored": "Protokoller",
+    "prelimitary_counting__storage_method": "Digitalt",
+    "prelimitary_counting__process_for_control": true,
+    "prelimitary_counting__process_for_control_type": "Sjekket etter opptelling, men ikke loggført",
+    "final_counting__is_stored": true,
+    "final_counting__what_is_stored": "Protokoller",
+    "final_counting__storage_method": "Digitalt",
+    "final_counting__process_for_control": true,
+    "final_counting__process_for_control_type": "Sjekket etter opptelling, men ikke loggført"
 }

@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\"any_answers_found\": false}\n\n"
+        "content": "\nThe following answers was given:\n\n\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7sDNBQa9NRqHBMTpVBql00aWOQLHo",
+  "id": "chatcmpl-7sZaEDZRD9J6yQuUIA65ljeovd1HL",
   "object": "chat.completion",
-  "created": 1693155473,
+  "created": 1693240850,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"answer1\": \"N/A\",\n    \"answer2\": \"N/A\",\n    \"answer3\": \"N/A\",\n    \"answer4\": \"N/A\",\n    \"answer5\": \"N/A\",\n    \"answer6\": \"N/A\",\n    \"answer7\": \"N/A\",\n    \"final_counting_type\": null,\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n    \"prelimitary_counting__transfer_to_eva__type\": null,\n    \"prelimitary_counting__is_stored\": false,\n    \"prelimitary_counting__what_is_stored\": null,\n    \"prelimitary_counting__storage_method\": null,\n    \"prelimitary_counting__process_for_control\": false,\n    \"prelimitary_counting__process_for_control_type\": null,\n    \"final_counting__is_stored\": false,\n    \"final_counting__what_is_stored\": null,\n    \"final_counting__storage_method\": null,\n    \"final_counting__process_for_control\": false,\n    \"final_counting__process_for_control_type\": null\n}"
+        "content": "{\n  \"answer1\": \"\",\n  \"answer2\": \"\",\n  \"answer3\": \"\",\n  \"answer4\": \"\",\n  \"answer5\": \"\",\n  \"answer6\": \"\",\n  \"answer7\": \"\",\n  \"final_counting_type\": \"\",\n  \"counting_type_decision_date\": \"\",\n  \"counting_type_decision_case_number\": \"\",\n  \"prelimitary_counting__any_counting_in_valgkrets\": false,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n  \"prelimitary_counting__transfer_to_eva__type\": \"\",\n  \"prelimitary_counting__is_stored\": false,\n  \"prelimitary_counting__what_is_stored\": \"\",\n  \"prelimitary_counting__storage_method\": \"\",\n  \"prelimitary_counting__process_for_control\": false,\n  \"prelimitary_counting__process_for_control_type\": \"\",\n  \"final_counting__is_stored\": false,\n  \"final_counting__what_is_stored\": \"\",\n  \"final_counting__storage_method\": \"\",\n  \"final_counting__process_for_control\": false,\n  \"final_counting__process_for_control_type\": \"\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1342,
-    "completion_tokens": 283,
-    "total_tokens": 1625
+    "prompt_tokens": 1335,
+    "completion_tokens": 252,
+    "total_tokens": 1587
   }
 }
 ---------------
 {
-    "answer1": "N/A",
-    "answer2": "N/A",
-    "answer3": "N/A",
-    "answer4": "N/A",
-    "answer5": "N/A",
-    "answer6": "N/A",
-    "answer7": "N/A",
-    "final_counting_type": null,
-    "counting_type_decision_date": null,
-    "counting_type_decision_case_number": null,
-    "prelimitary_counting__any_counting_in_valgkrets": false,
-    "prelimitary_counting__transfer_to_eva__do_they_answer": false,
-    "prelimitary_counting__transfer_to_eva__type": null,
-    "prelimitary_counting__is_stored": false,
-    "prelimitary_counting__what_is_stored": null,
-    "prelimitary_counting__storage_method": null,
-    "prelimitary_counting__process_for_control": false,
-    "prelimitary_counting__process_for_control_type": null,
-    "final_counting__is_stored": false,
-    "final_counting__what_is_stored": null,
-    "final_counting__storage_method": null,
-    "final_counting__process_for_control": false,
-    "final_counting__process_for_control_type": null
+  "answer1": "",
+  "answer2": "",
+  "answer3": "",
+  "answer4": "",
+  "answer5": "",
+  "answer6": "",
+  "answer7": "",
+  "final_counting_type": "",
+  "counting_type_decision_date": "",
+  "counting_type_decision_case_number": "",
+  "prelimitary_counting__any_counting_in_valgkrets": false,
+  "prelimitary_counting__transfer_to_eva__do_they_answer": false,
+  "prelimitary_counting__transfer_to_eva__type": "",
+  "prelimitary_counting__is_stored": false,
+  "prelimitary_counting__what_is_stored": "",
+  "prelimitary_counting__storage_method": "",
+  "prelimitary_counting__process_for_control": false,
+  "prelimitary_counting__process_for_control_type": "",
+  "final_counting__is_stored": false,
+  "final_counting__what_is_stored": "",
+  "final_counting__storage_method": "",
+  "final_counting__process_for_control": false,
+  "final_counting__process_for_control_type": ""
 }

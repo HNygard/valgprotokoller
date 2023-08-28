@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n  \"any_answers_found\": true,\n  \"answer1\": \"Ullensaker kommune gjennomf\u00f8rer maskinell telling av endelig valgresultat.\",\n  \"answer2\": \"Ullensaker kommune vedtok \u00e5 benytte elektronisk telling for f\u00f8rste gang ved valget i 2013. Kommunestyresak PS 19/13\",\n  \"answer3\": \"Avgitte stemmer telles manuellt (2 ganger) i valgkretsene. Resultatet f\u00f8res inn i en m\u00f8tebok som medbringes til skannersenteret hvor det f\u00f8res inn i EVA f\u00f8r stemmene kontrolltelles maskinelt.\",\n  \"answer4\": \"Resultatet fr\u00e5 opptellingene hentes ut fra EVA og journalf\u00f8res i v\u00e5rt sak- og arkivsystem. Valget godkjennes av nyvalgt kommunestyre ved konstituerende m\u00f8te.\",\n  \"answer5\": \"Eventuelle avvik m\u00e5 kommenteres/forklares f\u00f8r det er mulig \u00e5 publisere resultatet\",\n  \"answer6\": \"Samme svar som p\u00e5 spm. 4\",\n  \"answer7\": \"Vi publiserer m\u00f8terotokollene via v\u00e5re nettsider og har kontroll p\u00e5 innholdet i disse. Disse protokollene lastes ogs\u00e5 opp p\u00e5 nettsiden som Valgdirektoratet har kontroll p\u00e5.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Ullensaker kommune gjennomf\u00f8rer maskinell telling av endelig valgresultat.\",\n    \"answer2\": \"Ullensaker kommune vedtok \u00e5 benytte elektronisk telling for f\u00f8rste gang ved valget i 2013. Kommunestyresak PS 19/13. Det er siden videref\u00f8rt via saker som omhandler budsjettet hvor det bevilges midler til kj\u00f8p/leasing av utstyr for digital manntallsregistrering og skanning av stemmesedler, sist i Kommunestyresak PS 162/22\",\n    \"answer3\": \"Avgitte stemmer telles manuellt (2 ganger) i valgkretsene. Resultatet f\u00f8res inn i en m\u00f8tebok som medbringes til skannersenteret hvor det f\u00f8res inn i EVA f\u00f8r stemmene kontrolltelles maskinelt.\",\n    \"answer4\": \"Resultatet fr\u00e5 opptellingene hentes ut fra EVA og journalf\u00f8res i v\u00e5rt sak- og arkivsystem. Valget godkjennes av nyvalgt kommunestyre ved konstituerende m\u00f8te.\",\n    \"answer5\": \"Eventuelle avvik m\u00e5 kommenteres/forklares f\u00f8r det er mulig \u00e5 publisere resultatet\",\n    \"answer6\": \"Samme svar som p\u00e5 spm. 4\",\n    \"answer7\": \"Vi publiserer m\u00f8terotokollene via v\u00e5re nettsider og har kontroll p\u00e5 innholdet i disse. Disse protokollene lastes ogs\u00e5 opp p\u00e5 nettsiden som Valgdirektoratet har kontroll p\u00e5.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s55LUW2mFTCWV49f034HL53KI1PN",
+  "id": "chatcmpl-7sZEIRFn9JEe6FIlK6T9WbXvCOths",
   "object": "chat.completion",
-  "created": 1693123615,
+  "created": 1693239490,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"answer1\": \"Ullensaker kommune gjennomf\u00f8rer maskinell telling av endelig valgresultat.\",\n  \"answer2\": \"Ullensaker kommune vedtok \u00e5 benytte elektronisk telling for f\u00f8rste gang ved valget i 2013. Kommunestyresak PS 19/13\",\n  \"answer3\": \"Avgitte stemmer telles manuellt (2 ganger) i valgkretsene. Resultatet f\u00f8res inn i en m\u00f8tebok som medbringes til skannersenteret hvor det f\u00f8res inn i EVA f\u00f8r stemmene kontrolltelles maskinelt.\",\n  \"answer4\": \"Resultatet fr\u00e5 opptellingene hentes ut fra EVA og journalf\u00f8res i v\u00e5rt sak- og arkivsystem. Valget godkjennes av nyvalgt kommunestyre ved konstituerende m\u00f8te.\",\n  \"answer5\": \"Eventuelle avvik m\u00e5 kommenteres/forklares f\u00f8r det er mulig \u00e5 publisere resultatet\",\n  \"answer6\": \"Samme svar som p\u00e5 spm. 4\",\n  \"answer7\": \"Vi publiserer m\u00f8terotokollene via v\u00e5re nettsider og har kontroll p\u00e5 innholdet i disse. Disse protokollene lastes ogs\u00e5 opp p\u00e5 nettsiden som Valgdirektoratet har kontroll p\u00e5.\",\n  \"final_counting_type\": \"maskinell\",\n  \"counting_type_decision_date\": \"2013-01-01\",\n  \"counting_type_decision_case_number\": \"PS 19/13\",\n  \"prelimitary_counting__any_counting_in_valgkrets\": true,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n  \"prelimitary_counting__transfer_to_eva__type\": \"f\u00f8res inn i EVA f\u00f8r stemmene kontrolltelles maskinelt\",\n  \"prelimitary_counting__is_stored\": true,\n  \"prelimitary_counting__what_is_stored\": \"resultatet\",\n  \"prelimitary_counting__storage_method\": \"journalf\u00f8res i v\u00e5rt sak- og arkivsystem\",\n  \"prelimitary_counting__process_for_control\": true,\n  \"prelimitary_counting__process_for_control_type\": \"resultatet av forel\u00f8pig opptelling kontrolleres opp mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet, i valgprotokoll, i medier osv.\",\n  \"final_counting__is_stored\": true,\n  \"final_counting__what_is_stored\": \"resultatet\",\n  \"final_counting__storage_method\": \"journalf\u00f8res i v\u00e5rt sak- og arkivsystem\",\n  \"final_counting__process_for_control\": true,\n  \"final_counting__process_for_control_type\": \"resultatet av endelig opptelling kontrolleres mot resultatet som blir publisert\"\n}"
+        "content": "{\n    \"answer1\": \"Ullensaker kommune gjennomf\u00f8rer maskinell telling av endelig valgresultat.\",\n    \"answer2\": \"Ullensaker kommune vedtok \u00e5 benytte elektronisk telling for f\u00f8rste gang ved valget i 2013. Kommunestyresak PS 19/13. Det er siden videref\u00f8rt via saker som omhandler budsjettet hvor det bevilges midler til kj\u00f8p/leasing av utstyr for digital manntallsregistrering og skanning av stemmesedler, sist i Kommunestyresak PS 162/22\",\n    \"answer3\": \"Avgitte stemmer telles manuellt (2 ganger) i valgkretsene. Resultatet f\u00f8res inn i en m\u00f8tebok som medbringes til skannersenteret hvor det f\u00f8res inn i EVA f\u00f8r stemmene kontrolltelles maskinelt.\",\n    \"answer4\": \"Resultatet fr\u00e5 opptellingene hentes ut fra EVA og journalf\u00f8res i v\u00e5rt sak- og arkivsystem. Valget godkjennes av nyvalgt kommunestyre ved konstituerende m\u00f8te.\",\n    \"answer5\": \"Eventuelle avvik m\u00e5 kommenteres/forklares f\u00f8r det er mulig \u00e5 publisere resultatet\",\n    \"answer6\": \"Samme svar som p\u00e5 spm. 4\",\n    \"answer7\": \"Vi publiserer m\u00f8terotokollene via v\u00e5re nettsider og har kontroll p\u00e5 innholdet i disse. Disse protokollene lastes ogs\u00e5 opp p\u00e5 nettsiden som Valgdirektoratet har kontroll p\u00e5.\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": true,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"Resultatet blir f\u00f8rt inn i en m\u00f8tebok som medbringes til skannersenteret hvor det f\u00f8res inn i EVA f\u00f8r stemmene kontrolltelles maskinelt.\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"Resultatet fra opptellingen\",\n    \"prelimitary_counting__storage_method\": \"Journalf\u00f8res i sak- og arkivsystem\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Eventuelle avvik m\u00e5 kommenteres/forklares f\u00f8r det er mulig \u00e5 publisere resultatet\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"Resultatet fra endelig opptelling\",\n    \"final_counting__storage_method\": \"Journalf\u00f8res i sak- og arkivsystem\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"M\u00f8terotokollene publiseres via nettsidene og Valgdirektoratet har kontroll p\u00e5 innholdet i disse.\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1651,
-    "completion_tokens": 660,
-    "total_tokens": 2311
+    "prompt_tokens": 1714,
+    "completion_tokens": 728,
+    "total_tokens": 2442
   }
 }
 ---------------
 {
-  "answer1": "Ullensaker kommune gjennomfører maskinell telling av endelig valgresultat.",
-  "answer2": "Ullensaker kommune vedtok å benytte elektronisk telling for første gang ved valget i 2013. Kommunestyresak PS 19/13",
-  "answer3": "Avgitte stemmer telles manuellt (2 ganger) i valgkretsene. Resultatet føres inn i en møtebok som medbringes til skannersenteret hvor det føres inn i EVA før stemmene kontrolltelles maskinelt.",
-  "answer4": "Resultatet frå opptellingene hentes ut fra EVA og journalføres i vårt sak- og arkivsystem. Valget godkjennes av nyvalgt kommunestyre ved konstituerende møte.",
-  "answer5": "Eventuelle avvik må kommenteres/forklares før det er mulig å publisere resultatet",
-  "answer6": "Samme svar som på spm. 4",
-  "answer7": "Vi publiserer møterotokollene via våre nettsider og har kontroll på innholdet i disse. Disse protokollene lastes også opp på nettsiden som Valgdirektoratet har kontroll på.",
-  "final_counting_type": "maskinell",
-  "counting_type_decision_date": "2013-01-01",
-  "counting_type_decision_case_number": "PS 19/13",
-  "prelimitary_counting__any_counting_in_valgkrets": true,
-  "prelimitary_counting__transfer_to_eva__do_they_answer": true,
-  "prelimitary_counting__transfer_to_eva__type": "føres inn i EVA før stemmene kontrolltelles maskinelt",
-  "prelimitary_counting__is_stored": true,
-  "prelimitary_counting__what_is_stored": "resultatet",
-  "prelimitary_counting__storage_method": "journalføres i vårt sak- og arkivsystem",
-  "prelimitary_counting__process_for_control": true,
-  "prelimitary_counting__process_for_control_type": "resultatet av foreløpig opptelling kontrolleres opp mot det som er synlig på valgresultat-siden til Valgdirektoratet, i valgprotokoll, i medier osv.",
-  "final_counting__is_stored": true,
-  "final_counting__what_is_stored": "resultatet",
-  "final_counting__storage_method": "journalføres i vårt sak- og arkivsystem",
-  "final_counting__process_for_control": true,
-  "final_counting__process_for_control_type": "resultatet av endelig opptelling kontrolleres mot resultatet som blir publisert"
+    "answer1": "Ullensaker kommune gjennomfører maskinell telling av endelig valgresultat.",
+    "answer2": "Ullensaker kommune vedtok å benytte elektronisk telling for første gang ved valget i 2013. Kommunestyresak PS 19/13. Det er siden videreført via saker som omhandler budsjettet hvor det bevilges midler til kjøp/leasing av utstyr for digital manntallsregistrering og skanning av stemmesedler, sist i Kommunestyresak PS 162/22",
+    "answer3": "Avgitte stemmer telles manuellt (2 ganger) i valgkretsene. Resultatet føres inn i en møtebok som medbringes til skannersenteret hvor det føres inn i EVA før stemmene kontrolltelles maskinelt.",
+    "answer4": "Resultatet frå opptellingene hentes ut fra EVA og journalføres i vårt sak- og arkivsystem. Valget godkjennes av nyvalgt kommunestyre ved konstituerende møte.",
+    "answer5": "Eventuelle avvik må kommenteres/forklares før det er mulig å publisere resultatet",
+    "answer6": "Samme svar som på spm. 4",
+    "answer7": "Vi publiserer møterotokollene via våre nettsider og har kontroll på innholdet i disse. Disse protokollene lastes også opp på nettsiden som Valgdirektoratet har kontroll på.",
+    "final_counting_type": "maskinell",
+    "counting_type_decision_date": null,
+    "counting_type_decision_case_number": null,
+    "prelimitary_counting__any_counting_in_valgkrets": true,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": true,
+    "prelimitary_counting__transfer_to_eva__type": "Resultatet blir ført inn i en møtebok som medbringes til skannersenteret hvor det føres inn i EVA før stemmene kontrolltelles maskinelt.",
+    "prelimitary_counting__is_stored": true,
+    "prelimitary_counting__what_is_stored": "Resultatet fra opptellingen",
+    "prelimitary_counting__storage_method": "Journalføres i sak- og arkivsystem",
+    "prelimitary_counting__process_for_control": true,
+    "prelimitary_counting__process_for_control_type": "Eventuelle avvik må kommenteres/forklares før det er mulig å publisere resultatet",
+    "final_counting__is_stored": true,
+    "final_counting__what_is_stored": "Resultatet fra endelig opptelling",
+    "final_counting__storage_method": "Journalføres i sak- og arkivsystem",
+    "final_counting__process_for_control": true,
+    "final_counting__process_for_control_type": "Møterotokollene publiseres via nettsidene og Valgdirektoratet har kontroll på innholdet i disse."
 }

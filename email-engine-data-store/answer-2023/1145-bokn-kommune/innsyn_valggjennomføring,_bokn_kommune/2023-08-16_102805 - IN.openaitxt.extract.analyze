@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n  \"any_answers_found\": true,\n  \"answer1\": \"Bokn kommune foretar manuell opptelling b\u00e5de ved forel\u00f8pig og endeleg opptelling.\",\n  \"answer2\": \"Grunna \u00f8konomiske omsyn (unng\u00e5 \u00e5 kj\u00f8pe og drifte dyrt oppteljingsutstyr) har Bokn kommune ikkje sett seg r\u00e5d til \u00e5 skaffe skanner med lisensar og utstyr for \u00e5 telje opp ca. 500 r\u00f8ystesetlar. Her avventer kommunen eit eventuelt p\u00e5legg dersom dette skulle komme fr\u00e5 direktoratet til mindre kommunar.\",\n  \"answer3\": \"Bokn kommune har ein valkrets og alt blir talt opp sentralt (p\u00e5 kommunehuset) og deretter lagt inn i EVA. Valansvarleg og valstyret har oppsyn med oppteljinga.\",\n  \"answer4\": \"Resultat av manuell forel\u00f8pig oppteljing etter valet blir lagt i EVA og tatt ut p\u00e5 papir til endeleg oppteljing og protokoll er ferdigstilt. Blir ikkje journalf\u00f8rt.\",\n  \"answer5\": \"Resultat av alle oppteljingar blir kontrollert 2 gonger av 2 sett valpersonell i tillegg til at valansvarlig og nettredakt\u00f8r kontrollerer mot Valdirektoratet si nettside. Vi kontrollerer ingen andre medier da dei hentar (skal hente) opplysningane p\u00e5 valdirektoratet sine sider.\",\n  \"answer6\": \"Resultat fr\u00e5 endeleg oppteljing blir lagt inn i EVA, journalf\u00f8rt i sak-arkivsystemet og i tillegg oppbevart i papir pakka i ei forsegla urne saman med r\u00f8ystesetlar og manntal til neste val er gjennomf\u00f8rt.\",\n  \"answer7\": \"Se svar under pkt. 5.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Bokn kommune foretar manuell opptelling b\u00e5de ved forel\u00f8pig og endeleg opptelling.\",\n    \"answer2\": \"Grunna \u00f8konomiske omsyn ( unng\u00e5 \u00e5 kj\u00f8pe og drifte dyrt oppteljingsutstyr) har Bokn kommune ikkje sett seg r\u00e5d til \u00e5 skaffe skanner med lisensar og utstyr for \u00e5 telje opp ca. 500 r\u00f8ystesetlar.  Her avventer kommunen eit eventuelt p\u00e5legg dersom dette skulle komme fr\u00e5 direktoratet til mindre kommunar.\",\n    \"answer3\": \"Bokn kommune har ein valkrets og alt blir talt opp sentralt (p\u00e5 kommunehuset) og deretter lagt inn i EVA.  Valansvarleg og valstyret har oppsyn med oppteljinga.\",\n    \"answer4\": \"Resultat av manuell forel\u00f8pig oppteljing etter valet blir lagt i EVA og tatt ut p\u00e5 papir til endeleg oppteljing og protokoll er ferdigstilt.  Blir ikkje journalf\u00f8rt.\",\n    \"answer5\": \"Resultat av alle oppteljingar blir kontrollert 2 gonger av 2 sett valpersonell i tillegg til at valansvarlig og nettredakt\u00f8r kontrollerer mot Valdirektoratet si nettside.  Vi kontrollerer ingen andre medier da dei hentar (skal hente) opplysningane p\u00e5 valdirektoratet sine sider.\",\n    \"answer6\": \"Resultat fr\u00e5 endeleg oppteljing blir lagt inn i EVA, journalf\u00f8rt i sak-arkivsystemet og i tillegg oppbevart i papir pakka i ei forsegla urne saman med r\u00f8ystesetlar og manntal til neste val er gjennomf\u00f8rt.\",\n    \"answer7\": \"Sj\u00e5 svar under pkt. 5.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s5QYCdjLtOVh7wpsgNvxqf0MNb1y",
+  "id": "chatcmpl-7sZavZwBUh2YBrgVch3xBcAESye9u",
   "object": "chat.completion",
-  "created": 1693124930,
+  "created": 1693240893,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"answer1\": \"Bokn kommune foretar manuell opptelling b\u00e5de ved forel\u00f8pig og endeleg opptelling.\",\n  \"answer2\": \"Grunna \u00f8konomiske omsyn (unng\u00e5 \u00e5 kj\u00f8pe og drifte dyrt oppteljingsutstyr) har Bokn kommune ikkje sett seg r\u00e5d til \u00e5 skaffe skanner med lisensar og utstyr for \u00e5 telje opp ca. 500 r\u00f8ystesetlar. Her avventer kommunen eit eventuelt p\u00e5legg dersom dette skulle komme fr\u00e5 direktoratet til mindre kommunar.\",\n  \"answer3\": \"Bokn kommune har ein valkrets og alt blir talt opp sentralt (p\u00e5 kommunehuset) og deretter lagt inn i EVA. Valansvarleg og valstyret har oppsyn med oppteljinga.\",\n  \"answer4\": \"Resultat av manuell forel\u00f8pig oppteljing etter valet blir lagt i EVA og tatt ut p\u00e5 papir til endeleg oppteljing og protokoll er ferdigstilt. Blir ikkje journalf\u00f8rt.\",\n  \"answer5\": \"Resultat av alle oppteljingar blir kontrollert 2 gonger av 2 sett valpersonell i tillegg til at valansvarlig og nettredakt\u00f8r kontrollerer mot Valdirektoratet si nettside. Vi kontrollerer ingen andre medier da dei hentar (skal hente) opplysningane p\u00e5 valdirektoratet sine sider.\",\n  \"answer6\": \"Resultat fr\u00e5 endeleg oppteljing blir lagt inn i EVA, journalf\u00f8rt i sak-arkivsystemet og i tillegg oppbevart i papir pakka i ei forsegla urne saman med r\u00f8ystesetlar og manntal til neste val er gjennomf\u00f8rt.\",\n  \"answer7\": \"Se svar under pkt. 5.\",\n  \"final_counting_type\": \"manuell\",\n  \"counting_type_decision_date\": null,\n  \"counting_type_decision_case_number\": null,\n  \"prelimitary_counting__any_counting_in_valgkrets\": false,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n  \"prelimitary_counting__transfer_to_eva__type\": \"Resultatet blir lagt inn i EVA etter opptellingen\",\n  \"prelimitary_counting__is_stored\": true,\n  \"prelimitary_counting__what_is_stored\": \"Resultat av manuell forel\u00f8pig oppteljing\",\n  \"prelimitary_counting__storage_method\": \"Papir\",\n  \"prelimitary_counting__process_for_control\": true,\n  \"prelimitary_counting__process_for_control_type\": \"Resultat av alle oppteljingar blir kontrollert 2 gonger av 2 sett valpersonell i tillegg til at valansvarlig og nettredakt\u00f8r kontrollerer mot Valdirektoratet si nettside\",\n  \"final_counting__is_stored\": true,\n  \"final_counting__what_is_stored\": \"Resultat fr\u00e5 endeleg oppteljing\",\n  \"final_counting__storage_method\": \"Digitalt og p\u00e5 papir\",\n  \"final_counting__process_for_control\": true,\n  \"final_counting__process_for_control_type\": \"Resultat fr\u00e5 endeleg oppteljing blir kontrollert mot resultat som blir publisert\"\n}"
+        "content": "{\n    \"answer1\": \"Bokn kommune foretar manuell opptelling b\u00e5de ved forel\u00f8pig og endeleg opptelling.\",\n    \"answer2\": \"Grunna \u00f8konomiske omsyn ( unng\u00e5 \u00e5 kj\u00f8pe og drifte dyrt oppteljingsutstyr) har Bokn kommune ikkje sett seg r\u00e5d til \u00e5 skaffe skanner med lisensar og utstyr for \u00e5 telje opp ca. 500 r\u00f8ystesetlar.  Her avventer kommunen eit eventuelt p\u00e5legg dersom dette skulle komme fr\u00e5 direktoratet til mindre kommunar.\",\n    \"answer3\": \"Bokn kommune har ein valkrets og alt blir talt opp sentralt (p\u00e5 kommunehuset) og deretter lagt inn i EVA.  Valansvarleg og valstyret har oppsyn med oppteljinga.\",\n    \"answer4\": \"Resultat av manuell forel\u00f8pig oppteljing etter valet blir lagt i EVA og tatt ut p\u00e5 papir til endeleg oppteljing og protokoll er ferdigstilt.  Blir ikkje journalf\u00f8rt.\",\n    \"answer5\": \"Resultat av alle oppteljingar blir kontrollert 2 gonger av 2 sett valpersonell i tillegg til at valansvarlig og nettredakt\u00f8r kontrollerer mot Valdirektoratet si nettside.  Vi kontrollerer ingen andre medier da dei hentar (skal hente) opplysningane p\u00e5 valdirektoratet sine sider.\",\n    \"answer6\": \"Resultat fr\u00e5 endeleg oppteljing blir lagt inn i EVA, journalf\u00f8rt i sak-arkivsystemet og i tillegg oppbevart i papir pakka i ei forsegla urne saman med r\u00f8ystesetlar og manntal til neste val er gjennomf\u00f8rt.\",\n    \"answer7\": \"Sj\u00e5 svar under pkt. 5.\",\n    \"final_counting_type\": \"manuell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"manuell opptelling\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"resultat av manuell forel\u00f8pig opptelling\",\n    \"prelimitary_counting__storage_method\": \"papir\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"kontrolleres av valpersonell, valansvarlig og nettredakt\u00f8r mot Valdirektoratet si nettside\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"resultat fra endelig opptelling, r\u00f8ystesetlar og manntal\",\n    \"final_counting__storage_method\": \"papir i forseglet urne, journalf\u00f8rt i sak-arkivsystemet\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"kontrolleres av valpersonell, valansvarlig og nettredakt\u00f8r mot Valdirektoratet si nettside\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1800,
-    "completion_tokens": 797,
-    "total_tokens": 2597
+    "prompt_tokens": 1806,
+    "completion_tokens": 798,
+    "total_tokens": 2604
   }
 }
 ---------------
 {
-  "answer1": "Bokn kommune foretar manuell opptelling både ved foreløpig og endeleg opptelling.",
-  "answer2": "Grunna økonomiske omsyn (unngå å kjøpe og drifte dyrt oppteljingsutstyr) har Bokn kommune ikkje sett seg råd til å skaffe skanner med lisensar og utstyr for å telje opp ca. 500 røystesetlar. Her avventer kommunen eit eventuelt pålegg dersom dette skulle komme frå direktoratet til mindre kommunar.",
-  "answer3": "Bokn kommune har ein valkrets og alt blir talt opp sentralt (på kommunehuset) og deretter lagt inn i EVA. Valansvarleg og valstyret har oppsyn med oppteljinga.",
-  "answer4": "Resultat av manuell foreløpig oppteljing etter valet blir lagt i EVA og tatt ut på papir til endeleg oppteljing og protokoll er ferdigstilt. Blir ikkje journalført.",
-  "answer5": "Resultat av alle oppteljingar blir kontrollert 2 gonger av 2 sett valpersonell i tillegg til at valansvarlig og nettredaktør kontrollerer mot Valdirektoratet si nettside. Vi kontrollerer ingen andre medier da dei hentar (skal hente) opplysningane på valdirektoratet sine sider.",
-  "answer6": "Resultat frå endeleg oppteljing blir lagt inn i EVA, journalført i sak-arkivsystemet og i tillegg oppbevart i papir pakka i ei forsegla urne saman med røystesetlar og manntal til neste val er gjennomført.",
-  "answer7": "Se svar under pkt. 5.",
-  "final_counting_type": "manuell",
-  "counting_type_decision_date": null,
-  "counting_type_decision_case_number": null,
-  "prelimitary_counting__any_counting_in_valgkrets": false,
-  "prelimitary_counting__transfer_to_eva__do_they_answer": true,
-  "prelimitary_counting__transfer_to_eva__type": "Resultatet blir lagt inn i EVA etter opptellingen",
-  "prelimitary_counting__is_stored": true,
-  "prelimitary_counting__what_is_stored": "Resultat av manuell foreløpig oppteljing",
-  "prelimitary_counting__storage_method": "Papir",
-  "prelimitary_counting__process_for_control": true,
-  "prelimitary_counting__process_for_control_type": "Resultat av alle oppteljingar blir kontrollert 2 gonger av 2 sett valpersonell i tillegg til at valansvarlig og nettredaktør kontrollerer mot Valdirektoratet si nettside",
-  "final_counting__is_stored": true,
-  "final_counting__what_is_stored": "Resultat frå endeleg oppteljing",
-  "final_counting__storage_method": "Digitalt og på papir",
-  "final_counting__process_for_control": true,
-  "final_counting__process_for_control_type": "Resultat frå endeleg oppteljing blir kontrollert mot resultat som blir publisert"
+    "answer1": "Bokn kommune foretar manuell opptelling både ved foreløpig og endeleg opptelling.",
+    "answer2": "Grunna økonomiske omsyn ( unngå å kjøpe og drifte dyrt oppteljingsutstyr) har Bokn kommune ikkje sett seg råd til å skaffe skanner med lisensar og utstyr for å telje opp ca. 500 røystesetlar.  Her avventer kommunen eit eventuelt pålegg dersom dette skulle komme frå direktoratet til mindre kommunar.",
+    "answer3": "Bokn kommune har ein valkrets og alt blir talt opp sentralt (på kommunehuset) og deretter lagt inn i EVA.  Valansvarleg og valstyret har oppsyn med oppteljinga.",
+    "answer4": "Resultat av manuell foreløpig oppteljing etter valet blir lagt i EVA og tatt ut på papir til endeleg oppteljing og protokoll er ferdigstilt.  Blir ikkje journalført.",
+    "answer5": "Resultat av alle oppteljingar blir kontrollert 2 gonger av 2 sett valpersonell i tillegg til at valansvarlig og nettredaktør kontrollerer mot Valdirektoratet si nettside.  Vi kontrollerer ingen andre medier da dei hentar (skal hente) opplysningane på valdirektoratet sine sider.",
+    "answer6": "Resultat frå endeleg oppteljing blir lagt inn i EVA, journalført i sak-arkivsystemet og i tillegg oppbevart i papir pakka i ei forsegla urne saman med røystesetlar og manntal til neste val er gjennomført.",
+    "answer7": "Sjå svar under pkt. 5.",
+    "final_counting_type": "manuell",
+    "counting_type_decision_date": null,
+    "counting_type_decision_case_number": null,
+    "prelimitary_counting__any_counting_in_valgkrets": false,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": true,
+    "prelimitary_counting__transfer_to_eva__type": "manuell opptelling",
+    "prelimitary_counting__is_stored": true,
+    "prelimitary_counting__what_is_stored": "resultat av manuell foreløpig opptelling",
+    "prelimitary_counting__storage_method": "papir",
+    "prelimitary_counting__process_for_control": true,
+    "prelimitary_counting__process_for_control_type": "kontrolleres av valpersonell, valansvarlig og nettredaktør mot Valdirektoratet si nettside",
+    "final_counting__is_stored": true,
+    "final_counting__what_is_stored": "resultat fra endelig opptelling, røystesetlar og manntal",
+    "final_counting__storage_method": "papir i forseglet urne, journalført i sak-arkivsystemet",
+    "final_counting__process_for_control": true,
+    "final_counting__process_for_control_type": "kontrolleres av valpersonell, valansvarlig og nettredaktør mot Valdirektoratet si nettside"
 }

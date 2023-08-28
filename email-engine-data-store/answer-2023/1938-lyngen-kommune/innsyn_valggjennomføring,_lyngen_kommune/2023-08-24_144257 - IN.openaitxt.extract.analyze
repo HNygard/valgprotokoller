@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n   \"any_answers_found\": true,\n   \"answer1\": \"Kommunen foretar maskinell endelig telling av valgresultatet.\",\n   \"answer2\": \"Det ble vedtatt i politisk sak PS 01/23.\",\n   \"answer3\": \"Forel\u00f8pig og endelig telling telles sentralt p\u00e5 kretsniv\u00e5.\",\n   \"answer4\": \"Kommunen bruker kun EVA admin. Etter avsluttet valg journalf\u00f8res m\u00f8teb\u00f8kene.\",\n   \"answer5\": \"All kontroll foreg\u00e5r i EVA admin.\",\n   \"answer6\": \"Forel\u00f8pig og endelig telling telles sentralt p\u00e5 kretsniv\u00e5. Etter avsluttet valg journalf\u00f8res m\u00f8teb\u00f8kene.\",\n   \"answer7\": \"All kontroll foreg\u00e5r i EVA admin.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Kommunen foretar maskinell endelig telling av valgresultatet.\",\n    \"answer2\": \"Sak PS 01/23.\",\n    \"answer3\": \"Forel\u00f8pig og endelig telling telles sentralt p\u00e5 kretsniv\u00e5.\",\n    \"answer4\": \"Kommunen bruker kun EVA admin. Etter avsluttet valg journalf\u00f8res m\u00f8teb\u00f8kene.\",\n    \"answer5\": \"All kontroll foreg\u00e5r i EVA admin.\",\n    \"answer6\": \"Forel\u00f8pig og endelig telling telles sentralt p\u00e5 kretsniv\u00e5. Etter avsluttet valg journalf\u00f8res m\u00f8teb\u00f8kene.\",\n    \"answer7\": \"All kontroll foreg\u00e5r i EVA admin.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7sDMIPNg8aHWtezWUyvMTVx6ZRxzI",
+  "id": "chatcmpl-7sZYkeXonv6sx1i6rlSsWMWUGHbK6",
   "object": "chat.completion",
-  "created": 1693155418,
+  "created": 1693240758,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n   \"answer1\": \"Kommunen foretar maskinell endelig telling av valgresultatet.\",\n   \"answer2\": \"Det ble vedtatt i politisk sak PS 01/23.\",\n   \"answer3\": \"Forel\u00f8pig og endelig telling telles sentralt p\u00e5 kretsniv\u00e5.\",\n   \"answer4\": \"Kommunen bruker kun EVA admin. Etter avsluttet valg journalf\u00f8res m\u00f8teb\u00f8kene.\",\n   \"answer5\": \"All kontroll foreg\u00e5r i EVA admin.\",\n   \"answer6\": \"Forel\u00f8pig og endelig telling telles sentralt p\u00e5 kretsniv\u00e5. Etter avsluttet valg journalf\u00f8res m\u00f8teb\u00f8kene.\",\n   \"answer7\": \"All kontroll foreg\u00e5r i EVA admin.\",\n   \"final_counting_type\": \"maskinell\",\n   \"counting_type_decision_date\": null,\n   \"counting_type_decision_case_number\": null,\n   \"prelimitary_counting__any_counting_in_valgkrets\": false,\n   \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n   \"prelimitary_counting__transfer_to_eva__type\": null,\n   \"prelimitary_counting__is_stored\": false,\n   \"prelimitary_counting__what_is_stored\": null,\n   \"prelimitary_counting__storage_method\": null,\n   \"prelimitary_counting__process_for_control\": false,\n   \"prelimitary_counting__process_for_control_type\": null,\n   \"final_counting__is_stored\": false,\n   \"final_counting__what_is_stored\": null,\n   \"final_counting__storage_method\": null,\n   \"final_counting__process_for_control\": false,\n   \"final_counting__process_for_control_type\": null\n}"
+        "content": "{\n    \"answer1\": \"Kommunen foretar maskinell endelig telling av valgresultatet.\",\n    \"answer2\": \"Sak PS 01/23.\",\n    \"answer3\": \"Forel\u00f8pig og endelig telling telles sentralt p\u00e5 kretsniv\u00e5.\",\n    \"answer4\": \"Kommunen bruker kun EVA admin. Etter avsluttet valg journalf\u00f8res m\u00f8teb\u00f8kene.\",\n    \"answer5\": \"All kontroll foreg\u00e5r i EVA admin.\",\n    \"answer6\": \"Forel\u00f8pig og endelig telling telles sentralt p\u00e5 kretsniv\u00e5. Etter avsluttet valg journalf\u00f8res m\u00f8teb\u00f8kene.\",\n    \"answer7\": \"All kontroll foreg\u00e5r i EVA admin.\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n    \"prelimitary_counting__transfer_to_eva__type\": null,\n    \"prelimitary_counting__is_stored\": false,\n    \"prelimitary_counting__what_is_stored\": null,\n    \"prelimitary_counting__storage_method\": null,\n    \"prelimitary_counting__process_for_control\": false,\n    \"prelimitary_counting__process_for_control_type\": null,\n    \"final_counting__is_stored\": false,\n    \"final_counting__what_is_stored\": null,\n    \"final_counting__storage_method\": null,\n    \"final_counting__process_for_control\": false,\n    \"final_counting__process_for_control_type\": null\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1534,
-    "completion_tokens": 412,
-    "total_tokens": 1946
+    "prompt_tokens": 1527,
+    "completion_tokens": 405,
+    "total_tokens": 1932
   }
 }
 ---------------
 {
-   "answer1": "Kommunen foretar maskinell endelig telling av valgresultatet.",
-   "answer2": "Det ble vedtatt i politisk sak PS 01/23.",
-   "answer3": "Foreløpig og endelig telling telles sentralt på kretsnivå.",
-   "answer4": "Kommunen bruker kun EVA admin. Etter avsluttet valg journalføres møtebøkene.",
-   "answer5": "All kontroll foregår i EVA admin.",
-   "answer6": "Foreløpig og endelig telling telles sentralt på kretsnivå. Etter avsluttet valg journalføres møtebøkene.",
-   "answer7": "All kontroll foregår i EVA admin.",
-   "final_counting_type": "maskinell",
-   "counting_type_decision_date": null,
-   "counting_type_decision_case_number": null,
-   "prelimitary_counting__any_counting_in_valgkrets": false,
-   "prelimitary_counting__transfer_to_eva__do_they_answer": false,
-   "prelimitary_counting__transfer_to_eva__type": null,
-   "prelimitary_counting__is_stored": false,
-   "prelimitary_counting__what_is_stored": null,
-   "prelimitary_counting__storage_method": null,
-   "prelimitary_counting__process_for_control": false,
-   "prelimitary_counting__process_for_control_type": null,
-   "final_counting__is_stored": false,
-   "final_counting__what_is_stored": null,
-   "final_counting__storage_method": null,
-   "final_counting__process_for_control": false,
-   "final_counting__process_for_control_type": null
+    "answer1": "Kommunen foretar maskinell endelig telling av valgresultatet.",
+    "answer2": "Sak PS 01/23.",
+    "answer3": "Foreløpig og endelig telling telles sentralt på kretsnivå.",
+    "answer4": "Kommunen bruker kun EVA admin. Etter avsluttet valg journalføres møtebøkene.",
+    "answer5": "All kontroll foregår i EVA admin.",
+    "answer6": "Foreløpig og endelig telling telles sentralt på kretsnivå. Etter avsluttet valg journalføres møtebøkene.",
+    "answer7": "All kontroll foregår i EVA admin.",
+    "final_counting_type": "maskinell",
+    "counting_type_decision_date": null,
+    "counting_type_decision_case_number": null,
+    "prelimitary_counting__any_counting_in_valgkrets": false,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": false,
+    "prelimitary_counting__transfer_to_eva__type": null,
+    "prelimitary_counting__is_stored": false,
+    "prelimitary_counting__what_is_stored": null,
+    "prelimitary_counting__storage_method": null,
+    "prelimitary_counting__process_for_control": false,
+    "prelimitary_counting__process_for_control_type": null,
+    "final_counting__is_stored": false,
+    "final_counting__what_is_stored": null,
+    "final_counting__storage_method": null,
+    "final_counting__process_for_control": false,
+    "final_counting__process_for_control_type": null
 }

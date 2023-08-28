@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n   \"any_answers_found\": true,\n   \"answer1\": \"manuell opptelling\",\n   \"answer2\": \"Vi har ikke vedtatt scanning\",\n   \"answer3\": \"H\u00f8ylandet har samlet opptellet. Telles ikke ute i kretsene.\",\n   \"answer4\": \"M\u00f8teboka fra EVA valg blir scannet inn i v\u00e5rt saksbehandlingssystem. Alle stemmesedler blir oppbevart for evt. etterkontroll. Kommunestyret m\u00e5 godkjenne valget. Resultatene blir journalf\u00f8rt.\",\n   \"answer5\": \"Vi har rutiner p\u00e5 opptelling med tellelag og vi m\u00e5 gjennomf\u00f8re flere tellinger  og sammenligne og rette p\u00e5 evt. feil. Vi m\u00e5 jo sjekke at Valgresultatet.no har de samme resultat som vi har i v\u00e5re m\u00f8teb\u00f8ker.\",\n   \"answer6\": \"Blir journalf\u00f8rt. Manuell opptelling med flere tellelag.\",\n   \"answer7\": \"Ja, Manuell opptelling med flere tellelag. Blir journalf\u00f8rt og publisert.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"manuell opptelling.\",\n    \"answer2\": \"Vi har ikke vedtatt scanning.\",\n    \"answer3\": \"H\u00f8ylandet har samlet opptellet. Telles ikke ute i kretsene.\",\n    \"answer4\": \"M\u00f8teboka fra EVA valg blir scannet inn i v\u00e5rt saksbehandlingssystem. Alle stemmesedler blir oppbevart for evt. etterkontroll. Kommunestyret m\u00e5 godkjenne valget. Resultatene blir journalf\u00f8rt.\",\n    \"answer5\": \"Vi har rutiner p\u00e5 opptelling med tellelag og vi m\u00e5 gjennomf\u00f8re flere tellinger  og sammenligne og rette p\u00e5 evt. feil. Vi m\u00e5 jo sjekke at Valgresultatet.no har de samme resultat som vi har i v\u00e5re m\u00f8teb\u00f8ker.\",\n    \"answer6\": \"Blir journalf\u00f8rt. Manuell opptelling med flere tellelag.\",\n    \"answer7\": \"Ja, Manuell opptelling med flere tellelag. Blir journalf\u00f8rt og publisert.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,16 +21,16 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7sDKBe4rpvmI1KibMXaTkTBPYdno7",
+  "id": "chatcmpl-7sZVN9EfFPonvX8qyA6nc5DjYEque",
   "object": "chat.completion",
-  "created": 1693155287,
+  "created": 1693240549,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n   \"answer1\": \"manuell opptelling\",\n   \"answer2\": \"Vi har ikke vedtatt scanning\",\n   \"answer3\": \"H\u00f8ylandet har samlet opptellet. Telles ikke ute i kretsene.\",\n   \"answer4\": \"M\u00f8teboka fra EVA valg blir scannet inn i v\u00e5rt saksbehandlingssystem. Alle stemmesedler blir oppbevart for evt. etterkontroll. Kommunestyret m\u00e5 godkjenne valget. Resultatene blir journalf\u00f8rt.\",\n   \"answer5\": \"Vi har rutiner p\u00e5 opptelling med tellelag og vi m\u00e5 gjennomf\u00f8re flere tellinger  og sammenligne og rette p\u00e5 evt. feil. Vi m\u00e5 jo sjekke at Valgresultatet.no har de samme resultat som vi har i v\u00e5re m\u00f8teb\u00f8ker.\",\n   \"answer6\": \"Blir journalf\u00f8rt. Manuell opptelling med flere tellelag.\",\n   \"answer7\": \"Ja, Manuell opptelling med flere tellelag. Blir journalf\u00f8rt og publisert.\",\n   \"final_counting_type\": \"manuell\",\n   \"counting_type_decision_date\": null,\n   \"counting_type_decision_case_number\": null,\n   \"prelimitary_counting__any_counting_in_valgkrets\": false,\n   \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n   \"prelimitary_counting__transfer_to_eva__type\": null,\n   \"prelimitary_counting__is_stored\": true,\n   \"prelimitary_counting__what_is_stored\": \"M\u00f8teboka fra EVA valg\",\n   \"prelimitary_counting__storage_method\": \"scanning\",\n   \"prelimitary_counting__process_for_control\": true,\n   \"prelimitary_counting__process_for_control_type\": \"Opptelling med tellelag og sammenligning av resultater\",\n   \"final_counting__is_stored\": true,\n   \"final_counting__what_is_stored\": \"Manuell opptelling med flere tellelag\",\n   \"final_counting__storage_method\": \"journalf\u00f8ring\",\n   \"final_counting__process_for_control\": true,\n   \"final_counting__process_for_control_type\": \"Kontroll av resultat i m\u00f8teb\u00f8ker og mot Valgresultatet.no\"\n}"
+        "content": "{\n    \"answer1\": \"manuell opptelling.\",\n    \"answer2\": \"Vi har ikke vedtatt scanning.\",\n    \"answer3\": \"H\u00f8ylandet har samlet opptellet. Telles ikke ute i kretsene.\",\n    \"answer4\": \"M\u00f8teboka fra EVA valg blir scannet inn i v\u00e5rt saksbehandlingssystem. Alle stemmesedler blir oppbevart for evt. etterkontroll. Kommunestyret m\u00e5 godkjenne valget. Resultatene blir journalf\u00f8rt.\",\n    \"answer5\": \"Vi har rutiner p\u00e5 opptelling med tellelag og vi m\u00e5 gjennomf\u00f8re flere tellinger  og sammenligne og rette p\u00e5 evt. feil. Vi m\u00e5 jo sjekke at Valgresultatet.no har de samme resultat som vi har i v\u00e5re m\u00f8teb\u00f8ker.\",\n    \"answer6\": \"Blir journalf\u00f8rt. Manuell opptelling med flere tellelag.\",\n    \"answer7\": \"Ja, Manuell opptelling med flere tellelag. Blir journalf\u00f8rt og publisert.\",\n    \"final_counting_type\": \"manuell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n    \"prelimitary_counting__transfer_to_eva__type\": null,\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"M\u00f8teboka fra EVA valg\",\n    \"prelimitary_counting__storage_method\": \"scannet inn i saksbehandlingssystemet\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Tellelag og sammenligning med Valgresultatet.no\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"resultatet fra endelig opptelling\",\n    \"final_counting__storage_method\": \"journalf\u00f8res\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Manuell opptelling med flere tellelag\"\n}"
       },
       "finish_reason": "stop"
     }
@@ -43,27 +43,27 @@ Chat completion
 }
 ---------------
 {
-   "answer1": "manuell opptelling",
-   "answer2": "Vi har ikke vedtatt scanning",
-   "answer3": "Høylandet har samlet opptellet. Telles ikke ute i kretsene.",
-   "answer4": "Møteboka fra EVA valg blir scannet inn i vårt saksbehandlingssystem. Alle stemmesedler blir oppbevart for evt. etterkontroll. Kommunestyret må godkjenne valget. Resultatene blir journalført.",
-   "answer5": "Vi har rutiner på opptelling med tellelag og vi må gjennomføre flere tellinger  og sammenligne og rette på evt. feil. Vi må jo sjekke at Valgresultatet.no har de samme resultat som vi har i våre møtebøker.",
-   "answer6": "Blir journalført. Manuell opptelling med flere tellelag.",
-   "answer7": "Ja, Manuell opptelling med flere tellelag. Blir journalført og publisert.",
-   "final_counting_type": "manuell",
-   "counting_type_decision_date": null,
-   "counting_type_decision_case_number": null,
-   "prelimitary_counting__any_counting_in_valgkrets": false,
-   "prelimitary_counting__transfer_to_eva__do_they_answer": false,
-   "prelimitary_counting__transfer_to_eva__type": null,
-   "prelimitary_counting__is_stored": true,
-   "prelimitary_counting__what_is_stored": "Møteboka fra EVA valg",
-   "prelimitary_counting__storage_method": "scanning",
-   "prelimitary_counting__process_for_control": true,
-   "prelimitary_counting__process_for_control_type": "Opptelling med tellelag og sammenligning av resultater",
-   "final_counting__is_stored": true,
-   "final_counting__what_is_stored": "Manuell opptelling med flere tellelag",
-   "final_counting__storage_method": "journalføring",
-   "final_counting__process_for_control": true,
-   "final_counting__process_for_control_type": "Kontroll av resultat i møtebøker og mot Valgresultatet.no"
+    "answer1": "manuell opptelling.",
+    "answer2": "Vi har ikke vedtatt scanning.",
+    "answer3": "Høylandet har samlet opptellet. Telles ikke ute i kretsene.",
+    "answer4": "Møteboka fra EVA valg blir scannet inn i vårt saksbehandlingssystem. Alle stemmesedler blir oppbevart for evt. etterkontroll. Kommunestyret må godkjenne valget. Resultatene blir journalført.",
+    "answer5": "Vi har rutiner på opptelling med tellelag og vi må gjennomføre flere tellinger  og sammenligne og rette på evt. feil. Vi må jo sjekke at Valgresultatet.no har de samme resultat som vi har i våre møtebøker.",
+    "answer6": "Blir journalført. Manuell opptelling med flere tellelag.",
+    "answer7": "Ja, Manuell opptelling med flere tellelag. Blir journalført og publisert.",
+    "final_counting_type": "manuell",
+    "counting_type_decision_date": null,
+    "counting_type_decision_case_number": null,
+    "prelimitary_counting__any_counting_in_valgkrets": false,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": false,
+    "prelimitary_counting__transfer_to_eva__type": null,
+    "prelimitary_counting__is_stored": true,
+    "prelimitary_counting__what_is_stored": "Møteboka fra EVA valg",
+    "prelimitary_counting__storage_method": "scannet inn i saksbehandlingssystemet",
+    "prelimitary_counting__process_for_control": true,
+    "prelimitary_counting__process_for_control_type": "Tellelag og sammenligning med Valgresultatet.no",
+    "final_counting__is_stored": true,
+    "final_counting__what_is_stored": "resultatet fra endelig opptelling",
+    "final_counting__storage_method": "journalføres",
+    "final_counting__process_for_control": true,
+    "final_counting__process_for_control_type": "Manuell opptelling med flere tellelag"
 }

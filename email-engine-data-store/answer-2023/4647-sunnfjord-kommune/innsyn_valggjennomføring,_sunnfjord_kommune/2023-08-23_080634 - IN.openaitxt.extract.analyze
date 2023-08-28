@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n  \"any_answers_found\": true,\n  \"answer1\": \"maskinell eller manuell endelig telling av valgresultatet\",\n  \"answer2\": \"unknown\",\n  \"answer3\": \"opptelling i valgkretsene, resultatet overf\u00f8res til valgstyret/valgansvarlig/EVA Admin\",\n  \"answer4\": \"unknown\",\n  \"answer5\": \"unknown\",\n  \"answer6\": \"unknown\",\n  \"answer7\": \"unknown\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": false\n}\n\n"
     },
     {
         "role": "user",
@@ -21,37 +21,37 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s5FrrLGkTdcZck53nWTuoRhfIkLx",
+  "id": "chatcmpl-7sZU0OaTwBaJKnTxw8MnbtYHJMCFz",
   "object": "chat.completion",
-  "created": 1693124267,
+  "created": 1693240464,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"answer1\": \"maskinell eller manuell endelig telling av valgresultatet\",\n  \"answer2\": \"unknown\",\n  \"answer3\": \"opptelling i valgkretsene, resultatet overf\u00f8res til valgstyret/valgansvarlig/EVA Admin\",\n  \"answer4\": \"unknown\",\n  \"answer5\": \"unknown\",\n  \"answer6\": \"unknown\",\n  \"answer7\": \"unknown\",\n  \"final_counting_type\": \"\",\n  \"counting_type_decision_date\": \"\",\n  \"counting_type_decision_case_number\": \"\",\n  \"prelimitary_counting__any_counting_in_valgkrets\": false,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n  \"prelimitary_counting__transfer_to_eva__type\": \"\",\n  \"prelimitary_counting__is_stored\": false,\n  \"prelimitary_counting__what_is_stored\": \"\",\n  \"prelimitary_counting__storage_method\": \"\",\n  \"prelimitary_counting__process_for_control\": false,\n  \"prelimitary_counting__process_for_control_type\": \"\",\n  \"final_counting__is_stored\": false,\n  \"final_counting__what_is_stored\": \"\",\n  \"final_counting__storage_method\": \"\",\n  \"final_counting__process_for_control\": false,\n  \"final_counting__process_for_control_type\": \"\"\n}"
+        "content": "{\n  \"answer1\": \"\",\n  \"answer2\": \"\",\n  \"answer3\": \"\",\n  \"answer4\": \"\",\n  \"answer5\": \"\",\n  \"answer6\": \"\",\n  \"answer7\": \"\",\n  \"final_counting_type\": \"\",\n  \"counting_type_decision_date\": null,\n  \"counting_type_decision_case_number\": \"\",\n  \"prelimitary_counting__any_counting_in_valgkrets\": false,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n  \"prelimitary_counting__transfer_to_eva__type\": \"\",\n  \"prelimitary_counting__is_stored\": false,\n  \"prelimitary_counting__what_is_stored\": \"\",\n  \"prelimitary_counting__storage_method\": \"\",\n  \"prelimitary_counting__process_for_control\": false,\n  \"prelimitary_counting__process_for_control_type\": \"\",\n  \"final_counting__is_stored\": false,\n  \"final_counting__what_is_stored\": \"\",\n  \"final_counting__storage_method\": \"\",\n  \"final_counting__process_for_control\": false,\n  \"final_counting__process_for_control_type\": \"\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1444,
-    "completion_tokens": 309,
-    "total_tokens": 1753
+    "prompt_tokens": 1345,
+    "completion_tokens": 253,
+    "total_tokens": 1598
   }
 }
 ---------------
 {
-  "answer1": "maskinell eller manuell endelig telling av valgresultatet",
-  "answer2": "unknown",
-  "answer3": "opptelling i valgkretsene, resultatet overføres til valgstyret/valgansvarlig/EVA Admin",
-  "answer4": "unknown",
-  "answer5": "unknown",
-  "answer6": "unknown",
-  "answer7": "unknown",
+  "answer1": "",
+  "answer2": "",
+  "answer3": "",
+  "answer4": "",
+  "answer5": "",
+  "answer6": "",
+  "answer7": "",
   "final_counting_type": "",
-  "counting_type_decision_date": "",
+  "counting_type_decision_date": null,
   "counting_type_decision_case_number": "",
   "prelimitary_counting__any_counting_in_valgkrets": false,
   "prelimitary_counting__transfer_to_eva__do_they_answer": false,

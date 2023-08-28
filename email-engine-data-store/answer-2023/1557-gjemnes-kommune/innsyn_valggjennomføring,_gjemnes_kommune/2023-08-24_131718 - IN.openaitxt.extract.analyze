@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n  \"any_answers_found\": true,\n  \"answer1\": \"Manuell telling\",\n  \"answer2\": \"Valgstyresak 1/23 ble det delegert fullmakt til 3 personer i administrasjonen til \u00e5 planlegge og gjennomf\u00f8re kommunestyre- og fylkestingsvalget, i de sp\u00f8rsm\u00e5l/oppgaver hvor ikke prinsipielle sp\u00f8rsm\u00e5l m\u00e5tte avgj\u00f8res.\",\n  \"answer3\": \"Telling vil foreg\u00e5 sentralt fordelt p\u00e5 krets. Dvs alle stemmene skal telles p\u00e5 kommunehuset etter valget er ferdig, men blir fordelt p\u00e5 kretsene.\",\n  \"answer4\": \"Alle stemmene blir partifordelt blir telt opp i bolker p\u00e5 50 og lagt i konvolutt og blir nummerert. Det blir laget arbeidsnotat p\u00e5 disse tellingene f\u00f8r overf\u00f8ring til EVA. Hver konvolutt blir telt 2 ganger under forel\u00f8pig opptelling av 2 forskjellige personer. Resultatet bli lagt inn i EVA, men ikke journalf\u00f8rt p\u00e5 annet vis, men kontrolleres opp mot arbeidsnotater.\",\n  \"answer5\": \"Konvoluttene med stemmesedlene blir telt p\u00e5 nytt under endelig opptelling 2 ganger av 2 forskjellige personer. Dette resultatet legges inn i EVA. Blir det avvik her mellom forel\u00f8pig og endelig telleing, m\u00e5 det kontroll telles p\u00e5 nytt., slik at vi har 2 like tellinger f\u00f8r vi godkjenner resultatet.\\nKommunen har ingen spesielle rutiner for \u00e5 sjekke forel\u00f8pig opptelling mot valgresultatsiden. Men det blir jo sjekket mot valgprotokollen i EVA.\",\n  \"answer6\": \"Samme svar som for 4. Endelig opptelling blir ikke journalf\u00f8rt for seg selv. Valgprotokollen som inneholder tellingene blir journalf\u00f8rt i v\u00e5rt saks og arkivsystem til slutt og sjekket opp mot valgresultatet. Den vil jo ogs\u00e5 finnes i en papirutgave som inneholder underskriftene til valgstyret.\\nAlle avgitte stemmer og protokoller blir tatt vare p\u00e5 i arkivet i 2 valg perioder.\",\n  \"answer7\": \"Samme svar som under nr 5.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Manuell telling\",\n    \"answer2\": \"Valgstyresak 1/23 ble det delegert fullmakt til 3 personer i administrasjonen til \u00e5 planlegge og gjennomf\u00f8re kommunestyre- og fylkestingsvalget, i de sp\u00f8rsm\u00e5l/oppgaver hvor ikke prinsipielle sp\u00f8rsm\u00e5l m\u00e5tte avgj\u00f8res.\",\n    \"answer3\": \"Telling vil foreg\u00e5 sentralt fordelt p\u00e5 krets. Dvs alle stemmene skal telles p\u00e5 kommunehuset etter valget er ferdig, men blir fordelt p\u00e5 kretsene.\",\n    \"answer4\": \"Alle stemmene blir partifordelt blir telt opp i bolker p\u00e5 50 og lagt i konvolutt og blir nummerert. Det blir laget arbeidsnotat p\u00e5 disse tellingene f\u00f8r overf\u00f8ring til EVA. Hver konvolutt blir telt 2 ganger under forel\u00f8pig opptelling av 2 forskjellige personer. Resultatet bli lagt inn i EVA, men ikke journalf\u00f8rt p\u00e5 annet vis, men kontrolleres opp mot arbeidsnotater.\",\n    \"answer5\": \"Konvoluttene med stemmesedlene blir telt p\u00e5 nytt under endelig opptelling 2 ganger av 2 forskjellige personer. Dette resultatet legges inn i EVA. Blir det avvik her mellom forel\u00f8pig og endelig telleing, m\u00e5 det kontroll telles p\u00e5 nytt., slik at vi har 2 like tellinger f\u00f8r vi godkjenner resultatet. Kommunen har ingen spesielle rutiner for \u00e5 sjekke forel\u00f8pig opptelling mot valgresultatsiden. Men det blir jo sjekket mot valgprotokollen i EVA.\",\n    \"answer6\": \"Samme svar som for 4. Endelig opptelling blir ikke journalf\u00f8rt for seg selv. Valgprotokollen som inneholder tellingene blir journalf\u00f8rt i v\u00e5rt saks og arkivsystem til slutt og sjekket opp mot valgresultatet. Den vil jo ogs\u00e5 finnes i en papirutgave som inneholder underskriftene til valgstyret. Alle avgitte stemmer og protokoller blir tatt vare p\u00e5 i arkivet i 2 valg perioder.\",\n    \"answer7\": \"Samme svar som under nr 5.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7sDF1IdQapsleUuZcGwi3LweZEWug",
+  "id": "chatcmpl-7sZGFPDHYh6CfzrjCKPjNapy7nNfy",
   "object": "chat.completion",
-  "created": 1693154967,
+  "created": 1693239611,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"answer1\": \"Manuell telling\",\n  \"answer2\": \"Valgstyresak 1/23 ble det delegert fullmakt til 3 personer i administrasjonen til \u00e5 planlegge og gjennomf\u00f8re kommunestyre- og fylkestingsvalget, i de sp\u00f8rsm\u00e5l/oppgaver hvor ikke prinsipielle sp\u00f8rsm\u00e5l m\u00e5tte avgj\u00f8res.\",\n  \"answer3\": \"Telling vil foreg\u00e5 sentralt fordelt p\u00e5 krets. Dvs alle stemmene skal telles p\u00e5 kommunehuset etter valget er ferdig, men blir fordelt p\u00e5 kretsene.\",\n  \"answer4\": \"Alle stemmene blir partifordelt blir telt opp i bolker p\u00e5 50 og lagt i konvolutt og blir nummerert. Det blir laget arbeidsnotat p\u00e5 disse tellingene f\u00f8r overf\u00f8ring til EVA. Hver konvolutt blir telt 2 ganger under forel\u00f8pig opptelling av 2 forskjellige personer. Resultatet bli lagt inn i EVA, men ikke journalf\u00f8rt p\u00e5 annet vis, men kontrolleres opp mot arbeidsnotater.\",\n  \"answer5\": \"Konvoluttene med stemmesedlene blir telt p\u00e5 nytt under endelig opptelling 2 ganger av 2 forskjellige personer. Dette resultatet legges inn i EVA. Blir det avvik her mellom forel\u00f8pig og endelig telleing, m\u00e5 det kontroll telles p\u00e5 nytt., slik at vi har 2 like tellinger f\u00f8r vi godkjenner resultatet.\\nKommunen har ingen spesielle rutiner for \u00e5 sjekke forel\u00f8pig opptelling mot valgresultatsiden. Men det blir jo sjekket mot valgprotokollen i EVA.\",\n  \"answer6\": \"Samme svar som for 4. Endelig opptelling blir ikke journalf\u00f8rt for seg selv. Valgprotokollen som inneholder tellingene blir journalf\u00f8rt i v\u00e5rt saks og arkivsystem til slutt og sjekket opp mot valgresultatet. Den vil jo ogs\u00e5 finnes i en papirutgave som inneholder underskriftene til valgstyret.\\nAlle avgitte stemmer og protokoller blir tatt vare p\u00e5 i arkivet i 2 valg perioder.\",\n  \"answer7\": \"Samme svar som under nr 5.\",\n  \"final_counting_type\": \"manuell\",\n  \"counting_type_decision_date\": null,\n  \"counting_type_decision_case_number\": null,\n  \"prelimitary_counting__any_counting_in_valgkrets\": true,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n  \"prelimitary_counting__transfer_to_eva__type\": null,\n  \"prelimitary_counting__is_stored\": false,\n  \"prelimitary_counting__what_is_stored\": null,\n  \"prelimitary_counting__storage_method\": null,\n  \"prelimitary_counting__process_for_control\": true,\n  \"prelimitary_counting__process_for_control_type\": null,\n  \"final_counting__is_stored\": false,\n  \"final_counting__what_is_stored\": null,\n  \"final_counting__storage_method\": null,\n  \"final_counting__process_for_control\": true,\n  \"final_counting__process_for_control_type\": null\n}"
+        "content": "{\n    \"answer1\": \"Manuell telling\",\n    \"answer2\": \"Valgstyresak 1/23 ble det delegert fullmakt til 3 personer i administrasjonen til \u00e5 planlegge og gjennomf\u00f8re kommunestyre- og fylkestingsvalget, i de sp\u00f8rsm\u00e5l/oppgaver hvor ikke prinsipielle sp\u00f8rsm\u00e5l m\u00e5tte avgj\u00f8res.\",\n    \"answer3\": \"Telling vil foreg\u00e5 sentralt fordelt p\u00e5 krets. Dvs alle stemmene skal telles p\u00e5 kommunehuset etter valget er ferdig, men blir fordelt p\u00e5 kretsene.\",\n    \"answer4\": \"Alle stemmene blir partifordelt blir telt opp i bolker p\u00e5 50 og lagt i konvolutt og blir nummerert. Det blir laget arbeidsnotat p\u00e5 disse tellingene f\u00f8r overf\u00f8ring til EVA. Hver konvolutt blir telt 2 ganger under forel\u00f8pig opptelling av 2 forskjellige personer. Resultatet bli lagt inn i EVA, men ikke journalf\u00f8rt p\u00e5 annet vis, men kontrolleres opp mot arbeidsnotater.\",\n    \"answer5\": \"Konvoluttene med stemmesedlene blir telt p\u00e5 nytt under endelig opptelling 2 ganger av 2 forskjellige personer. Dette resultatet legges inn i EVA. Blir det avvik her mellom forel\u00f8pig og endelig telleing, m\u00e5 det kontroll telles p\u00e5 nytt., slik at vi har 2 like tellinger f\u00f8r vi godkjenner resultatet. Kommunen har ingen spesielle rutiner for \u00e5 sjekke forel\u00f8pig opptelling mot valgresultatsiden. Men det blir jo sjekket mot valgprotokollen i EVA.\",\n    \"answer6\": \"Samme svar som for 4. Endelig opptelling blir ikke journalf\u00f8rt for seg selv. Valgprotokollen som inneholder tellingene blir journalf\u00f8rt i v\u00e5rt saks og arkivsystem til slutt og sjekket opp mot valgresultatet. Den vil jo ogs\u00e5 finnes i en papirutgave som inneholder underskriftene til valgstyret. Alle avgitte stemmer og protokoller blir tatt vare p\u00e5 i arkivet i 2 valg perioder.\",\n    \"answer7\": \"Samme svar som under nr 5.\"\n    \"final_counting_type\": \"manuell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": true,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n    \"prelimitary_counting__transfer_to_eva__type\": null,\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"Resultatet blir lagt inn i EVA og kontrolleres mot arbeidsnotater\",\n    \"prelimitary_counting__storage_method\": \"Digitalt dokument\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Kontrolleres mot valgprotokollen i EVA\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"Valgprotokollen blir lagret i saks- og arkivsystemet\",\n    \"final_counting__storage_method\": \"Papir og digitalt dokument\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Kontrolleres mot valgresultatet\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1899,
-    "completion_tokens": 776,
-    "total_tokens": 2675
+    "prompt_tokens": 1896,
+    "completion_tokens": 842,
+    "total_tokens": 2738
   }
 }
 ---------------
 {
-  "answer1": "Manuell telling",
-  "answer2": "Valgstyresak 1/23 ble det delegert fullmakt til 3 personer i administrasjonen til å planlegge og gjennomføre kommunestyre- og fylkestingsvalget, i de spørsmål/oppgaver hvor ikke prinsipielle spørsmål måtte avgjøres.",
-  "answer3": "Telling vil foregå sentralt fordelt på krets. Dvs alle stemmene skal telles på kommunehuset etter valget er ferdig, men blir fordelt på kretsene.",
-  "answer4": "Alle stemmene blir partifordelt blir telt opp i bolker på 50 og lagt i konvolutt og blir nummerert. Det blir laget arbeidsnotat på disse tellingene før overføring til EVA. Hver konvolutt blir telt 2 ganger under foreløpig opptelling av 2 forskjellige personer. Resultatet bli lagt inn i EVA, men ikke journalført på annet vis, men kontrolleres opp mot arbeidsnotater.",
-  "answer5": "Konvoluttene med stemmesedlene blir telt på nytt under endelig opptelling 2 ganger av 2 forskjellige personer. Dette resultatet legges inn i EVA. Blir det avvik her mellom foreløpig og endelig telleing, må det kontroll telles på nytt., slik at vi har 2 like tellinger før vi godkjenner resultatet.\nKommunen har ingen spesielle rutiner for å sjekke foreløpig opptelling mot valgresultatsiden. Men det blir jo sjekket mot valgprotokollen i EVA.",
-  "answer6": "Samme svar som for 4. Endelig opptelling blir ikke journalført for seg selv. Valgprotokollen som inneholder tellingene blir journalført i vårt saks og arkivsystem til slutt og sjekket opp mot valgresultatet. Den vil jo også finnes i en papirutgave som inneholder underskriftene til valgstyret.\nAlle avgitte stemmer og protokoller blir tatt vare på i arkivet i 2 valg perioder.",
-  "answer7": "Samme svar som under nr 5.",
-  "final_counting_type": "manuell",
-  "counting_type_decision_date": null,
-  "counting_type_decision_case_number": null,
-  "prelimitary_counting__any_counting_in_valgkrets": true,
-  "prelimitary_counting__transfer_to_eva__do_they_answer": false,
-  "prelimitary_counting__transfer_to_eva__type": null,
-  "prelimitary_counting__is_stored": false,
-  "prelimitary_counting__what_is_stored": null,
-  "prelimitary_counting__storage_method": null,
-  "prelimitary_counting__process_for_control": true,
-  "prelimitary_counting__process_for_control_type": null,
-  "final_counting__is_stored": false,
-  "final_counting__what_is_stored": null,
-  "final_counting__storage_method": null,
-  "final_counting__process_for_control": true,
-  "final_counting__process_for_control_type": null
+    "answer1": "Manuell telling",
+    "answer2": "Valgstyresak 1/23 ble det delegert fullmakt til 3 personer i administrasjonen til å planlegge og gjennomføre kommunestyre- og fylkestingsvalget, i de spørsmål/oppgaver hvor ikke prinsipielle spørsmål måtte avgjøres.",
+    "answer3": "Telling vil foregå sentralt fordelt på krets. Dvs alle stemmene skal telles på kommunehuset etter valget er ferdig, men blir fordelt på kretsene.",
+    "answer4": "Alle stemmene blir partifordelt blir telt opp i bolker på 50 og lagt i konvolutt og blir nummerert. Det blir laget arbeidsnotat på disse tellingene før overføring til EVA. Hver konvolutt blir telt 2 ganger under foreløpig opptelling av 2 forskjellige personer. Resultatet bli lagt inn i EVA, men ikke journalført på annet vis, men kontrolleres opp mot arbeidsnotater.",
+    "answer5": "Konvoluttene med stemmesedlene blir telt på nytt under endelig opptelling 2 ganger av 2 forskjellige personer. Dette resultatet legges inn i EVA. Blir det avvik her mellom foreløpig og endelig telleing, må det kontroll telles på nytt., slik at vi har 2 like tellinger før vi godkjenner resultatet. Kommunen har ingen spesielle rutiner for å sjekke foreløpig opptelling mot valgresultatsiden. Men det blir jo sjekket mot valgprotokollen i EVA.",
+    "answer6": "Samme svar som for 4. Endelig opptelling blir ikke journalført for seg selv. Valgprotokollen som inneholder tellingene blir journalført i vårt saks og arkivsystem til slutt og sjekket opp mot valgresultatet. Den vil jo også finnes i en papirutgave som inneholder underskriftene til valgstyret. Alle avgitte stemmer og protokoller blir tatt vare på i arkivet i 2 valg perioder.",
+    "answer7": "Samme svar som under nr 5."
+    "final_counting_type": "manuell",
+    "counting_type_decision_date": null,
+    "counting_type_decision_case_number": null,
+    "prelimitary_counting__any_counting_in_valgkrets": true,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": false,
+    "prelimitary_counting__transfer_to_eva__type": null,
+    "prelimitary_counting__is_stored": true,
+    "prelimitary_counting__what_is_stored": "Resultatet blir lagt inn i EVA og kontrolleres mot arbeidsnotater",
+    "prelimitary_counting__storage_method": "Digitalt dokument",
+    "prelimitary_counting__process_for_control": true,
+    "prelimitary_counting__process_for_control_type": "Kontrolleres mot valgprotokollen i EVA",
+    "final_counting__is_stored": true,
+    "final_counting__what_is_stored": "Valgprotokollen blir lagret i saks- og arkivsystemet",
+    "final_counting__storage_method": "Papir og digitalt dokument",
+    "final_counting__process_for_control": true,
+    "final_counting__process_for_control_type": "Kontrolleres mot valgresultatet"
 }

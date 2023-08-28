@@ -44,25 +44,39 @@ border-collapse: collapse;
 
 ';
 
-$files = getDirContents(__DIR__ . '/email-engine-data-store/raw-' . $election_year);
+$files = getDirContents(__DIR__ . '/email-engine-data-store/openai_txt_extract-' . $election_year);
 foreach ($files as $file) {
     if (str_ends_with($file, ' - IN.openaitxt')) {
         $obj = readOpenaiDockerOutput($file);
 
         #var_dump($obj->choices[0]->message->content);
 
-        $answer_file = str_replace('/raw-', '/answer-', $file . '.extract');
+        $answer_file = str_replace('/openai_txt_extract-', '/answer-', $file . '.extract');
         if (!file_exists($answer_file)) {
             $dir = dirname($answer_file);
             if (!file_exists($dir)) {
                 mkdir($dir, 0777, true);
             }
-            file_put_contents($answer_file, $obj->choices[0]->message->content);
+            $txt = $obj->choices[0]->message->content;
+            if (json_decode($txt) != null) {
+                $txt = json_encode(json_decode($txt), JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES);
+            }
+            file_put_contents($answer_file, $txt);
+        }
+        else {
+            // Format existing files.
+            $json = json_decode(file_get_contents($answer_file));
+            if ($json != null) {
+                file_put_contents($answer_file, json_encode($json, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES));
+            }
         }
 
         $lines = explode("\n", file_get_contents($answer_file));
         foreach ($lines as $line) {
-            if (str_starts_with($line, '{')
+            if (trim($line) == '') {
+                continue;
+            }
+            if (str_starts_with(trim($line), '{')
                 || str_starts_with(trim($line), '"any_answers_found":')
                 || str_starts_with(trim($line), '"answer1":')
                 || str_starts_with(trim($line), '"answer2":')
@@ -71,7 +85,7 @@ foreach ($files as $file) {
                 || str_starts_with(trim($line), '"answer5":')
                 || str_starts_with(trim($line), '"answer6":')
                 || str_starts_with(trim($line), '"answer7":')
-                || str_starts_with($line, '}')) {
+                || str_starts_with(trim($line), '}')) {
                 continue;
             }
             var_dump($line);
@@ -80,7 +94,7 @@ foreach ($files as $file) {
         }
         //exit;
 
-        $answer_file2 = str_replace('/raw-', '/answer-', $file . '.extract.analyze');
+        $answer_file2 = str_replace('/openai_txt_extract-', '/answer-', $file . '.extract.analyze');
         if (file_exists($answer_file2)) {
             $obj2 = readOpenaiDockerOutput($answer_file2);
             if (json_decode($obj2->choices[0]->message->content) != null) {

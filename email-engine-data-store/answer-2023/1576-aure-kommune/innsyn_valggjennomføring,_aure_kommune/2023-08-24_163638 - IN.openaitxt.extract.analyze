@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n   \"any_answers_found\": true,\n   \"answer1\": \"Maskinell\",\n   \"answer2\": \"Sak 1/23 den 13.03.2023\",\n   \"answer3\": \"Nei\\nVi har urnetelling i kretsene og forel\u00f8pig opptelling sentralt samlet.\",\n   \"answer4\": \"Journalf\u00f8rt i arkiv (m\u00f8teprotokoll)\",\n   \"answer5\": \"Ja. Kontroll blir protokollf\u00f8rt og arkivert.\",\n   \"answer6\": \"Maskinell. Journalf\u00f8rt i arkiv (m\u00f8teprotokoll)\",\n   \"answer7\": \"Ja. Kontroll blir protokollf\u00f8rt og arkivert.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Maskinell\",\n    \"answer2\": \"Sak 1/23 den 13.03.2023.\",\n    \"answer3\": \"Nei\\nVi har urnetelling i kretsene og forel\u00f8pig opptelling sentralt samlet.\",\n    \"answer4\": \"Journalf\u00f8rt i arkiv (m\u00f8teprotokoll)\",\n    \"answer5\": \"Ja. Kontroll blir protokollf\u00f8rt og arkivert.\",\n    \"answer6\": \"Maskinell. Journalf\u00f8rt i arkiv (m\u00f8teprotokoll)\",\n    \"answer7\": \"Ja. Kontroll blir protokollf\u00f8rt og arkivert.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,30 +21,30 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7sDKMFBvqk0DAmcro4hzSiF2i483h",
+  "id": "chatcmpl-7sZVcNWAJDGxD6lNm0sLK8frRk5Ld",
   "object": "chat.completion",
-  "created": 1693155298,
+  "created": 1693240564,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"answer1\": \"Maskinell\",\n    \"answer2\": \"Sak 1/23 den 13.03.2023\",\n    \"answer3\": \"Nei\\nVi har urnetelling i kretsene og forel\u00f8pig opptelling sentralt samlet.\",\n    \"answer4\": \"Journalf\u00f8rt i arkiv (m\u00f8teprotokoll)\",\n    \"answer5\": \"Ja. Kontroll blir protokollf\u00f8rt og arkivert.\",\n    \"answer6\": \"Maskinell. Journalf\u00f8rt i arkiv (m\u00f8teprotokoll)\",\n    \"answer7\": \"Ja. Kontroll blir protokollf\u00f8rt og arkivert.\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": \"2023-03-13\",\n    \"counting_type_decision_case_number\": \"1/23\",\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n    \"prelimitary_counting__transfer_to_eva__type\": \"\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"Journalf\u00f8rt i arkiv (m\u00f8teprotokoll)\",\n    \"prelimitary_counting__storage_method\": \"Papir\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Resultatet kontrolleres mot valgresultat-siden til Valgdirektoratet, valgprotokoll og medier.\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"Journalf\u00f8rt i arkiv (m\u00f8teprotokoll)\",\n    \"final_counting__storage_method\": \"Papir\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Resultatet kontrolleres mot publisert resultat.\"\n}"
+        "content": "{\n    \"answer1\": \"Maskinell\",\n    \"answer2\": \"Sak 1/23 den 13.03.2023.\",\n    \"answer3\": \"Nei\\nVi har urnetelling i kretsene og forel\u00f8pig opptelling sentralt samlet.\",\n    \"answer4\": \"Journalf\u00f8rt i arkiv (m\u00f8teprotokoll)\",\n    \"answer5\": \"Ja. Kontroll blir protokollf\u00f8rt og arkivert.\",\n    \"answer6\": \"Maskinell. Journalf\u00f8rt i arkiv (m\u00f8teprotokoll)\",\n    \"answer7\": \"Ja. Kontroll blir protokollf\u00f8rt og arkivert.\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": \"2023-03-13\",\n    \"counting_type_decision_case_number\": \"1/23\",\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"Ikke relevant\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"Opptellingen\",\n    \"prelimitary_counting__storage_method\": \"Journalf\u00f8rt i arkiv\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Rutiner for kontroll og protokollf\u00f8ring\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"Opptellingen\",\n    \"final_counting__storage_method\": \"Journalf\u00f8rt i arkiv\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Rutiner for kontroll og protokollf\u00f8ring\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
     "prompt_tokens": 1500,
-    "completion_tokens": 462,
-    "total_tokens": 1962
+    "completion_tokens": 440,
+    "total_tokens": 1940
   }
 }
 ---------------
 {
     "answer1": "Maskinell",
-    "answer2": "Sak 1/23 den 13.03.2023",
+    "answer2": "Sak 1/23 den 13.03.2023.",
     "answer3": "Nei\nVi har urnetelling i kretsene og foreløpig opptelling sentralt samlet.",
     "answer4": "Journalført i arkiv (møteprotokoll)",
     "answer5": "Ja. Kontroll blir protokollført og arkivert.",
@@ -54,16 +54,16 @@ Chat completion
     "counting_type_decision_date": "2023-03-13",
     "counting_type_decision_case_number": "1/23",
     "prelimitary_counting__any_counting_in_valgkrets": false,
-    "prelimitary_counting__transfer_to_eva__do_they_answer": false,
-    "prelimitary_counting__transfer_to_eva__type": "",
+    "prelimitary_counting__transfer_to_eva__do_they_answer": true,
+    "prelimitary_counting__transfer_to_eva__type": "Ikke relevant",
     "prelimitary_counting__is_stored": true,
-    "prelimitary_counting__what_is_stored": "Journalført i arkiv (møteprotokoll)",
-    "prelimitary_counting__storage_method": "Papir",
+    "prelimitary_counting__what_is_stored": "Opptellingen",
+    "prelimitary_counting__storage_method": "Journalført i arkiv",
     "prelimitary_counting__process_for_control": true,
-    "prelimitary_counting__process_for_control_type": "Resultatet kontrolleres mot valgresultat-siden til Valgdirektoratet, valgprotokoll og medier.",
+    "prelimitary_counting__process_for_control_type": "Rutiner for kontroll og protokollføring",
     "final_counting__is_stored": true,
-    "final_counting__what_is_stored": "Journalført i arkiv (møteprotokoll)",
-    "final_counting__storage_method": "Papir",
+    "final_counting__what_is_stored": "Opptellingen",
+    "final_counting__storage_method": "Journalført i arkiv",
     "final_counting__process_for_control": true,
-    "final_counting__process_for_control_type": "Resultatet kontrolleres mot publisert resultat."
+    "final_counting__process_for_control_type": "Rutiner for kontroll og protokollføring"
 }

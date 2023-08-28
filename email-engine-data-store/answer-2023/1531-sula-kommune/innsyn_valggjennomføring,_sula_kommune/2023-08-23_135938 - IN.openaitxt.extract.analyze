@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Sula kommune vil foreta maskinell endelig telling.\",\n    \"answer2\": \"Dette ble vedtatt av Sula valstyre i m\u00f8te 14.02.23.\",\n    \"answer3\": \"Forel\u00f8pig opptelling skjer i stemmekretsene. Resultat blir overf\u00f8rt i Valdirektoratet sitt elektroniske valadministrasjonssystem (EVA).\",\n    \"answer4\": \"Sula kommune lagrer / journalf\u00f8rer resultatet fra endelig opptelling i v\u00e5rt arkiv- og saksbehandlingssystem. Dette ligger \u00e5pent for innsyn.\",\n    \"answer5\": \"Sula kommune har ikke egne rutiner for dette, men vi legger til grunn Valdirektoratet sine rutiner og veiledninger.\",\n    \"answer6\": \"Sula kommune lagrer / journalf\u00f8rer resultatet fra endelig opptelling i v\u00e5rt arkiv- og saksbehandlingssystem. Dette ligger \u00e5pent for innsyn.\",\n    \"answer7\": \"Sula kommune har ikke egne rutiner for dette, men vi legger til grunn Valdirektoratet sine rutiner og veiledninger.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Sula kommune vil foreta maskinell endelig telling.\",\n    \"answer2\": \"Dette ble vedtatt av Sula valstyre i m\u00f8te 14.02.23.\",\n    \"answer3\": \"Forel\u00f8pig opptelling skjer i stemmekretsene.\\nResultat blir overf\u00f8rt i Valdirektoratet sitt elektroniske valadministrasjonssystem (EVA).\",\n    \"answer4\": \"Sula kommune lagrer / journalf\u00f8rer resultatet fra endelig opptelling i v\u00e5rt arkiv- og saksbehandlingssystem. Dette ligger \u00e5pent for innsyn.\",\n    \"answer5\": \"Sula kommune har ikke egne rutiner for dette, men vi legger til grunn Valdirektoratet sine rutiner og veiledninger.\\nForel\u00f8pig telling skjer ute i stemmekretsene. Det skal telles minst 2 gangar og tellingene skal ha likt resultat. Ved ulikt resultat skal det telles minst \u00e9n gang til. Senere kommer endelig maskinell telling som skal skje minst \u00e9n gang.\",\n    \"answer6\": \"Sula kommune lagrer / journalf\u00f8rer resultatet fra endelig opptelling i v\u00e5rt arkiv- og saksbehandlingssystem. Dette ligger \u00e5pent for innsyn.\",\n    \"answer7\": \"Sula kommune har ikke egne rutiner for dette, men vi legger til grunn Valdirektoratet sine rutiner og veiledninger.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s5PqpMGoVcYQPjtABIDYmtHcfBno",
+  "id": "chatcmpl-7sZaeyKHPC3dAy9c9lXbA65zHG0Px",
   "object": "chat.completion",
-  "created": 1693124886,
+  "created": 1693240876,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n   \"answer1\": \"Sula kommune vil foreta maskinell endelig telling.\",\n   \"answer2\": \"Dette ble vedtatt av Sula valstyre i m\u00f8te 14.02.23.\",\n   \"answer3\": \"Forel\u00f8pig opptelling skjer i stemmekretsene. Resultat blir overf\u00f8rt i Valdirektoratet sitt elektroniske valadministrasjonssystem (EVA).\",\n   \"answer4\": \"Sula kommune lagrer / journalf\u00f8rer resultatet fra endelig opptelling i v\u00e5rt arkiv- og saksbehandlingssystem. Dette ligger \u00e5pent for innsyn.\",\n   \"answer5\": \"Sula kommune har ikke egne rutiner for dette, men vi legger til grunn Valdirektoratet sine rutiner og veiledninger.\",\n   \"answer6\": \"Sula kommune lagrer / journalf\u00f8rer resultatet fra endelig opptelling i v\u00e5rt arkiv- og saksbehandlingssystem. Dette ligger \u00e5pent for innsyn.\",\n   \"answer7\": \"Sula kommune har ikke egne rutiner for dette, men vi legger til grunn Valdirektoratet sine rutiner og veiledninger.\",\n   \"final_counting_type\": \"maskinell\",\n   \"counting_type_decision_date\": \"2023-02-14\",\n   \"counting_type_decision_case_number\": \"...\",\n   \"prelimitary_counting__any_counting_in_valgkrets\": true,\n   \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n   \"prelimitary_counting__transfer_to_eva__type\": \"elektronisk valadministrasjonssystem\",\n   \"prelimitary_counting__is_stored\": true,\n   \"prelimitary_counting__what_is_stored\": \"resultatet fra endelig opptelling\",\n   \"prelimitary_counting__storage_method\": \"arkiv- og saksbehandlingssystem\",\n   \"prelimitary_counting__process_for_control\": false,\n   \"prelimitary_counting__process_for_control_type\": \"...\",\n   \"final_counting__is_stored\": true,\n   \"final_counting__what_is_stored\": \"resultatet fra endelig opptelling\",\n   \"final_counting__storage_method\": \"arkiv- og saksbehandlingssystem\",\n   \"final_counting__process_for_control\": false,\n   \"final_counting__process_for_control_type\": \"...\"\n}"
+        "content": "{\n   \"answer1\":\"Sula kommune vil foreta maskinell endelig telling.\",\n   \"answer2\":\"Dette ble vedtatt av Sula valstyre i m\u00f8te 14.02.23.\",\n   \"answer3\":\"Forel\u00f8pig opptelling skjer i stemmekretsene.\\nResultat blir overf\u00f8rt i Valdirektoratet sitt elektroniske valadministrasjonssystem (EVA).\",\n   \"answer4\":\"Sula kommune lagrer / journalf\u00f8rer resultatet fra endelig opptelling i v\u00e5rt arkiv- og saksbehandlingssystem. Dette ligger \u00e5pent for innsyn.\",\n   \"answer5\":\"Sula kommune har ikke egne rutiner for dette, men vi legger til grunn Valdirektoratet sine rutiner og veiledninger.\\nForel\u00f8pig telling skjer ute i stemmekretsene. Det skal telles minst 2 gangar og tellingene skal ha likt resultat. Ved ulikt resultat skal det telles minst \u00e9n gang til. Senere kommer endelig maskinell telling som skal skje minst \u00e9n gang.\",\n   \"answer6\":\"Sula kommune lagrer / journalf\u00f8rer resultatet fra endelig opptelling i v\u00e5rt arkiv- og saksbehandlingssystem. Dette ligger \u00e5pent for innsyn.\",\n   \"answer7\":\"Sula kommune har ikke egne rutiner for dette, men vi legger til grunn Valdirektoratet sine rutiner og veiledninger.\",\n   \"final_counting_type\":\"maskinell\",\n   \"counting_type_decision_date\":\"14.02.23\",\n   \"counting_type_decision_case_number\":\"\",\n   \"prelimitary_counting__any_counting_in_valgkrets\":true,\n   \"prelimitary_counting__transfer_to_eva__do_they_answer\":true,\n   \"prelimitary_counting__transfer_to_eva__type\":\"elektronisk overf\u00f8ring\",\n   \"prelimitary_counting__is_stored\":true,\n   \"prelimitary_counting__what_is_stored\":\"resultatet fra endelig opptelling\",\n   \"prelimitary_counting__storage_method\":\"arkiv- og saksbehandlingssystem\",\n   \"prelimitary_counting__process_for_control\":true,\n   \"prelimitary_counting__process_for_control_type\":\"Valdirektoratet sine rutiner og veiledninger\",\n   \"final_counting__is_stored\":true,\n   \"final_counting__what_is_stored\":\"resultatet fra endelig opptelling\",\n   \"final_counting__storage_method\":\"arkiv- og saksbehandlingssystem\",\n   \"final_counting__process_for_control\":true,\n   \"final_counting__process_for_control_type\":\"Valdirektoratet sine rutiner og veiledninger\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1622,
-    "completion_tokens": 553,
-    "total_tokens": 2175
+    "prompt_tokens": 1692,
+    "completion_tokens": 627,
+    "total_tokens": 2319
   }
 }
 ---------------
 {
-   "answer1": "Sula kommune vil foreta maskinell endelig telling.",
-   "answer2": "Dette ble vedtatt av Sula valstyre i møte 14.02.23.",
-   "answer3": "Foreløpig opptelling skjer i stemmekretsene. Resultat blir overført i Valdirektoratet sitt elektroniske valadministrasjonssystem (EVA).",
-   "answer4": "Sula kommune lagrer / journalfører resultatet fra endelig opptelling i vårt arkiv- og saksbehandlingssystem. Dette ligger åpent for innsyn.",
-   "answer5": "Sula kommune har ikke egne rutiner for dette, men vi legger til grunn Valdirektoratet sine rutiner og veiledninger.",
-   "answer6": "Sula kommune lagrer / journalfører resultatet fra endelig opptelling i vårt arkiv- og saksbehandlingssystem. Dette ligger åpent for innsyn.",
-   "answer7": "Sula kommune har ikke egne rutiner for dette, men vi legger til grunn Valdirektoratet sine rutiner og veiledninger.",
-   "final_counting_type": "maskinell",
-   "counting_type_decision_date": "2023-02-14",
-   "counting_type_decision_case_number": "...",
-   "prelimitary_counting__any_counting_in_valgkrets": true,
-   "prelimitary_counting__transfer_to_eva__do_they_answer": true,
-   "prelimitary_counting__transfer_to_eva__type": "elektronisk valadministrasjonssystem",
-   "prelimitary_counting__is_stored": true,
-   "prelimitary_counting__what_is_stored": "resultatet fra endelig opptelling",
-   "prelimitary_counting__storage_method": "arkiv- og saksbehandlingssystem",
-   "prelimitary_counting__process_for_control": false,
-   "prelimitary_counting__process_for_control_type": "...",
-   "final_counting__is_stored": true,
-   "final_counting__what_is_stored": "resultatet fra endelig opptelling",
-   "final_counting__storage_method": "arkiv- og saksbehandlingssystem",
-   "final_counting__process_for_control": false,
-   "final_counting__process_for_control_type": "..."
+   "answer1":"Sula kommune vil foreta maskinell endelig telling.",
+   "answer2":"Dette ble vedtatt av Sula valstyre i møte 14.02.23.",
+   "answer3":"Foreløpig opptelling skjer i stemmekretsene.\nResultat blir overført i Valdirektoratet sitt elektroniske valadministrasjonssystem (EVA).",
+   "answer4":"Sula kommune lagrer / journalfører resultatet fra endelig opptelling i vårt arkiv- og saksbehandlingssystem. Dette ligger åpent for innsyn.",
+   "answer5":"Sula kommune har ikke egne rutiner for dette, men vi legger til grunn Valdirektoratet sine rutiner og veiledninger.\nForeløpig telling skjer ute i stemmekretsene. Det skal telles minst 2 gangar og tellingene skal ha likt resultat. Ved ulikt resultat skal det telles minst én gang til. Senere kommer endelig maskinell telling som skal skje minst én gang.",
+   "answer6":"Sula kommune lagrer / journalfører resultatet fra endelig opptelling i vårt arkiv- og saksbehandlingssystem. Dette ligger åpent for innsyn.",
+   "answer7":"Sula kommune har ikke egne rutiner for dette, men vi legger til grunn Valdirektoratet sine rutiner og veiledninger.",
+   "final_counting_type":"maskinell",
+   "counting_type_decision_date":"14.02.23",
+   "counting_type_decision_case_number":"",
+   "prelimitary_counting__any_counting_in_valgkrets":true,
+   "prelimitary_counting__transfer_to_eva__do_they_answer":true,
+   "prelimitary_counting__transfer_to_eva__type":"elektronisk overføring",
+   "prelimitary_counting__is_stored":true,
+   "prelimitary_counting__what_is_stored":"resultatet fra endelig opptelling",
+   "prelimitary_counting__storage_method":"arkiv- og saksbehandlingssystem",
+   "prelimitary_counting__process_for_control":true,
+   "prelimitary_counting__process_for_control_type":"Valdirektoratet sine rutiner og veiledninger",
+   "final_counting__is_stored":true,
+   "final_counting__what_is_stored":"resultatet fra endelig opptelling",
+   "final_counting__storage_method":"arkiv- og saksbehandlingssystem",
+   "final_counting__process_for_control":true,
+   "final_counting__process_for_control_type":"Valdirektoratet sine rutiner og veiledninger"
 }

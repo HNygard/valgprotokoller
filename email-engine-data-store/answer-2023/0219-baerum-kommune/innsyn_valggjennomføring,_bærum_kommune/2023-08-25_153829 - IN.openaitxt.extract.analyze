@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Vi foretar maskinell endelig telling.\",\n    \"answer2\": \"Valgstyret sak 025/21 Evaluering av gjennomf\u00f8ringen av stortings og- sametingsvalget 2021 Valgstyret sak 002/23 Gjennomf\u00f8ring av kommunestyre- og fylkestingsvalget 2023\",\n    \"answer3\": \"Ved valgting skjer forel\u00f8pig manuell opptelling i den enkelte valgkretsen (valglokalet). Stemmestyret i det enkelte lokale legger tallene inn i EVA og leverer skriftlig m\u00f8tebok p\u00e5 papir. Resultatene kontrolleres deretter av valgansvarlig. M\u00f8teb\u00f8kene nevnt i punkt 3, vil bli arkivert i lokalt arkivsystem.\",\n    \"answer4\": \"Resultatet fra endelig opptelling blir journalf\u00f8rt i m\u00f8tebok. Stemmesedlene (papir) oppbevares lokalt til neste valgperiode. Stemmesedlene (digital kopi) oppbevares p\u00e5 egen ekstern lagringsenhet p\u00e5 annet sted enn papirsedlene.\",\n    \"answer5\": \"Ja, vi kontrollerer at det er samsvar mellom resultatene fra forel\u00f8pig og endelig opptelling. Ja, vi fors\u00f8ker \u00e5 kontrollere s\u00e5 raskt som mulig at det er samsvar med det som publiseres p\u00e5 valgeresultat.no.\",\n    \"answer6\": \"Resultatet fra endelig opptelling blir journalf\u00f8rt i m\u00f8tebok. Stemmesedlene (papir) oppbevares lokalt til neste valgperiode. Stemmesedlene (digital kopi) oppbevares p\u00e5 egen ekstern lagringsenhet p\u00e5 annet sted enn papirsedlene.\",\n    \"answer7\": \"Ja, vi kontrollerer at det er samsvar mellom resultatene fra forel\u00f8pig og endelig opptelling. Ja, vi fors\u00f8ker \u00e5 kontrollere s\u00e5 raskt som mulig at det er samsvar med det som publiseres p\u00e5 valgeresultat.no.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Vi foretar maskinell endelig telling.\",\n    \"answer2\": \"Valgstyret sak 025/21 Evaluering av gjennomf\u00f8ringen av stortings og- sametingsvalget 2021\\nValgstyret sak 002/23 Gjennomf\u00f8ring av kommunestyre- og fylkestingsvalget 2023\",\n    \"answer3\": \"Ved valgting skjer forel\u00f8pig manuell opptelling i den enkelte valgkretsen (valglokalet). Stemmestyret i det enkelte lokale legger tallene inn i EVA\\nog leverer skriftlig m\u00f8tebok p\u00e5 papir. Resultatene kontrolleres deretter av valgansvarlig.\\nM\u00f8teb\u00f8kene nevnt i punkt 3, vil bli arkivert i lokalt arkivsystem.\",\n    \"answer4\": \"Resultatet fra endelig opptelling blir journalf\u00f8rt i m\u00f8tebok. Stemmesedlene (papir) oppbevares lokalt til neste valgperiode. Stemmesedlene (digital kopi) oppbevares p\u00e5 egen ekstern lagringsenhet p\u00e5 annet sted enn papirsedlene.\",\n    \"answer5\": \"Ja, vi kontrollerer at det er samsvar mellom resultatene fra forel\u00f8pig og endelig opptelling. Ja, vi fors\u00f8ker \u00e5 kontrollere s\u00e5 raskt som mulig at det er samsvar med det som publiseres p\u00e5 valgeresultat.no.\",\n    \"answer6\": \"Resultatet fra endelig opptelling blir journalf\u00f8rt i m\u00f8tebok. Stemmesedlene (papir) oppbevares lokalt til neste valgperiode. Stemmesedlene (digital kopi) oppbevares p\u00e5 egen ekstern lagringsenhet p\u00e5 annet sted enn papirsedlene.\",\n    \"answer7\": \"Ja, vi kontrollerer at det er samsvar mellom resultatene fra forel\u00f8pig og endelig opptelling. Ja, vi fors\u00f8ker \u00e5 kontrollere s\u00e5 raskt som mulig at det er samsvar med det som publiseres p\u00e5 valgeresultat.no.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7sDFLh8BLwOnWQRSbW8fYB7NxEJyU",
+  "id": "chatcmpl-7sZGcEkDCJXc5EbmTf0OoMqZ4buLD",
   "object": "chat.completion",
-  "created": 1693154987,
+  "created": 1693239634,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"answer1\": \"Vi foretar maskinell endelig telling.\",\n    \"answer2\": \"Valgstyret sak 025/21 Evaluering av gjennomf\u00f8ringen av stortings og- sametingsvalget 2021 Valgstyret sak 002/23 Gjennomf\u00f8ring av kommunestyre- og fylkestingsvalget 2023\",\n    \"answer3\": \"Ved valgting skjer forel\u00f8pig manuell opptelling i den enkelte valgkretsen (valglokalet). Stemmestyret i det enkelte lokale legger tallene inn i EVA og leverer skriftlig m\u00f8tebok p\u00e5 papir. Resultatene kontrolleres deretter av valgansvarlig. M\u00f8teb\u00f8kene nevnt i punkt 3, vil bli arkivert i lokalt arkivsystem.\",\n    \"answer4\": \"Resultatet fra endelig opptelling blir journalf\u00f8rt i m\u00f8tebok. Stemmesedlene (papir) oppbevares lokalt til neste valgperiode. Stemmesedlene (digital kopi) oppbevares p\u00e5 egen ekstern lagringsenhet p\u00e5 annet sted enn papirsedlene.\",\n    \"answer5\": \"Ja, vi kontrollerer at det er samsvar mellom resultatene fra forel\u00f8pig og endelig opptelling. Ja, vi fors\u00f8ker \u00e5 kontrollere s\u00e5 raskt som mulig at det er samsvar med det som publiseres p\u00e5 valgeresultat.no.\",\n    \"answer6\": \"Resultatet fra endelig opptelling blir journalf\u00f8rt i m\u00f8tebok. Stemmesedlene (papir) oppbevares lokalt til neste valgperiode. Stemmesedlene (digital kopi) oppbevares p\u00e5 egen ekstern lagringsenhet p\u00e5 annet sted enn papirsedlene.\",\n    \"answer7\": \"Ja, vi kontrollerer at det er samsvar mellom resultatene fra forel\u00f8pig og endelig opptelling. Ja, vi fors\u00f8ker \u00e5 kontrollere s\u00e5 raskt som mulig at det er samsvar med det som publiseres p\u00e5 valgeresultat.no.\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": \"\",\n    \"prelimitary_counting__any_counting_in_valgkrets\": true,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"Skriftlig m\u00f8tebok p\u00e5 papir\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"M\u00f8tebok\",\n    \"prelimitary_counting__storage_method\": \"Lokalt arkivsystem\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Kontrollere resultatet mot det som publiseres p\u00e5 valgresultat.no og i medier\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"M\u00f8tebok og stemmesedler\",\n    \"final_counting__storage_method\": \"Lokalt arkivsystem og ekstern lagringsenhet\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Kontrollere resultatet mot det som publiseres\"\n}"
+        "content": "{\n  \"answer1\": \"Vi foretar maskinell endelig telling.\",\n  \"answer2\": \"Valgstyret sak 025/21 Evaluering av gjennomf\u00f8ringen av stortings og- sametingsvalget 2021\\nValgstyret sak 002/23 Gjennomf\u00f8ring av kommunestyre- og fylkestingsvalget 2023\",\n  \"answer3\": \"Ved valgting skjer forel\u00f8pig manuell opptelling i den enkelte valgkretsen (valglokalet). Stemmestyret i det enkelte lokale legger tallene inn i EVA\\nog leverer skriftlig m\u00f8tebok p\u00e5 papir. Resultatene kontrolleres deretter av valgansvarlig.\\nM\u00f8teb\u00f8kene nevnt i punkt 3, vil bli arkivert i lokalt arkivsystem.\",\n  \"answer4\": \"Resultatet fra endelig opptelling blir journalf\u00f8rt i m\u00f8tebok. Stemmesedlene (papir) oppbevares lokalt til neste valgperiode. Stemmesedlene (digital kopi) oppbevares p\u00e5 egen ekstern lagringsenhet p\u00e5 annet sted enn papirsedlene.\",\n  \"answer5\": \"Ja, vi kontrollerer at det er samsvar mellom resultatene fra forel\u00f8pig og endelig opptelling. Ja, vi fors\u00f8ker \u00e5 kontrollere s\u00e5 raskt som mulig at det er samsvar med det som publiseres p\u00e5 valgeresultat.no.\",\n  \"answer6\": \"Resultatet fra endelig opptelling blir journalf\u00f8rt i m\u00f8tebok. Stemmesedlene (papir) oppbevares lokalt til neste valgperiode. Stemmesedlene (digital kopi) oppbevares p\u00e5 egen ekstern lagringsenhet p\u00e5 annet sted enn papirsedlene.\",\n  \"answer7\": \"Ja, vi kontrollerer at det er samsvar mellom resultatene fra forel\u00f8pig og endelig opptelling. Ja, vi fors\u00f8ker \u00e5 kontrollere s\u00e5 raskt som mulig at det er samsvar med det som publiseres p\u00e5 valgeresultat.no.\",\n  \"final_counting_type\": \"maskinell\",\n  \"counting_type_decision_date\": null,\n  \"counting_type_decision_case_number\": null,\n  \"prelimitary_counting__any_counting_in_valgkrets\": true,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n  \"prelimitary_counting__transfer_to_eva__type\": null,\n  \"prelimitary_counting__is_stored\": true,\n  \"prelimitary_counting__what_is_stored\": \"Resultatet fra forel\u00f8pig opptelling\",\n  \"prelimitary_counting__storage_method\": \"Journalf\u00f8res i m\u00f8tebok\",\n  \"prelimitary_counting__process_for_control\": true,\n  \"prelimitary_counting__process_for_control_type\": \"Kontrollerer resultatet mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet, valgprotokoll, medier osv.\",\n  \"final_counting__is_stored\": true,\n  \"final_counting__what_is_stored\": \"Resultatet fra endelig opptelling\",\n  \"final_counting__storage_method\": \"Journalf\u00f8res i m\u00f8tebok\",\n  \"final_counting__process_for_control\": true,\n  \"final_counting__process_for_control_type\": \"Kontrollerer resultatet mot det som blir publisert\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1858,
-    "completion_tokens": 818,
-    "total_tokens": 2676
+    "prompt_tokens": 1861,
+    "completion_tokens": 829,
+    "total_tokens": 2690
   }
 }
 ---------------
 {
-    "answer1": "Vi foretar maskinell endelig telling.",
-    "answer2": "Valgstyret sak 025/21 Evaluering av gjennomføringen av stortings og- sametingsvalget 2021 Valgstyret sak 002/23 Gjennomføring av kommunestyre- og fylkestingsvalget 2023",
-    "answer3": "Ved valgting skjer foreløpig manuell opptelling i den enkelte valgkretsen (valglokalet). Stemmestyret i det enkelte lokale legger tallene inn i EVA og leverer skriftlig møtebok på papir. Resultatene kontrolleres deretter av valgansvarlig. Møtebøkene nevnt i punkt 3, vil bli arkivert i lokalt arkivsystem.",
-    "answer4": "Resultatet fra endelig opptelling blir journalført i møtebok. Stemmesedlene (papir) oppbevares lokalt til neste valgperiode. Stemmesedlene (digital kopi) oppbevares på egen ekstern lagringsenhet på annet sted enn papirsedlene.",
-    "answer5": "Ja, vi kontrollerer at det er samsvar mellom resultatene fra foreløpig og endelig opptelling. Ja, vi forsøker å kontrollere så raskt som mulig at det er samsvar med det som publiseres på valgeresultat.no.",
-    "answer6": "Resultatet fra endelig opptelling blir journalført i møtebok. Stemmesedlene (papir) oppbevares lokalt til neste valgperiode. Stemmesedlene (digital kopi) oppbevares på egen ekstern lagringsenhet på annet sted enn papirsedlene.",
-    "answer7": "Ja, vi kontrollerer at det er samsvar mellom resultatene fra foreløpig og endelig opptelling. Ja, vi forsøker å kontrollere så raskt som mulig at det er samsvar med det som publiseres på valgeresultat.no.",
-    "final_counting_type": "maskinell",
-    "counting_type_decision_date": null,
-    "counting_type_decision_case_number": "",
-    "prelimitary_counting__any_counting_in_valgkrets": true,
-    "prelimitary_counting__transfer_to_eva__do_they_answer": true,
-    "prelimitary_counting__transfer_to_eva__type": "Skriftlig møtebok på papir",
-    "prelimitary_counting__is_stored": true,
-    "prelimitary_counting__what_is_stored": "Møtebok",
-    "prelimitary_counting__storage_method": "Lokalt arkivsystem",
-    "prelimitary_counting__process_for_control": true,
-    "prelimitary_counting__process_for_control_type": "Kontrollere resultatet mot det som publiseres på valgresultat.no og i medier",
-    "final_counting__is_stored": true,
-    "final_counting__what_is_stored": "Møtebok og stemmesedler",
-    "final_counting__storage_method": "Lokalt arkivsystem og ekstern lagringsenhet",
-    "final_counting__process_for_control": true,
-    "final_counting__process_for_control_type": "Kontrollere resultatet mot det som publiseres"
+  "answer1": "Vi foretar maskinell endelig telling.",
+  "answer2": "Valgstyret sak 025/21 Evaluering av gjennomføringen av stortings og- sametingsvalget 2021\nValgstyret sak 002/23 Gjennomføring av kommunestyre- og fylkestingsvalget 2023",
+  "answer3": "Ved valgting skjer foreløpig manuell opptelling i den enkelte valgkretsen (valglokalet). Stemmestyret i det enkelte lokale legger tallene inn i EVA\nog leverer skriftlig møtebok på papir. Resultatene kontrolleres deretter av valgansvarlig.\nMøtebøkene nevnt i punkt 3, vil bli arkivert i lokalt arkivsystem.",
+  "answer4": "Resultatet fra endelig opptelling blir journalført i møtebok. Stemmesedlene (papir) oppbevares lokalt til neste valgperiode. Stemmesedlene (digital kopi) oppbevares på egen ekstern lagringsenhet på annet sted enn papirsedlene.",
+  "answer5": "Ja, vi kontrollerer at det er samsvar mellom resultatene fra foreløpig og endelig opptelling. Ja, vi forsøker å kontrollere så raskt som mulig at det er samsvar med det som publiseres på valgeresultat.no.",
+  "answer6": "Resultatet fra endelig opptelling blir journalført i møtebok. Stemmesedlene (papir) oppbevares lokalt til neste valgperiode. Stemmesedlene (digital kopi) oppbevares på egen ekstern lagringsenhet på annet sted enn papirsedlene.",
+  "answer7": "Ja, vi kontrollerer at det er samsvar mellom resultatene fra foreløpig og endelig opptelling. Ja, vi forsøker å kontrollere så raskt som mulig at det er samsvar med det som publiseres på valgeresultat.no.",
+  "final_counting_type": "maskinell",
+  "counting_type_decision_date": null,
+  "counting_type_decision_case_number": null,
+  "prelimitary_counting__any_counting_in_valgkrets": true,
+  "prelimitary_counting__transfer_to_eva__do_they_answer": false,
+  "prelimitary_counting__transfer_to_eva__type": null,
+  "prelimitary_counting__is_stored": true,
+  "prelimitary_counting__what_is_stored": "Resultatet fra foreløpig opptelling",
+  "prelimitary_counting__storage_method": "Journalføres i møtebok",
+  "prelimitary_counting__process_for_control": true,
+  "prelimitary_counting__process_for_control_type": "Kontrollerer resultatet mot det som er synlig på valgresultat-siden til Valgdirektoratet, valgprotokoll, medier osv.",
+  "final_counting__is_stored": true,
+  "final_counting__what_is_stored": "Resultatet fra endelig opptelling",
+  "final_counting__storage_method": "Journalføres i møtebok",
+  "final_counting__process_for_control": true,
+  "final_counting__process_for_control_type": "Kontrollerer resultatet mot det som blir publisert"
 }

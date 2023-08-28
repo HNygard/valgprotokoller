@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n  \"any_answers_found\": true,\n  \"answer1\": \"Forel\u00f8pig opptelling blir gjort manuelt.\",\n  \"answer2\": \"Det er vedtatt i en politisk sak, men det er ikke oppgitt hvilken sak.\",\n  \"answer3\": \"Opptellingen blir gjort i valgkretsene. Resultatet blir overf\u00f8rt fra valgkretsene til valgstyret/EVA Admin.\",\n  \"answer4\": \"Det er ikke oppgitt hvordan kommunen lagrer/arkiverer resultatet fra forel\u00f8pig opptelling utenom EVA Admin.\",\n  \"answer5\": \"Kommunen har rutiner for \u00e5 kontrollere resultatet av forel\u00f8pig opptelling mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet.\",\n  \"answer6\": \"Det er ikke oppgitt hvordan kommunen lagrer resultatet fra endelig opptelling utenom EVA Admin/EVA Skanning.\",\n  \"answer7\": \"Det er ikke oppgitt om kommunen har rutiner for kontroll av endelig opptelling mot resultat som blir publisert.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Vil kommunen foreta maskinell eller manuell endelig telling av valgresultatet?\",\n    \"answer2\": \"I hvilken politisk sak ble dette vedtatt?\",\n    \"answer3\": \"Ved forel\u00f8pig opptelling (manuell opptelling), blir opptellingen gjort i valgkretsene? Hvis det er opptelling i valgkretsene, hvordan overf\u00f8rer kommunen resultatet fra valgkretsene inn til valgstyret/valgansvarlig/EVA Admin?\",\n    \"answer4\": \"Ved forel\u00f8pig opptelling (manuell opptelling), hvordan lagrer/arkiverer kommunen resultatet fra opptellingen utenom EVA Admin? Papir? Digitalt dokument? SMS? Blir resultatet journalf\u00f8rt?\",\n    \"answer5\": \"Har kommunen rutiner for \u00e5 kontrollere resultatet av forel\u00f8pig opptelling opp mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet (valgresultat d\u00e5tt no), i valgprotokoll, i medier og lignende?\\r\\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet.\",\n    \"answer6\": \"Tilsvarende som 4) for endelig opptelling (maskinell eller manuell).\\r\\nHvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Blir resultatet journalf\u00f8rt?\",\n    \"answer7\": \"Tilsvarende som 5) for endelig opptelling (maskinell eller manuell).\\r\\nHar kommunen rutiner for kontroll av endelig opptelling mot resultat som blir publisert?\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s5DxlPhvvEQylqWgWuJTzhmGYRkR",
+  "id": "chatcmpl-7sZTPE8Y8OnwpjFsrTwTijsiNyaw0",
   "object": "chat.completion",
-  "created": 1693124149,
+  "created": 1693240427,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"answer1\": \"Forel\u00f8pig opptelling blir gjort manuelt.\",\n  \"answer2\": \"Det er vedtatt i en politisk sak, men det er ikke oppgitt hvilken sak.\",\n  \"answer3\": \"Opptellingen blir gjort i valgkretsene. Resultatet blir overf\u00f8rt fra valgkretsene til valgstyret/EVA Admin.\",\n  \"answer4\": \"Det er ikke oppgitt hvordan kommunen lagrer/arkiverer resultatet fra forel\u00f8pig opptelling utenom EVA Admin.\",\n  \"answer5\": \"Kommunen har rutiner for \u00e5 kontrollere resultatet av forel\u00f8pig opptelling mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet.\",\n  \"answer6\": \"Det er ikke oppgitt hvordan kommunen lagrer resultatet fra endelig opptelling utenom EVA Admin/EVA Skanning.\",\n  \"answer7\": \"Det er ikke oppgitt om kommunen har rutiner for kontroll av endelig opptelling mot resultat som blir publisert.\",\n  \"final_counting_type\": \"manuell\",\n  \"counting_type_decision_date\": null,\n  \"counting_type_decision_case_number\": null,\n  \"prelimitary_counting__any_counting_in_valgkrets\": true,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n  \"prelimitary_counting__transfer_to_eva__type\": \"Overf\u00f8res manuelt\",\n  \"prelimitary_counting__is_stored\": false,\n  \"prelimitary_counting__what_is_stored\": null,\n  \"prelimitary_counting__storage_method\": null,\n  \"prelimitary_counting__process_for_control\": true,\n  \"prelimitary_counting__process_for_control_type\": \"Sammenligning med valgresultat-siden til Valgdirektoratet\",\n  \"final_counting__is_stored\": false,\n  \"final_counting__what_is_stored\": null,\n  \"final_counting__storage_method\": null,\n  \"final_counting__process_for_control\": false,\n  \"final_counting__process_for_control_type\": null\n}"
+        "content": "{\n  \"answer1\": \"Vil kommunen foreta maskinell eller manuell endelig telling av valgresultatet?\",\n  \"answer2\": \"I hvilken politisk sak ble dette vedtatt?\",\n  \"answer3\": \"Ved forel\u00f8pig opptelling (manuell opptelling), blir opptellingen gjort i valgkretsene? Hvis det er opptelling i valgkretsene, hvordan overf\u00f8rer kommunen resultatet fra valgkretsene inn til valgstyret/valgansvarlig/EVA Admin?\",\n  \"answer4\": \"Ved forel\u00f8pig opptelling (manuell opptelling), hvordan lagrer/arkiverer kommunen resultatet fra opptellingen utenom EVA Admin? Papir? Digitalt dokument? SMS? Blir resultatet journalf\u00f8rt?\",\n  \"answer5\": \"Har kommunen rutiner for \u00e5 kontrollere resultatet av forel\u00f8pig opptelling opp mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet (valgresultat d\u00e5tt no), i valgprotokoll, i medier og lignende?\\r\\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet.\",\n  \"answer6\": \"Tilsvarende som 4) for endelig opptelling (maskinell eller manuell).\\r\\nHvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Blir resultatet journalf\u00f8rt?\",\n  \"answer7\": \"Tilsvarende som 5) for endelig opptelling (maskinell eller manuell).\\r\\nHar kommunen rutiner for kontroll av endelig opptelling mot resultat som blir publisert?\",\n  \"final_counting_type\": \"\",\n  \"counting_type_decision_date\": null,\n  \"counting_type_decision_case_number\": null,\n  \"prelimitary_counting__any_counting_in_valgkrets\": null,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": null,\n  \"prelimitary_counting__transfer_to_eva__type\": null,\n  \"prelimitary_counting__is_stored\": null,\n  \"prelimitary_counting__what_is_stored\": null,\n  \"prelimitary_counting__storage_method\": null,\n  \"prelimitary_counting__process_for_control\": null,\n  \"prelimitary_counting__process_for_control_type\": null,\n  \"final_counting__is_stored\": null,\n  \"final_counting__what_is_stored\": null,\n  \"final_counting__storage_method\": null,\n  \"final_counting__process_for_control\": null,\n  \"final_counting__process_for_control_type\": null\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1593,
-    "completion_tokens": 496,
-    "total_tokens": 2089
+    "prompt_tokens": 1776,
+    "completion_tokens": 650,
+    "total_tokens": 2426
   }
 }
 ---------------
 {
-  "answer1": "Foreløpig opptelling blir gjort manuelt.",
-  "answer2": "Det er vedtatt i en politisk sak, men det er ikke oppgitt hvilken sak.",
-  "answer3": "Opptellingen blir gjort i valgkretsene. Resultatet blir overført fra valgkretsene til valgstyret/EVA Admin.",
-  "answer4": "Det er ikke oppgitt hvordan kommunen lagrer/arkiverer resultatet fra foreløpig opptelling utenom EVA Admin.",
-  "answer5": "Kommunen har rutiner for å kontrollere resultatet av foreløpig opptelling mot det som er synlig på valgresultat-siden til Valgdirektoratet.",
-  "answer6": "Det er ikke oppgitt hvordan kommunen lagrer resultatet fra endelig opptelling utenom EVA Admin/EVA Skanning.",
-  "answer7": "Det er ikke oppgitt om kommunen har rutiner for kontroll av endelig opptelling mot resultat som blir publisert.",
-  "final_counting_type": "manuell",
+  "answer1": "Vil kommunen foreta maskinell eller manuell endelig telling av valgresultatet?",
+  "answer2": "I hvilken politisk sak ble dette vedtatt?",
+  "answer3": "Ved foreløpig opptelling (manuell opptelling), blir opptellingen gjort i valgkretsene? Hvis det er opptelling i valgkretsene, hvordan overfører kommunen resultatet fra valgkretsene inn til valgstyret/valgansvarlig/EVA Admin?",
+  "answer4": "Ved foreløpig opptelling (manuell opptelling), hvordan lagrer/arkiverer kommunen resultatet fra opptellingen utenom EVA Admin? Papir? Digitalt dokument? SMS? Blir resultatet journalført?",
+  "answer5": "Har kommunen rutiner for å kontrollere resultatet av foreløpig opptelling opp mot det som er synlig på valgresultat-siden til Valgdirektoratet (valgresultat dått no), i valgprotokoll, i medier og lignende?\r\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet.",
+  "answer6": "Tilsvarende som 4) for endelig opptelling (maskinell eller manuell).\r\nHvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Blir resultatet journalført?",
+  "answer7": "Tilsvarende som 5) for endelig opptelling (maskinell eller manuell).\r\nHar kommunen rutiner for kontroll av endelig opptelling mot resultat som blir publisert?",
+  "final_counting_type": "",
   "counting_type_decision_date": null,
   "counting_type_decision_case_number": null,
-  "prelimitary_counting__any_counting_in_valgkrets": true,
-  "prelimitary_counting__transfer_to_eva__do_they_answer": true,
-  "prelimitary_counting__transfer_to_eva__type": "Overføres manuelt",
-  "prelimitary_counting__is_stored": false,
+  "prelimitary_counting__any_counting_in_valgkrets": null,
+  "prelimitary_counting__transfer_to_eva__do_they_answer": null,
+  "prelimitary_counting__transfer_to_eva__type": null,
+  "prelimitary_counting__is_stored": null,
   "prelimitary_counting__what_is_stored": null,
   "prelimitary_counting__storage_method": null,
-  "prelimitary_counting__process_for_control": true,
-  "prelimitary_counting__process_for_control_type": "Sammenligning med valgresultat-siden til Valgdirektoratet",
-  "final_counting__is_stored": false,
+  "prelimitary_counting__process_for_control": null,
+  "prelimitary_counting__process_for_control_type": null,
+  "final_counting__is_stored": null,
   "final_counting__what_is_stored": null,
   "final_counting__storage_method": null,
-  "final_counting__process_for_control": false,
+  "final_counting__process_for_control": null,
   "final_counting__process_for_control_type": null
 }

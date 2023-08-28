@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Ja\",\n    \"answer2\": \"Sak K-055/22, 31.10.2022\",\n    \"answer3\": \"Hole kommune har kun \u00e9n valgkrets. Opptelling foreg\u00e5r sentralt p\u00e5 r\u00e5dhuset der valgstyret er lokalisert.\",\n    \"answer4\": \"Resultatene legges f\u00f8rst og fremst inn manuelt p\u00e5 papir f\u00f8r det registreres i EVA. Oppbevares sammen med stemmesedlene, men praksis har ikke v\u00e6rt \u00e5 journalf\u00f8re disse. Resultatene legges deretter inn i EVA, som igjen danner grunnlaget for valgstyrets m\u00f8tebok, som vedtas og signeres av valgstyret. Valgstyrets m\u00f8tebok journalf\u00f8res.\",\n    \"answer5\": \"Forel\u00f8pig opptelling gj\u00f8res to ganger (dvs \u00e9n kontrolltelling). Ved avvik telles stemmesedlene en tredje gang. Det er ikke samme person som kontrollteller. To personer m\u00e5 telle samme antall i en bunke f\u00f8r tallet legges inn i EVA. Bunkene er i forkant delt inn i bunker a 50 stemmesedler (og mindre)\",\n    \"answer6\": \"Resultatene legges f\u00f8rst og fremst inn manuelt p\u00e5 papir f\u00f8r det registreres i EVA. Oppbevares sammen med stemmesedlene, men praksis har ikke v\u00e6rt \u00e5 journalf\u00f8re disse. Legges deretter inn i EVA.\",\n    \"answer7\": \"Tallene som legges inn i EVA kontrollsjekkes. Alle avvik m\u00e5 dessuten beskrives f\u00f8r resultatet manuelt kan godkjennes. Praksis har v\u00e6rt \u00e5 kontrollere v\u00e5re tall (notater) mot tallene publisert p\u00e5 valgresultat.no\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Ja\",\n    \"answer2\": \"Sak K-055/22, 31.10.2022\",\n    \"answer3\": \"Hole kommune har kun \u00e9n valgkrets. Opptelling foreg\u00e5r sentralt p\u00e5 r\u00e5dhuset der valgstyret er lokalisert.\",\n    \"answer4\": \"Resultatene legges f\u00f8rst og fremst inn manuelt p\u00e5 papir f\u00f8r det registreres i EVA. Oppbevares sammen med stemmesedlene, men praksis har ikke v\u00e6rt \u00e5 journalf\u00f8re disse. Resultatene legges deretter inn i EVA, som igjen danner grunnlaget for valgstyrets m\u00f8tebok, som vedtas og signeres av valgstyret. Valgstyrets m\u00f8tebok journalf\u00f8res.\",\n    \"answer5\": \"En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet. Forel\u00f8pig opptelling gj\u00f8res to ganger (dvs \u00e9n kontrolltelling). Ved avvik telles stemmesedlene en tredje gang. Det er ikke samme person som kontrollteller. To personer m\u00e5 telle samme antall i en bunke f\u00f8r tallet legges inn i EVA. Bunkene er i forkant delt inn i bunker a 50 stemmesedler (og mindre)\",\n    \"answer6\": \"Resultatene legges f\u00f8rst og fremst inn manuelt p\u00e5 papir f\u00f8r det registreres i EVA. Oppbevares sammen med stemmesedlene, men praksis har ikke v\u00e6rt \u00e5 journalf\u00f8re disse. Legges deretter inn i EVA.\",\n    \"answer7\": \"Tallene som legges inn i EVA kontrollsjekkes. Alle avvik m\u00e5 dessuten beskrives f\u00f8r resultatet manuelt kan godkjennes. Praksis har v\u00e6rt \u00e5 kontrollere v\u00e5re tall (notater) mot tallene publisert p\u00e5 valgresultat.no\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,24 +21,24 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s5Aw8khycZQMYW1uIwVzn0ucf2Yu",
+  "id": "chatcmpl-7sZRVJFd6CLK5vjo8b9vdzKdA5oN8",
   "object": "chat.completion",
-  "created": 1693123962,
+  "created": 1693240309,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"answer1\": \"Ja\",\n    \"answer2\": \"Sak K-055/22, 31.10.2022\",\n    \"answer3\": \"Hole kommune har kun \u00e9n valgkrets. Opptelling foreg\u00e5r sentralt p\u00e5 r\u00e5dhuset der valgstyret er lokalisert.\",\n    \"answer4\": \"Resultatene legges f\u00f8rst og fremst inn manuelt p\u00e5 papir f\u00f8r det registreres i EVA. Oppbevares sammen med stemmesedlene, men praksis har ikke v\u00e6rt \u00e5 journalf\u00f8re disse. Resultatene legges deretter inn i EVA, som igjen danner grunnlaget for valgstyrets m\u00f8tebok, som vedtas og signeres av valgstyret. Valgstyrets m\u00f8tebok journalf\u00f8res.\",\n    \"answer5\": \"Forel\u00f8pig opptelling gj\u00f8res to ganger (dvs \u00e9n kontrolltelling). Ved avvik telles stemmesedlene en tredje gang. Det er ikke samme person som kontrollteller. To personer m\u00e5 telle samme antall i en bunke f\u00f8r tallet legges inn i EVA. Bunkene er i forkant delt inn i bunker a 50 stemmesedler (og mindre)\",\n    \"answer6\": \"Resultatene legges f\u00f8rst og fremst inn manuelt p\u00e5 papir f\u00f8r det registreres i EVA. Oppbevares sammen med stemmesedlene, men praksis har ikke v\u00e6rt \u00e5 journalf\u00f8re disse. Legges deretter inn i EVA.\",\n    \"answer7\": \"Tallene som legges inn i EVA kontrollsjekkes. Alle avvik m\u00e5 dessuten beskrives f\u00f8r resultatet manuelt kan godkjennes. Praksis har v\u00e6rt \u00e5 kontrollere v\u00e5re tall (notater) mot tallene publisert p\u00e5 valgresultat.no\",\n    \"final_counting_type\": \"manuell\",\n    \"counting_type_decision_date\": \"2022-10-31\",\n    \"counting_type_decision_case_number\": \"Sak K-055/22\",\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n    \"prelimitary_counting__transfer_to_eva__type\": null,\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"Resultatene\",\n    \"prelimitary_counting__storage_method\": \"Papir\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Kontroll av tall mot resultat p\u00e5 valgresultat.no\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"Resultatene\",\n    \"final_counting__storage_method\": \"Papir\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Kontroll av tall mot resultat som blir publisert\"\n}"
+        "content": "{\n    \"answer1\": \"Ja\",\n    \"answer2\": \"Sak K-055/22, 31.10.2022\",\n    \"answer3\": \"Hole kommune har kun \u00e9n valgkrets. Opptelling foreg\u00e5r sentralt p\u00e5 r\u00e5dhuset der valgstyret er lokalisert.\",\n    \"answer4\": \"Resultatene legges f\u00f8rst og fremst inn manuelt p\u00e5 papir f\u00f8r det registreres i EVA. Oppbevares sammen med stemmesedlene, men praksis har ikke v\u00e6rt \u00e5 journalf\u00f8re disse. Resultatene legges deretter inn i EVA, som igjen danner grunnlaget for valgstyrets m\u00f8tebok, som vedtas og signeres av valgstyret. Valgstyrets m\u00f8tebok journalf\u00f8res.\",\n    \"answer5\": \"En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet. Forel\u00f8pig opptelling gj\u00f8res to ganger (dvs \u00e9n kontrolltelling). Ved avvik telles stemmesedlene en tredje gang. Det er ikke samme person som kontrollteller. To personer m\u00e5 telle samme antall i en bunke f\u00f8r tallet legges inn i EVA. Bunkene er i forkant delt inn i bunker a 50 stemmesedler (og mindre)\",\n    \"answer6\": \"Resultatene legges f\u00f8rst og fremst inn manuelt p\u00e5 papir f\u00f8r det registreres i EVA. Oppbevares sammen med stemmesedlene, men praksis har ikke v\u00e6rt \u00e5 journalf\u00f8re disse. Legges deretter inn i EVA.\",\n    \"answer7\": \"Tallene som legges inn i EVA kontrollsjekkes. Alle avvik m\u00e5 dessuten beskrives f\u00f8r resultatet manuelt kan godkjennes. Praksis har v\u00e6rt \u00e5 kontrollere v\u00e5re tall (notater) mot tallene publisert p\u00e5 valgresultat.no\",\n    \"final_counting_type\": \"manuell\",\n    \"counting_type_decision_date\": \"2022-10-31\",\n    \"counting_type_decision_case_number\": \"K-055/22\",\n    \"prelimitary_counting__any_counting_in_valgkrets\": true,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"manuell opptelling\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"resultatene\",\n    \"prelimitary_counting__storage_method\": \"p\u00e5 papir\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Kontrolltelling gj\u00f8res to ganger, og ved avvik telles stemmesedlene en tredje gang.\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"resultatene\",\n    \"final_counting__storage_method\": \"p\u00e5 papir\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Tallene kontrollsjekkes og avvik m\u00e5 beskrives f\u00f8r resultatet manuelt kan godkjennes.\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1774,
-    "completion_tokens": 701,
-    "total_tokens": 2475
+    "prompt_tokens": 1822,
+    "completion_tokens": 781,
+    "total_tokens": 2603
   }
 }
 ---------------
@@ -47,23 +47,23 @@ Chat completion
     "answer2": "Sak K-055/22, 31.10.2022",
     "answer3": "Hole kommune har kun én valgkrets. Opptelling foregår sentralt på rådhuset der valgstyret er lokalisert.",
     "answer4": "Resultatene legges først og fremst inn manuelt på papir før det registreres i EVA. Oppbevares sammen med stemmesedlene, men praksis har ikke vært å journalføre disse. Resultatene legges deretter inn i EVA, som igjen danner grunnlaget for valgstyrets møtebok, som vedtas og signeres av valgstyret. Valgstyrets møtebok journalføres.",
-    "answer5": "Foreløpig opptelling gjøres to ganger (dvs én kontrolltelling). Ved avvik telles stemmesedlene en tredje gang. Det er ikke samme person som kontrollteller. To personer må telle samme antall i en bunke før tallet legges inn i EVA. Bunkene er i forkant delt inn i bunker a 50 stemmesedler (og mindre)",
+    "answer5": "En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet. Foreløpig opptelling gjøres to ganger (dvs én kontrolltelling). Ved avvik telles stemmesedlene en tredje gang. Det er ikke samme person som kontrollteller. To personer må telle samme antall i en bunke før tallet legges inn i EVA. Bunkene er i forkant delt inn i bunker a 50 stemmesedler (og mindre)",
     "answer6": "Resultatene legges først og fremst inn manuelt på papir før det registreres i EVA. Oppbevares sammen med stemmesedlene, men praksis har ikke vært å journalføre disse. Legges deretter inn i EVA.",
     "answer7": "Tallene som legges inn i EVA kontrollsjekkes. Alle avvik må dessuten beskrives før resultatet manuelt kan godkjennes. Praksis har vært å kontrollere våre tall (notater) mot tallene publisert på valgresultat.no",
     "final_counting_type": "manuell",
     "counting_type_decision_date": "2022-10-31",
-    "counting_type_decision_case_number": "Sak K-055/22",
-    "prelimitary_counting__any_counting_in_valgkrets": false,
-    "prelimitary_counting__transfer_to_eva__do_they_answer": false,
-    "prelimitary_counting__transfer_to_eva__type": null,
+    "counting_type_decision_case_number": "K-055/22",
+    "prelimitary_counting__any_counting_in_valgkrets": true,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": true,
+    "prelimitary_counting__transfer_to_eva__type": "manuell opptelling",
     "prelimitary_counting__is_stored": true,
-    "prelimitary_counting__what_is_stored": "Resultatene",
-    "prelimitary_counting__storage_method": "Papir",
+    "prelimitary_counting__what_is_stored": "resultatene",
+    "prelimitary_counting__storage_method": "på papir",
     "prelimitary_counting__process_for_control": true,
-    "prelimitary_counting__process_for_control_type": "Kontroll av tall mot resultat på valgresultat.no",
+    "prelimitary_counting__process_for_control_type": "Kontrolltelling gjøres to ganger, og ved avvik telles stemmesedlene en tredje gang.",
     "final_counting__is_stored": true,
-    "final_counting__what_is_stored": "Resultatene",
-    "final_counting__storage_method": "Papir",
+    "final_counting__what_is_stored": "resultatene",
+    "final_counting__storage_method": "på papir",
     "final_counting__process_for_control": true,
-    "final_counting__process_for_control_type": "Kontroll av tall mot resultat som blir publisert"
+    "final_counting__process_for_control_type": "Tallene kontrollsjekkes og avvik må beskrives før resultatet manuelt kan godkjennes."
 }

@@ -12,6 +12,7 @@ $files = getDirContents(__DIR__ . '/email-engine-data-store/raw-' . $election_ye
 foreach ($files as $file) {
     if (str_ends_with($file, ' - IN.txt')) {
         $file_txt = str_replace('.txt', '.openaitxt', $file);
+        $file_txt = str_replace('/raw-', '/openai_txt_extract-', $file_txt);
         if (!file_exists($file_txt)) {
             echo file_get_contents($file);
             echo chr(10);
@@ -20,18 +21,22 @@ foreach ($files as $file) {
             echo chr(10);
             echo chr(10);
 
+            $dir = dirname($file_txt);
+            if (!file_exists($dir)) {
+                mkdir($dir, 0777, true);
+            }
 
             echo 'TEXT-parse-OpenAI: ' . $file . chr(10);
             $output = parseUsingOpenAI($file);
             file_put_contents($file_txt, $output);
 
             echo $output.chr(10);
-            exit;
+            //exit;
         }
 
         // Extracted by 9-email-engine__make_report.php
-        $answer_file = str_replace('/raw-', '/answer-', $file_txt . '.extract');
-        $answer_file2 = str_replace('/raw-', '/answer-', $file_txt . '.extract.analyze');
+        $answer_file = str_replace('/openai_txt_extract-', '/answer-', $file_txt . '.extract');
+        $answer_file2 = str_replace('/openai_txt_extract-', '/answer-', $file_txt . '.extract.analyze');
         if (file_exists($answer_file) && !file_exists($answer_file2)) {
             echo file_get_contents($answer_file);
             echo chr(10);
@@ -46,7 +51,7 @@ foreach ($files as $file) {
             file_put_contents($answer_file2, $output);
 
             echo $output.chr(10);
-            exit;
+            //exit;
         }
 
     }

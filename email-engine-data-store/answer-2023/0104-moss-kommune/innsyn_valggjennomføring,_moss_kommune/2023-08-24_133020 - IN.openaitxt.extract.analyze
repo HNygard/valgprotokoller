@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n  \"any_answers_found\": true,\n  \"answer1\": \"Endelig opptelling foretas med EVA Skanning\",\n  \"answer2\": \"Valgstyrets sak 22/5567\",\n  \"answer3\": \"Ja. Stemmestyret protokollerer resultatet i stemmestyrets m\u00f8tebok (elektronisk i EVA).\",\n  \"answer4\": \"Vi har lister p\u00e5 papir, legger inn i digitalt dokument og journalf\u00f8rer.\",\n  \"answer5\": \"Vi sjekker stadig at det som ligger ute er riktig.\",\n  \"answer6\": \"Samme svar som i 4.\",\n  \"answer7\": \"Samme svar som i 5.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Endelig opptelling foretas med EVA Skanning\",\n    \"answer2\": \"Valgstyrets sak 22/5567\",\n    \"answer3\": \"Ja. Stemmestyret skal gjennomf\u00f8re tellingen og protokollere resultatet i stemmestyrets m\u00f8tebok (elektronisk i EVA).\",\n    \"answer4\": \"Vi har lister p\u00e5 papir, legger inn i digitalt dokument og journalf\u00f8rer.\",\n    \"answer5\": \"Vi sitter alltid to sammen og legger inn. Representanter fra valgstyret er ogs\u00e5 tilstede. Vi sjekker stadig at det som ligger ute er riktig.\",\n    \"answer6\": \"Samme svar som i 4.\",\n    \"answer7\": \"Samme svar som i 5.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7sDB7ET1LxOLFAz1TNBmVcmWjDEqX",
+  "id": "chatcmpl-7sZBpyJ4ClOtulcU15uphvHstMvwD",
   "object": "chat.completion",
-  "created": 1693154725,
+  "created": 1693239337,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"answer1\": \"Endelig opptelling foretas med EVA Skanning\",\n  \"answer2\": \"Valgstyrets sak 22/5567\",\n  \"answer3\": \"Ja. Stemmestyret protokollerer resultatet i stemmestyrets m\u00f8tebok (elektronisk i EVA).\",\n  \"answer4\": \"Vi har lister p\u00e5 papir, legger inn i digitalt dokument og journalf\u00f8rer.\",\n  \"answer5\": \"Vi sjekker stadig at det som ligger ute er riktig.\",\n  \"answer6\": \"Samme svar som i 4.\",\n  \"answer7\": \"Samme svar som i 5.\",\n  \"final_counting_type\": \"maskinell\",\n  \"counting_type_decision_date\": null,\n  \"counting_type_decision_case_number\": null,\n  \"prelimitary_counting__any_counting_in_valgkrets\": true,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n  \"prelimitary_counting__transfer_to_eva__type\": \"Protokollen overf\u00f8res elektronisk via EVA Admin.\",\n  \"prelimitary_counting__is_stored\": true,\n  \"prelimitary_counting__what_is_stored\": \"Lokale lister og protokoller fra valgkretsene.\",\n  \"prelimitary_counting__storage_method\": \"Lister p\u00e5 papir og digitale protokoller arkiveres.\",\n  \"prelimitary_counting__process_for_control\": true,\n  \"prelimitary_counting__process_for_control_type\": \"Kontrolleres mot Valgdirektoratets valgresultatside og valgprotokollene.\",\n  \"final_counting__is_stored\": true,\n  \"final_counting__what_is_stored\": \"Endelig resultat og protokoll.\",\n  \"final_counting__storage_method\": \"Lagres elektronisk og journalf\u00f8res.\",\n  \"final_counting__process_for_control\": true,\n  \"final_counting__process_for_control_type\": \"Kontrolleres mot resultatet som blir publisert.\"\n}"
+        "content": "{\n    \"answer1\": \"Endelig opptelling foretas med EVA Skanning\",\n    \"answer2\": \"Valgstyrets sak 22/5567\",\n    \"answer3\": \"Ja. Stemmestyret skal gjennomf\u00f8re tellingen og protokollere resultatet i stemmestyrets m\u00f8tebok (elektronisk i EVA).\",\n    \"answer4\": \"Vi har lister p\u00e5 papir, legger inn i digitalt dokument og journalf\u00f8rer.\",\n    \"answer5\": \"Vi sitter alltid to sammen og legger inn. Representanter fra valgstyret er ogs\u00e5 tilstede. Vi sjekker stadig at det som ligger ute er riktig.\",\n    \"answer6\": \"Samme svar som i 4.\",\n    \"answer7\": \"Samme svar som i 5.\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": \"2022-08-15\",\n    \"counting_type_decision_case_number\": \"22/5567\",\n    \"prelimitary_counting__any_counting_in_valgkrets\": true,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"overf\u00f8rer via EVA Admin\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"resultater fra opptellingen\",\n    \"prelimitary_counting__storage_method\": \"p\u00e5 papir og digitalt dokument\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"kontroll av resultatet mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet, valgprotokoll og medier\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"resultater fra endelig opptelling\",\n    \"final_counting__storage_method\": \"p\u00e5 papir og digitalt dokument\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"kontroll av endelig opptelling mot resultat som blir publisert\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1499,
-    "completion_tokens": 474,
-    "total_tokens": 1973
+    "prompt_tokens": 1533,
+    "completion_tokens": 509,
+    "total_tokens": 2042
   }
 }
 ---------------
 {
-  "answer1": "Endelig opptelling foretas med EVA Skanning",
-  "answer2": "Valgstyrets sak 22/5567",
-  "answer3": "Ja. Stemmestyret protokollerer resultatet i stemmestyrets møtebok (elektronisk i EVA).",
-  "answer4": "Vi har lister på papir, legger inn i digitalt dokument og journalfører.",
-  "answer5": "Vi sjekker stadig at det som ligger ute er riktig.",
-  "answer6": "Samme svar som i 4.",
-  "answer7": "Samme svar som i 5.",
-  "final_counting_type": "maskinell",
-  "counting_type_decision_date": null,
-  "counting_type_decision_case_number": null,
-  "prelimitary_counting__any_counting_in_valgkrets": true,
-  "prelimitary_counting__transfer_to_eva__do_they_answer": true,
-  "prelimitary_counting__transfer_to_eva__type": "Protokollen overføres elektronisk via EVA Admin.",
-  "prelimitary_counting__is_stored": true,
-  "prelimitary_counting__what_is_stored": "Lokale lister og protokoller fra valgkretsene.",
-  "prelimitary_counting__storage_method": "Lister på papir og digitale protokoller arkiveres.",
-  "prelimitary_counting__process_for_control": true,
-  "prelimitary_counting__process_for_control_type": "Kontrolleres mot Valgdirektoratets valgresultatside og valgprotokollene.",
-  "final_counting__is_stored": true,
-  "final_counting__what_is_stored": "Endelig resultat og protokoll.",
-  "final_counting__storage_method": "Lagres elektronisk og journalføres.",
-  "final_counting__process_for_control": true,
-  "final_counting__process_for_control_type": "Kontrolleres mot resultatet som blir publisert."
+    "answer1": "Endelig opptelling foretas med EVA Skanning",
+    "answer2": "Valgstyrets sak 22/5567",
+    "answer3": "Ja. Stemmestyret skal gjennomføre tellingen og protokollere resultatet i stemmestyrets møtebok (elektronisk i EVA).",
+    "answer4": "Vi har lister på papir, legger inn i digitalt dokument og journalfører.",
+    "answer5": "Vi sitter alltid to sammen og legger inn. Representanter fra valgstyret er også tilstede. Vi sjekker stadig at det som ligger ute er riktig.",
+    "answer6": "Samme svar som i 4.",
+    "answer7": "Samme svar som i 5.",
+    "final_counting_type": "maskinell",
+    "counting_type_decision_date": "2022-08-15",
+    "counting_type_decision_case_number": "22/5567",
+    "prelimitary_counting__any_counting_in_valgkrets": true,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": true,
+    "prelimitary_counting__transfer_to_eva__type": "overfører via EVA Admin",
+    "prelimitary_counting__is_stored": true,
+    "prelimitary_counting__what_is_stored": "resultater fra opptellingen",
+    "prelimitary_counting__storage_method": "på papir og digitalt dokument",
+    "prelimitary_counting__process_for_control": true,
+    "prelimitary_counting__process_for_control_type": "kontroll av resultatet mot det som er synlig på valgresultat-siden til Valgdirektoratet, valgprotokoll og medier",
+    "final_counting__is_stored": true,
+    "final_counting__what_is_stored": "resultater fra endelig opptelling",
+    "final_counting__storage_method": "på papir og digitalt dokument",
+    "final_counting__process_for_control": true,
+    "final_counting__process_for_control_type": "kontroll av endelig opptelling mot resultat som blir publisert"
 }

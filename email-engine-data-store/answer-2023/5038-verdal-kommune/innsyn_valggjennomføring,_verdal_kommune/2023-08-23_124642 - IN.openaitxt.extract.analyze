@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n   \"any_answers_found\": true,\n   \"answer1\": \"Verdal kommune foretar maskinell endelig telling.\",\n   \"answer2\": \"Det ble ikke vedtatt i en politisk sak siden skanning av stemmesedler startet i 2007.\",\n   \"answer3\": \"Valgopptellingen gj\u00f8res manuelt kretsvis og resultatet overf\u00f8res til valgstyret p\u00e5 R\u00e5dhuset.\",\n   \"answer4\": \"Resultatet fra forel\u00f8pig tellling arkiveres i Elements - kommunens saks- og arkivsystem.\",\n   \"answer5\": \"Kommunen har rutiner for \u00e5 kontrollere resultatet av forel\u00f8pig opptelling mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet og i valgprotokollen.\",\n   \"answer6\": \"Resultatet fra endelig opptelling lagres ogs\u00e5 i Elements - kommunens saks- og arkivsystem.\",\n   \"answer7\": \"Kommunen har ikke skriftlige rutiner for kontroll av endelig opptelling mot resultat som blir publisert, men de sjekker valgresultatet p\u00e5 valgresultat.no og sammenligner med protokoller og tellerapporter i EVA.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Verdal kommune foretar maskinell endelig telling.\",\n    \"answer2\": \"Dette har vi ikke hatt politisk sak p\u00e5 siden vi startet skanning av stemmesedlene i 2007.\",\n    \"answer3\": \"Vi har manuell telling kretsvis samlet p\u00e5 R\u00e5dhuset.\",\n    \"answer4\": \"Vi arkiverer dette i Elements - kommunens saks- og arkivsystem.\",\n    \"answer5\": \"Vi sjekker manuell telling opp mot soteringerstelling og urne innhold. Vi sjekker ogs\u00e5 dette i valgprotokollen.\",\n    \"answer6\": \"Vi arkiverer dette i Elements - kommunens saks- og arkivsystem.\",\n    \"answer7\": \"Ja vi sjekker p\u00e5 valgresultat.no n\u00e5r det er overf\u00f8rt. Vi har ikke skrevne rutiner for dette, men har innarbeidet praksis. Sjekker ogs\u00e5 protokoll mot tellerapporter i Eva.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s5GOYdyDAIsY0q2MeHcocSDEd2z2",
+  "id": "chatcmpl-7sZU8XWz6Kn5dKSuK9wgJ0o6VK0Lq",
   "object": "chat.completion",
-  "created": 1693124300,
+  "created": 1693240472,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n   \"answer1\": \"Verdal kommune foretar maskinell endelig telling.\",\n   \"answer2\": \"Det ble ikke vedtatt i en politisk sak siden skanning av stemmesedler startet i 2007.\",\n   \"answer3\": \"Valgopptellingen gj\u00f8res manuelt kretsvis og resultatet overf\u00f8res til valgstyret p\u00e5 R\u00e5dhuset.\",\n   \"answer4\": \"Resultatet fra forel\u00f8pig tellling arkiveres i Elements - kommunens saks- og arkivsystem.\",\n   \"answer5\": \"Kommunen har rutiner for \u00e5 kontrollere resultatet av forel\u00f8pig opptelling mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet og i valgprotokollen.\",\n   \"answer6\": \"Resultatet fra endelig opptelling lagres ogs\u00e5 i Elements - kommunens saks- og arkivsystem.\",\n   \"answer7\": \"Kommunen har ikke skriftlige rutiner for kontroll av endelig opptelling mot resultat som blir publisert, men de sjekker valgresultatet p\u00e5 valgresultat.no og sammenligner med protokoller og tellerapporter i EVA.\",\n   \"final_counting_type\": \"maskinell\",\n   \"counting_type_decision_date\": null,\n   \"counting_type_decision_case_number\": null,\n   \"prelimitary_counting__any_counting_in_valgkrets\": true,\n   \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n   \"prelimitary_counting__transfer_to_eva__type\": \"manuell overf\u00f8ring\",\n   \"prelimitary_counting__is_stored\": true,\n   \"prelimitary_counting__what_is_stored\": \"forel\u00f8pig opptelling\",\n   \"prelimitary_counting__storage_method\": \"Elements - kommunens saks- og arkivsystem\",\n   \"prelimitary_counting__process_for_control\": true,\n   \"prelimitary_counting__process_for_control_type\": \"kontrollerer mot Valgdirektoratet og valgprotokoller\",\n   \"final_counting__is_stored\": true,\n   \"final_counting__what_is_stored\": \"endelig opptelling\",\n   \"final_counting__storage_method\": \"Elements - kommunens saks- og arkivsystem\",\n   \"final_counting__process_for_control\": false,\n   \"final_counting__process_for_control_type\": \"ikke skriftlige rutiner, men sjekker valgresultatet mot protokoller og tellerapporter\"\n}"
+        "content": "{\n    \"answer1\": \"Verdal kommune foretar maskinell endelig telling.\",\n    \"answer2\": \"Dette har vi ikke hatt politisk sak p\u00e5 siden vi startet skanning av stemmesedlene i 2007.\",\n    \"answer3\": \"Vi har manuell telling kretsvis samlet p\u00e5 R\u00e5dhuset.\",\n    \"answer4\": \"Vi arkiverer dette i Elements - kommunens saks- og arkivsystem.\",\n    \"answer5\": \"Vi sjekker manuell telling opp mot soteringerstelling og urne innhold. Vi sjekker ogs\u00e5 dette i valgprotokollen.\",\n    \"answer6\": \"Vi arkiverer dette i Elements - kommunens saks- og arkivsystem.\",\n    \"answer7\": \"Ja vi sjekker p\u00e5 valgresultat.no n\u00e5r det er overf\u00f8rt. Vi har ikke skrevne rutiner for dette, men har innarbeidet praksis. Sjekker ogs\u00e5 protokoll mot tellerapporter i Eva.\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": true,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n    \"prelimitary_counting__transfer_to_eva__type\": null,\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"resultatet fra opptellingen\",\n    \"prelimitary_counting__storage_method\": \"Elements - kommunens saks- og arkivsystem\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"sjekker manuell telling opp mot soteringerstelling, urne innhold og valgprotokollen\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"resultatet fra endelig opptelling\",\n    \"final_counting__storage_method\": \"Elements - kommunens saks- og arkivsystem\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"sjekker p\u00e5 valgresultat.no, protokoll mot tellerapporter i Eva\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1622,
-    "completion_tokens": 582,
-    "total_tokens": 2204
+    "prompt_tokens": 1571,
+    "completion_tokens": 533,
+    "total_tokens": 2104
   }
 }
 ---------------
 {
-   "answer1": "Verdal kommune foretar maskinell endelig telling.",
-   "answer2": "Det ble ikke vedtatt i en politisk sak siden skanning av stemmesedler startet i 2007.",
-   "answer3": "Valgopptellingen gjøres manuelt kretsvis og resultatet overføres til valgstyret på Rådhuset.",
-   "answer4": "Resultatet fra foreløpig tellling arkiveres i Elements - kommunens saks- og arkivsystem.",
-   "answer5": "Kommunen har rutiner for å kontrollere resultatet av foreløpig opptelling mot det som er synlig på valgresultat-siden til Valgdirektoratet og i valgprotokollen.",
-   "answer6": "Resultatet fra endelig opptelling lagres også i Elements - kommunens saks- og arkivsystem.",
-   "answer7": "Kommunen har ikke skriftlige rutiner for kontroll av endelig opptelling mot resultat som blir publisert, men de sjekker valgresultatet på valgresultat.no og sammenligner med protokoller og tellerapporter i EVA.",
-   "final_counting_type": "maskinell",
-   "counting_type_decision_date": null,
-   "counting_type_decision_case_number": null,
-   "prelimitary_counting__any_counting_in_valgkrets": true,
-   "prelimitary_counting__transfer_to_eva__do_they_answer": true,
-   "prelimitary_counting__transfer_to_eva__type": "manuell overføring",
-   "prelimitary_counting__is_stored": true,
-   "prelimitary_counting__what_is_stored": "foreløpig opptelling",
-   "prelimitary_counting__storage_method": "Elements - kommunens saks- og arkivsystem",
-   "prelimitary_counting__process_for_control": true,
-   "prelimitary_counting__process_for_control_type": "kontrollerer mot Valgdirektoratet og valgprotokoller",
-   "final_counting__is_stored": true,
-   "final_counting__what_is_stored": "endelig opptelling",
-   "final_counting__storage_method": "Elements - kommunens saks- og arkivsystem",
-   "final_counting__process_for_control": false,
-   "final_counting__process_for_control_type": "ikke skriftlige rutiner, men sjekker valgresultatet mot protokoller og tellerapporter"
+    "answer1": "Verdal kommune foretar maskinell endelig telling.",
+    "answer2": "Dette har vi ikke hatt politisk sak på siden vi startet skanning av stemmesedlene i 2007.",
+    "answer3": "Vi har manuell telling kretsvis samlet på Rådhuset.",
+    "answer4": "Vi arkiverer dette i Elements - kommunens saks- og arkivsystem.",
+    "answer5": "Vi sjekker manuell telling opp mot soteringerstelling og urne innhold. Vi sjekker også dette i valgprotokollen.",
+    "answer6": "Vi arkiverer dette i Elements - kommunens saks- og arkivsystem.",
+    "answer7": "Ja vi sjekker på valgresultat.no når det er overført. Vi har ikke skrevne rutiner for dette, men har innarbeidet praksis. Sjekker også protokoll mot tellerapporter i Eva.",
+    "final_counting_type": "maskinell",
+    "counting_type_decision_date": null,
+    "counting_type_decision_case_number": null,
+    "prelimitary_counting__any_counting_in_valgkrets": true,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": false,
+    "prelimitary_counting__transfer_to_eva__type": null,
+    "prelimitary_counting__is_stored": true,
+    "prelimitary_counting__what_is_stored": "resultatet fra opptellingen",
+    "prelimitary_counting__storage_method": "Elements - kommunens saks- og arkivsystem",
+    "prelimitary_counting__process_for_control": true,
+    "prelimitary_counting__process_for_control_type": "sjekker manuell telling opp mot soteringerstelling, urne innhold og valgprotokollen",
+    "final_counting__is_stored": true,
+    "final_counting__what_is_stored": "resultatet fra endelig opptelling",
+    "final_counting__storage_method": "Elements - kommunens saks- og arkivsystem",
+    "final_counting__process_for_control": true,
+    "final_counting__process_for_control_type": "sjekker på valgresultat.no, protokoll mot tellerapporter i Eva"
 }

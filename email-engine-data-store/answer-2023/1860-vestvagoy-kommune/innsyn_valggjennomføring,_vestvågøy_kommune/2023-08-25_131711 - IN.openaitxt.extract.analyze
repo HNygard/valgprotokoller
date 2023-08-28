@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Ja, kommunen vil foreta maskinell eller manuell endelig telling av valgresultatet.\",\n    \"answer2\": \"Det ble vedtatt i en politisk sak.\",\n    \"answer3\": \"Ja, opptellingen blir gjort i valgkretsene. Resultatet blir overf\u00f8rt fra valgkretsene til valgstyret/valgansvarlig/EVA Admin.\",\n    \"answer4\": \"Kommunen lagrer/arkiverer resultatet fra forel\u00f8pig opptelling (manuell opptelling) enten som papir, digitalt dokument eller SMS. Resultatet blir ogs\u00e5 journalf\u00f8rt.\",\n    \"answer5\": \"Ja, kommunen har rutiner for \u00e5 kontrollere resultatet av forel\u00f8pig opptelling mot det som er synlig p\u00e5 Valgdirektoratets valgresultat-side, i valgprotokoll, i medier og lignende.\",\n    \"answer6\": \"Kommunen lagrer resultatet fra endelig opptelling (maskinell eller manuell) utenom EVA Admin/EVA Skanning. Resultatet blir ogs\u00e5 journalf\u00f8rt.\",\n    \"answer7\": \"Ja, kommunen har rutiner for kontroll av endelig opptelling mot resultat som blir publisert.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Kommunen vil foreta manuell endelig telling av valgresultatet.\",\n    \"answer2\": \"Det ble vedtatt i den politiske saken med referanse VSA 253/12 12.12.2016. Forvaltningslovens \u00a7 10 til 12 jf. valglovens \u00a7 42.29.11.2022.\",\n    \"answer3\": \"Ved forel\u00f8pig opptelling blir opptellingen gjort i valgkretsene. Resultatet overf\u00f8res fra valgkretsene til valgstyret/valgansvarlig/EVA Admin gjennom manuell meldingsformidling.\",\n    \"answer4\": \"Ved forel\u00f8pig opptelling lagrer kommunen resultatet i papirform. Resultatet blir ogs\u00e5 journalf\u00f8rt.\",\n    \"answer5\": \"Ja, kommunen har rutiner for \u00e5 kontrollere resultatet av forel\u00f8pig opptelling opp mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet, valgprotokoll, medier og lignende. Dette gj\u00f8res for \u00e5 oppdage eventuelle tastefeil eller feil i Valgdirektoratets h\u00e5ndtering av resultatet.\",\n    \"answer6\": \"Ved endelig opptelling lagrer kommunen resultatet utenom EVA Admin/EVA Skanning i papirform. Resultatet blir ogs\u00e5 journalf\u00f8rt.\",\n    \"answer7\": \"Ja, kommunen har rutiner for kontroll av endelig opptelling mot resultat som blir publisert.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7sDEkgdxHZWyyOqWXudsaq6whM2pg",
+  "id": "chatcmpl-7sZFyg0sE7IxOZ08xbgtBylpHahPS",
   "object": "chat.completion",
-  "created": 1693154950,
+  "created": 1693239594,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"answer1\": \"Ja, kommunen vil foreta maskinell eller manuell endelig telling av valgresultatet.\",\n    \"answer2\": \"Det ble vedtatt i en politisk sak.\",\n    \"answer3\": \"Ja, opptellingen blir gjort i valgkretsene. Resultatet blir overf\u00f8rt fra valgkretsene til valgstyret/valgansvarlig/EVA Admin.\",\n    \"answer4\": \"Kommunen lagrer/arkiverer resultatet fra forel\u00f8pig opptelling (manuell opptelling) enten som papir, digitalt dokument eller SMS. Resultatet blir ogs\u00e5 journalf\u00f8rt.\",\n    \"answer5\": \"Ja, kommunen har rutiner for \u00e5 kontrollere resultatet av forel\u00f8pig opptelling mot det som er synlig p\u00e5 Valgdirektoratets valgresultat-side, i valgprotokoll, i medier og lignende.\",\n    \"answer6\": \"Kommunen lagrer resultatet fra endelig opptelling (maskinell eller manuell) utenom EVA Admin/EVA Skanning. Resultatet blir ogs\u00e5 journalf\u00f8rt.\",\n    \"answer7\": \"Ja, kommunen har rutiner for kontroll av endelig opptelling mot resultat som blir publisert.\",\n    \"final_counting_type\": \"manuell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": true,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"Overf\u00f8ring skjer via en elektronisk l\u00f8sning\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"Resultatet fra forel\u00f8pig opptelling\",\n    \"prelimitary_counting__storage_method\": \"Digitalt dokument, papir\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Kommunen sammenligner resultatet av forel\u00f8pig opptelling med Valgdirektoratets valgresultat-side, valgprotokoll og medieomtale for \u00e5 kontrollere riktigheten av tallene.\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"Resultatet fra endelig opptelling\",\n    \"final_counting__storage_method\": \"Digitalt dokument, papir\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Kommunen sammenligner resultatet av endelig opptelling med det som blir publisert for \u00e5 kontrollere riktigheten av tallene.\"\n}"
+        "content": "{\n    \"answer1\": \"Kommunen vil foreta manuell endelig telling av valgresultatet.\",\n    \"answer2\": \"Det ble vedtatt i den politiske saken med referanse VSA 253/12 12.12.2016. Forvaltningslovens \u00a7 10 til 12 jf. valglovens \u00a7 42.29.11.2022.\",\n    \"answer3\": \"Ved forel\u00f8pig opptelling blir opptellingen gjort i valgkretsene. Resultatet overf\u00f8res fra valgkretsene til valgstyret/valgansvarlig/EVA Admin gjennom manuell meldingsformidling.\",\n    \"answer4\": \"Ved forel\u00f8pig opptelling lagrer kommunen resultatet i papirform. Resultatet blir ogs\u00e5 journalf\u00f8rt.\",\n    \"answer5\": \"Ja, kommunen har rutiner for \u00e5 kontrollere resultatet av forel\u00f8pig opptelling opp mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet, valgprotokoll, medier og lignende. Dette gj\u00f8res for \u00e5 oppdage eventuelle tastefeil eller feil i Valgdirektoratets h\u00e5ndtering av resultatet.\",\n    \"answer6\": \"Ved endelig opptelling lagrer kommunen resultatet utenom EVA Admin/EVA Skanning i papirform. Resultatet blir ogs\u00e5 journalf\u00f8rt.\",\n    \"answer7\": \"Ja, kommunen har rutiner for kontroll av endelig opptelling mot resultat som blir publisert.\",\n    \"final_counting_type\": \"manuell\",\n    \"counting_type_decision_date\": \"2016-12-12\",\n    \"counting_type_decision_case_number\": \"VSA 253/12\",\n    \"prelimitary_counting__any_counting_in_valgkrets\": true,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"manuell meldingsformidling\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"resultatet i papirform\",\n    \"prelimitary_counting__storage_method\": \"fysisk arkivering\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"kontroll av resultat mot valgresultat-siden til Valgdirektoratet, valgprotokoll og medier\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"resultatet i papirform\",\n    \"final_counting__storage_method\": \"fysisk arkivering\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"kontroll av resultat mot publisert resultat\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1638,
-    "completion_tokens": 648,
-    "total_tokens": 2286
+    "prompt_tokens": 1706,
+    "completion_tokens": 662,
+    "total_tokens": 2368
   }
 }
 ---------------
 {
-    "answer1": "Ja, kommunen vil foreta maskinell eller manuell endelig telling av valgresultatet.",
-    "answer2": "Det ble vedtatt i en politisk sak.",
-    "answer3": "Ja, opptellingen blir gjort i valgkretsene. Resultatet blir overført fra valgkretsene til valgstyret/valgansvarlig/EVA Admin.",
-    "answer4": "Kommunen lagrer/arkiverer resultatet fra foreløpig opptelling (manuell opptelling) enten som papir, digitalt dokument eller SMS. Resultatet blir også journalført.",
-    "answer5": "Ja, kommunen har rutiner for å kontrollere resultatet av foreløpig opptelling mot det som er synlig på Valgdirektoratets valgresultat-side, i valgprotokoll, i medier og lignende.",
-    "answer6": "Kommunen lagrer resultatet fra endelig opptelling (maskinell eller manuell) utenom EVA Admin/EVA Skanning. Resultatet blir også journalført.",
+    "answer1": "Kommunen vil foreta manuell endelig telling av valgresultatet.",
+    "answer2": "Det ble vedtatt i den politiske saken med referanse VSA 253/12 12.12.2016. Forvaltningslovens § 10 til 12 jf. valglovens § 42.29.11.2022.",
+    "answer3": "Ved foreløpig opptelling blir opptellingen gjort i valgkretsene. Resultatet overføres fra valgkretsene til valgstyret/valgansvarlig/EVA Admin gjennom manuell meldingsformidling.",
+    "answer4": "Ved foreløpig opptelling lagrer kommunen resultatet i papirform. Resultatet blir også journalført.",
+    "answer5": "Ja, kommunen har rutiner for å kontrollere resultatet av foreløpig opptelling opp mot det som er synlig på valgresultat-siden til Valgdirektoratet, valgprotokoll, medier og lignende. Dette gjøres for å oppdage eventuelle tastefeil eller feil i Valgdirektoratets håndtering av resultatet.",
+    "answer6": "Ved endelig opptelling lagrer kommunen resultatet utenom EVA Admin/EVA Skanning i papirform. Resultatet blir også journalført.",
     "answer7": "Ja, kommunen har rutiner for kontroll av endelig opptelling mot resultat som blir publisert.",
     "final_counting_type": "manuell",
-    "counting_type_decision_date": null,
-    "counting_type_decision_case_number": null,
+    "counting_type_decision_date": "2016-12-12",
+    "counting_type_decision_case_number": "VSA 253/12",
     "prelimitary_counting__any_counting_in_valgkrets": true,
     "prelimitary_counting__transfer_to_eva__do_they_answer": true,
-    "prelimitary_counting__transfer_to_eva__type": "Overføring skjer via en elektronisk løsning",
+    "prelimitary_counting__transfer_to_eva__type": "manuell meldingsformidling",
     "prelimitary_counting__is_stored": true,
-    "prelimitary_counting__what_is_stored": "Resultatet fra foreløpig opptelling",
-    "prelimitary_counting__storage_method": "Digitalt dokument, papir",
+    "prelimitary_counting__what_is_stored": "resultatet i papirform",
+    "prelimitary_counting__storage_method": "fysisk arkivering",
     "prelimitary_counting__process_for_control": true,
-    "prelimitary_counting__process_for_control_type": "Kommunen sammenligner resultatet av foreløpig opptelling med Valgdirektoratets valgresultat-side, valgprotokoll og medieomtale for å kontrollere riktigheten av tallene.",
+    "prelimitary_counting__process_for_control_type": "kontroll av resultat mot valgresultat-siden til Valgdirektoratet, valgprotokoll og medier",
     "final_counting__is_stored": true,
-    "final_counting__what_is_stored": "Resultatet fra endelig opptelling",
-    "final_counting__storage_method": "Digitalt dokument, papir",
+    "final_counting__what_is_stored": "resultatet i papirform",
+    "final_counting__storage_method": "fysisk arkivering",
     "final_counting__process_for_control": true,
-    "final_counting__process_for_control_type": "Kommunen sammenligner resultatet av endelig opptelling med det som blir publisert for å kontrollere riktigheten av tallene."
+    "final_counting__process_for_control_type": "kontroll av resultat mot publisert resultat"
 }

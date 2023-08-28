@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Molde kommune bruker maskinell endelig opptelling.\",\n    \"answer2\": \"Dette ble vedtatt innf\u00f8rt i 2009.\",\n    \"answer3\": \"Forel\u00f8pig opptelling gj\u00f8res i kretsene manuelt. Resultatet rapporteres inn via EVA til valgstyret.\",\n    \"answer4\": \"M\u00f8teboken blir skannet og lagret i kommunens arkivsystem.\",\n    \"answer5\": \"Forel\u00f8pig opptelling er forel\u00f8pig opptelling og er det f\u00f8rste som blir rapporter inn p\u00e5 valgnatta, og er de f\u00f8rste tallene som blir frigitt til media. Kontrollen skjer ved endelig maskinell opptelling, kretsvis og valgoppgj\u00f8ret er foretatt. Da vil resultatet av endelig opptelling rapporteres inn.\",\n    \"answer6\": \"Resultat av endelig opptelling er selve valgoppgj\u00f8ret (valgstyrets m\u00f8tebok). Dette lagres i kommunens arkivsystem.\",\n    \"answer7\": \"Ved maskinell telling foretar vi stikkpr\u00f8vekontroll underveis for \u00e5 se at de fysiske sedlene stemmer overens med resultatet som framkommer av skanningen.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Molde kommune bruker maskinell endelig opptelling.\",\n    \"answer2\": \"Dette ble vedtatt innf\u00f8rt i 2009\",\n    \"answer3\": \"Forel\u00f8pig opptelling gj\u00f8res i kretsene manuelt. Resultatet rapporteres inn via EVA til valgstyret.\",\n    \"answer4\": \"M\u00f8teboken blir skannet og lagret i kommunens arkivsystem.\",\n    \"answer5\": \"Forel\u00f8pig opptelling er forel\u00f8pig opptelling og er det f\u00f8rste som blir rapporter inn p\u00e5 valgnatta, og er de f\u00f8rste tallene som blir frigitt til media. Kontrollen skjer ved endelig maskinell opptelling, kretsvis og valgoppgj\u00f8ret er foretatt. Da vil resultatet av endelig opptelling rapporteres inn.\",\n    \"answer6\": \"Resultat av endelig opptelling er selve valgoppgj\u00f8ret (valgstyrets m\u00f8tebok). Dette lagres i kommunens arkivsystem.\",\n    \"answer7\": \"Ved maskinell telling foretar vi stikkpr\u00f8vekontroll underveis for \u00e5 se at de fysiske sedlene stemmer overens med resultatet som framkommer av skanningen.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,30 +21,30 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7sDOFesgMQyWR143l6C4JKcUWN59j",
+  "id": "chatcmpl-7sZd7kl7XHZeucAc50Q3H5joTUoLK",
   "object": "chat.completion",
-  "created": 1693155539,
+  "created": 1693241029,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"answer1\": \"Molde kommune bruker maskinell endelig opptelling.\",\n    \"answer2\": \"Dette ble vedtatt innf\u00f8rt i 2009.\",\n    \"answer3\": \"Forel\u00f8pig opptelling gj\u00f8res i kretsene manuelt. Resultatet rapporteres inn via EVA til valgstyret.\",\n    \"answer4\": \"M\u00f8teboken blir skannet og lagret i kommunens arkivsystem.\",\n    \"answer5\": \"Forel\u00f8pig opptelling er forel\u00f8pig opptelling og er det f\u00f8rste som blir rapporter inn p\u00e5 valgnatta, og er de f\u00f8rste tallene som blir frigitt til media. Kontrollen skjer ved endelig maskinell opptelling, kretsvis og valgoppgj\u00f8ret er foretatt. Da vil resultatet av endelig opptelling rapporteres inn.\",\n    \"answer6\": \"Resultat av endelig opptelling er selve valgoppgj\u00f8ret (valgstyrets m\u00f8tebok). Dette lagres i kommunens arkivsystem.\",\n    \"answer7\": \"Ved maskinell telling foretar vi stikkpr\u00f8vekontroll underveis for \u00e5 se at de fysiske sedlene stemmer overens med resultatet som framkommer av skanningen.\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": true,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"via EVA\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"m\u00f8teboken\",\n    \"prelimitary_counting__storage_method\": \"skannet og lagret i kommunens arkivsystem\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"kontroll ved endelig maskinell opptelling\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"valgoppgj\u00f8ret (valgstyrets m\u00f8tebok)\",\n    \"final_counting__storage_method\": \"lagres i kommunens arkivsystem\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"stikkpr\u00f8vekontroll underveis for \u00e5 se at de fysiske sedlene stemmer overens\"\n}"
+        "content": "{\n    \"answer1\": \"Molde kommune bruker maskinell endelig opptelling.\",\n    \"answer2\": \"Dette ble vedtatt innf\u00f8rt i 2009\",\n    \"answer3\": \"Forel\u00f8pig opptelling gj\u00f8res i kretsene manuelt. Resultatet rapporteres inn via EVA til valgstyret.\",\n    \"answer4\": \"M\u00f8teboken blir skannet og lagret i kommunens arkivsystem.\",\n    \"answer5\": \"Forel\u00f8pig opptelling er forel\u00f8pig opptelling og er det f\u00f8rste som blir rapporter inn p\u00e5 valgnatta, og er de f\u00f8rste tallene som blir frigitt til media. Kontrollen skjer ved endelig maskinell opptelling, kretsvis og valgoppgj\u00f8ret er foretatt. Da vil resultatet av endelig opptelling rapporteres inn.\",\n    \"answer6\": \"Resultat av endelig opptelling er selve valgoppgj\u00f8ret (valgstyrets m\u00f8tebok). Dette lagres i kommunens arkivsystem.\",\n    \"answer7\": \"Ved maskinell telling foretar vi stikkpr\u00f8vekontroll underveis for \u00e5 se at de fysiske sedlene stemmer overens med resultatet som framkommer av skanningen.\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": true,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"via EVA\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"m\u00f8teboken\",\n    \"prelimitary_counting__storage_method\": \"skanning\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"kontroll ved endelig maskinell opptelling\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"valgoppgj\u00f8ret (valgstyrets m\u00f8tebok)\",\n    \"final_counting__storage_method\": \"arkivsystem\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"stikkpr\u00f8vekontroll underveis\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
     "prompt_tokens": 1641,
-    "completion_tokens": 597,
-    "total_tokens": 2238
+    "completion_tokens": 568,
+    "total_tokens": 2209
   }
 }
 ---------------
 {
     "answer1": "Molde kommune bruker maskinell endelig opptelling.",
-    "answer2": "Dette ble vedtatt innført i 2009.",
+    "answer2": "Dette ble vedtatt innført i 2009",
     "answer3": "Foreløpig opptelling gjøres i kretsene manuelt. Resultatet rapporteres inn via EVA til valgstyret.",
     "answer4": "Møteboken blir skannet og lagret i kommunens arkivsystem.",
     "answer5": "Foreløpig opptelling er foreløpig opptelling og er det første som blir rapporter inn på valgnatta, og er de første tallene som blir frigitt til media. Kontrollen skjer ved endelig maskinell opptelling, kretsvis og valgoppgjøret er foretatt. Da vil resultatet av endelig opptelling rapporteres inn.",
@@ -58,12 +58,12 @@ Chat completion
     "prelimitary_counting__transfer_to_eva__type": "via EVA",
     "prelimitary_counting__is_stored": true,
     "prelimitary_counting__what_is_stored": "møteboken",
-    "prelimitary_counting__storage_method": "skannet og lagret i kommunens arkivsystem",
+    "prelimitary_counting__storage_method": "skanning",
     "prelimitary_counting__process_for_control": true,
     "prelimitary_counting__process_for_control_type": "kontroll ved endelig maskinell opptelling",
     "final_counting__is_stored": true,
     "final_counting__what_is_stored": "valgoppgjøret (valgstyrets møtebok)",
-    "final_counting__storage_method": "lagres i kommunens arkivsystem",
+    "final_counting__storage_method": "arkivsystem",
     "final_counting__process_for_control": true,
-    "final_counting__process_for_control_type": "stikkprøvekontroll underveis for å se at de fysiske sedlene stemmer overens"
+    "final_counting__process_for_control_type": "stikkprøvekontroll underveis"
 }

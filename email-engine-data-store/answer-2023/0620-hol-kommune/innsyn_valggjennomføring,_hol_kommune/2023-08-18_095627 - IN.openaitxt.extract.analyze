@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n   \"any_answers_found\": true,\n   \"answer1\": \"Ved endelig opptelling vil kommunen benytte maskinell telling (skanner)\",\n   \"answer2\": \"Vi har hatt maskinell skanning de siste valg\u00e5rene. Har hatt en sak politisk der vi har delegert ikke prinsipielle saker til r\u00e5dmann som har delegert videre til administrasjonen. Blant annet fordi maskinell telling er benyttet siste \u00e5rene tolket vi dette som en ikke prinsipiell sak.\",\n   \"answer3\": \"Manuell opptelling blir gjort samlet, ikke i valgkretsene.\",\n   \"answer4\": \"Dette blir lagt inn i excel av tellekorps. Disse blir igjen lagret i en egen fysisk mappe.\",\n   \"answer5\": \"Tallene blir kontrollert underveis, og valgresultat.no viser bare det vi legger inn.\",\n   \"answer6\": \"Det er EVA Admin som er v\u00e5rt system, og det er protokoll fra valget som lagres videre. Vi tar ikke noe fra systemet og lagrer for seg elektronisk. Alt er i EVA. Protokollen lagrer vi imidlertid videre i mappe.\",\n   \"answer7\": \"som i sp\u00f8rsm\u00e5l 5.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Ved endelig opptelling vil kommunen benytte maskinell telling (skanner)\",\n    \"answer2\": \"Vi ar hatt maskinell skanning de siste valg\u00e5rene. Har hatt en sak politisk der vi har delegert ikke prinsipielle saker til r\u00e5dmann som har delegert videre til administrasjonen. Blant annet fordi maskinell telling er benyttet siste \u00e5rene tolket vi dette som en ikke prinsipiell sak.\",\n    \"answer3\": \"Manuell opptelling blir gjort samlet, ikke i valgkretsene.\",\n    \"answer4\": \"Dette blir lagt inn i excel av tellekorps. Disse blir igjen lagret i en egen fysisk mappe.\",\n    \"answer5\": \"Tallene blir kontrollert underveis, og valgresultat.no viser bare det vi legger inn.\",\n    \"answer6\": \"Det er EVA Admin som er v\u00e5rt system, og det er protokoll fra valget som lagres videre. Vi tar ikke noe fra systemet og lagrer for seg elektronisk. Alt er i EVA. Protokollen lagrer vi imidlertid videre i mappe.\",\n    \"answer7\": \"som i sp\u00f8rsm\u00e5l 5.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s5TQGz2PUo3V0ATP24kriPaDMing",
+  "id": "chatcmpl-7sZciz8wd5AiDwaYClilA8RoB1Tpv",
   "object": "chat.completion",
-  "created": 1693125108,
+  "created": 1693241004,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n   \"answer1\": \"Ved endelig opptelling vil kommunen benytte maskinell telling (skanner)\",\n   \"answer2\": \"Vi har hatt maskinell skanning de siste valg\u00e5rene. Har hatt en sak politisk der vi har delegert ikke prinsipielle saker til r\u00e5dmann som har delegert videre til administrasjonen. Blant annet fordi maskinell telling er benyttet siste \u00e5rene tolket vi dette som en ikke prinsipiell sak.\",\n   \"answer3\": \"Manuell opptelling blir gjort samlet, ikke i valgkretsene.\",\n   \"answer4\": \"Dette blir lagt inn i excel av tellekorps. Disse blir igjen lagret i en egen fysisk mappe.\",\n   \"answer5\": \"Tallene blir kontrollert underveis, og valgresultat.no viser bare det vi legger inn.\",\n   \"answer6\": \"Det er EVA Admin som er v\u00e5rt system, og det er protokoll fra valget som lagres videre. Vi tar ikke noe fra systemet og lagrer for seg elektronisk. Alt er i EVA. Protokollen lagrer vi imidlertid videre i mappe.\",\n   \"answer7\": \"som i sp\u00f8rsm\u00e5l 5.\",\n   \"final_counting_type\": \"maskinell\",\n   \"counting_type_decision_date\": null,\n   \"counting_type_decision_case_number\": null,\n   \"prelimitary_counting__any_counting_in_valgkrets\": false,\n   \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n   \"prelimitary_counting__transfer_to_eva__type\": null,\n   \"prelimitary_counting__is_stored\": true,\n   \"prelimitary_counting__what_is_stored\": \"excel av tellekorps\",\n   \"prelimitary_counting__storage_method\": \"egen fysisk mappe\",\n   \"prelimitary_counting__process_for_control\": true,\n   \"prelimitary_counting__process_for_control_type\": \"Tallene blir kontrollert underveis, og valgresultat.no viser bare det vi legger inn.\",\n   \"final_counting__is_stored\": true,\n   \"final_counting__what_is_stored\": \"protokoll fra valget\",\n   \"final_counting__storage_method\": \"mappe\",\n   \"final_counting__process_for_control\": true,\n   \"final_counting__process_for_control_type\": \"Tallene blir kontrollert underveis, og valgresultat.no viser bare det vi legger inn.\"\n}"
+        "content": "{\n    \"answer1\": \"Ved endelig opptelling vil kommunen benytte maskinell telling (skanner)\",\n    \"answer2\": \"Vi har hatt maskinell skanning de siste valg\u00e5rene. Har hatt en sak politisk der vi har delegert ikke prinsipielle saker til r\u00e5dmann som har delegert videre til administrasjonen. Blant annet fordi maskinell telling er benyttet siste \u00e5rene tolket vi dette som en ikke prinsipiell sak.\",\n    \"answer3\": \"Manuell opptelling blir gjort samlet, ikke i valgkretsene.\",\n    \"answer4\": \"Dette blir lagt inn i excel av tellekorps. Disse blir igjen lagret i en egen fysisk mappe.\",\n    \"answer5\": \"Tallene blir kontrollert underveis, og valgresultat.no viser bare det vi legger inn.\",\n    \"answer6\": \"Det er EVA Admin som er v\u00e5rt system, og det er protokoll fra valget som lagres videre. Vi tar ikke noe fra systemet og lagrer for seg elektronisk. Alt er i EVA. Protokollen lagrer vi imidlertid videre i mappe.\",\n    \"answer7\": \"som i sp\u00f8rsm\u00e5l 5.\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n    \"prelimitary_counting__transfer_to_eva__type\": null,\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"resultatet fra opptellingen\",\n    \"prelimitary_counting__storage_method\": \"i en egen fysisk mappe\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Tallene blir kontrollert underveis\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"protokoll fra valget\",\n    \"final_counting__storage_method\": \"lagres videre i mappe\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Tallene blir kontrollert underveis\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
     "prompt_tokens": 1639,
-    "completion_tokens": 585,
-    "total_tokens": 2224
+    "completion_tokens": 565,
+    "total_tokens": 2204
   }
 }
 ---------------
 {
-   "answer1": "Ved endelig opptelling vil kommunen benytte maskinell telling (skanner)",
-   "answer2": "Vi har hatt maskinell skanning de siste valgårene. Har hatt en sak politisk der vi har delegert ikke prinsipielle saker til rådmann som har delegert videre til administrasjonen. Blant annet fordi maskinell telling er benyttet siste årene tolket vi dette som en ikke prinsipiell sak.",
-   "answer3": "Manuell opptelling blir gjort samlet, ikke i valgkretsene.",
-   "answer4": "Dette blir lagt inn i excel av tellekorps. Disse blir igjen lagret i en egen fysisk mappe.",
-   "answer5": "Tallene blir kontrollert underveis, og valgresultat.no viser bare det vi legger inn.",
-   "answer6": "Det er EVA Admin som er vårt system, og det er protokoll fra valget som lagres videre. Vi tar ikke noe fra systemet og lagrer for seg elektronisk. Alt er i EVA. Protokollen lagrer vi imidlertid videre i mappe.",
-   "answer7": "som i spørsmål 5.",
-   "final_counting_type": "maskinell",
-   "counting_type_decision_date": null,
-   "counting_type_decision_case_number": null,
-   "prelimitary_counting__any_counting_in_valgkrets": false,
-   "prelimitary_counting__transfer_to_eva__do_they_answer": false,
-   "prelimitary_counting__transfer_to_eva__type": null,
-   "prelimitary_counting__is_stored": true,
-   "prelimitary_counting__what_is_stored": "excel av tellekorps",
-   "prelimitary_counting__storage_method": "egen fysisk mappe",
-   "prelimitary_counting__process_for_control": true,
-   "prelimitary_counting__process_for_control_type": "Tallene blir kontrollert underveis, og valgresultat.no viser bare det vi legger inn.",
-   "final_counting__is_stored": true,
-   "final_counting__what_is_stored": "protokoll fra valget",
-   "final_counting__storage_method": "mappe",
-   "final_counting__process_for_control": true,
-   "final_counting__process_for_control_type": "Tallene blir kontrollert underveis, og valgresultat.no viser bare det vi legger inn."
+    "answer1": "Ved endelig opptelling vil kommunen benytte maskinell telling (skanner)",
+    "answer2": "Vi har hatt maskinell skanning de siste valgårene. Har hatt en sak politisk der vi har delegert ikke prinsipielle saker til rådmann som har delegert videre til administrasjonen. Blant annet fordi maskinell telling er benyttet siste årene tolket vi dette som en ikke prinsipiell sak.",
+    "answer3": "Manuell opptelling blir gjort samlet, ikke i valgkretsene.",
+    "answer4": "Dette blir lagt inn i excel av tellekorps. Disse blir igjen lagret i en egen fysisk mappe.",
+    "answer5": "Tallene blir kontrollert underveis, og valgresultat.no viser bare det vi legger inn.",
+    "answer6": "Det er EVA Admin som er vårt system, og det er protokoll fra valget som lagres videre. Vi tar ikke noe fra systemet og lagrer for seg elektronisk. Alt er i EVA. Protokollen lagrer vi imidlertid videre i mappe.",
+    "answer7": "som i spørsmål 5.",
+    "final_counting_type": "maskinell",
+    "counting_type_decision_date": null,
+    "counting_type_decision_case_number": null,
+    "prelimitary_counting__any_counting_in_valgkrets": false,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": false,
+    "prelimitary_counting__transfer_to_eva__type": null,
+    "prelimitary_counting__is_stored": true,
+    "prelimitary_counting__what_is_stored": "resultatet fra opptellingen",
+    "prelimitary_counting__storage_method": "i en egen fysisk mappe",
+    "prelimitary_counting__process_for_control": true,
+    "prelimitary_counting__process_for_control_type": "Tallene blir kontrollert underveis",
+    "final_counting__is_stored": true,
+    "final_counting__what_is_stored": "protokoll fra valget",
+    "final_counting__storage_method": "lagres videre i mappe",
+    "final_counting__process_for_control": true,
+    "final_counting__process_for_control_type": "Tallene blir kontrollert underveis"
 }

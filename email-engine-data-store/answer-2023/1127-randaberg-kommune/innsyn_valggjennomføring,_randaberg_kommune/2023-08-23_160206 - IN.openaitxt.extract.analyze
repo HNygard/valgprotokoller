@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Maskinell\",\n    \"answer2\": \"Vedtatt i Valgstyret i forkant av 2007-valget\",\n    \"answer3\": \"Randaberg har kun en valgkrets. Forel\u00f8pig telling blir registrert i EVA.\",\n    \"answer4\": \"Resultatet fra forel\u00f8pig opptelling blir lagret i EVA. Stemmesedlene fra et valg skal oppbevares ut valgperioden. Valgloven \u00a715-2 (med referanse til arkivloven).\",\n    \"answer5\": \"Her er jeg ikke sikker p\u00e5 hva du sp\u00f8r om. Hele valggjennomf\u00f8ringen blir protokollert i Valgstyrets protokoll, som signeres av valgstyret, og offentliggj\u00f8res i etterkant av valget.\",\n    \"answer6\": \"Se svar for 4) og 5).\",\n    \"answer7\": \"Valgstyrets protokoll.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Maskinell.\",\n    \"answer2\": \"Vedtatt i Valgstyret i forkant av 2007-valget.\",\n    \"answer3\": \"Randaberg har kun en valgkrets. Forel\u00f8pig telling blir registrert i EVA.\",\n    \"answer4\": \"Resultatet fra forel\u00f8pig opptelling blir lagret i EVA. Stemmesedlene fra et valg skal oppbevares ut valgperioden. Valgloven \u00a715-2 (med referanse til arkivloven).\",\n    \"answer5\": \"Her er jeg ikke sikker p\u00e5 hva du sp\u00f8r om. Hele valggjennomf\u00f8ringen blir protokollert i Valgstyrets protokoll, som signeres av valgstyret, og offentliggj\u00f8res i etterkant av valget.\",\n    \"answer6\": \"Se svar for 4) og 5).\",\n    \"answer7\": \"Valgstyrets protokoll.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,30 +21,30 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s4u197eVEJgDCGNLIUDLzmWk8sp8",
+  "id": "chatcmpl-7sZBO8EJ2B1bneGqJtH3qwNJBW0cN",
   "object": "chat.completion",
-  "created": 1693122913,
+  "created": 1693239310,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"answer1\": \"Maskinell\",\n    \"answer2\": \"Vedtatt i Valgstyret i forkant av 2007-valget\",\n    \"answer3\": \"Randaberg har kun en valgkrets. Forel\u00f8pig telling blir registrert i EVA.\",\n    \"answer4\": \"Resultatet fra forel\u00f8pig opptelling blir lagret i EVA. Stemmesedlene fra et valg skal oppbevares ut valgperioden. Valgloven \u00a715-2 (med referanse til arkivloven).\",\n    \"answer5\": \"Her er jeg ikke sikker p\u00e5 hva du sp\u00f8r om. Hele valggjennomf\u00f8ringen blir protokollert i Valgstyrets protokoll, som signeres av valgstyret, og offentliggj\u00f8res i etterkant av valget.\",\n    \"answer6\": \"Se svar for 4) og 5).\",\n    \"answer7\": \"Valgstyrets protokoll\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": true,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"registrert i EVA\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"Resultatet fra forel\u00f8pig opptelling\",\n    \"prelimitary_counting__storage_method\": \"i EVA\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Valgstyrets protokoll\",\n    \"final_counting__is_stored\": false,\n    \"final_counting__what_is_stored\": null,\n    \"final_counting__storage_method\": null,\n    \"final_counting__process_for_control\": false,\n    \"final_counting__process_for_control_type\": null\n}"
+        "content": "{\n    \"answer1\": \"Maskinell.\",\n    \"answer2\": \"Vedtatt i Valgstyret i forkant av 2007-valget.\",\n    \"answer3\": \"Randaberg har kun en valgkrets. Forel\u00f8pig telling blir registrert i EVA.\",\n    \"answer4\": \"Resultatet fra forel\u00f8pig opptelling blir lagret i EVA. Stemmesedlene fra et valg skal oppbevares ut valgperioden. Valgloven \u00a715-2 (med referanse til arkivloven).\",\n    \"answer5\": \"Her er jeg ikke sikker p\u00e5 hva du sp\u00f8r om. Hele valggjennomf\u00f8ringen blir protokollert i Valgstyrets protokoll, som signeres av valgstyret, og offentliggj\u00f8res i etterkant av valget.\",\n    \"answer6\": \"Se svar for 4) og 5).\",\n    \"answer7\": \"Valgstyrets protokoll\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": true,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"registrering i EVA\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"resultatet fra forel\u00f8pig opptelling\",\n    \"prelimitary_counting__storage_method\": \"lagret i EVA\",\n    \"prelimitary_counting__process_for_control\": false,\n    \"prelimitary_counting__process_for_control_type\": null,\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"resultatet fra endelig opptelling\",\n    \"final_counting__storage_method\": \"lagret i EVA\",\n    \"final_counting__process_for_control\": false,\n    \"final_counting__process_for_control_type\": null\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
     "prompt_tokens": 1572,
-    "completion_tokens": 476,
-    "total_tokens": 2048
+    "completion_tokens": 485,
+    "total_tokens": 2057
   }
 }
 ---------------
 {
-    "answer1": "Maskinell",
-    "answer2": "Vedtatt i Valgstyret i forkant av 2007-valget",
+    "answer1": "Maskinell.",
+    "answer2": "Vedtatt i Valgstyret i forkant av 2007-valget.",
     "answer3": "Randaberg har kun en valgkrets. Foreløpig telling blir registrert i EVA.",
     "answer4": "Resultatet fra foreløpig opptelling blir lagret i EVA. Stemmesedlene fra et valg skal oppbevares ut valgperioden. Valgloven §15-2 (med referanse til arkivloven).",
     "answer5": "Her er jeg ikke sikker på hva du spør om. Hele valggjennomføringen blir protokollert i Valgstyrets protokoll, som signeres av valgstyret, og offentliggjøres i etterkant av valget.",
@@ -55,15 +55,15 @@ Chat completion
     "counting_type_decision_case_number": null,
     "prelimitary_counting__any_counting_in_valgkrets": true,
     "prelimitary_counting__transfer_to_eva__do_they_answer": true,
-    "prelimitary_counting__transfer_to_eva__type": "registrert i EVA",
+    "prelimitary_counting__transfer_to_eva__type": "registrering i EVA",
     "prelimitary_counting__is_stored": true,
-    "prelimitary_counting__what_is_stored": "Resultatet fra foreløpig opptelling",
-    "prelimitary_counting__storage_method": "i EVA",
-    "prelimitary_counting__process_for_control": true,
-    "prelimitary_counting__process_for_control_type": "Valgstyrets protokoll",
-    "final_counting__is_stored": false,
-    "final_counting__what_is_stored": null,
-    "final_counting__storage_method": null,
+    "prelimitary_counting__what_is_stored": "resultatet fra foreløpig opptelling",
+    "prelimitary_counting__storage_method": "lagret i EVA",
+    "prelimitary_counting__process_for_control": false,
+    "prelimitary_counting__process_for_control_type": null,
+    "final_counting__is_stored": true,
+    "final_counting__what_is_stored": "resultatet fra endelig opptelling",
+    "final_counting__storage_method": "lagret i EVA",
     "final_counting__process_for_control": false,
     "final_counting__process_for_control_type": null
 }

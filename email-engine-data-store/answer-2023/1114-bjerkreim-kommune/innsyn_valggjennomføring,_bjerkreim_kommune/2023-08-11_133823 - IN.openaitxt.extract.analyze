@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Maskinell, for f\u00f8rste gang.\",\n    \"answer2\": \"Avgj\u00f8relsen om \u00e5 skanne ble tatt administrativt.\",\n    \"answer3\": \"Nei. -\",\n    \"answer4\": \"Vi har kladd p\u00e5 papir liggende litt, tar ev. ogs\u00e5 en utskrift, men arkiverer det ikke utenom m\u00f8teboken (valgprotokollen). Nei\",\n    \"answer5\": \"Vi kontrollerer EVA og m\u00f8teboken.\",\n    \"answer6\": \"Det lagres i m\u00f8teboken. M\u00f8teboken blir journalf\u00f8rt og arkivert.\",\n    \"answer7\": \"Vi kontrollerer EVA og m\u00f8teboken.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Maskinell, for f\u00f8rste gang.\",\n    \"answer2\": \"Avgj\u00f8relsen om \u00e5 skanne ble tatt administrativt.\",\n    \"answer3\": \"Nei\",\n    \"answer4\": \"Vi har kladd p\u00e5 papir liggende litt, tar ev. ogs\u00e5 en utskrift, men arkiverer det ikke utenom m\u00f8teboken (valgprotokollen).\\nPapir? Digitalt dokument? SMS? Blir resultatet journalf\u00f8rt? Nei\",\n    \"answer5\": \"Vi kontrollerer EVA og m\u00f8teboken.\\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet.\",\n    \"answer6\": \"Har tidligere hatt kladd p\u00e5 papir av partifordeling liggende litt, registrering av personstemmer har vi bare hatt i EVA, og s\u00e5 har vi arkivert m\u00f8teboken. Regner med ved maskinell telling at partifordelingen og registreringen av personstemmer bare vil v\u00e6re i EVA, og at vi ev. tar ut noen utskrifter fra EVA skanning, og arkiverer m\u00f8teboken med vedlegg.\\nHvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Det lagres i m\u00f8teboken. Blir resultatet journalf\u00f8rt? M\u00f8teboken blir journalf\u00f8rt og arkivert.\",\n    \"answer7\": \"Vi kontrollerer EVA og m\u00f8teboken.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s5JRnbYRzfERQXSNycD1ORJnf8S7",
+  "id": "chatcmpl-7sZWJ0GgPu6zg9JsvDTrLSGY2YFg7",
   "object": "chat.completion",
-  "created": 1693124489,
+  "created": 1693240607,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"answer1\": \"Maskinell, for f\u00f8rste gang.\",\n  \"answer2\": \"Avgj\u00f8relsen om \u00e5 skanne ble tatt administrativt.\",\n  \"answer3\": \"Nei. -\",\n  \"answer4\": \"Vi har kladd p\u00e5 papir liggende litt, tar ev. ogs\u00e5 en utskrift, men arkiverer det ikke utenom m\u00f8teboken (valgprotokollen). Nei\",\n  \"answer5\": \"Vi kontrollerer EVA og m\u00f8teboken.\",\n  \"answer6\": \"Det lagres i m\u00f8teboken. M\u00f8teboken blir journalf\u00f8rt og arkivert.\",\n  \"answer7\": \"Vi kontrollerer EVA og m\u00f8teboken.\",\n  \"final_counting_type\": \"maskinell\",\n  \"counting_type_decision_date\": null,\n  \"counting_type_decision_case_number\": null,\n  \"prelimitary_counting__any_counting_in_valgkrets\": false,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n  \"prelimitary_counting__transfer_to_eva__type\": null,\n  \"prelimitary_counting__is_stored\": false,\n  \"prelimitary_counting__what_is_stored\": null,\n  \"prelimitary_counting__storage_method\": null,\n  \"prelimitary_counting__process_for_control\": true,\n  \"prelimitary_counting__process_for_control_type\": \"Vi kontrollerer EVA og m\u00f8teboken.\",\n  \"final_counting__is_stored\": true,\n  \"final_counting__what_is_stored\": \"Det lagres i m\u00f8teboken.\",\n  \"final_counting__storage_method\": \"M\u00f8teboken blir journalf\u00f8rt og arkivert.\",\n  \"final_counting__process_for_control\": true,\n  \"final_counting__process_for_control_type\": \"Vi kontrollerer EVA og m\u00f8teboken.\"\n}"
+        "content": "{\n    \"answer1\": \"Maskinell, for f\u00f8rste gang.\",\n    \"answer2\": \"Avgj\u00f8relsen om \u00e5 skanne ble tatt administrativt.\",\n    \"answer3\": \"Nei\",\n    \"answer4\": \"Vi har kladd p\u00e5 papir liggende litt, tar ev. ogs\u00e5 en utskrift, men arkiverer det ikke utenom m\u00f8teboken (valgprotokollen).\\nPapir? Digitalt dokument? SMS? Blir resultatet journalf\u00f8rt? Nei\",\n    \"answer5\": \"Vi kontrollerer EVA og m\u00f8teboken.\\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet.\",\n    \"answer6\": \"Har tidligere hatt kladd p\u00e5 papir av partifordeling liggende litt, registrering av personstemmer har vi bare hatt i EVA, og s\u00e5 har vi arkivert m\u00f8teboken. Regner med ved maskinell telling at partifordelingen og registreringen av personstemmer bare vil v\u00e6re i EVA, og at vi ev. tar ut noen utskrifter fra EVA skanning, og arkiverer m\u00f8teboken med vedlegg.\\nHvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Det lagres i m\u00f8teboken. Blir resultatet journalf\u00f8rt? M\u00f8teboken blir journalf\u00f8rt og arkivert.\",\n    \"answer7\": \"Vi kontrollerer EVA og m\u00f8teboken.\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n    \"prelimitary_counting__transfer_to_eva__type\": null,\n    \"prelimitary_counting__is_stored\": false,\n    \"prelimitary_counting__what_is_stored\": null,\n    \"prelimitary_counting__storage_method\": null,\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Vi kontrollerer EVA og m\u00f8teboken\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"m\u00f8teboken med vedlegg\",\n    \"final_counting__storage_method\": \"Journalf\u00f8res og arkiveres\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Vi kontrollerer EVA og m\u00f8teboken\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1508,
-    "completion_tokens": 431,
-    "total_tokens": 1939
+    "prompt_tokens": 1719,
+    "completion_tokens": 636,
+    "total_tokens": 2355
   }
 }
 ---------------
 {
-  "answer1": "Maskinell, for første gang.",
-  "answer2": "Avgjørelsen om å skanne ble tatt administrativt.",
-  "answer3": "Nei. -",
-  "answer4": "Vi har kladd på papir liggende litt, tar ev. også en utskrift, men arkiverer det ikke utenom møteboken (valgprotokollen). Nei",
-  "answer5": "Vi kontrollerer EVA og møteboken.",
-  "answer6": "Det lagres i møteboken. Møteboken blir journalført og arkivert.",
-  "answer7": "Vi kontrollerer EVA og møteboken.",
-  "final_counting_type": "maskinell",
-  "counting_type_decision_date": null,
-  "counting_type_decision_case_number": null,
-  "prelimitary_counting__any_counting_in_valgkrets": false,
-  "prelimitary_counting__transfer_to_eva__do_they_answer": false,
-  "prelimitary_counting__transfer_to_eva__type": null,
-  "prelimitary_counting__is_stored": false,
-  "prelimitary_counting__what_is_stored": null,
-  "prelimitary_counting__storage_method": null,
-  "prelimitary_counting__process_for_control": true,
-  "prelimitary_counting__process_for_control_type": "Vi kontrollerer EVA og møteboken.",
-  "final_counting__is_stored": true,
-  "final_counting__what_is_stored": "Det lagres i møteboken.",
-  "final_counting__storage_method": "Møteboken blir journalført og arkivert.",
-  "final_counting__process_for_control": true,
-  "final_counting__process_for_control_type": "Vi kontrollerer EVA og møteboken."
+    "answer1": "Maskinell, for første gang.",
+    "answer2": "Avgjørelsen om å skanne ble tatt administrativt.",
+    "answer3": "Nei",
+    "answer4": "Vi har kladd på papir liggende litt, tar ev. også en utskrift, men arkiverer det ikke utenom møteboken (valgprotokollen).\nPapir? Digitalt dokument? SMS? Blir resultatet journalført? Nei",
+    "answer5": "Vi kontrollerer EVA og møteboken.\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet.",
+    "answer6": "Har tidligere hatt kladd på papir av partifordeling liggende litt, registrering av personstemmer har vi bare hatt i EVA, og så har vi arkivert møteboken. Regner med ved maskinell telling at partifordelingen og registreringen av personstemmer bare vil være i EVA, og at vi ev. tar ut noen utskrifter fra EVA skanning, og arkiverer møteboken med vedlegg.\nHvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Det lagres i møteboken. Blir resultatet journalført? Møteboken blir journalført og arkivert.",
+    "answer7": "Vi kontrollerer EVA og møteboken.",
+    "final_counting_type": "maskinell",
+    "counting_type_decision_date": null,
+    "counting_type_decision_case_number": null,
+    "prelimitary_counting__any_counting_in_valgkrets": false,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": false,
+    "prelimitary_counting__transfer_to_eva__type": null,
+    "prelimitary_counting__is_stored": false,
+    "prelimitary_counting__what_is_stored": null,
+    "prelimitary_counting__storage_method": null,
+    "prelimitary_counting__process_for_control": true,
+    "prelimitary_counting__process_for_control_type": "Vi kontrollerer EVA og møteboken",
+    "final_counting__is_stored": true,
+    "final_counting__what_is_stored": "møteboken med vedlegg",
+    "final_counting__storage_method": "Journalføres og arkiveres",
+    "final_counting__process_for_control": true,
+    "final_counting__process_for_control_type": "Vi kontrollerer EVA og møteboken"
 }

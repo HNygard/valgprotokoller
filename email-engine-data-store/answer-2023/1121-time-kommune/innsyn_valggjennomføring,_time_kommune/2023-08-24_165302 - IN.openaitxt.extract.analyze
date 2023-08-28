@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Maskinell telling\",\n    \"answer2\": \"Delegering\",\n    \"answer3\": \"EVA Admin\",\n    \"answer4\": \"Papir\",\n    \"answer5\": \"Ja\",\n    \"answer6\": \"Blir journalf\u00f8rt\",\n    \"answer7\": \"Ja\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Maskinell telling\",\n    \"answer2\": \"Delegering\",\n    \"answer3\": \"Opptellingen blir gjort i valgkretsene og resultatet blir overf\u00f8rt til EVA Admin\",\n    \"answer4\": \"Det blir lagret i m\u00f8teboka fra stemmestyrene, og det blir journalf\u00f8rt\",\n    \"answer5\": \"Ja, kommunen har rutiner for \u00e5 kontrollere resultatet av forel\u00f8pig opptelling\",\n    \"answer6\": \"Resultatet blir lagret utenom EVA Admin/EVA Skanning og blir journalf\u00f8rt\",\n    \"answer7\": \"Ja, kommunen har rutiner for kontroll av endelig opptelling mot publiserte resultater\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7sDKhujR9Yx5lMe8zvofHrB2o6LJW",
+  "id": "chatcmpl-7sZWs6PQIyFRADHxQUp3er2iTUb0i",
   "object": "chat.completion",
-  "created": 1693155319,
+  "created": 1693240642,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"answer1\": \"Maskinell telling\",\n    \"answer2\": \"Delegering\",\n    \"answer3\": \"EVA Admin\",\n    \"answer4\": \"Papir\",\n    \"answer5\": \"Ja\",\n    \"answer6\": \"Blir journalf\u00f8rt\",\n    \"answer7\": \"Ja\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n    \"prelimitary_counting__transfer_to_eva__type\": null,\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"resultatet fra opptellingen\",\n    \"prelimitary_counting__storage_method\": \"papir\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"kontroll mot valgresultat-siden til Valgdirektoratet, valgprotokoll og medier\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"resultatet fra endelig opptelling\",\n    \"final_counting__storage_method\": \"ukjent\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"kontroll mot publisert resultat\"\n}"
+        "content": "{\n    \"answer1\": \"Maskinell telling\",\n    \"answer2\": \"Delegering\",\n    \"answer3\": \"Opptellingen blir gjort i valgkretsene og resultatet blir overf\u00f8rt til EVA Admin\",\n    \"answer4\": \"Det blir lagret i m\u00f8teboka fra stemmestyrene, og det blir journalf\u00f8rt\",\n    \"answer5\": \"Ja, kommunen har rutiner for \u00e5 kontrollere resultatet av forel\u00f8pig opptelling\",\n    \"answer6\": \"Resultatet blir lagret utenom EVA Admin/EVA Skanning og blir journalf\u00f8rt\",\n    \"answer7\": \"Ja, kommunen har rutiner for kontroll av endelig opptelling mot publiserte resultater\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": true,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"Overf\u00f8res til EVA Admin\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"M\u00f8teboka fra stemmestyrene\",\n    \"prelimitary_counting__storage_method\": \"Journalf\u00f8ring\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Kommunen har rutiner for \u00e5 kontrollere resultatet av forel\u00f8pig opptelling\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"Resultatet av endelig opptelling\",\n    \"final_counting__storage_method\": \"Journalf\u00f8ring\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Kommunen har rutiner for kontroll av endelig opptelling mot publiserte resultater\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1417,
-    "completion_tokens": 350,
-    "total_tokens": 1767
+    "prompt_tokens": 1516,
+    "completion_tokens": 475,
+    "total_tokens": 1991
   }
 }
 ---------------
 {
     "answer1": "Maskinell telling",
     "answer2": "Delegering",
-    "answer3": "EVA Admin",
-    "answer4": "Papir",
-    "answer5": "Ja",
-    "answer6": "Blir journalført",
-    "answer7": "Ja",
+    "answer3": "Opptellingen blir gjort i valgkretsene og resultatet blir overført til EVA Admin",
+    "answer4": "Det blir lagret i møteboka fra stemmestyrene, og det blir journalført",
+    "answer5": "Ja, kommunen har rutiner for å kontrollere resultatet av foreløpig opptelling",
+    "answer6": "Resultatet blir lagret utenom EVA Admin/EVA Skanning og blir journalført",
+    "answer7": "Ja, kommunen har rutiner for kontroll av endelig opptelling mot publiserte resultater",
     "final_counting_type": "maskinell",
     "counting_type_decision_date": null,
     "counting_type_decision_case_number": null,
-    "prelimitary_counting__any_counting_in_valgkrets": false,
-    "prelimitary_counting__transfer_to_eva__do_they_answer": false,
-    "prelimitary_counting__transfer_to_eva__type": null,
+    "prelimitary_counting__any_counting_in_valgkrets": true,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": true,
+    "prelimitary_counting__transfer_to_eva__type": "Overføres til EVA Admin",
     "prelimitary_counting__is_stored": true,
-    "prelimitary_counting__what_is_stored": "resultatet fra opptellingen",
-    "prelimitary_counting__storage_method": "papir",
+    "prelimitary_counting__what_is_stored": "Møteboka fra stemmestyrene",
+    "prelimitary_counting__storage_method": "Journalføring",
     "prelimitary_counting__process_for_control": true,
-    "prelimitary_counting__process_for_control_type": "kontroll mot valgresultat-siden til Valgdirektoratet, valgprotokoll og medier",
+    "prelimitary_counting__process_for_control_type": "Kommunen har rutiner for å kontrollere resultatet av foreløpig opptelling",
     "final_counting__is_stored": true,
-    "final_counting__what_is_stored": "resultatet fra endelig opptelling",
-    "final_counting__storage_method": "ukjent",
+    "final_counting__what_is_stored": "Resultatet av endelig opptelling",
+    "final_counting__storage_method": "Journalføring",
     "final_counting__process_for_control": true,
-    "final_counting__process_for_control_type": "kontroll mot publisert resultat"
+    "final_counting__process_for_control_type": "Kommunen har rutiner for kontroll av endelig opptelling mot publiserte resultater"
 }

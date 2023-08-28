@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Manuell\",\n    \"answer2\": \"Valgstyret\",\n    \"answer3\": \"Berlev\u00e5g kommune har kun en valgkrets\",\n    \"answer4\": \"Det lagres i v\u00e5rt arkivsystem public 360, protokollene legges ut p\u00e5 v\u00e5r hjemmeside.\",\n    \"answer5\": \"Ja, En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet. Opptellingen skal ha to like resultat f\u00f8r det blir godkjent.\",\n    \"answer6\": \"Det lagres i public 360.\",\n    \"answer7\": \"Samme som sp\u00f8rsm\u00e5l 5.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Manuell\",\n    \"answer2\": \"Valgstyret\",\n    \"answer3\": \"Berlev\u00e5g kommune har kun en valgkrets\",\n    \"answer4\": \"Det lagres i v\u00e5rt arkivsystem public 360, protokollene legges ut p\u00e5 v\u00e5r hjemmeside.\",\n    \"answer5\": \"Ja\\r\\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet. Opptellingen skal ha to like resultat f\u00f8r det blir godkjent.\",\n    \"answer6\": \"Det lagres i public 360.\",\n    \"answer7\": \"Samme som sp\u00f8rsm\u00e5l 5.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,24 +21,24 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7sDFfZW73vcNBkoXzW8AWzqNS56ZV",
+  "id": "chatcmpl-7sZmsl7XHRJhs28X8ktsarVPTiVdK",
   "object": "chat.completion",
-  "created": 1693155007,
+  "created": 1693241634,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"answer1\": \"Manuell\",\n    \"answer2\": \"Valgstyret\",\n    \"answer3\": \"Berlev\u00e5g kommune har kun en valgkrets\",\n    \"answer4\": \"Det lagres i v\u00e5rt arkivsystem public 360, protokollene legges ut p\u00e5 v\u00e5r hjemmeside.\",\n    \"answer5\": \"Ja, En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet. Opptellingen skal ha to like resultat f\u00f8r det blir godkjent.\",\n    \"answer6\": \"Det lagres i public 360.\",\n    \"answer7\": \"Samme som sp\u00f8rsm\u00e5l 5.\",\n    \"final_counting_type\": \"Manuell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"Det blir ikke oppgitt i svaret.\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"Resultatene blir lagret i arkivsystemet public 360, protokollene blir ogs\u00e5 offentliggjort p\u00e5 kommunes hjemmeside.\",\n    \"prelimitary_counting__storage_method\": \"Digitalt i arkivsystemet public 360 og p\u00e5 nett.\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Rutinene inneb\u00e6rer en kontroll av resultatet opp mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet, i valgprotokollen og i mediene.\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"Resultatet blir lagret i arkivsystemet public 360.\",\n    \"final_counting__storage_method\": \"Digitalt i arkivsystemet public 360.\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Rutinene inneb\u00e6rer en kontroll av resultatet opp mot det som blir publisert.\"\n}"
+        "content": "{\n    \"answer1\": \"Manuell\",\n    \"answer2\": \"Valgstyret\",\n    \"answer3\": \"Berlev\u00e5g kommune har kun en valgkrets\",\n    \"answer4\": \"Det lagres i v\u00e5rt arkivsystem public 360, protokollene legges ut p\u00e5 v\u00e5r hjemmeside.\",\n    \"answer5\": \"Ja\\r\\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet. Opptellingen skal ha to like resultat f\u00f8r det blir godkjent.\",\n    \"answer6\": \"Det lagres i public 360.\",\n    \"answer7\": \"Samme som sp\u00f8rsm\u00e5l 5.\",\n    \"final_counting_type\": \"Manuell\",\n    \"counting_type_decision_date\": \"\",\n    \"counting_type_decision_case_number\": \"\",\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"N/A\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"Opptelling fra valgkretsen\",\n    \"prelimitary_counting__storage_method\": \"Arkivsystem public 360\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Valgresultat-siden til Valgdirektoratet, valgprotokoll, medier\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"Opptelling fra endelig opptelling\",\n    \"final_counting__storage_method\": \"Arkivsystem public 360\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Valgresultat-siden til Valgdirektoratet, valgprotokoll, medier\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1519,
-    "completion_tokens": 543,
-    "total_tokens": 2062
+    "prompt_tokens": 1520,
+    "completion_tokens": 471,
+    "total_tokens": 1991
   }
 }
 ---------------
@@ -47,23 +47,23 @@ Chat completion
     "answer2": "Valgstyret",
     "answer3": "Berlevåg kommune har kun en valgkrets",
     "answer4": "Det lagres i vårt arkivsystem public 360, protokollene legges ut på vår hjemmeside.",
-    "answer5": "Ja, En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet. Opptellingen skal ha to like resultat før det blir godkjent.",
+    "answer5": "Ja\r\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet. Opptellingen skal ha to like resultat før det blir godkjent.",
     "answer6": "Det lagres i public 360.",
     "answer7": "Samme som spørsmål 5.",
     "final_counting_type": "Manuell",
-    "counting_type_decision_date": null,
-    "counting_type_decision_case_number": null,
+    "counting_type_decision_date": "",
+    "counting_type_decision_case_number": "",
     "prelimitary_counting__any_counting_in_valgkrets": false,
     "prelimitary_counting__transfer_to_eva__do_they_answer": true,
-    "prelimitary_counting__transfer_to_eva__type": "Det blir ikke oppgitt i svaret.",
+    "prelimitary_counting__transfer_to_eva__type": "N/A",
     "prelimitary_counting__is_stored": true,
-    "prelimitary_counting__what_is_stored": "Resultatene blir lagret i arkivsystemet public 360, protokollene blir også offentliggjort på kommunes hjemmeside.",
-    "prelimitary_counting__storage_method": "Digitalt i arkivsystemet public 360 og på nett.",
+    "prelimitary_counting__what_is_stored": "Opptelling fra valgkretsen",
+    "prelimitary_counting__storage_method": "Arkivsystem public 360",
     "prelimitary_counting__process_for_control": true,
-    "prelimitary_counting__process_for_control_type": "Rutinene innebærer en kontroll av resultatet opp mot det som er synlig på valgresultat-siden til Valgdirektoratet, i valgprotokollen og i mediene.",
+    "prelimitary_counting__process_for_control_type": "Valgresultat-siden til Valgdirektoratet, valgprotokoll, medier",
     "final_counting__is_stored": true,
-    "final_counting__what_is_stored": "Resultatet blir lagret i arkivsystemet public 360.",
-    "final_counting__storage_method": "Digitalt i arkivsystemet public 360.",
+    "final_counting__what_is_stored": "Opptelling fra endelig opptelling",
+    "final_counting__storage_method": "Arkivsystem public 360",
     "final_counting__process_for_control": true,
-    "final_counting__process_for_control_type": "Rutinene innebærer en kontroll av resultatet opp mot det som blir publisert."
+    "final_counting__process_for_control_type": "Valgresultat-siden til Valgdirektoratet, valgprotokoll, medier"
 }

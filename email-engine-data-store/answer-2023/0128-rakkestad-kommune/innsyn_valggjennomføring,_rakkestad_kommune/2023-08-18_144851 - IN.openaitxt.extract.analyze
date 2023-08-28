@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n   \"any_answers_found\": true,\n   \"answer1\": \"Rakkestad kommune foretar maskinell endelig telling av valgresultatet.\",\n   \"answer2\": \"Valgstyret behandlet opptelling av stemmesedler - forh\u00e5ndsstemmer og valgtingstemmer i sak 12/23, 07.06.2023.\",\n   \"answer3\": \"Rakkestad kommune har sentral opptelling, ikke i valgkrets.\",\n   \"answer4\": \"Resultatet f\u00f8res p\u00e5 papir f\u00f8r det legges inn i EVA. Papirdokumentet journalf\u00f8res digitalt.\",\n   \"answer5\": \"Valgresultat.no: Sjekker mot innsendt resultat.\\r\\nValgprotokoll: Manuell telling telles to ganger. Sammenlignes med maskinell telling. Stikkpr\u00f8vekontroll i maskinell telling etter rutine fra Valgdirektoratet.\",\n   \"answer6\": \"Valgstyrets godkjente valgprotokoll journalf\u00f8res. Godkjennelse av kommunestyrevalget legges frem i det nye kommunestyrets f\u00f8rste m\u00f8te - her fremg\u00e5r beregning av listestemmetall og antall mandater til listene, beregning av stemmetillegg og personstemmer samt valgte representanter. Journalf\u00f8res digitalt.\",\n   \"answer7\": \"Valgresultat.no: Sjekker mot innsendt resultat.\\r\\nValgprotokoll: Sammenlignes med manuell telling. Stikkpr\u00f8vekontroll i maskinell telling etter rutine fra Valgdirektoratet. Valgdirektoratet har laget veiledning for manuell kontroll av beregning av valgoppgj\u00f8ret som Rakkestad kommune skal f\u00f8lge.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Rakkestad kommune foretar maskinell endelig telling av valgresultatet.\",\n    \"answer2\": \"Valgstyret behandlet opptelling av stemmesedler - forh\u00e5ndsstemmer og valgtingstemmer i sak 12/23, 07.06.2023.\",\n    \"answer3\": \"Rakkestad kommune har sentral opptelling, ikke i valgkrets.\",\n    \"answer4\": \"Resultatet f\u00f8res p\u00e5 papir f\u00f8r det legges inn i EVA. Papirdokumentet journalf\u00f8res digitalt.\",\n    \"answer5\": \"Valgresultat.no: Sjekker mot innsendt resultat.\\nValgprotokoll: Manuell telling telles to ganger. Sammenlignes med maskinell telling. Stikkpr\u00f8vekontroll i maskinell telling etter rutine fra Valgdirektoratet.\",\n    \"answer6\": \"Valgstyrets godkjente valgprotokoll journalf\u00f8res. Godkjennelse av kommunestyrevalget legges frem i det nye kommunestyrets f\u00f8rste m\u00f8te - her fremg\u00e5r beregning av listestemmetall og antall mandater til listene, beregning av stemmetillegg og personstemmer samt valgte representanter. Journalf\u00f8res digitalt.\",\n    \"answer7\": \"Valgresultat.no: Sjekker mot innsendt resultat.\\nValgprotokoll: Sammenlignes med manuell telling. Stikkpr\u00f8vekontroll i maskinell telling etter rutine fra Valgdirektoratet. Valgdirektoratet har laget veiledning for manuell kontroll av beregning av valgoppgj\u00f8ret som Rakkestad kommune skal f\u00f8lge.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s4vzqz50tdd8c5gnjkWzuaKTlA8W",
+  "id": "chatcmpl-7sZCokn65tPr6OQobK4bFDzEIpuW4",
   "object": "chat.completion",
-  "created": 1693123035,
+  "created": 1693239398,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n   \"answer1\": \"Rakkestad kommune foretar maskinell endelig telling av valgresultatet.\",\n   \"answer2\": \"Valgstyret behandlet opptelling av stemmesedler - forh\u00e5ndsstemmer og valgtingstemmer i sak 12/23, 07.06.2023.\",\n   \"answer3\": \"Rakkestad kommune har sentral opptelling, ikke i valgkrets.\",\n   \"answer4\": \"Resultatet f\u00f8res p\u00e5 papir f\u00f8r det legges inn i EVA. Papirdokumentet journalf\u00f8res digitalt.\",\n   \"answer5\": \"Valgresultat.no: Sjekker mot innsendt resultat.\\r\\nValgprotokoll: Manuell telling telles to ganger. Sammenlignes med maskinell telling. Stikkpr\u00f8vekontroll i maskinell telling etter rutine fra Valgdirektoratet.\",\n   \"answer6\": \"Valgstyrets godkjente valgprotokoll journalf\u00f8res. Godkjennelse av kommunestyrevalget legges frem i det nye kommunestyrets f\u00f8rste m\u00f8te - her fremg\u00e5r beregning av listestemmetall og antall mandater til listene, beregning av stemmetillegg og personstemmer samt valgte representanter. Journalf\u00f8res digitalt.\",\n   \"answer7\": \"Valgresultat.no: Sjekker mot innsendt resultat.\\r\\nValgprotokoll: Sammenlignes med manuell telling. Stikkpr\u00f8vekontroll i maskinell telling etter rutine fra Valgdirektoratet. Valgdirektoratet har laget veiledning for manuell kontroll av beregning av valgoppgj\u00f8ret som Rakkestad kommune skal f\u00f8lge.\",\n   \"final_counting_type\": \"maskinell\",\n   \"counting_type_decision_date\": null,\n   \"counting_type_decision_case_number\": null,\n   \"prelimitary_counting__any_counting_in_valgkrets\": false,\n   \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n   \"prelimitary_counting__transfer_to_eva__type\": \"N/A\",\n   \"prelimitary_counting__is_stored\": true,\n   \"prelimitary_counting__what_is_stored\": \"Resultatet fra forel\u00f8pig opptelling f\u00f8rt p\u00e5 papir\",\n   \"prelimitary_counting__storage_method\": \"papir og digitalt\",\n   \"prelimitary_counting__process_for_control\": true,\n   \"prelimitary_counting__process_for_control_type\": \"Manuell telling telles to ganger og sammenlignes med maskinell telling. Stikkpr\u00f8vekontroll i maskinell telling etter rutine fra Valgdirektoratet.\",\n   \"final_counting__is_stored\": true,\n   \"final_counting__what_is_stored\": \"Valgstyrets godkjente valgprotokoll\",\n   \"final_counting__storage_method\": \"journalf\u00f8res digitalt\",\n   \"final_counting__process_for_control\": true,\n   \"final_counting__process_for_control_type\": \"Sammenlignes med manuell telling. Stikkpr\u00f8vekontroll i maskinell telling etter rutine fra Valgdirektoratet. Valgdirektoratet har laget veiledning for manuell kontroll av beregning av valgoppgj\u00f8ret som Rakkestad kommune skal f\u00f8lge.\"\n}"
+        "content": "{\n    \"answer1\": \"Rakkestad kommune foretar maskinell endelig telling av valgresultatet.\",\n    \"answer2\": \"Valgstyret behandlet opptelling av stemmesedler - forh\u00e5ndsstemmer og valgtingstemmer i sak 12/23, 07.06.2023.\",\n    \"answer3\": \"Rakkestad kommune har sentral opptelling, ikke i valgkrets.\",\n    \"answer4\": \"Resultatet f\u00f8res p\u00e5 papir f\u00f8r det legges inn i EVA. Papirdokumentet journalf\u00f8res digitalt.\",\n    \"answer5\": \"Valgresultat.no: Sjekker mot innsendt resultat.\\nValgprotokoll: Manuell telling telles to ganger. Sammenlignes med maskinell telling. Stikkpr\u00f8vekontroll i maskinell telling etter rutine fra Valgdirektoratet.\",\n    \"answer6\": \"Valgstyrets godkjente valgprotokoll journalf\u00f8res. Godkjennelse av kommunestyrevalget legges frem i det nye kommunestyrets f\u00f8rste m\u00f8te - her fremg\u00e5r beregning av listestemmetall og antall mandater til listene, beregning av stemmetillegg og personstemmer samt valgte representanter. Journalf\u00f8res digitalt.\",\n    \"answer7\": \"Valgresultat.no: Sjekker mot innsendt resultat.\\nValgprotokoll: Sammenlignes med manuell telling. Stikkpr\u00f8vekontroll i maskinell telling etter rutine fra Valgdirektoratet. Valgdirektoratet har laget veiledning for manuell kontroll av beregning av valgoppgj\u00f8ret som Rakkestad kommune skal f\u00f8lge.\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": \"2023-06-07\",\n    \"counting_type_decision_case_number\": \"12/23\",\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"The answer is not provided\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"Resultat p\u00e5 papir\",\n    \"prelimitary_counting__storage_method\": \"Digital journalf\u00f8ring\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Rutiner for \u00e5 sammenligne og kontrollere mot flere kilder\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"Valgstyrets godkjente valgprotokoll\",\n    \"final_counting__storage_method\": \"Digital journalf\u00f8ring\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Sammenligning med manuell telling og stikkpr\u00f8vekontroll i maskinell telling etter rutine fra Valgdirektoratet\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1756,
-    "completion_tokens": 790,
-    "total_tokens": 2546
+    "prompt_tokens": 1754,
+    "completion_tokens": 722,
+    "total_tokens": 2476
   }
 }
 ---------------
 {
-   "answer1": "Rakkestad kommune foretar maskinell endelig telling av valgresultatet.",
-   "answer2": "Valgstyret behandlet opptelling av stemmesedler - forhåndsstemmer og valgtingstemmer i sak 12/23, 07.06.2023.",
-   "answer3": "Rakkestad kommune har sentral opptelling, ikke i valgkrets.",
-   "answer4": "Resultatet føres på papir før det legges inn i EVA. Papirdokumentet journalføres digitalt.",
-   "answer5": "Valgresultat.no: Sjekker mot innsendt resultat.\r\nValgprotokoll: Manuell telling telles to ganger. Sammenlignes med maskinell telling. Stikkprøvekontroll i maskinell telling etter rutine fra Valgdirektoratet.",
-   "answer6": "Valgstyrets godkjente valgprotokoll journalføres. Godkjennelse av kommunestyrevalget legges frem i det nye kommunestyrets første møte - her fremgår beregning av listestemmetall og antall mandater til listene, beregning av stemmetillegg og personstemmer samt valgte representanter. Journalføres digitalt.",
-   "answer7": "Valgresultat.no: Sjekker mot innsendt resultat.\r\nValgprotokoll: Sammenlignes med manuell telling. Stikkprøvekontroll i maskinell telling etter rutine fra Valgdirektoratet. Valgdirektoratet har laget veiledning for manuell kontroll av beregning av valgoppgjøret som Rakkestad kommune skal følge.",
-   "final_counting_type": "maskinell",
-   "counting_type_decision_date": null,
-   "counting_type_decision_case_number": null,
-   "prelimitary_counting__any_counting_in_valgkrets": false,
-   "prelimitary_counting__transfer_to_eva__do_they_answer": true,
-   "prelimitary_counting__transfer_to_eva__type": "N/A",
-   "prelimitary_counting__is_stored": true,
-   "prelimitary_counting__what_is_stored": "Resultatet fra foreløpig opptelling ført på papir",
-   "prelimitary_counting__storage_method": "papir og digitalt",
-   "prelimitary_counting__process_for_control": true,
-   "prelimitary_counting__process_for_control_type": "Manuell telling telles to ganger og sammenlignes med maskinell telling. Stikkprøvekontroll i maskinell telling etter rutine fra Valgdirektoratet.",
-   "final_counting__is_stored": true,
-   "final_counting__what_is_stored": "Valgstyrets godkjente valgprotokoll",
-   "final_counting__storage_method": "journalføres digitalt",
-   "final_counting__process_for_control": true,
-   "final_counting__process_for_control_type": "Sammenlignes med manuell telling. Stikkprøvekontroll i maskinell telling etter rutine fra Valgdirektoratet. Valgdirektoratet har laget veiledning for manuell kontroll av beregning av valgoppgjøret som Rakkestad kommune skal følge."
+    "answer1": "Rakkestad kommune foretar maskinell endelig telling av valgresultatet.",
+    "answer2": "Valgstyret behandlet opptelling av stemmesedler - forhåndsstemmer og valgtingstemmer i sak 12/23, 07.06.2023.",
+    "answer3": "Rakkestad kommune har sentral opptelling, ikke i valgkrets.",
+    "answer4": "Resultatet føres på papir før det legges inn i EVA. Papirdokumentet journalføres digitalt.",
+    "answer5": "Valgresultat.no: Sjekker mot innsendt resultat.\nValgprotokoll: Manuell telling telles to ganger. Sammenlignes med maskinell telling. Stikkprøvekontroll i maskinell telling etter rutine fra Valgdirektoratet.",
+    "answer6": "Valgstyrets godkjente valgprotokoll journalføres. Godkjennelse av kommunestyrevalget legges frem i det nye kommunestyrets første møte - her fremgår beregning av listestemmetall og antall mandater til listene, beregning av stemmetillegg og personstemmer samt valgte representanter. Journalføres digitalt.",
+    "answer7": "Valgresultat.no: Sjekker mot innsendt resultat.\nValgprotokoll: Sammenlignes med manuell telling. Stikkprøvekontroll i maskinell telling etter rutine fra Valgdirektoratet. Valgdirektoratet har laget veiledning for manuell kontroll av beregning av valgoppgjøret som Rakkestad kommune skal følge.",
+    "final_counting_type": "maskinell",
+    "counting_type_decision_date": "2023-06-07",
+    "counting_type_decision_case_number": "12/23",
+    "prelimitary_counting__any_counting_in_valgkrets": false,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": true,
+    "prelimitary_counting__transfer_to_eva__type": "The answer is not provided",
+    "prelimitary_counting__is_stored": true,
+    "prelimitary_counting__what_is_stored": "Resultat på papir",
+    "prelimitary_counting__storage_method": "Digital journalføring",
+    "prelimitary_counting__process_for_control": true,
+    "prelimitary_counting__process_for_control_type": "Rutiner for å sammenligne og kontrollere mot flere kilder",
+    "final_counting__is_stored": true,
+    "final_counting__what_is_stored": "Valgstyrets godkjente valgprotokoll",
+    "final_counting__storage_method": "Digital journalføring",
+    "final_counting__process_for_control": true,
+    "final_counting__process_for_control_type": "Sammenligning med manuell telling og stikkprøvekontroll i maskinell telling etter rutine fra Valgdirektoratet"
 }

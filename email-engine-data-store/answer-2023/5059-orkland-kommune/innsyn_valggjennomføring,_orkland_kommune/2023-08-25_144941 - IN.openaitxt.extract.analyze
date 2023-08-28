@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n  \"any_answers_found\": true,\n  \"answer1\": \"Maskinell endelig telling.\",\n  \"answer2\": \"Sak 1/23 - valgstyrets delegering til kommunedirekt\u00f8ren. Vi har benyttet maskinell telling siden 2009.\",\n  \"answer3\": \"Forel\u00f8pig telling skjer i valgkretsene. Ansvarlig i valglokalet legger inn resultatet i EVA. I tillegg tar han et bilde p\u00e5 SMS av \\\"kladden\\\", der antall stemmer pr. parti er lagt inn. Sender dette p\u00e5 SMS til valgansvarlig. Dette for kontroll at riktig tall er registrert i EVA.\",\n  \"answer4\": \"Skal skannes og legges i sak og arkivsystemet/journalf\u00f8res. Oppbevarer papiroriginalen i arkivet for valg.\",\n  \"answer5\": \"Det vi legger inn i EVA skal v\u00e6re kontrollert av oss. Valgdirektoratet henter ut opplysninger derfra.\",\n  \"answer6\": \"Valgstyrets m\u00f8tebok underskrives av valgstyret,  skannes og legges i sak og arkivsystemet/journalf\u00f8res. Oppbevarer papiroriginalen i arkivet for valg.\",\n  \"answer7\": \"Maskinell telling overf\u00f8res fra skannerprogrammet til EVA-admin. Vi sammenligner forel\u00f8pig og endelig telling. N\u00e5r endelig telling er ferdig,  foretar vi valgoppgj\u00f8ret. Det er direktoratet som henter ut og publiserer dataene fra EVA.  Vi skal sjekke om dette blir publisert.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Maskinell endelig telling.\",\n    \"answer2\": \"Sak 1/23 - valgstyrets delegering til kommunedirekt\u00f8ren. Vi har benyttet maskinell telling siden 2009.\",\n    \"answer3\": \"Forel\u00f8pig telling skjer i valgkretsene. Ansvarlig i valglokalet legger inn resultatet i EVA. I tillegg tar han et bilde p\u00e5 SMS av 'kladden', der antall stemmer pr. parti er lagt inn. Sender dette p\u00e5 SMS til valgansvarlig. Dette for kontroll at riktig tall er registrert i EVA.\",\n    \"answer4\": \"Skal skannes og legges i sak og arkivsystemet/journalf\u00f8res. Oppbevarer papiroriginalen i arkivet for valg.\",\n    \"answer5\": \"Det vi legger inn i EVA skal v\u00e6re kontrollert av oss. Valgdirektoratet henter ut opplysninger derfra.\",\n    \"answer6\": \"Valgstyrets m\u00f8tebok underskrives av valgstyret, skannes og legges i sak og arkivsystemet/journalf\u00f8res. Oppbevarer papiroriginalen i arkivet for valg.\",\n    \"answer7\": \"Maskinell telling overf\u00f8res fra skannerprogrammet til EVA-admin. Vi sammenligner forel\u00f8pig og endelig telling. N\u00e5r endelig telling er ferdig, foretar vi valgoppgj\u00f8ret. Det er direktoratet som henter ut og publiserer dataene fra EVA. Vi skal sjekke om dette blir publisert.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7sDLK8Ip1siOED0KM0sPnVukJ5qod",
+  "id": "chatcmpl-7sZXqH6s5CRhW7Vg6vOonzKBaMPMn",
   "object": "chat.completion",
-  "created": 1693155358,
+  "created": 1693240702,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"answer1\": \"Maskinell endelig telling.\",\n  \"answer2\": \"Sak 1/23 - valgstyrets delegering til kommunedirekt\u00f8ren. Vi har benyttet maskinell telling siden 2009.\",\n  \"answer3\": \"Forel\u00f8pig telling skjer i valgkretsene. Ansvarlig i valglokalet legger inn resultatet i EVA. I tillegg tar han et bilde p\u00e5 SMS av \\\"kladden\\\", der antall stemmer pr. parti er lagt inn. Sender dette p\u00e5 SMS til valgansvarlig. Dette for kontroll at riktig tall er registrert i EVA.\",\n  \"answer4\": \"Skal skannes og legges i sak og arkivsystemet/journalf\u00f8res. Oppbevarer papiroriginalen i arkivet for valg.\",\n  \"answer5\": \"Det vi legger inn i EVA skal v\u00e6re kontrollert av oss. Valgdirektoratet henter ut opplysninger derfra.\",\n  \"answer6\": \"Valgstyrets m\u00f8tebok underskrives av valgstyret, skannes og legges i sak og arkivsystemet/journalf\u00f8res. Oppbevarer papiroriginalen i arkivet for valg.\",\n  \"answer7\": \"Maskinell telling overf\u00f8res fra skannerprogrammet til EVA-admin. Vi sammenligner forel\u00f8pig og endelig telling. N\u00e5r endelig telling er ferdig, foretar vi valgoppgj\u00f8ret. Det er direktoratet som henter ut og publiserer dataene fra EVA. Vi skal sjekke om dette blir publisert.\",\n  \"final_counting_type\": \"maskinell\",\n  \"counting_type_decision_date\": null,\n  \"counting_type_decision_case_number\": null,\n  \"prelimitary_counting__any_counting_in_valgkrets\": true,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n  \"prelimitary_counting__transfer_to_eva__type\": \"SMS\",\n  \"prelimitary_counting__is_stored\": true,\n  \"prelimitary_counting__what_is_stored\": \"Resultatet fra forel\u00f8pig telling\",\n  \"prelimitary_counting__storage_method\": \"Skannes og lagres i sak og arkivsystemet\",\n  \"prelimitary_counting__process_for_control\": true,\n  \"prelimitary_counting__process_for_control_type\": \"Kontrollerer resultatet mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet\",\n  \"final_counting__is_stored\": true,\n  \"final_counting__what_is_stored\": \"Resultatet fra endelig telling\",\n  \"final_counting__storage_method\": \"Skannes og lagres i sak og arkivsystemet\",\n  \"final_counting__process_for_control\": true,\n  \"final_counting__process_for_control_type\": \"Kontrollerer endelig opptelling mot resultat som blir publisert\"\n}"
+        "content": "{\n    \"answer1\": \"Maskinell endelig telling.\",\n    \"answer2\": \"Sak 1/23 - valgstyrets delegering til kommunedirekt\u00f8ren. Vi har benyttet maskinell telling siden 2009.\",\n    \"answer3\": \"Forel\u00f8pig telling skjer i valgkretsene. Ansvarlig i valglokalet legger inn resultatet i EVA. I tillegg tar han et bilde p\u00e5 SMS av 'kladden', der antall stemmer pr. parti er lagt inn. Sender dette p\u00e5 SMS til valgansvarlig. Dette for kontroll at riktig tall er registrert i EVA.\",\n    \"answer4\": \"Skal skannes og legges i sak og arkivsystemet/journalf\u00f8res. Oppbevarer papiroriginalen i arkivet for valg.\",\n    \"answer5\": \"Det vi legger inn i EVA skal v\u00e6re kontrollert av oss. Valgdirektoratet henter ut opplysninger derfra.\",\n    \"answer6\": \"Valgstyrets m\u00f8tebok underskrives av valgstyret, skannes og legges i sak og arkivsystemet/journalf\u00f8res. Oppbevarer papiroriginalen i arkivet for valg.\",\n    \"answer7\": \"Maskinell telling overf\u00f8res fra skannerprogrammet til EVA-admin. Vi sammenligner forel\u00f8pig og endelig telling. N\u00e5r endelig telling er ferdig, foretar vi valgoppgj\u00f8ret. Det er direktoratet som henter ut og publiserer dataene fra EVA. Vi skal sjekke om dette blir publisert.\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": true,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"SMS\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"Skal skannes og legges i sak og arkivsystemet/journalf\u00f8res. Oppbevarer papiroriginalen i arkivet for valg.\",\n    \"prelimitary_counting__storage_method\": \"Papir\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Vi kontrollerer resultatet av forel\u00f8pig opptelling mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet, i valgprotokoll, i medier og lignende.\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"Valgstyrets m\u00f8tebok underskrives av valgstyret, skannes og legges i sak og arkivsystemet/journalf\u00f8res. Oppbevarer papiroriginalen i arkivet for valg.\",\n    \"final_counting__storage_method\": \"Papir\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Vi har rutiner for kontroll av endelig opptelling mot resultat som blir publisert.\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1721,
-    "completion_tokens": 679,
-    "total_tokens": 2400
+    "prompt_tokens": 1718,
+    "completion_tokens": 754,
+    "total_tokens": 2472
   }
 }
 ---------------
 {
-  "answer1": "Maskinell endelig telling.",
-  "answer2": "Sak 1/23 - valgstyrets delegering til kommunedirektøren. Vi har benyttet maskinell telling siden 2009.",
-  "answer3": "Foreløpig telling skjer i valgkretsene. Ansvarlig i valglokalet legger inn resultatet i EVA. I tillegg tar han et bilde på SMS av \"kladden\", der antall stemmer pr. parti er lagt inn. Sender dette på SMS til valgansvarlig. Dette for kontroll at riktig tall er registrert i EVA.",
-  "answer4": "Skal skannes og legges i sak og arkivsystemet/journalføres. Oppbevarer papiroriginalen i arkivet for valg.",
-  "answer5": "Det vi legger inn i EVA skal være kontrollert av oss. Valgdirektoratet henter ut opplysninger derfra.",
-  "answer6": "Valgstyrets møtebok underskrives av valgstyret, skannes og legges i sak og arkivsystemet/journalføres. Oppbevarer papiroriginalen i arkivet for valg.",
-  "answer7": "Maskinell telling overføres fra skannerprogrammet til EVA-admin. Vi sammenligner foreløpig og endelig telling. Når endelig telling er ferdig, foretar vi valgoppgjøret. Det er direktoratet som henter ut og publiserer dataene fra EVA. Vi skal sjekke om dette blir publisert.",
-  "final_counting_type": "maskinell",
-  "counting_type_decision_date": null,
-  "counting_type_decision_case_number": null,
-  "prelimitary_counting__any_counting_in_valgkrets": true,
-  "prelimitary_counting__transfer_to_eva__do_they_answer": true,
-  "prelimitary_counting__transfer_to_eva__type": "SMS",
-  "prelimitary_counting__is_stored": true,
-  "prelimitary_counting__what_is_stored": "Resultatet fra foreløpig telling",
-  "prelimitary_counting__storage_method": "Skannes og lagres i sak og arkivsystemet",
-  "prelimitary_counting__process_for_control": true,
-  "prelimitary_counting__process_for_control_type": "Kontrollerer resultatet mot det som er synlig på valgresultat-siden til Valgdirektoratet",
-  "final_counting__is_stored": true,
-  "final_counting__what_is_stored": "Resultatet fra endelig telling",
-  "final_counting__storage_method": "Skannes og lagres i sak og arkivsystemet",
-  "final_counting__process_for_control": true,
-  "final_counting__process_for_control_type": "Kontrollerer endelig opptelling mot resultat som blir publisert"
+    "answer1": "Maskinell endelig telling.",
+    "answer2": "Sak 1/23 - valgstyrets delegering til kommunedirektøren. Vi har benyttet maskinell telling siden 2009.",
+    "answer3": "Foreløpig telling skjer i valgkretsene. Ansvarlig i valglokalet legger inn resultatet i EVA. I tillegg tar han et bilde på SMS av 'kladden', der antall stemmer pr. parti er lagt inn. Sender dette på SMS til valgansvarlig. Dette for kontroll at riktig tall er registrert i EVA.",
+    "answer4": "Skal skannes og legges i sak og arkivsystemet/journalføres. Oppbevarer papiroriginalen i arkivet for valg.",
+    "answer5": "Det vi legger inn i EVA skal være kontrollert av oss. Valgdirektoratet henter ut opplysninger derfra.",
+    "answer6": "Valgstyrets møtebok underskrives av valgstyret, skannes og legges i sak og arkivsystemet/journalføres. Oppbevarer papiroriginalen i arkivet for valg.",
+    "answer7": "Maskinell telling overføres fra skannerprogrammet til EVA-admin. Vi sammenligner foreløpig og endelig telling. Når endelig telling er ferdig, foretar vi valgoppgjøret. Det er direktoratet som henter ut og publiserer dataene fra EVA. Vi skal sjekke om dette blir publisert.",
+    "final_counting_type": "maskinell",
+    "counting_type_decision_date": null,
+    "counting_type_decision_case_number": null,
+    "prelimitary_counting__any_counting_in_valgkrets": true,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": true,
+    "prelimitary_counting__transfer_to_eva__type": "SMS",
+    "prelimitary_counting__is_stored": true,
+    "prelimitary_counting__what_is_stored": "Skal skannes og legges i sak og arkivsystemet/journalføres. Oppbevarer papiroriginalen i arkivet for valg.",
+    "prelimitary_counting__storage_method": "Papir",
+    "prelimitary_counting__process_for_control": true,
+    "prelimitary_counting__process_for_control_type": "Vi kontrollerer resultatet av foreløpig opptelling mot det som er synlig på valgresultat-siden til Valgdirektoratet, i valgprotokoll, i medier og lignende.",
+    "final_counting__is_stored": true,
+    "final_counting__what_is_stored": "Valgstyrets møtebok underskrives av valgstyret, skannes og legges i sak og arkivsystemet/journalføres. Oppbevarer papiroriginalen i arkivet for valg.",
+    "final_counting__storage_method": "Papir",
+    "final_counting__process_for_control": true,
+    "final_counting__process_for_control_type": "Vi har rutiner for kontroll av endelig opptelling mot resultat som blir publisert."
 }

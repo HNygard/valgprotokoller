@@ -80,8 +80,8 @@ The following email or document was given:
         "answer6": "...",
         "answer7": "..."
      }
-    
-No translation of the answer. No changes. 
+
+It is very important that you do not interpret, translate or otherwise alter the text of their answers. I want the answers verbatim as they wrote them, you should just "copy-paste" them out.
 """},
 
 ]

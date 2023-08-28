@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Manuell\",\n    \"answer2\": \"86/22\",\n    \"answer3\": \"Nei\",\n    \"answer4\": \"Ja\",\n    \"answer5\": \"Ja\",\n    \"answer6\": \"Ja\",\n    \"answer7\": \"Ja\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Manuell\",\n    \"answer2\": \"86/22\",\n    \"answer3\": \"Nei\",\n    \"answer4\": \"Ja\",\n    \"answer5\": \"Ja\\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet.\",\n    \"answer6\": \"Ja\",\n    \"answer7\": \"Ja\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,24 +21,24 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s5J68jfMTZJkFR1jqG1b0qWBxJD6",
+  "id": "chatcmpl-7sZVp9G3hVZ3igJd54kCKQgayXAoK",
   "object": "chat.completion",
-  "created": 1693124468,
+  "created": 1693240577,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"answer1\": \"Manuell\",\n    \"answer2\": \"86/22\",\n    \"answer3\": \"Nei\",\n    \"answer4\": \"Ja\",\n    \"answer5\": \"Ja\",\n    \"answer6\": \"Ja\",\n    \"answer7\": \"Ja\",\n    \"final_counting_type\": \"manuell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n    \"prelimitary_counting__transfer_to_eva__type\": null,\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"resultatet fra opptellingen\",\n    \"prelimitary_counting__storage_method\": \"Papir\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"kontroll av opptellingen opp mot resultatet som blir publisert\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"resultatet fra endelig opptelling\",\n    \"final_counting__storage_method\": \"Papir\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"kontroll av endelig opptelling mot resultat som blir publisert\"\n}"
+        "content": "{\n    \"answer1\": \"Manuell\",\n    \"answer2\": \"86/22\",\n    \"answer3\": \"Nei\",\n    \"answer4\": \"Ja\",\n    \"answer5\": \"Ja\\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet.\",\n    \"answer6\": \"Ja\",\n    \"answer7\": \"Ja\",\n    \"final_counting_type\": \"manuell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n    \"prelimitary_counting__transfer_to_eva__type\": null,\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"resultatet fra opptellingen\",\n    \"prelimitary_counting__storage_method\": \"Papir\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Rutiner for \u00e5 kontrollere resultatet opp mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet, i valgprotokoll, i medier og lignende.\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"resultatet fra endelig opptelling\",\n    \"final_counting__storage_method\": \"Digitalt dokument\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Rutiner for kontroll av endelig opptelling mot resultat som blir publisert.\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1405,
-    "completion_tokens": 336,
-    "total_tokens": 1741
+    "prompt_tokens": 1453,
+    "completion_tokens": 417,
+    "total_tokens": 1870
   }
 }
 ---------------
@@ -47,7 +47,7 @@ Chat completion
     "answer2": "86/22",
     "answer3": "Nei",
     "answer4": "Ja",
-    "answer5": "Ja",
+    "answer5": "Ja\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet.",
     "answer6": "Ja",
     "answer7": "Ja",
     "final_counting_type": "manuell",
@@ -60,10 +60,10 @@ Chat completion
     "prelimitary_counting__what_is_stored": "resultatet fra opptellingen",
     "prelimitary_counting__storage_method": "Papir",
     "prelimitary_counting__process_for_control": true,
-    "prelimitary_counting__process_for_control_type": "kontroll av opptellingen opp mot resultatet som blir publisert",
+    "prelimitary_counting__process_for_control_type": "Rutiner for å kontrollere resultatet opp mot det som er synlig på valgresultat-siden til Valgdirektoratet, i valgprotokoll, i medier og lignende.",
     "final_counting__is_stored": true,
     "final_counting__what_is_stored": "resultatet fra endelig opptelling",
-    "final_counting__storage_method": "Papir",
+    "final_counting__storage_method": "Digitalt dokument",
     "final_counting__process_for_control": true,
-    "final_counting__process_for_control_type": "kontroll av endelig opptelling mot resultat som blir publisert"
+    "final_counting__process_for_control_type": "Rutiner for kontroll av endelig opptelling mot resultat som blir publisert."
 }

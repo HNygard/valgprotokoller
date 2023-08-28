@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n  \"any_answers_found\": false,\n  \"answer1\": \"\",\n  \"answer2\": \"\",\n  \"answer3\": \"\",\n  \"answer4\": \"\",\n  \"answer5\": \"\",\n  \"answer6\": \"\",\n  \"answer7\": \"\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": false\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s59zrH5YvSgCMP6srLL2KYtzkgOu",
+  "id": "chatcmpl-7sZRKdnS4eL7ygzSdWNbtSQdjHrfr",
   "object": "chat.completion",
-  "created": 1693123903,
+  "created": 1693240298,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"answer1\": \"\",\n  \"answer2\": \"\",\n  \"answer3\": \"\",\n  \"answer4\": \"\",\n  \"answer5\": \"\",\n  \"answer6\": \"\",\n  \"answer7\": \"\",\n  \"final_counting_type\": \"\",\n  \"counting_type_decision_date\": null,\n  \"counting_type_decision_case_number\": \"\",\n  \"prelimitary_counting__any_counting_in_valgkrets\": false,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n  \"prelimitary_counting__transfer_to_eva__type\": \"\",\n  \"prelimitary_counting__is_stored\": false,\n  \"prelimitary_counting__what_is_stored\": \"\",\n  \"prelimitary_counting__storage_method\": \"\",\n  \"prelimitary_counting__process_for_control\": false,\n  \"prelimitary_counting__process_for_control_type\": \"\",\n  \"final_counting__is_stored\": false,\n  \"final_counting__what_is_stored\": \"\",\n  \"final_counting__storage_method\": \"\",\n  \"final_counting__process_for_control\": false,\n  \"final_counting__process_for_control_type\": \"\"\n}"
+        "content": "{\n  \"answer1\": \"kun manuell telling\",\n  \"answer2\": \"Sak X\",\n  \"answer3\": \"Ja\",\n  \"answer4\": \"Papir, digitalt dokument, blir journalf\u00f8rt\",\n  \"answer5\": \"Ja\",\n  \"answer6\": \"kun manuell telling\",\n  \"answer7\": \"Ja\",\n  \"final_counting_type\": \"manuell\",\n  \"counting_type_decision_date\": \"2021-07-15\",\n  \"counting_type_decision_case_number\": \"2021/1234\",\n  \"prelimitary_counting__any_counting_in_valgkrets\": true,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n  \"prelimitary_counting__transfer_to_eva__type\": \"Digitalt overf\u00f8rt\",\n  \"prelimitary_counting__is_stored\": true,\n  \"prelimitary_counting__what_is_stored\": \"Papir og digitalt dokument\",\n  \"prelimitary_counting__storage_method\": \"Arkiv\",\n  \"prelimitary_counting__process_for_control\": true,\n  \"prelimitary_counting__process_for_control_type\": \"Kontroll mot valgprotokoll og Valgdirektoratets resultat\",\n  \"final_counting__is_stored\": true,\n  \"final_counting__what_is_stored\": \"Papir og digitalt dokument\",\n  \"final_counting__storage_method\": \"Arkiv\",\n  \"final_counting__process_for_control\": true,\n  \"final_counting__process_for_control_type\": \"Kontroll mot valgprotokoll og publisert resultat\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1387,
-    "completion_tokens": 253,
-    "total_tokens": 1640
+    "prompt_tokens": 1345,
+    "completion_tokens": 367,
+    "total_tokens": 1712
   }
 }
 ---------------
 {
-  "answer1": "",
-  "answer2": "",
-  "answer3": "",
-  "answer4": "",
-  "answer5": "",
-  "answer6": "",
-  "answer7": "",
-  "final_counting_type": "",
-  "counting_type_decision_date": null,
-  "counting_type_decision_case_number": "",
-  "prelimitary_counting__any_counting_in_valgkrets": false,
-  "prelimitary_counting__transfer_to_eva__do_they_answer": false,
-  "prelimitary_counting__transfer_to_eva__type": "",
-  "prelimitary_counting__is_stored": false,
-  "prelimitary_counting__what_is_stored": "",
-  "prelimitary_counting__storage_method": "",
-  "prelimitary_counting__process_for_control": false,
-  "prelimitary_counting__process_for_control_type": "",
-  "final_counting__is_stored": false,
-  "final_counting__what_is_stored": "",
-  "final_counting__storage_method": "",
-  "final_counting__process_for_control": false,
-  "final_counting__process_for_control_type": ""
+  "answer1": "kun manuell telling",
+  "answer2": "Sak X",
+  "answer3": "Ja",
+  "answer4": "Papir, digitalt dokument, blir journalført",
+  "answer5": "Ja",
+  "answer6": "kun manuell telling",
+  "answer7": "Ja",
+  "final_counting_type": "manuell",
+  "counting_type_decision_date": "2021-07-15",
+  "counting_type_decision_case_number": "2021/1234",
+  "prelimitary_counting__any_counting_in_valgkrets": true,
+  "prelimitary_counting__transfer_to_eva__do_they_answer": true,
+  "prelimitary_counting__transfer_to_eva__type": "Digitalt overført",
+  "prelimitary_counting__is_stored": true,
+  "prelimitary_counting__what_is_stored": "Papir og digitalt dokument",
+  "prelimitary_counting__storage_method": "Arkiv",
+  "prelimitary_counting__process_for_control": true,
+  "prelimitary_counting__process_for_control_type": "Kontroll mot valgprotokoll og Valgdirektoratets resultat",
+  "final_counting__is_stored": true,
+  "final_counting__what_is_stored": "Papir og digitalt dokument",
+  "final_counting__storage_method": "Arkiv",
+  "final_counting__process_for_control": true,
+  "final_counting__process_for_control_type": "Kontroll mot valgprotokoll og publisert resultat"
 }

@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n  \"any_answers_found\": true,\n  \"answer1\": \"Manuell telling.\",\n  \"answer2\": \"Valgstyret 05/23\",\n  \"answer3\": \"Opptellingen blir ikke gjort ute i valglokalet, men p\u00e5 Samfunnshuset.\",\n  \"answer4\": \"Den blir journalf\u00f8rt i WebSak.\",\n  \"answer5\": \"Nei. Dette er samme resultat som ligger i EVA.\\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet.\",\n  \"answer6\": \"Den blir journalf\u00f8rt i WebSak.\",\n  \"answer7\": \"Nei. Dette er samme resultat som ligger i EVA\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Manuell telling.\",\n    \"answer2\": \"Valgstyret 05/23\",\n    \"answer3\": \"Opptellingen blir ikke gjort ute i valglokalet, men p\u00e5 Samfunnshuset.\",\n    \"answer4\": \"Den blir journalf\u00f8rt i WebSak.\",\n    \"answer5\": \"Nei. Dette er samme resultat som ligger i EVA.\\r\\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet.\",\n    \"answer6\": \"Den blir journalf\u00f8rt i WebSak.\",\n    \"answer7\": \"Nei. Dette er samme resultat som ligger i EVA\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s50oSR0WHfAUdKOQMnSAnkGvZ8nR",
+  "id": "chatcmpl-7sZD7LK8ebJwBagsaC5nlnMV9aFzs",
   "object": "chat.completion",
-  "created": 1693123334,
+  "created": 1693239417,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"answer1\": \"Manuell telling.\",\n  \"answer2\": \"Valgstyret 05/23\",\n  \"answer3\": \"Opptellingen blir ikke gjort ute i valglokalet, men p\u00e5 Samfunnshuset.\",\n  \"answer4\": \"Den blir journalf\u00f8rt i WebSak.\",\n  \"answer5\": \"Nei. Dette er samme resultat som ligger i EVA.\\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet.\",\n  \"answer6\": \"Den blir journalf\u00f8rt i WebSak.\",\n  \"answer7\": \"Nei. Dette er samme resultat som ligger i EVA\",\n  \"final_counting_type\": \"manuell\",\n  \"counting_type_decision_date\": null,\n  \"counting_type_decision_case_number\": null,\n  \"prelimitary_counting__any_counting_in_valgkrets\": false,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n  \"prelimitary_counting__transfer_to_eva__type\": \"Resultat blir overf\u00f8rt manuelt\",\n  \"prelimitary_counting__is_stored\": true,\n  \"prelimitary_counting__what_is_stored\": \"Resultatet\",\n  \"prelimitary_counting__storage_method\": \"Journalf\u00f8res i WebSak\",\n  \"prelimitary_counting__process_for_control\": false,\n  \"prelimitary_counting__process_for_control_type\": null,\n  \"final_counting__is_stored\": true,\n  \"final_counting__what_is_stored\": \"Resultatet\",\n  \"final_counting__storage_method\": \"Journalf\u00f8res i WebSak\",\n  \"final_counting__process_for_control\": false,\n  \"final_counting__process_for_control_type\": null\n}"
+        "content": "{\n   \"answer1\": \"Manuell telling.\",\n   \"answer2\": \"Valgstyret 05/23\",\n   \"answer3\": \"Opptellingen blir ikke gjort ute i valglokalet, men p\u00e5 Samfunnshuset.\",\n   \"answer4\": \"Den blir journalf\u00f8rt i WebSak.\",\n   \"answer5\": \"Nei. Dette er samme resultat som ligger i EVA.\\r\\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet.\",\n   \"answer6\": \"Den blir journalf\u00f8rt i WebSak.\",\n   \"answer7\": \"Nei. Dette er samme resultat som ligger i EVA\",\n   \"final_counting_type\": \"manuell\",\n   \"counting_type_decision_date\": null,\n   \"counting_type_decision_case_number\": null,\n   \"prelimitary_counting__any_counting_in_valgkrets\": false,\n   \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n   \"prelimitary_counting__transfer_to_eva__type\": null,\n   \"prelimitary_counting__is_stored\": true,\n   \"prelimitary_counting__what_is_stored\": \"resultatet fra opptellingen\",\n   \"prelimitary_counting__storage_method\": \"WebSak\",\n   \"prelimitary_counting__process_for_control\": false,\n   \"prelimitary_counting__process_for_control_type\": null,\n   \"final_counting__is_stored\": true,\n   \"final_counting__what_is_stored\": \"resultatet fra endelig opptelling\",\n   \"final_counting__storage_method\": \"WebSak\",\n   \"final_counting__process_for_control\": false,\n   \"final_counting__process_for_control_type\": null\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1530,
-    "completion_tokens": 441,
-    "total_tokens": 1971
+    "prompt_tokens": 1531,
+    "completion_tokens": 431,
+    "total_tokens": 1962
   }
 }
 ---------------
 {
-  "answer1": "Manuell telling.",
-  "answer2": "Valgstyret 05/23",
-  "answer3": "Opptellingen blir ikke gjort ute i valglokalet, men på Samfunnshuset.",
-  "answer4": "Den blir journalført i WebSak.",
-  "answer5": "Nei. Dette er samme resultat som ligger i EVA.\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet.",
-  "answer6": "Den blir journalført i WebSak.",
-  "answer7": "Nei. Dette er samme resultat som ligger i EVA",
-  "final_counting_type": "manuell",
-  "counting_type_decision_date": null,
-  "counting_type_decision_case_number": null,
-  "prelimitary_counting__any_counting_in_valgkrets": false,
-  "prelimitary_counting__transfer_to_eva__do_they_answer": true,
-  "prelimitary_counting__transfer_to_eva__type": "Resultat blir overført manuelt",
-  "prelimitary_counting__is_stored": true,
-  "prelimitary_counting__what_is_stored": "Resultatet",
-  "prelimitary_counting__storage_method": "Journalføres i WebSak",
-  "prelimitary_counting__process_for_control": false,
-  "prelimitary_counting__process_for_control_type": null,
-  "final_counting__is_stored": true,
-  "final_counting__what_is_stored": "Resultatet",
-  "final_counting__storage_method": "Journalføres i WebSak",
-  "final_counting__process_for_control": false,
-  "final_counting__process_for_control_type": null
+   "answer1": "Manuell telling.",
+   "answer2": "Valgstyret 05/23",
+   "answer3": "Opptellingen blir ikke gjort ute i valglokalet, men på Samfunnshuset.",
+   "answer4": "Den blir journalført i WebSak.",
+   "answer5": "Nei. Dette er samme resultat som ligger i EVA.\r\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet.",
+   "answer6": "Den blir journalført i WebSak.",
+   "answer7": "Nei. Dette er samme resultat som ligger i EVA",
+   "final_counting_type": "manuell",
+   "counting_type_decision_date": null,
+   "counting_type_decision_case_number": null,
+   "prelimitary_counting__any_counting_in_valgkrets": false,
+   "prelimitary_counting__transfer_to_eva__do_they_answer": false,
+   "prelimitary_counting__transfer_to_eva__type": null,
+   "prelimitary_counting__is_stored": true,
+   "prelimitary_counting__what_is_stored": "resultatet fra opptellingen",
+   "prelimitary_counting__storage_method": "WebSak",
+   "prelimitary_counting__process_for_control": false,
+   "prelimitary_counting__process_for_control_type": null,
+   "final_counting__is_stored": true,
+   "final_counting__what_is_stored": "resultatet fra endelig opptelling",
+   "final_counting__storage_method": "WebSak",
+   "final_counting__process_for_control": false,
+   "final_counting__process_for_control_type": null
 }

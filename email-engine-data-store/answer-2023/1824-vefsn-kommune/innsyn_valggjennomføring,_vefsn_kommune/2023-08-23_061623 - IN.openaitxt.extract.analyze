@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n  \"any_answers_found\": true,\n  \"answer1\": \"Det fremg\u00e5r ikke klart fra denne e-posten eller dokumentet.\",\n  \"answer2\": \"Det fremg\u00e5r ikke klart fra denne e-posten eller dokumentet.\",\n  \"answer3\": \"Det fremg\u00e5r ikke klart fra denne e-posten eller dokumentet.\",\n  \"answer4\": \"Det fremg\u00e5r ikke klart fra denne e-posten eller dokumentet.\",\n  \"answer5\": \"Det fremg\u00e5r ikke klart fra denne e-posten eller dokumentet.\",\n  \"answer6\": \"Det fremg\u00e5r ikke klart fra denne e-posten eller dokumentet.\",\n  \"answer7\": \"Det fremg\u00e5r ikke klart fra denne e-posten eller dokumentet.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": null,\n    \"answer2\": null,\n    \"answer3\": null,\n    \"answer4\": null,\n    \"answer5\": null,\n    \"answer6\": null,\n    \"answer7\": null\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s5FV06cCu5TwCS2oxYkBMDwW7rml",
+  "id": "chatcmpl-7sZThFMEzuGfV8tU5cpor5wz6DVXR",
   "object": "chat.completion",
-  "created": 1693124245,
+  "created": 1693240445,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"answer1\": \"Det fremg\u00e5r ikke klart fra denne e-posten eller dokumentet.\",\n  \"answer2\": \"Det fremg\u00e5r ikke klart fra denne e-posten eller dokumentet.\",\n  \"answer3\": \"Det fremg\u00e5r ikke klart fra denne e-posten eller dokumentet.\",\n  \"answer4\": \"Det fremg\u00e5r ikke klart fra denne e-posten eller dokumentet.\",\n  \"answer5\": \"Det fremg\u00e5r ikke klart fra denne e-posten eller dokumentet.\",\n  \"answer6\": \"Det fremg\u00e5r ikke klart fra denne e-posten eller dokumentet.\",\n  \"answer7\": \"Det fremg\u00e5r ikke klart fra denne e-posten eller dokumentet.\",\n  \"final_counting_type\": null,\n  \"counting_type_decision_date\": null,\n  \"counting_type_decision_case_number\": null,\n  \"prelimitary_counting__any_counting_in_valgkrets\": null,\n  \"prelimitary_counting__transfer_to_eva__do_they_answer\": null,\n  \"prelimitary_counting__transfer_to_eva__type\": null,\n  \"prelimitary_counting__is_stored\": null,\n  \"prelimitary_counting__what_is_stored\": null,\n  \"prelimitary_counting__storage_method\": null,\n  \"prelimitary_counting__process_for_control\": null,\n  \"prelimitary_counting__process_for_control_type\": null,\n  \"final_counting__is_stored\": null,\n  \"final_counting__what_is_stored\": null,\n  \"final_counting__storage_method\": null,\n  \"final_counting__process_for_control\": null,\n  \"final_counting__process_for_control_type\": null\n}"
+        "content": "{\n    \"answer1\": null,\n    \"answer2\": null,\n    \"answer3\": null,\n    \"answer4\": null,\n    \"answer5\": null,\n    \"answer6\": null,\n    \"answer7\": null,\n    \"final_counting_type\": null,\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": null,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": null,\n    \"prelimitary_counting__transfer_to_eva__type\": null,\n    \"prelimitary_counting__is_stored\": null,\n    \"prelimitary_counting__what_is_stored\": null,\n    \"prelimitary_counting__storage_method\": null,\n    \"prelimitary_counting__process_for_control\": null,\n    \"prelimitary_counting__process_for_control_type\": null,\n    \"final_counting__is_stored\": null,\n    \"final_counting__what_is_stored\": null,\n    \"final_counting__storage_method\": null,\n    \"final_counting__process_for_control\": null,\n    \"final_counting__process_for_control_type\": null\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1499,
-    "completion_tokens": 374,
-    "total_tokens": 1873
+    "prompt_tokens": 1394,
+    "completion_tokens": 269,
+    "total_tokens": 1663
   }
 }
 ---------------
 {
-  "answer1": "Det fremgår ikke klart fra denne e-posten eller dokumentet.",
-  "answer2": "Det fremgår ikke klart fra denne e-posten eller dokumentet.",
-  "answer3": "Det fremgår ikke klart fra denne e-posten eller dokumentet.",
-  "answer4": "Det fremgår ikke klart fra denne e-posten eller dokumentet.",
-  "answer5": "Det fremgår ikke klart fra denne e-posten eller dokumentet.",
-  "answer6": "Det fremgår ikke klart fra denne e-posten eller dokumentet.",
-  "answer7": "Det fremgår ikke klart fra denne e-posten eller dokumentet.",
-  "final_counting_type": null,
-  "counting_type_decision_date": null,
-  "counting_type_decision_case_number": null,
-  "prelimitary_counting__any_counting_in_valgkrets": null,
-  "prelimitary_counting__transfer_to_eva__do_they_answer": null,
-  "prelimitary_counting__transfer_to_eva__type": null,
-  "prelimitary_counting__is_stored": null,
-  "prelimitary_counting__what_is_stored": null,
-  "prelimitary_counting__storage_method": null,
-  "prelimitary_counting__process_for_control": null,
-  "prelimitary_counting__process_for_control_type": null,
-  "final_counting__is_stored": null,
-  "final_counting__what_is_stored": null,
-  "final_counting__storage_method": null,
-  "final_counting__process_for_control": null,
-  "final_counting__process_for_control_type": null
+    "answer1": null,
+    "answer2": null,
+    "answer3": null,
+    "answer4": null,
+    "answer5": null,
+    "answer6": null,
+    "answer7": null,
+    "final_counting_type": null,
+    "counting_type_decision_date": null,
+    "counting_type_decision_case_number": null,
+    "prelimitary_counting__any_counting_in_valgkrets": null,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": null,
+    "prelimitary_counting__transfer_to_eva__type": null,
+    "prelimitary_counting__is_stored": null,
+    "prelimitary_counting__what_is_stored": null,
+    "prelimitary_counting__storage_method": null,
+    "prelimitary_counting__process_for_control": null,
+    "prelimitary_counting__process_for_control_type": null,
+    "final_counting__is_stored": null,
+    "final_counting__what_is_stored": null,
+    "final_counting__storage_method": null,
+    "final_counting__process_for_control": null,
+    "final_counting__process_for_control_type": null
 }

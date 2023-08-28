@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Manuell opptelling\",\n    \"answer2\": \"Vedtak - Valstyret sak  10/2023 . Valstyret vedtek at \u00c5l kommune skal ha samla sentral opptelling og manuell opptelling i to omganger, f\u00f8rebels telling og endeleg telling.\",\n    \"answer3\": \"Sentral opptelling\",\n    \"answer4\": \"Vi har eige opptellingsskjema, kor tala fr\u00e5 opptellinga, to tellinger med ulike personar, levert fysisk til den som registrerer i valsystemet EVA - m\u00f8teprotokollen blir journalf\u00f8rt n\u00e5r valet er over.\",\n    \"answer5\": \"Alltid to personer som sjekker at rett resultat blir lagt ut.\",\n    \"answer6\": \"Samme svar som punkt 4\",\n    \"answer7\": \"Alltid to personer som sjekker at rett resultat blir lagt ut.\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Manuell opptelling\",\n    \"answer2\": \"Vedtak - Valstyret sak 10/2023. Valstyret vedtek at \u00c5l kommune skal ha samla sentral opptelling og manuell opptelling i to omganger, f\u00f8rebels telling og endeleg telling.\",\n    \"answer3\": \"Sentral opptelling\",\n    \"answer4\": \"Vi har eige opptellingsskjema, kor tala fr\u00e5 opptellinga, to tellinger med ulike personar, levert fysisk til den som registrerer i valsystemet EVA - m\u00f8teprotokollen blir journalf\u00f8rt n\u00e5r valet er over.\",\n    \"answer5\": \"Alltid to personer som sjekker at rett resultat blir lagt ut.\",\n    \"answer6\": \"Samme svar som punkt 4\",\n    \"answer7\": \"Alltid to personer som sjekker at rett resultat blir lagt ut.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,30 +21,30 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7s5Tz1adomywhDKEw4XqIBoSSOzSV",
+  "id": "chatcmpl-7sZdMLCL9wnNWKvYiZBD6uy05Le6v",
   "object": "chat.completion",
-  "created": 1693125143,
+  "created": 1693241044,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"answer1\": \"Manuell opptelling\",\n    \"answer2\": \"Vedtak - Valstyret sak  10/2023 . Valstyret vedtek at \u00c5l kommune skal ha samla sentral opptelling og manuell opptelling i to omganger, f\u00f8rebels telling og endeleg telling.\",\n    \"answer3\": \"Sentral opptelling\",\n    \"answer4\": \"Vi har eige opptellingsskjema, kor tala fr\u00e5 opptellinga, to tellinger med ulike personar, levert fysisk til den som registrerer i valsystemet EVA - m\u00f8teprotokollen blir journalf\u00f8rt n\u00e5r valet er over.\",\n    \"answer5\": \"Alltid to personer som sjekker at rett resultat blir lagt ut.\",\n    \"answer6\": \"Samme svar som punkt 4\",\n    \"answer7\": \"Alltid to personer som sjekker at rett resultat blir lagt ut.\",\n    \"final_counting_type\": \"manuell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n    \"prelimitary_counting__transfer_to_eva__type\": null,\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"opptellingsskjema\",\n    \"prelimitary_counting__storage_method\": \"fysisk levering\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"to personer som sjekker resultatet\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"opptellingsskjema\",\n    \"final_counting__storage_method\": \"fysisk levering\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"to personer som sjekker resultatet\"\n}"
+        "content": "{\n    \"answer1\": \"Manuell opptelling\",\n    \"answer2\": \"Vedtak - Valstyret sak 10/2023. Valstyret vedtek at \u00c5l kommune skal ha samla sentral opptelling og manuell opptelling i to omganger, f\u00f8rebels telling og endeleg telling.\",\n    \"answer3\": \"Sentral opptelling\",\n    \"answer4\": \"Vi har eige opptellingsskjema, kor tala fr\u00e5 opptellinga, to tellinger med ulike personar, levert fysisk til den som registrerer i valsystemet EVA - m\u00f8teprotokollen blir journalf\u00f8rt n\u00e5r valet er over.\",\n    \"answer5\": \"Alltid to personer som sjekker at rett resultat blir lagt ut.\",\n    \"answer6\": \"Samme svar som punkt 4\",\n    \"answer7\": \"Alltid to personer som sjekker at rett resultat blir lagt ut.\",\n    \"final_counting_type\": \"manuell\",\n    \"counting_type_decision_date\": null,\n    \"counting_type_decision_case_number\": null,\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n    \"prelimitary_counting__transfer_to_eva__type\": null,\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"opptellingsskjema\",\n    \"prelimitary_counting__storage_method\": \"fysisk\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"sjekking av resultat\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"opptellingsskjema\",\n    \"final_counting__storage_method\": \"fysisk\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"sjekking av resultat\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1565,
-    "completion_tokens": 482,
-    "total_tokens": 2047
+    "prompt_tokens": 1564,
+    "completion_tokens": 469,
+    "total_tokens": 2033
   }
 }
 ---------------
 {
     "answer1": "Manuell opptelling",
-    "answer2": "Vedtak - Valstyret sak  10/2023 . Valstyret vedtek at Ål kommune skal ha samla sentral opptelling og manuell opptelling i to omganger, førebels telling og endeleg telling.",
+    "answer2": "Vedtak - Valstyret sak 10/2023. Valstyret vedtek at Ål kommune skal ha samla sentral opptelling og manuell opptelling i to omganger, førebels telling og endeleg telling.",
     "answer3": "Sentral opptelling",
     "answer4": "Vi har eige opptellingsskjema, kor tala frå opptellinga, to tellinger med ulike personar, levert fysisk til den som registrerer i valsystemet EVA - møteprotokollen blir journalført når valet er over.",
     "answer5": "Alltid to personer som sjekker at rett resultat blir lagt ut.",
@@ -58,12 +58,12 @@ Chat completion
     "prelimitary_counting__transfer_to_eva__type": null,
     "prelimitary_counting__is_stored": true,
     "prelimitary_counting__what_is_stored": "opptellingsskjema",
-    "prelimitary_counting__storage_method": "fysisk levering",
+    "prelimitary_counting__storage_method": "fysisk",
     "prelimitary_counting__process_for_control": true,
-    "prelimitary_counting__process_for_control_type": "to personer som sjekker resultatet",
+    "prelimitary_counting__process_for_control_type": "sjekking av resultat",
     "final_counting__is_stored": true,
     "final_counting__what_is_stored": "opptellingsskjema",
-    "final_counting__storage_method": "fysisk levering",
+    "final_counting__storage_method": "fysisk",
     "final_counting__process_for_control": true,
-    "final_counting__process_for_control_type": "to personer som sjekker resultatet"
+    "final_counting__process_for_control_type": "sjekking av resultat"
 }

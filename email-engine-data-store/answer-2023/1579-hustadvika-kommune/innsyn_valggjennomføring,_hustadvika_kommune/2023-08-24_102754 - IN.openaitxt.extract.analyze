@@ -12,7 +12,7 @@ Chat completion
     },
     {
         "role": "user",
-        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Hustadvika kommune vil gjennomf\u00f8re maskinell opptelling ved endelig telling av valgresultatet.\",\n    \"answer2\": \"Vedtatt av Hustadvika valgstyre PS 4/2023 i m\u00f8te den 13.03.2023.\",\n    \"answer3\": \"Forel\u00f8pig opptelling p\u00e5 valgting gj\u00f8res ute i hver enkelt valgkrets av stemmestyrene. Stemmestyrenes m\u00f8tebok signeres av stemmestyret, og fraktes inn til valgstyret sammen med annet valgmateriell.\",\n    \"answer4\": \"Stemmestyrenes m\u00f8teb\u00f8ker blir skannet og arkivert (journalf\u00f8rt) i kommunens sak/arkiv-system.\",\n    \"answer5\": \"Stemmestyrenes m\u00f8teb\u00f8ker kontrolleres ved kretsmottak, og sjekkes/registreres i EVA. Det er ikke rutiner for kontroll av forel\u00f8pig resultat mot valgresultat.no eller media.\",\n    \"answer6\": \"Valgstyrets m\u00f8tebok inneholder resultatet av opptelling, og signeres av valgstyret. Valgstyrets m\u00f8tebok blir skannet og arkivert (journalf\u00f8rt) i kommunens sak/arkiv-system. Valgstyrets m\u00f8tebok med signaturer blir sendt/lastet opp p\u00e5 valgresultat.no. Stemmesedlene for kommunestyrevalget oppbevares i v\u00e5rt arkiv frem til neste kommunestyrevalg. Fylkestingsstemmesedlene fraktes til fylkeskommunen, som oppbevarer sine stemmesedler.\",\n    \"answer7\": \"Ja\"\n}\n\n"
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Hustadvika kommune vil gjennomf\u00f8re maskinell opptelling ved endelig telling av valgresultatet.\",\n    \"answer2\": \"Vedtatt av Hustadvika valgstyre PS 4/2023 i m\u00f8te den 13.03.2023.\",\n    \"answer3\": \"Forel\u00f8pig opptelling p\u00e5 valgting gj\u00f8res ute i hver enkelt valgkrets av stemmestyrene.\\nStemmestyrene m\u00e5 fylle ut stemmestyrets m\u00f8tebok hvor de f\u00f8rer inn tallene for den forel\u00f8pige opptellingen. Stemmestyrets m\u00f8tebok signeres av stemmestyret, og fraktes inn til valgstyret sammen med annet valgmateriell.\",\n    \"answer4\": \"Stemmestyrenes m\u00f8teb\u00f8ker blir skannet og arkivert (journalf\u00f8rt) i kommunens sak/arkiv-system.\",\n    \"answer5\": \"Stemmestyrenes m\u00f8teb\u00f8ker kontrolleres ved kretsmottak, og sjekkes/registreres i EVA. Det er ikke rutiner for kontroll av forel\u00f8pig resultat mot valgresultat.no eller media.\",\n    \"answer6\": \"Valgstyrets m\u00f8tebok inneholder resultatet av opptelling, og signeres av valgstyret. Valgstyrets m\u00f8tebok blir skannet og arkivert (journalf\u00f8rt) i kommunens sak/arkiv-system. Valgstyrets m\u00f8tebok med signaturer blir sendt/lastet opp p\u00e5 valgresultat.no.\\nStemmesedlene for kommunestyrevalget oppbevares i v\u00e5rt arkiv frem til neste kommunestyrevalg. Fylkestingsstemmesedlene fraktes til fylkeskommunen, som oppbevarer sine stemmesedler.\",\n    \"answer7\": \"Ja.\"\n}\n\n"
     },
     {
         "role": "user",
@@ -21,49 +21,49 @@ Chat completion
 ]
 --------------- OUTPUT
 {
-  "id": "chatcmpl-7sDBhiyIVF8CxE0zbArnScMmcIVU7",
+  "id": "chatcmpl-7sZCB6Wsm6mR79oJPlhJEGzzryPNU",
   "object": "chat.completion",
-  "created": 1693154761,
+  "created": 1693239359,
   "model": "gpt-3.5-turbo-0613",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"answer1\": \"Hustadvika kommune vil gjennomf\u00f8re maskinell opptelling ved endelig telling av valgresultatet.\",\n    \"answer2\": \"Vedtatt av Hustadvika valgstyre PS 4/2023 i m\u00f8te den 13.03.2023.\",\n    \"answer3\": \"Forel\u00f8pig opptelling p\u00e5 valgting gj\u00f8res ute i hver enkelt valgkrets av stemmestyrene. Stemmestyrenes m\u00f8tebok signeres av stemmestyret, og fraktes inn til valgstyret sammen med annet valgmateriell.\",\n    \"answer4\": \"Stemmestyrenes m\u00f8teb\u00f8ker blir skannet og arkivert (journalf\u00f8rt) i kommunens sak/arkiv-system.\",\n    \"answer5\": \"Stemmestyrenes m\u00f8teb\u00f8ker kontrolleres ved kretsmottak, og sjekkes/registreres i EVA. Det er ikke rutiner for kontroll av forel\u00f8pig resultat mot valgresultat.no eller media.\",\n    \"answer6\": \"Valgstyrets m\u00f8tebok inneholder resultatet av opptelling, og signeres av valgstyret. Valgstyrets m\u00f8tebok blir skannet og arkivert (journalf\u00f8rt) i kommunens sak/arkiv-system. Valgstyrets m\u00f8tebok med signaturer blir sendt/lastet opp p\u00e5 valgresultat.no. Stemmesedlene for kommunestyrevalget oppbevares i v\u00e5rt arkiv frem til neste kommunestyrevalg. Fylkestingsstemmesedlene fraktes til fylkeskommunen, som oppbevarer sine stemmesedler.\",\n    \"answer7\": \"Ja\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": \"2023-03-13\",\n    \"counting_type_decision_case_number\": \"PS 4/2023\",\n    \"prelimitary_counting__any_counting_in_valgkrets\": true,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"Signert m\u00f8tebok og valgmateriell fraktes inn til valgstyret\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"Stemmestyrenes m\u00f8teb\u00f8ker\",\n    \"prelimitary_counting__storage_method\": \"Skanning og journalf\u00f8ring i kommunens sak/arkiv-system\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Kontroll ved kretsmottak, sjekkes/registreres i EVA\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"Valgstyrets m\u00f8tebok\",\n    \"final_counting__storage_method\": \"Skanning og journalf\u00f8ring i kommunens sak/arkiv-system\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Innsendelse/opplasting p\u00e5 valgresultat.no\"\n}"
+        "content": "{\n    \"answer1\": \"Hustadvika kommune vil gjennomf\u00f8re maskinell opptelling ved endelig telling av valgresultatet.\",\n    \"answer2\": \"Vedtatt av Hustadvika valgstyre PS 4/2023 i m\u00f8te den 13.03.2023.\",\n    \"answer3\": \"Forel\u00f8pig opptelling p\u00e5 valgting gj\u00f8res ute i hver enkelt valgkrets av stemmestyrene.\\nStemmestyrene m\u00e5 fylle ut stemmestyrets m\u00f8tebok hvor de f\u00f8rer inn tallene for den forel\u00f8pige opptellingen. Stemmestyrets m\u00f8tebok signeres av stemmestyret, og fraktes inn til valgstyret sammen med annet valgmateriell.\",\n    \"answer4\": \"Stemmestyrenes m\u00f8teb\u00f8ker blir skannet og arkivert (journalf\u00f8rt) i kommunens sak/arkiv-system.\",\n    \"answer5\": \"Stemmestyrenes m\u00f8teb\u00f8ker kontrolleres ved kretsmottak, og sjekkes/registreres i EVA. Det er ikke rutiner for kontroll av forel\u00f8pig resultat mot valgresultat.no eller media.\",\n    \"answer6\": \"Valgstyrets m\u00f8tebok inneholder resultatet av opptelling, og signeres av valgstyret. Valgstyrets m\u00f8tebok blir skannet og arkivert (journalf\u00f8rt) i kommunens sak/arkiv-system. Valgstyrets m\u00f8tebok med signaturer blir sendt/lastet opp p\u00e5 valgresultat.no.\\nStemmesedlene for kommunestyrevalget oppbevares i v\u00e5rt arkiv frem til neste kommunestyrevalg. Fylkestingsstemmesedlene fraktes til fylkeskommunen, som oppbevarer sine stemmesedler.\",\n    \"answer7\": \"Ja\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": \"2023-03-13\",\n    \"counting_type_decision_case_number\": \"PS 4/2023\",\n    \"prelimitary_counting__any_counting_in_valgkrets\": true,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"valgkretsene inn til valgstyret\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"stemmestyrenes m\u00f8teb\u00f8ker\",\n    \"prelimitary_counting__storage_method\": \"skanning og journalf\u00f8ring i kommunens sak/arkiv-system\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"kontrolleres ved kretsmottak og sjekkes/registreres i EVA\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"valgstyrets m\u00f8tebok\",\n    \"final_counting__storage_method\": \"skanning og journalf\u00f8ring i kommunens sak/arkiv-system\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"sendes/lastes opp p\u00e5 valgresultat.no\"\n}"
       },
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1746,
-    "completion_tokens": 739,
-    "total_tokens": 2485
+    "prompt_tokens": 1784,
+    "completion_tokens": 766,
+    "total_tokens": 2550
   }
 }
 ---------------
 {
     "answer1": "Hustadvika kommune vil gjennomføre maskinell opptelling ved endelig telling av valgresultatet.",
     "answer2": "Vedtatt av Hustadvika valgstyre PS 4/2023 i møte den 13.03.2023.",
-    "answer3": "Foreløpig opptelling på valgting gjøres ute i hver enkelt valgkrets av stemmestyrene. Stemmestyrenes møtebok signeres av stemmestyret, og fraktes inn til valgstyret sammen med annet valgmateriell.",
+    "answer3": "Foreløpig opptelling på valgting gjøres ute i hver enkelt valgkrets av stemmestyrene.\nStemmestyrene må fylle ut stemmestyrets møtebok hvor de fører inn tallene for den foreløpige opptellingen. Stemmestyrets møtebok signeres av stemmestyret, og fraktes inn til valgstyret sammen med annet valgmateriell.",
     "answer4": "Stemmestyrenes møtebøker blir skannet og arkivert (journalført) i kommunens sak/arkiv-system.",
     "answer5": "Stemmestyrenes møtebøker kontrolleres ved kretsmottak, og sjekkes/registreres i EVA. Det er ikke rutiner for kontroll av foreløpig resultat mot valgresultat.no eller media.",
-    "answer6": "Valgstyrets møtebok inneholder resultatet av opptelling, og signeres av valgstyret. Valgstyrets møtebok blir skannet og arkivert (journalført) i kommunens sak/arkiv-system. Valgstyrets møtebok med signaturer blir sendt/lastet opp på valgresultat.no. Stemmesedlene for kommunestyrevalget oppbevares i vårt arkiv frem til neste kommunestyrevalg. Fylkestingsstemmesedlene fraktes til fylkeskommunen, som oppbevarer sine stemmesedler.",
+    "answer6": "Valgstyrets møtebok inneholder resultatet av opptelling, og signeres av valgstyret. Valgstyrets møtebok blir skannet og arkivert (journalført) i kommunens sak/arkiv-system. Valgstyrets møtebok med signaturer blir sendt/lastet opp på valgresultat.no.\nStemmesedlene for kommunestyrevalget oppbevares i vårt arkiv frem til neste kommunestyrevalg. Fylkestingsstemmesedlene fraktes til fylkeskommunen, som oppbevarer sine stemmesedler.",
     "answer7": "Ja",
     "final_counting_type": "maskinell",
     "counting_type_decision_date": "2023-03-13",
     "counting_type_decision_case_number": "PS 4/2023",
     "prelimitary_counting__any_counting_in_valgkrets": true,
     "prelimitary_counting__transfer_to_eva__do_they_answer": true,
-    "prelimitary_counting__transfer_to_eva__type": "Signert møtebok og valgmateriell fraktes inn til valgstyret",
+    "prelimitary_counting__transfer_to_eva__type": "valgkretsene inn til valgstyret",
     "prelimitary_counting__is_stored": true,
-    "prelimitary_counting__what_is_stored": "Stemmestyrenes møtebøker",
-    "prelimitary_counting__storage_method": "Skanning og journalføring i kommunens sak/arkiv-system",
+    "prelimitary_counting__what_is_stored": "stemmestyrenes møtebøker",
+    "prelimitary_counting__storage_method": "skanning og journalføring i kommunens sak/arkiv-system",
     "prelimitary_counting__process_for_control": true,
-    "prelimitary_counting__process_for_control_type": "Kontroll ved kretsmottak, sjekkes/registreres i EVA",
+    "prelimitary_counting__process_for_control_type": "kontrolleres ved kretsmottak og sjekkes/registreres i EVA",
     "final_counting__is_stored": true,
-    "final_counting__what_is_stored": "Valgstyrets møtebok",
-    "final_counting__storage_method": "Skanning og journalføring i kommunens sak/arkiv-system",
+    "final_counting__what_is_stored": "valgstyrets møtebok",
+    "final_counting__storage_method": "skanning og journalføring i kommunens sak/arkiv-system",
     "final_counting__process_for_control": true,
-    "final_counting__process_for_control_type": "Innsendelse/opplasting på valgresultat.no"
+    "final_counting__process_for_control_type": "sendes/lastes opp på valgresultat.no"
 }
