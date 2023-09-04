@@ -1,0 +1,69 @@
+------ openai-docker-python ------
+Chat completion
+--------------- INPUT
+[
+    {
+        "role": "system",
+        "content": "\n\nYou parse answers from questionnaire and analyze the answers. You output to JSON.\n\nQuestions are numbered you don't need to repeat the question in JSON. Give them an ID.\n\nFrom the answers, extract other useful data point as JSON properties.\n\n    "
+    },
+    {
+        "role": "user",
+        "content": "\n\nThe following questions was asked:\n\n1): Vil kommunen foreta maskinell eller manuell endelig\u00a0telling av valgresultatet?\n\n2): I hvilken politisk sak ble dette vedtatt?\n\n3): Ved forel\u00f8pig opptelling (manuell opptelling), blir opptellingen gjort i valgkretsene? Hvis det er opptelling i valgkretsene, hvordan overf\u00f8rer kommunen resultatet fra valgkretsene inn til valgstyret/valgansvarlig/EVA Admin?\n\n4): Ved forel\u00f8pig opptelling (manuell opptelling), hvordan lagrer/arkiverer kommunen resultatet fra opptellingen utenom EVA Admin? Papir? Digitalt dokument? SMS? Blir resultatet journalf\u00f8rt?\n\n5): Har kommunen rutiner for \u00e5 kontrollere resultatet av forel\u00f8pig opptelling opp mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet (valgresultat d\u00e5tt no), i valgprotokoll, i medier og lignende?\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet.\n\n6): Tilsvarende som 4) for endelig opptelling (maskinell eller manuell).\nHvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Blir resultatet journalf\u00f8rt?\n\n7): Tilsvarende som 5) for endelig opptelling (maskinell eller manuell).\nHar kommunen rutiner for kontroll av endelig opptelling mot resultat som blir publisert?\n\n"
+    },
+    {
+        "role": "user",
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"\",\n    \"answer2\": \"\",\n    \"answer3\": \"\",\n    \"answer4\": \"\",\n    \"answer5\": \"\",\n    \"answer6\": \"\",\n    \"answer7\": \"\"\n}\n\n"
+    },
+    {
+        "role": "user",
+        "content": "Add answers to JSON. Question 1 to 7.\n     \n     Also add root level JSON properties with answers to the following questions about the answers:\n     \n     final_counting_type - Enum: I sp\u00f8rsm\u00e5l 1, var endelig opptelling \"maskinell opptelling\" eller \"manuell opptelling\"?\n     \n     counting_type_decision_date - Date: I sp\u00f8rsm\u00e5l 2, hent ut dato for eventuelt vedtak.\n     counting_type_decision_case_number - String: I sp\u00f8rsm\u00e5l 2, hent ut saksnummer for eventuelt vedtak.\n     \n     prelimitary_counting__any_counting_in_valgkrets - boolean: I sp\u00f8rsm\u00e5l 3, er det opptelling i valgkretsene?\n     prelimitary_counting__transfer_to_eva__do_they_answer - boolean: I sp\u00f8rsm\u00e5l 3, svarer de p\u00e5 hvordan resultatet overf\u00f8res til valgstyret/valgansvarlig/EVA Admin?\n     prelimitary_counting__transfer_to_eva__type - string: I sp\u00f8rsm\u00e5l 3, hvordan overf\u00f8rer de resultatet til valgstyret/valgansvarlig/EVA Admin?\n     \n     prelimitary_counting__is_stored - boolean: I sp\u00f8rsm\u00e5l 4, lagrer de noe i arkivet?\n     prelimitary_counting__what_is_stored - string: I sp\u00f8rsm\u00e5l 4, hva lagrer de?\n     prelimitary_counting__storage_method - string: I sp\u00f8rsm\u00e5l 4, hvordan lagres det?\n     \n     prelimitary_counting__process_for_control - boolean: I sp\u00f8rsm\u00e5l 5, har de rutiner for \u00e5 kontrollere resultatet?\n     prelimitary_counting__process_for_control_type - string: I sp\u00f8rsm\u00e5l 5, oppsummer eventuelle rutiner for \u00e5 kontrollere resultatet?\n     \n     final_counting__is_stored - boolean: I sp\u00f8rsm\u00e5l 6, lagrer de noe i arkivet?\n     final_counting__what_is_stored - string: I sp\u00f8rsm\u00e5l 6, hva lagrer de?\n     final_counting__storage_method - string: I sp\u00f8rsm\u00e5l 6, hvordan lagres det?\n     \n     final_counting__process_for_control - boolean: I sp\u00f8rsm\u00e5l 7, har de rutiner for \u00e5 kontrollere resultatet?\n     final_counting__process_for_control_type - string: I sp\u00f8rsm\u00e5l 7, oppsummer eventuelle rutiner for \u00e5 kontrollere resultatet?\n     \n     Example JSON:\n     {\n        \"answer1\": \"...\",\n        \"answer2\": \"...\",\n        \"answer3\": \"...\",\n        \"answer4\": \"...\",\n        \"answer5\": \"...\",\n        \"answer6\": \"...\",\n        \"answer7\": \"...\"\n        \"final_counting_type\": \"[maskinell|manuell]\",\n        \"counting_type_decision_date\": \"1970-01-01\",\n        \"counting_type_decision_case_number\": \"...\",\n        \"prelimitary_counting__any_counting_in_valgkrets\": true/false,\n        \"prelimitary_counting__transfer_to_eva__do_they_answer\": true/false,\n        \"prelimitary_counting__transfer_to_eva__type\": \"...\",\n        \"prelimitary_counting__is_stored\": true/false,\n        \"prelimitary_counting__what_is_stored\": \"...\",\n        \"prelimitary_counting__storage_method\": \"...\",\n        \"prelimitary_counting__process_for_control\": true/false,\n        \"prelimitary_counting__process_for_control_type\": \"...\",\n        \"final_counting__is_stored\": true/false,\n        \"final_counting__what_is_stored\": \"...\",\n        \"final_counting__storage_method\": \"...\",\n        \"final_counting__process_for_control\": true/false,\n        \"final_counting__process_for_control_type\": \"...\",\n     }\n     \n"
+    }
+]
+--------------- OUTPUT
+{
+  "id": "chatcmpl-7vBJDzTlOGVhumyIwa76cNqMO2eLA",
+  "object": "chat.completion",
+  "created": 1693862523,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"answer1\": \"\",\n    \"answer2\": \"\",\n    \"answer3\": \"\",\n    \"answer4\": \"\",\n    \"answer5\": \"\",\n    \"answer6\": \"\",\n    \"answer7\": \"\",\n    \"final_counting_type\": \"\",\n    \"counting_type_decision_date\": \"\",\n    \"counting_type_decision_case_number\": \"\",\n    \"prelimitary_counting__any_counting_in_valgkrets\": false,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": false,\n    \"prelimitary_counting__transfer_to_eva__type\": \"\",\n    \"prelimitary_counting__is_stored\": false,\n    \"prelimitary_counting__what_is_stored\": \"\",\n    \"prelimitary_counting__storage_method\": \"\",\n    \"prelimitary_counting__process_for_control\": false,\n    \"prelimitary_counting__process_for_control_type\": \"\",\n    \"final_counting__is_stored\": false,\n    \"final_counting__what_is_stored\": \"\",\n    \"final_counting__storage_method\": \"\",\n    \"final_counting__process_for_control\": false,\n    \"final_counting__process_for_control_type\": \"\"\n}"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1387,
+    "completion_tokens": 252,
+    "total_tokens": 1639
+  }
+}
+---------------
+{
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "answer4": "",
+    "answer5": "",
+    "answer6": "",
+    "answer7": "",
+    "final_counting_type": "",
+    "counting_type_decision_date": "",
+    "counting_type_decision_case_number": "",
+    "prelimitary_counting__any_counting_in_valgkrets": false,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": false,
+    "prelimitary_counting__transfer_to_eva__type": "",
+    "prelimitary_counting__is_stored": false,
+    "prelimitary_counting__what_is_stored": "",
+    "prelimitary_counting__storage_method": "",
+    "prelimitary_counting__process_for_control": false,
+    "prelimitary_counting__process_for_control_type": "",
+    "final_counting__is_stored": false,
+    "final_counting__what_is_stored": "",
+    "final_counting__storage_method": "",
+    "final_counting__process_for_control": false,
+    "final_counting__process_for_control_type": ""
+}

@@ -1,0 +1,70 @@
+------ openai-docker-python ------
+Chat completion
+--------------- INPUT
+[
+    {
+        "role": "system",
+        "content": "\n\nYou parse answers from questionnaire and analyze the answers. You output to JSON.\n\nQuestions are numbered you don't need to repeat the question in JSON. Give them an ID.\n\nFrom the answers, extract other useful data point as JSON properties.\n\n    "
+    },
+    {
+        "role": "user",
+        "content": "\n\nThe following questions was asked:\n\n1): Vil kommunen foreta maskinell eller manuell endelig\u00a0telling av valgresultatet?\n\n2): I hvilken politisk sak ble dette vedtatt?\n\n3): Ved forel\u00f8pig opptelling (manuell opptelling), blir opptellingen gjort i valgkretsene? Hvis det er opptelling i valgkretsene, hvordan overf\u00f8rer kommunen resultatet fra valgkretsene inn til valgstyret/valgansvarlig/EVA Admin?\n\n4): Ved forel\u00f8pig opptelling (manuell opptelling), hvordan lagrer/arkiverer kommunen resultatet fra opptellingen utenom EVA Admin? Papir? Digitalt dokument? SMS? Blir resultatet journalf\u00f8rt?\n\n5): Har kommunen rutiner for \u00e5 kontrollere resultatet av forel\u00f8pig opptelling opp mot det som er synlig p\u00e5 valgresultat-siden til Valgdirektoratet (valgresultat d\u00e5tt no), i valgprotokoll, i medier og lignende?\nEn slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets h\u00e5ndtering av resultatet.\n\n6): Tilsvarende som 4) for endelig opptelling (maskinell eller manuell).\nHvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Blir resultatet journalf\u00f8rt?\n\n7): Tilsvarende som 5) for endelig opptelling (maskinell eller manuell).\nHar kommunen rutiner for kontroll av endelig opptelling mot resultat som blir publisert?\n\n"
+    },
+    {
+        "role": "user",
+        "content": "\nThe following answers was given:\n\n{\n    \"any_answers_found\": true,\n    \"answer1\": \"Endelig telling foretas ved skanning (maskinell).\",\n    \"answer2\": \"Det ble behandlet og vedtatt av valgstyret 21.11.22 i sak PS 3/22: Kommunestyre- og fylkestingsvalget 2023 \u0096 delegering, valgkretser, stemmestyrer og \u00e5pningstider.\",\n    \"answer3\": \"Forel\u00f8pig opptelling p\u00e5 valgting foreg\u00e5r kretsvis. Resultatet registreres kretsvis i EVA. Fysisk signert m\u00f8tebok registreres inn sentralt, og kontrolleres sentralt mot EVA av to ansatte i valgsekretariatet.\",\n    \"answer4\": \"M\u00f8teb\u00f8kene fra stemmestyrene journalf\u00f8res i v\u00e5rt elektroniske arkivsystem, og fysiske originaler oppbevares i arkiv.\",\n    \"answer5\": \"Resultatene gjennomg\u00e5s av valgsekretariatet. M\u00f8teb\u00f8ker fra stemmestyrene kontrolleres mot EVA av to ansatte p\u00e5 valgsekretariatet. Dersom det er avvik i tellingen (urne, forel\u00f8pig eller endelig), vil det foretas en ny telling.\",\n    \"answer6\": \"Skannet versjon av valgprotokollen journalf\u00f8res, og fysisk original arkiveres i arkiv. Det blir i tillegg laget og lagret en elektronisk kopi.\",\n    \"answer7\": \"Resultatene gjennomg\u00e5s av valgsekretariatet, da med fokus p\u00e5 kommunestyrevalget. Ved fylkestingsvalget vil det kunne oppst\u00e5 avvik fra forel\u00f8pig telling dersom fylkesvalgstyret ved endelig telling vurderer f.eks. endringer p\u00e5 stemmeseddel eller forkastelser til et annet resultat, eller de ev. skulle ha oppdaget feil.\"\n}\n\n"
+    },
+    {
+        "role": "user",
+        "content": "Add answers to JSON. Question 1 to 7.\n     \n     Also add root level JSON properties with answers to the following questions about the answers:\n     \n     final_counting_type - Enum: I sp\u00f8rsm\u00e5l 1, var endelig opptelling \"maskinell opptelling\" eller \"manuell opptelling\"?\n     \n     counting_type_decision_date - Date: I sp\u00f8rsm\u00e5l 2, hent ut dato for eventuelt vedtak.\n     counting_type_decision_case_number - String: I sp\u00f8rsm\u00e5l 2, hent ut saksnummer for eventuelt vedtak.\n     \n     prelimitary_counting__any_counting_in_valgkrets - boolean: I sp\u00f8rsm\u00e5l 3, er det opptelling i valgkretsene?\n     prelimitary_counting__transfer_to_eva__do_they_answer - boolean: I sp\u00f8rsm\u00e5l 3, svarer de p\u00e5 hvordan resultatet overf\u00f8res til valgstyret/valgansvarlig/EVA Admin?\n     prelimitary_counting__transfer_to_eva__type - string: I sp\u00f8rsm\u00e5l 3, hvordan overf\u00f8rer de resultatet til valgstyret/valgansvarlig/EVA Admin?\n     \n     prelimitary_counting__is_stored - boolean: I sp\u00f8rsm\u00e5l 4, lagrer de noe i arkivet?\n     prelimitary_counting__what_is_stored - string: I sp\u00f8rsm\u00e5l 4, hva lagrer de?\n     prelimitary_counting__storage_method - string: I sp\u00f8rsm\u00e5l 4, hvordan lagres det?\n     \n     prelimitary_counting__process_for_control - boolean: I sp\u00f8rsm\u00e5l 5, har de rutiner for \u00e5 kontrollere resultatet?\n     prelimitary_counting__process_for_control_type - string: I sp\u00f8rsm\u00e5l 5, oppsummer eventuelle rutiner for \u00e5 kontrollere resultatet?\n     \n     final_counting__is_stored - boolean: I sp\u00f8rsm\u00e5l 6, lagrer de noe i arkivet?\n     final_counting__what_is_stored - string: I sp\u00f8rsm\u00e5l 6, hva lagrer de?\n     final_counting__storage_method - string: I sp\u00f8rsm\u00e5l 6, hvordan lagres det?\n     \n     final_counting__process_for_control - boolean: I sp\u00f8rsm\u00e5l 7, har de rutiner for \u00e5 kontrollere resultatet?\n     final_counting__process_for_control_type - string: I sp\u00f8rsm\u00e5l 7, oppsummer eventuelle rutiner for \u00e5 kontrollere resultatet?\n     \n     Example JSON:\n     {\n        \"answer1\": \"...\",\n        \"answer2\": \"...\",\n        \"answer3\": \"...\",\n        \"answer4\": \"...\",\n        \"answer5\": \"...\",\n        \"answer6\": \"...\",\n        \"answer7\": \"...\"\n        \"final_counting_type\": \"[maskinell|manuell]\",\n        \"counting_type_decision_date\": \"1970-01-01\",\n        \"counting_type_decision_case_number\": \"...\",\n        \"prelimitary_counting__any_counting_in_valgkrets\": true/false,\n        \"prelimitary_counting__transfer_to_eva__do_they_answer\": true/false,\n        \"prelimitary_counting__transfer_to_eva__type\": \"...\",\n        \"prelimitary_counting__is_stored\": true/false,\n        \"prelimitary_counting__what_is_stored\": \"...\",\n        \"prelimitary_counting__storage_method\": \"...\",\n        \"prelimitary_counting__process_for_control\": true/false,\n        \"prelimitary_counting__process_for_control_type\": \"...\",\n        \"final_counting__is_stored\": true/false,\n        \"final_counting__what_is_stored\": \"...\",\n        \"final_counting__storage_method\": \"...\",\n        \"final_counting__process_for_control\": true/false,\n        \"final_counting__process_for_control_type\": \"...\",\n     }\n     \n"
+    }
+]
+--------------- OUTPUT
+{
+  "id": "chatcmpl-7vBNlUF2V6NQm1AFgjh2znfH1Ffcp",
+  "object": "chat.completion",
+  "created": 1693862805,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"answer1\": \"Endelig telling foretas ved skanning (maskinell).\",\n    \"answer2\": \"Det ble behandlet og vedtatt av valgstyret 21.11.22 i sak PS 3/22: Kommunestyre- og fylkestingsvalget 2023 \u0096 delegering, valgkretser, stemmestyrer og \u00e5pningstider.\",\n    \"answer3\": \"Forel\u00f8pig opptelling p\u00e5 valgting foreg\u00e5r kretsvis. Resultatet registreres kretsvis i EVA. Fysisk signert m\u00f8tebok registreres inn sentralt, og kontrolleres sentralt mot EVA av to ansatte i valgsekretariatet.\",\n    \"answer4\": \"M\u00f8teb\u00f8kene fra stemmestyrene journalf\u00f8res i v\u00e5rt elektroniske arkivsystem, og fysiske originaler oppbevares i arkiv.\",\n    \"answer5\": \"Resultatene gjennomg\u00e5s av valgsekretariatet. M\u00f8teb\u00f8ker fra stemmestyrene kontrolleres mot EVA av to ansatte p\u00e5 valgsekretariatet. Dersom det er avvik i tellingen (urne, forel\u00f8pig eller endelig), vil det foretas en ny telling.\",\n    \"answer6\": \"Skannet versjon av valgprotokollen journalf\u00f8res, og fysisk original arkiveres i arkiv. Det blir i tillegg laget og lagret en elektronisk kopi.\",\n    \"answer7\": \"Resultatene gjennomg\u00e5s av valgsekretariatet, da med fokus p\u00e5 kommunestyrevalget. Ved fylkestingsvalget vil det kunne oppst\u00e5 avvik fra forel\u00f8pig telling dersom fylkesvalgstyret ved endelig telling vurderer f.eks. endringer p\u00e5 stemmeseddel eller forkastelser til et annet resultat, eller de ev. skulle ha oppdaget feil.\",\n    \"final_counting_type\": \"maskinell\",\n    \"counting_type_decision_date\": \"2022-11-21\",\n    \"counting_type_decision_case_number\": \"PS 3/22\",\n    \"prelimitary_counting__any_counting_in_valgkrets\": true,\n    \"prelimitary_counting__transfer_to_eva__do_they_answer\": true,\n    \"prelimitary_counting__transfer_to_eva__type\": \"Resultatet overf\u00f8res til valgstyret/valgansvarlig/EVA Admin ved \u00e5 registrere det i EVA og fysisk signere m\u00f8teboken.\",\n    \"prelimitary_counting__is_stored\": true,\n    \"prelimitary_counting__what_is_stored\": \"M\u00f8teb\u00f8kene fra stemmestyrene\",\n    \"prelimitary_counting__storage_method\": \"Elektronisk arkivsystem og fysiske originaler i arkiv\",\n    \"prelimitary_counting__process_for_control\": true,\n    \"prelimitary_counting__process_for_control_type\": \"Resultatene gjennomg\u00e5s av valgsekretariatet og kontrolleres mot EVA av to ansatte p\u00e5 valgsekretariatet.\",\n    \"final_counting__is_stored\": true,\n    \"final_counting__what_is_stored\": \"Skannet versjon av valgprotokollen\",\n    \"final_counting__storage_method\": \"Elektronisk arkivsystem og fysisk original i arkiv\",\n    \"final_counting__process_for_control\": true,\n    \"final_counting__process_for_control_type\": \"Resultatene gjennomg\u00e5s av valgsekretariatet, med fokus p\u00e5 kommunestyrevalget. Eventuelle avvik fra forel\u00f8pig telling blir vurdert av fylkesvalgstyret.\",\n    \"any_answers_found\": true\n}"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1799,
+    "completion_tokens": 872,
+    "total_tokens": 2671
+  }
+}
+---------------
+{
+    "answer1": "Endelig telling foretas ved skanning (maskinell).",
+    "answer2": "Det ble behandlet og vedtatt av valgstyret 21.11.22 i sak PS 3/22: Kommunestyre- og fylkestingsvalget 2023  delegering, valgkretser, stemmestyrer og åpningstider.",
+    "answer3": "Foreløpig opptelling på valgting foregår kretsvis. Resultatet registreres kretsvis i EVA. Fysisk signert møtebok registreres inn sentralt, og kontrolleres sentralt mot EVA av to ansatte i valgsekretariatet.",
+    "answer4": "Møtebøkene fra stemmestyrene journalføres i vårt elektroniske arkivsystem, og fysiske originaler oppbevares i arkiv.",
+    "answer5": "Resultatene gjennomgås av valgsekretariatet. Møtebøker fra stemmestyrene kontrolleres mot EVA av to ansatte på valgsekretariatet. Dersom det er avvik i tellingen (urne, foreløpig eller endelig), vil det foretas en ny telling.",
+    "answer6": "Skannet versjon av valgprotokollen journalføres, og fysisk original arkiveres i arkiv. Det blir i tillegg laget og lagret en elektronisk kopi.",
+    "answer7": "Resultatene gjennomgås av valgsekretariatet, da med fokus på kommunestyrevalget. Ved fylkestingsvalget vil det kunne oppstå avvik fra foreløpig telling dersom fylkesvalgstyret ved endelig telling vurderer f.eks. endringer på stemmeseddel eller forkastelser til et annet resultat, eller de ev. skulle ha oppdaget feil.",
+    "final_counting_type": "maskinell",
+    "counting_type_decision_date": "2022-11-21",
+    "counting_type_decision_case_number": "PS 3/22",
+    "prelimitary_counting__any_counting_in_valgkrets": true,
+    "prelimitary_counting__transfer_to_eva__do_they_answer": true,
+    "prelimitary_counting__transfer_to_eva__type": "Resultatet overføres til valgstyret/valgansvarlig/EVA Admin ved å registrere det i EVA og fysisk signere møteboken.",
+    "prelimitary_counting__is_stored": true,
+    "prelimitary_counting__what_is_stored": "Møtebøkene fra stemmestyrene",
+    "prelimitary_counting__storage_method": "Elektronisk arkivsystem og fysiske originaler i arkiv",
+    "prelimitary_counting__process_for_control": true,
+    "prelimitary_counting__process_for_control_type": "Resultatene gjennomgås av valgsekretariatet og kontrolleres mot EVA av to ansatte på valgsekretariatet.",
+    "final_counting__is_stored": true,
+    "final_counting__what_is_stored": "Skannet versjon av valgprotokollen",
+    "final_counting__storage_method": "Elektronisk arkivsystem og fysisk original i arkiv",
+    "final_counting__process_for_control": true,
+    "final_counting__process_for_control_type": "Resultatene gjennomgås av valgsekretariatet, med fokus på kommunestyrevalget. Eventuelle avvik fra foreløpig telling blir vurdert av fylkesvalgstyret.",
+    "any_answers_found": true
+}
