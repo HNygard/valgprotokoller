@@ -24,6 +24,1479 @@ border-collapse: collapse;
 
 <h1>Spørsmål om valggjennomføring - GPT3.5 output</h1>
 
+<h2>Spørsmål stilt</h2>
+<pre>
+1): Vil kommunen foreta maskinell eller manuell endelig telling av valgresultatet?
+
+2): I hvilken politisk sak ble dette vedtatt?
+
+3): Ved foreløpig opptelling (manuell opptelling), blir opptellingen gjort i valgkretsene? Hvis det er opptelling i valgkretsene, hvordan overfører
+kommunen resultatet fra valgkretsene inn til valgstyret/valgansvarlig/EVA Admin?
+
+4): Ved foreløpig opptelling (manuell opptelling), hvordan lagrer/arkiverer kommunen resultatet fra opptellingen utenom EVA Admin? Papir? Digitalt
+dokument? SMS? Blir resultatet journalført?
+
+5): Har kommunen rutiner for å kontrollere resultatet av foreløpig opptelling opp mot det som er synlig på valgresultat-siden til Valgdirektoratet
+(valgresultat dått no), i valgprotokoll, i medier og lignende?
+En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet.
+
+6): Tilsvarende som 4) for endelig opptelling (maskinell eller manuell).
+Hvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Blir resultatet journalført?
+
+7): Tilsvarende som 5) for endelig opptelling (maskinell eller manuell).
+Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir publisert?
+</pre>
+
+<h3>GPT3.5 har svart på følgende om svarene</h3>
+<pre>
+final_counting_type - Enum: I spørsmål 1, var endelig opptelling "maskinell opptelling" eller "manuell opptelling"?
+
+counting_type_decision_date - Date: I spørsmål 2, hent ut dato for eventuelt vedtak.
+counting_type_decision_case_number - String: I spørsmål 2, hent ut saksnummer for eventuelt vedtak.
+
+prelimitary_counting__any_counting_in_valgkrets - boolean: I spørsmål 3, er det opptelling i valgkretsene?
+prelimitary_counting__transfer_to_eva__do_they_answer - boolean: I spørsmål 3, svarer de på hvordan resultatet overføres til valgstyret/valgansvarlig/EVA Admin?
+prelimitary_counting__transfer_to_eva__type - string: I spørsmål 3, hvordan overfører de resultatet til valgstyret/valgansvarlig/EVA Admin?
+
+prelimitary_counting__is_stored - boolean: I spørsmål 4, lagrer de noe i arkivet?
+prelimitary_counting__what_is_stored - string: I spørsmål 4, hva lagrer de?
+prelimitary_counting__storage_method - string: I spørsmål 4, hvordan lagres det?
+
+prelimitary_counting__process_for_control - boolean: I spørsmål 5, har de rutiner for å kontrollere resultatet?
+prelimitary_counting__process_for_control_type - string: I spørsmål 5, oppsummer eventuelle rutiner for å kontrollere resultatet?
+
+final_counting__is_stored - boolean: I spørsmål 6, lagrer de noe i arkivet?
+final_counting__what_is_stored - string: I spørsmål 6, hva lagrer de?
+final_counting__storage_method - string: I spørsmål 6, hvordan lagres det?
+
+final_counting__process_for_control - boolean: I spørsmål 7, har de rutiner for å kontrollere resultatet?
+final_counting__process_for_control_type - string: I spørsmål 7, oppsummer eventuelle rutiner for å kontrollere resultatet?
+</pre>
+
+
+<h2>Oppsummering av svar</h2>
+<table>
+<tr>
+<th>final_counting_type</th>
+<td>
+maskinell: 38<br>
+manuell: 45<br>
+: 106<br>
+Manuell: 2<br>
+Manuell opptelling: 2<br>
+MANUELL: 2<br>
+Manuell telling: 2<br>
+[maskinell|manuell]: 1<br>
+manuel_counting: 1<br>
+manuell opptelling: 1<br>
+</td>
+</tr>
+<tr>
+<th>counting_type_decision_date</th>
+<td>
+2012-12-01: 1<br>
+: 176<br>
+2022-08-15: 1<br>
+2023-03-13: 2<br>
+2023-02-07: 1<br>
+2023-06-07: 1<br>
+2023-02-14: 1<br>
+2007-05-23: 1<br>
+2016-12-12: 1<br>
+2023-03-20: 1<br>
+2023-02-01: 1<br>
+2021-07-15: 1<br>
+2022-10-31: 1<br>
+2023-02-09: 1<br>
+2016-09-05: 1<br>
+2023-04-18: 1<br>
+2021-02-15: 1<br>
+1970-01-01: 1<br>
+2023-03-07: 1<br>
+2017-05-02: 1<br>
+2027-02-08: 1<br>
+14.02.23: 1<br>
+2023-05-15: 1<br>
+2023-05-02: 1<br>
+</td>
+</tr>
+<tr>
+<th>counting_type_decision_case_number</th>
+<td>
+...: 1<br>
+: 177<br>
+22/5567: 1<br>
+PS 4/2023: 1<br>
+0005/23: 1<br>
+12/23: 1<br>
+2/23: 2<br>
+VAL-009/07: 1<br>
+VSA 253/12: 1<br>
+4/23: 2<br>
+2021/1234: 1<br>
+K-055/22: 1<br>
+Delegering av myndighet fra Valgstyret - Kommunestyre- og fylkestingsvalget 2023: 1<br>
+3/16: 1<br>
+2/23 (arkivsak 22/01847): 1<br>
+123/2021: 1<br>
+23/2252: 1<br>
+1/23: 1<br>
+17/1: 1<br>
+PS sak 17/2: 1<br>
+10/2023: 1<br>
+002/23: 1<br>
+</td>
+</tr>
+<tr>
+<th>prelimitary_counting__any_counting_in_valgkrets</th>
+<td>
+true: 47<br>
+: 53<br>
+false: 99<br>
+</td>
+</tr>
+<tr>
+<th>prelimitary_counting__transfer_to_eva__do_they_answer</th>
+<td>
+true: 48<br>
+: 54<br>
+false: 97<br>
+</td>
+</tr>
+<tr>
+<th>prelimitary_counting__transfer_to_eva__type</th>
+<td>
+overfører i EVA: 1<br>
+EVA Admin: 2<br>
+: 151<br>
+Resultatet blir lagt inn i valsystemet EVA.: 1<br>
+registrering i EVA: 1<br>
+Resultatet blir overført til valgstyret/valgansvarlig/EVA Admin: 1<br>
+overfører via EVA Admin: 1<br>
+valgkretsene inn til valgstyret: 1<br>
+telefon: 1<br>
+automatisk overføring: 1<br>
+The answer is not provided: 1<br>
+Resultatet overføres fra valgkretsene til valgstyret/valgansvarlig/EVA Admin gjennom manuell registrering av tellingen.: 1<br>
+skriftlig: 1<br>
+Resultatet blir ført inn i en møtebok som medbringes til skannersenteret hvor det føres inn i EVA før stemmene kontrolltelles maskinelt.: 1<br>
+manuell meldingsformidling: 1<br>
+Sentral samlet: 1<br>
+N/A: 2<br>
+ukjent: 1<br>
+sentralt hos valgstyret: 1<br>
+Digitalt overført: 1<br>
+...: 2<br>
+manuell opptelling: 2<br>
+Digitalt: 1<br>
+Stemmestyrene fører sin manuelle opptelling inn i møteboka i EVA: 1<br>
+Resultatet overføres manuelt fra valgkretsene til valgstyret/valgansvarlig/EVA Admin.: 1<br>
+n/a: 1<br>
+Elektronisk overføring: 1<br>
+Sentral overføring: 1<br>
+resultatet bringes til sentral opptelling: 1<br>
+Ikke relevant: 1<br>
+Overføres til EVA Admin: 1<br>
+unknown: 1<br>
+SMS: 1<br>
+Overføring skjer ved at resultatet legges inn i EVA av stemmestyrene: 1<br>
+sentralt: 1<br>
+scanning: 1<br>
+Resultatet blir overført elektronisk til valgansvarlig/EVA Admin.: 1<br>
+Valgstyret: 1<br>
+overføring: 1<br>
+elektronisk overføring: 1<br>
+digitalt: 1<br>
+Resultatet blir overført manuelt fra valgkretsene til valgansvarlig på rådhuset.: 1<br>
+Resultatet blir overført fra valgkretsene inn til valgstyret/valgansvarlig/EVA Admin.: 1<br>
+via EVA: 1<br>
+Resultatet transmiteres elektronisk ved direktilgang fra valgkretsesnivået til valgstyret i EVA Admin.: 1<br>
+</td>
+</tr>
+<tr>
+<th>prelimitary_counting__is_stored</th>
+<td>
+false: 64<br>
+true: 82<br>
+: 53<br>
+</td>
+</tr>
+<tr>
+<th>prelimitary_counting__what_is_stored</th>
+<td>
+: 115<br>
+Resultatet: 2<br>
+teljelister i tillegg til at det vert ført i EVA: 1<br>
+resultatet fra foreløpig opptelling: 1<br>
+Resultatet fra foreløpig opptelling: 4<br>
+resultater fra opptellingen: 1<br>
+resultatet fra opptellingen: 13<br>
+Resultat fra opptelling: 1<br>
+stemmestyrenes møtebøker: 1<br>
+møtebok: 1<br>
+valgprotokoll: 3<br>
+Resultat på papir: 1<br>
+Valgstyrets møtebok: 3<br>
+Resultatet lagres i stemmestyrets møtebok.: 1<br>
+opptellingen: 3<br>
+røystestyrets møtebok: 1<br>
+resultatet: 3<br>
+Resultatet fra opptellingen: 1<br>
+resultatene fra manuell opptelling: 1<br>
+tellingene: 1<br>
+en oversikt på papir: 1<br>
+resultatet i papirform: 1<br>
+Papir: 1<br>
+Opptelling fra valgkretsen: 1<br>
+N/A: 1<br>
+Underskrevet protokoll fra stemmestyrene: 1<br>
+Papir og digitalt dokument: 1<br>
+Opptellingsresultater: 1<br>
+...: 1<br>
+Protokollen: 2<br>
+resultatene: 1<br>
+Papirskjema: 1<br>
+Stemmestyrenes møtebøker: 1<br>
+Protokoll: 1<br>
+Resultatet fra opptellingen noteres på papir eller digitalt.: 1<br>
+Resultatet blir notert ned på papir: 1<br>
+Møtebok/protokoll: 1<br>
+resultatet journalføres i sak- arkivsystem: 1<br>
+egne skjema: 1<br>
+Valgprotokoller og relevante dokumenter: 1<br>
+Møteboka fra EVA valg: 1<br>
+Opptellingen: 1<br>
+Protokollen fra EVA Admin: 1<br>
+Møteboka fra stemmestyrene: 1<br>
+valgstyrets møtebok, stemmestyrenes urnetelling: 1<br>
+resultat fra opptellingen: 1<br>
+Skal skannes og legges i sak og arkivsystemet/journalføres. Oppbevarer papiroriginalen i arkivet for valg.: 1<br>
+Resultatet noteres i en notatblokk: 1<br>
+Resultatet blir lagret kun i EVA: 1<br>
+Foreløpig manuell telling: 1<br>
+resultatet fra endelig opptelling: 1<br>
+resultat av manuell foreløpig opptelling: 1<br>
+stemmesedler og møtebøker: 1<br>
+Resultater blir lagret i EVA og rapporter i sak/arkivsystemet.: 1<br>
+Stemmesedler: 1<br>
+møteboken: 1<br>
+opptellingsskjema: 1<br>
+Opptellingsskjema: 1<br>
+RESULTATET FRA OPPTELLINGEN: 1<br>
+Protokoller: 1<br>
+</td>
+</tr>
+<tr>
+<th>prelimitary_counting__storage_method</th>
+<td>
+: 116<br>
+Lagres i EVA Admin: 1<br>
+arkivert og journalført i vårt saksystem (Websak Pluss): 1<br>
+lagret i EVA: 1<br>
+Digitalt dokument: 4<br>
+på papir og digitalt dokument: 1<br>
+Kommunens arkiv og journalsystem: 2<br>
+papir: 10<br>
+skanning og journalføring i kommunens sak/arkiv-system: 1<br>
+skanning: 2<br>
+Digital journalføring: 1<br>
+WebSak: 1<br>
+Arkivert/journalført: 1<br>
+Papir og i sak/arkivsystemet.: 1<br>
+journalført: 1<br>
+arkivert digitalt og fysisk: 1<br>
+EVA Admin, papir: 1<br>
+Journalføres i sak- og arkivsystem: 1<br>
+digitalt dokument: 3<br>
+På papir: 1<br>
+valglogg og omslag: 1<br>
+journalføres i kommunens sak- og arkivsystem: 1<br>
+fysisk arkivering: 1<br>
+Journalført: 1<br>
+Journalføres i møtebok: 1<br>
+Arkivsystem public 360: 1<br>
+N/A: 1<br>
+EVA: 1<br>
+Journalføres og arkiveres i kommunens sak- og arkivsystem: 1<br>
+Arkiv: 1<br>
+Digitalt i EVA Admin og journalføring: 1<br>
+...: 1<br>
+Arkivsystem: 1<br>
+på papir: 2<br>
+Journalføres: 1<br>
+Elektronisk sak arkiv system: 1<br>
+digitalt og papirkopi: 1<br>
+Resultatet føres i valgprotokollen/valgstyrets møtebok og journalføres.: 1<br>
+Elektronisk lagring og papirkopier arkiveres: 1<br>
+på papir i stemmestyrets møtebok: 1<br>
+Elements - kommunens saks- og arkivsystem: 1<br>
+i arkiv i papirform og som digitalt dokument: 1<br>
+journalført i kommunens sak og arkivsystem: 1<br>
+Papir: 5<br>
+papir og digitalt: 1<br>
+scannet inn i saksbehandlingssystemet: 1<br>
+Journalført i arkiv: 1<br>
+Arkivert i vårt saksbehandlingssystem: 1<br>
+Journalføring: 1<br>
+elektronisk og papir: 1<br>
+papir/digitalt dokument: 1<br>
+sak/arkivsystem: 2<br>
+arkiveres: 1<br>
+Elements/ePhorte: 1<br>
+EVA Admin: 1<br>
+Journalføring i kommunens arkiv: 1<br>
+arkiv- og saksbehandlingssystem: 1<br>
+i en egen fysisk mappe: 1<br>
+fysisk: 1<br>
+Fysisk arkivering: 1<br>
+DIGITALT: 1<br>
+Digitalt: 1<br>
+</td>
+</tr>
+<tr>
+<th>prelimitary_counting__process_for_control</th>
+<td>
+true: 79<br>
+: 53<br>
+false: 67<br>
+</td>
+</tr>
+<tr>
+<th>prelimitary_counting__process_for_control_type</th>
+<td>
+Nettsida blir sjekka for å oppdage feil: 1<br>
+Kontroll av resultat mot Valgdirektoratet, valgprotokoll, medier osv.: 1<br>
+: 121<br>
+Kontrollerer resultatet opp mot det som er synleg på valgresultat-siden til Valgdirektoratet, valgprotokoll, medier osv.: 1<br>
+Kommunen kontrollerer resultatet mot valgresultat-siden til Valgdirektoratet, i valgprotokoll, i medier og lignende.: 1<br>
+kontroll av resultatet mot det som er synlig på valgresultat-siden til Valgdirektoratet, valgprotokoll og medier: 1<br>
+Rutiner ved opptelling og kontroll av resultatet, ved stikkprøvekontroll i EVA: 1<br>
+Kontroll mot valgresultat-siden til Valgdirektoratet, valgprotokoll, medier: 1<br>
+kontrolleres ved kretsmottak og sjekkes/registreres i EVA: 1<br>
+dobbeltsjekk av resultatet: 1<br>
+kontroll av tallene mot valgstyrets protokoll og valgresultater.no: 1<br>
+Rutiner for å sammenligne og kontrollere mot flere kilder: 1<br>
+Dobbeltsjekk av valgarbeidet: 1<br>
+Kommunen kontrollerer resultatet av foreløpig opptelling opp mot det som er synlig på valgresultat-siden til Valgdirektoratet, i valgprotokoll, i medier og lignende.: 1<br>
+kontroll av resultatet mot valgresultat-siden til Valgdirektoratet, valgprotokoll, medier osv.: 1<br>
+går gjennom resultater på valgresultat.no: 1<br>
+rutiner for kvalitetssikring av tallene: 1<br>
+2 teljekorps som kontrollerer kvarandre før rapportering til media: 1<br>
+Eventuelle avvik må kommenteres/forklares før det er mulig å publisere resultatet: 1<br>
+kontroll mot valgresultat-siden til Valgdirektoratet, valgprotokoll, medier, etc.: 1<br>
+Registrering av tallene fra manuell foreløpig telling inn til EVA kontrolleres: 1<br>
+usikker på tidligere rutiner: 1<br>
+kontrolleres opp mot antall kryss i manntallet og føres oversikt over partier og antall stemmer pr. parti: 1<br>
+kontroll av resultat mot valgresultat-siden til Valgdirektoratet, valgprotokoll og medier: 1<br>
+Sjekker tallene på valgresultatsiden opp mot våre tall: 1<br>
+Kontrollerer resultatet mot det som er synlig på valgresultat-siden til Valgdirektoratet, valgprotokoll, medier osv.: 1<br>
+Valgresultat-siden til Valgdirektoratet, valgprotokoll, medier: 1<br>
+rutiner for å kontrollere resultatet: 1<br>
+Vågå kommune har rutiner for kontroll av førebels opptelling slik at det samsvarer med det resultatet som vert offentleg.: 1<br>
+sjekker valresultatet og valgprotokollen: 1<br>
+Kommunen kontrollerer tall/resultater, sjekker publisering på Valgdirektoratets valgresultat side: 1<br>
+Kontroll mot valgprotokoll og Valgdirektoratets resultat: 1<br>
+Kommunen kontrollerer resultatet opp mot valgresultat-siden til Valgdirektoratet, valgprotokoll, medier osv.: 1<br>
+...: 1<br>
+Kontrolltelling gjøres to ganger, og ved avvik telles stemmesedlene en tredje gang.: 1<br>
+Stikkprøvekontroller: 1<br>
+Kontroll med elektronisk opptelling/skanning i kommunen og manuell stikkprøvekontroll: 1<br>
+rutiner for å kontrollere resultatet mot valgresultat-siden til Valgdirektoratet, valgprotokoll, medier, osv.: 1<br>
+Valgstyret signerer valgprotokollen/valgstyrets møtebok, men det er ingen eksplisitt rutine for å kontrollere resultatet opp mot det som publiseres.: 1<br>
+kontroll av resultatet mot valgresultat-siden til Valgdirektoratet, valgprotokoll, medier etc.: 1<br>
+Sammenligner resultatet med valgresultat-siden til Valgdirektoratet, valgprotokoll og medier: 1<br>
+Kontroll mot resultat på valgresultatsiden til Valgdirektoratet, valgprotokoll og medier: 1<br>
+automatisk rapportering fra EVA, manuell kontroll ved feiltasting: 1<br>
+kontroll av resultat mot Valgdirektoratet, valgprotokoll og medier: 1<br>
+sjekker manuell telling opp mot soteringerstelling, urne innhold og valgprotokollen: 1<br>
+Sammenligning med valgresultat-siden til Valgdirektoratet, valgprotokoll, medier og lignende: 1<br>
+kontroll av resultatet mot det som er synlig på valgresultat-siden til Valgdirektoratet, valgprotokoll, medier osv.: 1<br>
+Innhenting av resultater fra valgstyret/valgkretsene og sammenligning med valgresultat på Valgdirektoratets nettside, samt valgprotokoller og medier: 1<br>
+sjekker opp mot valgresultater.no: 1<br>
+Tellelag og sammenligning med Valgresultatet.no: 1<br>
+Rutiner for kontroll og protokollføring: 1<br>
+Kontroll utføres av valgansvarlig: 1<br>
+Rutiner for å kontrollere resultatet opp mot det som er synlig på valgresultat-siden til Valgdirektoratet, i valgprotokoll, i medier og lignende.: 1<br>
+Vi kontrollerer EVA og møteboken: 1<br>
+Kommunen har rutiner for å kontrollere resultatet av foreløpig opptelling: 1<br>
+sjekker resultatet mot valgdirektoratet og andre offentlige kilder: 1<br>
+kontroll av resultatet mot valgresultatet på valgresultat-siden til Valgdirektoratet, valgprotokoll, medier, etc.: 1<br>
+kontroll av resultat mot valgresultat-siden til Valgdirektoratet, valgprotokoll, media, osv.: 1<br>
+kontroll av innlegging i EVA: 1<br>
+Vi kontrollerer resultatet av foreløpig opptelling mot det som er synlig på valgresultat-siden til Valgdirektoratet, i valgprotokoll, i medier og lignende.: 1<br>
+Kontroll i EVA: 1<br>
+kontroll av resultatet mot valgprotokoll, medier og Valgdirektoratets resultatside: 1<br>
+Rutiner for å kontrollere resultatet mot Valgdirektoratets valgresultat-side, valgprotokoll, og medier.: 1<br>
+Kommunen har rutiner og sjekker resultatet av foreløpig opptelling mot det som vises på valgresultat-siden til Valgdirektoratet, valgprotokoll og i medier.: 1<br>
+Rutinene i EVA blir fulgt for kontroll av resultatet: 1<br>
+Kontrollerer resultatet mot publiserte resultater: 1<br>
+Valdirektoratet sine rutiner og veiledninger: 1<br>
+kontrolleres av valpersonell, valansvarlig og nettredaktør mot Valdirektoratet si nettside: 1<br>
+kontroll mot resultat som blir publisert: 1<br>
+Valgansvarlig kontrollerer resultatet mot valgresultat-siden til Valgdirektoratet, valgprotokoll, medier osv.: 1<br>
+Ingen rutiner for å kontrollere resultatet: 1<br>
+Kommunen har rutiner for å kontrollere resultatet av foreløpig opptelling opp mot det som er synlig på valgresultat-siden til Valgdirektoratet, i valgprotokoll, i medier og lignende.: 1<br>
+Tallene blir kontrollert underveis: 1<br>
+kontroll ved endelig maskinell opptelling: 1<br>
+sjekking av resultat: 1<br>
+To personer sjekker for riktige resultater: 1<br>
+Kontrollerer tallene før de legges inn: 1<br>
+KONTROLL VED AT SYSTEMET VARSLER AVVIK DERSOM ULIKE TALL LEGGES INN: 1<br>
+Sjekket etter opptelling, men ikke loggført: 1<br>
+</td>
+</tr>
+<tr>
+<th>final_counting__is_stored</th>
+<td>
+true: 86<br>
+: 53<br>
+false: 60<br>
+</td>
+</tr>
+<tr>
+<th>final_counting__what_is_stored</th>
+<td>
+Møtebøker: 1<br>
+Resultatet: 2<br>
+: 112<br>
+teljelister i tillegg til at det vert ført i EVA: 1<br>
+resultatet fra endelig opptelling: 15<br>
+Resultatet fra endelig opptelling: 5<br>
+resultater fra endelig opptelling: 1<br>
+Resultat fra endelig opptelling: 1<br>
+valgstyrets møtebok: 2<br>
+møtebok: 1<br>
+valgprotokoll: 3<br>
+Valgstyrets godkjente valgprotokoll: 1<br>
+Valgstyrets møtebok: 3<br>
+Resultatet lagres i eget sak/arkivsystem.: 1<br>
+valstyrets møtebok: 1<br>
+resultatet: 4<br>
+opptellingen: 2<br>
+resultatene fra endelig opptelling: 1<br>
+tellingene: 1<br>
+resultatet i papirform: 1<br>
+Papir: 1<br>
+Opptelling fra endelig opptelling: 1<br>
+møtebøker for stemmestyra og valgstyret, endeleg opptelling: 1<br>
+Underskrevet protokoll fra valgstyret: 1<br>
+Papir og digitalt dokument: 1<br>
+Opptellingsresultater: 1<br>
+...: 1<br>
+Protokollen: 1<br>
+resultatene: 1<br>
+Stemmesedler, Møtebok: 1<br>
+Valgstyrets valgprotokoll: 1<br>
+Protokoll: 1<br>
+Resultatet føres i valgprotokollen og journalføres. Stemmesedlene oppbevares fysisk i arkivet minimum til valgperioden er utløpt.: 1<br>
+Notert ned på papir. Dei fysiske røystesetlane blir lagt i konvoluttar markert med tal på røyster. Blir arkivert i åtte år: 1<br>
+Møtebok/protokoll: 1<br>
+resultatet journalføres som en del av saksdokumentene/valgstyrets møteprotokoll: 1<br>
+protokoll: 1<br>
+Valgprotokoller og relevante dokumenter: 1<br>
+Opptellingen: 1<br>
+Protokollen fra EVA Admin: 1<br>
+møteboken med vedlegg: 1<br>
+Resultatet av endelig opptelling: 1<br>
+resultat fra endelig opptelling: 1<br>
+Valgstyrets møtebok underskrives av valgstyret, skannes og legges i sak og arkivsystemet/journalføres. Oppbevarer papiroriginalen i arkivet for valg.: 1<br>
+Resultatet noteres i en notatblokk: 1<br>
+Resultatet fra endelig opptelling blir journalført: 1<br>
+Protokoll fra EVA blir lagret i saksbehandlingssystemet Elements: 1<br>
+Endelig telling: 1<br>
+Møtebok fra EVA Admin: 1<br>
+resultat fra endelig opptelling, røystesetlar og manntal: 1<br>
+valgprotokoller og stemmesedler: 1<br>
+Resultater blir lagret i EVA og rapporter i sak/arkivsystemet.: 1<br>
+Møtebok (Valgprotokoll): 1<br>
+protokoll fra valget: 1<br>
+valgoppgjøret (valgstyrets møtebok): 1<br>
+opptellingsskjema: 1<br>
+Opptellingsskjema: 1<br>
+Valgstyrets protokoll: 1<br>
+RESULTATET FRA OPPTELLINGEN: 1<br>
+Protokoller: 1<br>
+</td>
+</tr>
+<tr>
+<th>final_counting__storage_method</th>
+<td>
+Sak- og arkivsystem, digitalt uttrekk (minnepenn), backup av database: 1<br>
+Lagres utenom EVA Admin: 1<br>
+: 115<br>
+arkivert og journalført i vårt saksystem (Websak Pluss): 1<br>
+lagret i EVA: 1<br>
+Ukjent: 1<br>
+på papir og digitalt dokument: 1<br>
+Kommunens arkiv og journalsystem: 2<br>
+papir: 4<br>
+skanning og journalføring i kommunens sak/arkiv-system: 1<br>
+skanning: 1<br>
+Digital journalføring: 1<br>
+WebSak: 1<br>
+Arkivert/journalført: 1<br>
+Papir og i sak/arkivsystemet.: 1<br>
+arkivert digitalt og fysisk: 1<br>
+EVA Admin, papir: 1<br>
+Journalføres i sak- og arkivsystem: 1<br>
+digitalt dokument: 4<br>
+På papir: 1<br>
+valglogg og omslag: 1<br>
+journalføres i kommunens sak- og arkivsystem: 1<br>
+fysisk arkivering: 1<br>
+Journalført: 1<br>
+Journalføres i møtebok: 1<br>
+Arkivsystem public 360: 1<br>
+journalsystem: 1<br>
+møteprotokoll, arkivsystem: 1<br>
+Journalføres og arkiveres i kommunens sak- og arkivsystem: 1<br>
+Arkiv: 1<br>
+Digitalt i EVA Admin og journalføring: 1<br>
+...: 1<br>
+Arkivsystem: 1<br>
+på papir: 1<br>
+Fysisk oppbevaring: 1<br>
+Elektronisk sak arkiv system: 1<br>
+digitalt og papirkopi: 1<br>
+Resultatet føres i valgprotokollen og journalføres.: 1<br>
+Elektronisk lagring og papirkopier arkiveres: 1<br>
+Digitalt dokument: 3<br>
+manuell på papir: 1<br>
+digitalt: 2<br>
+Elements - kommunens saks- og arkivsystem: 1<br>
+som digitalt dokument og på annet lagermedium: 1<br>
+journalført i kommunens sak og arkivsystem: 1<br>
+Papir og digitalt: 1<br>
+papir, digitalt og journalført: 1<br>
+journalføres: 1<br>
+Journalført i arkiv: 1<br>
+Arkivert i vårt saksbehandlingssystem: 1<br>
+Journalføres og arkiveres: 1<br>
+Journalføring: 2<br>
+elektronisk og papir: 1<br>
+papir/digitalt dokument: 1<br>
+Papir: 2<br>
+sak/arkivsystem: 2<br>
+arkiveres: 1<br>
+Elements/ePhorte: 1<br>
+Elements: 1<br>
+ukjent: 2<br>
+Arkivering og journalføring: 1<br>
+arkiv- og saksbehandlingssystem: 1<br>
+papir i forseglet urne, journalført i sak-arkivsystemet: 1<br>
+Sakssystem: 1<br>
+Utenom i EVA Admin/EVA Skanning: 1<br>
+lagres videre i mappe: 1<br>
+arkivsystem: 1<br>
+fysisk: 1<br>
+Fysisk arkivering: 1<br>
+MANUELL: 1<br>
+Digitalt: 1<br>
+</td>
+</tr>
+<tr>
+<th>final_counting__process_for_control</th>
+<td>
+true: 77<br>
+: 53<br>
+false: 69<br>
+</td>
+</tr>
+<tr>
+<th>final_counting__process_for_control_type</th>
+<td>
+Nettsida blir sjekka for å oppdage feil: 1<br>
+Kontroll av resultat mot publisert resultat: 1<br>
+: 121<br>
+Kontrollerer resultatet opp mot det som blir publisert.: 1<br>
+Kommunen kontrollerer endelig opptelling mot publiserte resultater.: 1<br>
+kontroll av endelig opptelling mot resultat som blir publisert: 3<br>
+Rutiner ved opptelling og kontroll av resultatet, ved stikkprøvekontroll i EVA: 1<br>
+Kontroll mot resultat som blir publisert: 3<br>
+sendes/lastes opp på valgresultat.no: 1<br>
+dobbeltsjekk av resultatet: 1<br>
+kontroll av tallene mot valgstyrets protokoll og valgresultater.no: 1<br>
+Sammenligning med manuell telling og stikkprøvekontroll i maskinell telling etter rutine fra Valgdirektoratet: 1<br>
+Dobbeltsjekk av valgarbeidet: 1<br>
+Kommunen har rutiner for kontroll av endelig opptelling opp mot resultat som blir publisert.: 1<br>
+går gjennom resultater på valgresultat.no: 1<br>
+rutiner for kvalitetssikring av tallene: 1<br>
+2 teljekorps som kontrollerer kvarandre før rapportering til media: 1<br>
+Møterotokollene publiseres via nettsidene og Valgdirektoratet har kontroll på innholdet i disse.: 1<br>
+Stikkprøvekontroll underveis i skanningen, sjekkes mot valgresultat dått no og valgprotokoll: 1<br>
+usikker på tidligere rutiner: 1<br>
+det kontrolleres opp mot antall kryss i manntallet og føres oversikt over partier og antall stemmer pr. parti: 1<br>
+kontroll av resultat mot publisert resultat: 2<br>
+Har kontroll på resultatet som blir publisert: 1<br>
+Kontrollerer resultatet mot det som blir publisert: 1<br>
+Valgresultat-siden til Valgdirektoratet, valgprotokoll, medier: 1<br>
+rutiner for å kontrollere resultatet: 1<br>
+Vågå kommune har rutiner for kontroll av endeleg opptelling slik at det samsvarer med det resultatet som vert offentleg.: 1<br>
+sjekker valresultatet: 1<br>
+Kommunen kontrollerer tall/resultater, sjekker publisering på Valgdirektoratets valgresultat side: 1<br>
+Kontroll mot valgprotokoll og publisert resultat: 1<br>
+Kommunen har rutiner for kontroll av endelig opptelling mot publisert resultat: 1<br>
+...: 1<br>
+Tallene kontrollsjekkes og avvik må beskrives før resultatet manuelt kan godkjennes.: 1<br>
+Stikkprøvekontroller: 1<br>
+Ukjent rutine for kontroll av endelig opptelling: 1<br>
+rutiner for kontroll av endelig opptelling mot publiserte resultater: 1<br>
+Valgstyret fører kontroll med opptellingen og signerer valgprotokoll/valgstyrets møtebok. Det er ingen eksplisitt rutine for å kontrollere endelig opptelling mot publisert resultat, men eventuelle avvik vil nok vekke oppmerksomhet.: 1<br>
+kontroll av endelig opptelling mot publisert resultat: 1<br>
+Rutiner for kontroll av endelig opptelling mot publiserte resultater: 1<br>
+automatisk rapportering fra EVA, manuell kontroll opp mot publiserte resultater: 1<br>
+sjekker på valgresultat.no, protokoll mot tellerapporter i Eva: 1<br>
+Innhenting av resultater fra valgstyret/valgkretsene og sammenligning med valgresultat på Valgdirektoratets nettside, samt valgprotokoller og medier: 1<br>
+sjekker opp mot valgresultater.no: 1<br>
+Manuell opptelling med flere tellelag: 1<br>
+Rutiner for kontroll og protokollføring: 1<br>
+Kontroll utføres av valgansvarlig: 1<br>
+Rutiner for kontroll av endelig opptelling mot resultat som blir publisert.: 1<br>
+Vi kontrollerer EVA og møteboken: 1<br>
+Kommunen har rutiner for kontroll av endelig opptelling mot publiserte resultater: 1<br>
+sjekker resultatet mot valgdirektoratet og andre offentlige kilder: 1<br>
+kontroll av resultatet mot publiserte resultater: 2<br>
+kontroll av endelig opptelling mot publiserte resultater: 1<br>
+kontroll av innlegging i EVA: 1<br>
+Vi har rutiner for kontroll av endelig opptelling mot resultat som blir publisert.: 1<br>
+Den endelige opptellingen blir sammenlignet med den foreløpige opptellingen.: 1<br>
+Kontroll av resultat: 1<br>
+Rutiner for å kontrollere resultatet mot Valgdirektoratets valgresultat-side, valgprotokoll, og medier.: 1<br>
+Kommunen har rutiner og sjekker resultatet av endelig opptelling mot resultatet som blir publisert.: 1<br>
+Ingen rutiner for kontroll utenom EVA: 1<br>
+Kontrollerer resultatet mot publiserte resultater: 1<br>
+Valdirektoratet sine rutiner og veiledninger: 1<br>
+kontrolleres av valpersonell, valansvarlig og nettredaktør mot Valdirektoratet si nettside: 1<br>
+kontroll mot resultat som blir publisert: 1<br>
+Valgansvarlig kontrollerer resultatet mot resultatet som blir publisert.: 1<br>
+Ingen rutiner for å kontrollere resultatet: 1<br>
+Kommunen har rutiner for kontroll av endelig opptelling mot resultat som blir publisert.: 1<br>
+Tallene blir kontrollert underveis: 1<br>
+stikkprøvekontroll underveis: 1<br>
+sjekking av resultat: 1<br>
+To personer sjekker for riktige resultater: 1<br>
+Valgdirektoratets ansvar å sikre riktige resultater på valgresultat.no, men vi sjekker hver gang vi publiserer noe: 1<br>
+KONTROLL VED AT SYSTEMET VARSLER AVVIK DERSOM ULIKE TALL LEGGES INN: 1<br>
+Sjekket etter opptelling, men ikke loggført: 1<br>
+</td>
+</tr>
+<tr>
+<th>answer1</th>
+<td>
+Maskinell: 7<br>
+Manuell: 9<br>
+Vil kommunen foreta maskinell eller manuell endelig telling av valgresultatet?: 38<br>
+Fedje kommune har manuell endeleg oppteljing av valresultatet.: 1<br>
+: 54<br>
+Maskinell.: 1<br>
+Vi vil foreta maskinell telling av valgresultatet.: 1<br>
+Endelig opptelling foretas med EVA Skanning: 1<br>
+Tysnes kommune har manuell endeleg teljing: 1<br>
+Hustadvika kommune vil gjennomføre maskinell opptelling ved endelig telling av valgresultatet.: 1<br>
+Kommunen foretar maskinell endelig telling av valgresultatet.: 2<br>
+No answer: 1<br>
+N/A: 1<br>
+Ja: 2<br>
+Rakkestad kommune foretar maskinell endelig telling av valgresultatet.: 1<br>
+Manuell telling.: 2<br>
+Manuell endelig telling.: 2<br>
+Malvik kommuner teller maskinelt.: 1<br>
+Manuell endelig telling av valgresultatet: 1<br>
+Ved foreløpig opptelling (manuell opptelling) blir opptellingen gjort i valgkretsene.: 1<br>
+...: 6<br>
+Sveio kommune utfører endeleg teljing maskinelt.: 1<br>
+Vi ønsker selvfølgelig å svare på dine spørsmål. Men jeg synes du sier lite om hvem du er og hvem du representerer og hva disse dataene skal brukes til. Skal spørsmålene bare besvarer under hvert?: 1<br>
+Gol kommune skal gjennomføre manuell telling av valgresultatet.: 1<br>
+Ullensaker kommune gjennomfører maskinell telling av endelig valgresultat.: 1<br>
+Kommunen teller alle stemmer manuelt: 1<br>
+Inderøy kommune skal foreta maskinell endelig telling. Unntaket er sent innkomne forhåndsstemmer som skal være hos kommunen innen kl. 17.00 dagen etter valgdagen.: 1<br>
+Kommunen vil foreta manuell endelig telling av valgresultatet.: 3<br>
+Rendalen kommune vil foreta manuell endelig telling.: 1<br>
+Ved foreløpig opptelling vil kommunen foreta manuell telling av valgresultatet.: 1<br>
+Vil kommunen foreta maskinell eller manuell endelig telling av valgresultatet? - N/A: 1<br>
+Nei - Manuell opptelling.: 1<br>
+Vi foretar maskinell endelig telling.: 1<br>
+Vågå kommune vil nytte manuell telling av røystesetlar.: 1<br>
+Manuell telling: 6<br>
+Luster kommune har manuell førebels og endeleg teljing.: 1<br>
+Maskinell telling: 2<br>
+kun manuell telling: 1<br>
+Vi vil foreta maskinell endelig telling av valgresultatet.: 1<br>
+Maskinell opptelling: 2<br>
+Manuell endelig telling: 1<br>
+Averøy kommune vil foreta manuell endelig telling av valgresultatet.: 1<br>
+Manuell teljing: 1<br>
+MANUELL: 2<br>
+Kommunen foretar manuell endelig telling.: 1<br>
+Manuel telling.: 1<br>
+Verdal kommune foretar maskinell endelig telling.: 1<br>
+Vil kommunen foreta maskinell eller manuell endelig telling av valgresultatet?: 2<br>
+Foreløpig opptelling blir gjort manuelt.: 1<br>
+Endelig opptelling skjer maskinelt: 1<br>
+No answer provided: 1<br>
+Vi vil fåreta foreløpig telling manuelt, telles to ganger , og endelig telling Maskinelt.: 1<br>
+manuell opptelling.: 1<br>
+Maskinell, for første gang.: 1<br>
+Manuell.: 2<br>
+Flå kommune foretar manuell endelig telling: 1<br>
+Maskinell endelig telling.: 1<br>
+Hitra kommune foretar maskinell opptelling ved den endelige tellingen av valgresultatet.: 1<br>
+Vi har manuell opptelling.: 1<br>
+Hvaler kommune har manuell opptelling: 1<br>
+Manuell endelig telling av valgresultatet.: 1<br>
+Sula kommune vil foreta maskinell endelig telling.: 1<br>
+Bokn kommune foretar manuell opptelling både ved foreløpig og endeleg opptelling.: 1<br>
+There were no answers found: 1<br>
+Alle stemmesedler telles to ganger, jf. valgloven § 10-4 (5). Foreløpig opptelling skjer manuelt. Endelig opptelling skjer maskinelt.: 1<br>
+Sel kommune skal foreta manuell opptelling av stemmesedler. (Både foreløpig og endelig).: 1<br>
+Det foretas manuell endelig telling av valgresultatet.: 1<br>
+Ved endelig opptelling vil kommunen benytte maskinell telling (skanner): 1<br>
+Molde kommune bruker maskinell endelig opptelling.: 1<br>
+Manuell opptelling: 3<br>
+Grue kommune foretar endelig maskinell telling (skanner stemmesedlene).: 1<br>
+kommunen benytter maskinell telling: 1<br>
+</td>
+</tr>
+<tr>
+<th>answer2</th>
+<td>
+EVA blei innført i 2013 og lovpålagt i 2015. Det var ei politisk sak i valstyret og kommunestyret i november og desember 2012.: 1<br>
+Sak 004/23: 1<br>
+I hvilken politisk sak ble dette vedtatt?: 40<br>
+Sak 036/23 i formannskapet som og er valstyre i Fedje kommune.: 1<br>
+: 56<br>
+Vedtatt i Valgstyret i forkant av 2007-valget.: 1<br>
+Dette ble vedtatt i sak nummer 23/9805.: 1<br>
+Valgstyrets sak 22/5567: 1<br>
+Valgstyret PS 5/23, delegering av fullmakter, ikke egen sak for maskinell telling. Det er gjort i tidligere valg.: 1<br>
+I politisk sak om oppteljing i Valstyret: 1<br>
+Vedtatt av Hustadvika valgstyre PS 4/2023 i møte den 13.03.2023.: 1<br>
+Kommunen tok i bruk maskinell opptelling første gang i 2007. Eksakt saksnummer har vi ikke funnet fram til, da dette ligger hos Interkommunalt Arkiv. Hvis ønskelig kan vi finne fram til saksnummer.: 1<br>
+No answer: 1<br>
+N/A: 1<br>
+Sak 0005/23 - Valgstyret / møte 7. februar 2023: 1<br>
+Valgstyret behandlet opptelling av stemmesedler - forhåndsstemmer og valgtingstemmer i sak 12/23, 07.06.2023.: 1<br>
+Valgstyret 05/23: 1<br>
+Denne beslutningen tas administrativt.: 1<br>
+Dette er delegert til kommunedirektøren, og det ble delegert i sak 2/23 i valgstyrets møte 14.02.23.: 1<br>
+Det ble ikke oppgitt vedtak: 1<br>
+Det er ikke oppgitt i dette dokumentet.: 1<br>
+...: 6<br>
+Maskinell teljing blei innført i 2007, (nemnd i sak VAL-009/07 av 23. mai 2007), og blir (implisitt) stadfesta av valstyret i forkant av kvart val, jf. seinast sak VAL-012/23 av 15. mai 2023, kor det kjem fram av saksframlegget at endeleg resultat blir skanna.: 1<br>
+Jeg synes du sier lite om hvem du er og hvem du representerer og hva disse dataene skal brukes til.: 1<br>
+Gol kommune har aldri hatt maskinell telling og har ikke hatt sak på dette. Valgstyret har gitt tilbakemelding om at vi fortsetter med manuell telling.: 1<br>
+PS 4/23 valstyresak om fullmakter, ikkje eiga sak om maskinell eller manuell teljing: 1<br>
+Ullensaker kommune vedtok å benytte elektronisk telling for første gang ved valget i 2013. Kommunestyresak PS 19/13. Det er siden videreført via saker som omhandler budsjettet hvor det bevilges midler til kjøp/leasing av utstyr for digital manntallsregistrering og skanning av stemmesedler, sist i Kommunestyresak PS 162/22: 1<br>
+Dette er avgjort i sak hos Valgstyret: 1<br>
+I valgstyrets sak 1/23 er det vedtatt at kommunedirektøren ivaretar ansvaret for den praktiske gjennomføringen av kommunestyre- og fylkestingsvalget 2023.: 1<br>
+Det er ikke vedtatt i politisk sak.: 1<br>
+Vet ikke.: 1<br>
+Det er ikke oppgitt i dokumentet hvilken politisk sak dette ble vedtatt i.: 1<br>
+I hvilken politisk sak ble dette vedtatt? - N/A: 1<br>
+Det ble vedtatt i den politiske saken med referanse VSA 253/12 12.12.2016. Forvaltningslovens § 10 til 12 jf. valglovens § 42.29.11.2022.: 1<br>
+Valgstyresak 2/23 i valgstyret den 20. mars 2023: 1<br>
+Valgstyret sak 025/21 Evaluering av gjennomføringen av stortings og- sametingsvalget 2021
+Valgstyret sak 002/23 Gjennomføring av kommunestyre- og fylkestingsvalget 2023: 1<br>
+Valgstyret: 1<br>
+080/22 og 002/23: 1<br>
+Vågå kommune har ikkje noko politisk vedtak på dette.: 1<br>
+Det har ikke vært behandlet politisk, men har alltid vært gjort manuelt.: 1<br>
+Avklart i drøftingssak med valstyret i sak 4/23 den 1.2.23.: 1<br>
+Valgstyret - PS 1/23: 1<br>
+Sak X: 1<br>
+Den politiske saken ble ikke oppgitt: 1<br>
+Ikke behandlet: 1<br>
+Sak K-055/22, 31.10.2022: 1<br>
+Dette ble politisk behandlet i Valgstyret den 9. februar 2023 "Delegering av myndighet fra Valgstyret - Kommunestyre- og fylkestingsvalget 2023" https://opengov.360online.com/Meetings/NORDREFOLLO/File/Details/1342318.PDF?fileName=Kommunestyre-%20og%20fylkestingsvalget%202023%20-%20Delegering%20av%20fullmakter&fileSize=266032 der kommunedirektøren blant annet fikk delegert myndighet til å "organisere valget på valgdagene og opptelling av stemmene og foreta valgoppgjør og føre valgprotokoll".: 1<br>
+Det ble vedtatt av Valstyret i Klepp den 05.09.2016, sak 3/16: 1<br>
+Maskinell telling er ikke aktuelt pga. kommunens størrelse: 1<br>
+Vedteke i budsjettsak gjennom auke i ramme.: 1<br>
+Manuell endelig opptelling ble vedtatt i Valgstyret 18.04.2023 - saksnummer 2/23 (arkivsak 22/01847): 1<br>
+Askvoll kommune er ein liten kommune og har difor aldri nytta skanning til maskinell teljing.: 1<br>
+Vedtak i sak 123/2021: 1<br>
+Vi har ikkje hatt saka oppe til politisk handsaming. Det har ikkje vore eit behov for scanning i og med at vi er ein relativt liten kommune og scanning er ganske kostbart.: 1<br>
+I valstyret, 14. mars 2023 var det nemnt i denne saka: https://innsyn.ulstein.kommune.no/wfdocument.ashx?journalpostid=2020059479&dokid=378204&versjon=2&variant=A&: 1<br>
+Det er ikke avsatt midler i årsbudsjettet til skannerutstyr. Grong er en liten kommune med 3 stemmekretser og har alltid hatt manuell endeling telling.: 1<br>
+Du finner det her: https://opengov.360online.com/Meetings/tingvoll/Meetings/Details/264594?agendaItemId=203689 Dette er ikke en prinsipiell sak og vi har funnet ut at det er kostbart og for en liten kommune så fungerer manuell telling veldig bra.: 1<br>
+Dette har vi ikke hatt politisk sak på siden vi startet skanning av stemmesedlene i 2007.: 1<br>
+Det vedtaket ble gjort i den politiske saken med referanse sak 23/2252.: 1<br>
+valgstyret 003/23: 1<br>
+Ikke politisk vedtatt - kun administrativt - ikke budsjett avsatt til innkjøp av maskinell telling - samt at vi er en liten kommune med kun 450 innbyggere: 1<br>
+No answer provided: 1<br>
+Sak 11/2023: 1<br>
+Vi har ikke vedtatt scanning.: 1<br>
+Sak 1/23 den 13.03.2023.: 1<br>
+Det er jeg usikker på, men det har aldri vært noe diskusjon rundt dette pga kostnaden det vil medføre for en liten kommune. Det går veldig raskt å telle stemmesedlene manuelt for vår kommune.: 1<br>
+86/22: 1<br>
+Avgjørelsen om å skanne ble tatt administrativt.: 1<br>
+Delegering: 1<br>
+Sak 4/23, møtedato: 07.03.2023: 1<br>
+Dette er samme tellemåte som er benyttet i kommunen hele tiden ved valgoppgjør.: 1<br>
+Det er ikke tatt stilling til på politisk nivå enda, da vi er liten kommune og ikke har behov for maskinell telling.: 1<br>
+Kommunedirektør (rådmann) er gitt fullmakt til tilrettelegging og praktisk gjennomføring av valget i sak 2/2023 i valgstyret.: 1<br>
+Sak 1/23 - valgstyrets delegering til kommunedirektøren. Vi har benyttet maskinell telling siden 2009.: 1<br>
+Det er ikke fattet politisk vedtak på dette.: 1<br>
+Vi har alltid hatt det og ikke sett behov for maskinell telling når vi er såpass liten kommune.: 1<br>
+Sak PS 01/23.: 1<br>
+Innføring av elektronisk opptelling var i likhet med andre kommuner ansett som å være en del av den praktiske gjennomføringen av valget og dermed delegert til administrasjonen som kurant sak og håndtert iht. dette, jf vedtak i Valgstyret 02.05.2017, sak 17/1: 1<br>
+Det er ikke vedtatt spesifikt, men vi har aldri hatt annen opptelling. Vi er en relativt liten kommune der manuell opptelling går raskt.: 1<br>
+Sak 4/23 i valgstyret: 1<br>
+Ikke vedtatt som egen sak, men går fram av budsjettet som er vedtatt og ligger til grunn for valggjennomføringen, at det ikke er budsjettert med innkjøp for å ha maskinell opptelling. Det er ikke nødvendig med 1100 stemmeberettigede.: 1<br>
+Aldri vore sak då vi er så liten kommune, ca 1200 innbyggarar: 1<br>
+PS sak 17/2 i Valgstyret 08.02.2027 - https://www.nannestad.kommune.no/sru/#se:mote/moteid:1207/utvalgid:14: 1<br>
+Det er ikke oppgitt konkret politisk sak der dette ble vedtatt.: 1<br>
+Har ikke vedtak: 1<br>
+Dette ble vedtatt av Sula valstyre i møte 14.02.23.: 1<br>
+Grunna økonomiske omsyn ( unngå å kjøpe og drifte dyrt oppteljingsutstyr) har Bokn kommune ikkje sett seg råd til å skaffe skanner med lisensar og utstyr for å telje opp ca. 500 røystesetlar.  Her avventer kommunen eit eventuelt pålegg dersom dette skulle komme frå direktoratet til mindre kommunar.: 1<br>
+Det vises til valgstyrets reglement vedtatt i sak 39/23. Valgstyrets myndighet i saker som ikke er av prinsipiell betydning er delegert til kommunedirektøren.: 1<br>
+Vi har ikke vedtatt dette i noen politisk sak, da det ikke har vært vurdert innkjøp av scannere.: 1<br>
+Kommunen har alltid hatt manuell telling.: 1<br>
+Dette ble vedtatt i saken som er vedlagt.: 1<br>
+Vi har hatt maskinell skanning de siste valgårene. Har hatt en sak politisk der vi har delegert ikke prinsipielle saker til rådmann som har delegert videre til administrasjonen. Blant annet fordi maskinell telling er benyttet siste årene tolket vi dette som en ikke prinsipiell sak.: 1<br>
+Dette ble vedtatt innført i 2009: 1<br>
+Vedtak - Valstyret sak 10/2023. Valstyret vedtek at Ål kommune skal ha samla sentral opptelling og manuell opptelling i to omganger, førebels telling og endeleg telling.: 1<br>
+Vedtak - Valstyret sak  10/2023 . Valstyret vedtek at Ål kommune skal ha samla sentral opptelling og manuell opptelling i to omganger, førebels telling og endeleg telling.: 1<br>
+Dette har ikke vært opp til politisk vurdering.: 1<br>
+Ikke noe eget vedtak på dette, vi ville gjort et vedtak hvis vi skulle endre det til maskinell opptelling.: 1<br>
+VALGSTYRETS SAK 2/23: 1<br>
+Sak 002/23 Utlegging av manntall - delegering av vedtak i enkeltsaker behandlet i Valgstyret 02.05.2023.: 1<br>
+Valgstyret i 2019.: 1<br>
+</td>
+</tr>
+<tr>
+<th>answer3</th>
+<td>
+Foreløpig opptelling i valkretsane. Leiar i stemmestyret i kvar krets overfører i EVA.: 1<br>
+EVA Admin: 1<br>
+Ved foreløpig opptelling (manuell opptelling), blir opptellingen gjort i valgkretsene? Hvis det er opptelling i valgkretsene, hvordan overfører kommunen resultatet fra valgkretsene inn til valgstyret/valgansvarlig/EVA Admin?: 40<br>
+Fedje kommune har berre ein valkrins, førebels oppteljing vert lagt inn i valsystemet EVA.: 1<br>
+: 57<br>
+Randaberg har kun en valgkrets. Foreløpig telling blir registrert i EVA.: 1<br>
+Opptellingen blir gjort i valgkretsene. Resultatet blir overført til valgstyret/valgansvarlig/EVA Admin.: 1<br>
+Ja. Stemmestyret skal gjennomføre tellingen og protokollere resultatet i stemmestyrets møtebok (elektronisk i EVA).: 1<br>
+Foreløpig opptelling manuelt foregår ute i kretsene, det blir ført inn i stemmestyrets elektroniske møtebok: 1<br>
+Oppteljing blir gjort sentralt samla.: 1<br>
+Foreløpig opptelling på valgting gjøres ute i hver enkelt valgkrets av stemmestyrene.
+Stemmestyrene må fylle ut stemmestyrets møtebok hvor de fører inn tallene for den foreløpige opptellingen. Stemmestyrets møtebok signeres av stemmestyret, og fraktes inn til valgstyret sammen med annet valgmateriell.: 1<br>
+Opptelling blir gjort ute i valgkretsene. Stemmestyret ringer inn resultatet til valgansvarlig, som fører resultatet inn i EVA Admin. Resultatet blir også levert på papir via møteboka når stemmestyret leverer stemmesedlene.: 1<br>
+No answer: 1<br>
+N/A: 1<br>
+Gjøres av ansvarlig valglokale på lokasjon: 1<br>
+Rakkestad kommune har sentral opptelling, ikke i valgkrets.: 1<br>
+Opptellingen blir ikke gjort ute i valglokalet, men på Samfunnshuset.: 1<br>
+Nei, foreløpig opptelling foregår sentralt, og legges inn i EVA Admin.: 1<br>
+Foreløpig opptelling gjøres ute i kretsene, og telling legges inn av stemmestyrets leder, kontrolleres av valgstyrets sekretær.: 1<br>
+Ja: 2<br>
+Det er ikke oppgitt i dette dokumentet.: 1<br>
+...: 6<br>
+Førebels teljing blir gjort i valkrinsane. Leiar av det enkelte røystestyret ringer inn resultatet til sin kontaktperson sentralt på kommunehuset. Desse formidlar tala vidare (skriftleg) til valansvarleg, som legg informasjonen inn i EVA, slik at relevante tal blir ein del av valstyret si møtebok.: 1<br>
+Skal spørsmålene bare besvarer under hvert?: 1<br>
+Foreløpig og endelig telling blir gjort sentralt. Gol har kun en valgkrets.: 1<br>
+Vi har oppteljing sentralt samla, ikkje fordelt på krets: 1<br>
+Avgitte stemmer telles manuellt (2 ganger) i valgkretsene. Resultatet føres inn i en møtebok som medbringes til skannersenteret hvor det føres inn i EVA før stemmene kontrolltelles maskinelt.: 1<br>
+Øystre Slidre er ein liten kommune med ca 2 600 røysteføre, vi har ein valkrins og eit vallokale. Vi teller alle stemmer sentral samlet.: 1<br>
+Nei. Det foretas kun urnetelling i valgkretsene.: 1<br>
+I Lødingen kommune telles stemmene fra de to valgkretsene på rådhuset, altså ingen valgtelling ute i valgkretsene.: 1<br>
+Rendalen kommune har sentral samlet telling.: 1<br>
+Ved foreløpig opptelling blir opptellingen gjort i valgkretsene. Resultatet fra valgkretsene blir overført til valgstyret/valgansvarlig/EVA Admin, men det står ikke spesifikt hvordan overføringen skjer.: 1<br>
+Ved foreløpig opptelling (manuell opptelling), blir opptellingen gjort i valgkretsene? Hvis det er opp telling i valgkretsene, hvordan overfører kommunen resultatet fra valgkretsene inn til valgstyret/valgansvarlig/EVA Admin? - N/A: 1<br>
+Ved foreløpig opptelling blir opptellingen gjort i valgkretsene. Resultatet overføres fra valgkretsene til valgstyret/valgansvarlig/EVA Admin gjennom manuell meldingsformidling.: 1<br>
+Sentral samlet: 1<br>
+Ved valgting skjer foreløpig manuell opptelling i den enkelte valgkretsen (valglokalet). Stemmestyret i det enkelte lokale legger tallene inn i EVA
+og leverer skriftlig møtebok på papir. Resultatene kontrolleres deretter av valgansvarlig.
+Møtebøkene nevnt i punkt 3, vil bli arkivert i lokalt arkivsystem.: 1<br>
+Berlevåg kommune har kun en valgkrets: 1<br>
+Kun 1 valglokal (krets). Der blir førstetelling gjort: 1<br>
+I Vågå kommune er opptelling sentralt samlet.: 1<br>
+Vi har bare to valgkretser, og den ene er så liten at det foretas ikke manuell telling der.: 1<br>
+Nei berre urneteljing i krinsane. Førebels oppteljing sentralt hjå valstyret.: 1<br>
+Foreløpig opptelling blir gjort i valgkretsene - lokalt fordelt på krets. Stemmestyret legger inn resultatet av foreløpig telling i EVA.: 1<br>
+Ja, det er opptelling i valgkretsene. Det ble ikke oppgitt hvordan resultatet overføres: 1<br>
+Birkenes kommune benytter sentralt-fordelt på krets. Foreløpig opptelling foregår sentralt.: 1<br>
+Hole kommune har kun én valgkrets. Opptelling foregår sentralt på rådhuset der valgstyret er lokalisert.: 1<br>
+Ja, foreløpig manuell opptelling blir gjort i valgkretsene. Resultatet blir lagt digitalt inn i Eva i valgkretsene før stemmesedlene og møteboken fraktes til rådhuset. Her vil tallene bli kontrollert før det overføres til Eva.: 1<br>
+Ja. Stemmestyrene fører sin manuelle opptelling inn i møteboka i EVA: 1<br>
+Nei, sentralt samlet: 1<br>
+Nei: 4<br>
+Alle tellinger av stemmer foretas manuelt og sentralt - samlet.: 1<br>
+Alt teljast sentralt: 1<br>
+Ja, det er opptelling i valgkretsene: 1<br>
+Foreløpig opptelling i krinsane. Blir lagt inn i EVA av røystestyret i krinsane: 1<br>
+Vi tel sentralt fordelt på krins, jamfør saka eg har lenka til i spørsmål 2.: 1<br>
+Det er kun antall stemmegivninger som telles ute i kretsene. Antall stemmegivninger registreres i EVA (kryss i manntall). Partifordeling telles sentralt samlet for alle kretsene. Stemmestyrets møtebok bringes til sentral opptelling.: 1<br>
+Alle stemmestyrene skal skriver møtebok hvor resultatet av urnetelleingen blir registrert sammen med opplysningene fra EVA - kryss i mantall. Det telles kun antall stemmesedler og ikke fordelt på parti.: 1<br>
+Vi har manuell telling kretsvis samlet på Rådhuset.: 1<br>
+Ja, opptellingen blir gjort i valgkretsene. Resultatet blir overført fra valgkretsene til valgstyret/valgansvarlig/EVA Admin.: 1<br>
+ja ved valglokalet/valgkretsen - EVA benyttes: 1<br>
+Træna har kun to valgkretser - den ene er for liten til å telle separat - her sjekkes kun kryss i manntall opp mot stemmer i urne.: 1<br>
+No answer provided: 1<br>
+Høylandet har samlet opptellet. Telles ikke ute i kretsene.: 1<br>
+Nei
+Vi har urnetelling i kretsene og foreløpig opptelling sentralt samlet.: 1<br>
+Opptelling skjer sentralt samlet.: 1<br>
+Opptellingen blir gjort i valgkretsene og resultatet blir overført til EVA Admin: 1<br>
+Nei, opptelling skjer sentralt.: 1<br>
+Foreløpig opptelling tas sentralt, kun urnetelling i stemmekretsene.: 1<br>
+Vi har kun 1 valgkrets - Hele kommunen: 1<br>
+Opptelling gjøres sentralt.: 1<br>
+Foreløpig telling skjer i valgkretsene. Ansvarlig i valglokalet legger inn resultatet i EVA. I tillegg tar han et bilde på SMS av 'kladden', der antall stemmer pr. parti er lagt inn. Sender dette på SMS til valgansvarlig. Dette for kontroll at riktig tall er registrert i EVA.: 1<br>
+I valgkretsene gjennomføres urnetelling av stemmestyrene. Urnetellingen legges inn i EVA av stemmestyrenes ledere.: 1<br>
+Vi har sentralt, samlet opptelling.: 1<br>
+Foreløpig og endelig telling telles sentralt på kretsnivå.: 1<br>
+Telling i Valgkreten anses foreløpig telling og stemmesedler scannes og overføres til Eva admin.: 1<br>
+Hvaler har opptelling sentralt på rådhuset.: 1<br>
+Vi har sentralt samla oppteljing så førebels oppteljing føregår på kommunehuset saman med røystestyra straks ettar at dei har levert valgmateriellet til valgstyret.: 1<br>
+Opptelling skjer sentralt -samlet: 1<br>
+Vi har kun ein valkrets: 1<br>
+Foreløpig manuell opptelling blir gjort kretsvis og fremgår av valgstyrets møtebok for den enkelte krets. Stemmestyrets leder og nestleder bringer foreløpig manuell telling inn til valgansvarlig som rapporterer i EVA admin.: 1<br>
+Ved foreløpig opptelling blir opptellingen gjort i valgkretsene. Resultatet overføres fra valgkretsene til valgstyret/valgansvarlig/EVA Admin.: 1<br>
+Foreløpig opptelling skjer i stemmekretsene.
+Resultat blir overført i Valdirektoratet sitt elektroniske valadministrasjonssystem (EVA).: 1<br>
+Bokn kommune har ein valkrets og alt blir talt opp sentralt (på kommunehuset) og deretter lagt inn i EVA.  Valansvarleg og valstyret har oppsyn med oppteljinga.: 1<br>
+Foreløpig opptelling på valgting skjer lokalt fordelt på krets. Rapportering av foreløpige resultater skjer digitalt via det valgadministrative systemet EVA.: 1<br>
+Vi har sentralt samlet opptelling, dvs alt blir telt manuelt på rådhuset.: 1<br>
+Nei, opptellinga foretas sentralt samlet.: 1<br>
+Ved foreløpig opptelling blir opptellingen gjort i valgkretsene. Resultatet blir overført fra valgkretsene inn til valgstyret/valgansvarlig/EVA Admin.: 1<br>
+Manuell opptelling blir gjort samlet, ikke i valgkretsene.: 1<br>
+Foreløpig opptelling gjøres i kretsene manuelt. Resultatet rapporteres inn via EVA til valgstyret.: 1<br>
+Sentral opptelling: 2<br>
+Opptelling blir gjort sentralt samlet.: 1<br>
+Dønna kommune har ikke opptelling i valgkretsene.: 1<br>
+NEI: 1<br>
+Det er kun en stemmekrets i Grue - Kirkenær krets. Sak 005/23: Kommunestyre- og fylkestingsvalget i 2023 - endring av antall stemmekretser - behandlet i Kommunestyret 20.02.2023.: 1<br>
+Opptelling skjer sentralt samlet: 1<br>
+</td>
+</tr>
+<tr>
+<th>answer4</th>
+<td>
+Resultatet blir ikkje lagra andre stader enn EVA. Det blir kontrolltelt  før endeleg telling.: 1<br>
+Lagres i EVA Admin, mulig stemmestyrene har egen kladd.: 1<br>
+Ved foreløpig opptelling (manuell opptelling), hvordan lagrer/arkiverer kommunen resultatet fra opptellingen utenom EVA Admin? Papir? Digitalt dokument? SMS? Blir resultatet journalført?: 40<br>
+Me bruker teljelister i tillegg til at det vert ført i EVA, alt vert arkivert og journalført i vårt saksystem. Me nyttar for tida saksystemet Websak Pluss.: 1<br>
+: 57<br>
+Resultatet fra foreløpig opptelling blir lagret i EVA. Stemmesedlene fra et valg skal oppbevares ut valgperioden. Valgloven §15-2 (med referanse til arkivloven).: 1<br>
+Resultatet fra foreløpig opptelling lagres/arkiveres ved bruk av digitalt dokument. Det blir også journalført.: 1<br>
+Vi har lister på papir, legger inn i digitalt dokument og journalfører.: 1<br>
+Kommunens arkiv og journalsystem: 2<br>
+Resultat blir oppbevart i papirform i arkiv.: 1<br>
+Stemmestyrenes møtebøker blir skannet og arkivert (journalført) i kommunens sak/arkiv-system.: 1<br>
+Møteboka blir scannet inn og arkivert i arkivsystemet vårt og journalført. Møtebok blir også lagt ut på nettsiden til kommunen.: 1<br>
+No answer: 1<br>
+N/A: 1<br>
+Papir (valgprotokoll for valgstyret) - resultatet/protokollen blir journalført: 1<br>
+Resultatet føres på papir før det legges inn i EVA. Papirdokumentet journalføres digitalt.: 1<br>
+Den blir journalført i WebSak.: 1<br>
+Valgstyrets møtebok arkiveres/journalføres. Av den fremgår resultatene fra opptellingen.: 1<br>
+Lagres i stemmestyrets møtebok, legges i sak/arkivsystemet. Oppbevares i tillegg på papir.: 1<br>
+Digitalt dokument, blir journalført: 1<br>
+Det er ikke oppgitt i dette dokumentet.: 1<br>
+...: 6<br>
+Røystestyrets leiar fører resultatet frå førebels oppteljing manuelt inn i røystestyret si møtebok, som blir levert inn sentralt valkvelden, skanna og arkivert digitalt. Originalen blir arkivert i det fysiske arkivet.: 1<br>
+Mvh
+Tove Gotvassli
+Ass. Rådmann og valgansvarlig: 1<br>
+EVA Admin er vårt valgadministrasjonssystem og resultatet lagres der. Protokollen som tas ut fra EVA Admin blir journalført. Vi har også resultatene på papir.: 1<br>
+Resultatet frå opptellingene hentes ut fra EVA og journalføres i vårt sak- og arkivsystem. Valget godkjennes av nyvalgt kommunestyre ved konstituerende møte.: 1<br>
+Alt blir registert i EVA Admin: 1<br>
+På papir. Resultatet blir ikke journalført annet enn i valgstyres møtebok. Der fremgår resultatene fra manuell opptelling.: 1<br>
+Tellingene blir ført i valglogg og på omslag rundt de forskjellige bunkenene (pr parti/liste).: 1<br>
+Det føres en oversikt på papir. Blir journalført i kommunens sak- og arkivsystem.: 1<br>
+Det er ikke oppgitt i dokumentet hvordan kommunen lagrer/arkiverer resultatet fra foreløpig opptellingen.: 1<br>
+Ved foreløpig opptelling (manuell opptelling), hvordan lagrer/arkiverer kommunen resultatet fra opptellingen utenom EVA Admin? Papir? Digitalt dokument? SMS? Blir resultatet journalført? - N/A: 1<br>
+Ved foreløpig opptelling lagrer kommunen resultatet i papirform. Resultatet blir også journalført.: 1<br>
+Papir blir journalført: 1<br>
+Resultatet fra endelig opptelling blir journalført i møtebok. Stemmesedlene (papir) oppbevares lokalt til neste valgperiode. Stemmesedlene (digital kopi) oppbevares på egen ekstern lagringsenhet på annet sted enn papirsedlene.: 1<br>
+Det lagres i vårt arkivsystem public 360, protokollene legges ut på vår hjemmeside.: 1<br>
+Digitalt dokument, som blir journalført: 1<br>
+Vi nytter kun EVA Admin for lagring av førebels opptelling: 1<br>
+Det blir lagra i EVA, blir journalført etter endeleg teljing.: 1<br>
+Underskrevet protokoll fra stemmestyrene blir journalført og arkivert i kommunens sak- og arkivsystem: 1<br>
+Papir, digitalt dokument, blir journalført: 1<br>
+Resultatet blir lagret digitalt i EVA Admin og blir også journalført: 1<br>
+Resultatet fra den foreløpige opptellingen fremgår av protokollen som signeres av Valgstyret etter valget. Protokollen journalføres i sak/arkivsystemet.: 1<br>
+Resultatene legges først og fremst inn manuelt på papir før det registreres i EVA. Oppbevares sammen med stemmesedlene, men praksis har ikke vært å journalføre disse. Resultatene legges deretter inn i EVA, som igjen danner grunnlaget for valgstyrets møtebok, som vedtas og signeres av valgstyret. Valgstyrets møtebok journalføres.: 1<br>
+Stemmestyret fyller inn et papirskjema som underskrives av stemmestyret og leveres inn når stemmesedlene leveres inn på rådhuset etter manuell opptelling. Dette skjemaet blir journalført.: 1<br>
+Stemmestyrenes møtebøker blir også arkivert i vårt elektroniske sak arkiv system: 1<br>
+Protokoll blir digitalt journalført og papirkopi oppbevares i arkivet: 1<br>
+Papir: 2<br>
+Utenom EVA Admin vil foreløpig opptelling noteres på papir eller digitalt. Resultatet fra opptellingen føres i valgprotokollen/valgstyrets møtebok. Dokumentet journalføres.: 1<br>
+Vi legg alle teljingar inn i EVA. Protokollen vert journalført: 1<br>
+Resultatet blir lagret elektronisk og papirkopier blir arkivert: 1<br>
+Resultatet blir notert ned på papir for kontroll, men ikkje journalført.: 1<br>
+Møtebok/protokoll vert laga i EVA, og vi arkiverer den i våre system etterpå.: 1<br>
+På papir i stemmestyrets møtebok. Stemmestyrets møtebok journalføres i sak- arkivsystem (se pkt. 6).: 1<br>
+Kommunen har egne skjema som ligger på vært rom (der det telles stemmesedler) her skriver de ned, antall stemmer pr. parti - rette og urette. Så bytter tellekorpset rom og alt blir telt en gang til. Ved avvik må det telles en gang til. Dette er et arbeidsdokument.: 1<br>
+Vi arkiverer dette i Elements - kommunens saks- og arkivsystem.: 1<br>
+Resultatet fra foreløpig opptelling lagres/arkiveres både i papirform og som digitalt dokument. Resultatet blir også journalført.: 1<br>
+ja journalført i kommunens sak og arkiv system.: 1<br>
+No answer provided: 1<br>
+Det blir arkivert både på papir og digitalt og lagt inn i sak-arkivsystemet vårt.: 1<br>
+Møteboka fra EVA valg blir scannet inn i vårt saksbehandlingssystem. Alle stemmesedler blir oppbevart for evt. etterkontroll. Kommunestyret må godkjenne valget. Resultatene blir journalført.: 1<br>
+Journalført i arkiv (møteprotokoll): 1<br>
+Det blir lagt rett inn i EVA Admin. Vi har i tillegg en digital liste til valget er gjennomført. Protokollen fra EVA blir arkivert i vårt saksbehandlingssystem.: 1<br>
+Ja: 1<br>
+Vi har kladd på papir liggende litt, tar ev. også en utskrift, men arkiverer det ikke utenom møteboken (valgprotokollen).
+Papir? Digitalt dokument? SMS? Blir resultatet journalført? Nei: 1<br>
+Det blir lagret i møteboka fra stemmestyrene, og det blir journalført: 1<br>
+Den arkiveres i sak- og arkivsystemet vårt. Digitalt dokument. Resultatet blir journalført.: 1<br>
+Valgstyrets møtebok (og stemmestyrenes urnetelling) arkiveres elektronisk og papir, øvrige materiell arkiveres i papir. Den endelige møtebok publiseres på Møteportal i innsyn i kommunestyrets godkjenning av valget.: 1<br>
+Papir. Ikke journalført da det er arbeidsdokument. Men lagret i fysisk arkiv.: 1<br>
+Papir/digitalt dokument. Resultatet av foreløpig opptelling blir ikke journalført.: 1<br>
+Skal skannes og legges i sak og arkivsystemet/journalføres. Oppbevarer papiroriginalen i arkivet for valg.: 1<br>
+Ved den foreløpige opptellingen så noteres resultatet også i notatblokk som blir tatt vare på som valgmateriell. Notatblokken blir ikke journalført.: 1<br>
+Valgstyrets møtebok blir lagret i sak/arkivsystemet.: 1<br>
+Kommunen bruker kun EVA admin. Etter avsluttet valg journalføres møtebøkene.: 1<br>
+I valgprotokoll: 1<br>
+Valgstyrets møtebok lagres i kommunens saksbehandlings- og arkivsystem Elements/ePhorte.: 1<br>
+Vi fører ikkje noko oversikt andre stader enn i EVA, men tar ut protokoll for stemmestyra som dei signerer på før vi starter endeleg opptelling. Det blir journalført i vårt sak/arkivsystem.: 1<br>
+Legges inn i EVA: 1<br>
+Kun registrering i EVA: 1<br>
+Foreløpig manuell telling blir journalført i kommunens arkiv.: 1<br>
+Ved foreløpig opptelling blir resultatet lagret/arkivert på papir.: 1<br>
+Arkiverer møtebok fra EVA Admin i vårt sak/arkivsystem: 1<br>
+Sula kommune lagrer / journalfører resultatet fra endelig opptelling i vårt arkiv- og saksbehandlingssystem. Dette ligger åpent for innsyn.: 1<br>
+Resultat av manuell foreløpig oppteljing etter valet blir lagt i EVA og tatt ut på papir til endeleg oppteljing og protokoll er ferdigstilt.  Blir ikkje journalført.: 1<br>
+I alle valglokaler er det et stemmestyre som administrerer stemmegivningen. Stemmestyret er valgt av valgstyret. Stemmestyret fører møtebok som avleveres valgsekretariatet ved innlevering av stemmesedler.: 1<br>
+Vi lagrer resultat i EVA og lagrer rapporter i sak/arkivsystemet i etterkant.: 1<br>
+Resultatet blir kun registrert i EVA Admin. Stemmesedler oppbevares i arkiv.: 1<br>
+Ved foreløpig opptelling blir resultatet lagret/arkivert i digitalt dokument. Resultatet blir også journalført.: 1<br>
+Dette blir lagt inn i excel av tellekorps. Disse blir igjen lagret i en egen fysisk mappe.: 1<br>
+Møteboken blir skannet og lagret i kommunens arkivsystem.: 1<br>
+Vi har eige opptellingsskjema, kor tala frå opptellinga, to tellinger med ulike personar, levert fysisk til den som registrerer i valsystemet EVA - møteprotokollen blir journalført når valet er over.: 2<br>
+På papir. Blir ikke journalført.: 1<br>
+Vi har bare ca 800 stemmesedler. Vi gjør notater på papir/Excel underveis og fører resultatet inn i EVA. Protokollen journalføres, ikke noe annet.: 1<br>
+DIGITALT: 1<br>
+Nei, vi har alt valgoppgjør digitalt i EVA, møteboken journalføres etter endt valgoppgjør.: 1<br>
+resultatene blir registrert inn i EVA. Protokoller arkiveres og journalføres (digitalt): 1<br>
+</td>
+</tr>
+<tr>
+<th>answer5</th>
+<td>
+Ja. Ved overføring/etter overføring blir nettsida 'sjekka'  og dt blir fort synleg der, dersom det er feil i talet samanalikna med foreløpig resultat.: 1<br>
+Ja: 7<br>
+Har kommunen rutiner for å kontrollere resultatet av foreløpig opptelling opp mot det som er synlig på valgresultat-siden til Valgdirektoratet (valgresultat dått no), i valgprotokoll, i medier og lignende? En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet.: 15<br>
+Valgdirektoratet hentar det dei offentleggjer frå valprogrammet EVA. Sjølvsagt kontrollerer me at det er rett det som vert offentleggjort.: 1<br>
+: 57<br>
+Her er jeg ikke sikker på hva du spør om. Hele valggjennomføringen blir protokollert i Valgstyrets protokoll, som signeres av valgstyret, og offentliggjøres i etterkant av valget.: 1<br>
+Ja, kommunen har rutiner for å kontrollere resultatet av foreløpig opptelling mot det som er synlig på valgresultat-siden til Valgdirektoratet, i valgprotokoll, i medier og lignende.: 1<br>
+Vi sitter alltid to sammen og legger inn. Representanter fra valgstyret er også tilstede. Vi sjekker stadig at det som ligger ute er riktig.: 1<br>
+Vi har rutiner ved opptelling og kontroll av resultatet, ved stikkprøvekontroll i EVA. Første telling er manuell endelig telling er maskinell.
+
+Resultatet blir ikke offentlig gjort før Valgdirektoratet åpner for det.: 1<br>
+Stemmestyrenes møtebøker kontrolleres ved kretsmottak, og sjekkes/registreres i EVA. Det er ikke rutiner for kontroll av foreløpig resultat mot valgresultat.no eller media.: 1<br>
+Ja, det gjøres en dobbelsjekk av resultatene når de legges inn. Valgresultat.no sjekkes også når resultatet offentliggjøres.: 1<br>
+No answer: 1<br>
+Har kommunen rutiner for å kontrollere resultatet av foreløpig opptelling opp mot det som er synlig på valgresultat-siden til Valgdirektoratet (valgresultat dått no), i valgprotokoll, i medier og lignende?
+En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet.: 9<br>
+N/A: 1<br>
+Det foretas en sjekk av at tallene som fremgår i valgstyrets protokoll er de samme som legges ut på valgresultater.no (overføringen skjer automatisk fra EVA etter at opptellingen er godkjent og man har markert for overføring): 1<br>
+Valgresultat.no: Sjekker mot innsendt resultat.
+Valgprotokoll: Manuell telling telles to ganger. Sammenlignes med maskinell telling. Stikkprøvekontroll i maskinell telling etter rutine fra Valgdirektoratet.: 1<br>
+Nei. Dette er samme resultat som ligger i EVA.
+En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet.: 1<br>
+Vi har gode rutiner for kvalitetssikring av valgarbeidet. Alt dobbeltsjekkes av flere personer. Feil skal ikke forekomme.: 1<br>
+Ja. Sjekker alltid valgresultat.no opp mot våre egne tall.: 1<br>
+Har kommunen rutiner for å kontrollere resultatet av foreløpig opptelling opp mot det som er synlig på valgresultat-siden til Valgdirektoratet (valgresultat dått no), i valgprotokoll, i medier og lignende?
+En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet.: 14<br>
+Det er ikke oppgitt i dette dokumentet.: 1<br>
+...: 6<br>
+Valansvarleg går gjennom resultata som blir publiserte på valgresultat.no opp mot informasjonen som er meld inn via EVA.: 1<br>
+Mvh
+Tove Gotvassli
+Ass. Rådmann og valgansvarlig: 1<br>
+Det som legges inn i EVA er det tellekorpset kommer fram til. Det telles og kontrolltelles av fire personer før det føres over på lister som legges inn. Vi har rutiner for kvalitetssikring av tallene.: 1<br>
+Vi har rutiner ved oppteljing og kontroll av resultater, 2 teljekorps som kontrollerer kvarandre før vi rapporterer vidare til media. Det er eiga sperrefrist for rapportering og slik eg har forstått det så vert denne styrt av valgdirektoratet: 1<br>
+Eventuelle avvik må kommenteres/forklares før det er mulig å publisere resultatet: 1<br>
+Vi må være helt sikre på at alle opptellingstall er riktige før de legges inn i EVA og låses. Data på valresultat.no er de samme dataene som er lagt inn i Eva Admin. Vi dobbeltsjekker systemene i mellom.: 1<br>
+En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet. Ved registrering av tallene fra manuell foreløpig telling inn til EVA kontrolleres det at det er riktige tall som blir registrert.: 1<br>
+For 2023 vil kommunen ha rutine på dette. Usikker på om det har vært rutiner på dette tidligere.: 1<br>
+Utskrift skjema til stemmestyre som fylles ut. Kontrolleres opp mot antall kryss i manntallet. Det blir også ført en oversikt underveis i opptellingen (på papir). Her er det oversikt over partier og antall stemmer pr. parti, rettede og urettede. Stemmer blir også sortert i samlekonvolutter med antall notert på konvolutt.: 1<br>
+Det er ikke oppgitt i dokumentet om kommunen har rutiner for å kontrollere resultatet av foreløpig opptelling mot resultater fra Valgdirektoratet, valgprotokoll, medier osv.: 1<br>
+Har kommunen rutiner for å kontrollere resultatet av foreløpig opptelling opp mot det som er synlig på valgresultat-siden til Valgdirektoratet (valgresultat dått no), i valgprotokoll, i medier og lignende? En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet. - N/A: 1<br>
+Ja, kommunen har rutiner for å kontrollere resultatet av foreløpig opptelling opp mot det som er synlig på valgresultat-siden til Valgdirektoratet, valgprotokoll, medier og lignende. Dette gjøres for å oppdage eventuelle tastefeil eller feil i Valgdirektoratets håndtering av resultatet.: 1<br>
+Vi sjekker tallene på valgresultatsiden opp mot våre tall: 1<br>
+Ja, vi kontrollerer at det er samsvar mellom resultatene fra foreløpig og endelig opptelling. Ja, vi forsøker å kontrollere så raskt som mulig at det er samsvar med det som publiseres på valgeresultat.no.: 1<br>
+Ja
+En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet. Opptellingen skal ha to like resultat før det blir godkjent.: 1<br>
+Dette er en umulig problemstilling, for opptelling vil ikke bli godkjent: 1<br>
+Vågå kommune har rutiner for kontroll av førebels opptelling slik at det samsvarer med det resultatet som vert offentleg.: 1<br>
+Me har ikkje nedskrivne rutinar på dette, men er innom valresultat og sjekkar i løpet av oppteljingsprosessen. Ev. tastefeil vil bli oppdaga ved endeleg teljing.: 1<br>
+Kommunen kontrollerer alle tall/resultater vi sender fra oss. Vi sjekker kun at vår kommune er publisert på valgresultat siden til Valgdirektoratet.: 1<br>
+Ja, kommunen har rutiner for å kontrollere resultatet: 1<br>
+Nei: 2<br>
+En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet. Foreløpig opptelling gjøres to ganger (dvs én kontrolltelling). Ved avvik telles stemmesedlene en tredje gang. Det er ikke samme person som kontrollteller. To personer må telle samme antall i en bunke før tallet legges inn i EVA. Bunkene er i forkant delt inn i bunker a 50 stemmesedler (og mindre): 1<br>
+Ja, alle stemmesedlene skannes maskinelt og eventuelle avvik (inkludert håndteringen av disse) vil fremkomme i møteboken som behandles politisk av valgstyret. I tillegg til manuell og maskinell opptelling vil vi gjennomføre stikkprøvekontroller av utvalgte kasser for å sikre at resultatet er riktig.: 1<br>
+Ja. Stemmestyrenes manuelle opptelling blir kontrollert med elektronisk opptelling/skanning i kommunen, og i tillegg tas det stikkprøver som sjekkes manuelt.: 1<br>
+Førebels teljing blir gjennomført tre gonger før vi punsjar resultatet i EVA. Punsjing blir dobbeltsjekka før overføring av valresultat. Vi følgjer valgdirektoratet sine rutiner for teljing.: 1<br>
+Valgstyret signerer valgprotokollen/valgstyrets møtebok. Averøy kommune har ingen eksplisitt rutine for å kontrollere resultatet av foreløpig opptelling opp mot det som er synlig på valgresultat-siden.: 1<br>
+Det er to som registrerer tal frå førebels oppteljing i EVA. Vi kontrollerar difor tala når dei vert registrert og ikkje i ettertid: 1<br>
+Har kommunen rutiner for å kontrollere resultatet av foreløpig opptelling opp mot det som er synlig på valgresultat-siden til Valgdirektoratet (valgresultat dått no), i valgprotokoll, i medier og lignende?
+
+En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet.: 1<br>
+Ja, det er rutiner for å kontrollere resultatet: 1<br>
+EVA rapporterer direkte til media. Det media hentar ut der vil difor samsvare med det vi har sendt inn. Valansvarleg sjekkar valgresultat.no.: 1<br>
+Automatisk rapportering fra EVA. Og en manuell kontroll. Ev. feiltasting vil komme fram ved endelig opptelling.  Ved ev. feiltasting blir det gjort ny endelig opptelling.: 1<br>
+Rette sedler blir registrert først en gang ( to og to personer sitter å gjør dette) Når en er ferdig med et parti så må et annet team gjør det en gang til.: 1<br>
+Vi sjekker manuell telling opp mot soteringerstelling og urne innhold. Vi sjekker også dette i valgprotokollen.: 1<br>
+Ja, kommunen har rutiner for å kontrollere resultatet av foreløpig opptelling. De sammenligner det med valgresultat-siden til Valgdirektoratet, valgprotokollen, medier og lignende for å oppdage eventuelle feil.: 1<br>
+ja: 1<br>
+Vi er en liten og oversiktlig kommune - her dokumenteres alt av to valgansvarlige: 1<br>
+No answer provided: 1<br>
+Ja, vi sjekker dette opp mot valgresultater.no.: 1<br>
+Vi har rutiner på opptelling med tellelag og vi må gjennomføre flere tellinger  og sammenligne og rette på evt. feil. Vi må jo sjekke at Valgresultatet.no har de samme resultat som vi har i våre møtebøker.: 1<br>
+Ja. Kontroll blir protokollført og arkivert.: 1<br>
+Alt blir sjekket av valgansvarlig.: 1<br>
+Ja
+En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet.: 1<br>
+Har kommunen rutiner for å kontrollere resultatet av foreløpig opptelling opp mot det som er synlig på valgresultat-siden til Valgdirektoratet (valgresultat dått no), i valgprotokoll, i medier og lignende?
+En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin), samt feil i Valgdirektoratets håndtering av resultatet.: 1<br>
+Vi kontrollerer EVA og møteboken.
+En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet.: 1<br>
+Ja, kommunen har rutiner for å kontrollere resultatet av foreløpig opptelling: 1<br>
+Vi sjekker det som ligger ute på valgdirektoratet sine sider.: 1<br>
+Dette sjekkes av valgansvarlig.: 1<br>
+Nei, men innleggingen i EVA blir kontrollert av flere valgmedarbeidere.: 1<br>
+Det vi legger inn i EVA skal være kontrollert av oss. Valgdirektoratet henter ut opplysninger derfra.: 1<br>
+Hitra kommune sjekker ikke informasjonen på valgresultat.no: 1<br>
+Resultatet blir kontrollert i EVA.: 1<br>
+All kontroll foregår i EVA admin.: 1<br>
+Dette sjekkes av valgstyret.: 1<br>
+Tastefeil fanges opp av EVA da det blir etterspurt forklaring på avvik mellom sedler og kryss i manntall. Alle bunker telles to ganger under foreløpig opptelling.: 1<br>
+Ja, sjekkes av valgansvarlige: 1<br>
+Rutinene i EVA blir fulgt: 1<br>
+JA, vi kontrollerer at det vi rapporterer som foreløpig opptelling er det samme som er publisert på valgresultat.no, i valgstyrets møteprotokoll og på kommunens nettside.: 1<br>
+Det er ingen opplysninger om rutiner for kontroll av foreløpig opptelling opp mot valgresultatet til Valgdirektoratet.: 1<br>
+Har ikke rutiner, men Valgstyret sjekker manuelt: 1<br>
+Sula kommune har ikke egne rutiner for dette, men vi legger til grunn Valdirektoratet sine rutiner og veiledninger.
+Foreløpig telling skjer ute i stemmekretsene. Det skal telles minst 2 gangar og tellingene skal ha likt resultat. Ved ulikt resultat skal det telles minst én gang til. Senere kommer endelig maskinell telling som skal skje minst én gang.: 1<br>
+Resultat av alle oppteljingar blir kontrollert 2 gonger av 2 sett valpersonell i tillegg til at valansvarlig og nettredaktør kontrollerer mot Valdirektoratet si nettside.  Vi kontrollerer ingen andre medier da dei hentar (skal hente) opplysningane på valdirektoratet sine sider.: 1<br>
+Ja. Eventuelle feil vil også bli oppdaget i sammenheng med innrapportering av endelig opptelling.: 1<br>
+Valgansvarlig kontrollerer dette.: 1<br>
+Nei, ingen rutiner for å sjekke valgresultat-siden til Valgdirektoratet.: 1<br>
+Ja, kommunen har rutiner for å kontrollere resultatet av foreløpig opptelling opp mot det som er synlig på valgresultat-siden til Valgdirektoratet, i valgprotokoll, i medier og lignende.: 1<br>
+Tallene blir kontrollert underveis, og valgresultat.no viser bare det vi legger inn.: 1<br>
+Foreløpig opptelling er foreløpig opptelling og er det første som blir rapporter inn på valgnatta, og er de første tallene som blir frigitt til media. Kontrollen skjer ved endelig maskinell opptelling, kretsvis og valgoppgjøret er foretatt. Da vil resultatet av endelig opptelling rapporteres inn.: 1<br>
+Alltid to personer som sjekker at rett resultat blir lagt ut.: 2<br>
+Det ligger ikke i våre rutiner, men registreringen i EVA Admin gjøres av to personer og det kontrolleres at EVA Admin er korrekt.: 1<br>
+Vi kontrollerer tallene før de legges inn.: 1<br>
+KONTROLL VED AT SYSTEMET VARSLER AVVIK DERSOM ULIKE TALL LEGGES INN: 1<br>
+Nei, vi forholder oss til endelig opptellingsresultat i EVA.: 1<br>
+Det blir sjekket etter opptelling, men ikke loggført.: 1<br>
+</td>
+</tr>
+<tr>
+<th>answer6</th>
+<td>
+Møtebøker blir lagra i vårt sak- og arkivsystem. Det blir føreteke eit uttrekk av data som blir lagra digitalt (minnepenn). Backup av database.: 1<br>
+Vi har rutiner for opptelling. Når denne er gjennomført og godkjent i EVA Admin, journalfører vi Valgstyrets protokoll.: 1<br>
+Tilsvarende som 4) for endelig opptelling (maskinell eller manuell). Hvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Blir resultatet journalført?: 18<br>
+Me bruker teljelister i tillegg til at det vert ført i EVA, alt vert arkivert og journalført i vårt saksystem. Me nyttar for tida saksystemet Websak Pluss.: 1<br>
+: 57<br>
+Se svar for 4) og 5).: 1<br>
+Resultatet fra endelig opptelling lagres utenom i EVA Admin/EVA Skanning. Det blir journalført.: 1<br>
+Samme svar som i 4.: 1<br>
+Kommunens arkiv og journalsystem: 2<br>
+Blir lagra i papirform tilsvarande som for spm 4).: 1<br>
+Valgstyrets møtebok inneholder resultatet av opptelling, og signeres av valgstyret. Valgstyrets møtebok blir skannet og arkivert (journalført) i kommunens sak/arkiv-system. Valgstyrets møtebok med signaturer blir sendt/lastet opp på valgresultat.no.
+Stemmesedlene for kommunestyrevalget oppbevares i vårt arkiv frem til neste kommunestyrevalg. Fylkestingsstemmesedlene fraktes til fylkeskommunen, som oppbevarer sine stemmesedler.: 1<br>
+Møteboka blir scannet inn og arkivert i arkivsystemet vårt og journalført. Møtebok blir også lagt ut på nettsiden til kommunen.: 1<br>
+No answer: 1<br>
+Tilsvarende som 4) for endelig opptelling (maskinell eller manuell).
+Hvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Blir resultatet journalført?: 7<br>
+N/A: 1<br>
+Samme som 4: 1<br>
+Valgstyrets godkjente valgprotokoll journalføres. Godkjennelse av kommunestyrevalget legges frem i det nye kommunestyrets første møte - her fremgår beregning av listestemmetall og antall mandater til listene, beregning av stemmetillegg og personstemmer samt valgte representanter. Journalføres digitalt.: 1<br>
+Den blir journalført i WebSak.: 1<br>
+Valgstyrets møtebok arkiveres/journalføres. Av den fremgår resultatene fra opptellingen.: 1<br>
+Ja. Legges i eget sak/arkivsystem. Oppbevares i tillegg på papir.: 1<br>
+Det ble ikke oppgitt hvordan kommunen lagrer resultatet: 1<br>
+Tilsvarende som 4) for endelig opptelling (maskinell eller manuell).
+Hvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Blir resultatet journalført?: 14<br>
+Det er ikke oppgitt i dette dokumentet.: 1<br>
+...: 6<br>
+Informasjonen som blir lagd inn i EVA er grunnlaget for valstyret si møtebok. Denne blir prenta og signert av valstyret, deretter blir skanna kopi arkivert digitalt. Originalen blir arkivert i det fysiske arkivet.: 1<br>
+Mvh
+Tove Gotvassli
+Ass. Rådmann og valgansvarlig: 1<br>
+Samme svar som for pkt. 4.: 1<br>
+Samme svar som på spm. 4: 1<br>
+Øystre Slidre er ein liten kommune med ca 2 600 røysteføre, vi har ein valkrins og eit vallokale. Vi teller alle stemmer sentral samlet.: 1<br>
+På papir. Resultatet blir ikke journalført annet enn i valgstyres møtebok. Der fremgår resultatene fra endelig opptelling.: 1<br>
+Tellingene blir ført i valglogg og på omslag rundt de forskjellige bunkenene (pr parti/liste).: 1<br>
+Resultatet blir journalført i kommunens sak- og arkivsystem.: 1<br>
+Det er ikke oppgitt i dokumentet hvordan kommunen lagrer resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning.: 1<br>
+Tilsvarende som 4) for endelig opptelling (maskinell eller manuell). Hvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Blir resultatet journalført? - N/A: 1<br>
+Ved endelig opptelling lagrer kommunen resultatet utenom EVA Admin/EVA Skanning i papirform. Resultatet blir også journalført.: 1<br>
+På papir. Blir journalført: 1<br>
+Resultatet fra endelig opptelling blir journalført i møtebok. Stemmesedlene (papir) oppbevares lokalt til neste valgperiode. Stemmesedlene (digital kopi) oppbevares på egen ekstern lagringsenhet på annet sted enn papirsedlene.: 1<br>
+Det lagres i public 360.: 1<br>
+Digitalt dokument som blir journalført: 1<br>
+Vågå kommune journalfører møtebøkene for stemmestyra og valstyret og den endelege opptellinga i våre journalsystem. Dette blir publisert.: 1<br>
+Resultat av oppteljinga blir overført til møteprotokoll, som blir journalført i kommunen sitt arkivsystem og publisert offentleg via politisk møtekalender.: 1<br>
+Underskrevet protokoll fra valgstyret med endelig opptelling blir journalført og arkivert i kommunens sak- og arkivsystem.: 1<br>
+kun manuell telling: 1<br>
+Resultatet blir lagret digitalt i EVA Admin og blir også journalført: 1<br>
+Resultatet fra den endelige opptellingen fremgår av protokollen som signeres av Valgstyret etter valget. Protokollen journalføres i sak/arkivsystemet.: 1<br>
+Resultatene legges først og fremst inn manuelt på papir før det registreres i EVA. Oppbevares sammen med stemmesedlene, men praksis har ikke vært å journalføre disse. Legges deretter inn i EVA.: 1<br>
+Resultatet fra endelig opptelling vil fremgå i møteboken som blir behandlet politisk av valgstyret. Disse dokumentene vil være offentlig tilgjengelige. Kommunen vil også fysisk oppbevare alle stemmesedlene frem til etter valgoppgjøret er godkjent i valgstyret ved neste lokalvalg i kommunen (2027).: 1<br>
+Valgstyrets valgprotokoll blir også arkivert i vårt elektroniske sak arkiv system: 1<br>
+Protokoll blir digitalt journalført og papirkopi oppbevares i arkivet: 1<br>
+Journalført: 1<br>
+Resultatet føres i valgprotokollen. Dokumentet journalføres. Stemmesedlene som er godkjent (kommunestyrevalget) oppbevares fysisk i arkivet minimum til valgperioden er utløpt.: 1<br>
+Alle teljingar vert registrert i EVA. Protokollen vert journalført: 1<br>
+Tilsvarende som 4) for endelig opptelling (maskinell eller manuell).
+
+Hvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Blir resultatet journalført?: 1<br>
+Resultatet blir lagret elektronisk og papirkopier blir arkivert: 1<br>
+Notert ned på papir. Men ikkje journalført. Dei fysiske røystesetlane blir lagt i konvoluttar markert med tal på røyster. Blir arkivert i åtte år (to kommunestyreval).: 1<br>
+Same som for spørsmål 4.: 1<br>
+Manuell endelig telling. På papir. /utskrift av valgstyrets møtebok (valgoppgjør). Journalføres som en del av saksdokumentene/valgstyrets møteprotokoll ifbm. behandling/godkjenning av valgoppgjøret.: 1<br>
+Alt som gjøres i EVA kommer ut i en protokoll som blir journalført i vårt arkivsystem og kommer da ut på den offentlige postlisten. Protokollen bli lagt ved når kommunestyre skal godkjenne valget i første møte den 7. oktober.: 1<br>
+Vi arkiverer dette i Elements - kommunens saks- og arkivsystem.: 1<br>
+Resultatet fra endelig opptelling lagres utenom EVA Admin/EVA Skanning, både som digitalt dokument og på annet lagermedium. Resultatet blir journalført.: 1<br>
+ja, blir journalført i kommunens sak og arkivsystem: 1<br>
+Både på papir og i EVA: 1<br>
+No answer provided: 1<br>
+På papir, digitalt og det blir journalført i sak-arkivsystemet vårt.: 1<br>
+Blir journalført. Manuell opptelling med flere tellelag.: 1<br>
+Maskinell. Journalført i arkiv (møteprotokoll): 1<br>
+Samme svar som nr. 4-: 1<br>
+Ja: 1<br>
+Har tidligere hatt kladd på papir av partifordeling liggende litt, registrering av personstemmer har vi bare hatt i EVA, og så har vi arkivert møteboken. Regner med ved maskinell telling at partifordelingen og registreringen av personstemmer bare vil være i EVA, og at vi ev. tar ut noen utskrifter fra EVA skanning, og arkiverer møteboken med vedlegg.
+Hvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Det lagres i møteboken. Blir resultatet journalført? Møteboken blir journalført og arkivert.: 1<br>
+Resultatet blir lagret utenom EVA Admin/EVA Skanning og blir journalført: 1<br>
+Den arkiveres i sak- og arkivsystemet vårt. Digitalt dokument. Resultatet blir journalført.: 1<br>
+Valgstyrets møtebok arkiveres elektronisk og papir, øvrige arkiveres i papir. Den endelige møtebok publiseres.: 1<br>
+Samme svar som 4: 1<br>
+Papir/digitalt dokument. Resultatet av endelig opptelling blir ikke journalført.: 1<br>
+Valgstyrets møtebok underskrives av valgstyret, skannes og legges i sak og arkivsystemet/journalføres. Oppbevarer papiroriginalen i arkivet for valg.: 1<br>
+Den endelige opptellingen noteres og i notatblokk som blir tatt vare på som valgmateriell. Notatblokken blir ikke journalført.: 1<br>
+Valgstyrets møtebok blir lagret i sak/arkivsystemet.: 1<br>
+Foreløpig og endelig telling telles sentralt på kretsnivå. Etter avsluttet valg journalføres møtebøkene.: 1<br>
+I valgprotokoll, journalføres.: 1<br>
+Valgstyrets møtebok lagres i kommunens saksbehandlings- og arkivsystem Elements/ePhorte.: 1<br>
+Valgprotokollen for begge valga blir journalført i vårt sak/arkivsystem signert av valgstyret.: 1<br>
+Resultatet legges inn i EVA. Valgstyret som til slutt godkjenner og underskriver protokollen, som journalføres.: 1<br>
+Protokoll frå EVA blir godkjent og lagt inn i saksbehandlingssystemet Elements, journalført og behandla i kommunestyret: 1<br>
+Endelig telling følger av valgstyrets møtebok som er til politisk behandling tilgjengelig på kommunens nettside, politisk møtekalender og blir journalført.: 1<br>
+Ved endelig opptelling blir resultatet lagret utenom EVA Admin/EVA Skanning. Det er ikke opplyst om resultatet blir journalført.: 1<br>
+Arkiverer og journalfører møtebok fra EVA Admin i vårt sak/arkivsystem: 1<br>
+Sula kommune lagrer / journalfører resultatet fra endelig opptelling i vårt arkiv- og saksbehandlingssystem. Dette ligger åpent for innsyn.: 1<br>
+Resultat frå endeleg oppteljing blir lagt inn i EVA, journalført i sak-arkivsystemet og i tillegg oppbevart i papir pakka i ei forsegla urne saman med røystesetlar og manntal til neste val er gjennomført.: 1<br>
+EVA-skanning er ikke godkjent for arkivering av stemmesedler. Det vises til kravene i arkivloven hva angår oppbevaring av brukte stemmesedler og møtebøker, jf. valgloven § 15-2.: 1<br>
+Vi lagrer resultat i EVA og lagrer rapporter i sak/arkivsystemet i etterkant.: 1<br>
+Møtebok (Valgprotokoll) arkiveres i sakssystemet.: 1<br>
+For endelig opptelling blir resultatet lagret utenom i EVA Admin/EVA Skanning. Resultatet blir også journalført.: 1<br>
+Det er EVA Admin som er vårt system, og det er protokoll fra valget som lagres videre. Vi tar ikke noe fra systemet og lagrer for seg elektronisk. Alt er i EVA. Protokollen lagrer vi imidlertid videre i mappe.: 1<br>
+Resultat av endelig opptelling er selve valgoppgjøret (valgstyrets møtebok). Dette lagres i kommunens arkivsystem.: 1<br>
+Samme svar som punkt 4: 2<br>
+Valgprotokoll blir skrevet ut.: 1<br>
+Valgstyrets protokoll journalføres.: 1<br>
+MANUELL: 1<br>
+Nei, vi forholder oss til endelig opptellingsresultat i EVA.: 1<br>
+resultatene blir registrert inn i EVA. Protokoller arkiveres og journalføres (digitalt): 1<br>
+</td>
+</tr>
+<tr>
+<th>answer7</th>
+<td>
+Som i punkt 5.: 1<br>
+Ja: 8<br>
+Tilsvarende som 5) for endelig opptelling (maskinell eller manuell). Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir publisert?: 18<br>
+Valgdirektoratet hentar det dei offentleggjer frå valprogrammet EVA. Sjølvsagt kontrollerer me at det er rett det som vert offentleggjort.: 1<br>
+: 57<br>
+Valgstyrets protokoll: 1<br>
+Ja, kommunen har rutiner for kontroll av endelig opptelling mot resultat som blir publisert.: 3<br>
+Samme svar som i 5.: 1<br>
+Samme som under pkt. 5: 1<br>
+Ja, det gjøres en dobbelsjekk av resultatene når de legges inn. Valgresultat.no sjekkes også når resultatet offentliggjøres.: 1<br>
+No answer: 1<br>
+Tilsvarende som 5) for endelig opptelling (maskinell eller manuell).
+Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir publisert?: 7<br>
+N/A: 1<br>
+Samme som 5: 1<br>
+Valgresultat.no: Sjekker mot innsendt resultat.
+Valgprotokoll: Sammenlignes med manuell telling. Stikkprøvekontroll i maskinell telling etter rutine fra Valgdirektoratet. Valgdirektoratet har laget veiledning for manuell kontroll av beregning av valgoppgjøret som Rakkestad kommune skal følge.: 1<br>
+Nei. Dette er samme resultat som ligger i EVA: 1<br>
+Vi har gode rutiner for kvalitetssikring av valgarbeidet. Alt dobbeltsjekkes av flere personer. Feil skal ikke forekomme.: 1<br>
+Ja. Kontrollerer valgresultat.no opp mot egne tall.: 1<br>
+Tilsvarende som 5) for endelig opptelling (maskinell eller manuell).
+Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir publisert?: 14<br>
+Det er ikke oppgitt i dette dokumentet.: 1<br>
+...: 6<br>
+Valansvarleg går gjennom resultata som blir publiserte på valgresultat.no opp mot informasjonen som er meld inn via EVA.: 1<br>
+Takk!
+
+Prosjekt Åpne Valgdata - https://hnygard.github.io/valgprotokoller/: 1<br>
+Samme svar som for pkt. 5.: 1<br>
+Sjå svar i punkt 5: 1<br>
+Vi publiserer møterotokollene via våre nettsider og har kontroll på innholdet i disse. Disse protokollene lastes også opp på nettsiden som Valgdirektoratet har kontroll på.: 1<br>
+Øystre Slidre er ein liten kommune med ca 2 600 røysteføre, vi har ein valkrins og eit vallokale. Vi teller alle stemmer sentral samlet. Vi dobbeltsjekker systemene i mellom.: 1<br>
+Det gjennomføres alltid stikkprøvekontroll underveis i skanningen i endelig opptelling. Endelig opptelling sjekkes mot valgresultat dått no, og valgprotokoll.: 1<br>
+For 2023 vil kommunen ha rutine på dette. Usikker på om det har vært rutiner på dette tidligere.: 1<br>
+Ja, samme som punkt 5.: 1<br>
+Det er ikke oppgitt i dokumentet om kommunen har rutiner for kontroll av endelig opptelling mot publiserte resultater.: 1<br>
+Tilsvarende som 5) for endelig opptelling (maskinell eller manuell). Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir publisert? - N/A: 1<br>
+Ja. Det har vi kontroll på: 1<br>
+Ja, vi kontrollerer at det er samsvar mellom resultatene fra foreløpig og endelig opptelling. Ja, vi forsøker å kontrollere så raskt som mulig at det er samsvar med det som publiseres på valgeresultat.no.: 1<br>
+Samme som spørsmål 5.: 1<br>
+Dette er en umulig problemstilling, for opptelling vil ikke bli godkjent: 1<br>
+Vågå kommune har rutiner for kontroll av endeleg opptelling slik at det samsvarer med det resultatet som vert offentleg.: 1<br>
+Me har ikkje nedskrivne rutinar på dette, men er innom valresultat og sjekkar endeleg resultat.: 1<br>
+Kommunen kontrollerer alle tall/resultater vi sender fra oss og vi sjekker kun at vår kommune er publisert på valgresultat siden til Valgdirektoratet.: 1<br>
+Ja, kommunen har rutiner for kontroll av endelig opptelling mot publisert resultat: 1<br>
+Nei: 2<br>
+Tallene som legges inn i EVA kontrollsjekkes. Alle avvik må dessuten beskrives før resultatet manuelt kan godkjennes. Praksis har vært å kontrollere våre tall (notater) mot tallene publisert på valgresultat.no: 1<br>
+Ja, gjennomfører stikkprøver for å sikre at den maskinelle opptellingen er riktig at valgresultatet som kommer frem i møteboken er korrekt. Dersom det er avvik mellom dette resultatet og det som blir offentliggjort gjennom offisielle kanaler (kommunens nettsider, valgresultat.no osv) eller gjennom mediene vil dette bli fanget opp.: 1<br>
+Ja.: 1<br>
+Stikkprøve og skanning fleire gonger om det blir oppdaga avvik. Vi følgjer valgdirektoratet sine rutiner for teljing.: 1<br>
+Valgstyret fører kontroll med opptellingen og signerer valgprotokoll/valgstyrets møtebok. Averøy kommune har ingen eksplisitt rutine for å kontrollere endelig opptelling mot resultat som blir publisert utover dette. (Imidlertid vil et avvik mellom valgprotokoll/valgstyrets møtebok og publisert resultat nok vekke oppmerksomhet.): 1<br>
+Tal frå EVA vert sjekka mot valgresultat.no: 1<br>
+Tilsvarende som 5) for endelig opptelling (maskinell eller manuell).
+
+Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir publisert?: 1<br>
+Ja, det er rutiner for kontroll av endelig opptelling mot publiserte resultater: 1<br>
+EVA rapporterer direkte til media. Det media hentar ut der vil difor samsvare med det vi har sendt inn. Valansvarleg sjekkar valgresultat.no: 1<br>
+Automatisk rapportering fra EVA. Manuell kontroll opp mot resultat som er publisert.: 1<br>
+Alt som gjøres i EVA kommer ut i en protokoll som blir journalført i vårt arkivsystem og kommer da ut på den offentlige postlisten. Protokollen bli lagt ved når kommunestyre skal godkjenne valget i første møte den 7. oktober.: 1<br>
+Ja vi sjekker på valgresultat.no når det er overført. Vi har ikke skrevne rutiner for dette, men har innarbeidet praksis. Sjekker også protokoll mot tellerapporter i Eva.: 1<br>
+Ja, kommunen har rutiner for å kontrollere endelig opptelling mot resultatet som blir publisert.: 1<br>
+ja: 1<br>
+Valgansvarlige sjekker dette: 1<br>
+No answer provided: 1<br>
+Ja, samme svar som på 5.: 1<br>
+Ja, Manuell opptelling med flere tellelag. Blir journalført og publisert.: 1<br>
+Ja. Kontroll blir protokollført og arkivert.: 1<br>
+Samme svar som nr. 6.: 1<br>
+Vi kontrollerer EVA og møteboken.: 1<br>
+Ja, kommunen har rutiner for kontroll av endelig opptelling mot publiserte resultater: 1<br>
+Vi sjekker det som ligger ute på valgdirektoratet sine sider.: 1<br>
+Dette sjekkes av valgansvarlig.: 1<br>
+Samme svar som 5: 1<br>
+Nei, men innleggingen i EVA blir kontrollert av flere valgmedarbeidere.: 1<br>
+Maskinell telling overføres fra skannerprogrammet til EVA-admin. Vi sammenligner foreløpig og endelig telling. Når endelig telling er ferdig, foretar vi valgoppgjøret. Det er direktoratet som henter ut og publiserer dataene fra EVA. Vi skal sjekke om dette blir publisert.: 1<br>
+Den endelige opptellingen blir sammenlignet med den foreløpige opptellingen.: 1<br>
+Ja. Resultat blir sjekket etter endelig opptelling.: 1<br>
+All kontroll foregår i EVA admin.: 1<br>
+Ja, alt dobbelsjekkes.: 1<br>
+Tastefeil fanges opp av EVA da det blir etterspurt forklaring på avvik mellom sedler og kryss i manntall. Alle bunker telles to ganger under endelig opptelling.: 1<br>
+Ja, sjekkes av valgansvarlige: 1<br>
+Nei, ikkje rutine utanom EVA: 1<br>
+JA, vi kontrollerer at det vi rapporterer som endelig opptelling er det samme som er publisert på valgresultat.no, i valgstyrets møteprotokoll og på kommunens nettside.: 1<br>
+Det er ingen opplysninger om rutiner for kontroll av endelig opptelling mot publiserte resultater.: 1<br>
+Har ikke rutiner, men Valgstyret sjekker manuelt: 1<br>
+Sula kommune har ikke egne rutiner for dette, men vi legger til grunn Valdirektoratet sine rutiner og veiledninger.: 1<br>
+Sjå svar under pkt. 5.: 1<br>
+Etter innrapportering via EVA kontrollerer vi om resultatene samsvarer med publiserte resultater på nettsiden valgresultater.no.: 1<br>
+Valgansvarlig kontrollerer dette.: 1<br>
+Nei, ingen rutiner for å sjekke valgresultat mot publiserte resultater.: 1<br>
+som i spørsmål 5.: 1<br>
+Ved maskinell telling foretar vi stikkprøvekontroll underveis for å se at de fysiske sedlene stemmer overens med resultatet som framkommer av skanningen.: 1<br>
+Alltid to personer som sjekker at rett resultat blir lagt ut.: 2<br>
+Det ligger ikke i våre rutiner, men registreringen i EVA Admin gjøres av to personer og det kontrolleres at EVA Admin er korrekt.: 1<br>
+Vi fokuserer på å gjøre alt rett hos oss selv. Det er ikke lokalt noen formell kontroll eller ansvar for at nettsiden valgresultat.no fungerer til enhver tid. Dette er valgdirektoratets ansvar. Men vi sitter og ser på den hver gang vi har publisert noe, så vi vil oppdage avvik.: 1<br>
+KONTROLL VED AT SYSTEMET VARSLER AVVIK DERSOM ULIKE TALL LEGGES INN: 1<br>
+Nei, vi forholder oss til endelig opptellingsresultat i EVA.: 1<br>
+Ikke ut over pkt 5.: 1<br>
+</td>
+</tr>
+<tr>
+<th>questions</th>
+<td>
+array answer - buggy...: 1<br>
+</td>
+</tr>
+<tr>
+<th>prelimitary_counting__is_storage__type</th>
+<td>
+digitalt dokument: 1<br>
+</td>
+</tr>
+<tr>
+<th>prelimitary_counting_any_counting_in_valgkrets</th>
+<td>
+false: 1<br>
+</td>
+</tr>
+<tr>
+<th>prelimitary_counting_transfer_to_eva_do_they_answer</th>
+<td>
+true: 1<br>
+</td>
+</tr>
+<tr>
+<th>prelimitary_counting_transfer_to_eva_type</th>
+<td>
+direkte inn i valgprogrammet EVA av administrator: 1<br>
+</td>
+</tr>
+<tr>
+<th>prelimitary_counting_is_stored</th>
+<td>
+true: 1<br>
+</td>
+</tr>
+<tr>
+<th>prelimitary_counting_what_is_stored</th>
+<td>
+Foreløpig opptelling blir ikke arkivert noe sted utover det som ligger i EVA: 1<br>
+</td>
+</tr>
+<tr>
+<th>prelimitary_counting_storage_method</th>
+<td>
+EVA: 1<br>
+</td>
+</tr>
+<tr>
+<th>prelimitary_counting_process_for_control</th>
+<td>
+true: 1<br>
+</td>
+</tr>
+<tr>
+<th>prelimitary_counting_process_for_control_type</th>
+<td>
+Foreløpig opptelling blir kontrolltelt og verifisert via skanning. Det blir også utført stikkprøvekontroll for å se at det som er lest inn maskinelt faktisk stemmer med de fysiske sedlene.: 1<br>
+</td>
+</tr>
+<tr>
+<th>final_counting_is_stored</th>
+<td>
+true: 1<br>
+</td>
+</tr>
+<tr>
+<th>final_counting_what_is_stored</th>
+<td>
+Endelig opptelling blir arkivert i sak- og arkivsystemet sammen med den politiske saksgangen: 1<br>
+</td>
+</tr>
+<tr>
+<th>final_counting_storage_method</th>
+<td>
+Sak- og arkivsystemet: 1<br>
+</td>
+</tr>
+<tr>
+<th>final_counting_process_for_control</th>
+<td>
+false: 1<br>
+</td>
+</tr>
+<tr>
+<th>final_counting_process_for_control_type</th>
+<td>
+Ingen rutine for kontroll av endelig opptelling: 1<br>
+</td>
+</tr>
+</table>
+
+
+<h2>Data fra kommunene</h2>
+
 <table>
 
     <tr>
