@@ -1415,8 +1415,7 @@ foreach ($entity_id__to__obj as $entity) {
         $mimesLink =
             // http://alaveteli.org/docs/developers/api/#starting-new-requests-programmatically
             '<a target="_blank" href="http://localhost:25081/start-thread.php'
-            . '?my_email=' . urlencode($email)
-            . '&my_name=' . urlencode($name)
+            . '?my_profile=RANDOM'
             . '&title=' . urlencode('Valgprotokoll ' . $election_year . ', ' . $entity->name)
             . '&labels=' . urlencode($tags)
             . '&entity_id=' . urlencode($entity->entityId)
@@ -1425,23 +1424,16 @@ foreach ($entity_id__to__obj as $entity) {
             . '&body=' . urlencode(
                 'Kjære ' . $entity->name . chr(10)
                 . chr(10)
-                . 'Jeg ønsker innsyn i valgprotokoll for stortingsvalget 2021, og eventuell sametingsvalget 2021. Ofte kalt "Valgprotokoll for valgstyret"'
+                . 'Jeg ønsker innsyn i kommunens valgprotokoll for Kommunestyre- og fylkestingsvalget 2023. Ofte kalt "Valgprotokoll for valgstyret"'
                 . ' eller "Valgstyrets møtebok". Jeg ønsker at den er maskinlesbar, altså ikke innskannet (slik de signerte ofte er). '
-                . 'Dette fordi vi skal lese ut data fra den.'
+                . 'Dette fordi vi skal lese ut data fra den. '
+                . 'Valgprotokollen kan hentes i EVA av valgansvarlig dersom kommunen ikke har den liggende (Offl. §9 om sammenstilling av nytt dokument ved enkle fremgangsmåter).'
                 . chr(10) . chr(10)
-                . 'Søker altså innsyn i:' . chr(10)
-                . '1. Valgprotokoll Stortingsvalget 2021 - ' . $entity->name . chr(10)
-                . '2. Hvis dere har: Valgprotokoll Sametingsvalget 2021 - ' . $entity->name . chr(10)
+                . 'Dersom saksbehandling i valgstyret tok opp avvik i valggjennomføringen, så ønsker også kopi av relevante saksdokumenter og vedtak.'
                 . chr(10) . chr(10)
-//                . 'Ønsker også svar på følgende:' . chr(10)
-//                . '1. Ble foreløpig opptelling utført manuelt eller med dataprogram?' . chr(10)
-//                . '2. Ble endelig opptelling utført manuelt eller med dataprogram?' . chr(10)
-//                . '3. Hvor mange opptellinger og omtellinger ble foretatt totalt?' . chr(10)
-//                . '4. Hvis flere enn foreløpig og endelig, hvordan ble disse utført (manuelt/data?) og hvorfor ble de utført?' . chr(10)
-//                . 'Dersom det er ulikt svar for de ulike valgskretsene, så svar for hver enkelt krets.' . chr(10) . chr(10)
                 . 'Takk!'
                 . chr(10) . chr(10)
-                . 'Prosjekt Åpne Valgdata - https://hnygard.github.io/valgprotokoller/'
+                . 'Prosjekt Åpne Valgdata'
             )
             . '">'
             . 'Søk innsyn via Email engine</a>' . chr(10);
