@@ -768,8 +768,7 @@ foreach ($files as $file) {
 
         $mimesLink .=
             '<a target="_blank" href="http://localhost:25081/start-thread.php'
-            . '?my_email=' . urlencode(str_replace('@', '_st@', $email))
-            . '&my_name=' . urlencode($name . ', Stortinget')
+            . '?my_profile=RANDOM'
             . '&title=' . urlencode('Klage på Stortingsvalget ' . $election_year . ', ' . $entity->name)
             . '&labels=' . urlencode('valgklage_' . $election_year . ' valgklage_' . $election_year . '_stortinget:' . $entity->entityId)
             . '&entity_id=stortinget'
@@ -1383,6 +1382,16 @@ foreach ($entity_id__to__obj as $entity) {
                     . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
             }
             elseif ($election->election == 'Stortingsvalget 2021' && $elections[1] == '<td>-</td>') {
+                $elections[1] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
+                    . chr(10)
+                    . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
+            }
+            if ($election->election == 'Kommunestyrevalget ' . $election_year && $elections[0] == '<td>-</td>') {
+                $elections[0] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
+                    . chr(10)
+                    . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
+            }
+            elseif ($election->election == 'Fylkestingsvalget ' . $election_year && $elections[1] == '<td>-</td>') {
                 $elections[1] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
                     . chr(10)
                     . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
