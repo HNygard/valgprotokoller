@@ -241,13 +241,7 @@ foreach ($lines as $line) {
 }
 
 // Path contains:
-$ignore_files = array(
-    // Svarbrev
-    'www.mimesbronn.no-request-2184-response-8887-attach-4-Svar Innsyn Valgprotokoll 2019 Randaberg kommune.PDF',
-    'www.mimesbronn.no-request-2184-response-9141-attach-5-Svar%20Tilbakemelding%20Innsyn%20valgprotokoll%202019.PDF',
-    'www.mimesbronn.no-request-2184-response-9075-attach-2-Svar%20Tilbakemelding%20Innsyn%20valgprotokoll%202019.PDF.',
-    'www.mimesbronn.no-request-2184-response-9141-attach-4-Svar%20Klage%20over%20innsyn%20Valgprotokoll%202019.PDF',
-    'www.mimesbronn.no-request-2145-response-8885-attach-4-attachment.pdf',
+$ignore_files = array(// Svarbrev
 );
 
 $files_written = array();
@@ -388,7 +382,7 @@ foreach ($files as $file) {
 }
 
 function parseFile_andWriteToDisk(&$obj, $file) {
-    global $domain_to_name;
+    global $domain_to_name, $election_year;
 
     // => Parse this file. Line by line.
     logInfo('Parsing [' . str_replace(__DIR__ . '/', '', $file) . '].');
@@ -519,7 +513,7 @@ function parseFile_andWriteToDisk(&$obj, $file) {
 
     // Clean up Randaberg.
     foreach (array(
-                 'Kommunestyre- og fylkestingsvalget                       2019' => 'Kommunestyre- og fylkestingsvalget 2019',
+                 'Kommunestyre- og fylkestingsvalget                       ' . $election_year => 'Kommunestyre- og fylkestingsvalget ' . $election_year,
                  'Total antall valgtingstemmesedler   i urne' => 'Total antall valgtingstemmesedler i urne  ',
                  'Total antall valgtingstemmesedler    i urne' => 'Total antall valgtingstemmesedler i urne  ',
                  'Total antall valgtingstemmesedler               i urne' => 'Total antall valgtingstemmesedler i urne               ',
@@ -533,7 +527,7 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     }
     $file_content = str_replace('C2.1 Antall valgtingsstemmesedler    i urne', 'C2.1 Antall valgtingsstemmesedler i urne', $file_content);
     $file_content = str_replace('C4.1 - C4.3 Valgtingsstemmesedler                i urne', 'C4.1 - C4.3 Valgtingsstemmesedler i urne', $file_content);
-    $file_content = str_replace('Valgprotokoll for valgstyret - Kommunestyrevalget       2019', 'Valgprotokoll for valgstyret - Kommunestyrevalget 2019', $file_content);
+    $file_content = str_replace('Valgprotokoll for valgstyret - Kommunestyrevalget       ' . $election_year, 'Valgprotokoll for valgstyret - Kommunestyrevalget ' . $election_year, $file_content);
     $file_content = str_replace('C2.1 Antall valgtingsstemmesedler                i urne', 'C2.1 Antall valgtingsstemmesedler i urne', $file_content);
     $file_content = str_replace('C4.1 - C4.3 Valgtingsstemmesedler    i urne', 'C4.1 - C4.3 Valgtingsstemmesedler i urne', $file_content);
 
@@ -561,11 +555,11 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     $obj->heading = 'Valgprotokoll for valgstyret i ' . trim($lines[$i++]);
 
     // --- START page 2
-    if ($obj->election == 'Stortingsvalget 2021') {
-        $i = assertLine_trim($lines, $i, 'Stortingsvalget 2021');
+    if ($obj->election == 'Stortingsvalget ' . $election_year) {
+        $i = assertLine_trim($lines, $i, 'Stortingsvalget ' . $election_year);
     }
     else {
-        $i = assertLine_trim($lines, $i, 'Kommunestyre- og fylkestingsvalget 2019');
+        $i = assertLine_trim($lines, $i, 'Kommunestyre- og fylkestingsvalget ' . $election_year);
     }
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = assertLine_trim($lines, $i, 'Valgprotokoll for valgstyret - ' . $obj->election);
@@ -574,17 +568,11 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     $match = regexAssertAndReturnMatch('/^Kommune: \s*([A-Za-zÆØÅæøåáKárášjohka\- ]*)\s*$/', $lines[$i++]);
     $obj->municipality = trim($match[1]);
     $i = removeLineIfPresent_andEmpty($lines, $i);
-    if ($obj->election == 'Stortingsvalget 2021') {
-        $match = regexAssertAndReturnMatch('/^Valgdistrikt: \s*([A-Za-zÆØÅæøåá \-]*)\s*$/', $lines[$i++]);
-        $obj->county = trim($match[1]);
-    }
-    else {
-        $match = regexAssertAndReturnMatch('/^Fylke: \s*([A-Za-zÆØÅæøå ]*)\s*$/', $lines[$i++]);
-        $obj->county = trim($match[1]);
-    }
+    $match = regexAssertAndReturnMatch('/^Valgdistrikt: \s*([A-Za-zÆØÅæøåá \-]*)\s*$/', $lines[$i++]);
+    $obj->county = trim($match[1]);
 
     $i = removeLineIfPresent_andEmpty($lines, $i);
-    $yearLine = str_replace('2021.0', '2021', $lines[$i++]);
+    $yearLine = str_replace($election_year . '.0', $election_year, $lines[$i++]);
     $match = regexAssertAndReturnMatch('/^År: \s*([0-9]*)\s*$/', $yearLine);
     $obj->electionYear = $match[1];
 
@@ -820,7 +808,7 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     $i = assertLine_trim($lines, $i, 'C4 Foreløpig opptelling hos valgstyret');
     $i = removeLineIfPresent_andEmpty($lines, $i);
     if ($lines[$i + 1] == 'Foreløpig opptelling av valgtingsstemmesedler er foretatt hos stemmestyrene'
-    || $lines[$i + 2] == 'Foreløpig opptelling av valgtingsstemmesedler er foretatt hos stemmestyrene') {
+        || $lines[$i + 2] == 'Foreløpig opptelling av valgtingsstemmesedler er foretatt hos stemmestyrene') {
         // C4.1 - C4.3 Valgtingsstemmesedler i urne
         // Foreløpig opptelling av valgtingsstemmesedler er foretatt hos stemmestyrene
         $obj->foretattForeløpigOpptellingHosValgstyret = false;
@@ -1340,7 +1328,7 @@ function readTableRow($lines, $i, $header_length, $start_of_row_keywords, $table
     $row_line = trim($row_line);
 
     if (!isset($match)) {
-        echo '10 last lines: '.chr(10);
+        echo '10 last lines: ' . chr(10);
         for ($j = $i - 10; $j <= $i; $j++) {
             echo 'lines[' . $j . ']: ' . $lines[$j] . chr(10);
         }
