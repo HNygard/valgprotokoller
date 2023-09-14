@@ -88,7 +88,7 @@ function downloadUrls_parseTxt($lines) {
 file_put_contents($urlsTxtFileName, $clean_file);
 
 
-$lines = file(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/urls.txt');
+$lines = file(__DIR__ . '/docs/data-store/email-engine-result-' . $election_year . '/entity-urls.txt');
 downloadUrls_parseTxt($lines);
 
 function logDebug($string) {
