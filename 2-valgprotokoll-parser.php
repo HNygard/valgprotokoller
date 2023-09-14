@@ -656,7 +656,7 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     $match = regexAssertAndReturnMatch('/^Kommune: \s*([A-Za-zÆØÅæøåáKárášjohka\- ]*)\s*$/', $lines[$i++]);
     $obj->municipality = trim($match[1]);
     $i = removeLineIfPresent_andEmpty($lines, $i);
-    $match = regexAssertAndReturnMatch('/^Valgdistrikt: \s*([A-Za-zÆØÅæøåá \-]*)\s*$/', $lines[$i++]);
+    $match = regexAssertAndReturnMatch('/^Valgdistrikt: \s*([A-Za-zÆØÅæøåáö \-]*)\s*$/', $lines[$i++]);
     $obj->county = trim($match[1]);
 
     $i = removeLineIfPresent_andEmpty($lines, $i);
