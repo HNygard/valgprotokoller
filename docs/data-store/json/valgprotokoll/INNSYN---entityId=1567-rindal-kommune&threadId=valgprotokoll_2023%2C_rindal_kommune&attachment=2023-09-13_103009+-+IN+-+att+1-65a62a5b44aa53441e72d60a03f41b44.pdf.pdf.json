@@ -1,0 +1,15 @@
+{
+    "localSource": "docs/data-store/pdfs-2023/INNSYN---entityId=1567-rindal-kommune&threadId=valgprotokoll_2023%2C_rindal_kommune&attachment=2023-09-13_103009+-+IN+-+att+1-65a62a5b44aa53441e72d60a03f41b44.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1567-rindal-kommune&threadId=valgprotokoll_2023%2C_rindal_kommune&attachment=2023-09-13_103009+-+IN+-+att+1-65a62a5b44aa53441e72d60a03f41b44.pdf",
+    "downloadTime": "2023-09-14 23:05:26",
+    "pdfMetaData": "Creator:         JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f\nProducer:        iText 2.1.7 by 1T3XT\nCreationDate:    Tue Sep 12 21:03:59 2023 CEST\nModDate:         Tue Sep 12 21:03:59 2023 CEST\nCustom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           20\nEncrypted:       no\nPage size:       595 x 842 pts (A4)\nPage rot:        0\nFile size:       204726 bytes\nOptimized:       no\nPDF version:     1.5",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "12.09.2023 21:03:45",
+    "election": "Kommunestyrevalget 2023",
+    "heading": "Valgprotokoll for valgstyret i Rindal kommune, Trøndelag Trööndelage valgdistrikt",
+    "municipality": "Rindal",
+    "errorMessage": "No match for regex.\nRegex ..... : ^Valgdistrikt: \\s*([A-Za-zÆØÅæøåá \\-]*)\\s*$\nLine ...... : Valgdistrikt:      Trøndelag Trööndelage\n\n#0 2-valgprotokoll-parser.php(659): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#2 {main}"
+}

@@ -1,0 +1,87 @@
+{
+    "localSource": "docs/data-store/pdfs-2023/INNSYN---entityId=4647-sunnfjord-kommune&threadId=valgprotokoll_2023%2C_sunnfjord_kommune&attachment=2023-09-13_142230+-+IN+-+att+1-95be5779c74b65b02fa9ef51d288a8dd.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=4647-sunnfjord-kommune&threadId=valgprotokoll_2023%2C_sunnfjord_kommune&attachment=2023-09-13_142230+-+IN+-+att+1-95be5779c74b65b02fa9ef51d288a8dd.pdf",
+    "downloadTime": "2023-09-14 23:05:33",
+    "pdfMetaData": "Creator:         JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f\nProducer:        iText 2.1.7 by 1T3XT\nCreationDate:    Tue Sep 12 19:42:18 2023 CEST\nModDate:         Tue Sep 12 19:42:18 2023 CEST\nCustom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           18\nEncrypted:       no\nPage size:       595 x 842 pts (A4)\nPage rot:        0\nFile size:       223393 bytes\nOptimized:       no\nPDF version:     1.5",
+    "language": "nn-NO",
+    "languageName": "Norwegian, Nynorsk",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "12.09.2023 19:42:00",
+    "election": "Fylkestingsvalget 2023",
+    "heading": "Valgprotokoll for valgstyret i Sunnfjord kommune, Vestland valdistrikt",
+    "municipality": "Sunnfjord",
+    "county": "Vestland",
+    "electionYear": "2023",
+    "keyfigures_antallStemmeberettigede": 17143,
+    "keyfigures_totaltAntallKryssIManntallet": 11154,
+    "keyfigures_oppmøteprosent": "65,06 %",
+    "keyfigures_totaltAntallGodkjenteForhåndsstemmegivninger": 5019,
+    "keyfigures_totaltAntallGodkjenteValgtingsstemmegivninger": 6135,
+    "keyfigures_totaltAntallForkastedeStemmegivninger": 19,
+    "keyfigures_totaltAntallGodkjenteStemmesedler": 10541,
+    "keyfigures_totaltAntallForkastedeStemmesedler": 7,
+    "numbers": {
+        "B1.1 Totalt mottatte forhåndsstemmegivninger": {
+            "Antall forhåndsstemmegivninger innenriks fra 1. juli til 9. august (tidlig-stemmegivning)": {
+                "Forkastet": 0,
+                "Godkjente": 5
+            },
+            "Antall forhåndsstemmegivninger innenriks fra 10. august": {
+                "Forkastet": 3,
+                "Godkjente": 5009
+            },
+            "Antall brevstemmer utenriks": {
+                "Forkastet": 0,
+                "Godkjente": 1
+            },
+            "Antall øvrige forhåndsstemmegivninger utenriks og på Svalbard og Jan Mayen": {
+                "Forkastet": 0,
+                "Godkjente": 4
+            },
+            "Antall i beredskapskonvolutt": {
+                "Forkastet": 0,
+                "Godkjente": 0
+            },
+            "Sum mottatte forhåndsstemmegivninger": {
+                "Forkastet": 3,
+                "Godkjente": 5019
+            },
+            "Totalt antall": [
+                "Totalt antall                                                                                                       5 022",
+                "5 022"
+            ]
+        },
+        "B1.2 Behandlede forhåndsstemmegivninger": {
+            "Velgeren er ikke innført i manntallet i kommunen § 10-1 (1) a": {
+                "Innenriks": 2,
+                "Utenriks": 0
+            },
+            "Stemmegivningen inneholder ikke tilstrekkelige opplysninger til å fastslå hvem veljaren er § 10-1 (1) b": {
+                "Innenriks": 0,
+                "Utenriks": 0
+            },
+            "Stemmegivningen er ikke avgitt til rett tid § 10-1 (1) c": {
+                "Innenriks": 0,
+                "Utenriks": 0
+            },
+            "Stemmegivningen er ikke levert til rett stemmemottaker § 10-1 (1) d": {
+                "Innenriks": 0,
+                "Utenriks": 0
+            },
+            "Omslagskonvolutten er åpnet eller forsøkt åpnet § 10-1 (1) e": {
+                "Innenriks": 0,
+                "Utenriks": 0
+            },
+            "Velgeren har allerede avgitt godkjent stemmegivning § 10-1 (1) f": {
+                "Innenriks": 1,
+                "Utenriks": 0
+            },
+            "Stemmegivningen er ikke kommet inn til valgstyret innen kl. 17 dagen etter 10-1 (1)": {
+                "Innenriks": 0,
+                "Utenriks": 0
+            }
+        }
+    },
+    "errorMessage": "Didn't find the row: \ng\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(759): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+}
