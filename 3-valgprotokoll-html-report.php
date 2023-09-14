@@ -1403,8 +1403,8 @@ foreach ($entity_id__to__obj as $entity) {
         }
     }
 
-    //$anyMissing = ($elections[0] == '<td>-</td>' || $elections[1] == '<td>-</td>');
-    $anyMissing = ($elections[1] == '<td>-</td>');
+    $anyMissing = ($elections[0] == '<td>-</td>' || $elections[1] == '<td>-</td>');
+    //$anyMissing = ($elections[1] == '<td>-</td>');
     if ($anyMissing) {
         $elections[2] = '<td>Missing election(s).</td>';
     }
