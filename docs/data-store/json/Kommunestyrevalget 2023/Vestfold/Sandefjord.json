@@ -335,7 +335,8 @@
                 "Endelig": 15391,
                 "Avvik": 40
             }
-        }
+        },
+        "Mandatene ble fordelt som følger:": []
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -447,6 +448,28 @@
             "listestemmetall_simulated_initial_counting": 129617
         },
         {
+            "name": "Norgesdemokratene",
+            "stemmesedler": 637,
+            "kommunestyrerepresentanter": 45,
+            "sedler_ganger_kst_repr": 28665,
+            "slengere_mottatt": 18,
+            "slengere_avgitt": 30,
+            "listestemmetall": 28653,
+            "stemmesedler_initial_counting": 637,
+            "listestemmetall_simulated_initial_counting": 28653
+        },
+        {
+            "name": "Industri- og Næringspartiet",
+            "stemmesedler": 1543,
+            "kommunestyrerepresentanter": 45,
+            "sedler_ganger_kst_repr": 69435,
+            "slengere_mottatt": 68,
+            "slengere_avgitt": 210,
+            "listestemmetall": 69293,
+            "stemmesedler_initial_counting": 1521,
+            "listestemmetall_simulated_initial_counting": 68303
+        },
+        {
             "name": "Venstre",
             "stemmesedler": 1311,
             "kommunestyrerepresentanter": 45,
@@ -456,6 +479,17 @@
             "listestemmetall": 59004,
             "stemmesedler_initial_counting": 1291,
             "listestemmetall_simulated_initial_counting": 58104
+        },
+        {
+            "name": "Konservativt",
+            "stemmesedler": 190,
+            "kommunestyrerepresentanter": 45,
+            "sedler_ganger_kst_repr": 8550,
+            "slengere_mottatt": 10,
+            "slengere_avgitt": 5,
+            "listestemmetall": 8555,
+            "stemmesedler_initial_counting": 190,
+            "listestemmetall_simulated_initial_counting": 8555
         },
         {
             "name": "Arbeiderpartiet",
@@ -489,7 +523,18 @@
             "listestemmetall": 46397,
             "stemmesedler_initial_counting": 1031,
             "listestemmetall_simulated_initial_counting": 46442
+        },
+        {
+            "name": "Partiet Sentrum",
+            "stemmesedler": 97,
+            "kommunestyrerepresentanter": 45,
+            "sedler_ganger_kst_repr": 4365,
+            "slengere_mottatt": 26,
+            "slengere_avgitt": 10,
+            "listestemmetall": 4381,
+            "stemmesedler_initial_counting": 97,
+            "listestemmetall_simulated_initial_counting": 4381
         }
     ],
-    "errorMessage": "Unknown line in E1.1: \n                                                Norgesdemokratene\n  Antall stemmesedler x antall kst.repr.= 637 x 45                                          28665\n                                              Mottatt:                                         18\n  Slengere:\n                                              Avgitt:                                          30\n  Listestemmetall:                                                                          28653\n                                             Industri- og Næringspartiet\n  Antall stemmesedler x antall kst.repr.= 1543 x 45                                         69435\n                                              Mottatt:                                         68\n  Slengere:\n                                              Avgitt:                                         210\n  Listestemmetall:                                                                          69293\n                                                     Konservativt\n  Antall stemmesedler x antall kst.repr.= 190 x 45                                           8550\n                                              Mottatt:                                         10\n  Slengere:\n                                              Avgitt:                                           5\n  Listestemmetall:                                                                           8555\n                                                    Partiet Sentrum\n  Antall stemmesedler x antall kst.repr.= 97 x 45                                            4365\n                                              Mottatt:                                         26\n  Slengere:\n                                              Avgitt:                                          10\n  Listestemmetall:                                                                           4381\n\n#0 2-valgprotokoll-parser.php(283): parseFile_andWriteToDisk()\n#1 {main}"
+    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
 }

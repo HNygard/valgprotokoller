@@ -445,5 +445,5 @@
             "listestemmetall_simulated_initial_counting": 4198
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1398): readTableRow()\n#1 2-valgprotokoll-parser.php(1142): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(283): parseFile_andWriteToDisk()\n#3 {main}"
+    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
 }

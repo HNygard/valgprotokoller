@@ -12,5 +12,5 @@
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Verdal kommune, Trøndelag Trööndelage valgdistrikt",
     "municipality": "Verdal",
-    "errorMessage": "No match for regex.\nRegex ..... : ^Valgdistrikt: \\s*([A-Za-zÆØÅæøåá \\-]*)\\s*$\nLine ...... : Valgdistrikt:      Trøndelag Trööndelage\n\n#0 2-valgprotokoll-parser.php(571): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(283): parseFile_andWriteToDisk()\n#2 {main}"
+    "errorMessage": "No match for regex.\nRegex ..... : ^Valgdistrikt: \\s*([A-Za-zÆØÅæøåá \\-]*)\\s*$\nLine ...... : Valgdistrikt:      Trøndelag Trööndelage\n\n#0 2-valgprotokoll-parser.php(659): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#2 {main}"
 }

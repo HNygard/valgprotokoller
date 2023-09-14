@@ -275,7 +275,8 @@
                 "Endelig": 1129,
                 "Avvik": 0
             }
-        }
+        },
+        "Mandatene ble fordelt som følger:": []
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -381,7 +382,18 @@
             "listestemmetall": 6214,
             "stemmesedler_initial_counting": 328,
             "listestemmetall_simulated_initial_counting": 6214
+        },
+        {
+            "name": "Folkestyret-listen",
+            "stemmesedler": 24,
+            "kommunestyrerepresentanter": 19,
+            "sedler_ganger_kst_repr": 456,
+            "slengere_mottatt": 3,
+            "slengere_avgitt": 1,
+            "listestemmetall": 458,
+            "stemmesedler_initial_counting": 24,
+            "listestemmetall_simulated_initial_counting": 458
         }
     ],
-    "errorMessage": "Unknown line in E1.1: \n                                                     Folkestyret-listen\n  Antall stemmesedler x antall kst.repr.= 24 x 19                                             456\n                                              Mottatt:                                          3\n  Slengere:\n                                              Avgitt:                                           1\n  Listestemmetall:                                                                            458\n\n#0 2-valgprotokoll-parser.php(283): parseFile_andWriteToDisk()\n#1 {main}"
+    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
 }
