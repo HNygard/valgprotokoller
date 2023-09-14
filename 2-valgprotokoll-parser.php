@@ -510,6 +510,10 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     $file_content = preg_replace('/\n\n\n/', "\n\n", $file_content);
     $file_content = preg_replace('/\n\n\n/', "\n\n", $file_content);
 
+    // Multi line header for Porsanger
+    // Porsanger - Porságu - Porsanki kommune, Finnmark Finnmárku valgdistrikt
+    $file_content = preg_replace('/Finnmárku\n *valgdistrikt/', "Finnmárku valgdistrikt", $file_content);
+
 
     // Clean up Randaberg.
     foreach (array(
