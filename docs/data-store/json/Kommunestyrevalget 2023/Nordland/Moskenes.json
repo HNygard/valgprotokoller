@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "13.09.2023 09:52:04",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Moskenes kommune, Nordland valgdistrikt",
@@ -243,8 +243,7 @@
                 "Endelig": 238,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -306,5 +305,84 @@
             "listestemmetall_simulated_initial_counting": 3696
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Moskenes Fellesliste",
+            "Kvotient": 2640
+        },
+        "2": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 1304.285714
+        },
+        "3": {
+            "Parti": "Bygdelista i Moskenes",
+            "Kvotient": 1301.428571
+        },
+        "4": {
+            "Parti": "Moskenes Fellesliste",
+            "Kvotient": 1232
+        },
+        "5": {
+            "Parti": "Moskenes Fellesliste",
+            "Kvotient": 739.2
+        },
+        "6": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 608.666667
+        },
+        "7": {
+            "Parti": "Bygdelista i Moskenes",
+            "Kvotient": 607.333333
+        },
+        "8": {
+            "Parti": "Moskenes Fellesliste",
+            "Kvotient": 528
+        },
+        "9": {
+            "Parti": "Moskenes Fellesliste",
+            "Kvotient": 410.666667
+        },
+        "10": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 365.2
+        },
+        "11": {
+            "Parti": "Bygdelista i Moskenes",
+            "Kvotient": 364.4
+        },
+        "12": {
+            "Parti": "Moskenes Fellesliste",
+            "Kvotient": 336
+        },
+        "13": {
+            "Parti": "Moskenes Fellesliste",
+            "Kvotient": 284.307692
+        },
+        "14": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 260.857143
+        },
+        "15": {
+            "Parti": "Bygdelista i Moskenes",
+            "Kvotient": 260.285714
+        },
+        "16": {
+            "Parti": "Moskenes Fellesliste",
+            "Kvotient": 246.4
+        },
+        "17": {
+            "Parti": "Moskenes Fellesliste",
+            "Kvotient": 217.411765
+        }
+    },
+    "e1_mandatPerParty": {
+        "Moskenes Fellesliste": 9,
+        "SV - Sosialistisk Venstreparti": 4,
+        "Bygdelista i Moskenes": 4
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Bygdelista i Moskenes": 4,
+        "Moskenes Fellesliste": 9,
+        "SV - Sosialistisk Venstreparti": 4
+    }
 }

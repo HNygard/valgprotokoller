@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 17:41:08",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Tydal kommune, Trøndelag Trööndelage valgdistrikt",
@@ -215,8 +215,7 @@
                 "Endelig": 265,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -268,5 +267,66 @@
             "listestemmetall_simulated_initial_counting": 3537
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 2526.428571
+        },
+        "2": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1810
+        },
+        "3": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1179
+        },
+        "4": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 844.666667
+        },
+        "5": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 707.4
+        },
+        "6": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 506.8
+        },
+        "7": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 505.285714
+        },
+        "8": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 393
+        },
+        "9": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 362
+        },
+        "10": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 321.545455
+        },
+        "11": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 281.555556
+        },
+        "12": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 272.076923
+        },
+        "13": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 235.8
+        }
+    },
+    "e1_mandatPerParty": {
+        "Senterpartiet": 8,
+        "Arbeiderpartiet": 5
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 5,
+        "Senterpartiet": 8
+    }
 }

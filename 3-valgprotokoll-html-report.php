@@ -387,6 +387,10 @@ foreach ($files as $file) {
     if ($obj->county == 'Hedmark') {
         $name2 = str_replace('Os kommune', 'Os kommune (Hedmark)', $name2);
     }
+    if ($obj->county == 'Innlandet') {
+        # TODO: This should be fixed.
+        $name2 = str_replace('Os kommune', 'Os kommune (Hedmark)', $name2);
+    }
     $obj->file = $file;
     $entity_id__to__obj[$entity_name__to__entity_id[$name2]]->elections[] = $obj;
     $klager_html_navn = $name2 . ' - ' . $obj->election;

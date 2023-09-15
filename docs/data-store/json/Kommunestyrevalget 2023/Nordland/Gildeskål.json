@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "14.09.2023 08:40:07",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Gildeskål kommune, Nordland valgdistrikt",
@@ -265,8 +265,7 @@
                 "Endelig": 566,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -374,5 +373,92 @@
             "listestemmetall_simulated_initial_counting": 4307
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Høyre",
+            "Kvotient": 3076.428571
+        },
+        "2": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2653.571429
+        },
+        "3": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 1992.857143
+        },
+        "4": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1714.285714
+        },
+        "5": {
+            "Parti": "Gildeskållista",
+            "Kvotient": 1561.428571
+        },
+        "6": {
+            "Parti": "Høyre",
+            "Kvotient": 1435.666667
+        },
+        "7": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1238.333333
+        },
+        "8": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 930
+        },
+        "9": {
+            "Parti": "Høyre",
+            "Kvotient": 861.4
+        },
+        "10": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 849.285714
+        },
+        "11": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 800
+        },
+        "12": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 743
+        },
+        "13": {
+            "Parti": "Gildeskållista",
+            "Kvotient": 728.666667
+        },
+        "14": {
+            "Parti": "Høyre",
+            "Kvotient": 615.285714
+        },
+        "15": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 558
+        },
+        "16": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 530.714286
+        },
+        "17": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 480
+        }
+    },
+    "e1_mandatPerParty": {
+        "Høyre": 4,
+        "Arbeiderpartiet": 4,
+        "Fremskrittspartiet": 3,
+        "Senterpartiet": 3,
+        "Gildeskållista": 2,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Kristelig Folkeparti": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 4,
+        "Fremskrittspartiet": 3,
+        "Gildeskållista": 2,
+        "Høyre": 4,
+        "Kristelig Folkeparti": 0,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Senterpartiet": 3
+    }
 }

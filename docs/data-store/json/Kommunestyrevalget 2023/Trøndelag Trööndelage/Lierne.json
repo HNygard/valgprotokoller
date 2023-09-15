@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 19:13:46",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Lierne kommune, Trøndelag Trööndelage valgdistrikt",
@@ -225,8 +225,7 @@
                 "Endelig": 464,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -288,5 +287,76 @@
             "listestemmetall_simulated_initial_counting": 654
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 3831.428571
+        },
+        "2": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 3362.142857
+        },
+        "3": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1788
+        },
+        "4": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1569
+        },
+        "5": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1072.8
+        },
+        "6": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 941.4
+        },
+        "7": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 766.285714
+        },
+        "8": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 672.428571
+        },
+        "9": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 596
+        },
+        "10": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 523
+        },
+        "11": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 487.636364
+        },
+        "12": {
+            "Parti": "Venstre",
+            "Kvotient": 467.142857
+        },
+        "13": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 427.909091
+        },
+        "14": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 412.615385
+        },
+        "15": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 362.076923
+        }
+    },
+    "e1_mandatPerParty": {
+        "Senterpartiet": 7,
+        "Arbeiderpartiet": 7,
+        "Venstre": 1
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 7,
+        "Senterpartiet": 7,
+        "Venstre": 1
+    }
 }

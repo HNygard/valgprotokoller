@@ -325,7 +325,9 @@ foreach ($lines as $line) {
 }
 
 // Path contains:
-$ignore_files = array(// Svarbrev
+$ignore_files = array(
+    // Svarbrev
+    '/home/hallvard/Dropbox/Innsyn/Valgdirektoratet/valgprotokoll/docs/data-store/pdfs-2023/INNSYN---entityId=1818-heroy-i-nordland-kommune&threadId=valgprotokoll_2023%2C_her%C3%B8y_kommune_%28nordland%29&attachment=2023-09-13_082308+-+IN+-+att+1-cd5c12a65e0bb674811533ca4bfb1e0e.pdf.pdf.layout.txt'
 );
 
 $files_written = array();
@@ -1475,9 +1477,17 @@ function readTable_twoColumns(&$obj, &$lines, $i, $current_heading, $text_headin
             };
             $start_of_row_keywords = "one_line_for_each";
 
+            if (empty($lines[$i])) {
+                // Skip empty line
+                $i++;
+            }
             if (str_contains($lines[$i], $text_heading)) {
                 // -> Next page. New heading.
                 regexAssertAndReturnMatch('/^' . $text_heading . '\s*' . $column1 . '\s*' . $column2 . '$/', trim($lines[$i++]));
+            }
+            if (empty($lines[$i])) {
+                // Skip empty line
+                $i++;
             }
         }
 

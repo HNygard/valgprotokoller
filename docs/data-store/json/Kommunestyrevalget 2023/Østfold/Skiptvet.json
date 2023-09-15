@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 19:38:15",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Skiptvet kommune, Østfold valgdistrikt",
@@ -245,8 +245,7 @@
                 "Endelig": 1051,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -330,5 +329,104 @@
             "listestemmetall_simulated_initial_counting": 8853
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 9215.714286
+        },
+        "2": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 6323.571429
+        },
+        "3": {
+            "Parti": "Høyre",
+            "Kvotient": 6162.142857
+        },
+        "4": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 4300.666667
+        },
+        "5": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 3210
+        },
+        "6": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 2951
+        },
+        "7": {
+            "Parti": "Høyre",
+            "Kvotient": 2875.666667
+        },
+        "8": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2580.4
+        },
+        "9": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1843.142857
+        },
+        "10": {
+            "Parti": "Kristelig Folkeparti",
+            "Kvotient": 1773.571429
+        },
+        "11": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1770.6
+        },
+        "12": {
+            "Parti": "Høyre",
+            "Kvotient": 1725.4
+        },
+        "13": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 1498
+        },
+        "14": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1433.555556
+        },
+        "15": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1264.714286
+        },
+        "16": {
+            "Parti": "Høyre",
+            "Kvotient": 1232.428571
+        },
+        "17": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1172.909091
+        },
+        "18": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 992.461538
+        },
+        "19": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 983.666667
+        },
+        "20": {
+            "Parti": "Høyre",
+            "Kvotient": 958.555556
+        },
+        "21": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 898.8
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeiderpartiet": 7,
+        "Senterpartiet": 5,
+        "Høyre": 5,
+        "Fremskrittspartiet": 3,
+        "Kristelig Folkeparti": 1
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 7,
+        "Fremskrittspartiet": 3,
+        "Høyre": 5,
+        "Kristelig Folkeparti": 1,
+        "Senterpartiet": 5
+    }
 }

@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "14.09.2023 09:49:39",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Holtålen kommune, Trøndelag Trööndelage valgdistrikt",
@@ -235,8 +235,7 @@
                 "Endelig": 826,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -312,5 +311,62 @@
             "listestemmetall_simulated_initial_counting": 5639
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 4027.857143
+        },
+        "2": {
+            "Parti": "Framtida Holtålen",
+            "Kvotient": 3474.285714
+        },
+        "3": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1879.666667
+        },
+        "4": {
+            "Parti": "Framtida Holtålen",
+            "Kvotient": 1621.333333
+        },
+        "5": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1317.857143
+        },
+        "6": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1127.8
+        },
+        "7": {
+            "Parti": "Framtida Holtålen",
+            "Kvotient": 972.8
+        },
+        "8": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 805.571429
+        },
+        "9": {
+            "Parti": "Framtida Holtålen",
+            "Kvotient": 694.857143
+        },
+        "10": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 626.555556
+        },
+        "11": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 615
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeiderpartiet": 5,
+        "Framtida Holtålen": 4,
+        "Senterpartiet": 2,
+        "Pensjonistpartiet": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 5,
+        "Framtida Holtålen": 4,
+        "Pensjonistpartiet": 0,
+        "Senterpartiet": 2
+    }
 }

@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 19:37:30",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Rennebu kommune, Trøndelag Trööndelage valgdistrikt",
@@ -235,8 +235,7 @@
                 "Endelig": 485,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -309,5 +308,102 @@
             "listestemmetall_simulated_initial_counting": 7509
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 5363.571429
+        },
+        "2": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 4750
+        },
+        "3": {
+            "Parti": "Kristelig Folkeparti",
+            "Kvotient": 4702.857143
+        },
+        "4": {
+            "Parti": "Fellesliste Høyre og Venstre",
+            "Kvotient": 3933.571429
+        },
+        "5": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 2503
+        },
+        "6": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2216.666667
+        },
+        "7": {
+            "Parti": "Kristelig Folkeparti",
+            "Kvotient": 2194.666667
+        },
+        "8": {
+            "Parti": "Fellesliste Høyre og Venstre",
+            "Kvotient": 1835.666667
+        },
+        "9": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1501.8
+        },
+        "10": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1330
+        },
+        "11": {
+            "Parti": "Kristelig Folkeparti",
+            "Kvotient": 1316.8
+        },
+        "12": {
+            "Parti": "Fellesliste Høyre og Venstre",
+            "Kvotient": 1101.4
+        },
+        "13": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1072.714286
+        },
+        "14": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 950
+        },
+        "15": {
+            "Parti": "Kristelig Folkeparti",
+            "Kvotient": 940.571429
+        },
+        "16": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 834.333333
+        },
+        "17": {
+            "Parti": "Fellesliste Høyre og Venstre",
+            "Kvotient": 786.714286
+        },
+        "18": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 738.888889
+        },
+        "19": {
+            "Parti": "Kristelig Folkeparti",
+            "Kvotient": 731.555556
+        },
+        "20": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 682.636364
+        },
+        "21": {
+            "Parti": "Fellesliste Høyre og Venstre",
+            "Kvotient": 611.888889
+        }
+    },
+    "e1_mandatPerParty": {
+        "Senterpartiet": 6,
+        "Arbeiderpartiet": 5,
+        "Kristelig Folkeparti": 5,
+        "Fellesliste Høyre og Venstre": 5
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 5,
+        "Fellesliste Høyre og Venstre": 5,
+        "Kristelig Folkeparti": 5,
+        "Senterpartiet": 6
+    }
 }

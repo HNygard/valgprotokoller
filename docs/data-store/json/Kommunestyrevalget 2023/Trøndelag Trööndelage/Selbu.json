@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 18:12:29",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Selbu kommune, Trøndelag Trööndelage valgdistrikt",
@@ -245,8 +245,7 @@
                 "Endelig": 1162,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -330,5 +329,120 @@
             "listestemmetall_simulated_initial_counting": 5780
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 17150.714286
+        },
+        "2": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 11962.142857
+        },
+        "3": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 8003.666667
+        },
+        "4": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 5582.333333
+        },
+        "5": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 4802.2
+        },
+        "6": {
+            "Parti": "Høyre",
+            "Kvotient": 4300.714286
+        },
+        "7": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 4128.571429
+        },
+        "8": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 3430.142857
+        },
+        "9": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 3349.4
+        },
+        "10": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2667.888889
+        },
+        "11": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 2392.428571
+        },
+        "12": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2182.818182
+        },
+        "13": {
+            "Parti": "Høyre",
+            "Kvotient": 2007
+        },
+        "14": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 1926.666667
+        },
+        "15": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1860.777778
+        },
+        "16": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1847
+        },
+        "17": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1600.733333
+        },
+        "18": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1522.454545
+        },
+        "19": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1412.411765
+        },
+        "20": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1288.230769
+        },
+        "21": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1263.736842
+        },
+        "22": {
+            "Parti": "Høyre",
+            "Kvotient": 1204.2
+        },
+        "23": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 1156
+        },
+        "24": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1143.380952
+        },
+        "25": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1116.466667
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeiderpartiet": 11,
+        "Senterpartiet": 8,
+        "Høyre": 3,
+        "SV - Sosialistisk Venstreparti": 3,
+        "Venstre og KrF": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 11,
+        "Høyre": 3,
+        "SV - Sosialistisk Venstreparti": 3,
+        "Senterpartiet": 8,
+        "Venstre og KrF": 0
+    }
 }

@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "14.09.2023 09:11:44",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Namsskogan kommune, Trøndelag Trööndelage valgdistrikt",
@@ -225,8 +225,7 @@
                 "Endelig": 249,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -288,5 +287,68 @@
             "listestemmetall_simulated_initial_counting": 2099
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1517.142857
+        },
+        "2": {
+            "Parti": "Optimum",
+            "Kvotient": 1499.285714
+        },
+        "3": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1106.428571
+        },
+        "4": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 708
+        },
+        "5": {
+            "Parti": "Optimum",
+            "Kvotient": 699.666667
+        },
+        "6": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 516.333333
+        },
+        "7": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 424.8
+        },
+        "8": {
+            "Parti": "Optimum",
+            "Kvotient": 419.8
+        },
+        "9": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 309.8
+        },
+        "10": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 303.428571
+        },
+        "11": {
+            "Parti": "Optimum",
+            "Kvotient": 299.857143
+        },
+        "12": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 236
+        },
+        "13": {
+            "Parti": "Optimum",
+            "Kvotient": 233.222222
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeiderpartiet": 5,
+        "Optimum": 5,
+        "Senterpartiet": 3
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 5,
+        "Optimum": 5,
+        "Senterpartiet": 3
+    }
 }

@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "13.09.2023 14:06:18",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Hol kommune, Buskerud valgdistrikt",
@@ -265,8 +265,7 @@
                 "Endelig": 1266,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -373,5 +372,108 @@
             "listestemmetall_simulated_initial_counting": 3050
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Høyre",
+            "Kvotient": 12132.857143
+        },
+        "2": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 9423.571429
+        },
+        "3": {
+            "Parti": "Høyre",
+            "Kvotient": 5662
+        },
+        "4": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 4670.714286
+        },
+        "5": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 4397.666667
+        },
+        "6": {
+            "Parti": "Høyre",
+            "Kvotient": 3397.2
+        },
+        "7": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 2948.571429
+        },
+        "8": {
+            "Parti": "Hol Bygdeliste",
+            "Kvotient": 2756.428571
+        },
+        "9": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 2638.6
+        },
+        "10": {
+            "Parti": "Høyre",
+            "Kvotient": 2426.571429
+        },
+        "11": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2179.666667
+        },
+        "12": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 2178.571429
+        },
+        "13": {
+            "Parti": "Høyre",
+            "Kvotient": 1887.333333
+        },
+        "14": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1884.714286
+        },
+        "15": {
+            "Parti": "Høyre",
+            "Kvotient": 1544.181818
+        },
+        "16": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1465.888889
+        },
+        "17": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 1376
+        },
+        "18": {
+            "Parti": "Venstre",
+            "Kvotient": 1364.285714
+        },
+        "19": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1307.8
+        },
+        "20": {
+            "Parti": "Høyre",
+            "Kvotient": 1306.615385
+        },
+        "21": {
+            "Parti": "Hol Bygdeliste",
+            "Kvotient": 1286.333333
+        }
+    },
+    "e1_mandatPerParty": {
+        "Høyre": 7,
+        "Senterpartiet": 5,
+        "Arbeiderpartiet": 3,
+        "SV - Sosialistisk Venstreparti": 2,
+        "Hol Bygdeliste": 2,
+        "Fremskrittspartiet": 1,
+        "Venstre": 1
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 3,
+        "Fremskrittspartiet": 1,
+        "Hol Bygdeliste": 2,
+        "Høyre": 7,
+        "SV - Sosialistisk Venstreparti": 2,
+        "Senterpartiet": 5,
+        "Venstre": 1
+    }
 }

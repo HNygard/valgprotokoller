@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "13.09.2023 09:39:43",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Hamarøy kommune, Nordland valgdistrikt",
@@ -275,8 +275,7 @@
                 "Endelig": 780,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -393,5 +392,94 @@
             "listestemmetall_simulated_initial_counting": 4272
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Høyre",
+            "Kvotient": 5664.285714
+        },
+        "2": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 4879.285714
+        },
+        "3": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 3051.428571
+        },
+        "4": {
+            "Parti": "Høyre",
+            "Kvotient": 2643.333333
+        },
+        "5": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 2277
+        },
+        "6": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 1637.857143
+        },
+        "7": {
+            "Parti": "Høyre",
+            "Kvotient": 1586
+        },
+        "8": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1424
+        },
+        "9": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1366.2
+        },
+        "10": {
+            "Parti": "Venstre",
+            "Kvotient": 1171.428571
+        },
+        "11": {
+            "Parti": "Høyre",
+            "Kvotient": 1132.857143
+        },
+        "12": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 1006.428571
+        },
+        "13": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 975.857143
+        },
+        "14": {
+            "Parti": "Høyre",
+            "Kvotient": 881.111111
+        },
+        "15": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 854.4
+        },
+        "16": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 764.333333
+        },
+        "17": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 759
+        }
+    },
+    "e1_mandatPerParty": {
+        "Høyre": 5,
+        "Senterpartiet": 5,
+        "Arbeiderpartiet": 3,
+        "Fremskrittspartiet": 2,
+        "Venstre": 1,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Kristelig Folkeparti": 0,
+        "Miljøpartiet De Grønne": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 3,
+        "Fremskrittspartiet": 2,
+        "Høyre": 5,
+        "Kristelig Folkeparti": 0,
+        "Miljøpartiet De Grønne": 0,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Senterpartiet": 5,
+        "Venstre": 1
+    }
 }

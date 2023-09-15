@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 20:19:16",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Orkland kommune, Trøndelag Trööndelage valgdistrikt",
@@ -325,8 +325,7 @@
                 "Endelig": 5391,
                 "Avvik": -1
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -521,5 +520,208 @@
             "listestemmetall_simulated_initial_counting": 14505
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 75165
+        },
+        "2": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 51408.571429
+        },
+        "3": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 35077
+        },
+        "4": {
+            "Parti": "Høyre",
+            "Kvotient": 26287.142857
+        },
+        "5": {
+            "Parti": "Småbypartiet Orkland",
+            "Kvotient": 25777.857143
+        },
+        "6": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 23990.666667
+        },
+        "7": {
+            "Parti": "Pensjonistpartiet",
+            "Kvotient": 22436.428571
+        },
+        "8": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 21046.2
+        },
+        "9": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 16654.285714
+        },
+        "10": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 15033
+        },
+        "11": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 14394.4
+        },
+        "12": {
+            "Parti": "Industri- og Næringspartiet",
+            "Kvotient": 13928.571429
+        },
+        "13": {
+            "Parti": "Høyre",
+            "Kvotient": 12267.333333
+        },
+        "14": {
+            "Parti": "Småbypartiet Orkland",
+            "Kvotient": 12029.666667
+        },
+        "15": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 11692.333333
+        },
+        "16": {
+            "Parti": "Pensjonistpartiet",
+            "Kvotient": 10470.333333
+        },
+        "17": {
+            "Parti": "Venstre",
+            "Kvotient": 10391.428571
+        },
+        "18": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 10281.714286
+        },
+        "19": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 9566.454545
+        },
+        "20": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 9357.857143
+        },
+        "21": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 8094.692308
+        },
+        "22": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 7996.888889
+        },
+        "23": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 7772
+        },
+        "24": {
+            "Parti": "Høyre",
+            "Kvotient": 7360.4
+        },
+        "25": {
+            "Parti": "Småbypartiet Orkland",
+            "Kvotient": 7217.8
+        },
+        "26": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 7015.4
+        },
+        "27": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 6542.909091
+        },
+        "28": {
+            "Parti": "Industri- og Næringspartiet",
+            "Kvotient": 6500
+        },
+        "29": {
+            "Parti": "Pensjonistpartiet",
+            "Kvotient": 6282.2
+        },
+        "30": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 6190.058824
+        },
+        "31": {
+            "Parti": "Kristelig Folkeparti",
+            "Kvotient": 6067.857143
+        },
+        "32": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 5538.473684
+        },
+        "33": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 5536.307692
+        },
+        "34": {
+            "Parti": "Høyre",
+            "Kvotient": 5257.428571
+        },
+        "35": {
+            "Parti": "Småbypartiet Orkland",
+            "Kvotient": 5155.571429
+        },
+        "36": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 5011
+        },
+        "37": {
+            "Parti": "Venstre",
+            "Kvotient": 4849.333333
+        },
+        "38": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 4798.133333
+        },
+        "39": {
+            "Parti": "Rødt",
+            "Kvotient": 4780
+        },
+        "40": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 4663.2
+        },
+        "41": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 4575.26087
+        },
+        "42": {
+            "Parti": "Pensjonistpartiet",
+            "Kvotient": 4487.285714
+        },
+        "43": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 4367
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeiderpartiet": 12,
+        "Senterpartiet": 8,
+        "Høyre": 4,
+        "Småbypartiet Orkland": 4,
+        "Pensjonistpartiet": 4,
+        "Fremskrittspartiet": 3,
+        "Industri- og Næringspartiet": 2,
+        "Venstre": 2,
+        "SV - Sosialistisk Venstreparti": 2,
+        "Kristelig Folkeparti": 1,
+        "Rødt": 1,
+        "Miljøpartiet De Grønne": 0,
+        "Norgesdemokratene": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 12,
+        "Fremskrittspartiet": 3,
+        "Høyre": 4,
+        "Industri- og Næringspartiet": 2,
+        "Kristelig Folkeparti": 1,
+        "Miljøpartiet De Grønne": 0,
+        "Norgesdemokratene": 0,
+        "Pensjonistpartiet": 4,
+        "Rødt": 1,
+        "SV - Sosialistisk Venstreparti": 2,
+        "Senterpartiet": 8,
+        "Småbypartiet Orkland": 4,
+        "Venstre": 2
+    }
 }

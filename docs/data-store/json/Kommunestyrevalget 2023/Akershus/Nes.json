@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 18:24:30",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Nes kommune, Akershus valgdistrikt",
@@ -305,8 +305,7 @@
                 "Endelig": 6557,
                 "Avvik": 3
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -464,5 +463,172 @@
             "listestemmetall_simulated_initial_counting": 8008
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 67288.571429
+        },
+        "2": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 56618.571429
+        },
+        "3": {
+            "Parti": "Høyre",
+            "Kvotient": 50725.714286
+        },
+        "4": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 31401.333333
+        },
+        "5": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 30420.714286
+        },
+        "6": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 26422
+        },
+        "7": {
+            "Parti": "Høyre",
+            "Kvotient": 23672
+        },
+        "8": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 18840.8
+        },
+        "9": {
+            "Parti": "Sosialistisk Venstreparti og Rødt",
+            "Kvotient": 18345.714286
+        },
+        "10": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 15853.2
+        },
+        "11": {
+            "Parti": "Høyre",
+            "Kvotient": 14203.2
+        },
+        "12": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 14196.333333
+        },
+        "13": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 13457.714286
+        },
+        "14": {
+            "Parti": "Miljøpartiet De Grønne",
+            "Kvotient": 12412.142857
+        },
+        "15": {
+            "Parti": "Industri- og Næringspartiet",
+            "Kvotient": 11807.857143
+        },
+        "16": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 11323.714286
+        },
+        "17": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 10467.111111
+        },
+        "18": {
+            "Parti": "Høyre",
+            "Kvotient": 10145.142857
+        },
+        "19": {
+            "Parti": "Venstre",
+            "Kvotient": 9688.571429
+        },
+        "20": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 8807.333333
+        },
+        "21": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 8564
+        },
+        "22": {
+            "Parti": "Sosialistisk Venstreparti og Rødt",
+            "Kvotient": 8561.333333
+        },
+        "23": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 8517.8
+        },
+        "24": {
+            "Parti": "Høyre",
+            "Kvotient": 7890.666667
+        },
+        "25": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 7246.461538
+        },
+        "26": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 7206
+        },
+        "27": {
+            "Parti": "Høyre",
+            "Kvotient": 6456
+        },
+        "28": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 6280.266667
+        },
+        "29": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 6097.384615
+        },
+        "30": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 6084.142857
+        },
+        "31": {
+            "Parti": "Miljøpartiet De Grønne",
+            "Kvotient": 5792.333333
+        },
+        "32": {
+            "Parti": "Kristelig Folkeparti",
+            "Kvotient": 5720
+        },
+        "33": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 5541.411765
+        },
+        "34": {
+            "Parti": "Industri- og Næringspartiet",
+            "Kvotient": 5510.333333
+        },
+        "35": {
+            "Parti": "Høyre",
+            "Kvotient": 5462.769231
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeiderpartiet": 9,
+        "Fremskrittspartiet": 7,
+        "Høyre": 7,
+        "Senterpartiet": 4,
+        "Sosialistisk Venstreparti og Rødt": 2,
+        "Miljøpartiet De Grønne": 2,
+        "Industri- og Næringspartiet": 2,
+        "Venstre": 1,
+        "Kristelig Folkeparti": 1,
+        "Konservativt": 0,
+        "Liberalistene": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 9,
+        "Fremskrittspartiet": 7,
+        "Høyre": 7,
+        "Industri- og Næringspartiet": 2,
+        "Konservativt": 0,
+        "Kristelig Folkeparti": 1,
+        "Liberalistene": 0,
+        "Miljøpartiet De Grønne": 2,
+        "Senterpartiet": 4,
+        "Sosialistisk Venstreparti og Rødt": 2,
+        "Venstre": 1
+    }
 }

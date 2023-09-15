@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 18:40:25",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Nord-Odal kommune, Innlandet valgdistrikt",
@@ -265,8 +265,7 @@
                 "Endelig": 1427,
                 "Avvik": 1
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -373,5 +372,124 @@
             "listestemmetall_simulated_initial_counting": 26775
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 19125
+        },
+        "2": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 8925
+        },
+        "3": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 6824.285714
+        },
+        "4": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 5355
+        },
+        "5": {
+            "Parti": "Høyre",
+            "Kvotient": 4792.857143
+        },
+        "6": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 4776.428571
+        },
+        "7": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 4517.857143
+        },
+        "8": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 3825
+        },
+        "9": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 3184.666667
+        },
+        "10": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2975
+        },
+        "11": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2434.090909
+        },
+        "12": {
+            "Parti": "Høyre",
+            "Kvotient": 2236.666667
+        },
+        "13": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 2229
+        },
+        "14": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 2108.333333
+        },
+        "15": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2059.615385
+        },
+        "16": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1910.8
+        },
+        "17": {
+            "Parti": "Rødt",
+            "Kvotient": 1814.285714
+        },
+        "18": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1785
+        },
+        "19": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1575
+        },
+        "20": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1409.210526
+        },
+        "21": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1364.857143
+        },
+        "22": {
+            "Parti": "Høyre",
+            "Kvotient": 1342
+        },
+        "23": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 1337.4
+        },
+        "24": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1275
+        },
+        "25": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 1265
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeiderpartiet": 11,
+        "Senterpartiet": 4,
+        "Høyre": 3,
+        "Fremskrittspartiet": 3,
+        "SV - Sosialistisk Venstreparti": 3,
+        "Rødt": 1,
+        "Venstre": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 11,
+        "Fremskrittspartiet": 3,
+        "Høyre": 3,
+        "Rødt": 1,
+        "SV - Sosialistisk Venstreparti": 3,
+        "Senterpartiet": 4,
+        "Venstre": 0
+    }
 }

@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "14.09.2023 13:57:58",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Vevelstad kommune, Nordland valgdistrikt",
@@ -225,8 +225,7 @@
                 "Endelig": 131,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -288,5 +287,68 @@
             "listestemmetall_simulated_initial_counting": 933
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Samarbeidslisten",
+            "Kvotient": 980.714286
+        },
+        "2": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 850.714286
+        },
+        "3": {
+            "Parti": "Kommunelista",
+            "Kvotient": 666.428571
+        },
+        "4": {
+            "Parti": "Samarbeidslisten",
+            "Kvotient": 457.666667
+        },
+        "5": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 397
+        },
+        "6": {
+            "Parti": "Kommunelista",
+            "Kvotient": 311
+        },
+        "7": {
+            "Parti": "Samarbeidslisten",
+            "Kvotient": 274.6
+        },
+        "8": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 238.2
+        },
+        "9": {
+            "Parti": "Samarbeidslisten",
+            "Kvotient": 196.142857
+        },
+        "10": {
+            "Parti": "Kommunelista",
+            "Kvotient": 186.6
+        },
+        "11": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 170.142857
+        },
+        "12": {
+            "Parti": "Samarbeidslisten",
+            "Kvotient": 152.555556
+        },
+        "13": {
+            "Parti": "Kommunelista",
+            "Kvotient": 133.285714
+        }
+    },
+    "e1_mandatPerParty": {
+        "Samarbeidslisten": 5,
+        "Arbeiderpartiet": 4,
+        "Kommunelista": 4
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 4,
+        "Kommunelista": 4,
+        "Samarbeidslisten": 5
+    }
 }

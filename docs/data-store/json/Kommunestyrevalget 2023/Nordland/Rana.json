@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "14.09.2023 10:49:02",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Rana kommune, Nordland valgdistrikt",
@@ -295,8 +295,7 @@
                 "Endelig": 5517,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -439,5 +438,178 @@
             "listestemmetall_simulated_initial_counting": 145673
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 103946.428571
+        },
+        "2": {
+            "Parti": "Høyre",
+            "Kvotient": 54591.428571
+        },
+        "3": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 48508.333333
+        },
+        "4": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 39735
+        },
+        "5": {
+            "Parti": "Industri- og Næringspartiet",
+            "Kvotient": 35687.857143
+        },
+        "6": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 29105
+        },
+        "7": {
+            "Parti": "Høyre",
+            "Kvotient": 25476
+        },
+        "8": {
+            "Parti": "Rødt",
+            "Kvotient": 21592.857143
+        },
+        "9": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 21403.571429
+        },
+        "10": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 20789.285714
+        },
+        "11": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 18543
+        },
+        "12": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 18069.285714
+        },
+        "13": {
+            "Parti": "Industri- og Næringspartiet",
+            "Kvotient": 16654.333333
+        },
+        "14": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 16169.444444
+        },
+        "15": {
+            "Parti": "Høyre",
+            "Kvotient": 15285.6
+        },
+        "16": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 13229.545455
+        },
+        "17": {
+            "Parti": "Venstre",
+            "Kvotient": 12305.714286
+        },
+        "18": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 11194.230769
+        },
+        "19": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 11125.8
+        },
+        "20": {
+            "Parti": "Høyre",
+            "Kvotient": 10918.285714
+        },
+        "21": {
+            "Parti": "Rødt",
+            "Kvotient": 10076.666667
+        },
+        "22": {
+            "Parti": "Industri- og Næringspartiet",
+            "Kvotient": 9992.6
+        },
+        "23": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 9988.333333
+        },
+        "24": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 9701.666667
+        },
+        "25": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 8560.294118
+        },
+        "26": {
+            "Parti": "Høyre",
+            "Kvotient": 8492
+        },
+        "27": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 8432.333333
+        },
+        "28": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 7947
+        },
+        "29": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 7659.210526
+        },
+        "30": {
+            "Parti": "Industri- og Næringspartiet",
+            "Kvotient": 7137.571429
+        },
+        "31": {
+            "Parti": "Høyre",
+            "Kvotient": 6948
+        },
+        "32": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 6929.761905
+        },
+        "33": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 6327.173913
+        },
+        "34": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 6181
+        },
+        "35": {
+            "Parti": "Rødt",
+            "Kvotient": 6046
+        },
+        "36": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 5993
+        },
+        "37": {
+            "Parti": "Høyre",
+            "Kvotient": 5879.076923
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeiderpartiet": 12,
+        "Høyre": 7,
+        "Senterpartiet": 5,
+        "Industri- og Næringspartiet": 4,
+        "Rødt": 3,
+        "Fremskrittspartiet": 3,
+        "SV - Sosialistisk Venstreparti": 2,
+        "Venstre": 1,
+        "Kristelig Folkeparti": 0,
+        "Norgesdemokratene": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 12,
+        "Fremskrittspartiet": 3,
+        "Høyre": 7,
+        "Industri- og Næringspartiet": 4,
+        "Kristelig Folkeparti": 0,
+        "Norgesdemokratene": 0,
+        "Rødt": 3,
+        "SV - Sosialistisk Venstreparti": 2,
+        "Senterpartiet": 5,
+        "Venstre": 1
+    }
 }

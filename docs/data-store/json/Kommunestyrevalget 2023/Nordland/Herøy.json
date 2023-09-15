@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "13.09.2023 08:11:56",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Herøy kommune, Nordland valgdistrikt",
@@ -243,8 +243,7 @@
                 "Endelig": 415,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -306,5 +305,92 @@
             "listestemmetall_simulated_initial_counting": 8567
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 6132.857143
+        },
+        "2": {
+            "Parti": "Herøy Bygdeliste",
+            "Kvotient": 3242.857143
+        },
+        "3": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2862
+        },
+        "4": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 2472.142857
+        },
+        "5": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1717.2
+        },
+        "6": {
+            "Parti": "Herøy Bygdeliste",
+            "Kvotient": 1513.333333
+        },
+        "7": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1226.571429
+        },
+        "8": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 1153.666667
+        },
+        "9": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 954
+        },
+        "10": {
+            "Parti": "Herøy Bygdeliste",
+            "Kvotient": 908
+        },
+        "11": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 780.545455
+        },
+        "12": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 692.2
+        },
+        "13": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 660.461538
+        },
+        "14": {
+            "Parti": "Herøy Bygdeliste",
+            "Kvotient": 648.571429
+        },
+        "15": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 572.4
+        },
+        "16": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 505.058824
+        },
+        "17": {
+            "Parti": "Herøy Bygdeliste",
+            "Kvotient": 504.444444
+        },
+        "18": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 494.428571
+        },
+        "19": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 451.894737
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeiderpartiet": 10,
+        "Herøy Bygdeliste": 5,
+        "Fremskrittspartiet": 4
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 10,
+        "Fremskrittspartiet": 4,
+        "Herøy Bygdeliste": 5
+    }
 }

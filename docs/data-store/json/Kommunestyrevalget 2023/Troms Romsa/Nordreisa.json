@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 17:42:13",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Nordreisa kommune, Troms Romsa valgdistrikt",
@@ -255,8 +255,7 @@
                 "Endelig": 1326,
                 "Avvik": 2
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -353,5 +352,106 @@
             "listestemmetall_simulated_initial_counting": 9460
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 7959.285714
+        },
+        "2": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 6757.142857
+        },
+        "3": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 5042.857143
+        },
+        "4": {
+            "Parti": "Industri- og Næringspartiet",
+            "Kvotient": 4964.285714
+        },
+        "5": {
+            "Parti": "Høyre",
+            "Kvotient": 4762.142857
+        },
+        "6": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 4054.285714
+        },
+        "7": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 3714.333333
+        },
+        "8": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 3153.333333
+        },
+        "9": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 2353.333333
+        },
+        "10": {
+            "Parti": "Industri- og Næringspartiet",
+            "Kvotient": 2316.666667
+        },
+        "11": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2228.6
+        },
+        "12": {
+            "Parti": "Høyre",
+            "Kvotient": 2222.333333
+        },
+        "13": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 1892
+        },
+        "14": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 1892
+        },
+        "15": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1591.857143
+        },
+        "16": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1412
+        },
+        "17": {
+            "Parti": "Industri- og Næringspartiet",
+            "Kvotient": 1390
+        },
+        "18": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 1351.428571
+        },
+        "19": {
+            "Parti": "Høyre",
+            "Kvotient": 1333.4
+        },
+        "20": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1238.111111
+        },
+        "21": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 1135.2
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeiderpartiet": 5,
+        "Fremskrittspartiet": 4,
+        "Senterpartiet": 3,
+        "Industri- og Næringspartiet": 3,
+        "Høyre": 3,
+        "SV - Sosialistisk Venstreparti": 3
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 5,
+        "Fremskrittspartiet": 4,
+        "Høyre": 3,
+        "Industri- og Næringspartiet": 3,
+        "SV - Sosialistisk Venstreparti": 3,
+        "Senterpartiet": 3
+    }
 }

@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "14.09.2023 14:09:12",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Berlevåg kommune, Finnmark Finnmárku valgdistrikt",
@@ -233,8 +233,7 @@
                 "Endelig": 278,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -285,5 +284,66 @@
             "listestemmetall_simulated_initial_counting": 3677
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2626.428571
+        },
+        "2": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 1765.714286
+        },
+        "3": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1225.666667
+        },
+        "4": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 824
+        },
+        "5": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 735.4
+        },
+        "6": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 525.285714
+        },
+        "7": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 494.4
+        },
+        "8": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 408.555556
+        },
+        "9": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 353.142857
+        },
+        "10": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 334.272727
+        },
+        "11": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 282.846154
+        },
+        "12": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 274.666667
+        },
+        "13": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 245.133333
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeiderpartiet": 8,
+        "SV - Sosialistisk Venstreparti": 5
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 8,
+        "SV - Sosialistisk Venstreparti": 5
+    }
 }

@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 18:15:28",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Averøy kommune, Møre og Romsdal valgdistrikt",
@@ -265,8 +265,7 @@
                 "Endelig": 1232,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -372,5 +371,116 @@
             "listestemmetall_simulated_initial_counting": 2442
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 20397.142857
+        },
+        "2": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 9518.666667
+        },
+        "3": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 8674.285714
+        },
+        "4": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 5711.2
+        },
+        "5": {
+            "Parti": "Høyre",
+            "Kvotient": 5130
+        },
+        "6": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 4079.428571
+        },
+        "7": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 4048
+        },
+        "8": {
+            "Parti": "Venstre",
+            "Kvotient": 3985.714286
+        },
+        "9": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 3172.888889
+        },
+        "10": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 3074.285714
+        },
+        "11": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2596
+        },
+        "12": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 2428.8
+        },
+        "13": {
+            "Parti": "Høyre",
+            "Kvotient": 2394
+        },
+        "14": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2196.615385
+        },
+        "15": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1903.733333
+        },
+        "16": {
+            "Parti": "Venstre",
+            "Kvotient": 1860
+        },
+        "17": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 1744.285714
+        },
+        "18": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 1734.857143
+        },
+        "19": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1679.764706
+        },
+        "20": {
+            "Parti": "Kristelig Folkeparti",
+            "Kvotient": 1581.428571
+        },
+        "21": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1502.947368
+        },
+        "22": {
+            "Parti": "Høyre",
+            "Kvotient": 1436.4
+        },
+        "23": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1434.666667
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeiderpartiet": 10,
+        "Fremskrittspartiet": 4,
+        "Høyre": 3,
+        "Venstre": 2,
+        "Senterpartiet": 2,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Kristelig Folkeparti": 1
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 10,
+        "Fremskrittspartiet": 4,
+        "Høyre": 3,
+        "Kristelig Folkeparti": 1,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Senterpartiet": 2,
+        "Venstre": 2
+    }
 }

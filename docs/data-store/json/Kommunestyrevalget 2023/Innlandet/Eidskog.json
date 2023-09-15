@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "13.09.2023 08:51:29",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Eidskog kommune, Innlandet valgdistrikt",
@@ -265,8 +265,7 @@
                 "Endelig": 1681,
                 "Avvik": 1
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -375,5 +374,124 @@
             "listestemmetall_simulated_initial_counting": 1300
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 22949.285714
+        },
+        "2": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 10709.666667
+        },
+        "3": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 9291.428571
+        },
+        "4": {
+            "Parti": "Høyre",
+            "Kvotient": 8092.142857
+        },
+        "5": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 6425.8
+        },
+        "6": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 5315.714286
+        },
+        "7": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 4589.857143
+        },
+        "8": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 4336
+        },
+        "9": {
+            "Parti": "Høyre",
+            "Kvotient": 3776.333333
+        },
+        "10": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 3569.888889
+        },
+        "11": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2920.818182
+        },
+        "12": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 2601.6
+        },
+        "13": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 2480.666667
+        },
+        "14": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2471.461538
+        },
+        "15": {
+            "Parti": "Høyre",
+            "Kvotient": 2265.8
+        },
+        "16": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2141.933333
+        },
+        "17": {
+            "Parti": "Pensjonistpartiet",
+            "Kvotient": 2100.714286
+        },
+        "18": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1889.941176
+        },
+        "19": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1858.285714
+        },
+        "20": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1691
+        },
+        "21": {
+            "Parti": "Høyre",
+            "Kvotient": 1618.428571
+        },
+        "22": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1529.952381
+        },
+        "23": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 1488.4
+        },
+        "24": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1445.333333
+        },
+        "25": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1396.913043
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeiderpartiet": 12,
+        "Senterpartiet": 5,
+        "Høyre": 4,
+        "Fremskrittspartiet": 3,
+        "Pensjonistpartiet": 1,
+        "Miljøpartiet De Grønne": 0,
+        "Venstre": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 12,
+        "Fremskrittspartiet": 3,
+        "Høyre": 4,
+        "Miljøpartiet De Grønne": 0,
+        "Pensjonistpartiet": 1,
+        "Senterpartiet": 5,
+        "Venstre": 0
+    }
 }

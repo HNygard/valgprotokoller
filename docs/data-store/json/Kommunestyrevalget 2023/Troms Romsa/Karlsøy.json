@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "14.09.2023 08:24:28",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Karlsøy kommune, Troms Romsa valgdistrikt",
@@ -283,8 +283,7 @@
                 "Endelig": 704,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -390,5 +389,92 @@
             "listestemmetall_simulated_initial_counting": 1862
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 4045.714286
+        },
+        "2": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 3152.857143
+        },
+        "3": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 2680
+        },
+        "4": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1888
+        },
+        "5": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1471.333333
+        },
+        "6": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 1330
+        },
+        "7": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 1250.666667
+        },
+        "8": {
+            "Parti": "Felleslista for Ringvassøy, Reinøy og Rebbenesøy",
+            "Kvotient": 1166.428571
+        },
+        "9": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1132.8
+        },
+        "10": {
+            "Parti": "Karlsøy Pensjonistliste",
+            "Kvotient": 1112.857143
+        },
+        "11": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 882.8
+        },
+        "12": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 809.142857
+        },
+        "13": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 750.4
+        },
+        "14": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 630.571429
+        },
+        "15": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 629.333333
+        },
+        "16": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 620.666667
+        },
+        "17": {
+            "Parti": "Rødt",
+            "Kvotient": 610
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeiderpartiet": 5,
+        "Senterpartiet": 4,
+        "Fremskrittspartiet": 3,
+        "SV - Sosialistisk Venstreparti": 2,
+        "Felleslista for Ringvassøy, Reinøy og Rebbenesøy": 1,
+        "Karlsøy Pensjonistliste": 1,
+        "Rødt": 1
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 5,
+        "Felleslista for Ringvassøy, Reinøy og Rebbenesøy": 1,
+        "Fremskrittspartiet": 3,
+        "Karlsøy Pensjonistliste": 1,
+        "Rødt": 1,
+        "SV - Sosialistisk Venstreparti": 2,
+        "Senterpartiet": 4
+    }
 }

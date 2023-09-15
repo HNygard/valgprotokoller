@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "14.09.2023 12:53:56",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Lødingen kommune, Nordland valgdistrikt",
@@ -245,8 +245,7 @@
                 "Endelig": 636,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -331,7 +330,90 @@
             "listestemmetall_simulated_initial_counting": 1336
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}",
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 5826.428571
+        },
+        "2": {
+            "Parti": "Høyre",
+            "Kvotient": 3125.714286
+        },
+        "3": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2719
+        },
+        "4": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 1970
+        },
+        "5": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1631.4
+        },
+        "6": {
+            "Parti": "Fellesliste Venstre og Senterpartiet",
+            "Kvotient": 1602.142857
+        },
+        "7": {
+            "Parti": "Høyre",
+            "Kvotient": 1458.666667
+        },
+        "8": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1165.285714
+        },
+        "9": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 954.285714
+        },
+        "10": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 919.333333
+        },
+        "11": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 906.333333
+        },
+        "12": {
+            "Parti": "Høyre",
+            "Kvotient": 875.2
+        },
+        "13": {
+            "Parti": "Fellesliste Venstre og Senterpartiet",
+            "Kvotient": 747.666667
+        },
+        "14": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 741.545455
+        },
+        "15": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 627.461538
+        },
+        "16": {
+            "Parti": "Høyre",
+            "Kvotient": 625.142857
+        },
+        "17": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 551.6
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeiderpartiet": 7,
+        "Høyre": 4,
+        "Fremskrittspartiet": 3,
+        "Fellesliste Venstre og Senterpartiet": 2,
+        "SV - Sosialistisk Venstreparti": 1
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 7,
+        "Fellesliste Venstre og Senterpartiet": 2,
+        "Fremskrittspartiet": 3,
+        "Høyre": 4,
+        "SV - Sosialistisk Venstreparti": 1
+    },
     "otherSources": [
         {
             "localSource": "docs/data-store/pdfs-2023/INNSYN---entityId=1851-lodingen-kommune&threadId=valgprotokoll_2023%2C_l%C3%B8dingen_kommune&attachment=2023-09-14_125833+-+IN+-+att+1-2734d03bbb8c44a6d250e9c9716c80a4.pdf.pdf.layout.txt",

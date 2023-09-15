@@ -7,7 +7,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 17:36:29",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Lunner kommune, Akershus valgdistrikt",
@@ -286,8 +286,7 @@
                 "Endelig": 2899,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -424,5 +423,128 @@
             "listestemmetall_simulated_initial_counting": 3519
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 34803.571429
+        },
+        "2": {
+            "Parti": "Høyre",
+            "Kvotient": 16719.285714
+        },
+        "3": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 16241.666667
+        },
+        "4": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 9854.285714
+        },
+        "5": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 9745
+        },
+        "6": {
+            "Parti": "Høyre",
+            "Kvotient": 7802.333333
+        },
+        "7": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 7561.428571
+        },
+        "8": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 6960.714286
+        },
+        "9": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 5413.888889
+        },
+        "10": {
+            "Parti": "Høyre",
+            "Kvotient": 4681.4
+        },
+        "11": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 4598.666667
+        },
+        "12": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 4429.545455
+        },
+        "13": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 3748.076923
+        },
+        "14": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 3528.666667
+        },
+        "15": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 3461.428571
+        },
+        "16": {
+            "Parti": "Høyre",
+            "Kvotient": 3343.857143
+        },
+        "17": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 3248.333333
+        },
+        "18": {
+            "Parti": "Rødt",
+            "Kvotient": 3055
+        },
+        "19": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2866.176471
+        },
+        "20": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 2759.2
+        },
+        "21": {
+            "Parti": "Høyre",
+            "Kvotient": 2600.777778
+        },
+        "22": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2564.473684
+        },
+        "23": {
+            "Parti": "Miljøpartiet De Grønne",
+            "Kvotient": 2563.571429
+        },
+        "24": {
+            "Parti": "Venstre",
+            "Kvotient": 2513.571429
+        },
+        "25": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2320.238095
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeiderpartiet": 11,
+        "Høyre": 5,
+        "Senterpartiet": 3,
+        "Fremskrittspartiet": 2,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Rødt": 1,
+        "Miljøpartiet De Grønne": 1,
+        "Venstre": 1,
+        "Konservativt": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 11,
+        "Fremskrittspartiet": 2,
+        "Høyre": 5,
+        "Konservativt": 0,
+        "Miljøpartiet De Grønne": 1,
+        "Rødt": 1,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Senterpartiet": 3,
+        "Venstre": 1
+    }
 }

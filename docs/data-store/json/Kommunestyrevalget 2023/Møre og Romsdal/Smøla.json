@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 17:47:50",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Smøla kommune, Møre og Romsdal valgdistrikt",
@@ -235,8 +235,7 @@
                 "Endelig": 550,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -312,5 +311,86 @@
             "listestemmetall_simulated_initial_counting": 9185
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 6560.714286
+        },
+        "2": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 3061.666667
+        },
+        "3": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 3047.857143
+        },
+        "4": {
+            "Parti": "Høyre",
+            "Kvotient": 1864.285714
+        },
+        "5": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1837
+        },
+        "6": {
+            "Parti": "Venstre",
+            "Kvotient": 1617.142857
+        },
+        "7": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1422.333333
+        },
+        "8": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1312.142857
+        },
+        "9": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1020.555556
+        },
+        "10": {
+            "Parti": "Høyre",
+            "Kvotient": 870
+        },
+        "11": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 853.4
+        },
+        "12": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 835
+        },
+        "13": {
+            "Parti": "Venstre",
+            "Kvotient": 754.666667
+        },
+        "14": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 706.538462
+        },
+        "15": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 612.333333
+        },
+        "16": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 609.571429
+        },
+        "17": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 540.294118
+        }
+    },
+    "e1_mandatPerParty": {
+        "Senterpartiet": 9,
+        "Arbeiderpartiet": 4,
+        "Høyre": 2,
+        "Venstre": 2
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 4,
+        "Høyre": 2,
+        "Senterpartiet": 9,
+        "Venstre": 2
+    }
 }

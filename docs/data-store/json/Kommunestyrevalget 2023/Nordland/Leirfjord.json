@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 18:00:52",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Leirfjord kommune, Nordland valgdistrikt",
@@ -255,8 +255,7 @@
                 "Endelig": 407,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -351,5 +350,98 @@
             "listestemmetall_simulated_initial_counting": 664
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 4924.285714
+        },
+        "2": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 4875.714286
+        },
+        "3": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2298
+        },
+        "4": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 2275.333333
+        },
+        "5": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 2245
+        },
+        "6": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 1467.857143
+        },
+        "7": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1378.8
+        },
+        "8": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1365.2
+        },
+        "9": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 1047.666667
+        },
+        "10": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 984.857143
+        },
+        "11": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 975.142857
+        },
+        "12": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 766
+        },
+        "13": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 758.444444
+        },
+        "14": {
+            "Parti": "Rødt",
+            "Kvotient": 751.428571
+        },
+        "15": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 685
+        },
+        "16": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 628.6
+        },
+        "17": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 626.727273
+        },
+        "18": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 620.545455
+        },
+        "19": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 530.307692
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeiderpartiet": 7,
+        "Senterpartiet": 6,
+        "Fremskrittspartiet": 3,
+        "SV - Sosialistisk Venstreparti": 2,
+        "Rødt": 1,
+        "Høyre": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 7,
+        "Fremskrittspartiet": 3,
+        "Høyre": 0,
+        "Rødt": 1,
+        "SV - Sosialistisk Venstreparti": 2,
+        "Senterpartiet": 6
+    }
 }

@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 18:07:27",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Midt-Telemark kommune, Telemark valgdistrikt",
@@ -285,8 +285,7 @@
                 "Endelig": 2455,
                 "Avvik": 50
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -417,5 +416,144 @@
             "listestemmetall_simulated_initial_counting": 6563
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 28827.857143
+        },
+        "2": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 15137.857143
+        },
+        "3": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 13453
+        },
+        "4": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 12337.857143
+        },
+        "5": {
+            "Parti": "Høyre",
+            "Kvotient": 11836.428571
+        },
+        "6": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 8071.8
+        },
+        "7": {
+            "Parti": "Venstre",
+            "Kvotient": 8036.428571
+        },
+        "8": {
+            "Parti": "Miljøpartiet De Grønne",
+            "Kvotient": 7347.857143
+        },
+        "9": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 7064.333333
+        },
+        "10": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 5783.571429
+        },
+        "11": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 5765.571429
+        },
+        "12": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 5757.666667
+        },
+        "13": {
+            "Parti": "Høyre",
+            "Kvotient": 5523.666667
+        },
+        "14": {
+            "Parti": "Kristelig Folkeparti",
+            "Kvotient": 4687.857143
+        },
+        "15": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 4484.333333
+        },
+        "16": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 4238.6
+        },
+        "17": {
+            "Parti": "Rødt",
+            "Kvotient": 3982.857143
+        },
+        "18": {
+            "Parti": "Venstre",
+            "Kvotient": 3750.333333
+        },
+        "19": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 3669
+        },
+        "20": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 3454.6
+        },
+        "21": {
+            "Parti": "Miljøpartiet De Grønne",
+            "Kvotient": 3429
+        },
+        "22": {
+            "Parti": "Høyre",
+            "Kvotient": 3314.2
+        },
+        "23": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 3104.538462
+        },
+        "24": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 3027.571429
+        },
+        "25": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 2699
+        },
+        "26": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 2690.6
+        },
+        "27": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 2467.571429
+        },
+        "28": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 2374.058824
+        },
+        "29": {
+            "Parti": "Høyre",
+            "Kvotient": 2367.285714
+        }
+    },
+    "e1_mandatPerParty": {
+        "Senterpartiet": 9,
+        "Arbeiderpartiet": 4,
+        "Fremskrittspartiet": 4,
+        "Høyre": 4,
+        "Venstre": 2,
+        "Miljøpartiet De Grønne": 2,
+        "SV - Sosialistisk Venstreparti": 2,
+        "Kristelig Folkeparti": 1,
+        "Rødt": 1
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 5,
+        "Fremskrittspartiet": 4,
+        "Høyre": 3,
+        "Kristelig Folkeparti": 1,
+        "Miljøpartiet De Grønne": 2,
+        "Rødt": 1,
+        "SV - Sosialistisk Venstreparti": 2,
+        "Senterpartiet": 9,
+        "Venstre": 2
+    }
 }

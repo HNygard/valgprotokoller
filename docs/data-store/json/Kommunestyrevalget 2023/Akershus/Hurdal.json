@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 17:17:18",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Hurdal kommune, Akershus valgdistrikt",
@@ -285,8 +285,7 @@
                 "Endelig": 801,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -414,5 +413,96 @@
             "listestemmetall_simulated_initial_counting": 5810
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 4150
+        },
+        "2": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 3037.142857
+        },
+        "3": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2298.571429
+        },
+        "4": {
+            "Parti": "Glad i Hurdal",
+            "Kvotient": 1968.571429
+        },
+        "5": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1936.666667
+        },
+        "6": {
+            "Parti": "Høyre",
+            "Kvotient": 1845
+        },
+        "7": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 1417.333333
+        },
+        "8": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1162
+        },
+        "9": {
+            "Parti": "Kristelig Folkeparti",
+            "Kvotient": 1104.285714
+        },
+        "10": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1072.666667
+        },
+        "11": {
+            "Parti": "Fellesliste SV - Sosialistisk Venstreparti og Rødt",
+            "Kvotient": 1009.285714
+        },
+        "12": {
+            "Parti": "Venstre",
+            "Kvotient": 974.285714
+        },
+        "13": {
+            "Parti": "Glad i Hurdal",
+            "Kvotient": 918.666667
+        },
+        "14": {
+            "Parti": "Høyre",
+            "Kvotient": 861
+        },
+        "15": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 850.4
+        },
+        "16": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 830
+        },
+        "17": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 645.555556
+        }
+    },
+    "e1_mandatPerParty": {
+        "Senterpartiet": 5,
+        "Fremskrittspartiet": 3,
+        "Arbeiderpartiet": 2,
+        "Glad i Hurdal": 2,
+        "Høyre": 2,
+        "Kristelig Folkeparti": 1,
+        "Fellesliste SV - Sosialistisk Venstreparti og Rødt": 1,
+        "Venstre": 1,
+        "Miljøpartiet De Grønne": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 2,
+        "Fellesliste SV - Sosialistisk Venstreparti og Rødt": 1,
+        "Fremskrittspartiet": 3,
+        "Glad i Hurdal": 2,
+        "Høyre": 2,
+        "Kristelig Folkeparti": 1,
+        "Miljøpartiet De Grønne": 0,
+        "Senterpartiet": 5,
+        "Venstre": 1
+    }
 }

@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 18:45:18",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Evenes kommune, Nordland valgdistrikt",
@@ -265,8 +265,7 @@
                 "Endelig": 421,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -372,5 +371,92 @@
             "listestemmetall_simulated_initial_counting": 2233
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Evenes Tverrpolitiske Liste",
+            "Kvotient": 2877.857143
+        },
+        "2": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2777.142857
+        },
+        "3": {
+            "Parti": "Høyre",
+            "Kvotient": 1595
+        },
+        "4": {
+            "Parti": "Evenes Tverrpolitiske Liste",
+            "Kvotient": 1343
+        },
+        "5": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1309.285714
+        },
+        "6": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1296
+        },
+        "7": {
+            "Parti": "Evenes Tverrpolitiske Liste",
+            "Kvotient": 805.8
+        },
+        "8": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 777.6
+        },
+        "9": {
+            "Parti": "Høyre",
+            "Kvotient": 744.333333
+        },
+        "10": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 611
+        },
+        "11": {
+            "Parti": "Evenes Tverrpolitiske Liste",
+            "Kvotient": 575.571429
+        },
+        "12": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 555.428571
+        },
+        "13": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 512.142857
+        },
+        "14": {
+            "Parti": "Evenes Tverrpolitiske Liste",
+            "Kvotient": 447.666667
+        },
+        "15": {
+            "Parti": "Høyre",
+            "Kvotient": 446.6
+        },
+        "16": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 435.714286
+        },
+        "17": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 432
+        }
+    },
+    "e1_mandatPerParty": {
+        "Evenes Tverrpolitiske Liste": 5,
+        "Arbeiderpartiet": 5,
+        "Høyre": 3,
+        "Senterpartiet": 2,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Fremskrittspartiet": 1,
+        "Venstre": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 5,
+        "Evenes Tverrpolitiske Liste": 5,
+        "Fremskrittspartiet": 1,
+        "Høyre": 3,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Senterpartiet": 2,
+        "Venstre": 0
+    }
 }

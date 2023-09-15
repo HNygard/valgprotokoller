@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 17:42:15",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Åfjord kommune, Trøndelag Trööndelage valgdistrikt",
@@ -255,8 +255,7 @@
                 "Endelig": 1133,
                 "Avvik": 0
             }
-        },
-        "Mandatene ble fordelt som følger:": []
+        }
     },
     "comments": {
         "B2.1.3 Merknad": [
@@ -354,5 +353,114 @@
             "listestemmetall_simulated_initial_counting": 3119
         }
     ],
-    "errorMessage": "Didn't find the row: \n\n\n#0 2-valgprotokoll-parser.php(1486): readTableRow()\n#1 2-valgprotokoll-parser.php(1230): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(367): parseFile_andWriteToDisk()\n#3 {main}"
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 15204.285714
+        },
+        "2": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 8980
+        },
+        "3": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 7095.333333
+        },
+        "4": {
+            "Parti": "Høyre",
+            "Kvotient": 5712.142857
+        },
+        "5": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 4257.2
+        },
+        "6": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 4190.666667
+        },
+        "7": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 3811.428571
+        },
+        "8": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 3040.857143
+        },
+        "9": {
+            "Parti": "Høyre",
+            "Kvotient": 2665.666667
+        },
+        "10": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 2514.4
+        },
+        "11": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 2365.111111
+        },
+        "12": {
+            "Parti": "Venstre",
+            "Kvotient": 2227.857143
+        },
+        "13": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1935.090909
+        },
+        "14": {
+            "Parti": "Kristelig Folkeparti",
+            "Kvotient": 1817.142857
+        },
+        "15": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1796
+        },
+        "16": {
+            "Parti": "Fremskrittspartiet",
+            "Kvotient": 1778.666667
+        },
+        "17": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1637.384615
+        },
+        "18": {
+            "Parti": "Høyre",
+            "Kvotient": 1599.4
+        },
+        "19": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1419.066667
+        },
+        "20": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1396.888889
+        },
+        "21": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1252.117647
+        },
+        "22": {
+            "Parti": "Arbeiderpartiet",
+            "Kvotient": 1142.909091
+        },
+        "23": {
+            "Parti": "Høyre",
+            "Kvotient": 1142.428571
+        }
+    },
+    "e1_mandatPerParty": {
+        "Senterpartiet": 9,
+        "Arbeiderpartiet": 6,
+        "Høyre": 4,
+        "Fremskrittspartiet": 2,
+        "Venstre": 1,
+        "Kristelig Folkeparti": 1
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeiderpartiet": 6,
+        "Fremskrittspartiet": 2,
+        "Høyre": 4,
+        "Kristelig Folkeparti": 1,
+        "Senterpartiet": 9,
+        "Venstre": 1
+    }
 }
