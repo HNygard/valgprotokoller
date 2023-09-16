@@ -327,7 +327,8 @@ foreach ($lines as $line) {
 // Path contains:
 $ignore_files = array(
     // Svarbrev
-    '/home/hallvard/Dropbox/Innsyn/Valgdirektoratet/valgprotokoll/docs/data-store/pdfs-2023/INNSYN---entityId=1818-heroy-i-nordland-kommune&threadId=valgprotokoll_2023%2C_her%C3%B8y_kommune_%28nordland%29&attachment=2023-09-13_082308+-+IN+-+att+1-cd5c12a65e0bb674811533ca4bfb1e0e.pdf.pdf.layout.txt'
+    'pdfs-2023/INNSYN---entityId=1818-heroy-i-nordland-kommune&threadId=valgprotokoll_2023%2C_her%C3%B8y_kommune_%28nordland%29&attachment=2023-09-13_082308+-+IN+-+att+1-cd5c12a65e0bb674811533ca4bfb1e0e.pdf.pdf.layout.txt',
+    'pdfs-2023/INNSYN---entityId=1865-vagan-kommune&threadId=valgprotokoll_2023%2C_v%C3%A5gan_kommune&attachment=2023-09-14_081146+-+IN+-+att+1-95a27584948d5b6310c9c9bc3f5edad2.pdf.pdf.layout.txt',
 );
 
 $files_written = array();
