@@ -372,6 +372,7 @@ function kommunenavnTilEntity($name, $county) {
     return $name2;
 }
 
+$valgprotokoll_with_error = array();
 foreach ($files as $file) {
 
     if ($file) {
@@ -381,6 +382,18 @@ foreach ($files as $file) {
 
     if (str_contains($file, 'mx-records')) {
         continue;
+    }
+    if (isset($obj->documentType) && $obj->documentType == 'valgprotokoll' && $obj->error && isset($obj->municipality)) {
+        if (!isset($obj->county)) {
+            var_dump($obj);
+            throw new Exception('Missing county. Early error: ' . $file);
+        }
+        else {
+            $name2 = kommunenavnTilEntity($obj->municipality, $obj->county);
+            $obj->file = $file;
+            $obj->url2 = $file;
+            $valgprotokoll_with_error[$entity_name__to__entity_id[$name2]][] = $obj;
+        }
     }
     if ($obj->error || $obj->documentType != 'valgprotokoll' || !isset($obj->election) || !isset($obj->municipality)) {
         continue;
@@ -392,7 +405,6 @@ foreach ($files as $file) {
         continue;
     }
     logInfo('Using [' . str_replace(__DIR__ . '/', '', $file) . '].');
-
 
     $name2 = kommunenavnTilEntity($obj->municipality, $obj->county);
     $obj->file = $file;
@@ -1367,47 +1379,56 @@ foreach ($entity_id__to__obj as $entity) {
     $elections = array(
         '<td>-</td>',
         '<td>-</td>',
-        '<td style="color: darkgreen">OK, all elections found and read.</td>',
+        '<td>-</td>',
         '<td>-</td>'
     );
+    $election_parse_error = false;
+    $valgprotokoller = array();
     if (isset($entity->elections)) {
-        foreach ($entity->elections as $election) {
-            /*
-            if ($election->election == 'Kommunestyrevalget 2019' && $elections[0] == '<td>-</td>') {
-                $elections[0] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
-                    . chr(10)
-                    . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
-            }
-            elseif ($election->election == 'Fylkestingsvalget 2019' && $elections[1] == '<td>-</td>') {
-                $elections[1] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
-                    . chr(10)
-                    . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
-            }
-            */
-            if ($election->election == 'Sametingsvalget 2021' && $elections[0] == '<td>-</td>') {
-                $elections[0] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
-                    . chr(10)
-                    . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
-            }
-            elseif ($election->election == 'Stortingsvalget 2021' && $elections[1] == '<td>-</td>') {
-                $elections[1] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
-                    . chr(10)
-                    . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
-            }
-            if ($election->election == 'Kommunestyrevalget ' . $election_year && $elections[0] == '<td>-</td>') {
-                $elections[0] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
-                    . chr(10)
-                    . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
-            }
-            elseif ($election->election == 'Fylkestingsvalget ' . $election_year && $elections[1] == '<td>-</td>') {
-                $elections[1] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
-                    . chr(10)
-                    . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
-            }
-            else {
-                var_dump($election);
-                throw new Exception('Unknown election: ' . $election->election);
-            }
+        $valgprotokoller = array_merge($valgprotokoller, $entity->elections);
+    }
+    if (isset($valgprotokoll_with_error[$entity->entityId])) {
+        $valgprotokoller = array_merge($valgprotokoller, $valgprotokoll_with_error[$entity->entityId]);
+    }
+    foreach ($valgprotokoller as $election) {
+        /*
+        if ($election->election == 'Kommunestyrevalget 2019' && $elections[0] == '<td>-</td>') {
+            $elections[0] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
+                . chr(10)
+                . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
+        }
+        elseif ($election->election == 'Fylkestingsvalget 2019' && $elections[1] == '<td>-</td>') {
+            $elections[1] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
+                . chr(10)
+                . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
+        }
+        */
+        if ($election->election == 'Sametingsvalget 2021' && $elections[0] == '<td>-</td>') {
+            $elections[0] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
+                . chr(10)
+                . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
+        }
+        elseif ($election->election == 'Stortingsvalget 2021' && $elections[1] == '<td>-</td>') {
+            $elections[1] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
+                . chr(10)
+                . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
+        }
+        if ($election->election == 'Kommunestyrevalget ' . $election_year && $elections[0] == '<td>-</td>') {
+            $elections[0] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
+                . chr(10)
+                . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
+        }
+        elseif ($election->election == 'Fylkestingsvalget ' . $election_year && $elections[1] == '<td>-</td>') {
+            $elections[1] = '<td><a href="' . getNewPath($election->file) . '">' . $election->election . '</a>'
+                . chr(10)
+                . ' [<a href="' . $election->url2 . '">PDF</a>]</td>';
+        }
+        else {
+            var_dump($election);
+            throw new Exception('Unknown election: ' . $election->election);
+        }
+        if ($election->error) {
+            $election_parse_error = true;
         }
     }
 
@@ -1416,6 +1437,12 @@ foreach ($entity_id__to__obj as $entity) {
     if ($anyMissing) {
         $elections[2] = '<td>Missing election(s).</td>';
     }
+    elseif($election_parse_error) {
+        $elections[2] = '<td style="color: darkred">All election found. Parse error.</td>';
+    }
+    else {
+        $elections[2] = '<td style="color: darkgreen">OK, all elections found and read.</td>';
+    }
     if (isset($entity_merging[$entity->name])) {
         $new_name = is_array($entity_merging[$entity->name])
             ? implode(', ', $entity_merging[$entity->name])
@@ -1423,6 +1450,7 @@ foreach ($entity_id__to__obj as $entity) {
         $elections[2] = '<td style="color: darkgreen">Merged other municipality. New is [' . $new_name . ']</td>';
         $anyMissing = false;
     }
+
 
     $nameColor = 'black';
     if (isset($entity->entityEmail)) {
@@ -1593,7 +1621,7 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
         }
 
         if (in_array($entity->entityId, $valggjennomforing_sporsmaal_sent)) {
-            $email_engine_valgsporsmaal =  "<span style=\"font-size: 0.6em;\">Valgspørsmål request sent</span>\n";
+            $email_engine_valgsporsmaal = "<span style=\"font-size: 0.6em;\">Valgspørsmål request sent</span>\n";
         }
 
         $mimesLink .= $email_engine_valgsporsmaal;
