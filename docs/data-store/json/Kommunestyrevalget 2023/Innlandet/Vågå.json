@@ -6,7 +6,7 @@
     "language": "nn-NO",
     "languageName": "Norwegian, Nynorsk",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "13.06.2023 10:37:41",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Vågå kommune, Innlandet valdistrikt",
@@ -89,11 +89,305 @@
                 "Innenriks": 0,
                 "Utenriks": 0
             },
-            "Sum forkastede forhåndsstemmegivninger Godkjente førehandsstemmegjevingar (skal vere lik sum av B2.1.1 og B2. 2.1)": {
+            "Sum forkastede forhåndsstemmegivninger": {
                 "Innenriks": 1,
                 "Utenriks": 0
+            },
+            "Godkjente forhåndsstemmegivninger (skal være lik sum av B2.1.1 og B2.2.1)": [
+                "Godkjente forhåndsstemmegivninger (skal være lik sum av B2.1.1 og B2.2.1)                                                                                                          47",
+                "47"
+            ],
+            "Totalt antall forhåndsstemmegivninger": [
+                "Totalt antall forhåndsstemmegivninger                                                                        48",
+                "48"
+            ]
+        },
+        "B2.1.1 Behandlede ordinære forhåndsstemmesedler": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 34
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1
+            },
+            "Total antall behandlede forhåndsstemmesedler": {
+                "Kryss i manntall": 36,
+                "Ant. sedler": 36
+            }
+        },
+        "B2.2.1 Behandlede sent innkomne forhåndsstemmesedler": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 11
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall sent innkomne forhåndsstemmesedler": {
+                "Kryss i manntall": 11,
+                "Ant. sedler": 11
+            }
+        },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 9
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 10,
+                "Ant. sedler": 10
+            }
+        },
+        "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
+            "Arbeidarpartiet": {
+                "Foreløpig": 9,
+                "Endelig": 9,
+                "Avvik": 0
+            },
+            "Senterpartiet": {
+                "Foreløpig": 7,
+                "Endelig": 7,
+                "Avvik": 0
+            },
+            "SV - Sosialistisk Venstreparti": {
+                "Foreløpig": 4,
+                "Endelig": 4,
+                "Avvik": 0
+            },
+            "Bygdalista i Vågå": {
+                "Foreløpig": 25,
+                "Endelig": 25,
+                "Avvik": 0
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 45,
+                "Endelig": 45,
+                "Avvik": 0
+            }
+        },
+        "D2.1 Opptalte valgtingsstemmesedler": {
+            "Ordinære": {
+                "Godkjente": 9,
+                "Blanke": 0,
+                "Forkastet": 1,
+                "Total": 10
+            },
+            "Særskilt": {
+                "Godkjente": 0,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 0
+            },
+            "Beredskap": {
+                "Godkjente": 3,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 3
+            },
+            "Total antall opptalte valgtingsstemmesedler": {
+                "Godkjente": 12,
+                "Blanke": 0,
+                "Forkastet": 1,
+                "Total": 13
+            }
+        },
+        "D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler": {
+            "Arbeidarpartiet": {
+                "Foreløpig": 3,
+                "Endelig": 3,
+                "Avvik": 0
+            },
+            "Senterpartiet": {
+                "Foreløpig": 1,
+                "Endelig": 1,
+                "Avvik": 0
+            },
+            "SV - Sosialistisk Venstreparti": {
+                "Foreløpig": 1,
+                "Endelig": 1,
+                "Avvik": 0
+            },
+            "Bygdalista i Vågå": {
+                "Foreløpig": 7,
+                "Endelig": 7,
+                "Avvik": 0
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 12,
+                "Endelig": 12,
+                "Avvik": 0
             }
         }
     },
-    "errorMessage": "Didn't find the row: \n47\n\n#0 2-valgprotokoll-parser.php(1528): readTableRow()\n#1 2-valgprotokoll-parser.php(777): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(369): parseFile_andWriteToDisk()\n#3 {main}"
+    "comments": {
+        "B2.1.3 Merknad": [
+            ""
+        ],
+        "B2.2.3 Merknad": [
+            ""
+        ],
+        "C4.3 Merknad": [
+            ""
+        ],
+        "C4.6 Merknad": [
+            ""
+        ],
+        "C4.9 Merknad": [
+            ""
+        ],
+        "D1.5 Merknad": [
+            ""
+        ],
+        "D2.5 Merknad": [
+            ""
+        ]
+    },
+    "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
+    "e1_1_listestemmetall_og_mandater": [
+        {
+            "name": "Arbeidarpartiet",
+            "stemmesedler": 12,
+            "kommunestyrerepresentanter": 17,
+            "sedler_ganger_kst_repr": 204,
+            "slengere_mottatt": 0,
+            "slengere_avgitt": 0,
+            "listestemmetall": 204,
+            "stemmesedler_initial_counting": 12,
+            "listestemmetall_simulated_initial_counting": 204
+        },
+        {
+            "name": "Senterpartiet",
+            "stemmesedler": 8,
+            "kommunestyrerepresentanter": 17,
+            "sedler_ganger_kst_repr": 136,
+            "slengere_mottatt": 0,
+            "slengere_avgitt": 0,
+            "listestemmetall": 136,
+            "stemmesedler_initial_counting": 8,
+            "listestemmetall_simulated_initial_counting": 136
+        },
+        {
+            "name": "SV - Sosialistisk Venstreparti",
+            "stemmesedler": 5,
+            "kommunestyrerepresentanter": 17,
+            "sedler_ganger_kst_repr": 85,
+            "slengere_mottatt": 0,
+            "slengere_avgitt": 0,
+            "listestemmetall": 85,
+            "stemmesedler_initial_counting": 5,
+            "listestemmetall_simulated_initial_counting": 85
+        },
+        {
+            "name": "Bygdalista i Vågå",
+            "stemmesedler": 32,
+            "kommunestyrerepresentanter": 17,
+            "sedler_ganger_kst_repr": 544,
+            "slengere_mottatt": 0,
+            "slengere_avgitt": 0,
+            "listestemmetall": 544,
+            "stemmesedler_initial_counting": 32,
+            "listestemmetall_simulated_initial_counting": 544
+        }
+    ],
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Bygdalista i Vågå",
+            "Kvotient": 388.571429
+        },
+        "2": {
+            "Parti": "Bygdalista i Vågå",
+            "Kvotient": 181.333333
+        },
+        "3": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 145.714286
+        },
+        "4": {
+            "Parti": "Bygdalista i Vågå",
+            "Kvotient": 108.8
+        },
+        "5": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 97.142857
+        },
+        "6": {
+            "Parti": "Bygdalista i Vågå",
+            "Kvotient": 77.714286
+        },
+        "7": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 68
+        },
+        "8": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 60.714286
+        },
+        "9": {
+            "Parti": "Bygdalista i Vågå",
+            "Kvotient": 60.444444
+        },
+        "10": {
+            "Parti": "Bygdalista i Vågå",
+            "Kvotient": 49.454545
+        },
+        "11": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 45.333333
+        },
+        "12": {
+            "Parti": "Bygdalista i Vågå",
+            "Kvotient": 41.846154
+        },
+        "13": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 40.8
+        },
+        "14": {
+            "Parti": "Bygdalista i Vågå",
+            "Kvotient": 36.266667
+        },
+        "15": {
+            "Parti": "Bygdalista i Vågå",
+            "Kvotient": 32
+        },
+        "16": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 29.142857
+        },
+        "17": {
+            "Parti": "Bygdalista i Vågå",
+            "Kvotient": 28.631579
+        }
+    },
+    "e1_mandatPerParty": {
+        "Bygdalista i Vågå": 10,
+        "Arbeidarpartiet": 4,
+        "Senterpartiet": 2,
+        "SV - Sosialistisk Venstreparti": 1
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeidarpartiet": 4,
+        "Bygdalista i Vågå": 10,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Senterpartiet": 2
+    }
 }

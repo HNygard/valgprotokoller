@@ -571,6 +571,21 @@ function parseFile_andWriteToDisk(&$obj, $file) {
                 . '                     Valprotokoll for valstyret                         '
                 . '                        Side 5', $file_content);
         }
+        // Vågå 2023, mindre formattteringsbug i txt
+        if ($election_year == '2023' && str_contains($file_content, 'Vågå')) {
+            $file_content = str_replace(' Godkjende førehandsstemmegjevingar '
+                . '(skal vere lik sum av B2.1.1 og B2.' . chr(10)
+                . ' 2.1)' . chr(10)
+                . '                                           '
+                . '                                      '
+                . '                           47',
+                ' Godkjende førehandsstemmegjevingar '
+                . '(skal vere lik sum av B2.1.1 og B2.2.1)'
+                . '                                       '
+                . '                                      '
+                . '                             47', $file_content);
+
+        }
 
         global $nynorskToBokmaal;
         foreach ($nynorskToBokmaal as $nynorskString => $bokmaalString) {
