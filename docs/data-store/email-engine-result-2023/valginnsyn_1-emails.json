@@ -1039,13 +1039,19 @@
     "0536-sondre-land-kommune": {
         "threadCount": 1,
         "emailsSummary": [
-            "- 2023-08-14 22:59:07 epost til dere"
+            "- 2023-08-14 22:59:07 epost til dere",
+            "- 2023-09-15 15:19:36 epost fra dere"
         ],
         "emails": [
             {
                 "datetime_received": "2023-08-14 22:59:07",
                 "timestamp_received": 1692046747,
                 "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-15 15:19:36",
+                "timestamp_received": 1694783976,
+                "email_type": "IN"
             }
         ]
     },
@@ -1465,12 +1471,30 @@
     "0805-porsgrunn-kommune": {
         "threadCount": 1,
         "emailsSummary": [
-            "- 2023-08-16 00:10:46 epost til dere"
+            "- 2023-08-16 00:10:46 epost til dere",
+            "- 2023-09-14 08:19:01 epost fra dere",
+            "- 2023-09-14 17:01:11 epost til dere",
+            "- 2023-09-14 17:01:13 epost til dere"
         ],
         "emails": [
             {
                 "datetime_received": "2023-08-16 00:10:46",
                 "timestamp_received": 1692137446,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-14 08:19:01",
+                "timestamp_received": 1694672341,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-14 17:01:11",
+                "timestamp_received": 1694703671,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-14 17:01:13",
+                "timestamp_received": 1694703673,
                 "email_type": "OUT"
             }
         ]
