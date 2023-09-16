@@ -6,7 +6,7 @@
     "language": "nn-NO",
     "languageName": "Norwegian, Nynorsk",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 18:05:55",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Hjartdal kommune, Telemark valdistrikt",
@@ -77,11 +77,312 @@
                 "Innenriks": 0,
                 "Utenriks": 0
             },
-            "Stemmegivningen er ikke kommet inn til valgstyret innen kl. 17 dagen etter 10-1 (1)": {
+            "Stemmegivningen er ikke kommet inn til valgstyret innen kl. 17 dagen etter 10-1 (1) g": {
                 "Innenriks": 0,
                 "Utenriks": 0
+            },
+            "Velgeren er ikke innført i manntallet i kommunen § 10-1a (1) a": {
+                "Innenriks": 0,
+                "Utenriks": 0
+            },
+            "Velgeren har allerede avgitt godkjent stemmegivning § 10-1a (1) c": {
+                "Innenriks": 0,
+                "Utenriks": 0
+            },
+            "Sum forkastede forhåndsstemmegivninger": {
+                "Innenriks": 0,
+                "Utenriks": 0
+            },
+            "Godkjente forhåndsstemmegivninger (skal være lik sum av B2.1.1 og B2.2.1)": [
+                "Godkjente forhåndsstemmegivninger (skal være lik sum av B2.1.1 og B2.2.1)                                                     203",
+                "203"
+            ],
+            "Totalt antall forhåndsstemmegivninger": [
+                "Totalt antall forhåndsstemmegivninger                                                                                            203",
+                "203"
+            ]
+        },
+        "B2.1.1 Behandlede ordinære forhåndsstemmesedler": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 161
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 6
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 3
+            },
+            "Total antall behandlede forhåndsstemmesedler": {
+                "Kryss i manntall": 170,
+                "Ant. sedler": 170
+            }
+        },
+        "B2.2.1 Behandlede sent innkomne forhåndsstemmesedler": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 30
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 2
+            },
+            "Total antall sent innkomne forhåndsstemmesedler": {
+                "Kryss i manntall": 33,
+                "Ant. sedler": 33
+            }
+        },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 582
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 32
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 3
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 617,
+                "Ant. sedler": 617
+            }
+        },
+        "C4.7 Antall fremmede stemmesedler": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 5
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall fremmedstemmesedler": {
+                "Kryss i manntall": 5,
+                "Ant. sedler": 5
+            }
+        },
+        "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
+            "Arbeidarpartiet": {
+                "Foreløpig": 116,
+                "Endelig": 116,
+                "Avvik": 0
+            },
+            "Senterpartiet": {
+                "Foreløpig": 42,
+                "Endelig": 42,
+                "Avvik": 0
+            },
+            "Kristeleg Folkeparti": {
+                "Foreløpig": 33,
+                "Endelig": 33,
+                "Avvik": 0
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 191,
+                "Endelig": 191,
+                "Avvik": 0
+            }
+        },
+        "D2.1 Opptalte valgtingsstemmesedler": {
+            "Ordinære": {
+                "Godkjente": 582,
+                "Blanke": 32,
+                "Forkastet": 3,
+                "Total": 617
+            },
+            "Særskilt": {
+                "Godkjente": 0,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 0
+            },
+            "Fremmede": {
+                "Godkjente": 5,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 5
+            },
+            "Total antall opptalte valgtingsstemmesedler": {
+                "Godkjente": 587,
+                "Blanke": 32,
+                "Forkastet": 3,
+                "Total": 622
+            }
+        },
+        "D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler": {
+            "Arbeidarpartiet": {
+                "Foreløpig": 321,
+                "Endelig": 321,
+                "Avvik": 0
+            },
+            "Senterpartiet": {
+                "Foreløpig": 192,
+                "Endelig": 192,
+                "Avvik": 0
+            },
+            "Kristeleg Folkeparti": {
+                "Foreløpig": 74,
+                "Endelig": 74,
+                "Avvik": 0
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 587,
+                "Endelig": 587,
+                "Avvik": 0
             }
         }
     },
-    "errorMessage": "Didn't find the row: \ng\n\n#0 2-valgprotokoll-parser.php(1496): readTableRow()\n#1 2-valgprotokoll-parser.php(761): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(369): parseFile_andWriteToDisk()\n#3 {main}"
+    "comments": {
+        "B2.1.3 Merknad": [
+            ""
+        ],
+        "B2.2.3 Merknad": [
+            ""
+        ],
+        "C4.3 Merknad": [
+            ""
+        ],
+        "C4.6 Merknad": [
+            ""
+        ],
+        "C4.9 Merknad": [
+            ""
+        ],
+        "D1.5 Merknad": [
+            ""
+        ],
+        "D2.5 Merknad": [
+            ""
+        ]
+    },
+    "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
+    "e1_1_listestemmetall_og_mandater": [
+        {
+            "name": "Arbeidarpartiet",
+            "stemmesedler": 437,
+            "kommunestyrerepresentanter": 17,
+            "sedler_ganger_kst_repr": 7429,
+            "slengere_mottatt": 39,
+            "slengere_avgitt": 32,
+            "listestemmetall": 7436,
+            "stemmesedler_initial_counting": 437,
+            "listestemmetall_simulated_initial_counting": 7436
+        },
+        {
+            "name": "Senterpartiet",
+            "stemmesedler": 234,
+            "kommunestyrerepresentanter": 17,
+            "sedler_ganger_kst_repr": 3978,
+            "slengere_mottatt": 23,
+            "slengere_avgitt": 39,
+            "listestemmetall": 3962,
+            "stemmesedler_initial_counting": 234,
+            "listestemmetall_simulated_initial_counting": 3962
+        },
+        {
+            "name": "Kristeleg Folkeparti",
+            "stemmesedler": 107,
+            "kommunestyrerepresentanter": 17,
+            "sedler_ganger_kst_repr": 1819,
+            "slengere_mottatt": 18,
+            "slengere_avgitt": 9,
+            "listestemmetall": 1828,
+            "stemmesedler_initial_counting": 107,
+            "listestemmetall_simulated_initial_counting": 1828
+        }
+    ],
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 5311.428571
+        },
+        "2": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 2830
+        },
+        "3": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 2478.666667
+        },
+        "4": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 1487.2
+        },
+        "5": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 1320.666667
+        },
+        "6": {
+            "Parti": "Kristeleg Folkeparti",
+            "Kvotient": 1305.714286
+        },
+        "7": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 1062.285714
+        },
+        "8": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 826.222222
+        },
+        "9": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 792.4
+        },
+        "10": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 676
+        },
+        "11": {
+            "Parti": "Kristeleg Folkeparti",
+            "Kvotient": 609.333333
+        },
+        "12": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 572
+        },
+        "13": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 566
+        },
+        "14": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 495.733333
+        },
+        "15": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 440.222222
+        },
+        "16": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 437.411765
+        },
+        "17": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 391.368421
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeidarpartiet": 10,
+        "Senterpartiet": 5,
+        "Kristeleg Folkeparti": 2
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeidarpartiet": 10,
+        "Kristeleg Folkeparti": 2,
+        "Senterpartiet": 5
+    }
 }

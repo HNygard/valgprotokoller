@@ -7,7 +7,7 @@
     "language": "nn-NO",
     "languageName": "Norwegian, Nynorsk",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "12.09.2023 17:21:34",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Modalen kommune, Vestland valdistrikt",
@@ -78,11 +78,255 @@
                 "Innenriks": 1,
                 "Utenriks": 0
             },
-            "Stemmegivningen er ikke kommet inn til valgstyret innen kl. 17 dagen etter 10-1 (1)": {
+            "Stemmegivningen er ikke kommet inn til valgstyret innen kl. 17 dagen etter 10-1 (1) g": {
                 "Innenriks": 0,
                 "Utenriks": 0
+            },
+            "Velgeren er ikke innført i manntallet i kommunen § 10-1a (1) a": {
+                "Innenriks": 0,
+                "Utenriks": 0
+            },
+            "Velgeren har allerede avgitt godkjent stemmegivning § 10-1a (1) c": {
+                "Innenriks": 0,
+                "Utenriks": 0
+            },
+            "Sum forkastede forhåndsstemmegivninger": {
+                "Innenriks": 1,
+                "Utenriks": 0
+            },
+            "Godkjente forhåndsstemmegivninger (skal være lik sum av B2.1.1 og B2.2.1)": [
+                "Godkjente forhåndsstemmegivninger (skal være lik sum av B2.1.1 og B2.2.1)                                                     84",
+                "84"
+            ],
+            "Totalt antall forhåndsstemmegivninger": [
+                "Totalt antall forhåndsstemmegivninger                                                                                            85",
+                "85"
+            ]
+        },
+        "B2.1.1 Behandlede ordinære forhåndsstemmesedler": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 65
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1
+            },
+            "Total antall behandlede forhåndsstemmesedler": {
+                "Kryss i manntall": 67,
+                "Ant. sedler": 67
+            }
+        },
+        "B2.2.1 Behandlede sent innkomne forhåndsstemmesedler": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 15
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall sent innkomne forhåndsstemmesedler": {
+                "Kryss i manntall": 17,
+                "Ant. sedler": 16
+            }
+        },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 137
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 137,
+                "Ant. sedler": 137
+            }
+        },
+        "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
+            "Samlingslista": {
+                "Foreløpig": 39,
+                "Endelig": 39,
+                "Avvik": 0
+            },
+            "Solrenningslista": {
+                "Foreløpig": 41,
+                "Endelig": 41,
+                "Avvik": 0
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 80,
+                "Endelig": 80,
+                "Avvik": 0
+            }
+        },
+        "D2.1 Opptalte valgtingsstemmesedler": {
+            "Ordinære": {
+                "Godkjente": 137,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 137
+            },
+            "Særskilt": {
+                "Godkjente": 0,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 0
+            },
+            "Beredskap": {
+                "Godkjente": 0,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 0
+            },
+            "Total antall opptalte valgtingsstemmesedler": {
+                "Godkjente": 137,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 137
+            }
+        },
+        "D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler": {
+            "Samlingslista": {
+                "Foreløpig": 70,
+                "Endelig": 70,
+                "Avvik": 0
+            },
+            "Solrenningslista": {
+                "Foreløpig": 67,
+                "Endelig": 67,
+                "Avvik": 0
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 137,
+                "Endelig": 137,
+                "Avvik": 0
             }
         }
     },
-    "errorMessage": "Didn't find the row: \ng\n\n#0 2-valgprotokoll-parser.php(1496): readTableRow()\n#1 2-valgprotokoll-parser.php(761): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(369): parseFile_andWriteToDisk()\n#3 {main}"
+    "comments": {
+        "B2.1.3 Merknad": [
+            ""
+        ],
+        "B2.2.3 Merknad": [
+            "Avvik skuldast at veljar ikkje røysta på begge vala."
+        ],
+        "C4.3 Merknad": [
+            ""
+        ],
+        "C4.6 Merknad": [
+            ""
+        ],
+        "C4.9 Merknad": [
+            ""
+        ],
+        "D1.5 Merknad": [
+            ""
+        ],
+        "D2.5 Merknad": [
+            ""
+        ]
+    },
+    "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
+    "e1_1_listestemmetall_og_mandater": [
+        {
+            "name": "Samlingslista",
+            "stemmesedler": 109,
+            "kommunestyrerepresentanter": 13,
+            "sedler_ganger_kst_repr": 1417,
+            "slengere_mottatt": 17,
+            "slengere_avgitt": 31,
+            "listestemmetall": 1403,
+            "stemmesedler_initial_counting": 109,
+            "listestemmetall_simulated_initial_counting": 1403
+        },
+        {
+            "name": "Solrenningslista",
+            "stemmesedler": 108,
+            "kommunestyrerepresentanter": 13,
+            "sedler_ganger_kst_repr": 1404,
+            "slengere_mottatt": 31,
+            "slengere_avgitt": 17,
+            "listestemmetall": 1418,
+            "stemmesedler_initial_counting": 108,
+            "listestemmetall_simulated_initial_counting": 1418
+        }
+    ],
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Solrenningslista",
+            "Kvotient": 1012.857143
+        },
+        "2": {
+            "Parti": "Samlingslista",
+            "Kvotient": 1002.142857
+        },
+        "3": {
+            "Parti": "Solrenningslista",
+            "Kvotient": 472.666667
+        },
+        "4": {
+            "Parti": "Samlingslista",
+            "Kvotient": 467.666667
+        },
+        "5": {
+            "Parti": "Solrenningslista",
+            "Kvotient": 283.6
+        },
+        "6": {
+            "Parti": "Samlingslista",
+            "Kvotient": 280.6
+        },
+        "7": {
+            "Parti": "Solrenningslista",
+            "Kvotient": 202.571429
+        },
+        "8": {
+            "Parti": "Samlingslista",
+            "Kvotient": 200.428571
+        },
+        "9": {
+            "Parti": "Solrenningslista",
+            "Kvotient": 157.555556
+        },
+        "10": {
+            "Parti": "Samlingslista",
+            "Kvotient": 155.888889
+        },
+        "11": {
+            "Parti": "Solrenningslista",
+            "Kvotient": 128.909091
+        },
+        "12": {
+            "Parti": "Samlingslista",
+            "Kvotient": 127.545455
+        },
+        "13": {
+            "Parti": "Solrenningslista",
+            "Kvotient": 109.076923
+        }
+    },
+    "e1_mandatPerParty": {
+        "Solrenningslista": 7,
+        "Samlingslista": 6
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Samlingslista": 6,
+        "Solrenningslista": 7
+    }
 }

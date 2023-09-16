@@ -6,7 +6,7 @@
     "language": "nn-NO",
     "languageName": "Norwegian, Nynorsk",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "14.09.2023 07:52:36",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Hå kommune, Rogaland valdistrikt",
@@ -77,11 +77,569 @@
                 "Innenriks": 0,
                 "Utenriks": 0
             },
-            "Stemmegivningen er ikke kommet inn til valgstyret innen kl. 17 dagen etter 10-1 (1)": {
+            "Stemmegivningen er ikke kommet inn til valgstyret innen kl. 17 dagen etter 10-1 (1) g": {
                 "Innenriks": 0,
                 "Utenriks": 0
+            },
+            "Velgeren er ikke innført i manntallet i kommunen § 10-1a (1) a": {
+                "Innenriks": 0,
+                "Utenriks": 0
+            },
+            "Velgeren har allerede avgitt godkjent stemmegivning § 10-1a (1) c": {
+                "Innenriks": 1,
+                "Utenriks": 0
+            },
+            "Sum forkastede forhåndsstemmegivninger": {
+                "Innenriks": 3,
+                "Utenriks": 0
+            },
+            "Godkjente forhåndsstemmegivninger (skal være lik sum av B2.1.1 og B2.2.1)": [
+                "Godkjente forhåndsstemmegivninger (skal være lik sum av B2.1.1 og B2.2.1)                                  4 747",
+                "4 747"
+            ],
+            "Totalt antall forhåndsstemmegivninger": [
+                "Totalt antall forhåndsstemmegivninger                                                                         4 750",
+                "4 750"
+            ]
+        },
+        "B2.1.1 Behandlede ordinære forhåndsstemmesedler": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 4580
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 21
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 5
+            },
+            "Total antall behandlede forhåndsstemmesedler": {
+                "Kryss i manntall": 4603,
+                "Ant. sedler": 4606
+            }
+        },
+        "B2.2.1 Behandlede sent innkomne forhåndsstemmesedler": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 127
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 5
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 3
+            },
+            "Total antall sent innkomne forhåndsstemmesedler": {
+                "Kryss i manntall": 144,
+                "Ant. sedler": 135
+            }
+        },
+        "C2.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 4592
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 36
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 1
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 4639,
+                "Ant. sedler": 4629
+            }
+        },
+        "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
+            "Liberalistene": {
+                "Foreløpig": 18,
+                "Endelig": 18,
+                "Avvik": 0
+            },
+            "Senterpartiet": {
+                "Foreløpig": 433,
+                "Endelig": 432,
+                "Avvik": -1
+            },
+            "Industri- og Næringspartiet": {
+                "Foreløpig": 145,
+                "Endelig": 145,
+                "Avvik": 0
+            },
+            "Høgre": {
+                "Foreløpig": 930,
+                "Endelig": 929,
+                "Avvik": -1
+            },
+            "Framstegspartiet": {
+                "Foreløpig": 728,
+                "Endelig": 727,
+                "Avvik": -1
+            },
+            "Arbeidarpartiet": {
+                "Foreløpig": 312,
+                "Endelig": 312,
+                "Avvik": 0
+            },
+            "Venstre": {
+                "Foreløpig": 63,
+                "Endelig": 63,
+                "Avvik": 0
+            },
+            "Kristeleg Folkeparti": {
+                "Foreløpig": 1112,
+                "Endelig": 1112,
+                "Avvik": 0
+            },
+            "Konservativt": {
+                "Foreløpig": 104,
+                "Endelig": 103,
+                "Avvik": -1
+            },
+            "SV - Sosialistisk Venstreparti": {
+                "Foreløpig": 181,
+                "Endelig": 180,
+                "Avvik": -1
+            },
+            "Hå-lista": {
+                "Foreløpig": 619,
+                "Endelig": 619,
+                "Avvik": 0
+            },
+            "Raudt": {
+                "Foreløpig": 62,
+                "Endelig": 62,
+                "Avvik": 0
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 4707,
+                "Endelig": 4702,
+                "Avvik": -5
+            }
+        },
+        "D2.1 Opptalte valgtingsstemmesedler": {
+            "Ordinære": {
+                "Godkjente": 4594,
+                "Blanke": 36,
+                "Forkastet": 1,
+                "Total": 4631
+            },
+            "Særskilt": {
+                "Godkjente": 0,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 0
+            },
+            "Beredskap": {
+                "Godkjente": 0,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 0
+            },
+            "Total antall opptalte valgtingsstemmesedler": {
+                "Godkjente": 4594,
+                "Blanke": 36,
+                "Forkastet": 1,
+                "Total": 4631
+            }
+        },
+        "D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler": {
+            "Liberalistene": {
+                "Foreløpig": 34,
+                "Endelig": 35,
+                "Avvik": 1
+            },
+            "Senterpartiet": {
+                "Foreløpig": 505,
+                "Endelig": 504,
+                "Avvik": -1
+            },
+            "Industri- og Næringspartiet": {
+                "Foreløpig": 169,
+                "Endelig": 169,
+                "Avvik": 0
+            },
+            "Høgre": {
+                "Foreløpig": 854,
+                "Endelig": 851,
+                "Avvik": -3
+            },
+            "Framstegspartiet": {
+                "Foreløpig": 801,
+                "Endelig": 802,
+                "Avvik": 1
+            },
+            "Arbeidarpartiet": {
+                "Foreløpig": 234,
+                "Endelig": 234,
+                "Avvik": 0
+            },
+            "Venstre": {
+                "Foreløpig": 59,
+                "Endelig": 59,
+                "Avvik": 0
+            },
+            "Kristeleg Folkeparti": {
+                "Foreløpig": 1173,
+                "Endelig": 1174,
+                "Avvik": 1
+            },
+            "Konservativt": {
+                "Foreløpig": 108,
+                "Endelig": 108,
+                "Avvik": 0
+            },
+            "SV - Sosialistisk Venstreparti": {
+                "Foreløpig": 129,
+                "Endelig": 129,
+                "Avvik": 0
+            },
+            "Hå-lista": {
+                "Foreløpig": 481,
+                "Endelig": 484,
+                "Avvik": 3
+            },
+            "Raudt": {
+                "Foreløpig": 45,
+                "Endelig": 45,
+                "Avvik": 0
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 4592,
+                "Endelig": 4594,
+                "Avvik": 2
             }
         }
     },
-    "errorMessage": "Didn't find the row: \ng\n\n#0 2-valgprotokoll-parser.php(1496): readTableRow()\n#1 2-valgprotokoll-parser.php(761): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(369): parseFile_andWriteToDisk()\n#3 {main}"
+    "comments": {
+        "B2.1.3 Merknad": [
+            "Det ble funnet noen stemmesedler som hang sammen, hvor kun den ytterste hadde stempel."
+        ],
+        "B2.2.3 Merknad": [
+            "Det er 9 mindre sedler enn kryss i manntall"
+        ],
+        "C2.3 Merknad fra stemmestyret": [
+            "Nærbø — valtingsstemmer ordinære:\n5 i avvik, kun levert 1 stemme",
+            "Varhaug — valtingsstemmer ordinære:\n2 stykk har sansynlegvis kun stemt på Fylkestingvalet",
+            "Vigrestad — valtingsstemmer ordinære:\n1 velger har stemt kun på fylkesvalget",
+            "Ogna — valtingsstemmer ordinære:\n2 stk har ikke stemt på kommunevalget"
+        ],
+        "C4.6 Merknad": [
+            ""
+        ],
+        "C4.9 Merknad": [
+            ""
+        ],
+        "D1.5 Merknad": [
+            "Hele kommunen — førehandsstemmer ordinære:\nFunnet 1 ekstra blank, funnet - 5 fordelt på flere parti, 8 ekstra som mangler stempel, og noen som ikke stemmesedler til\nparti som ikke stiller til valg i Hå."
+        ],
+        "D2.5 Merknad": [
+            "Nærbø — valtingsstemmer ordinære:\nFant 1 ekstra seddel",
+            "Vigrestad — valtingsstemmer ordinære:\nFant 1 ekstra FRP"
+        ]
+    },
+    "foretattForeløpigOpptellingHosStemmestyrene": true,
+    "foretattForeløpigOpptellingHosValgstyret": false,
+    "e1_1_listestemmetall_og_mandater": [
+        {
+            "name": "Liberalistene",
+            "stemmesedler": 53,
+            "kommunestyrerepresentanter": 33,
+            "sedler_ganger_kst_repr": 1749,
+            "slengere_mottatt": 12,
+            "slengere_avgitt": 2,
+            "listestemmetall": 1759,
+            "stemmesedler_initial_counting": 52,
+            "listestemmetall_simulated_initial_counting": 1726
+        },
+        {
+            "name": "Senterpartiet",
+            "stemmesedler": 936,
+            "kommunestyrerepresentanter": 33,
+            "sedler_ganger_kst_repr": 30888,
+            "slengere_mottatt": 325,
+            "slengere_avgitt": 234,
+            "listestemmetall": 30979,
+            "stemmesedler_initial_counting": 938,
+            "listestemmetall_simulated_initial_counting": 31045
+        },
+        {
+            "name": "Industri- og Næringspartiet",
+            "stemmesedler": 314,
+            "kommunestyrerepresentanter": 33,
+            "sedler_ganger_kst_repr": 10362,
+            "slengere_mottatt": 24,
+            "slengere_avgitt": 24,
+            "listestemmetall": 10362,
+            "stemmesedler_initial_counting": 314,
+            "listestemmetall_simulated_initial_counting": 10362
+        },
+        {
+            "name": "Høgre",
+            "stemmesedler": 1780,
+            "kommunestyrerepresentanter": 33,
+            "sedler_ganger_kst_repr": 58740,
+            "slengere_mottatt": 345,
+            "slengere_avgitt": 383,
+            "listestemmetall": 58702,
+            "stemmesedler_initial_counting": 1784,
+            "listestemmetall_simulated_initial_counting": 58834
+        },
+        {
+            "name": "Framstegspartiet",
+            "stemmesedler": 1529,
+            "kommunestyrerepresentanter": 33,
+            "sedler_ganger_kst_repr": 50457,
+            "slengere_mottatt": 226,
+            "slengere_avgitt": 219,
+            "listestemmetall": 50464,
+            "stemmesedler_initial_counting": 1529,
+            "listestemmetall_simulated_initial_counting": 50464
+        },
+        {
+            "name": "Arbeidarpartiet",
+            "stemmesedler": 546,
+            "kommunestyrerepresentanter": 33,
+            "sedler_ganger_kst_repr": 18018,
+            "slengere_mottatt": 55,
+            "slengere_avgitt": 115,
+            "listestemmetall": 17958,
+            "stemmesedler_initial_counting": 546,
+            "listestemmetall_simulated_initial_counting": 17958
+        },
+        {
+            "name": "Venstre",
+            "stemmesedler": 122,
+            "kommunestyrerepresentanter": 33,
+            "sedler_ganger_kst_repr": 4026,
+            "slengere_mottatt": 53,
+            "slengere_avgitt": 30,
+            "listestemmetall": 4049,
+            "stemmesedler_initial_counting": 122,
+            "listestemmetall_simulated_initial_counting": 4049
+        },
+        {
+            "name": "Kristeleg Folkeparti",
+            "stemmesedler": 2286,
+            "kommunestyrerepresentanter": 33,
+            "sedler_ganger_kst_repr": 75438,
+            "slengere_mottatt": 275,
+            "slengere_avgitt": 377,
+            "listestemmetall": 75336,
+            "stemmesedler_initial_counting": 2285,
+            "listestemmetall_simulated_initial_counting": 75303
+        },
+        {
+            "name": "Konservativt",
+            "stemmesedler": 211,
+            "kommunestyrerepresentanter": 33,
+            "sedler_ganger_kst_repr": 6963,
+            "slengere_mottatt": 27,
+            "slengere_avgitt": 31,
+            "listestemmetall": 6959,
+            "stemmesedler_initial_counting": 212,
+            "listestemmetall_simulated_initial_counting": 6992
+        },
+        {
+            "name": "SV - Sosialistisk Venstreparti",
+            "stemmesedler": 309,
+            "kommunestyrerepresentanter": 33,
+            "sedler_ganger_kst_repr": 10197,
+            "slengere_mottatt": 48,
+            "slengere_avgitt": 73,
+            "listestemmetall": 10172,
+            "stemmesedler_initial_counting": 310,
+            "listestemmetall_simulated_initial_counting": 10205
+        },
+        {
+            "name": "Hå-lista",
+            "stemmesedler": 1103,
+            "kommunestyrerepresentanter": 33,
+            "sedler_ganger_kst_repr": 36399,
+            "slengere_mottatt": 319,
+            "slengere_avgitt": 223,
+            "listestemmetall": 36495,
+            "stemmesedler_initial_counting": 1100,
+            "listestemmetall_simulated_initial_counting": 36396
+        },
+        {
+            "name": "Raudt",
+            "stemmesedler": 107,
+            "kommunestyrerepresentanter": 33,
+            "sedler_ganger_kst_repr": 3531,
+            "slengere_mottatt": 16,
+            "slengere_avgitt": 14,
+            "listestemmetall": 3533,
+            "stemmesedler_initial_counting": 107,
+            "listestemmetall_simulated_initial_counting": 3533
+        }
+    ],
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Kristeleg Folkeparti",
+            "Kvotient": 53811.428571
+        },
+        "2": {
+            "Parti": "Høgre",
+            "Kvotient": 41930
+        },
+        "3": {
+            "Parti": "Framstegspartiet",
+            "Kvotient": 36045.714286
+        },
+        "4": {
+            "Parti": "Hå-lista",
+            "Kvotient": 26067.857143
+        },
+        "5": {
+            "Parti": "Kristeleg Folkeparti",
+            "Kvotient": 25112
+        },
+        "6": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 22127.857143
+        },
+        "7": {
+            "Parti": "Høgre",
+            "Kvotient": 19567.333333
+        },
+        "8": {
+            "Parti": "Framstegspartiet",
+            "Kvotient": 16821.333333
+        },
+        "9": {
+            "Parti": "Kristeleg Folkeparti",
+            "Kvotient": 15067.2
+        },
+        "10": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 12827.142857
+        },
+        "11": {
+            "Parti": "Hå-lista",
+            "Kvotient": 12165
+        },
+        "12": {
+            "Parti": "Høgre",
+            "Kvotient": 11740.4
+        },
+        "13": {
+            "Parti": "Kristeleg Folkeparti",
+            "Kvotient": 10762.285714
+        },
+        "14": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 10326.333333
+        },
+        "15": {
+            "Parti": "Framstegspartiet",
+            "Kvotient": 10092.8
+        },
+        "16": {
+            "Parti": "Høgre",
+            "Kvotient": 8386
+        },
+        "17": {
+            "Parti": "Kristeleg Folkeparti",
+            "Kvotient": 8370.666667
+        },
+        "18": {
+            "Parti": "Industri- og Næringspartiet",
+            "Kvotient": 7401.428571
+        },
+        "19": {
+            "Parti": "Hå-lista",
+            "Kvotient": 7299
+        },
+        "20": {
+            "Parti": "SV - Sosialistisk Venstreparti",
+            "Kvotient": 7265.714286
+        },
+        "21": {
+            "Parti": "Framstegspartiet",
+            "Kvotient": 7209.142857
+        },
+        "22": {
+            "Parti": "Kristeleg Folkeparti",
+            "Kvotient": 6848.727273
+        },
+        "23": {
+            "Parti": "Høgre",
+            "Kvotient": 6522.444444
+        },
+        "24": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 6195.8
+        },
+        "25": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 5986
+        },
+        "26": {
+            "Parti": "Kristeleg Folkeparti",
+            "Kvotient": 5795.076923
+        },
+        "27": {
+            "Parti": "Framstegspartiet",
+            "Kvotient": 5607.111111
+        },
+        "28": {
+            "Parti": "Høgre",
+            "Kvotient": 5336.545455
+        },
+        "29": {
+            "Parti": "Hå-lista",
+            "Kvotient": 5213.571429
+        },
+        "30": {
+            "Parti": "Kristeleg Folkeparti",
+            "Kvotient": 5022.4
+        },
+        "31": {
+            "Parti": "Konservativt",
+            "Kvotient": 4970.714286
+        },
+        "32": {
+            "Parti": "Framstegspartiet",
+            "Kvotient": 4587.636364
+        },
+        "33": {
+            "Parti": "Høgre",
+            "Kvotient": 4515.538462
+        }
+    },
+    "e1_mandatPerParty": {
+        "Kristeleg Folkeparti": 8,
+        "Høgre": 7,
+        "Framstegspartiet": 6,
+        "Hå-lista": 4,
+        "Senterpartiet": 3,
+        "Arbeidarpartiet": 2,
+        "Industri- og Næringspartiet": 1,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Konservativt": 1,
+        "Liberalistene": 0,
+        "Raudt": 0,
+        "Venstre": 0
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeidarpartiet": 2,
+        "Framstegspartiet": 6,
+        "Hå-lista": 4,
+        "Høgre": 7,
+        "Industri- og Næringspartiet": 1,
+        "Konservativt": 1,
+        "Kristeleg Folkeparti": 8,
+        "Liberalistene": 0,
+        "Raudt": 0,
+        "SV - Sosialistisk Venstreparti": 1,
+        "Senterpartiet": 3,
+        "Venstre": 0
+    }
 }

@@ -1399,8 +1399,14 @@ function readTableRow($lines, $i, $header_length, $start_of_row_keywords, $table
             }
         }
         if (
-            // Stop picking up lines, if there are empty lines
-            strlen($lines[$i]) > 3
+            (
+                // Stop picking up lines, if there are empty lines
+                strlen($lines[$i]) > 3
+
+                // 2023, the g in "Stemmegivningen er ikke kommet inn til valgstyret innen kl. 17 dagen etter 10-1 (1) g"
+                // got it's own line
+                || trim($lines[$i]) == 'g'
+            )
 
             // Is the next line a key word?
             && !$start_with_keyword
@@ -1438,6 +1444,8 @@ function readTableRow($lines, $i, $header_length, $start_of_row_keywords, $table
         for ($j = $i - 10; $j <= $i; $j++) {
             echo 'lines[' . $j . ']: ' . $lines[$j] . chr(10);
         }
+        echo "Start of row keywords .... : " . json_encode($start_of_row_keywords) . "\n";
+        echo "Row regex used ........... : $rowRegex\n";
         throw new Exception('Didn\'t find the row: ' . chr(10) . $row_line);
     }
 

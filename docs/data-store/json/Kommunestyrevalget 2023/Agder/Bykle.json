@@ -6,7 +6,7 @@
     "language": "nn-NO",
     "languageName": "Norwegian, Nynorsk",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "14.09.2023 09:41:50",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Bykle kommune, Agder valdistrikt",
@@ -77,11 +77,347 @@
                 "Innenriks": 0,
                 "Utenriks": 0
             },
-            "Stemmegivningen er ikke kommet inn til valgstyret innen kl. 17 dagen etter 10-1 (1)": {
+            "Stemmegivningen er ikke kommet inn til valgstyret innen kl. 17 dagen etter 10-1 (1) g": {
                 "Innenriks": 0,
                 "Utenriks": 0
+            },
+            "Velgeren er ikke innført i manntallet i kommunen § 10-1a (1) a": {
+                "Innenriks": 0,
+                "Utenriks": 0
+            },
+            "Velgeren har allerede avgitt godkjent stemmegivning § 10-1a (1) c": {
+                "Innenriks": 0,
+                "Utenriks": 0
+            },
+            "Sum forkastede forhåndsstemmegivninger": {
+                "Innenriks": 0,
+                "Utenriks": 0
+            },
+            "Godkjente forhåndsstemmegivninger (skal være lik sum av B2.1.1 og B2.2.1)": [
+                "Godkjente forhåndsstemmegivninger (skal være lik sum av B2.1.1 og B2.2.1)                                                     256",
+                "256"
+            ],
+            "Totalt antall forhåndsstemmegivninger": [
+                "Totalt antall forhåndsstemmegivninger                                                                                            256",
+                "256"
+            ]
+        },
+        "B2.1.1 Behandlede ordinære forhåndsstemmesedler": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 223
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall behandlede forhåndsstemmesedler": {
+                "Kryss i manntall": 223,
+                "Ant. sedler": 223
+            }
+        },
+        "B2.2.1 Behandlede sent innkomne forhåndsstemmesedler": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 33
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall sent innkomne forhåndsstemmesedler": {
+                "Kryss i manntall": 33,
+                "Ant. sedler": 33
+            }
+        },
+        "C4.1 Antall valgtingsstemmesedler i urne": {
+            "Godkjente": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 304
+            },
+            "Blanke": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 4
+            },
+            "Tvilsomme": {
+                "Kryss i manntall": "—",
+                "Ant. sedler": 0
+            },
+            "Total antall valgtingstemmesedler i urne": {
+                "Kryss i manntall": 308,
+                "Ant. sedler": 308
+            }
+        },
+        "D1.4 Avvik mellom foreløpig og endelig opptelling av forhåndsstemmesedler": {
+            "Høgre": {
+                "Foreløpig": 62,
+                "Endelig": 62,
+                "Avvik": 0
+            },
+            "Kristeleg Folkeparti": {
+                "Foreløpig": 25,
+                "Endelig": 25,
+                "Avvik": 0
+            },
+            "Senterpartiet": {
+                "Foreløpig": 46,
+                "Endelig": 46,
+                "Avvik": 0
+            },
+            "Bykle Bygdeliste": {
+                "Foreløpig": 15,
+                "Endelig": 15,
+                "Avvik": 0
+            },
+            "Venstre": {
+                "Foreløpig": 34,
+                "Endelig": 34,
+                "Avvik": 0
+            },
+            "Arbeidarpartiet": {
+                "Foreløpig": 74,
+                "Endelig": 74,
+                "Avvik": 0
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 256,
+                "Endelig": 256,
+                "Avvik": 0
+            }
+        },
+        "D2.1 Opptalte valgtingsstemmesedler": {
+            "Ordinære": {
+                "Godkjente": 304,
+                "Blanke": 4,
+                "Forkastet": 0,
+                "Total": 308
+            },
+            "Særskilt": {
+                "Godkjente": 0,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 0
+            },
+            "Beredskap": {
+                "Godkjente": 0,
+                "Blanke": 0,
+                "Forkastet": 0,
+                "Total": 0
+            },
+            "Total antall opptalte valgtingsstemmesedler": {
+                "Godkjente": 304,
+                "Blanke": 4,
+                "Forkastet": 0,
+                "Total": 308
+            }
+        },
+        "D2.4 Avvik mellom foreløpig og endelig opptelling av ordinære valgtingsstemmesedler": {
+            "Høgre": {
+                "Foreløpig": 65,
+                "Endelig": 65,
+                "Avvik": 0
+            },
+            "Kristeleg Folkeparti": {
+                "Foreløpig": 15,
+                "Endelig": 15,
+                "Avvik": 0
+            },
+            "Senterpartiet": {
+                "Foreløpig": 55,
+                "Endelig": 55,
+                "Avvik": 0
+            },
+            "Bykle Bygdeliste": {
+                "Foreløpig": 28,
+                "Endelig": 28,
+                "Avvik": 0
+            },
+            "Venstre": {
+                "Foreløpig": 66,
+                "Endelig": 66,
+                "Avvik": 0
+            },
+            "Arbeidarpartiet": {
+                "Foreløpig": 75,
+                "Endelig": 75,
+                "Avvik": 0
+            },
+            "Totalt antall partifordelte stemmesedler": {
+                "Foreløpig": 304,
+                "Endelig": 304,
+                "Avvik": 0
             }
         }
     },
-    "errorMessage": "Didn't find the row: \ng\n\n#0 2-valgprotokoll-parser.php(1496): readTableRow()\n#1 2-valgprotokoll-parser.php(761): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(369): parseFile_andWriteToDisk()\n#3 {main}"
+    "comments": {
+        "B2.1.3 Merknad": [
+            ""
+        ],
+        "B2.2.3 Merknad": [
+            ""
+        ],
+        "C4.3 Merknad": [
+            ""
+        ],
+        "C4.6 Merknad": [
+            ""
+        ],
+        "C4.9 Merknad": [
+            ""
+        ],
+        "D1.5 Merknad": [
+            ""
+        ],
+        "D2.5 Merknad": [
+            ""
+        ]
+    },
+    "foretattForeløpigOpptellingHosStemmestyrene": false,
+    "foretattForeløpigOpptellingHosValgstyret": true,
+    "e1_1_listestemmetall_og_mandater": [
+        {
+            "name": "Høgre",
+            "stemmesedler": 127,
+            "kommunestyrerepresentanter": 13,
+            "sedler_ganger_kst_repr": 1651,
+            "slengere_mottatt": 15,
+            "slengere_avgitt": 21,
+            "listestemmetall": 1645,
+            "stemmesedler_initial_counting": 127,
+            "listestemmetall_simulated_initial_counting": 1645
+        },
+        {
+            "name": "Kristeleg Folkeparti",
+            "stemmesedler": 40,
+            "kommunestyrerepresentanter": 13,
+            "sedler_ganger_kst_repr": 520,
+            "slengere_mottatt": 11,
+            "slengere_avgitt": 14,
+            "listestemmetall": 517,
+            "stemmesedler_initial_counting": 40,
+            "listestemmetall_simulated_initial_counting": 517
+        },
+        {
+            "name": "Senterpartiet",
+            "stemmesedler": 101,
+            "kommunestyrerepresentanter": 13,
+            "sedler_ganger_kst_repr": 1313,
+            "slengere_mottatt": 26,
+            "slengere_avgitt": 42,
+            "listestemmetall": 1297,
+            "stemmesedler_initial_counting": 101,
+            "listestemmetall_simulated_initial_counting": 1297
+        },
+        {
+            "name": "Bykle Bygdeliste",
+            "stemmesedler": 43,
+            "kommunestyrerepresentanter": 13,
+            "sedler_ganger_kst_repr": 559,
+            "slengere_mottatt": 10,
+            "slengere_avgitt": 9,
+            "listestemmetall": 560,
+            "stemmesedler_initial_counting": 43,
+            "listestemmetall_simulated_initial_counting": 560
+        },
+        {
+            "name": "Venstre",
+            "stemmesedler": 100,
+            "kommunestyrerepresentanter": 13,
+            "sedler_ganger_kst_repr": 1300,
+            "slengere_mottatt": 29,
+            "slengere_avgitt": 22,
+            "listestemmetall": 1307,
+            "stemmesedler_initial_counting": 100,
+            "listestemmetall_simulated_initial_counting": 1307
+        },
+        {
+            "name": "Arbeidarpartiet",
+            "stemmesedler": 149,
+            "kommunestyrerepresentanter": 13,
+            "sedler_ganger_kst_repr": 1937,
+            "slengere_mottatt": 49,
+            "slengere_avgitt": 32,
+            "listestemmetall": 1954,
+            "stemmesedler_initial_counting": 149,
+            "listestemmetall_simulated_initial_counting": 1954
+        }
+    ],
+    "mandatFordelingEndelig": {
+        "1": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 1395.714286
+        },
+        "2": {
+            "Parti": "Høgre",
+            "Kvotient": 1175
+        },
+        "3": {
+            "Parti": "Venstre",
+            "Kvotient": 933.571429
+        },
+        "4": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 926.428571
+        },
+        "5": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 651.333333
+        },
+        "6": {
+            "Parti": "Høgre",
+            "Kvotient": 548.333333
+        },
+        "7": {
+            "Parti": "Venstre",
+            "Kvotient": 435.666667
+        },
+        "8": {
+            "Parti": "Senterpartiet",
+            "Kvotient": 432.333333
+        },
+        "9": {
+            "Parti": "Bykle Bygdeliste",
+            "Kvotient": 400
+        },
+        "10": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 390.8
+        },
+        "11": {
+            "Parti": "Kristeleg Folkeparti",
+            "Kvotient": 369.285714
+        },
+        "12": {
+            "Parti": "Høgre",
+            "Kvotient": 329
+        },
+        "13": {
+            "Parti": "Arbeidarpartiet",
+            "Kvotient": 279.142857
+        }
+    },
+    "e1_mandatPerParty": {
+        "Arbeidarpartiet": 4,
+        "Høgre": 3,
+        "Venstre": 2,
+        "Senterpartiet": 2,
+        "Bykle Bygdeliste": 1,
+        "Kristeleg Folkeparti": 1
+    },
+    "e1_mandatPerParty_simulated_initial_counting": {
+        "Arbeidarpartiet": 4,
+        "Bykle Bygdeliste": 1,
+        "Høgre": 3,
+        "Kristeleg Folkeparti": 1,
+        "Senterpartiet": 2,
+        "Venstre": 2
+    }
 }
