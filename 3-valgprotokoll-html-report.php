@@ -1433,9 +1433,13 @@ foreach ($entity_id__to__obj as $entity) {
     }
 
     $anyMissing = ($elections[0] == '<td>-</td>' || $elections[1] == '<td>-</td>');
+    $anyFound = ($elections[0] != '<td>-</td>' || $elections[1] != '<td>-</td>');
     //$anyMissing = ($elections[1] == '<td>-</td>');
-    if ($anyMissing) {
-        $elections[2] = '<td>Missing election(s).</td>';
+    if ($anyMissing && $anyFound) {
+        $elections[2] = '<td style="color: orange">One election found. One election missing.</td>';
+    }
+    elseif ($anyMissing) {
+        $elections[2] = '<td style="color: red;">Missing election(s).</td>';
     }
     elseif($election_parse_error) {
         $elections[2] = '<td style="color: darkred">All election found. Parse error.</td>';
