@@ -188,6 +188,53 @@ $summaryData = array(
     'Fylkestingsvalget 2023' => 0,
     'Kommunestyrevalget 2023' => 0,
 );
+function kommunenavnTilEntity($name, $county) {
+    $name = str_replace('Aurskog -Høland', 'Aurskog-Høland', $name);
+    $name = str_replace('Unjárga - Nesseby', 'Nesseby', $name);
+    $name = str_replace('Porsanger - Porságu - Porsanki', 'Porsanger', $name);
+    $name2 = $name . ' kommune';
+    //$name2 = str_replace('Ullensvang kommune', 'Ullensvang herad', $name2);
+    $name2 = str_replace('Ulvik kommune', 'Ulvik herad', $name2);
+    $name2 = str_replace('Kvam kommune', 'Kvam herad', $name2);
+    $name2 = str_replace('Voss kommune', 'Voss herad', $name2);
+    $name2 = str_replace('Snåase - Snåsa kommune', 'Snåsa kommune', $name2);
+    $name2 = str_replace('Gáivuotna - Kåfjord - Kaivuono kommune', 'Kåfjord kommune', $name2);
+    $name2 = str_replace('Storfjord - Omasvuotna - Omasvuono kommune', 'Storfjord kommune', $name2);
+    $name2 = str_replace('Raarvihke - Røyrvik kommune', 'Røyrvik kommune', $name2);
+    $name2 = str_replace('Hábmer - Hamarøy kommune', 'Hamarøy kommune', $name2);
+    $name2 = str_replace('Deatnu - Tana kommune', 'Tana kommune', $name2);
+    $name2 = str_replace('Kárášjohka - Karasjok kommune', 'Karasjok kommune', $name2);
+    $name2 = str_replace('Loabák - Lavangen kommune', 'Lavangen kommune', $name2);
+    if ($county == 'Viken') {
+        $name2 = str_replace('Våler kommune', 'Våler kommune (Østfold)', $name2);
+    }
+    if ($county == 'Østfold') {
+        $name2 = str_replace('Våler kommune', 'Våler kommune (Østfold)', $name2);
+    }
+    if ($county == 'Møre og Romsdal') {
+        $name2 = str_replace('Sande kommune', 'Sande kommune (Møre og Romsdal)', $name2);
+    }
+    if ($county == 'Nordland') {
+        $name2 = str_replace('Bø kommune', 'Bø kommune (Nordland)', $name2);
+    }
+    if ($county == 'Nordland') {
+        $name2 = str_replace('Herøy kommune', 'Herøy kommune (Nordland)', $name2);
+    }
+    if ($county == 'Møre og Romsdal') {
+        $name2 = str_replace('Herøy kommune', 'Herøy kommune (Møre og Romsdal)', $name2);
+    }
+    if ($county == 'Hedmark') {
+        $name2 = str_replace('Våler kommune', 'Våler kommune (Hedmark)', $name2);
+    }
+    if ($county == 'Hedmark') {
+        $name2 = str_replace('Os kommune', 'Os kommune (Hedmark)', $name2);
+    }
+    if ($county == 'Innlandet') {
+        # TODO: This should be fixed.
+        $name2 = str_replace('Os kommune', 'Os kommune (Hedmark)', $name2);
+    }
+    return $name2;
+}
 
 $d1_4_heading = '<table>
 <tr>
@@ -346,51 +393,7 @@ foreach ($files as $file) {
     logInfo('Using [' . str_replace(__DIR__ . '/', '', $file) . '].');
 
 
-    $name = $obj->municipality;
-    $name = str_replace('Aurskog -Høland', 'Aurskog-Høland', $name);
-    $name = str_replace('Unjárga - Nesseby', 'Nesseby', $name);
-    $name = str_replace('Porsanger - Porságu - Porsanki', 'Porsanger', $name);
-    $name2 = $name . ' kommune';
-    //$name2 = str_replace('Ullensvang kommune', 'Ullensvang herad', $name2);
-    $name2 = str_replace('Ulvik kommune', 'Ulvik herad', $name2);
-    $name2 = str_replace('Kvam kommune', 'Kvam herad', $name2);
-    $name2 = str_replace('Voss kommune', 'Voss herad', $name2);
-    $name2 = str_replace('Snåase - Snåsa kommune', 'Snåsa kommune', $name2);
-    $name2 = str_replace('Gáivuotna - Kåfjord - Kaivuono kommune', 'Kåfjord kommune', $name2);
-    $name2 = str_replace('Storfjord - Omasvuotna - Omasvuono kommune', 'Storfjord kommune', $name2);
-    $name2 = str_replace('Raarvihke - Røyrvik kommune', 'Røyrvik kommune', $name2);
-    $name2 = str_replace('Hábmer - Hamarøy kommune', 'Hamarøy kommune', $name2);
-    $name2 = str_replace('Deatnu - Tana kommune', 'Tana kommune', $name2);
-    $name2 = str_replace('Kárášjohka - Karasjok kommune', 'Karasjok kommune', $name2);
-    $name2 = str_replace('Loabák - Lavangen kommune', 'Lavangen kommune', $name2);
-    if ($obj->county == 'Viken') {
-        $name2 = str_replace('Våler kommune', 'Våler kommune (Østfold)', $name2);
-    }
-    if ($obj->county == 'Østfold') {
-        $name2 = str_replace('Våler kommune', 'Våler kommune (Østfold)', $name2);
-    }
-    if ($obj->county == 'Møre og Romsdal') {
-        $name2 = str_replace('Sande kommune', 'Sande kommune (Møre og Romsdal)', $name2);
-    }
-    if ($obj->county == 'Nordland') {
-        $name2 = str_replace('Bø kommune', 'Bø kommune (Nordland)', $name2);
-    }
-    if ($obj->county == 'Nordland') {
-        $name2 = str_replace('Herøy kommune', 'Herøy kommune (Nordland)', $name2);
-    }
-    if ($obj->county == 'Møre og Romsdal') {
-        $name2 = str_replace('Herøy kommune', 'Herøy kommune (Møre og Romsdal)', $name2);
-    }
-    if ($obj->county == 'Hedmark') {
-        $name2 = str_replace('Våler kommune', 'Våler kommune (Hedmark)', $name2);
-    }
-    if ($obj->county == 'Hedmark') {
-        $name2 = str_replace('Os kommune', 'Os kommune (Hedmark)', $name2);
-    }
-    if ($obj->county == 'Innlandet') {
-        # TODO: This should be fixed.
-        $name2 = str_replace('Os kommune', 'Os kommune (Hedmark)', $name2);
-    }
+    $name2 = kommunenavnTilEntity($obj->municipality, $obj->county);
     $obj->file = $file;
     $entity_id__to__obj[$entity_name__to__entity_id[$name2]]->elections[] = $obj;
     $klager_html_navn = $name2 . ' - ' . $obj->election;
@@ -990,7 +993,7 @@ Twitteriatet for Valgkontroll
 Klage ført i penn av Hallvard Nygård [Twitter: @hallny].
 
 Klager: Twitteriatet for Valgkontroll ved Hallvard Nygård
-Klage sendes og følges opp av: ' . $name . '
+Klage sendes og følges opp av: ' . str_replace(' kommune', '', $name2) . '
 
 ';
 
