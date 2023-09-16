@@ -556,6 +556,22 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         $obj->language = 'nn-NO';
         $obj->languageName = 'Norwegian, Nynorsk';
 
+        // Luster 2023, kommunestyrevalget virker neste (Etter manuelt oppgjør). Legger til en replace.
+        if ($election_year == '2023' && str_contains($file_content, 'Luster')) {
+            $file_content = str_replace('Valprotokoll for vastyret', 'Valprotokoll for valstyret', $file_content);
+            $file_content = str_replace('12.09.2023 18:06:04            '
+                .'                 Valprotokoll for valstyret       '.
+                '          Side'.chr(10) . '15', '12.09.2023 18:06:04            '
+                .'                 Valprotokoll for valstyret       '.
+                '          Side 15', $file_content);
+            $file_content = str_replace('12.09.2023 18:05:52                          '
+                .'                     Valprotokoll for valstyret                         '
+                .'                        Side'.chr(10).'5',
+                '12.09.2023 18:05:52                          '
+                .'                     Valprotokoll for valstyret                         '
+                .'                        Side 5', $file_content);
+        }
+
         global $nynorskToBokmaal;
         foreach ($nynorskToBokmaal as $nynorskString => $bokmaalString) {
             $file_content = str_replace($nynorskString, $bokmaalString, $file_content);
