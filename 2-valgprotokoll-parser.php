@@ -560,16 +560,16 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         if ($election_year == '2023' && str_contains($file_content, 'Luster')) {
             $file_content = str_replace('Valprotokoll for vastyret', 'Valprotokoll for valstyret', $file_content);
             $file_content = str_replace('12.09.2023 18:06:04            '
-                .'                 Valprotokoll for valstyret       '.
-                '          Side'.chr(10) . '15', '12.09.2023 18:06:04            '
-                .'                 Valprotokoll for valstyret       '.
+                . '                 Valprotokoll for valstyret       ' .
+                '          Side' . chr(10) . '15', '12.09.2023 18:06:04            '
+                . '                 Valprotokoll for valstyret       ' .
                 '          Side 15', $file_content);
             $file_content = str_replace('12.09.2023 18:05:52                          '
-                .'                     Valprotokoll for valstyret                         '
-                .'                        Side'.chr(10).'5',
+                . '                     Valprotokoll for valstyret                         '
+                . '                        Side' . chr(10) . '5',
                 '12.09.2023 18:05:52                          '
-                .'                     Valprotokoll for valstyret                         '
-                .'                        Side 5', $file_content);
+                . '                     Valprotokoll for valstyret                         '
+                . '                        Side 5', $file_content);
         }
 
         global $nynorskToBokmaal;
@@ -581,6 +581,14 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     elseif (str_contains($file_content, 'Valgprotokoll for valgstyret')) {
         $obj->language = 'nb-NO';
         $obj->languageName = 'Norwegian, Bokmål';
+    }
+
+
+    if ($election_year == '2023' && str_contains($file_content, 'Karmøy')) {
+        // Page 28 is empty. It's fine.
+        $file_content = str_replace(chr(10) . chr(10) . '13.09.2023 13:22:55              '
+            . '              Valgprotokoll for valgstyret               Side 27', '', $file_content);
+        $file_content = str_replace('13.09.2023 13:22:55   Valgprotokoll for valgstyret   Side 28', '', $file_content);
     }
 
 
