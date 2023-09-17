@@ -1441,7 +1441,7 @@ foreach ($entity_id__to__obj as $entity) {
     elseif ($anyMissing) {
         $elections[2] = '<td style="color: red;">Missing election(s).</td>';
     }
-    elseif($election_parse_error) {
+    elseif ($election_parse_error) {
         $elections[2] = '<td style="color: darkred">All election found. Parse error.</td>';
     }
     else {
@@ -1590,24 +1590,25 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
                         'Klage til ' . $entity->name . chr(10)
                         . chr(10)
                         . 'Dere har ikke svart på vår epost av ' . $initialSendDate . '. '
+                        /*
                         . 'Dette kan skyldes tekniske årsaker hos dere og vi forsøker å sende fra en ny epsotadresse. '
                         . 'Dere bør sjekke deres epostsystem (f.eks. spammappe eller Microsoft Impersonation Insight). '
+                        */
                         . 'At dere ikke svarer er brudd på Offentleglova og vil bli klaget inn til Statsforvalteren.'
+                        . ' Vi ønsker også å sende inn klage på valggjennomføringen (valgloven) dersom dere avviser '
+                        . 'innsyn i valgprotokollen.'
                         . chr(10) . chr(10)
                         . 'Oppsummering av epostkorrespondanse:' . chr(10)
                         . implode("\n", $entityEmail->emailsSummary)
 
                         . chr(10) . chr(10)
-                        . 'Fra original henvendelse:' . chr(10)
-                        . 'Jeg ønsker innsyn i valgprotokoll for stortingsvalget 2021, og eventuell sametingsvalget 2021. Ofte kalt "Valgprotokoll for valgstyret"'
-                        . ' eller "Valgstyrets møtebok". Jeg ønsker at den er maskinlesbar, altså ikke innskannet (slik de signerte ofte er). '
-                        . 'Dette fordi vi skal lese ut data fra den.'
+                        . 'Kort oppsummert:' . chr(10)
+                        . 'Krav om innsyn i valgprotokoll i maskinlesbart format. '
+                        . 'Original PDF fra EVA Admin er tilstrekkelig for oss. '
+                        . 'Innskannet (og signert) blir ikke godtatt som maskinlesbart. '
+                        . 'Både valgprotokoll for kommunestyrevalg og fylkestingsvalg. Sistnevnte inneholder nok "utkast" i bakgrunn.'
                         . chr(10) . chr(10)
-                        . 'Søker altså innsyn i:' . chr(10)
-                        . '1. Valgprotokoll Stortingsvalget 2021 - ' . $entity->name . chr(10)
-                        . '2. Hvis dere har: Valgprotokoll Sametingsvalget 2021 - ' . $entity->name . chr(10)
-                        . chr(10) . chr(10)
-                        . 'Ønsker svar på original henvendelse (over) samt en forklaring på hvorfor dere avviser krav om innsyn ved ikke å svare.'
+                        . 'Ønsker svar på original henvendelse (oppsummert over) samt en forklaring på hvorfor dere avviser krav om innsyn ved ikke å svare.'
                         . chr(10) . chr(10)
                         . 'Takk!'
                         . chr(10) . chr(10)
