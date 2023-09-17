@@ -48,6 +48,7 @@ function fetchAndSave($url2, $saveUrl, $resultPrefix) {
         $max = 0;
         if (!isset($entityEmails[$thread->entity_id])) {
             $entityEmails[$thread->entity_id] = new stdClass();
+            $entityEmails[$thread->entity_id]->threadId = $thread->thread_id;
             $entityEmails[$thread->entity_id]->threadCount = 0;
             $entityEmails[$thread->entity_id]->emailsSummary = array();
             $entityEmails[$thread->entity_id]->emails = array();

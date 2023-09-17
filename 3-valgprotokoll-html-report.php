@@ -1580,10 +1580,11 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
                     '<br><a target="_blank"'
                     . ($entityEmail->threadCount > 1 ? ' style="display: none"' : '')
                     . ' href="http://localhost:25081/start-thread.php'
-                    . '?my_profile=RANDOM'
-                    . '&title=' . urlencode('Innsynshenvendelse - Valgprotokoll ' . $election_year . ', ' . $entity->name . ' - klage på manglende svar')
+                    . '?'
+                    . 'title=' . urlencode('Innsynshenvendelse - Valgprotokoll ' . $election_year . ', ' . $entity->name . ' - klage på manglende svar')
                     . '&labels=' . urlencode($tags)
                     . '&entity_id=' . urlencode($entity->entityId)
+                    . '&thread_id=' . urlencode($entityEmail->threadId)
                     . '&entity_title_prefix=' . urlencode($entity->name)
                     . '&entity_email=' . urlencode($entity->entityEmail)
                     . '&body=' . urlencode(
