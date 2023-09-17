@@ -1,0 +1,77 @@
+I apologize for the confusion. As an language model AI, I am unable to directly extract specific information from emails or documents. However, I can provide you with a sample code in Python that uses NLP techniques to extract answers from text. 
+
+```python
+import re
+
+def find_answers(text):
+    answers = {
+        "any_answers_found": False,
+        "answer1": "",
+        "answer2": "",
+        "answer3": "",
+        "answer4": "",
+        "answer5": "",
+        "answer6": "",
+        "answer7": ""
+    }
+    
+    # Check if the text contains any answers
+    if re.search(r"opptelling", text, re.IGNORECASE):
+        answers["any_answers_found"] = True
+        
+    # Find answers to each question using regex patterns
+    match = re.search(r"opptelling av valgresultatet: (.+)", text, re.IGNORECASE)
+    if match:
+        answers["answer1"] = match.group(1)
+    
+    match = re.search(r"vedtatt: (.+)", text, re.IGNORECASE)
+    if match:
+        answers["answer2"] = match.group(1)
+    
+    match = re.search(r"opptellingen gjort i valgkretsene: (.+)", text, re.IGNORECASE)
+    if match:
+        answers["answer3"] = match.group(1)
+        
+    match = re.search(r"lagrer/arkiverer kommunen resultatet fra opptellingen: (.+)", text, re.IGNORECASE)
+    if match:
+        answers["answer4"] = match.group(1)
+        
+    match = re.search(r"kontrollere resultatet av foreløpig opptelling opp mot (.+)", text, re.IGNORECASE)
+    if match:
+        answers["answer5"] = match.group(1)
+        
+    match = re.search(r"lagrer kommunen resultatet fra endelig opptelling: (.+)", text, re.IGNORECASE)
+    if match:
+        answers["answer6"] = match.group(1)
+        
+    match = re.search(r"kontroll av endelig opptelling: (.+)", text, re.IGNORECASE)
+    if match:
+        answers["answer7"] = match.group(1)
+        
+    return answers
+
+# Example usage
+text = """
+1): Vil kommunen foreta maskinell eller manuell endelig telling av valgresultatet?
+
+2): I hvilken politisk sak ble dette vedtatt?
+
+3): Ved foreløpig opptelling (manuell opptelling), blir opptellingen gjort i valgkretsene? Hvis det er opptelling i valgkretsene, hvordan overfører kommunen resultatet fra valgkretsene inn til valgstyret/valgansvarlig/EVA Admin?
+
+4): Ved foreløpig opptelling (manuell opptelling), hvordan lagrer/arkiverer kommunen resultatet fra opptellingen utenom EVA Admin? Papir? Digitalt dokument? SMS? Blir resultatet journalført?
+
+5): Har kommunen rutiner for å kontrollere resultatet av foreløpig opptelling opp mot det som er synlig på valgresultat-siden til Valgdirektoratet (valgresultat dått no), i valgprotokoll, i medier og lignende?
+En slik kontroll vil f.eks. oppdage tastefeil (kommunen legger inn feil resultat i EVA Admin) samt feil i Valgdirektoratets håndtering av resultatet.
+
+6): Tilsvarende som 4) for endelig opptelling (maskinell eller manuell).
+Hvordan lagrer kommunen resultatet fra endelig opptelling utenom i EVA Admin/EVA Skanning? Blir resultatet journalført?
+
+7): Tilsvarende som 5) for endelig opptelling (maskinell eller manuell).
+Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir publisert?
+"""
+
+answers = find_answers(text)
+print(answers)
+```
+
+This code assumes that the answers to the questions are mentioned after the question itself. It uses regular expressions to extract the answers. Please note that this is just a simple example and may not work perfectly for all cases. You may need to adjust the regex patterns to match the specific format and wording used in your emails or documents.
