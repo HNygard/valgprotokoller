@@ -17,6 +17,7 @@ $additional_urls = array(// Also fetch these FOI requests
 
 fetchAndSave('http://localhost:25081/api.php?label=valgprotokoll_' . $election_year, true, 'entity');
 fetchAndSave('http://localhost:25081/api.php?label=valginnsyn_1_' . $election_year, true, 'valginnsyn_1');
+fetchAndSave('http://localhost:25081/api.php?label=valginnsyn_2_' . $election_year, true, 'valginnsyn_2');
 function fetchAndSave($url2, $saveUrl, $resultPrefix) {
     global $election_year;
 

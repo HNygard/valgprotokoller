@@ -1488,8 +1488,36 @@ foreach ($entity_id__to__obj as $entity) {
             . 'Søk innsyn via Email engine</a>' . chr(10);
 
 
+        $tags = 'valg_' . $election_year . ' valginnsyn_2_' . $election_year . ' valginnsyn_2_' . $election_year . '_' . $entity->municipalityNumber;
+        $email_engine_valgsporsmaal2 =
+            // http://alaveteli.org/docs/developers/api/#starting-new-requests-programmatically
+            ' -:- <a target="_blank" href="http://localhost:25081/start-thread.php'
+            . '?my_profile=RANDOM'
+            . '&title=' . urlencode('Innsyn valgopptelling, ' . $entity->name)
+            . '&labels=' . urlencode($tags)
+            . '&entity_id=' . urlencode($entity->entityId)
+            . '&entity_title_prefix=' . urlencode($entity->name)
+            . '&entity_email=' . urlencode($entity->entityEmail)
+            . '&body=' . urlencode(
+                'Kjære ' . $entity->name . chr(10)
+                . chr(10)
+                . 'Ønsker innsyn i valgopptellingen deres nå i 2023.
+
+1): Ønsker innsyn i møtebok fra stemmestyrene i kommunestyrevalget og fylkestingsvalget
+
+2) Ønsker innsyn i alle papirer hvor opptellinger er notert for hånd.
+
+3) Ønsker innsyn i andre dokumenter med opptelling som ikke har vært innom valgsystemene EVA'
+                . chr(10) . chr(10)
+                . 'Takk!'
+                . chr(10) . chr(10)
+                . 'Prosjekt Åpne Valgdata - https://hnygard.github.io/valgprotokoller/'
+            )
+            . '">'
+            . 'Søk innsyn i papiropptelling via Email engine</a>' . chr(10);
+
         $tags = 'valg_' . $election_year . ' valginnsyn_1_' . $election_year . ' valginnsyn_1_' . $election_year . '_' . $entity->municipalityNumber;
-        $email_engine_valgsporsmaal =
+        $email_engine_valgsporsmaal1 =
             // http://alaveteli.org/docs/developers/api/#starting-new-requests-programmatically
             ' -:- <a target="_blank" href="http://localhost:25081/start-thread.php'
             . '?my_profile=RANDOM'
