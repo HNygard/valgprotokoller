@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2023/INNSYN---entityId=1520-orsta-kommune&threadId=valgprotokoll_2023%2C_%C3%B8rsta_kommune&attachment=2023-09-18_082332+-+IN+-+att+2-0e69fe52c84f8b825fb65e951f18e605.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1520-orsta-kommune&threadId=valgprotokoll_2023%2C_%C3%B8rsta_kommune&attachment=2023-09-18_082332+-+IN+-+att+2-0e69fe52c84f8b825fb65e951f18e605.pdf",
+    "downloadTime": "2023-09-22 00:17:28",
+    "pdfMetaData": "Author:          svc_acos_pixedit\nCreator:         Canon iR-ADV C5860\nProducer:        PixEdit AS,  PixToolsLib Version 2.7.8.0\nCreationDate:    Fri Sep 15 13:06:58 2023 CEST\nModDate:         Fri Sep 15 13:06:58 2023 CEST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           34\nEncrypted:       no\nPage size:       595.2 x 841.68 pts (A4)\nPage rot:        0\nFile size:       15859494 bytes\nOptimized:       no\nPDF version:     1.4",
+    "language": "nn-NO",
+    "languageName": "Norwegian, Nynorsk",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "12.09.2023 17:45:43",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : t.\n\n#0 2-valgprotokoll-parser.php(674): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#2 {main}"
+}

@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2023/INNSYN---entityId=0626-lier-kommune&threadId=valgprotokoll_2023%2C_lier_kommune&attachment=2023-09-18_134512+-+IN+-+att+1-9cf6a528d4a7d0dfd4d00ff8a1a8caae.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=0626-lier-kommune&threadId=valgprotokoll_2023%2C_lier_kommune&attachment=2023-09-18_134512+-+IN+-+att+1-9cf6a528d4a7d0dfd4d00ff8a1a8caae.pdf",
+    "downloadTime": "2023-09-22 00:16:59",
+    "pdfMetaData": "Subject:         C221CB21-32D1-4F60-BCFC-0CCDA35F5128 00002H\nAuthor:          arkivskann\nCreator:         PixEdit Version 8.6.5.0, SN 357-81126-02, KEY Cxxxx-xxxxx-xxxxx-xxxxx-xxxxx-xxxxE\nProducer:        PixEdit AS,  PixEdit Version 8.6.5.0\nCreationDate:    Fri Sep 15 09:30:57 2023 CEST\nModDate:         Fri Sep 15 09:30:57 2023 CEST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           18\nEncrypted:       no\nPage size:       597.12 x 842.88 pts (A4)\nPage rot:        0\nFile size:       971429 bytes\nOptimized:       no\nPDF version:     1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "13.09.2023 10:17:36",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : 4de\n\n#0 2-valgprotokoll-parser.php(674): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#2 {main}"
+}

@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2023/INNSYN---entityId=1933-balsfjord-kommune&threadId=valgprotokoll_2023%2C_balsfjord_kommune&attachment=2023-09-19_100926+-+IN+-+att+2-948d2cbfc23cb35cd6138e530f7932ec.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1933-balsfjord-kommune&threadId=valgprotokoll_2023%2C_balsfjord_kommune&attachment=2023-09-19_100926+-+IN+-+att+2-948d2cbfc23cb35cd6138e530f7932ec.pdf",
+    "downloadTime": "2023-09-22 00:17:35",
+    "pdfMetaData": "Author:          dokb\nCreator:         Canon iR-ADV C5850  PDF\nProducer:        PixEdit AS,  PixEdit Server Core Version 2.7.0.8\nCreationDate:    Mon Sep 18 14:53:29 2023 CEST\nModDate:         Mon Sep 18 15:00:12 2023 CEST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           28\nEncrypted:       no\nPage size:       595.2 x 841.44 pts (A4)\nPage rot:        0\nFile size:       1689776 bytes\nOptimized:       no\nPDF version:     1.4",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "14.09.2023 08:57:50",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : # vAL6\n\n#0 2-valgprotokoll-parser.php(674): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#2 {main}"
+}

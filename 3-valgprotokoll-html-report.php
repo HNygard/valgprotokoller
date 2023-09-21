@@ -363,6 +363,9 @@ function kommunenavnTilEntity($name, $county) {
     if ($county == 'Hedmark') {
         $name2 = str_replace('Våler kommune', 'Våler kommune (Hedmark)', $name2);
     }
+    if ($county == 'Innlandet') {
+        $name2 = str_replace('Våler kommune', 'Våler kommune (Hedmark)', $name2);
+    }
     if ($county == 'Hedmark') {
         $name2 = str_replace('Os kommune', 'Os kommune (Hedmark)', $name2);
     }

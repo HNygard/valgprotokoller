@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2023/INNSYN---entityId=1247-askoy-kommune&threadId=valgprotokoll_2023%2C_ask%C3%B8y_kommune&attachment=2023-09-18_141817+-+IN+-+att+4-a77765c250ef047e80faa8ac30ff969f.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1247-askoy-kommune&threadId=valgprotokoll_2023%2C_ask%C3%B8y_kommune&attachment=2023-09-18_141817+-+IN+-+att+4-a77765c250ef047e80faa8ac30ff969f.pdf",
+    "downloadTime": "2023-09-22 00:17:16",
+    "pdfMetaData": "Custom Metadata: no\nMetadata Stream: yes\nTagged:          yes\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           54\nEncrypted:       no\nPage size:       602 x 846 pts\nPage rot:        0\nFile size:       2520301 bytes\nOptimized:       no\nPDF version:     1.7",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "13.09.2023 17:09:05",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : $VALG\n\n#0 2-valgprotokoll-parser.php(674): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#2 {main}"
+}

@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2023/INNSYN---entityId=1449-stryn-kommune&threadId=valgprotokoll_2023%2C_stryn_kommune&attachment=2023-09-18_132915+-+IN+-+att+1-3e0dbdf341b569d28dcb66ce5a92e3c5.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1449-stryn-kommune&threadId=valgprotokoll_2023%2C_stryn_kommune&attachment=2023-09-18_132915+-+IN+-+att+1-3e0dbdf341b569d28dcb66ce5a92e3c5.pdf",
+    "downloadTime": "2023-09-22 00:17:24",
+    "pdfMetaData": "Author:          sNFpixedit\nCreator:         PStr-ServiceK-MF-Kontor\nProducer:        PixEdit AS,  PixToolsLib Version 2.8.2.4\nCreationDate:    Wed Sep 13 07:55:08 2023 CEST\nModDate:         Mon Sep 18 13:25:35 2023 CEST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           17\nEncrypted:       no\nPage size:       595.2 x 841.68 pts (A4)\nPage rot:        0\nFile size:       7040974 bytes\nOptimized:       no\nPDF version:     1.4",
+    "language": "nn-NO",
+    "languageName": "Norwegian, Nynorsk",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "12.09.2023 18:36:46",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : 'VALG\n\n#0 2-valgprotokoll-parser.php(674): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#2 {main}"
+}
