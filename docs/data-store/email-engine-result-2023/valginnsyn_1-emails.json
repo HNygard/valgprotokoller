@@ -1,21 +1,33 @@
 {
-    "1133-hjelmeland-kommune": {
-        "threadId": "innsyn_valggjennomføring,_hjelmeland_kommune",
+    "1111-sokndal-kommune": {
+        "threadId": "innsyn_valggjennomføring,_sokndal_kommune",
         "threadCount": 2,
         "emailsSummary": [
-            "- 2023-08-22 23:26:02 epost til dere",
-            "- 2023-08-22 23:26:02 epost til dere"
+            "- 2023-08-22 23:25:58 epost til dere",
+            "- 2023-08-23 09:11:19 epost fra dere",
+            "- 2023-08-22 23:25:58 epost til dere",
+            "- 2023-08-23 09:11:19 epost fra dere"
         ],
         "emails": [
             {
-                "datetime_received": "2023-08-22 23:26:02",
-                "timestamp_received": 1692739562,
+                "datetime_received": "2023-08-22 23:25:58",
+                "timestamp_received": 1692739558,
                 "email_type": "OUT"
             },
             {
-                "datetime_received": "2023-08-22 23:26:02",
-                "timestamp_received": 1692739562,
+                "datetime_received": "2023-08-23 09:11:19",
+                "timestamp_received": 1692774679,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-08-22 23:25:58",
+                "timestamp_received": 1692739558,
                 "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-08-23 09:11:19",
+                "timestamp_received": 1692774679,
+                "email_type": "IN"
             }
         ]
     },
@@ -2415,26 +2427,6 @@
             }
         ]
     },
-    "1111-sokndal-kommune": {
-        "threadId": "innsyn_valggjennomføring,_sokndal_kommune",
-        "threadCount": 1,
-        "emailsSummary": [
-            "- 2023-08-22 23:25:58 epost til dere",
-            "- 2023-08-23 09:11:19 epost fra dere"
-        ],
-        "emails": [
-            {
-                "datetime_received": "2023-08-22 23:25:58",
-                "timestamp_received": 1692739558,
-                "email_type": "OUT"
-            },
-            {
-                "datetime_received": "2023-08-23 09:11:19",
-                "timestamp_received": 1692774679,
-                "email_type": "IN"
-            }
-        ]
-    },
     "1112-lund-kommune": {
         "threadId": "innsyn_valggjennomføring,_lund_kommune",
         "threadCount": 1,
@@ -2605,6 +2597,20 @@
             {
                 "datetime_received": "2023-08-22 23:26:01",
                 "timestamp_received": 1692739561,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1133-hjelmeland-kommune": {
+        "threadId": "innsyn_valggjennomføring,_hjelmeland_kommune",
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-08-22 23:26:02 epost til dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-08-22 23:26:02",
+                "timestamp_received": 1692739562,
                 "email_type": "OUT"
             }
         ]
@@ -5349,13 +5355,19 @@
         "threadId": "innsyn_valggjennomføring,_hammerfest_kommune",
         "threadCount": 1,
         "emailsSummary": [
-            "- 2023-08-22 23:32:10 epost til dere"
+            "- 2023-08-22 23:32:10 epost til dere",
+            "- 2023-09-22 12:50:07 epost fra dere"
         ],
         "emails": [
             {
                 "datetime_received": "2023-08-22 23:32:10",
                 "timestamp_received": 1692739930,
                 "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-22 12:50:07",
+                "timestamp_received": 1695379807,
+                "email_type": "IN"
             }
         ]
     },
