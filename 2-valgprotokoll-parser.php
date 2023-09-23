@@ -606,6 +606,11 @@ function parseFile_andWriteToDisk(&$obj, $file) {
             . '              Valgprotokoll for valgstyret               Side 27', '', $file_content);
         $file_content = str_replace('13.09.2023 13:22:55   Valgprotokoll for valgstyret   Side 28', '', $file_content);
     }
+    // Lørenskog 2023, en ekstra tom side rundt E1.1
+    if ($election_year == '2023' && str_contains($file_content, 'Lørenskog')) {
+        $file_content = str_replace('13.09.2023 12:41:20                            Valgprotokoll for valgstyret               Side 24'.chr(10),'', $file_content);
+        $file_content = str_replace('13.09.2023 12:41:20   Valgprotokoll for valgstyret   Side 25'.chr(10),'', $file_content);
+    }
 
 
     // :: Strip footers
