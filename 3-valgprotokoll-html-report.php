@@ -1650,6 +1650,52 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
                     . '">'
                     . 'Klage random profile via Email engine</a>' . chr(10);
 
+                $mimesLink .=
+                    ' [<a target="_blank"'
+                    . ($entityEmail->threadCount > 1 ? ' style="display: none"' : '')
+                    . ' href="http://localhost:25081/start-thread.php'
+                    . '?'
+                    . 'title=' . urlencode('Klage på valggjennomføring - ' . $election_year . ', ' . $entity->name)
+                    . '&labels=' . urlencode($tags)
+                    . '&entity_id=' . urlencode($entity->entityId)
+                    . '&thread_id=' . urlencode($entityEmail->threadId)
+                    . '&entity_title_prefix=' . urlencode($entity->name)
+                    . '&entity_email=' . urlencode($entity->entityEmail)
+                    . '&body=' . urlencode(
+                        'Valgklage til ' . $entity->name . chr(10)
+                        . chr(10)
+                        . 'Dere har ikke svart på vårt innsynskrav av ' . $initialSendDate . '. '
+                        /*
+                        . 'Dette kan skyldes tekniske årsaker hos dere og vi forsøker å sende fra en ny epsotadresse. '
+                        . 'Dere bør sjekke deres epostsystem (f.eks. spammappe eller Microsoft Impersonation Insight). '
+                        */
+                        . 'Siden vi allerede har sendt dere klage på manglende svar, så ønsker vi med dette å klage på valggjennomføringen i '
+                        . $entity->name . '. At deres svar uteblir er brudd på Offentleglova og hindrer kontroll av '
+                        . 'valggjennomføringen. Vi klager med dette etter valgloven § 13.'
+                        . chr(10) . chr(10)
+                        . 'Oppsummering av epostkorrespondanse:' . chr(10)
+                        . implode("\n", $entityEmail->emailsSummary)
+
+                        . chr(10) . chr(10)
+                        . 'Kort oppsummert:' . chr(10)
+                        . 'Vi krever innsyn i valgprotokoll i maskinlesbart format. '
+                        . 'Original PDF fra EVA Admin er tilstrekkelig for oss. '
+                        . 'Innskannet (og signert) blir ikke godtatt som maskinlesbart (kan ikke lese data fra disse). '
+                        . 'Både valgprotokoll for kommunestyrevalg og fylkestingsvalg. Sistnevnte inneholder nok "utkast" i bakgrunn.'
+                        . chr(10) . chr(10)
+                        . 'En del kommuner har filtrert epostene våre som spam. Dersom dere har det, så er dette ett valg dere som kommune '
+                        . 'har gjort gjennom valg av IT-systemer og hvordan dere har satt de opp. Vi har fremdeles rett på svar etter '
+                        . 'Offentleglova.'
+                        . chr(10) . chr(10)
+                        . 'Ønsker svar med maskinlesbar valgprotokoll samt behandling av denne klagen i Valgstyret.'
+                        . chr(10) . chr(10)
+                        . 'Takk!'
+                        . chr(10) . chr(10)
+                        . 'Prosjekt Åpne Valgdata'
+                    )
+                    . '">'
+                    . 'klage 2 - valgloven</a>]' . chr(10);
+
                 $mimesLink .= (isset($mxRecords[$entity->entityId])) ? '<br>' . implode(', ', array_keys((array)$mxRecords[$entity->entityId]->emailServer)) : '';
             }
             elseif (!$anyMissing) {
@@ -1662,7 +1708,7 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
             $email_engine_valgsporsmaal1 = "<span style=\"font-size: 0.6em;\">Valgspørsmål request sent</span>\n";
         }
         if (in_array($entity->entityId, $valggjennomforing_sporsmaal_sent2)) {
-            $email_engine_valgsporsmaal1 = "<span style=\"font-size: 0.6em;\">Valgspørsmål request sent</span>\n";
+            $email_engine_valgsporsmaal2 = "<span style=\"font-size: 0.6em;\">Valgspørsmål 2 request sent</span>\n";
         }
 
         $mimesLink .= $email_engine_valgsporsmaal1;
