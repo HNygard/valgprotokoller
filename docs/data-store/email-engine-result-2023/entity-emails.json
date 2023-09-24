@@ -8867,6 +8867,8 @@
         "emailsSummary": [
             "- 2023-09-12 00:13:30 epost til dere",
             "- 2023-09-17 23:50:18 epost til dere",
+            "- 2023-09-19 11:17:29 epost fra dere",
+            "- 2023-09-19 13:10:12 epost fra dere",
             "- 2023-09-20 22:54:17 epost til dere"
         ],
         "emails": [
@@ -8879,6 +8881,16 @@
                 "datetime_received": "2023-09-17 23:50:18",
                 "timestamp_received": 1694987418,
                 "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-19 11:17:29",
+                "timestamp_received": 1695115049,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-19 13:10:12",
+                "timestamp_received": 1695121812,
+                "email_type": "IN"
             },
             {
                 "datetime_received": "2023-09-20 22:54:17",
@@ -8946,7 +8958,8 @@
             "- 2023-09-12 00:13:33 epost til dere",
             "- 2023-09-17 23:50:20 epost til dere",
             "- 2023-09-18 07:15:47 epost fra dere",
-            "- 2023-09-18 20:48:48 epost til dere"
+            "- 2023-09-18 20:48:48 epost til dere",
+            "- 2023-09-19 08:24:47 epost fra dere"
         ],
         "emails": [
             {
@@ -8968,6 +8981,11 @@
                 "datetime_received": "2023-09-18 20:48:48",
                 "timestamp_received": 1695062928,
                 "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-19 08:24:47",
+                "timestamp_received": 1695104687,
+                "email_type": "IN"
             }
         ]
     },

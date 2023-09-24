@@ -1,7 +1,7 @@
 {
     "1111-sokndal-kommune": {
         "threadId": "innsyn_valgopptelling,_sokndal_kommune",
-        "threadCount": 1,
+        "threadCount": 2,
         "emailsSummary": [],
         "emails": []
     },
@@ -68,8 +68,22 @@
     "1112-lund-kommune": {
         "threadId": "innsyn_valgopptelling,_lund_kommune",
         "threadCount": 1,
-        "emailsSummary": [],
-        "emails": []
+        "emailsSummary": [
+            "- 2023-09-23 13:10:13 epost til dere",
+            "- 2023-09-23 13:10:21 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-09-23 13:10:13",
+                "timestamp_received": 1695467413,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-23 13:10:21",
+                "timestamp_received": 1695467421,
+                "email_type": "IN"
+            }
+        ]
     },
     "1114-bjerkreim-kommune": {
         "threadId": "innsyn_valgopptelling,_bjerkreim_kommune",
