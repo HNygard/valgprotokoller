@@ -220,6 +220,9 @@ being noticed.</i><br><br>
 - <a href='https://www.evenes.kommune.no/startsiden/nyhetsarkiv/5596-pressemelding.html'>(Norwegian) Evenes municipality - Press release - Election board recommands not approving the election for municipality</a></i><br>
 - <a href='https://www.vg.no/nyheter/innenriks/i/GGKOBJ/anbefaler-at-kommunevalg-ikke-godkjennes'>(Norwegian) VG.no - Anbefaler at kommunevalg ikke godkjennes</a></i>
 
+<h2>Summary - high numbers</h2>
+BALLOT_STUFFING_SUMMARY
+
 <table>
 ";
 
@@ -377,6 +380,7 @@ function kommunenavnTilEntity($name, $county) {
 }
 
 $valgprotokoll_with_error = array();
+$ballot_stuffing_per_kommune = array();
 foreach ($files as $file) {
 
     if ($file) {
@@ -609,10 +613,13 @@ foreach ($files as $file) {
         if ($checksum < 0 && $color == 'red') {
             global $ballotStuffingErrors, $ballotStuffingErrorsComments;
             $ballotStuffingErrors[$textNor] = 'Flere antall stemmesedler (' . $ballots->{'Ant. sedler'} . ') enn antall kryss i manntall (' . $ballots->{'Kryss i manntall'} . ').'
-                . ' ' . abs($checksum) . ' flere stemmesedler enn det skulle vært.';
+                . ' ' . abs($checksum) . ' flere stemmesedler enn det skulle vært (' . number_format((abs($checksum) / $ballots->{'Ant. sedler'}) * 100, 2) . ' % flere).';
             if ($comments != null) {
                 $ballotStuffingErrorsComments[$comments] = $obj->comments->$comments;
             }
+
+            global $ballot_stuffing_per_kommune, $name2, $obj;
+            $ballot_stuffing_per_kommune[$name2 . ' - ' . $obj->election] = $ballotStuffingErrors[$textNor];
         }
 
         return "<td>$text</td>
@@ -1351,7 +1358,13 @@ $html = str_replace('----D1.4-TABLE---', $html_d1_4, $html);
 $html = str_replace('----D2.4-TABLE---', $html_d2_4, $html);
 file_put_contents(__DIR__ . '/docs/index.html', $html);
 
-$html_BallotStuffing .= "</table>";
+$ballot_stuffing_summary = '<ul>'.chr(10);
+foreach($ballot_stuffing_per_kommune as $kommunenavn => $text) {
+    $ballot_stuffing_summary .= '<li><b style="width: 400px; display: inline-block">' . $kommunenavn . ':</b> ' .$text .'</li>'.chr(10);
+}
+$ballot_stuffing_summary .= '</ul>'.chr(10);
+$html_BallotStuffing = str_replace('BALLOT_STUFFING_SUMMARY', $ballot_stuffing_summary, $html_BallotStuffing);
+$html_BallotStuffing .= "</table>".chr(10);
 file_put_contents(__DIR__ . '/docs/ballot-stuffing.html', $html_BallotStuffing);
 
 
