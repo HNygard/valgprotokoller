@@ -44,7 +44,11 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-09-21 21:56:47 epost til dere",
-            "- 2023-09-21 21:56:50 epost fra dere"
+            "- 2023-09-21 21:56:50 epost fra dere",
+            "- 2023-09-25 14:31:21 epost fra dere",
+            "- 2023-09-25 20:14:47 epost til dere",
+            "- 2023-09-26 08:42:36 epost fra dere",
+            "- 2023-09-26 10:26:40 epost til dere"
         ],
         "emails": [
             {
@@ -55,6 +59,58 @@
             {
                 "datetime_received": "2023-09-21 21:56:50",
                 "timestamp_received": 1695326210,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-25 14:31:21",
+                "timestamp_received": 1695645081,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-25 20:14:47",
+                "timestamp_received": 1695665687,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-26 08:42:36",
+                "timestamp_received": 1695710556,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-26 10:26:40",
+                "timestamp_received": 1695716800,
+                "email_type": "OUT"
+            }
+        ]
+    },
+    "1111-sokndal-kommune": {
+        "threadId": "innsyn_valgopptelling,_sokndal_kommune",
+        "threadCount": 1,
+        "emailsSummary": [
+            "- 2023-09-23 13:10:15 epost fra dere",
+            "- 2023-09-24 08:49:16 epost til dere",
+            "- 2023-09-24 08:49:20 epost fra dere",
+            "- 2023-09-25 08:28:54 epost fra dere"
+        ],
+        "emails": [
+            {
+                "datetime_received": "2023-09-23 13:10:15",
+                "timestamp_received": 1695467415,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-24 08:49:16",
+                "timestamp_received": 1695538156,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-24 08:49:20",
+                "timestamp_received": 1695538160,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-25 08:28:54",
+                "timestamp_received": 1695623334,
                 "email_type": "IN"
             }
         ]
@@ -83,13 +139,19 @@
         "threadId": "innsyn_valgopptelling,_bjerkreim_kommune",
         "threadCount": 1,
         "emailsSummary": [
-            "- 2023-09-21 21:56:47 epost til dere"
+            "- 2023-09-21 21:56:47 epost til dere",
+            "- 2023-09-25 10:31:14 epost fra dere"
         ],
         "emails": [
             {
                 "datetime_received": "2023-09-21 21:56:47",
                 "timestamp_received": 1695326207,
                 "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-25 10:31:14",
+                "timestamp_received": 1695630674,
+                "email_type": "IN"
             }
         ]
     },
@@ -97,12 +159,60 @@
         "threadId": "innsyn_valgopptelling,_hå_kommune",
         "threadCount": 1,
         "emailsSummary": [
-            "- 2023-09-21 21:56:48 epost til dere"
+            "- 2023-09-21 21:56:48 epost til dere",
+            "- 2023-09-25 10:24:19 epost fra dere",
+            "- 2023-09-25 20:39:34 epost til dere",
+            "- 2023-09-26 08:05:31 epost fra dere",
+            "- 2023-09-26 10:29:59 epost til dere",
+            "- 2023-09-26 10:35:01 epost fra dere",
+            "- 2023-09-26 11:12:19 epost til dere",
+            "- 2023-09-26 12:28:57 epost fra dere",
+            "- 2023-09-26 13:07:22 epost til dere"
         ],
         "emails": [
             {
                 "datetime_received": "2023-09-21 21:56:48",
                 "timestamp_received": 1695326208,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-25 10:24:19",
+                "timestamp_received": 1695630259,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-25 20:39:34",
+                "timestamp_received": 1695667174,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-26 08:05:31",
+                "timestamp_received": 1695708331,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-26 10:29:59",
+                "timestamp_received": 1695716999,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-26 10:35:01",
+                "timestamp_received": 1695717301,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-26 11:12:19",
+                "timestamp_received": 1695719539,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-26 12:28:57",
+                "timestamp_received": 1695724137,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-26 13:07:22",
+                "timestamp_received": 1695726442,
                 "email_type": "OUT"
             }
         ]
@@ -168,7 +278,8 @@
             "- 2023-09-21 21:56:52 epost til dere",
             "- 2023-09-21 21:57:39 epost fra dere",
             "- 2023-09-22 10:02:12 epost fra dere",
-            "- 2023-09-23 12:30:09 epost til dere"
+            "- 2023-09-23 12:30:09 epost til dere",
+            "- 2023-09-25 08:47:02 epost fra dere"
         ],
         "emails": [
             {
@@ -190,6 +301,11 @@
                 "datetime_received": "2023-09-23 12:30:09",
                 "timestamp_received": 1695465009,
                 "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-25 08:47:02",
+                "timestamp_received": 1695624422,
+                "email_type": "IN"
             }
         ]
     },
@@ -224,7 +340,8 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-09-21 21:56:54 epost til dere",
-            "- 2023-09-21 21:57:42 epost fra dere"
+            "- 2023-09-21 21:57:42 epost fra dere",
+            "- 2023-09-25 08:51:09 epost fra dere"
         ],
         "emails": [
             {
@@ -235,6 +352,11 @@
             {
                 "datetime_received": "2023-09-21 21:57:42",
                 "timestamp_received": 1695326262,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-25 08:51:09",
+                "timestamp_received": 1695624669,
                 "email_type": "IN"
             }
         ]
@@ -258,7 +380,9 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-09-23 13:10:03 epost til dere",
-            "- 2023-09-23 13:11:02 epost fra dere"
+            "- 2023-09-23 13:11:02 epost fra dere",
+            "- 2023-09-26 11:16:14 epost fra dere",
+            "- 2023-09-26 13:03:58 epost til dere"
         ],
         "emails": [
             {
@@ -270,6 +394,16 @@
                 "datetime_received": "2023-09-23 13:11:02",
                 "timestamp_received": 1695467462,
                 "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-26 11:16:14",
+                "timestamp_received": 1695719774,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-26 13:03:58",
+                "timestamp_received": 1695726238,
+                "email_type": "OUT"
             }
         ]
     },
@@ -277,13 +411,37 @@
         "threadId": "innsyn_valgopptelling,_kvitsøy_kommune",
         "threadCount": 1,
         "emailsSummary": [
-            "- 2023-09-23 13:10:04 epost til dere"
+            "- 2023-09-23 13:10:04 epost til dere",
+            "- 2023-09-25 09:00:48 epost fra dere",
+            "- 2023-09-25 09:29:06 epost fra dere",
+            "- 2023-09-25 12:16:15 epost til dere",
+            "- 2023-09-25 12:19:23 epost fra dere"
         ],
         "emails": [
             {
                 "datetime_received": "2023-09-23 13:10:04",
                 "timestamp_received": 1695467404,
                 "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-25 09:00:48",
+                "timestamp_received": 1695625248,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-25 09:29:06",
+                "timestamp_received": 1695626946,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-25 12:16:15",
+                "timestamp_received": 1695636975,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-25 12:19:23",
+                "timestamp_received": 1695637163,
+                "email_type": "IN"
             }
         ]
     },
@@ -306,7 +464,8 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-09-23 13:10:08 epost til dere",
-            "- 2023-09-23 13:10:11 epost fra dere"
+            "- 2023-09-23 13:10:11 epost fra dere",
+            "- 2023-09-26 10:13:00 epost fra dere"
         ],
         "emails": [
             {
@@ -318,6 +477,11 @@
                 "datetime_received": "2023-09-23 13:10:11",
                 "timestamp_received": 1695467411,
                 "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-26 10:13:00",
+                "timestamp_received": 1695715980,
+                "email_type": "IN"
             }
         ]
     },
@@ -326,7 +490,9 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-09-23 13:10:09 epost til dere",
-            "- 2023-09-23 13:10:13 epost fra dere"
+            "- 2023-09-23 13:10:13 epost fra dere",
+            "- 2023-09-26 13:47:01 epost fra dere",
+            "- 2023-09-26 18:37:07 epost til dere"
         ],
         "emails": [
             {
@@ -338,6 +504,16 @@
                 "datetime_received": "2023-09-23 13:10:13",
                 "timestamp_received": 1695467413,
                 "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-26 13:47:01",
+                "timestamp_received": 1695728821,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-26 18:37:07",
+                "timestamp_received": 1695746227,
+                "email_type": "OUT"
             }
         ]
     },
@@ -345,13 +521,31 @@
         "threadId": "innsyn_valgopptelling,_utsira_kommune",
         "threadCount": 1,
         "emailsSummary": [
-            "- 2023-09-23 13:10:10 epost til dere"
+            "- 2023-09-23 13:10:10 epost til dere",
+            "- 2023-09-25 08:57:45 epost fra dere",
+            "- 2023-09-25 12:19:24 epost til dere",
+            "- 2023-09-25 12:20:33 epost fra dere"
         ],
         "emails": [
             {
                 "datetime_received": "2023-09-23 13:10:10",
                 "timestamp_received": 1695467410,
                 "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-25 08:57:45",
+                "timestamp_received": 1695625065,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-25 12:19:24",
+                "timestamp_received": 1695637164,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-25 12:20:33",
+                "timestamp_received": 1695637233,
+                "email_type": "IN"
             }
         ]
     },
@@ -360,7 +554,9 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-09-23 13:10:11 epost til dere",
-            "- 2023-09-23 13:10:16 epost fra dere"
+            "- 2023-09-23 13:10:16 epost fra dere",
+            "- 2023-09-25 14:13:00 epost fra dere",
+            "- 2023-09-25 20:20:19 epost til dere"
         ],
         "emails": [
             {
@@ -372,6 +568,16 @@
                 "datetime_received": "2023-09-23 13:10:16",
                 "timestamp_received": 1695467416,
                 "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-25 14:13:00",
+                "timestamp_received": 1695643980,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-25 20:20:19",
+                "timestamp_received": 1695666019,
+                "email_type": "OUT"
             }
         ]
     }
