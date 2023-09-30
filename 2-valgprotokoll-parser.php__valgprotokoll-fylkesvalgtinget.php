@@ -92,6 +92,57 @@ function readValgprotokollFylkesvalgting($file_content, &$obj, $election_year) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
+    $i = assertLine_trim($lines, $i, 'Nøkkeltall i valggjennomføringen');
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^ Antall stemmeberettigede \s*([0-9 ]*)\s*$/', $lines[$i++]);
+    $obj->keyfigures_antallStemmeberettigede = cleanFormattedNumber($match[1]);
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^ Totalt antall kryss i manntallet \s*([0-9 ]*)\s*$/', $lines[$i++]);
+    $obj->keyfigures_totaltAntallKryssIManntallet = cleanFormattedNumber($match[1]);
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^ Oppmøteprosent \s*([0-9, %]*)\s*$/', $lines[$i++]);
+    $obj->keyfigures_oppmøteprosent = $match[1];
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^ Totalt antall godkjente forhåndsstemmegivninger \s*([0-9 ]*)\s*$/', $lines[$i++]);
+    $obj->keyfigures_totaltAntallGodkjenteForhåndsstemmegivninger = cleanFormattedNumber($match[1]);
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^ Totalt antall godkjente valgtingsstemmegivninger \s*([0-9 ]*)\s*$/', $lines[$i++]);
+    $obj->keyfigures_totaltAntallGodkjenteValgtingsstemmegivninger = cleanFormattedNumber($match[1]);
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^ Totalt antall forkastede stemmegivninger \s*([0-9 ]*)\s*$/', $lines[$i++]);
+    $obj->keyfigures_totaltAntallForkastedeStemmegivninger = cleanFormattedNumber($match[1]);
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^ Totalt antall godkjente stemmesedler \s*([0-9 ]*)\s*$/', $lines[$i++]);
+    $obj->keyfigures_totaltAntallGodkjenteStemmesedler = cleanFormattedNumber($match[1]);
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^ Totalt antall forkastede stemmesedler \s*([0-9 ]*)\s*$/', $lines[$i++]);
+    $obj->keyfigures_totaltAntallForkastedeStemmesedler = cleanFormattedNumber($match[1]);
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    $obj->numbers = array();
+
+    if (ifExistsAndEqual($lines, $i, 'Mandatfordeling')) {
+        while (!str_starts_with(trim($lines[$i]), 'Sum')) {
+            // Skip
+            $i++;
+        }
+        $i++;
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+    }
+
+
 
     $unknown_lines = false;
     $j = 0;
