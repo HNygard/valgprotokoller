@@ -50,12 +50,13 @@ function downloadUrls_parseTxt($lines) {
 
         if (!file_exists($cache_name)) {
             $data = getUrlUsingCurl($line);
-            file_put_contents($cache_name, $data);
+            file_put_contents($cache_name, $data['body']);
 
             // :: Save some meta data
             $obj = new stdClass();
             $obj->url = $line;
             $obj->downloadTime = date('Y-m-d H:i:s');
+            $obj->serverHeaders = $data['headers'];
             file_put_contents($cache_name . '.json', json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_UNICODE ^ JSON_UNESCAPED_SLASHES));
         }
 
