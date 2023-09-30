@@ -10,5 +10,5 @@
     "reportGenerated": "25.09.2023 12:39:33",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Storfjord - Omasvuotna - Omasvuono kommune, Troms Romsa",
-    "errorMessage": "Did not find expected value on line [4].\nExpected ... : Kommunestyre- og fylkestingsvalget 2023\nActual ..... : valgdistrikt\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-kommune.php(147): assertLine_trim()\n#1 2-valgprotokoll-parser.php(549): readValgprotokollKommune()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
+    "errorMessage": "Did not find expected value on line [4].\nExpected ... : Kommunestyre- og fylkestingsvalget 2023\nActual ..... : valgdistrikt\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-kommune.php(147): assertLine_trim()\n#1 2-valgprotokoll-parser.php(559): readValgprotokollKommune()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
 }

@@ -1,6 +1,6 @@
 <?php
 
-function readValgprotokollFylkesvalgting($file_content, $obj, $election_year) {
+function readValgprotokollFylkesvalgting($file_content, &$obj, $election_year) {
 
     $nynorsk = str_contains($file_content, 'Valprotokoll for fylkesvalstyret');
     if ($nynorsk) {

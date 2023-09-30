@@ -285,5 +285,5 @@
     "foretattForeløpigOpptellingHosStemmestyrene": false,
     "foretattForeløpigOpptellingHosValgstyret": true,
     "e1_1_listestemmetall_og_mandater": [],
-    "errorMessage": "Inconsistency in [\"stemmesedler\" in E1.1][82] vs [D1.4 + D2.4][36 + 45] for party [Høyre].\n\n#0 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#1 {main}"
+    "errorMessage": "Inconsistency in [\"stemmesedler\" in E1.1][82] vs [D1.4 + D2.4][36 + 45] for party [Høyre].\n\n#0 2-valgprotokoll-parser.php(559): readValgprotokollKommune()\n#1 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#2 {main}"
 }

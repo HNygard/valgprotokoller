@@ -536,5 +536,5 @@
             "listestemmetall_simulated_initial_counting": 71504
         }
     ],
-    "errorMessage": "Unknown line in E1.1: \n19.09.2023 09:22:34   Valgprotokoll for valgstyret   Side 28\n\n#0 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#1 {main}"
+    "errorMessage": "Unknown line in E1.1: \n19.09.2023 09:22:34   Valgprotokoll for valgstyret   Side 28\n\n#0 2-valgprotokoll-parser.php(559): readValgprotokollKommune()\n#1 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#2 {main}"
 }
