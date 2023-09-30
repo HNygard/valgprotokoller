@@ -6,6 +6,11 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-fylkesvalgstyret",
-    "error": false,
-    "reportGenerated": "13.09.2023 20:15:03"
+    "error": true,
+    "reportGenerated": "13.09.2023 20:15:03",
+    "election": "Fylkestingsvalget 2023",
+    "heading": "Valgprotokoll for fylkesvalgstyret i Rogaland valgdistrikt",
+    "county": "Rogaland",
+    "electionYear": "2023",
+    "errorMessage": "Unknown lines.\n\n#0 2-valgprotokoll-parser.php(552): readValgprotokollFylkesvalgting()\n#1 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#2 {main}"
 }

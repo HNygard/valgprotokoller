@@ -6,6 +6,8 @@
     "language": "nn-NO",
     "languageName": "Norwegian, Nynorsk",
     "documentType": "valgprotokoll-fylkesvalgstyret",
-    "error": false,
-    "reportGenerated": "15.09.2023 18:51:43"
+    "error": true,
+    "reportGenerated": "15.09.2023 18:51:43",
+    "election": "Fylkestingsvalget 2023",
+    "errorMessage": "Did not find expected value on line [2].\nExpected ... : Valgprotokoll for valgstyret i\nActual ..... : Valgprotokoll for fylkesvalgstyret i\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-fylkesvalgtinget.php(68): assertLine_trim()\n#1 2-valgprotokoll-parser.php(552): readValgprotokollFylkesvalgting()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
 }

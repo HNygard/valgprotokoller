@@ -404,7 +404,7 @@ foreach ($files as $file) {
     }
 
 
-    if (isset($obj->election) && isset($obj->county)) {
+    if (isset($obj->election) && isset($obj->county) && ($obj->documentType != 'valgprotokoll-fylkesvalgstyret')) {
         $data_dir = __DIR__ . '/docs/data-store/json/' . $obj->election . '/' . $obj->county;
         if (!file_exists($data_dir)) {
             mkdir($data_dir, 0777, true);

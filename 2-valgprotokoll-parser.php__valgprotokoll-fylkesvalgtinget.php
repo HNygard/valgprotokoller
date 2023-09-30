@@ -47,5 +47,67 @@ function readValgprotokollFylkesvalgting($file_content, &$obj, $election_year) {
     $file_content = preg_replace('/\n\n\n/', "\n\n", $file_content);
 
 
+    // Split into array and start counter.
+    $lines_untrimmed = explode("\n", $file_content);
+    $lines = array();
+    foreach ($lines_untrimmed as $line) {
+        $lines[] = str_replace("\n", '', $line);
+    }
+    $i = 0;
+
+    // --- START page 1
+    $match = regexAssertAndReturnMatch('/^\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\s*$/', $lines[$i++]);
+    $obj->election = $match[1];
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    $i = assertLine_trim($lines, $i, 'Valgprotokoll for fylkesvalgstyret i');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $obj->heading = 'Valgprotokoll for fylkesvalgstyret i ' . trim($lines[$i++]);
+
+    // --- START page 2
+    if ($obj->election == 'Stortingsvalget ' . $election_year) {
+        $i = assertLine_trim($lines, $i, 'Stortingsvalget ' . $election_year);
+    }
+    else {
+        $i = assertLine_trim($lines, $i, 'Kommunestyre- og fylkestingsvalget ' . $election_year);
+    }
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = assertLine_trim($lines, $i, 'Valgprotokoll for fylkesvalgstyret - del 2');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    $match = regexAssertAndReturnMatch('/^Valgdistrikt: \s*([A-Za-zÆØÅæøåáö \-]*)\s*$/', $lines[$i++]);
+    $obj->county = trim($match[1]);
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $yearLine = str_replace($election_year . '.0', $election_year, $lines[$i++]);
+    $match = regexAssertAndReturnMatch('/^År: \s*([0-9]*)\s*$/', $yearLine);
+    $obj->electionYear = $match[1];
+
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+
+    $unknown_lines = false;
+    $j = 0;
+    for (; $i < count($lines); $i++) {
+        $unknown_lines = true;
+        echo '[' . $i . '] ' . $lines[$i] . "\n";
+        $j++;
+        if ($j == 10) {
+            break;
+        }
+    }
+
+    if ($unknown_lines) {
+        throw new Exception('Unknown lines.');
+    }
+
+
     return $obj;
 }
