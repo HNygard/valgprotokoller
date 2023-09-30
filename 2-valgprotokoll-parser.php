@@ -537,9 +537,9 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     }
     if (str_contains(substr($file_content, 0, 100), 'Valprotokoll for fylkesvalstyret')
         || str_contains(substr($file_content, 0, 100), 'Valgprotokoll for fylkesvalgstyret')) {
-        $obj->documentType = 'valgprotokoll-fylkesvalgstyret';
-        $obj->error = false;
-        logInfo('Ignoring. Valkesvalgstyret.');
+        require_once  __DIR__ . '/2-valgprotokoll-parser.php__valgprotokoll-fylkesvalgtinget.php';
+
+        $obj = readValgprotokollFylkesvalgting($file_content, $obj, $election_year);
         return;
     }
 
