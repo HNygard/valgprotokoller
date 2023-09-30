@@ -770,9 +770,7 @@ function readValgprotokollKommune($file_content, &$obj, $election_year) {
     }
 
     if ($unknown_lines) {
-        logError('Unknown lines in [' . str_replace(__DIR__ . '/', '', $file) . '].');
-        // TODO: throw exception here!
-
+        throw new Exception('Unknown lines.');
     }
 
     if (isset($obj->e1_1_listestemmetall_og_mandater)) {
