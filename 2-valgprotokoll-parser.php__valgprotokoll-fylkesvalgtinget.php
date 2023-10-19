@@ -300,8 +300,8 @@ function readValgprotokollFylkesvalgting($file_content, &$obj, $election_year) {
     }
 
 
-    $i = assertLine_trim($lines, $i, 'C Avgitte godkjente stemmesedler');
-    $i = removeLineIfPresent_andEmpty($lines, $i);
+    //$i = assertLine_trim($lines, $i, 'C Avgitte godkjente stemmesedler');
+    //$i = removeLineIfPresent_andEmpty($lines, $i);
 
     $unknown_lines = false;
     $j = 0;
@@ -315,7 +315,8 @@ function readValgprotokollFylkesvalgting($file_content, &$obj, $election_year) {
     }
 
     if ($unknown_lines) {
-        throw new Exception('Unknown lines.');
+        $obj->unknown_lines = true;
+        //throw new Exception('Unknown lines.');
     }
 
 
