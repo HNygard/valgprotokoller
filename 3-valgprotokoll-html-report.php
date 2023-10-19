@@ -624,7 +624,7 @@ foreach ($files as $file) {
         }
         global $ballot_stuffing_per_kommune, $name2, $obj;
         if (!empty($err_text)) {
-                $ballot_stuffing_per_kommune[$obj->election . ' - ' . $obj->county .  ' - ' . $name2] = $err_text;
+            $ballot_stuffing_per_kommune[$obj->election . ' - ' . $obj->county . ' - ' . $name2] = $err_text;
         }
 
         return "<td>$text</td>
@@ -1364,13 +1364,13 @@ $html = str_replace('----D2.4-TABLE---', $html_d2_4, $html);
 file_put_contents(__DIR__ . '/docs/index.html', $html);
 
 ksort($ballot_stuffing_per_kommune);
-$ballot_stuffing_summary = '<ul>'.chr(10);
-foreach($ballot_stuffing_per_kommune as $kommunenavn => $text) {
-    $ballot_stuffing_summary .= '<li><b style="width: 500px; display: inline-block">' . $kommunenavn . ':</b> ' .$text .'</li>'.chr(10);
+$ballot_stuffing_summary = '<ul>' . chr(10);
+foreach ($ballot_stuffing_per_kommune as $kommunenavn => $text) {
+    $ballot_stuffing_summary .= '<li><b style="width: 500px; display: inline-block">' . $kommunenavn . ':</b> ' . $text . '</li>' . chr(10);
 }
-$ballot_stuffing_summary .= '</ul>'.chr(10);
+$ballot_stuffing_summary .= '</ul>' . chr(10);
 $html_BallotStuffing = str_replace('BALLOT_STUFFING_SUMMARY', $ballot_stuffing_summary, $html_BallotStuffing);
-$html_BallotStuffing .= "</table>".chr(10);
+$html_BallotStuffing .= "</table>" . chr(10);
 file_put_contents(__DIR__ . '/docs/ballot-stuffing.html', $html_BallotStuffing);
 
 
@@ -1810,6 +1810,48 @@ $nonFoi = $tableSummary->total - $tableSummary->foiFinished - $tableSummary->foi
 $html_entities .= "<td>" . $nonFoi . ' (' . round(100 * $nonFoi / $tableSummary->total) . " %)</td>\n";
 $html_entities .= "</tr>\n";
 $html_entities .= '</table>';
+
+
+$valgdistrikter = array(
+    'Agder',
+    'Akershus',
+    'Buskerud',
+    'Finnmark Finnmárku',
+    'Innlandet',
+    'Møre og Romsdal',
+    'Nordland',
+    'Rogaland',
+    'Telemark',
+    'Troms Romsa',
+    'Trøndelag Trööndelage',
+    'Vestland',
+    'Østfold',
+);
+$html_entities .= "<br><br>\n";
+$html_entities .= "<table>\n";
+foreach($valgdistrikter as $valgdistrikt) {
+    $html_entities .= "<tr>\n";
+    $html_entities .= "<th>$valgdistrikt</th>\n";
+
+    $file = __DIR__ . '/docs/data-store/json/Fylkestingsvalget ' . $election_year . '/' . $valgdistrikt . '.json';
+    if (!file_exists($file)) {
+        $html_entities .= "<td style='text-align: left; color: red;'>Ingen lesbar valgprotokoll del 2</td>\n";
+    }
+    else {
+        $obj = json_decode(file_get_contents($file));
+        if (isset($obj->error) && $obj->error) {
+            $html_entities .= "<td style='text-align: left; color: red;'>Error lesing av valgprotokoll del 2</td>\n";
+
+        }
+        else {
+            $html_entities .= "<td style='text-align: left; color: darkgreen'>OK - " . $obj->keyfigures_totaltAntallGodkjenteStemmesedler . " godkjente stemmesedler</td>\n";
+        }
+    }
+    $html_entities .= "</tr>\n";
+
+}
+$html_entities .= "</table>\n";
+
 
 file_put_contents(__DIR__ . '/docs/status-files.html', $html_entities);
 
