@@ -403,7 +403,31 @@ foreach ($files as $file) {
         }
     }
 
+    if (isset($obj->documentType)) {
+        $data_dir_for_document_type = __DIR__ . '/docs/data-store/json/' . $obj->documentType . '/';
+        $file_name_for_document_type = $data_dir_for_document_type . '/'
+        . (isset($obj->municipalityNameFromUrl) ? $obj->municipalityNameFromUrl . ' - ' : '')
+        . basename(str_replace('.layout.txt', '', $file))
+        . '.json';
+    }
 
+    $data_dir = __DIR__ . '/docs/data-store/json/error-no-content';
+    if (!file_exists($data_dir)) {
+        mkdir($data_dir, 0777, true);
+    }
+    $error_json_file__no_content = $data_dir . '/' . basename(str_replace('.layout.txt', '', $file)) . '.json';
+    $data_dir = __DIR__ . '/docs/data-store/json/error-unknown-doc-type/' . $election_year;
+    if (!file_exists($data_dir)) {
+        mkdir($data_dir, 0777, true);
+    }
+    $error_json_file__unknown_doc_type = $data_dir . '/' . basename(str_replace('.layout.txt', '', $file)) . '.json';
+    $data_dir = __DIR__ . '/docs/data-store/json/error/' . $election_year;
+    if (!file_exists($data_dir)) {
+        mkdir($data_dir, 0777, true);
+    }
+    $error_json_file = $data_dir . '/' . basename(str_replace('.layout.txt', '', $file)) . '.json';
+
+    $json_file = null;
     if (isset($obj->election) && isset($obj->county) && ($obj->documentType != 'valgprotokoll-fylkesvalgstyret')) {
         $data_dir = __DIR__ . '/docs/data-store/json/' . $obj->election . '/' . $obj->county;
         if (!file_exists($data_dir)) {
@@ -424,47 +448,62 @@ foreach ($files as $file) {
             json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE)
         );
         $files_written[$json_file] = $obj;
+
+        unlink_if_exists($file_name_for_document_type);
+        unlink_if_exists($error_json_file__no_content);
+        unlink_if_exists($error_json_file__unknown_doc_type);
+        unlink_if_exists($error_json_file);
     }
-    elseif (isset($obj->documentType)) {
-        $data_dir = __DIR__ . '/docs/data-store/json/' . $obj->documentType . '/';
+    elseif (isset($obj->election) && isset($obj->county) && ($obj->documentType == 'valgprotokoll-fylkesvalgstyret')) {
+        $data_dir = __DIR__ . '/docs/data-store/json/' . $obj->election;
         if (!file_exists($data_dir)) {
             mkdir($data_dir, 0777, true);
         }
+        $json_file = $data_dir . '/' . $obj->county . '.json';
+        if (isset($files_written[$json_file])) {
+            $first_file = $files_written[$json_file];
+            if (isset($first_file->otherSources)) {
+                $obj->otherSources = $first_file->otherSources;
+            }
+            unset($first_file->otherSources);
+            $obj->otherSources[] = getDiffBetweenObjects($obj, $first_file);
+        }
+
         file_put_contents(
-            $data_dir . '/'
-            . (isset($obj->municipalityNameFromUrl) ? $obj->municipalityNameFromUrl . ' - ' : '')
-            . basename(str_replace('.layout.txt', '', $file))
-            . '.json',
+            $json_file,
+            json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE)
+        );
+        $files_written[$json_file] = $obj;
+
+        unlink_if_exists($file_name_for_document_type);
+        unlink_if_exists($error_json_file__no_content);
+        unlink_if_exists($error_json_file__unknown_doc_type);
+        unlink_if_exists($error_json_file);
+    }
+    elseif (isset($obj->documentType)) {
+        if (!file_exists($data_dir_for_document_type)) {
+            mkdir($data_dir_for_document_type, 0777, true);
+        }
+        file_put_contents(
+            $file_name_for_document_type,
             json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE)
         );
     }
     elseif ($obj->error && $obj->errorMessage == 'No content. Might contain scanned image.') {
-        $data_dir = __DIR__ . '/docs/data-store/json/error-no-content';
-        if (!file_exists($data_dir)) {
-            mkdir($data_dir, 0777, true);
-        }
         file_put_contents(
-            $data_dir . '/' . basename(str_replace('.layout.txt', '', $file)) . '.json',
+            $error_json_file__no_content,
             json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE)
         );
     }
     elseif ($obj->error && $obj->errorMessage == 'Unknown file.') {
-        $data_dir = __DIR__ . '/docs/data-store/json/error-unknown-doc-type/' . $election_year;
-        if (!file_exists($data_dir)) {
-            mkdir($data_dir, 0777, true);
-        }
         file_put_contents(
-            $data_dir . '/' . basename(str_replace('.layout.txt', '', $file)) . '.json',
+            $error_json_file__unknown_doc_type,
             json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE)
         );
     }
     elseif ($obj->error) {
-        $data_dir = __DIR__ . '/docs/data-store/json/error/' . $election_year;
-        if (!file_exists($data_dir)) {
-            mkdir($data_dir, 0777, true);
-        }
         file_put_contents(
-            $data_dir . '/' . basename(str_replace('.layout.txt', '', $file)) . '.json',
+            $error_json_file,
             json_encode($obj, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE)
         );
     }
@@ -1049,4 +1088,10 @@ function getDiffBetweenObjects($document, $document_new) {
     }
 
     return $new_key_values;
+}
+
+function unlink_if_exists($file) {
+    if (file_exists($file)) {
+        unlink($file);
+    }
 }

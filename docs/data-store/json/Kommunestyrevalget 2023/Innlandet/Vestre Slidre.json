@@ -286,5 +286,5 @@
             "listestemmetall_simulated_initial_counting": 1211
         }
     ],
-    "errorMessage": "Inconsistency in [\"stemmesedler\" in E1.1][234] vs [D1.4 + D2.4][101 + 137] for party [Bygdeliste].\n\n#0 2-valgprotokoll-parser.php(559): readValgprotokollKommune()\n#1 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#2 {main}"
+    "errorMessage": "Inconsistency in [\"stemmesedler\" in E1.1][234] vs [D1.4 + D2.4][101 + 137] for party [Bygdeliste].\n\n#0 2-valgprotokoll-parser.php(598): readValgprotokollKommune()\n#1 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#2 {main}"
 }
