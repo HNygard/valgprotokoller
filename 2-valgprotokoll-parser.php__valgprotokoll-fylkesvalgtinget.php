@@ -158,7 +158,7 @@ function readValgprotokollFylkesvalgting($file_content, &$obj, $election_year) {
         // For each municipality
         $muncipality = new stdClass();
         $i = removeLineIfPresent_andEmpty($lines, $i);
-        $muncipality->name = regexAssertAndReturnMatch('/^Kommune:\s*([A-Za-zÆØÅæøå0-9 ]*)\s*$/', $lines[$i++])[1];
+        $muncipality->name = regexAssertAndReturnMatch('/^Kommune:\s*([A-Za-zÆØÅæøå0-9 \-]*)\s*$/', $lines[$i++])[1];
         $obj->{'B Avvik kommune-fylke'}->{$muncipality->name} = $muncipality;
         $muncipality->numbers = array();
 
