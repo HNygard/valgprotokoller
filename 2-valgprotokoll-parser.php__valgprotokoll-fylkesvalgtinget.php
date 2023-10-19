@@ -131,7 +131,7 @@ function readValgprotokollFylkesvalgting($file_content, &$obj, $election_year) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
-    $obj->numbers = array();
+    $obj->{'B Avvik kommune-fylke'} = new stdClass();
 
     if (ifExistsAndEqual($lines, $i, 'Mandatfordeling')) {
         while (!str_starts_with(trim($lines[$i]), 'Sum')) {
@@ -142,7 +142,99 @@ function readValgprotokollFylkesvalgting($file_content, &$obj, $election_year) {
         $i = removeLineIfPresent_andEmpty($lines, $i);
     }
 
+    $i = assertLine_trim($lines, $i, 'A Administrative forhold');
+    // A1 Valgstyret
+    // A2 Valgtinget
+    // Continue to 'B Foreløpig opptelling av forhåndsstemmer'
+    while (trim($lines[$i]) != 'B Avvik mellom kommunenes endelige opptelling og valgdistriktets endelige opptelling') {
+        $i++;
+    }
 
+
+    $i = assertLine_trim($lines, $i, 'B Avvik mellom kommunenes endelige opptelling og valgdistriktets endelige opptelling');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    while (trim($lines[$i]) != 'C Avgitte godkjente stemmesedler') {
+        // For each municipality
+        $muncipality = new stdClass();
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $muncipality->name = regexAssertAndReturnMatch('/^Kommune:\s*([A-Za-zÆØÅæøå0-9 ]*)\s*$/', $lines[$i++])[1];
+        $obj->{'B Avvik kommune-fylke'}->{$muncipality->name} = $muncipality;
+        $muncipality->numbers = array();
+
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = assertLine_trim($lines, $i, 'B.1    Forkastede stemmegivninger');
+        $muncipality->numbers['B.1 Forkastede stemmegivninger'] = new stdClass();
+
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        regexAssertAndReturnMatch('/ Type forkastelse  \s* Antall$/', $lines[$i++]);
+
+        foreach (array(
+                     'Velgeren er ikke innført i manntallet i kommunen § 10-1 (1) a',
+                     'Stemmegivningen inneholder ikke tilstrekkelige opplysninger til å fastslå hvem velgeren er § 10-1 (1) b',
+                     'Stemmegivningen er ikke avgitt til rett tid § 10-1 (1) c',
+                     'Stemmegivningen er ikke levert til rett stemmemottaker § 10-1 (1) d',
+                     'Omslagskonvolutten er åpnet eller forsøkt åpnet § 10-1 (1) e',
+                     'Velgeren har allerede avgitt godkjent stemmegivning § 10-1 (1) f',
+                     'Stemmegivningen er ikke kommet inn til valgstyret innen kl. 17 dagen etter valgdagen § 10-1 (1) g',
+                     'Velgeren er ikke innført i manntallet i kommunen § 10-1a (1) a',
+                     'Velgeren har allerede avgitt godkjent stemmegivning § 10-1a (1) c',
+                     'Sum forkastede forhåndsstemmegivninger',
+                     'Velger ikke i kommunens manntall §10-2(1) a)',
+                     'Velger hadde forhåndsstemt/avgitt allerede godkjent stemme §10-2(1) c)',
+                     'Sum forkastede valgtingsstemmegivninger',
+                     'Totalt forkastede stemmegivninger'
+                 ) as $type_forkastelse) {
+            $i = removeLineIfPresent_andEmpty($lines, $i);
+            $type_forkastelse_regex = str_replace('(', '\(', $type_forkastelse);
+            $type_forkastelse_regex = str_replace(')', '\)', $type_forkastelse_regex);
+            $type_forkastelse_regex = str_replace('/', '\/', $type_forkastelse_regex);
+            $number = regexAssertAndReturnMatch('/^ ' . $type_forkastelse_regex . ' \s*([0-9 ]*)\s*$/', $lines[$i++])[1];
+            $muncipality->numbers['B.1 Forkastede stemmegivninger']->{$type_forkastelse} = $number;
+            $i = removeLineIfPresent_andEmpty($lines, $i);
+        }
+
+
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+
+        // ---- Table per municipality - B.2 Behandling av stemmesedler
+        $current_heading = 'B.2 Behandling av stemmesedler';
+        $text_heading = 'Stemmesedler';
+        $column_heading = null;
+        $column1 = 'Forhånd';
+        $column2 = 'Valgting';
+        $sum_row1 = null;
+        $sum_row2 = null;
+        $table_ending = 'B2.1       Forkastede stemmesedler';
+        $i = readTable_twoColumns($muncipality, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
+
+        // ---- Table per municipality - B2.1 Forkastede stemmesedler
+        $current_heading = 'B2.1       Forkastede stemmesedler';
+        $text_heading = 'Type forkastelse';
+        $column_heading = null;
+        $column1 = 'Kommune';
+        $column2 = 'Valgdistrikt';
+        $column3 = 'Avvik';
+        $table_ending = 'B.2.2 Avvik mellom kommunens endelige opptelling og valgdistriktets endelige opptelling';
+        $start_of_row_keywords_partier = array();
+        $i = readTable_threeColumns($muncipality, $lines, $i, $current_heading, $text_heading, $column1, $column2, $column3, $table_ending, $start_of_row_keywords_partier);
+
+        // ---- Table per municipality - B.2.2 Avvik mellom kommunens endelige opptelling og valgdistriktets endelige opptelling
+        $current_heading = 'B.2.2 Avvik mellom kommunens endelige opptelling og valgdistriktets endelige opptelling';
+        $text_heading = 'Parti';
+        $column_heading = null;
+        $column1 = 'Kommune';
+        $column2 = 'Valgdistrikt';
+        $column3 = 'Avvik';
+        $table_ending = 'B.2.2 Avvik mellom kommunens endelige opptelling og valgdistriktets endelige opptelling';
+        $start_of_row_keywords_partier = array();
+        $i = readTable_threeColumns($muncipality, $lines, $i, $current_heading, $text_heading, $column1, $column2, $column3, $table_ending, $start_of_row_keywords_partier);
+
+    }
+
+
+    $i = assertLine_trim($lines, $i, 'C Avgitte godkjente stemmesedler');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
 
     $unknown_lines = false;
     $j = 0;
