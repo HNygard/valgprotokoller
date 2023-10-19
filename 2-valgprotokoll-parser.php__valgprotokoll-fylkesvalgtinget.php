@@ -226,9 +226,17 @@ function readValgprotokollFylkesvalgting($file_content, &$obj, $election_year) {
         $column1 = 'Kommune';
         $column2 = 'Valgdistrikt';
         $column3 = 'Avvik';
-        $table_ending = 'B.2.2 Avvik mellom kommunens endelige opptelling og valgdistriktets endelige opptelling';
-        $start_of_row_keywords_partier = array();
-        $i = readTable_threeColumns($muncipality, $lines, $i, $current_heading, $text_heading, $column1, $column2, $column3, $table_ending, $start_of_row_keywords_partier);
+        $table_ending = 'B.2.3 Blanke stemmesedler';
+        global $alle_partier;
+        $start_of_row_keywords_partier = $alle_partier;
+        $start_of_row_keywords_partier[] = 'Sum antall partifordelte stemmesedler — forhånd';
+        $start_of_row_keywords_partier[] = 'Sum antall partifordelte stemmesedler — valgting';
+        $start_of_row_keywords_partier[] = 'Totalt antall partifordelte stemmesedler';
+        $subheadings = array(
+            'Forhånd',
+            'Valgting'
+        );
+        $i = readTable_threeColumns_subheadings($muncipality, $lines, $i, $current_heading, $text_heading, $column1, $column2, $column3, $table_ending, $start_of_row_keywords_partier, $subheadings);
 
     }
 

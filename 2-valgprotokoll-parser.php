@@ -547,19 +547,18 @@ function parseFile_andWriteToDisk(&$obj, $file) {
     }
     if (str_contains(substr($file_content, 0, 100), 'Valprotokoll for fylkesvalstyret')
         || str_contains(substr($file_content, 0, 100), 'Valgprotokoll for fylkesvalgstyret')) {
-        require_once  __DIR__ . '/2-valgprotokoll-parser.php__valgprotokoll-fylkesvalgtinget.php';
+        require_once __DIR__ . '/2-valgprotokoll-parser.php__valgprotokoll-fylkesvalgtinget.php';
 
         readValgprotokollFylkesvalgting($file_content, $obj, $election_year);
         return;
     }
     if (str_contains(substr($file_content, 0, 100), 'Valprotokoll for valstyret')
         || str_contains(substr($file_content, 0, 100), 'Valgprotokoll for valgstyret')) {
-        require_once  __DIR__ . '/2-valgprotokoll-parser.php__valgprotokoll-kommune.php';
+        require_once __DIR__ . '/2-valgprotokoll-parser.php__valgprotokoll-kommune.php';
 
         readValgprotokollKommune($file_content, $obj, $election_year);
         return;
     }
-
 
 
     $obj->error = true;
@@ -649,7 +648,13 @@ function readTableRow($lines, $i, $header_length, $start_of_row_keywords, $table
     if (!isset($match)) {
         echo '10 last lines: ' . chr(10);
         for ($j = $i - 10; $j <= $i; $j++) {
-            echo 'lines[' . $j . ']: ' . $lines[$j] . chr(10);
+            if ($i == $j) {
+                echo '-> LINES[' . $j . ']: ';
+            }
+            else {
+                echo '   lines[' . $j . ']: ';
+            }
+            echo $lines[$j] . chr(10);
         }
         echo "Start of row keywords .... : " . json_encode($start_of_row_keywords) . "\n";
         echo "Row regex used ........... : $rowRegex\n";
@@ -787,6 +792,62 @@ function readTable_threeColumns(&$obj, &$lines, $i, $current_heading, $text_head
         );
         $i = $row['i'];
     }
+
+    return $i;
+}
+
+
+function readTable_threeColumns_subheadings(&$obj, &$lines, $i, $current_heading, $text_heading,
+                                            $column1, $column2, $column3,
+                                            $table_ending, $start_of_row_keywords, $subheadings) {
+    $obj->numbers[$current_heading] = array();
+    $i = assertLine_trim($lines, $i, $current_heading);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    $header_length = strlen($lines[$i]);
+    regexAssertAndReturnMatch('/^' . $text_heading . '\s*' . $column1 . '\s*' . $column2 . '\s*' . $column3 . '$/', trim($lines[$i++]));
+
+    $current_subheading = "-ingen-underoverskrift-";
+    while (!str_starts_with(trim($lines[$i]), $table_ending)) {
+        foreach ($subheadings as $subheading) {
+            if (
+                str_starts_with(trim($lines[$i]), $subheading)
+                || str_starts_with(trim($lines[$i + 1]), $subheading)
+
+            ) {
+                $i = removeLineIfPresent_andEmpty($lines, $i);
+                $current_subheading = $subheading;
+                $i = assertLine_trim($lines, $i, $subheading);
+                $i = removeLineIfPresent_andEmpty($lines, $i);
+            }
+        }
+
+        $row = readTableRow($lines, $i, $header_length, $start_of_row_keywords, $table_ending,
+            '/^(.*)\s+\s\s(([0-9]* ?[0-9]+)|(\—))\s\s\s+([0-9]* ?[0-9]+)\s\s\s+(\-?[0-9]* ?[0-9]+)\s*$/',
+            function ($i, $row_lines, $row_line, $match) {
+                return array(
+                    'i' => $i,
+                    'line' => $row_lines,
+                    'text' => $row_line,
+                    'numberColumn1' => $match[2],
+                    'numberColumn2' => $match[5],
+                    'numberColumn3' => $match[6]
+                );
+            });
+
+        if (!isset($obj->numbers[$current_heading][$current_subheading])) {
+            $obj->numbers[$current_heading][$current_subheading] = array();
+        }
+
+        $obj->numbers[$current_heading][$current_subheading][$row['text']] = array(
+            $column1 => cleanFormattedNumber($row['numberColumn1']),
+            $column2 => cleanFormattedNumber($row['numberColumn2']),
+            $column3 => cleanFormattedNumber($row['numberColumn3'])
+        );
+        $i = $row['i'];
+    }
+
 
     return $i;
 }
