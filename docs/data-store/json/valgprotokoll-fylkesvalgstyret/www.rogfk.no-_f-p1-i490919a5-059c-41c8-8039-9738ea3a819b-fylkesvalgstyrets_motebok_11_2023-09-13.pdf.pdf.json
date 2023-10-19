@@ -280,9 +280,26 @@
                         "Valgdistrikt": 6825,
                         "Avvik": 0
                     }
+                },
+                "B.2.3 Blanke stemmesedler": {
+                    "Forhånd": {
+                        "Kommune": 50,
+                        "Valgdistrikt": 50,
+                        "Avvik": 0
+                    },
+                    "Valgting": {
+                        "Kommune": 107,
+                        "Valgdistrikt": 107,
+                        "Avvik": 0
+                    },
+                    "Totalt": {
+                        "Kommune": 157,
+                        "Valgdistrikt": 157,
+                        "Avvik": 0
+                    }
                 }
             }
         }
     },
-    "errorMessage": "No match for regex.\nRegex ..... : ^Kommune:\\s*([A-Za-zÆØÅæøå0-9 ]*)\\s*$\nLine ...... :  B.2.3 Blanke stemmesedler\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-fylkesvalgtinget.php(161): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(552): readValgprotokollFylkesvalgting()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
+    "errorMessage": "No match for regex.\nRegex ..... : ^Kommune:\\s*([A-Za-zÆØÅæøå0-9 ]*)\\s*$\nLine ...... : B.2.4 Merknader\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-fylkesvalgtinget.php(161): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(552): readValgprotokollFylkesvalgting()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
 }
