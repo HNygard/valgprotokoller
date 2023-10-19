@@ -230,13 +230,13 @@ function readValgprotokollFylkesvalgting($file_content, &$obj, $election_year) {
             'Valgting'
         );
         $i = readTable_threeColumns_subheadings($muncipality, $lines, $i, $current_heading, $text_heading, $column1, $column2, $column3, $table_ending, $start_of_row_keywords_partier,$subheadings);
-        /*$muncipality->numbers[$current_heading]['Sum forkastede stemmesedler - forhånd'] = $muncipality->numbers[$current_heading]['Forhånd']['Sum forkastede stemmesedler - forhånd'];
+        $muncipality->numbers[$current_heading]['Sum forkastede stemmesedler - forhånd'] = $muncipality->numbers[$current_heading]['Forhånd']['Sum forkastede stemmesedler - forhånd'];
         unset($muncipality->numbers[$current_heading]['Forhånd']['Sum forkastede stemmesedler - forhånd']);
         $muncipality->numbers[$current_heading]['Sum forkastede stemmesedler - valgting'] = $muncipality->numbers[$current_heading]['Valgting']['Sum forkastede stemmesedler - valgting'];
         unset($muncipality->numbers[$current_heading]['Valgting']['Sum forkastede stemmesedler - valgting']);
         $muncipality->numbers[$current_heading]['Totalt forkastede stemmesedler'] = $muncipality->numbers[$current_heading]['Valgting']['Totalt forkastede stemmesedler'];
         unset($muncipality->numbers[$current_heading]['Valgting']['Totalt forkastede stemmesedler']);
-        */$muncipality->numbers['B2.1 Forkastede stemmesedler'] = $muncipality->numbers[$current_heading];
+        $muncipality->numbers['B2.1 Forkastede stemmesedler'] = $muncipality->numbers[$current_heading];
         unset($muncipality->numbers[$current_heading]);
 
         // ---- Table per municipality - B.2.2 Avvik mellom kommunens endelige opptelling og valgdistriktets endelige opptelling
