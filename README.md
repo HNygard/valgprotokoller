@@ -10,7 +10,7 @@ The summary pages is her:
 
 The JSON files can be seen here:
 
-- https://github.com/HNygard/valgprotokoller/tree/master/data-store/json
+- https://github.com/HNygard/valgprotokoller/tree/master/docs/data-store/json
 
 
 ## Requirements for running
