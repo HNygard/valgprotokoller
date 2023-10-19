@@ -237,7 +237,12 @@ function readValgprotokollFylkesvalgting($file_content, &$obj, $election_year) {
             'Valgting'
         );
         $i = readTable_threeColumns_subheadings($muncipality, $lines, $i, $current_heading, $text_heading, $column1, $column2, $column3, $table_ending, $start_of_row_keywords_partier, $subheadings);
-
+        $muncipality->numbers[$current_heading]['Sum antall partifordelte stemmesedler — forhånd'] = $muncipality->numbers[$current_heading]['Forhånd']['Sum antall partifordelte stemmesedler — forhånd'];
+        unset($muncipality->numbers[$current_heading]['Forhånd']['Sum antall partifordelte stemmesedler — forhånd']);
+        $muncipality->numbers[$current_heading]['Sum antall partifordelte stemmesedler — valgting'] = $muncipality->numbers[$current_heading]['Valgting']['Sum antall partifordelte stemmesedler — valgting'];
+        unset($muncipality->numbers[$current_heading]['Valgting']['Sum antall partifordelte stemmesedler — valgting']);
+        $muncipality->numbers[$current_heading]['Totalt antall partifordelte stemmesedler'] = $muncipality->numbers[$current_heading]['Valgting']['Totalt antall partifordelte stemmesedler'];
+        unset($muncipality->numbers[$current_heading]['Valgting']['Totalt antall partifordelte stemmesedler']);
     }
 
 
