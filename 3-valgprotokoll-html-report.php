@@ -610,6 +610,7 @@ foreach ($files as $file) {
             $comments2 = '';
         }
 
+        $err_text = '';
         if ($checksum < 0 && $color == 'red') {
             global $ballotStuffingErrors, $ballotStuffingErrorsComments;
             $ballotStuffingErrors[$textNor] = 'Flere antall stemmesedler (' . $ballots->{'Ant. sedler'} . ') enn antall kryss i manntall (' . $ballots->{'Kryss i manntall'} . ').'
@@ -618,8 +619,12 @@ foreach ($files as $file) {
                 $ballotStuffingErrorsComments[$comments] = $obj->comments->$comments;
             }
 
-            global $ballot_stuffing_per_kommune, $name2, $obj;
-            $ballot_stuffing_per_kommune[$name2 . ' - ' . $obj->election] = $ballotStuffingErrors[$textNor];
+            $err_text = $ballotStuffingErrors[$textNor];
+
+        }
+        global $ballot_stuffing_per_kommune, $name2, $obj;
+        if (!empty($err_text)) {
+                $ballot_stuffing_per_kommune[$obj->election . ' - ' . $obj->county .  ' - ' . $name2] = $err_text;
         }
 
         return "<td>$text</td>
@@ -1358,9 +1363,10 @@ $html = str_replace('----D1.4-TABLE---', $html_d1_4, $html);
 $html = str_replace('----D2.4-TABLE---', $html_d2_4, $html);
 file_put_contents(__DIR__ . '/docs/index.html', $html);
 
+ksort($ballot_stuffing_per_kommune);
 $ballot_stuffing_summary = '<ul>'.chr(10);
 foreach($ballot_stuffing_per_kommune as $kommunenavn => $text) {
-    $ballot_stuffing_summary .= '<li><b style="width: 400px; display: inline-block">' . $kommunenavn . ':</b> ' .$text .'</li>'.chr(10);
+    $ballot_stuffing_summary .= '<li><b style="width: 500px; display: inline-block">' . $kommunenavn . ':</b> ' .$text .'</li>'.chr(10);
 }
 $ballot_stuffing_summary .= '</ul>'.chr(10);
 $html_BallotStuffing = str_replace('BALLOT_STUFFING_SUMMARY', $ballot_stuffing_summary, $html_BallotStuffing);
