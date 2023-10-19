@@ -272,5 +272,5 @@
     "foretattForeløpigOpptellingHosStemmestyrene": false,
     "foretattForeløpigOpptellingHosValgstyret": true,
     "e1_1_listestemmetall_og_mandater": [],
-    "errorMessage": "No match for regex.\nRegex ..... : ^Mandat nr.:\\s*Parti:\\s*Kvotient:$\nLine ...... : E2 Kandidatkåring\n\n#0 2-valgprotokoll-parser.php(682): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php__valgprotokoll-kommune.php(727): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(559): readValgprotokollKommune()\n#3 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#4 {main}"
+    "errorMessage": "No match for regex.\nRegex ..... : ^Mandat nr.:\\s*Parti:\\s*Kvotient:$\nLine ...... : E2 Kandidatkåring\n\n#0 2-valgprotokoll-parser.php(687): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php__valgprotokoll-kommune.php(727): readTable_twoColumns()\n#2 2-valgprotokoll-parser.php(559): readValgprotokollKommune()\n#3 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#4 {main}"
 }

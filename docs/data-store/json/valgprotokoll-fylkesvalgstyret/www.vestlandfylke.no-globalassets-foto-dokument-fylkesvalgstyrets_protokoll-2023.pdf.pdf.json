@@ -9,5 +9,17 @@
     "error": true,
     "reportGenerated": "15.09.2023 18:51:43",
     "election": "Fylkestingsvalget 2023",
-    "errorMessage": "Did not find expected value on line [2].\nExpected ... : Valgprotokoll for valgstyret i\nActual ..... : Valgprotokoll for fylkesvalgstyret i\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-fylkesvalgtinget.php(68): assertLine_trim()\n#1 2-valgprotokoll-parser.php(552): readValgprotokollFylkesvalgting()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
+    "heading": "Valgprotokoll for fylkesvalgstyret i Vestland valdistrikt",
+    "county": "Vestland",
+    "electionYear": "2023",
+    "keyfigures_antallStemmeberettigede": 507923,
+    "keyfigures_totaltAntallKryssIManntallet": 331300,
+    "keyfigures_oppmøteprosent": "65,23 %",
+    "keyfigures_totaltAntallGodkjenteForhåndsstemmegivninger": 166774,
+    "keyfigures_totaltAntallGodkjenteValgtingsstemmegivninger": 164526,
+    "keyfigures_totaltAntallForkastedeStemmegivninger": 277,
+    "keyfigures_totaltAntallGodkjenteStemmesedler": 309492,
+    "keyfigures_totaltAntallForkastedeStemmesedler": 166,
+    "B Avvik kommune-fylke": {},
+    "errorMessage": "Undefined array key 15222\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-fylkesvalgtinget.php(149): {closure}()\n#1 2-valgprotokoll-parser.php(552): readValgprotokollFylkesvalgting()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
 }
