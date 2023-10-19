@@ -296,7 +296,7 @@ function readValgprotokollFylkesvalgting($file_content, &$obj, $election_year) {
             $comment_lines[] = trim($lines[$i++]);
         }
         $comments = explode("\n\n", trim(implode("\n", $comment_lines)));
-        $obj->comments[$merknad_heading] = $comments;
+        $muncipality->comments[$merknad_heading] = $comments;
     }
 
 
