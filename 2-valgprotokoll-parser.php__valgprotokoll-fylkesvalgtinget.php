@@ -244,7 +244,6 @@ function readValgprotokollFylkesvalgting($file_content, &$obj, $election_year) {
         $muncipality->numbers[$current_heading]['Totalt antall partifordelte stemmesedler'] = $muncipality->numbers[$current_heading]['Valgting']['Totalt antall partifordelte stemmesedler'];
         unset($muncipality->numbers[$current_heading]['Valgting']['Totalt antall partifordelte stemmesedler']);
 
-
         // ---- Table per municipality - B.2.3 Blanke stemmesedler
         $current_heading = 'B.2.3 Blanke stemmesedler';
         $text_heading = 'Blanke stemmesedler';
@@ -260,6 +259,24 @@ function readValgprotokollFylkesvalgting($file_content, &$obj, $election_year) {
         );
         $i = readTable_threeColumns($muncipality, $lines, $i, $current_heading, $text_heading, $column1, $column2, $column3, $table_ending, $start_of_row_keywords_partier);
 
+        // ---- Comment sections per municipality - B.2.4 Merknader
+        $merknad_heading = 'B.2.4 Merknader';
+        $merknad_reason = null;
+
+        $i = assertLine_trim($lines, $i, $merknad_heading);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+
+        $comment_lines = array();
+        while (
+            // Stopp på neste kommune
+            !str_starts_with(trim($lines[$i]), 'Kommune: ') &&
+            // Stopp på per-kommune-info
+            !str_starts_with(trim($lines[$i]), 'C Avgitte godkjente stemmesedler')
+        ) {
+            $comment_lines[] = trim($lines[$i++]);
+        }
+        $comments = explode("\n\n", trim(implode("\n", $comment_lines)));
+        $obj->comments[$merknad_heading] = $comments;
     }
 
 
