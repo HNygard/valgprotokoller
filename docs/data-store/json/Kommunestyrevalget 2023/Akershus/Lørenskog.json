@@ -689,5 +689,27 @@
         "SV - Sosialistisk Venstreparti": 3,
         "Senterpartiet": 2,
         "Venstre": 3
-    }
+    },
+    "otherSources": [
+        {
+            "localSource": "docs/data-store/pdfs-2023/innsyn.onacos.no-lorenskog-mote-pluss-wfdocument.ashx?journalpostid=2020378621&dokid=2988135&versjon=1&variant=A&.pdf.layout.txt",
+            "url": "https://innsyn.onacos.no/lorenskog/mote/pluss/wfdocument.ashx?journalpostid=2020378621&dokid=2988135&versjon=1&variant=A&",
+            "downloadTime": "2023-10-20 23:05:51",
+            "pdfMetaData": "Creator:         JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f\nProducer:        iText 2.1.7 by 1T3XT\nCreationDate:    Mon Sep 25 10:53:05 2023 CEST\nModDate:         Mon Sep 25 10:53:05 2023 CEST\nCustom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           46\nEncrypted:       no\nPage size:       595 x 842 pts (A4)\nPage rot:        0\nFile size:       330493 bytes\nOptimized:       no\nPDF version:     1.5",
+            "error": true,
+            "reportGenerated": "25.09.2023 10:52:49",
+            "comments": {
+                "B2.1.3 Merknad": [
+                    "Institusjoner og ambulerende stemmegivning\nKjente avvik tellekrets institusjoner og ambulerende (inkl. konvoluttstemmer):",
+                    "18 stemmesedler er stemplet, men forkastet av valgstyret fordi 1) det er stemt på et parti som ikke stiller til valg i Lørenskog kommune eller 2) fordi det\ner satt kryss på to partier (-18)\n1 stemmeseddel mangler stempel\n25 stemmesedler er mottatt på institusjon, men ble registrert som mottatt på Lørenskog hus eller valgbilen\n1 velger la seddel i urna før EVA var sjekket, hadde stemt før.\n20 lagt til side (-20)",
+                    "Lørenskog hus, Kunstsalen\nKjente avvik tellekrets Lørenskog hus:",
+                    "22 velgere stemte kun ved fylkestingsvalget (-22)\n22 stemmer ble ved en feil registrert på denne kretsen, men ble mottatt på institusjon. (+22)\n1 stemme til annen kommune ble lagt rett i urne (+1)\nTotalt avvik som kan forklares: -43",
+                    "Valgmedarbeidere har notert hvor mange som kun har stemt ved ett valg, men dette har ikke blitt gjort hver dag.",
+                    "Valgbil - mobilt valglokale\nKjente avvik tellekrets valgbil:",
+                    "8 velgere stemte kun ved fylkestingsvalget (-8)\n3 velgere ble registrert på valgbilen, men ble mottatt på institusjon (-3)\n1 velger fikk ikke kryss i manntall, men seddelen ble lagt i urna (+1)\nTotalt avvik som kan forklares: -10"
+                ]
+            },
+            "errorMessage": "Unknown line in E1.1: \n25.09.2023 10:53:04   Valgprotokoll for valgstyret   Side 25\n\n#0 2-valgprotokoll-parser.php(598): readValgprotokollKommune()\n#1 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#2 {main}"
+        }
+    ]
 }
