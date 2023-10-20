@@ -163,11 +163,11 @@ function readValgprotokollFylkesvalgting($file_content, &$obj, $election_year) {
         $muncipality->numbers = array();
 
         $i = removeLineIfPresent_andEmpty($lines, $i);
-        $i = assertLine_trim($lines, $i, 'B.1    Forkastede stemmegivninger');
+        regexAssertAndReturnMatch('/^B.1 \s*Forkastede stemmegivninger$/', trim($lines[$i++]));
         $muncipality->numbers['B.1 Forkastede stemmegivninger'] = new stdClass();
 
         $i = removeLineIfPresent_andEmpty($lines, $i);
-        regexAssertAndReturnMatch('/ Type forkastelse  \s* Antall$/', $lines[$i++]);
+        regexAssertAndReturnMatch('/Type forkastelse  \s* Antall$/', trim($lines[$i++]));
 
         foreach (array(
                      'Velgeren er ikke innført i manntallet i kommunen § 10-1 (1) a',
