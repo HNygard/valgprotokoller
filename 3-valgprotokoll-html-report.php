@@ -1581,6 +1581,7 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
             . '">'
             . 'Søk innsyn i spørsmål via Email engine</a>' . chr(10);
 
+        $emailSummary = '';
         if (in_array($entity->entityId, $entityFoiFinished)) {
             $mimesLink = "<span style=\"font-size: 0.6em;\">FOI request finished</span>\n";
         }
@@ -1681,7 +1682,7 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
                     . '&entity_title_prefix=' . urlencode($entity->name)
                     . '&entity_email=' . urlencode($entity->entityEmail)
                     . '&body=' . urlencode(
-                        'Valgklage til ' . $entity->name . chr(10)
+                        'Valgklage - Manglende innsyn og kontroll i valggjennomføring - ' . $entity->name . chr(10)
                         . chr(10)
                         . 'Dere har ikke svart på vårt innsynskrav av ' . $initialSendDate . '. '
                         /*
@@ -1690,7 +1691,7 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
                         */
                         . 'Siden vi allerede har sendt dere klage på manglende svar, så ønsker vi med dette å klage på valggjennomføringen i '
                         . $entity->name . '. At deres svar uteblir er brudd på Offentleglova og hindrer kontroll av '
-                        . 'valggjennomføringen. Vi klager med dette etter valgloven § 13.'
+                        . 'valggjennomføringen. Vi klager med dette etter valgloven § 13. Klager er Hallvard Nygård.'
                         . chr(10) . chr(10)
                         . 'Oppsummering av epostkorrespondanse:' . chr(10)
                         . implode("\n", $entityEmail->emailsSummary)
@@ -1700,20 +1701,23 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
                         . 'Vi krever innsyn i valgprotokoll i maskinlesbart format. '
                         . 'Original PDF fra EVA Admin er tilstrekkelig for oss. '
                         . 'Innskannet (og signert) blir ikke godtatt som maskinlesbart (kan ikke lese data fra disse). '
-                        . 'Både valgprotokoll for kommunestyrevalg og fylkestingsvalg. Sistnevnte inneholder nok "utkast" i bakgrunn.'
+                        . 'Både valgprotokoll for kommunestyrevalg og fylkestingsvalg. Sistnevnte kan ikkeholde "utkast" i bakgrunn.'
                         . chr(10) . chr(10)
-                        . 'En del kommuner har filtrert epostene våre som spam. Dersom dere har det, så er dette ett valg dere som kommune '
+                        . 'En del kommuner har filtrert epostene våre som spam. Dersom dere har det, så er dette et valg dere som kommune '
                         . 'har gjort gjennom valg av IT-systemer og hvordan dere har satt de opp. Vi har fremdeles rett på svar etter '
                         . 'Offentleglova.'
                         . chr(10) . chr(10)
-                        . 'Ønsker svar med maskinlesbar valgprotokoll samt behandling av denne klagen i Valgstyret.'
+                        . 'Ønsker svar med maskinlesbar valgprotokoll til MY_EMAIL (MY_NAME) samt behandling av denne klagen i Valgstyret.'
                         . chr(10) . chr(10)
                         . 'Takk!'
                         . chr(10) . chr(10)
-                        . 'Prosjekt Åpne Valgdata'
+                        . 'Prosjekt Åpne Valgdata' . chr(10)
+                        . 'Hallvard Nygård, sikkerhetsanalytiker valg'
                     )
                     . '">'
                     . 'klage 2 - valgloven</a>]' . chr(10);
+
+                $emailSummary = implode("\n", $entityEmail->emailsSummary);
 
                 $mimesLink .= (isset($mxRecords[$entity->entityId])) ? '<br>' . implode(', ', array_keys((array)$mxRecords[$entity->entityId]->emailServer)) : '';
             }
@@ -1761,6 +1765,10 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
         if (str_contains($mimesLink, 'FOI request sent')) {
             $foiStatusPerEmailServerType[$emailServerCombo]->foiWaiting++;
         }
+    }
+
+    if (!str_contains($mimesLink, 'FOI request finished') && !str_contains($elections[2], 'OK, all elections found and read.')) {
+        $elections[4] = '<td style="text-align: left;"><pre style="width: 400px; overflow-x: scroll">' . $emailSummary . '</pre></td>';
     }
 
     $html_entities .= '
