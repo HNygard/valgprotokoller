@@ -56,7 +56,8 @@ function fetchAndSave($url2, $saveUrl, $resultPrefix) {
         }
         foreach ($thread->emails as $email) {
             $entityEmails[$thread->entity_id]->emailsSummary[] = '- ' . date('Y-m-d H:i:s', $email->timestamp_received) .
-                ($email->email_type == 'IN' ? ' epost fra dere' : ' epost til dere');
+                ($email->email_type == 'IN' ? ' epost fra dere' : ' epost til dere')
+                .' - emne: ' . $email->subject;
 
             $email2 = new stdClass();
             $email2->datetime_received = $email->datetime_received;
