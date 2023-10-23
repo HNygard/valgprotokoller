@@ -438,7 +438,9 @@ foreach ($files as $file) {
         $pdfOriginal = $obj->url;
     }
     else {
-        throw new Exception('Unknown source: ' . $obj->localSource);
+        $pdfLink = '';
+        $pdfName = '';
+        //throw new Exception('Unknown source: ' . $obj->localSource);
     }
     $obj->url2 = $pdfLink;
 
