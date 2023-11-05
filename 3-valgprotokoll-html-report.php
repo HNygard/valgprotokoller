@@ -1684,7 +1684,8 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
                     . '&entity_title_prefix=' . urlencode($entity->name)
                     . '&entity_email=' . urlencode($entity->entityEmail)
                     . '&body=' . urlencode(
-                        'Valgklage - Manglende innsyn og kontroll i valggjennomføring - ' . $entity->name . chr(10)
+                        'Til valgstyret i ' . $entity->name . chr(10) . chr(10)
+                        . 'Valgklage - Manglende innsyn og kontroll i valggjennomføring - ' . $entity->name . chr(10)
                         . chr(10)
                         . 'Dere har ikke svart på vårt innsynskrav av ' . $initialSendDate . '. '
                         /*
@@ -1693,7 +1694,7 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
                         */
                         . 'Siden vi allerede har sendt dere klage på manglende svar, så ønsker vi med dette å klage på valggjennomføringen i '
                         . $entity->name . '. At deres svar uteblir er brudd på Offentleglova og hindrer kontroll av '
-                        . 'valggjennomføringen. Vi klager med dette etter valgloven § 13. Klager er Hallvard Nygård.'
+                        . 'valggjennomføringen (jfr Grunnloven § 100 femte ledd om innsynsrett, Offentleglova § 1 Formål, Valgloven § 1-1 Formål). Vi klager med dette etter valgloven § 13. Klager er Hallvard Nygård (hallvard.nygard@offpost.no).'
                         . chr(10) . chr(10)
                         . 'Oppsummering av epostkorrespondanse:' . chr(10)
                         . implode("\n", $entityEmail->emailsSummary)
@@ -1703,13 +1704,15 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
                         . 'Vi krever innsyn i valgprotokoll i maskinlesbart format. '
                         . 'Original PDF fra EVA Admin er tilstrekkelig for oss. '
                         . 'Innskannet (og signert) blir ikke godtatt som maskinlesbart (kan ikke lese data fra disse). '
-                        . 'Både valgprotokoll for kommunestyrevalg og fylkestingsvalg. Sistnevnte kan ikkeholde "utkast" i bakgrunn.'
+                        . 'Både valgprotokoll for kommunestyrevalg og fylkestingsvalg. Sistnevnte kan inneholde "utkast" i bakgrunn.'
                         . chr(10) . chr(10)
                         . 'En del kommuner har filtrert epostene våre som spam. Dersom dere har det, så er dette et valg dere som kommune '
                         . 'har gjort gjennom valg av IT-systemer og hvordan dere har satt de opp. Vi har fremdeles rett på svar etter '
                         . 'Offentleglova.'
                         . chr(10) . chr(10)
-                        . 'Ønsker svar med maskinlesbar valgprotokoll til MY_EMAIL (MY_NAME) samt behandling av denne klagen i Valgstyret.'
+                        . 'Derfor kreves nå:' . chr(10)
+                        . '- svar med maskinlesbar valgprotokoll til MY_EMAIL (MY_NAME). ' . chr(10)
+                        . '- behandling av denne klagen i Valgstyret (svar til klager - Hallvard Nygård / hallvard.nygard@offpost.no).'
                         . chr(10) . chr(10)
                         . 'Takk!'
                         . chr(10) . chr(10)
@@ -1839,7 +1842,7 @@ $valgdistrikter = array(
 );
 $html_entities .= "<br><br>\n";
 $html_entities .= "<table>\n";
-foreach($valgdistrikter as $valgdistrikt) {
+foreach ($valgdistrikter as $valgdistrikt) {
     $html_entities .= "<tr>\n";
     $html_entities .= "<th>$valgdistrikt</th>\n";
 
