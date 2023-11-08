@@ -1871,11 +1871,17 @@
         "threadId": "valgprotokoll_2023,_skjåk_kommune",
         "threadCount": 1,
         "emailsSummary": [
+            "- 2023-09-12 00:01:59 epost til dere - emne: Valgprotokoll 2023, Skjåk kommune",
             "- 2023-09-13 12:39:33 epost fra dere - emne: Valprotokoll frå Skjåk",
             "- 2023-09-13 12:52:18 epost fra dere - emne: Brev fra Skjåk kommune",
             "- 2023-09-13 21:37:24 epost til dere - emne: Re: Valprotokoll frå Skjåk"
         ],
         "emails": [
+            {
+                "datetime_received": "2023-09-12 00:01:59",
+                "timestamp_received": 1694469719,
+                "email_type": "OUT"
+            },
             {
                 "datetime_received": "2023-09-13 12:39:33",
                 "timestamp_received": 1694601573,
@@ -2936,6 +2942,8 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-09-12 00:03:18 epost til dere - emne: Valgprotokoll 2023, Modum kommune",
+            "- 2023-09-17 23:47:21 epost til dere - emne: Innsynshenvendelse - Valgprotokoll 2023, Modum kommune - klage på manglende svar",
+            "- 2023-09-18 08:47:09 epost fra dere - emne: Valgprotokoll Modum kommune",
             "- 2023-09-18 21:29:05 epost til dere - emne: Re: Valgprotokoll Modum kommune",
             "- 2023-09-19 08:26:29 epost fra dere - emne: SV: Valgprotokoll Modum kommune",
             "- 2023-09-19 14:51:20 epost fra dere - emne: SV: Valgprotokoll Modum kommune",
@@ -2946,6 +2954,16 @@
                 "datetime_received": "2023-09-12 00:03:18",
                 "timestamp_received": 1694469798,
                 "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-17 23:47:21",
+                "timestamp_received": 1694987241,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-09-18 08:47:09",
+                "timestamp_received": 1695019629,
+                "email_type": "IN"
             },
             {
                 "datetime_received": "2023-09-18 21:29:05",
@@ -6653,6 +6671,7 @@
         "emailsSummary": [
             "- 2023-09-12 00:10:32 epost til dere - emne: Valgprotokoll 2023, Bremanger kommune",
             "- 2023-09-12 00:10:38 epost fra dere - emne: Automatisk svar frå Bremanger kommune",
+            "- 2023-09-15 13:04:42 epost fra dere - emne: SV: Valgprotokoll 2023, Bremanger kommune",
             "- 2023-09-15 13:22:41 epost fra dere - emne: VS: Valgprotokoll 2023, Bremanger kommune"
         ],
         "emails": [
@@ -6664,6 +6683,11 @@
             {
                 "datetime_received": "2023-09-12 00:10:38",
                 "timestamp_received": 1694470238,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-09-15 13:04:42",
+                "timestamp_received": 1694775882,
                 "email_type": "IN"
             },
             {
@@ -8164,7 +8188,8 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-09-12 00:11:56 epost til dere - emne: Valgprotokoll 2023, Træna kommune",
-            "- 2023-09-13 11:03:22 epost fra dere - emne: SVAR: Valgprotokoll 2023, Træna kommune"
+            "- 2023-09-13 11:03:22 epost fra dere - emne: SVAR: Valgprotokoll 2023, Træna kommune",
+            "- 2023-11-05 20:27:20 epost til dere - emne: Re: SVAR: Valgprotokoll 2023, Træna kommune"
         ],
         "emails": [
             {
@@ -8176,6 +8201,11 @@
                 "datetime_received": "2023-09-13 11:03:22",
                 "timestamp_received": 1694595802,
                 "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-11-05 20:27:20",
+                "timestamp_received": 1699212440,
+                "email_type": "OUT"
             }
         ]
     },
@@ -8275,7 +8305,8 @@
         "emailsSummary": [
             "- 2023-09-12 00:11:58 epost til dere - emne: Valgprotokoll 2023, Saltdal kommune",
             "- 2023-09-12 00:12:03 epost fra dere - emne: Automatisk svar: Valgprotokoll 2023, Saltdal kommune",
-            "- 2023-09-17 23:49:37 epost til dere - emne: Innsynshenvendelse - Valgprotokoll 2023, Saltdal kommune - klage på manglende svar"
+            "- 2023-09-17 23:49:37 epost til dere - emne: Innsynshenvendelse - Valgprotokoll 2023, Saltdal kommune - klage på manglende svar",
+            "- 2023-11-05 20:31:09 epost til dere - emne: Klage på valggjennomføring - 2023, Saltdal kommune"
         ],
         "emails": [
             {
@@ -8291,6 +8322,11 @@
             {
                 "datetime_received": "2023-09-17 23:49:37",
                 "timestamp_received": 1694987377,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-11-05 20:31:09",
+                "timestamp_received": 1699212669,
                 "email_type": "OUT"
             }
         ]
@@ -8332,7 +8368,8 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-09-12 00:12:00 epost til dere - emne: Valgprotokoll 2023, Sørfold kommune",
-            "- 2023-09-17 23:49:39 epost til dere - emne: Innsynshenvendelse - Valgprotokoll 2023, Sørfold kommune - klage på manglende svar"
+            "- 2023-09-17 23:49:39 epost til dere - emne: Innsynshenvendelse - Valgprotokoll 2023, Sørfold kommune - klage på manglende svar",
+            "- 2023-11-05 20:31:45 epost til dere - emne: Klage på valggjennomføring - 2023, Sørfold kommune"
         ],
         "emails": [
             {
@@ -8343,6 +8380,11 @@
             {
                 "datetime_received": "2023-09-17 23:49:39",
                 "timestamp_received": 1694987379,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-11-05 20:31:45",
+                "timestamp_received": 1699212705,
                 "email_type": "OUT"
             }
         ]
@@ -8402,7 +8444,10 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-09-12 00:12:01 epost til dere - emne: Valgprotokoll 2023, Hamarøy kommune",
-            "- 2023-09-13 09:52:05 epost fra dere - emne: Valgstyrets møtebok"
+            "- 2023-09-13 09:52:05 epost fra dere - emne: Valgstyrets møtebok",
+            "- 2023-11-05 20:32:14 epost til dere - emne: Klage på valggjennomføring - 2023, Hamarøy kommune",
+            "- 2023-11-05 20:32:20 epost fra dere - emne: Automatisk svar: Klage på valggjennomføring - 2023, Hamarøy kommune",
+            "- 2023-11-05 20:36:28 epost til dere - emne: Re: Klage på valggjennomføring - 2023, Hamarøy kommune"
         ],
         "emails": [
             {
@@ -8414,6 +8459,21 @@
                 "datetime_received": "2023-09-13 09:52:05",
                 "timestamp_received": 1694591525,
                 "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-11-05 20:32:14",
+                "timestamp_received": 1699212734,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-11-05 20:32:20",
+                "timestamp_received": 1699212740,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-11-05 20:36:28",
+                "timestamp_received": 1699212988,
+                "email_type": "OUT"
             }
         ]
     },
@@ -8449,7 +8509,8 @@
         "emailsSummary": [
             "- 2023-09-12 00:12:02 epost til dere - emne: Valgprotokoll 2023, Tjeldsund kommune",
             "- 2023-09-17 23:49:44 epost til dere - emne: Innsynshenvendelse - Valgprotokoll 2023, Tjeldsund kommune - klage på manglende svar",
-            "- 2023-09-18 12:31:50 epost fra dere - emne: Svar på henvendelse vedr. innsyn i valgprotokoll "
+            "- 2023-09-18 12:31:50 epost fra dere - emne: Svar på henvendelse vedr. innsyn i valgprotokoll ",
+            "- 2023-11-05 20:37:17 epost til dere - emne: Re: Svar på henvendelse vedr. innsyn i valgprotokoll"
         ],
         "emails": [
             {
@@ -8466,6 +8527,11 @@
                 "datetime_received": "2023-09-18 12:31:50",
                 "timestamp_received": 1695033110,
                 "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-11-05 20:37:17",
+                "timestamp_received": 1699213037,
+                "email_type": "OUT"
             }
         ]
     },
@@ -8474,7 +8540,8 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-09-12 00:12:04 epost til dere - emne: Valgprotokoll 2023, Evenes kommune",
-            "- 2023-09-13 11:44:26 epost fra dere - emne: 23/4297 Innsyn valgprotokoll 2023, Evenes kommune"
+            "- 2023-09-13 11:44:26 epost fra dere - emne: 23/4297 Innsyn valgprotokoll 2023, Evenes kommune",
+            "- 2023-11-05 20:37:35 epost til dere - emne: Re: 23/4297 Innsyn valgprotokoll 2023, Evenes kommune"
         ],
         "emails": [
             {
@@ -8486,6 +8553,11 @@
                 "datetime_received": "2023-09-13 11:44:26",
                 "timestamp_received": 1694598266,
                 "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-11-05 20:37:35",
+                "timestamp_received": 1699213055,
+                "email_type": "OUT"
             }
         ]
     },
@@ -8532,7 +8604,8 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-09-12 00:12:05 epost til dere - emne: Valgprotokoll 2023, Værøy kommune",
-            "- 2023-09-13 08:40:33 epost fra dere - emne: SV: Valgprotokoll 2023, Værøy kommune"
+            "- 2023-09-13 08:40:33 epost fra dere - emne: SV: Valgprotokoll 2023, Værøy kommune",
+            "- 2023-11-05 20:38:20 epost til dere - emne: Re: SV: Valgprotokoll 2023, Værøy kommune"
         ],
         "emails": [
             {
@@ -8544,6 +8617,11 @@
                 "datetime_received": "2023-09-13 08:40:33",
                 "timestamp_received": 1694587233,
                 "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-11-05 20:38:20",
+                "timestamp_received": 1699213100,
+                "email_type": "OUT"
             }
         ]
     },
@@ -8604,7 +8682,8 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-09-12 00:12:07 epost til dere - emne: Valgprotokoll 2023, Vågan kommune",
-            "- 2023-09-14 08:11:46 epost fra dere - emne: Svar på innsyn - Valgprotokoll 2023 - Vågan kommune"
+            "- 2023-09-14 08:11:46 epost fra dere - emne: Svar på innsyn - Valgprotokoll 2023 - Vågan kommune",
+            "- 2023-11-05 20:40:36 epost til dere - emne: Re: Svar på innsyn - Valgprotokoll 2023 - Vågan kommune"
         ],
         "emails": [
             {
@@ -8616,6 +8695,11 @@
                 "datetime_received": "2023-09-14 08:11:46",
                 "timestamp_received": 1694671906,
                 "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-11-05 20:40:36",
+                "timestamp_received": 1699213236,
+                "email_type": "OUT"
             }
         ]
     },
@@ -8624,7 +8708,9 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-09-12 00:12:09 epost til dere - emne: Valgprotokoll 2023, Hadsel kommune",
-            "- 2023-09-17 23:49:50 epost til dere - emne: Innsynshenvendelse - Valgprotokoll 2023, Hadsel kommune - klage på manglende svar"
+            "- 2023-09-17 23:49:50 epost til dere - emne: Innsynshenvendelse - Valgprotokoll 2023, Hadsel kommune - klage på manglende svar",
+            "- 2023-11-05 20:40:56 epost til dere - emne: Klage på valggjennomføring - 2023, Hadsel kommune",
+            "- 2023-11-05 20:41:02 epost fra dere - emne: Automatisk svar fra Hadsel kommune"
         ],
         "emails": [
             {
@@ -8636,6 +8722,16 @@
                 "datetime_received": "2023-09-17 23:49:50",
                 "timestamp_received": 1694987390,
                 "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-11-05 20:40:56",
+                "timestamp_received": 1699213256,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-11-05 20:41:02",
+                "timestamp_received": 1699213262,
+                "email_type": "IN"
             }
         ]
     },
@@ -8694,7 +8790,9 @@
         "threadCount": 1,
         "emailsSummary": [
             "- 2023-09-12 00:12:10 epost til dere - emne: Valgprotokoll 2023, Øksnes kommune",
-            "- 2023-09-17 23:49:51 epost til dere - emne: Innsynshenvendelse - Valgprotokoll 2023, Øksnes kommune - klage på manglende svar"
+            "- 2023-09-17 23:49:51 epost til dere - emne: Innsynshenvendelse - Valgprotokoll 2023, Øksnes kommune - klage på manglende svar",
+            "- 2023-11-05 20:41:01 epost til dere - emne: Klage på valggjennomføring - 2023, Øksnes kommune",
+            "- 2023-11-05 20:41:09 epost fra dere - emne: Automatic reply: Klage på valggjennomføring - 2023, Øksnes kommune"
         ],
         "emails": [
             {
@@ -8706,6 +8804,16 @@
                 "datetime_received": "2023-09-17 23:49:51",
                 "timestamp_received": 1694987391,
                 "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-11-05 20:41:01",
+                "timestamp_received": 1699213261,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-11-05 20:41:09",
+                "timestamp_received": 1699213269,
+                "email_type": "IN"
             }
         ]
     },
@@ -8715,7 +8823,9 @@
         "emailsSummary": [
             "- 2023-09-12 00:12:11 epost til dere - emne: Valgprotokoll 2023, Sortland kommune",
             "- 2023-09-12 00:12:19 epost fra dere - emne: Bekreftelse på mottak av e-post",
-            "- 2023-09-15 12:52:54 epost fra dere - emne: Valgprotokoll 2023 - kommunestyrevalget i Sortland"
+            "- 2023-09-15 12:52:54 epost fra dere - emne: Valgprotokoll 2023 - kommunestyrevalget i Sortland",
+            "- 2023-11-05 20:41:59 epost til dere - emne: Re: Valgprotokoll 2023 - kommunestyrevalget i Sortland",
+            "- 2023-11-05 20:42:07 epost fra dere - emne: Automatisk svar: Valgprotokoll 2023 - kommunestyrevalget i Sortland"
         ],
         "emails": [
             {
@@ -8731,6 +8841,16 @@
             {
                 "datetime_received": "2023-09-15 12:52:54",
                 "timestamp_received": 1694775174,
+                "email_type": "IN"
+            },
+            {
+                "datetime_received": "2023-11-05 20:41:59",
+                "timestamp_received": 1699213319,
+                "email_type": "OUT"
+            },
+            {
+                "datetime_received": "2023-11-05 20:42:07",
+                "timestamp_received": 1699213327,
                 "email_type": "IN"
             }
         ]
