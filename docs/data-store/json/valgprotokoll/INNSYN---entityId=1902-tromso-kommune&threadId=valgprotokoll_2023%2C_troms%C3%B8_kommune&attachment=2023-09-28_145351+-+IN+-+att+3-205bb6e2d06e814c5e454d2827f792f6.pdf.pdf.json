@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2023/INNSYN---entityId=1902-tromso-kommune&threadId=valgprotokoll_2023%2C_troms%C3%B8_kommune&attachment=2023-09-28_145351+-+IN+-+att+3-205bb6e2d06e814c5e454d2827f792f6.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1902-tromso-kommune&threadId=valgprotokoll_2023%2C_troms%C3%B8_kommune&attachment=2023-09-28_145351+-+IN+-+att+3-205bb6e2d06e814c5e454d2827f792f6.pdf",
+    "downloadTime": "2023-11-10 23:45:17",
+    "pdfMetaData": "Author:\nCreator:         PDFium\nProducer:        PixEdit AS,  PixEdit Converter Server Core Version 2.8.9.0\nCreationDate:    Fri Sep 15 09:12:14 2023 CEST\nModDate:         Fri Sep 15 09:12:14 2023 CEST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           19\nEncrypted:       no\nPage size:       595.2 x 842.16 pts (A4)\nPage rot:        0\nFile size:       9495703 bytes\nOptimized:       no\nPDF version:     1.7",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "13.09.2023 16:47:55",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : VALG\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-kommune.php(129): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(598): readValgprotokollKommune()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
+}

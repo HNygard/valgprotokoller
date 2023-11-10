@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2023/INNSYN---entityId=1902-tromso-kommune&threadId=valgprotokoll_2023%2C_troms%C3%B8_kommune&attachment=2023-09-28_145351+-+IN+-+att+2-f726861077bed6378ea9007e82ad8df9.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1902-tromso-kommune&threadId=valgprotokoll_2023%2C_troms%C3%B8_kommune&attachment=2023-09-28_145351+-+IN+-+att+2-f726861077bed6378ea9007e82ad8df9.pdf",
+    "downloadTime": "2023-11-10 23:45:15",
+    "pdfMetaData": "Author:          farm5618Admin\nCreator:         JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f\nProducer:        PixEdit AS,  PixEdit Converter Server Core Version 2.8.5.15\nCreationDate:    Tue Sep 12 19:58:07 2023 CEST\nModDate:         Tue Sep 12 19:58:12 2023 CEST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           64\nEncrypted:       no\nPage size:       595 x 842 pts (A4)\nPage rot:        0\nFile size:       568806 bytes\nOptimized:       no\nPDF version:     1.7",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "12.09.2023 19:35:36",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : $VALG\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-kommune.php(129): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(598): readValgprotokollKommune()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
+}
