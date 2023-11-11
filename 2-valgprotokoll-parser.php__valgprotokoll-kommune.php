@@ -95,6 +95,10 @@ function readValgprotokollKommune($file_content, &$obj, $election_year) {
     // Porsanger - Porságu - Porsanki kommune, Finnmark Finnmárku valgdistrikt
     $file_content = preg_replace('/Finnmárku\n *valgdistrikt/', "Finnmárku valgdistrikt", $file_content);
 
+    // Multi line header for Storfjord
+    // Storfjord - Omasvuotna - Omasvuono kommune, Troms Romsa valgdistrikt
+    $file_content = preg_replace('/Troms Romsa\n *valgdistrikt/', "Troms Romsa valgdistrikt", $file_content);
+
 
     // Clean up Randaberg.
     foreach (array(
