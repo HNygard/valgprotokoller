@@ -476,7 +476,7 @@ foreach ($files as $file) {
             $partyLargeDiscrepancies_D1_4_klage[] = $klageNum;
             $avvik_forelopig_endelig_comments['D1.5 Merknad'] = $obj->comments->{'D1.5 Merknad'};
         }
-        $addCountySums($obj->county, $party, $numbers);
+        $addCountySums($obj->election . '  - ' . $obj->county, $party, $numbers);
     }
     $electionHtml .= "</table>\n\n";
     $electionHtml .= "<h3>Comments to D1.4 ('D1.5 Merknad')</h3>\n";
@@ -495,7 +495,7 @@ foreach ($files as $file) {
             $partyLargeDiscrepancies_D2_4_klage[] = $klageNum;
             $avvik_forelopig_endelig_comments['D2.5 Merknad'] = $obj->comments->{'D2.5 Merknad'};
         }
-        $addCountySums($obj->county, $party, $numbers);
+        $addCountySums($obj->election . '  - ' . $obj->county, $party, $numbers);
     }
     $electionHtml .= "</table>\n\n";
     $electionHtml .= "<h3>Comments to D2.4 ('D2.5 Merknad')</h3>\n";
@@ -1055,18 +1055,35 @@ Klage sendes og følges opp av: ' . str_replace(' kommune', '', $name2) . '
 }
 
 
-$html .= "<h2>Fylkesoversikt</h2>\n";
+$html .= "<h2>Fylkesoversikt - sum av innleste kommuner</h2>\n";
 $html .= "<table>\n";
 foreach ($county_sums as $county => $county_sum) {
     $html .= "<tr>\n";
-    $html .= "<td>$county</td>\n";
+    $html .= "<td style='text-align: left;'>$county</td>\n";
     $html .= "<td style='text-align: left;'>\n";
-    $large_diffs = array();
+    $html .= "<table>\n";
+    $html .= "<tr>\n";
+    $html .= "<td>Party</td>\n";
+    $html .= "<td>Foreløpig</td>\n";
+    $html .= "<td>Endelig</td>\n";
+    $html .= "<td>Diff</td>\n";
+    $html .= "<td>Stort avvik</td>\n";
+    $html .= "</tr>\n\n";
     foreach ($county_sum as $party => $numbers) {
-        $large_diffs[] = $number_if_large_diff($numbers, $party, 300);
+        $html .= "<tr>\n";
+        $html .= "<td>$party</td>\n";
+        $html .= "<td>" . $numbers->{'Foreløpig'} . "</td>\n";
+        $html .= "<td>" . $numbers->{'Endelig'} . "</td>\n";
+
+        $diff = ($numbers->{'Endelig'} - $numbers->{'Foreløpig'});
+        $diff_percent = 100 * (($diff) / $numbers->{'Foreløpig'});
+        $formattedNumber = number_format($diff_percent, 2);
+        $html .= "<td>$diff / $formattedNumber %</td>\n";
+        $html .= "<td>" . $number_if_large_diff($numbers, $party, 300) . "</td>\n";
+        $html .= "</tr>\n\n";
 
     }
-    $html .= implode("\n", $large_diffs);
+    $html .= "</table>\n";
     $html .= "</td>\n";
     $html .= "</tr>\n";
 }
