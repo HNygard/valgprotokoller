@@ -1,13 +1,13 @@
 {
-    "localSource": "docs/data-store/pdfs-2023/INNSYN---entityId=1903-harstad-harsttak-kommune&threadId=valgprotokoll_2023%2C_harstad_kommune&attachment=2023-09-25_131743+-+IN+-+att+1-9fee79faa7ba9cc151adb47adc5163c1.pdf.pdf.layout.txt",
-    "url": "http://localhost:25081/file.php?entityId=1903-harstad-harsttak-kommune&threadId=valgprotokoll_2023%2C_harstad_kommune&attachment=2023-09-25_131743+-+IN+-+att+1-9fee79faa7ba9cc151adb47adc5163c1.pdf",
-    "downloadTime": "2023-09-26 20:34:13",
-    "pdfMetaData": "Creator:         JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f\nProducer:        iText 2.1.7 by 1T3XT\nCreationDate:    Tue Sep 12 19:54:58 2023 CEST\nModDate:         Tue Sep 12 19:54:58 2023 CEST\nCustom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           46\nEncrypted:       no\nPage size:       595 x 842 pts (A4)\nPage rot:        0\nFile size:       327004 bytes\nOptimized:       no\nPDF version:     1.5",
+    "localSource": "docs/data-store/pdfs-2023/INNSYN---entityId=1903-harstad-harsttak-kommune&threadId=valgprotokoll_2023%2C_harstad_kommune&attachment=2023-11-15_094117+-+IN+-+att+2-b52622f8745946b9262319a34aaed039.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1903-harstad-harsttak-kommune&threadId=valgprotokoll_2023%2C_harstad_kommune&attachment=2023-11-15_094117+-+IN+-+att+2-b52622f8745946b9262319a34aaed039.pdf",
+    "downloadTime": "2023-11-19 21:12:39",
+    "pdfMetaData": "Creator:         JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f\nProducer:        iText 2.1.7 by 1T3XT\nCreationDate:    Wed Nov 15 09:38:45 2023 CET\nModDate:         Wed Nov 15 09:38:45 2023 CET\nCustom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           46\nEncrypted:       no\nPage size:       595 x 842 pts (A4)\nPage rot:        0\nFile size:       326824 bytes\nOptimized:       no\nPDF version:     1.5",
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
     "error": true,
-    "reportGenerated": "12.09.2023 19:54:44",
+    "reportGenerated": "15.11.2023 09:38:31",
     "election": "Kommunestyrevalget 2023",
     "heading": "Valgprotokoll for valgstyret i Harstad kommune, Troms Romsa valgdistrikt",
     "municipality": "Harstad",
@@ -499,5 +499,15 @@
             "listestemmetall_simulated_initial_counting": 10400
         }
     ],
-    "errorMessage": "Unknown line in E1.1: \n12.09.2023 19:54:57   Valgprotokoll for valgstyret   Side 26\n\n#0 2-valgprotokoll-parser.php(598): readValgprotokollKommune()\n#1 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#2 {main}"
+    "errorMessage": "Unknown line in E1.1: \n15.11.2023 09:38:45   Valgprotokoll for valgstyret   Side 26\n\n#0 2-valgprotokoll-parser.php(598): readValgprotokollKommune()\n#1 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#2 {main}",
+    "otherSources": [
+        {
+            "localSource": "docs/data-store/pdfs-2023/INNSYN---entityId=1903-harstad-harsttak-kommune&threadId=valgprotokoll_2023%2C_harstad_kommune&attachment=2023-09-25_131743+-+IN+-+att+1-9fee79faa7ba9cc151adb47adc5163c1.pdf.pdf.layout.txt",
+            "url": "http://localhost:25081/file.php?entityId=1903-harstad-harsttak-kommune&threadId=valgprotokoll_2023%2C_harstad_kommune&attachment=2023-09-25_131743+-+IN+-+att+1-9fee79faa7ba9cc151adb47adc5163c1.pdf",
+            "downloadTime": "2023-09-26 20:34:13",
+            "pdfMetaData": "Creator:         JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f\nProducer:        iText 2.1.7 by 1T3XT\nCreationDate:    Tue Sep 12 19:54:58 2023 CEST\nModDate:         Tue Sep 12 19:54:58 2023 CEST\nCustom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           46\nEncrypted:       no\nPage size:       595 x 842 pts (A4)\nPage rot:        0\nFile size:       327004 bytes\nOptimized:       no\nPDF version:     1.5",
+            "reportGenerated": "12.09.2023 19:54:44",
+            "errorMessage": "Unknown line in E1.1: \n12.09.2023 19:54:57   Valgprotokoll for valgstyret   Side 26\n\n#0 2-valgprotokoll-parser.php(598): readValgprotokollKommune()\n#1 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#2 {main}"
+        }
+    ]
 }

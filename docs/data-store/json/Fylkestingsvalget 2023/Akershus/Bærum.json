@@ -1,12 +1,12 @@
 {
-    "localSource": "docs/data-store/pdfs-2023/INNSYN---entityId=0219-baerum-kommune&threadId=valgprotokoll_2023%2C_b%C3%A6rum_kommune&attachment=2023-11-09_080742+-+IN+-+att+1-833959a3ad1b72804077e8624573945d.pdf.pdf.layout.txt",
-    "url": "http://localhost:25081/file.php?entityId=0219-baerum-kommune&threadId=valgprotokoll_2023%2C_b%C3%A6rum_kommune&attachment=2023-11-09_080742+-+IN+-+att+1-833959a3ad1b72804077e8624573945d.pdf",
-    "downloadTime": "2023-11-10 23:45:11",
-    "pdfMetaData": "Title:\nCreator:         Adobe Acrobat Standard (64-bit) 23.3.20284\nProducer:        Adobe Acrobat Standard (64-bit) 23.3.20284\nCreationDate:    Wed Sep 13 16:56:01 2023 CEST\nModDate:         Wed Sep 13 16:56:01 2023 CEST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           20\nEncrypted:       no\nPage size:       595 x 842 pts (A4)\nPage rot:        0\nFile size:       719066 bytes\nOptimized:       yes\nPDF version:     1.6",
+    "localSource": "docs/data-store/pdfs-2023/INNSYN---entityId=0219-baerum-kommune&threadId=valgprotokoll_2023%2C_b%C3%A6rum_kommune&attachment=2023-11-10_071723+-+IN+-+att+1-7a95142d7477f06a14b7a0acf373a644.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=0219-baerum-kommune&threadId=valgprotokoll_2023%2C_b%C3%A6rum_kommune&attachment=2023-11-10_071723+-+IN+-+att+1-7a95142d7477f06a14b7a0acf373a644.pdf",
+    "downloadTime": "2023-11-19 21:12:33",
+    "pdfMetaData": "Creator:         JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f\nProducer:        iText 2.1.7 by 1T3XT\nCreationDate:    Wed Sep 13 09:17:47 2023 CEST\nModDate:         Wed Sep 13 09:17:47 2023 CEST\nCustom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           20\nEncrypted:       no\nPage size:       595 x 842 pts (A4)\nPage rot:        0\nFile size:       197453 bytes\nOptimized:       no\nPDF version:     1.5",
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll",
-    "error": true,
+    "error": false,
     "reportGenerated": "13.09.2023 09:17:30",
     "election": "Fylkestingsvalget 2023",
     "heading": "Valgprotokoll for valgstyret i Bærum kommune, Akershus valgdistrikt",
@@ -447,5 +447,14 @@
     },
     "foretattForeløpigOpptellingHosStemmestyrene": true,
     "foretattForeløpigOpptellingHosValgstyret": false,
-    "errorMessage": "Unknown lines.\n\n#0 2-valgprotokoll-parser.php(598): readValgprotokollKommune()\n#1 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#2 {main}"
+    "otherSources": [
+        {
+            "localSource": "docs/data-store/pdfs-2023/INNSYN---entityId=0219-baerum-kommune&threadId=valgprotokoll_2023%2C_b%C3%A6rum_kommune&attachment=2023-11-09_080742+-+IN+-+att+1-833959a3ad1b72804077e8624573945d.pdf.pdf.layout.txt",
+            "url": "http://localhost:25081/file.php?entityId=0219-baerum-kommune&threadId=valgprotokoll_2023%2C_b%C3%A6rum_kommune&attachment=2023-11-09_080742+-+IN+-+att+1-833959a3ad1b72804077e8624573945d.pdf",
+            "downloadTime": "2023-11-10 23:45:11",
+            "pdfMetaData": "Title:\nCreator:         Adobe Acrobat Standard (64-bit) 23.3.20284\nProducer:        Adobe Acrobat Standard (64-bit) 23.3.20284\nCreationDate:    Wed Sep 13 16:56:01 2023 CEST\nModDate:         Wed Sep 13 16:56:01 2023 CEST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           20\nEncrypted:       no\nPage size:       595 x 842 pts (A4)\nPage rot:        0\nFile size:       719066 bytes\nOptimized:       yes\nPDF version:     1.6",
+            "error": true,
+            "errorMessage": "Unknown lines.\n\n#0 2-valgprotokoll-parser.php(598): readValgprotokollKommune()\n#1 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#2 {main}"
+        }
+    ]
 }
