@@ -1500,6 +1500,7 @@ foreach ($entity_id__to__obj as $entity) {
 
 
     $nameColor = 'black';
+    $lastEmail = time();
     if (isset($entity->entityEmail)) {
         $tags = 'valg_' . $election_year . ' valgprotokoll_' . $election_year . ' valgprotokoll_' . $election_year . '_' . $entity->municipalityNumber;
         $email = 'valgprotokoll_' . $election_year . '_' . $entity->entityId . '@offpost.no';
@@ -1621,6 +1622,7 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
                 foreach ($entityLastAction as $lastAction) {
                     if (str_starts_with($lastAction, $entity->entityId)) {
                         $time = explode(':', $lastAction, 2)[1];
+                        $lastEmail = $time;
                         $daysSince = round((time() - $time) / 86400);
                         if ($daysSince < 5) {
                             continue;
@@ -1790,16 +1792,25 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
         }
     }
 
+    $finished = true;
     if (!str_contains($mimesLink, 'FOI request finished') && !str_contains($elections[2], 'OK, all elections found and read.')) {
+        $finished = false;
         $elections[4] = '<td style="text-align: left;"><pre style="width: 400px; overflow-x: scroll">' . $emailSummary . '</pre></td>';
     }
     $entity_results[] = array(
         'nameColor' => $nameColor,
         'entityName' => $entity->name,
+        'lastEmailSortOrder' => $finished
+            // Just sort finished to the bottom
+            ? time() + 2000
+            : $lastEmail,
         'elections' => $elections
-
     );
 }
+
+usort($entity_results, function($a, $b) {
+    return strcmp($a['lastEmailSortOrder'], $b['lastEmailSortOrder']);
+});
 
 foreach($entity_results as $entity_result) {
     $html_entities .= '
