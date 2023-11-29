@@ -1415,6 +1415,7 @@ $html_entities = htmlHeading('Municipality overview - Valgprotokoller') . '
 
 ';
 $foiStatusPerEmailServerType = array();
+$entity_results = array();
 foreach ($entity_id__to__obj as $entity) {
     $i = $entity->i;
 
@@ -1792,12 +1793,20 @@ Har kommunen rutiner for kontroll av endelig opptelling mot resultat som blir pu
     if (!str_contains($mimesLink, 'FOI request finished') && !str_contains($elections[2], 'OK, all elections found and read.')) {
         $elections[4] = '<td style="text-align: left;"><pre style="width: 400px; overflow-x: scroll">' . $emailSummary . '</pre></td>';
     }
+    $entity_results[] = array(
+        'nameColor' => $nameColor,
+        'entityName' => $entity->name,
+        'elections' => $elections
 
+    );
+}
+
+foreach($entity_results as $entity_result) {
     $html_entities .= '
 
                     <tr>
-        <th style="color: ' . $nameColor . '"> ' . $entity->name . '</th>
-                ' . implode("\n", $elections) . '
+        <th style="color: ' . $entity_result['nameColor'] . '"> ' . $entity_result['entityName'] . '</th>
+                ' . implode("\n", $entity_result['elections']) . '
     </tr>
                 ';
 }
