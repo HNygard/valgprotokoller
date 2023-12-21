@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2023/INNSYN---entityId=1554-averoy-kommune&threadId=valgprotokoll_2023%2C_aver%C3%B8y_kommune&attachment=2023-11-30_093029+-+IN+-+att+2-3c68e4235086d45775e43282601bf82f.pdf.pdf.layout.txt",
+    "url": "http://localhost:25081/file.php?entityId=1554-averoy-kommune&threadId=valgprotokoll_2023%2C_aver%C3%B8y_kommune&attachment=2023-11-30_093029+-+IN+-+att+2-3c68e4235086d45775e43282601bf82f.pdf",
+    "downloadTime": "2023-12-21 19:13:16",
+    "pdfMetaData": "Subject:         SKILLEARK\nAuthor:          54serkon6\nCreator:         Canon iR-ADV C5760  PDF\nProducer:        PixEdit AS,  PixEdit Converter Server Core Version 2.8.9.0\nCreationDate:    Fri Nov  3 01:50:01 2023 CET\nModDate:         Thu Nov 30 09:24:59 2023 CET\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           14\nEncrypted:       no\nPage size:       595.2 x 841.44 pts (A4)\nPage rot:        0\nFile size:       868676 bytes\nOptimized:       yes\nPDF version:     1.7",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll",
+    "error": true,
+    "reportGenerated": "12.09.2023 18:11:25",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : SvAL6\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-kommune.php(133): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(598): readValgprotokollKommune()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
+}
