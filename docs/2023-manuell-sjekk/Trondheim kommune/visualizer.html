@@ -1,0 +1,163 @@
+
+
+<div id="button-container"></div>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Highcharts Example</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+    <div id="date-buttons-container"></div>
+    <div id="cell2-buttons-container"></div>
+    <div id="cell3-buttons-container"></div>
+    <div id="container" style="width:100%; height:700px;"></div>
+    <script>
+// URL of the tab-separated values file
+const url = 'Stemmegivninger Trondheim 2023 sladdet.csv';
+
+// Fetch the file
+fetch(url)
+    .then(response => response.text()) // Read the response as text
+    .then(text => {
+        // Split the text into lines
+        const lines = text.split('\n');
+
+        // Split each line into columns and process
+        const data = lines.map(line => line.split('\t'));
+
+        // Handling the data (for demonstration)
+        console.log(data);
+        
+        // Extract the first column and filter out unique values
+        const uniqueValues = Array.from(new Set(lines.map(line => line.split('\t')[1])));
+
+        // Get the container in which to place the buttons
+        const container = document.getElementById('button-container'); // Make sure to have a div with this ID in your HTML
+
+        // Create and append buttons for each unique value
+        uniqueValues.forEach(value => {
+            if (value) { // check if the value is not empty
+                const button = document.createElement('button');
+                button.textContent = value;
+                container.appendChild(button);
+            }
+        });
+        
+        
+       let countsByMinute = {};
+       
+       const timezoneOffset = -5;
+
+        // Process each line
+        lines.forEach(line => {
+            const fields = line.split('\t');
+            
+            
+            const date = new Date(fields[0]);
+            if (!isNaN(date.getTime())) {
+                // Round down to the nearest minute
+                const adjustedDate = new Date(date.getTime());
+                const minute = new Date(adjustedDate.getFullYear(), adjustedDate.getMonth(), adjustedDate.getDate(), adjustedDate.getHours() +2, adjustedDate.getMinutes());
+                const minuteTimestamp = minute.getTime();
+                countsByMinute[minuteTimestamp] = (countsByMinute[minuteTimestamp] || 0) + 1;
+                
+                if (adjustedDate.getMonth() != 7 && adjustedDate.getMonth() != 8) {
+                	console.log(fields);
+        	}
+            }
+        });
+
+        // Convert to array for Highcharts
+        const chartData = Object.entries(countsByMinute).map(([timestamp, count]) => {
+            return [parseInt(timestamp), count];
+        });
+
+        // Sort data by timestamp
+        chartData.sort((a, b) => a[0] - b[0]);
+
+
+        // Create the Highcharts chart
+        const chart = Highcharts.chart('container', {
+            chart: {
+                type: 'line',
+        zoomType: 'x' // Enable zooming along the x-axis
+
+            },
+            title: {
+                text: 'Kryss i manntallet per minutt'
+            },
+            xAxis: {
+		type: 'datetime',
+		title: {
+		    text: 'Date and Time'
+		},
+		dateTimeLabelFormats: {
+		    minute: '%H:%M'
+		}
+            },
+            yAxis: {
+                title: {
+                    text: 'Count'
+                },
+                min: 0
+            },
+            series: [{
+       		 name: 'Data Count per Minute',
+                data: chartData
+            }],
+            
+    // Optional: Adding a reset zoom button
+    resetZoomButton: {
+        position: {
+            align: 'right', // right, center, left
+            verticalAlign: 'top', // top, middle, bottom
+            x: 0,
+            y: -30
+        },
+        relativeTo: 'chart'
+    }
+        });
+        
+        
+        // Create buttons for unique dates
+        createFilterButtons(Array.from(uniqueDates), date => {
+            // Filter logic for dates
+            updateChartData(chart, chartData, date);
+        }, 'date-buttons-container');
+
+        // Create buttons for values in cells 2 and 3
+        createFilterButtons(Array.from(uniqueValuesCell2), value => {
+            // Filter logic for cell 2 values
+            updateChartData(chart, chartData, null, value);
+        }, 'cell2-buttons-container');
+        createFilterButtons(Array.from(uniqueValuesCell3), value => {
+            // Filter logic for cell 3 values
+            updateChartData(chart, chartData, null, null, value);
+        }, 'cell3-buttons-container');
+    })
+    .catch(error => {
+        console.error('Error fetching the file:', error);
+    });
+    
+    
+// Function to create filter buttons
+function createFilterButtons(values, onClickHandler, containerId) {
+    const container = document.getElementById(containerId);
+    values.forEach(value => {
+        const button = document.createElement('button');
+        button.textContent = value;
+        button.onclick = () => onClickHandler(value);
+        container.appendChild(button);
+    });
+}
+
+// Function to update chart data based on filters
+function updateChartData(chart, originalData, date, cell2Value, cell3Value) {
+    // Logic to filter data based on the selected date and/or values in cells 2 and 3
+    // ...
+}
+</script>
+</body>
+</html>
