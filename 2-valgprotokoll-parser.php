@@ -17,7 +17,7 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline) {
     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
 });
 
-$election_year = '2023';
+$election_year = '2025';
 
 $alle_partier = array(
     // Known values for this table. Improves reading.
@@ -582,6 +582,12 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         $obj->documentType = 'valgdeltakelse';
         $obj->error = false;
         logInfo('Ignoring. Valgdeltakelse.');
+        return;
+    }
+    if (str_contains(substr($file_content, 0, 100), 'Signering av protokoll for stortingsvalget 2025')) {
+        $obj->documentType = 'valgprotokoll-digitalt-signert-st2025';
+        $obj->error = false;
+        logInfo('Ignoring. Digitalt signert valgprotokoll.');
         return;
     }
     if (str_contains(substr($file_content, 0, 100), 'Valprotokoll for fylkesvalstyret')
