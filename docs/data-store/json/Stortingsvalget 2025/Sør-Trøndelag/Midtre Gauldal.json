@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "09.09.2025    18:54",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Midtre Gauldal kommune Sør-Trøndelag valgdistrikt",
@@ -1746,11 +1746,243 @@
         "Godkjente stemmesedler": 0,
         "Avvik": "-",
         "remarks": [
-            "C3.2 Forkastede valgtingsstemmesedler - øvrige",
-            "Oversikt over valgtingsstemmesedler valgstyret har forkastet. Eventuelle forkastede tvilsomme sedler lagt til side før første telling fra",
-            "valglokalene er inkludert i forkastelser fra første telling."
+            ""
         ]
     },
-    "C3.2 Forkastede valgtingsstemmesedler - øvrige": {},
-    "errorMessage": "Did not find expected value on line [750].\nExpected ... : C3.2 Forkastede valgtingsstemmesedler - øvrige\nActual ..... : Forkastelsesgrunn                                                               Første telling              Andre telling                Totalt\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1750): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "C3.2 Forkastede valgtingsstemmesedler - øvrige": {
+        "Seddelen mangler offentlig stempel § 10-3 (1) a": {
+            "førsteTelling": "-",
+            "andreTelling": "-",
+            "totalt": "-"
+        },
+        "Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b": {
+            "førsteTelling": "-",
+            "andreTelling": "-",
+            "totalt": "-"
+        },
+        "Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c": {
+            "førsteTelling": "-",
+            "andreTelling": "-",
+            "totalt": "-"
+        },
+        "Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d": {
+            "førsteTelling": "-",
+            "andreTelling": "-",
+            "totalt": "-"
+        },
+        "Forkastede stemmesedler": {
+            "førsteTelling": 0,
+            "andreTelling": 0,
+            "totalt": 0
+        }
+    },
+    "C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige": {
+        "parties": [
+            {
+                "name": "Arbeiderpartiet",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Fred og Rettferdighet (FOR)",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Fremskrittspartiet",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Generasjonspartiet",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Høyre",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Industri- og Næringspartiet",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Konservativt",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Kristelig Folkeparti",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Miljøpartiet De Grønne",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Norgesdemokratene",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Partiet DNI",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Partiet Sentrum",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Pensjonistpartiet",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Rødt",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "SV - Sosialistisk Venstreparti",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Senterpartiet",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Velferd og Innovasjonspartiet",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Venstre",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            }
+        ],
+        "Totalt partifordelte stemmesedler": {
+            "førsteTelling": 0,
+            "andreTelling": 0
+        },
+        "Blanke stemmesedler": {
+            "førsteTelling": 0,
+            "andreTelling": 0,
+            "avvik": "-"
+        },
+        "Totalt godkjente stemmesedler": {
+            "førsteTelling": 0,
+            "andreTelling": 0
+        },
+        "avvikRemarks": [
+            "-"
+        ],
+        "remarks": [
+            "-"
+        ]
+    },
+    "D Kontrolltiltak": {
+        "D1 Kontrolltiltak": [
+            "ROS-analyse for valg er utarbeidet. Alle valgmedarbeidere har fått opplæring, samt at ROS-analysen er gjort for alle som deltar i",
+            "valgarbeidet. Valgdirektoratets sikkerhetsveileder er fulgt."
+        ]
+    },
+    "D2 Stikkprøvekontroll": {
+        "Gjennomførte stikkprøver": [
+            {
+                "kategori": "Forhåndsstemmer - fra valglokalene",
+                "resultat": "AP 6, Norgesdemokratene 4, GP 4, FOR 3, MDG 10, R 43, Blank 5. Kontrollert 75."
+            },
+            {
+                "kategori": "Forhåndsstemmer - øvrige",
+                "resultat": "AP 19, FOR 1, Blank 4. Kontrollert 24."
+            },
+            {
+                "kategori": "Forhåndsstemmer - telt etter kl. 17 dagen etter valgdagen",
+                "resultat": "SP 6, Konservativt 3, KRF 4, Blank 3. Kontrollert 16"
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Kontroll gjennomført på alle valglokaler. Alt stemte."
+            }
+        ]
+    },
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "-"
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "TRUDE SOLEM HEGGDAL",
+                "role": "Leder"
+            },
+            {
+                "name": "STIAN ENGEN",
+                "role": "Nestleder"
+            },
+            {
+                "name": "HARALD ROGNES",
+                "role": "Medlem"
+            },
+            {
+                "name": "TORSTEIN ROGNES",
+                "role": "Medlem"
+            },
+            {
+                "name": "ANNA THERESE FLATMO",
+                "role": "Medlem"
+            },
+            {
+                "name": "KENNETH MOE",
+                "role": "Medlem"
+            },
+            {
+                "name": "KRISTIN STORNES",
+                "role": "Medlem"
+            },
+            {
+                "name": "LISE SUNDLI",
+                "role": "Medlem"
+            }
+        ],
+        "dato": "Tirsdag 09. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "TORSTEIN ROGNES"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "ANNA THERESE FLATMO"
+            }
+        ]
+    }
 }

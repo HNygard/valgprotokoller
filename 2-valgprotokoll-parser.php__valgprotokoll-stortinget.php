@@ -1719,12 +1719,12 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $remarks = array();
     while (true) {
-        if ($i >= count($lines) || trim($lines[$i]) == '') {
+        if (str_starts_with(trim($lines[$i]), 'C3.2 Forkastede valgtingsstemmesedler - øvrige')) {
             break;
         }
         $remarks[] = trim($lines[$i++]);
     }
-    $obj->{'C3.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler'}->remarks = $remarks;
+    $obj->{'C3.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler'}->remarks = explode("\n", trim(implode("\n", $remarks)));
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     
