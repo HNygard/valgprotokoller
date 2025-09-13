@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "10.09.2025    09:34",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Gjøvik kommune Oppland valgdistrikt",
@@ -2127,6 +2127,80 @@
             "lokaler. Dette medfører at alt opptellingsutstyr står i rød sone er bare autorisert personell har tilgang via adgangskontroll."
         ]
     },
-    "D2 Stikkprøvekontroll": {},
-    "errorMessage": "No match for regex.\nRegex ..... : ^([A-Za-zÆØÅæøå0-9\\-\\.\\(\\) ,]+?)  \\s*(.+)$\nLine ...... : sedler i kasse.\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1971): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "D2 Stikkprøvekontroll": {
+        "Gjennomførte stikkprøver": [
+            {
+                "kategori": "Forhåndsstemmer - fra valglokalene",
+                "resultat": "Utført stikkprøvekontroll av kasse 6/7. Ingen avvik mellom maskinelt leste og sedler i kasse."
+            },
+            {
+                "kategori": "Forhåndsstemmer - øvrige",
+                "resultat": "Utført stikkprøvekontroll av kasse 1/7. Ingen avvik mellom maskinelt leste og sedler i kasse."
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Utført stikkprøvekontroll på kasse 1/6 i krets Sentrum/Vindingstad samt kasse 1/3 i krets Nordbyen. Ingen avvik mellom maskinelt leste og sedler i kasser."
+            }
+        ]
+    },
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "-"
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "ANNE BJERTNÆS",
+                "role": "Leder"
+            },
+            {
+                "name": "KRISTIN STENSRUD LONGVA",
+                "role": "Nestleder"
+            },
+            {
+                "name": "CAMILLA AASETH",
+                "role": "Medlem"
+            },
+            {
+                "name": "EVEN KYSETH",
+                "role": "Medlem"
+            },
+            {
+                "name": "ØYSTEIN ANDREASSEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "GRY RAGNA DAAE MÆLAND",
+                "role": "Medlem"
+            },
+            {
+                "name": "FINN OLAV ROLIJORDET",
+                "role": "Medlem"
+            },
+            {
+                "name": "KJETIL BJØRKLUND",
+                "role": "Medlem"
+            },
+            {
+                "name": "DAG HALVOR FJELDSTAD-PETTERSEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "THOMAS WINGE LONGVA",
+                "role": "Varamedlem"
+            }
+        ],
+        "dato": "Onsdag 10. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "ANNE BJERTNÆS"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "KRISTIN STENSRUD LONGVA"
+            }
+        ]
+    }
 }

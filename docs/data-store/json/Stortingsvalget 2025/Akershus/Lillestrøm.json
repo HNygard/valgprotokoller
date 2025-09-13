@@ -4356,5 +4356,5 @@
         ]
     },
     "D2 Stikkprøvekontroll": {},
-    "errorMessage": "No match for regex.\nRegex ..... : ^([A-Za-zÆØÅæøå0-9\\-\\.\\(\\) ,]+?)  \\s*(.+)$\nLine ...... : stemmekretser. Disse er fordelt på alle 4 skannere som har vært i bruk. Det er\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1971): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "errorMessage": "Did not find expected value on line [1786].\nExpected ... : valgdagen\nActual ..... : valgdagen                                                            stemmekretser. Disse er fordelt på alle 4 skannere som har vært i bruk. Det er\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1983): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }

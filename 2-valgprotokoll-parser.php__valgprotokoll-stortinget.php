@@ -1968,9 +1968,11 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
             }
 
             // Expect: Opptellingskategori <whitespace> Resultat
-            $match = regexAssertAndReturnMatch('/^([A-Za-zÆØÅæøå0-9\-\.\(\) ,]+?)  \s*(.+)$/', trim($lines[$i++]));
+            $match = regexAssertAndReturnMatch('/^\s*([A-Za-zÆØÅæøå0-9\-\.\(\) ,]+?)  \s*(.+)$/', $lines[$i++]);
             if (empty(trim($match[1]))) {
-                throw new Exception('Expected opptellingskategori in stikkprøvekontroll, got empty string at line ' . ($i) . ': ' . $lines[$i-1]);
+                // Add to previous
+                $stikkprove[count($stikkprove)-1]->resultat .= ' ' . trim($match[2]);
+                continue;
             }
             $kategori = trim($match[1]);
             $resultat = trim($match[2]);

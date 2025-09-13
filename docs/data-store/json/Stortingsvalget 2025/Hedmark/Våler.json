@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "10.09.2025    09:11",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Våler kommune Hedmark valgdistrikt",
@@ -1345,6 +1345,60 @@
             "funnet noen avvik."
         ]
     },
-    "D2 Stikkprøvekontroll": {},
-    "errorMessage": "No match for regex.\nRegex ..... : ^([A-Za-zÆØÅæøå0-9\\-\\.\\(\\) ,]+?)  \\s*(.+)$\nLine ...... : funnet.\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1971): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "D2 Stikkprøvekontroll": {
+        "Gjennomførte stikkprøver": [
+            {
+                "kategori": "Forhåndsstemmer - fra valglokalene",
+                "resultat": "Det er gjennomført stikkprøve både av kasseinnhold og sedler. Ingen avvik funnet."
+            },
+            {
+                "kategori": "Forhåndsstemmer - øvrige",
+                "resultat": "Det er gjennomført stikkprøve både av kasseinnhold og sedler. Ingen avvik funnet."
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Det er gjennomført stikkprøve både av kasseinnhold og sedler. Ingen avvik funnet."
+            }
+        ]
+    },
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "-"
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "ESPEN SVENNEBY",
+                "role": "Nestleder"
+            },
+            {
+                "name": "GUNN MARIT LINDMOEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "ELIN ØSTEBERG",
+                "role": "Medlem"
+            },
+            {
+                "name": "KARSTEN ØSTEBERG",
+                "role": "Medlem"
+            },
+            {
+                "name": "ANNE BRITT MYRVOLD",
+                "role": "Medlem"
+            }
+        ],
+        "dato": "Onsdag 10. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "KARSTEN ØSTEBERG"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "ANNE BRITT MYRVOLD"
+            }
+        ]
+    }
 }

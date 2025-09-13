@@ -1331,5 +1331,5 @@
         "Gjennomførte stikkprøver": []
     },
     "E Godkjenning": {},
-    "errorMessage": "Did not find expected value on line [585].\nExpected ... : E Godkjenning\nActual ..... : Samlet vurdering er at kontrolltiltakene har vært tilstrekkelige og at valget er gjennomført på en korrekt og sikker måte i tråd med\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2007): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "errorMessage": "Did not find expected value on line [585].\nExpected ... : E Godkjenning\nActual ..... : Samlet vurdering er at kontrolltiltakene har vært tilstrekkelige og at valget er gjennomført på en korrekt og sikker måte i tråd med\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2015): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }

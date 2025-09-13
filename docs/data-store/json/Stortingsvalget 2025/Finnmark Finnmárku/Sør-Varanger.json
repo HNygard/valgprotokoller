@@ -2582,5 +2582,5 @@
         ]
     },
     "D2 Stikkprøvekontroll": {},
-    "errorMessage": "No match for regex.\nRegex ..... : ^([A-Za-zÆØÅæøå0-9\\-\\.\\(\\) ,]+?)  \\s*(.+)$\nLine ...... : forhåndsstemmemottakene. Begge stikkprøver viser ingen differanse mellom\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1971): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "errorMessage": "Did not find expected value on line [1083].\nExpected ... : valgdagen\nActual ..... : valgdagen                                                           valgtellingen som helhet. Denne stikkprøven viste ingen differanse mellom\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1983): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }
