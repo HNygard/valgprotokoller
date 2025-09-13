@@ -776,7 +776,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $remarks = array();
         while (true) {
-            if ($i >= count($lines) || trim($lines[$i]) == '') {
+            if (str_starts_with(trim($lines[$i]), 'Andre merknader til forhåndsstemmer - ')) {
                 break;
             }
             $remarks[] = trim($lines[$i++]);
@@ -784,7 +784,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         if (isset($pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->avvikRemarks)) {
             throw new ErrorException('Duplicate avvik remarks section in B2.3 Fordeling av forhåndsstemmesedler for polling station ' . $pollingStationName);
         }
-        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->avvikRemarks = $remarks;
+        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->avvikRemarks = explode("\n", trim(implode("\n", $remarks)));
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -793,7 +793,12 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $remarks = array();
         while (true) {
-            if ($i >= count($lines) || trim($lines[$i]) == '') {
+            if (str_starts_with(trim($lines[$i+1]), 'B2.1 Sammenligning av godkjente') ) {
+                // Next polling station
+                break;
+            }
+            if (str_starts_with(trim($lines[$i]), 'B3 Forhåndsstemmer - øvrige')) {
+                // End of polling stations
                 break;
             }    
             $remarks[] = trim($lines[$i++]);
@@ -801,7 +806,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         if (isset($pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->remarks)) {
             throw new ErrorException('Duplicate remarks section in B2.3 Fordeling av forhåndsstemmesedler for polling station ' . $pollingStationName);
         }
-        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->remarks = $remarks;
+        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->remarks = explode("\n", trim(implode("\n", $remarks)));
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -2084,7 +2089,8 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // Oppmøte
     $i = assertLine_trim($lines, $i, 'Oppmøte');
     $i = removeLineIfPresent_andEmpty($lines, $i);
-    regexAssertAndReturnMatch('/^Medlem \s* Rolle$/', trim($lines[$i++]));
+    // Reile = Bergen. Modified PDF.
+    regexAssertAndReturnMatch('/^Medlem \s* (Rolle|Reile)$/', trim($lines[$i++]));
     $oppmote = array();
     while (true) {
         $i = removeLineIfPresent_andEmpty($lines, $i);

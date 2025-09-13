@@ -2098,5 +2098,5 @@
             "Eventuelt annen relevant informasjon fra valggjennomføring og opptelling."
         ]
     },
-    "errorMessage": "Did not find expected value on line [868].\nExpected ... : Andre merknader til valgtingsstemmer - øvrige\nActual ..... : -\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1895): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "errorMessage": "Did not find expected value on line [868].\nExpected ... : Andre merknader til valgtingsstemmer - øvrige\nActual ..... : -\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1900): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }
