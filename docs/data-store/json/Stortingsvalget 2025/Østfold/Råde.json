@@ -6,12 +6,167 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": false,
+    "error": true,
     "reportGenerated": "09.09.2025    18:42",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Råde kommune Østfold valgdistrikt",
     "electionYear": "2025",
     "municipality": "Råde",
     "county": "Østfold",
-    "unknown_lines": true
+    "keyfigures_antallStemmeberettigede": 5706,
+    "keyfigures_totaltAntallGodkjenteStemmegivninger": 4633,
+    "keyfigures_oppmøteprosent": "81,2 %",
+    "A2.1 Stemmegivninger": {
+        "Godkjente stemmegivninger": 4633,
+        "Velgeren er ikke innført i manntallet i kommunen § 10-2 (1) a": "4",
+        "Velgeren har ikke stemmerett § 10-2 (1) a": "8",
+        "Det kan ikke fastslås hvem velgeren er § 10-2 (1) b": "1",
+        "Stemmegivningen er ikke levert til et sted der velgeren kan stemme § 10-2 (1) c": "-",
+        "Det er sannsynlighetsovervekt for at omslagskonvolutten er åpnet § 10-2 (1) d": "-",
+        "Velgeren har tidligere fått godkjent en stemmegivning § 10-2 (1) e": "-",
+        "Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter klokken 17 dagen etter valgdagen § 10-2 (1) f": "-",
+        "Forkastede stemmegivninger": "13"
+    },
+    "A1.3 Stemmesedler": {
+        "Godkjente stemmesedler": 4636,
+        "Forkastede stemmesedler": "16",
+        "Totalt antall stemmesedler": 4652,
+        "Seddelen mangler offentlig stempel § 10-3 (1) a": "13",
+        "Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b": "-",
+        "Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c": "3",
+        "Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d": "-"
+    },
+    "A1.4 Fordeling av stemmesedler": {
+        "parties": [
+            {
+                "name": "Fremskrittspartiet",
+                "forhånd": 910,
+                "valgting": 497,
+                "totalt": 1407
+            },
+            {
+                "name": "Arbeiderpartiet",
+                "forhånd": 689,
+                "valgting": 429,
+                "totalt": 1118
+            },
+            {
+                "name": "Høyre",
+                "forhånd": 380,
+                "valgting": 232,
+                "totalt": 612
+            },
+            {
+                "name": "Senterpartiet",
+                "forhånd": 188,
+                "valgting": 171,
+                "totalt": 359
+            },
+            {
+                "name": "Kristelig Folkeparti",
+                "forhånd": 167,
+                "valgting": 150,
+                "totalt": 317
+            },
+            {
+                "name": "Rødt",
+                "forhånd": 98,
+                "valgting": 62,
+                "totalt": 160
+            },
+            {
+                "name": "SV - Sosialistisk Venstreparti",
+                "forhånd": 95,
+                "valgting": 60,
+                "totalt": 155
+            },
+            {
+                "name": "Miljøpartiet De Grønne",
+                "forhånd": 76,
+                "valgting": 65,
+                "totalt": 141
+            },
+            {
+                "name": "Venstre",
+                "forhånd": 50,
+                "valgting": 36,
+                "totalt": 86
+            },
+            {
+                "name": "Pensjonistpartiet",
+                "forhånd": 36,
+                "valgting": 16,
+                "totalt": 52
+            },
+            {
+                "name": "Norgesdemokratene",
+                "forhånd": 23,
+                "valgting": 22,
+                "totalt": 45
+            },
+            {
+                "name": "Konservativt",
+                "forhånd": 24,
+                "valgting": 16,
+                "totalt": 40
+            },
+            {
+                "name": "Industri- og Næringspartiet",
+                "forhånd": 18,
+                "valgting": 17,
+                "totalt": 35
+            },
+            {
+                "name": "Generasjonspartiet",
+                "forhånd": 15,
+                "valgting": 19,
+                "totalt": 34
+            },
+            {
+                "name": "Velferd og Innovasjonspartiet",
+                "forhånd": 4,
+                "valgting": 4,
+                "totalt": 8
+            },
+            {
+                "name": "Partiet Sentrum",
+                "forhånd": 3,
+                "valgting": 4,
+                "totalt": 7
+            },
+            {
+                "name": "Fred og Rettferdighet (FOR)",
+                "forhånd": 2,
+                "valgting": 2,
+                "totalt": 4
+            },
+            {
+                "name": "Partiet DNI",
+                "forhånd": 4,
+                "valgting": 0,
+                "totalt": 4
+            }
+        ],
+        "Totalt partifordelte stemmesedler": {
+            "forhånd": 2782,
+            "valgting": 1802,
+            "totalt": 4584
+        },
+        "Blanke stemmesedler": {
+            "forhånd": 21,
+            "valgting": 31,
+            "totalt": 52
+        },
+        "Totalt godkjente stemmesedler": {
+            "forhånd": 2803,
+            "valgting": 1833,
+            "totalt": 4636
+        }
+    },
+    "A2.1 Manntall og tellemåte": {
+        "manntallValgting": "Elektronisk",
+        "tellemåteAndreTelling": "Maskinell"
+    },
+    "A2.2 Valgstyret": [],
+    "errorMessage": "No match for regex.\nRegex ..... : ^([A-Za-zÆØÅæøåáö \\-]*) \\s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\\s*$\nLine ...... : RENÉ RAFSHOL                                                                        Leder\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(397): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(647): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }

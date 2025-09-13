@@ -86,6 +86,10 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
+    if ($nynorsk) {
+        throw new Exception("Nynorsk text detected. Parser not finished.");
+    }
+
     // Skip over "Innholdsfortegnelse" (table of contents) if present
 
 
@@ -2132,7 +2136,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
 
     if ($unknown_lines) {
         $obj->unknown_lines = true;
-        //throw new Exception('Unknown lines.');
+        throw new Exception('Unknown lines.');
     }
 
 

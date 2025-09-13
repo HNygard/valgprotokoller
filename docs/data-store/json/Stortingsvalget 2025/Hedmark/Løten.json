@@ -6,12 +6,248 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": false,
+    "error": true,
     "reportGenerated": "10.09.2025    11:17",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Løten kommune Hedmark valgdistrikt",
     "electionYear": "2025",
     "municipality": "Løten",
     "county": "Hedmark",
-    "unknown_lines": true
+    "keyfigures_antallStemmeberettigede": 6007,
+    "keyfigures_totaltAntallGodkjenteStemmegivninger": 4701,
+    "keyfigures_oppmøteprosent": "78,3 %",
+    "A2.1 Stemmegivninger": {
+        "Godkjente stemmegivninger": 4701,
+        "Velgeren er ikke innført i manntallet i kommunen § 10-2 (1) a": "7",
+        "Velgeren har ikke stemmerett § 10-2 (1) a": "2",
+        "Det kan ikke fastslås hvem velgeren er § 10-2 (1) b": "1",
+        "Stemmegivningen er ikke levert til et sted der velgeren kan stemme § 10-2 (1) c": "-",
+        "Det er sannsynlighetsovervekt for at omslagskonvolutten er åpnet § 10-2 (1) d": "-",
+        "Velgeren har tidligere fått godkjent en stemmegivning § 10-2 (1) e": "-",
+        "Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter klokken 17 dagen etter valgdagen § 10-2 (1) f": "-",
+        "Forkastede stemmegivninger": "10"
+    },
+    "A1.3 Stemmesedler": {
+        "Godkjente stemmesedler": 4710,
+        "Forkastede stemmesedler": "11",
+        "Totalt antall stemmesedler": 4721,
+        "Seddelen mangler offentlig stempel § 10-3 (1) a": "7",
+        "Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b": "-",
+        "Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c": "3",
+        "Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d": "1"
+    },
+    "A1.4 Fordeling av stemmesedler": {
+        "parties": [
+            {
+                "name": "Arbeiderpartiet",
+                "forhånd": 922,
+                "valgting": 782,
+                "totalt": 1704
+            },
+            {
+                "name": "Fremskrittspartiet",
+                "forhånd": 528,
+                "valgting": 486,
+                "totalt": 1014
+            },
+            {
+                "name": "Senterpartiet",
+                "forhånd": 279,
+                "valgting": 426,
+                "totalt": 705
+            },
+            {
+                "name": "Høyre",
+                "forhånd": 134,
+                "valgting": 118,
+                "totalt": 252
+            },
+            {
+                "name": "Rødt",
+                "forhånd": 119,
+                "valgting": 100,
+                "totalt": 219
+            },
+            {
+                "name": "SV - Sosialistisk Venstreparti",
+                "forhånd": 87,
+                "valgting": 83,
+                "totalt": 170
+            },
+            {
+                "name": "Miljøpartiet De Grønne",
+                "forhånd": 68,
+                "valgting": 64,
+                "totalt": 132
+            },
+            {
+                "name": "Kristelig Folkeparti",
+                "forhånd": 69,
+                "valgting": 56,
+                "totalt": 125
+            },
+            {
+                "name": "Norgesdemokratene",
+                "forhånd": 31,
+                "valgting": 45,
+                "totalt": 76
+            },
+            {
+                "name": "Pensjonistpartiet",
+                "forhånd": 46,
+                "valgting": 23,
+                "totalt": 69
+            },
+            {
+                "name": "Venstre",
+                "forhånd": 24,
+                "valgting": 22,
+                "totalt": 46
+            },
+            {
+                "name": "Generasjonspartiet",
+                "forhånd": 17,
+                "valgting": 28,
+                "totalt": 45
+            },
+            {
+                "name": "Industri- og Næringspartiet",
+                "forhånd": 12,
+                "valgting": 20,
+                "totalt": 32
+            },
+            {
+                "name": "Konservativt",
+                "forhånd": 16,
+                "valgting": 7,
+                "totalt": 23
+            },
+            {
+                "name": "Velferd og Innovasjonspartiet",
+                "forhånd": 4,
+                "valgting": 12,
+                "totalt": 16
+            },
+            {
+                "name": "Partiet DNI",
+                "forhånd": 7,
+                "valgting": 4,
+                "totalt": 11
+            },
+            {
+                "name": "Fred og Rettferdighet (FOR)",
+                "forhånd": 5,
+                "valgting": 3,
+                "totalt": 8
+            },
+            {
+                "name": "Partiet Sentrum",
+                "forhånd": 2,
+                "valgting": 4,
+                "totalt": 6
+            }
+        ],
+        "Totalt partifordelte stemmesedler": {
+            "forhånd": 2370,
+            "valgting": 2283,
+            "totalt": 4653
+        },
+        "Blanke stemmesedler": {
+            "forhånd": 26,
+            "valgting": 31,
+            "totalt": 57
+        },
+        "Totalt godkjente stemmesedler": {
+            "forhånd": 2396,
+            "valgting": 2314,
+            "totalt": 4710
+        }
+    },
+    "A2.1 Manntall og tellemåte": {
+        "manntallValgting": "Elektronisk",
+        "tellemåteAndreTelling": "Maskinell"
+    },
+    "A2.2 Valgstyret": [
+        {
+            "name": "MARTE LARSEN TØNSETH",
+            "role": "Leder"
+        },
+        {
+            "name": "CHRISTEN ENGELOUG",
+            "role": "Nestleder"
+        },
+        {
+            "name": "INGRID LEKVE",
+            "role": "Medlem"
+        },
+        {
+            "name": "KJELL-ERIK NORDAHL",
+            "role": "Medlem"
+        },
+        {
+            "name": "KAROLINE WEEA TORHEIM",
+            "role": "Medlem"
+        },
+        {
+            "name": "HELLE JORDBRÆK",
+            "role": "Medlem"
+        },
+        {
+            "name": "JON LURÅS",
+            "role": "Medlem"
+        },
+        {
+            "name": "JØRN ARILD FLATHA",
+            "role": "Medlem"
+        },
+        {
+            "name": "SYNNØVE FJÆRGÅRD",
+            "role": "Medlem"
+        },
+        {
+            "name": "FREDRIK HAFSLUND",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "ANNE-LISE JENSEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "ELLEN BEATHE SØGÅRD",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "ANNE-GRETHE SVARVERUD-VIKEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "ELIN STORSVEEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "STIAN KNUTSEN GUDEM",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "JØRGEN HARALDSEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "LAILA JENSSVEEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "MARTIN KJELSRUD",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "KNUT ARNE SØSVEEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "MONA MYRVANG NYGAARD",
+            "role": "Varamedlem"
+        }
+    ],
+    "errorMessage": "No match for regex.\nRegex ..... : ^([A-Za-zÆØÅæøåáö \\-]*) \\s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\\s*$\nLine ...... : B Forhåndsstemmer\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(397): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(647): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }

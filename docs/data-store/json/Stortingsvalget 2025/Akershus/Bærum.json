@@ -6,12 +6,232 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": false,
+    "error": true,
     "reportGenerated": "10.09.2025    14:34",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Bærum kommune Akershus valgdistrikt",
     "electionYear": "2025",
     "municipality": "Bærum",
     "county": "Akershus",
-    "unknown_lines": true
+    "keyfigures_antallStemmeberettigede": 91793,
+    "keyfigures_totaltAntallGodkjenteStemmegivninger": 79180,
+    "keyfigures_oppmøteprosent": "86,3 %",
+    "A2.1 Stemmegivninger": {
+        "Godkjente stemmegivninger": 79180,
+        "Velgeren er ikke innført i manntallet i kommunen § 10-2 (1) a": "51",
+        "Velgeren har ikke stemmerett § 10-2 (1) a": "29",
+        "Det kan ikke fastslås hvem velgeren er § 10-2 (1) b": "3",
+        "Stemmegivningen er ikke levert til et sted der velgeren kan stemme § 10-2 (1) c": "-",
+        "Det er sannsynlighetsovervekt for at omslagskonvolutten er åpnet § 10-2 (1) d": "-",
+        "Velgeren har tidligere fått godkjent en stemmegivning § 10-2 (1) e": "15",
+        "Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter klokken 17 dagen etter valgdagen § 10-2 (1) f": "-",
+        "Forkastede stemmegivninger": "98"
+    },
+    "A1.3 Stemmesedler": {
+        "Godkjente stemmesedler": 79173,
+        "Forkastede stemmesedler": "24",
+        "Totalt antall stemmesedler": 79197,
+        "Seddelen mangler offentlig stempel § 10-3 (1) a": "2",
+        "Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b": "-",
+        "Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c": "7",
+        "Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d": "15"
+    },
+    "A1.4 Fordeling av stemmesedler": {
+        "parties": [
+            {
+                "name": "Høyre",
+                "forhånd": 17955,
+                "valgting": 5973,
+                "totalt": 23928
+            },
+            {
+                "name": "Arbeiderpartiet",
+                "forhånd": 12666,
+                "valgting": 5006,
+                "totalt": 17672
+            },
+            {
+                "name": "Fremskrittspartiet",
+                "forhånd": 11834,
+                "valgting": 2866,
+                "totalt": 14700
+            },
+            {
+                "name": "Venstre",
+                "forhånd": 5289,
+                "valgting": 2478,
+                "totalt": 7767
+            },
+            {
+                "name": "Miljøpartiet De Grønne",
+                "forhånd": 3464,
+                "valgting": 1500,
+                "totalt": 4964
+            },
+            {
+                "name": "SV - Sosialistisk Venstreparti",
+                "forhånd": 2249,
+                "valgting": 839,
+                "totalt": 3088
+            },
+            {
+                "name": "Rødt",
+                "forhånd": 1602,
+                "valgting": 600,
+                "totalt": 2202
+            },
+            {
+                "name": "Kristelig Folkeparti",
+                "forhånd": 1370,
+                "valgting": 542,
+                "totalt": 1912
+            },
+            {
+                "name": "Senterpartiet",
+                "forhånd": 429,
+                "valgting": 212,
+                "totalt": 641
+            },
+            {
+                "name": "Pensjonistpartiet",
+                "forhånd": 357,
+                "valgting": 90,
+                "totalt": 447
+            },
+            {
+                "name": "Norgesdemokratene",
+                "forhånd": 252,
+                "valgting": 128,
+                "totalt": 380
+            },
+            {
+                "name": "Industri- og Næringspartiet",
+                "forhånd": 201,
+                "valgting": 94,
+                "totalt": 295
+            },
+            {
+                "name": "Generasjonspartiet",
+                "forhånd": 187,
+                "valgting": 76,
+                "totalt": 263
+            },
+            {
+                "name": "Fred og Rettferdighet (FOR)",
+                "forhånd": 153,
+                "valgting": 73,
+                "totalt": 226
+            },
+            {
+                "name": "Konservativt",
+                "forhånd": 108,
+                "valgting": 20,
+                "totalt": 128
+            },
+            {
+                "name": "Partiet Sentrum",
+                "forhånd": 60,
+                "valgting": 40,
+                "totalt": 100
+            },
+            {
+                "name": "Velferd og Innovasjonspartiet",
+                "forhånd": 58,
+                "valgting": 37,
+                "totalt": 95
+            },
+            {
+                "name": "Partiet DNI",
+                "forhånd": 29,
+                "valgting": 12,
+                "totalt": 41
+            }
+        ],
+        "Totalt partifordelte stemmesedler": {
+            "forhånd": 58263,
+            "valgting": 20586,
+            "totalt": 78849
+        },
+        "Blanke stemmesedler": {
+            "forhånd": 206,
+            "valgting": 118,
+            "totalt": 324
+        },
+        "Totalt godkjente stemmesedler": {
+            "forhånd": 58469,
+            "valgting": 20704,
+            "totalt": 79173
+        }
+    },
+    "A2.1 Manntall og tellemåte": {
+        "manntallValgting": "Elektronisk",
+        "tellemåteAndreTelling": "Maskinell"
+    },
+    "A2.2 Valgstyret": [
+        {
+            "name": "LISBETH HAMMER KROG",
+            "role": "Leder"
+        },
+        {
+            "name": "HAAKON KVENNA VEUM",
+            "role": "Nestleder"
+        },
+        {
+            "name": "Tone Halvorsen",
+            "role": "Sekretær"
+        },
+        {
+            "name": "CATHRINE CHAFFEY",
+            "role": "Medlem"
+        },
+        {
+            "name": "REIDAR KLEPPE",
+            "role": "Medlem"
+        },
+        {
+            "name": "TORBJØRN ESPELIEN",
+            "role": "Medlem"
+        },
+        {
+            "name": "DAG EGIL STRØMME",
+            "role": "Medlem"
+        },
+        {
+            "name": "ELISABETH HEGG GJØLME",
+            "role": "Medlem"
+        },
+        {
+            "name": "HAAKON CHRISTOPHER SANDVEN",
+            "role": "Medlem"
+        },
+        {
+            "name": "MORTEN SKAUGE",
+            "role": "Medlem"
+        },
+        {
+            "name": "ANDERS NIKKI SCHEI",
+            "role": "Medlem"
+        },
+        {
+            "name": "EIRIK TRYGVE BØE",
+            "role": "Medlem"
+        },
+        {
+            "name": "WENCHE STEEN",
+            "role": "Medlem"
+        },
+        {
+            "name": "ANDERS PUNTERVOLD HAMMER",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "ELISABETH NESSET",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "DAG VANGSNES",
+            "role": "Varamedlem"
+        }
+    ],
+    "errorMessage": "No match for regex.\nRegex ..... : ^([A-Za-zÆØÅæøåáö \\-]*) \\s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\\s*$\nLine ...... : B Forhåndsstemmer\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(397): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(647): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }

@@ -6,12 +6,12 @@
     "language": "nn-NO",
     "languageName": "Norwegian, Nynorsk",
     "documentType": "valgprotokoll-stortinget",
-    "error": false,
+    "error": true,
     "reportGenerated": "09.09.2025   17:20",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Kviteseid kommune Telemark valdistrikt",
     "electionYear": "2025",
     "municipality": "Kviteseid",
     "county": "Telemark",
-    "unknown_lines": true
+    "errorMessage": "Nynorsk text detected. Parser not finished.\n\n#0 2-valgprotokoll-parser.php(647): readValgprotokollStortinget()\n#1 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#2 {main}"
 }

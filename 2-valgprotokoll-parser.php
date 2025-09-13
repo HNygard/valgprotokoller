@@ -538,7 +538,8 @@ foreach ($files_written as $obj) {
             $summary_numbers['error_messages'][$obj->errorMessage]++;
         }
 
-    } else {
+    }
+    else {
         $summary_numbers['files_successful']++;
     }
 }

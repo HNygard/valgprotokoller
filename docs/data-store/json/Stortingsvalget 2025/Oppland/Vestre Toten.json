@@ -6,12 +6,256 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": false,
+    "error": true,
     "reportGenerated": "09.09.2025    18:43",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Vestre Toten kommune Oppland valgdistrikt",
     "electionYear": "2025",
     "municipality": "Vestre Toten",
     "county": "Oppland",
-    "unknown_lines": true
+    "keyfigures_antallStemmeberettigede": 10594,
+    "keyfigures_totaltAntallGodkjenteStemmegivninger": 8039,
+    "keyfigures_oppmøteprosent": "75,9 %",
+    "A2.1 Stemmegivninger": {
+        "Godkjente stemmegivninger": 8039,
+        "Velgeren er ikke innført i manntallet i kommunen § 10-2 (1) a": "-",
+        "Velgeren har ikke stemmerett § 10-2 (1) a": "-",
+        "Det kan ikke fastslås hvem velgeren er § 10-2 (1) b": "-",
+        "Stemmegivningen er ikke levert til et sted der velgeren kan stemme § 10-2 (1) c": "-",
+        "Det er sannsynlighetsovervekt for at omslagskonvolutten er åpnet § 10-2 (1) d": "-",
+        "Velgeren har tidligere fått godkjent en stemmegivning § 10-2 (1) e": "-",
+        "Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter klokken 17 dagen etter valgdagen § 10-2 (1) f": "-",
+        "Forkastede stemmegivninger": "0"
+    },
+    "A1.3 Stemmesedler": {
+        "Godkjente stemmesedler": 8046,
+        "Forkastede stemmesedler": "23",
+        "Totalt antall stemmesedler": 8069,
+        "Seddelen mangler offentlig stempel § 10-3 (1) a": "23",
+        "Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b": "-",
+        "Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c": "-",
+        "Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d": "-"
+    },
+    "A1.4 Fordeling av stemmesedler": {
+        "parties": [
+            {
+                "name": "Arbeiderpartiet",
+                "forhånd": 1347,
+                "valgting": 1448,
+                "totalt": 2795
+            },
+            {
+                "name": "Fremskrittspartiet",
+                "forhånd": 981,
+                "valgting": 1038,
+                "totalt": 2019
+            },
+            {
+                "name": "Høyre",
+                "forhånd": 351,
+                "valgting": 426,
+                "totalt": 777
+            },
+            {
+                "name": "Senterpartiet",
+                "forhånd": 246,
+                "valgting": 511,
+                "totalt": 757
+            },
+            {
+                "name": "Rødt",
+                "forhånd": 193,
+                "valgting": 182,
+                "totalt": 375
+            },
+            {
+                "name": "SV - Sosialistisk Venstreparti",
+                "forhånd": 136,
+                "valgting": 124,
+                "totalt": 260
+            },
+            {
+                "name": "Kristelig Folkeparti",
+                "forhånd": 79,
+                "valgting": 102,
+                "totalt": 181
+            },
+            {
+                "name": "Miljøpartiet De Grønne",
+                "forhånd": 105,
+                "valgting": 73,
+                "totalt": 178
+            },
+            {
+                "name": "Venstre",
+                "forhånd": 78,
+                "valgting": 86,
+                "totalt": 164
+            },
+            {
+                "name": "Industri- og Næringspartiet",
+                "forhånd": 37,
+                "valgting": 52,
+                "totalt": 89
+            },
+            {
+                "name": "Pensjonistpartiet",
+                "forhånd": 37,
+                "valgting": 50,
+                "totalt": 87
+            },
+            {
+                "name": "Norgesdemokratene",
+                "forhånd": 26,
+                "valgting": 40,
+                "totalt": 66
+            },
+            {
+                "name": "Generasjonspartiet",
+                "forhånd": 27,
+                "valgting": 30,
+                "totalt": 57
+            },
+            {
+                "name": "Konservativt",
+                "forhånd": 14,
+                "valgting": 17,
+                "totalt": 31
+            },
+            {
+                "name": "Partiet Sentrum",
+                "forhånd": 9,
+                "valgting": 16,
+                "totalt": 25
+            },
+            {
+                "name": "Velferd og Innovasjonspartiet",
+                "forhånd": 13,
+                "valgting": 10,
+                "totalt": 23
+            },
+            {
+                "name": "Fred og Rettferdighet (FOR)",
+                "forhånd": 14,
+                "valgting": 7,
+                "totalt": 21
+            },
+            {
+                "name": "Partiet DNI",
+                "forhånd": 12,
+                "valgting": 8,
+                "totalt": 20
+            }
+        ],
+        "Totalt partifordelte stemmesedler": {
+            "forhånd": 3705,
+            "valgting": 4220,
+            "totalt": 7925
+        },
+        "Blanke stemmesedler": {
+            "forhånd": 43,
+            "valgting": 78,
+            "totalt": 121
+        },
+        "Totalt godkjente stemmesedler": {
+            "forhånd": 3748,
+            "valgting": 4298,
+            "totalt": 8046
+        }
+    },
+    "A2.1 Manntall og tellemåte": {
+        "manntallValgting": "Elektronisk",
+        "tellemåteAndreTelling": "Maskinell"
+    },
+    "A2.2 Valgstyret": [
+        {
+            "name": "TONJE BERGUM JAHR",
+            "role": "Leder"
+        },
+        {
+            "name": "ØIVIND STRØMSTAD SØRHUSBAKKEN",
+            "role": "Nestleder"
+        },
+        {
+            "name": "HILDE CATHRINE FUGLERUD BJØRGE",
+            "role": "Medlem"
+        },
+        {
+            "name": "STIAN PETTERSBAKKEN",
+            "role": "Medlem"
+        },
+        {
+            "name": "ANN MARIT SANDSENGEN",
+            "role": "Medlem"
+        },
+        {
+            "name": "SVEIN ERIK SØRENSEN",
+            "role": "Medlem"
+        },
+        {
+            "name": "MARTE REBECCA DÆHLEN",
+            "role": "Medlem"
+        },
+        {
+            "name": "DORTHE ØDEGAARD BENCKERT",
+            "role": "Medlem"
+        },
+        {
+            "name": "HELGE TESTAD",
+            "role": "Medlem"
+        },
+        {
+            "name": "AHMED HARUUN ALI",
+            "role": "Medlem"
+        },
+        {
+            "name": "TOR OLE KARLSEN",
+            "role": "Medlem"
+        },
+        {
+            "name": "ROLF ERIK HALLE",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "ANNE LINN DAMBRÅTEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "LARS SOLHEIM",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "PER MORTEN ØSTBY",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "HANNE NARTEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "KAI FRODE GRYTHE",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "ODD INGARD HOBERG",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "PER ERIK BERGSTUEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "JARLE AMLIEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "JORUNN SIGNE BALLANGRUD",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "HANS AMLIEN",
+            "role": "Varamedlem"
+        }
+    ],
+    "errorMessage": "No match for regex.\nRegex ..... : ^([A-Za-zÆØÅæøåáö \\-]*) \\s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\\s*$\nLine ...... : B Forhåndsstemmer\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(397): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(647): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }
