@@ -2149,5 +2149,34 @@
             "-"
         ]
     },
-    "errorMessage": "No match for regex.\nRegex ..... : Stop here\nLine ...... : D Kontrolltiltak\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1990): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(617): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
+    "D Kontrolltiltak": {
+        "D1 Kontrolltiltak": [
+            "Det er gjennomført stikkprøver ved alle skanninger og alle tellinger der det er avvik er talt flere ganger."
+        ]
+    },
+    "D2 Stikkprøvekontroll": {
+        "Gjennomførte stikkprøver": [
+            {
+                "kategori": "Forhåndsstemmer - fra valglokalene",
+                "resultat": "Ingen avvik på noen av stikkprøvene."
+            },
+            {
+                "kategori": "Forhåndsstemmer - øvrige",
+                "resultat": "Ingen avvik på noen av stikkprøvene."
+            },
+            {
+                "kategori": "Forhåndsstemmer - telt etter kl. 17 dagen etter valgdagen",
+                "resultat": "Ingen avvik på noen av stikkprøvene."
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Ingen avvik på noen av stikkprøvene."
+            },
+            {
+                "kategori": "Valgtingsstemmer - øvrige",
+                "resultat": "Ingen avvik på noen av stikkprøvene."
+            }
+        ]
+    },
+    "errorMessage": "No match for regex.\nRegex ..... : Stop here\nLine ...... : E Godkjenning\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2040): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(617): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
 }
