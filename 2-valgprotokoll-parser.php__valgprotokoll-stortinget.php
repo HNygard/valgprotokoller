@@ -571,16 +571,16 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         $party->avvik = cleanFormattedNumber($match[4]);
         $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->parties[] = $party;
     }
-    $match = regexAssertAndReturnMatch('/^Totalt partifordelte stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    $match = regexAssertAndReturnMatch('/^Totalt partifordelte stemmesedler \s*  ([0-9\-]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)\s*$/', trim($lines[$i++]));
     $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Totalt partifordelte stemmesedler'} = new stdClass();
     $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Totalt partifordelte stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
     $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Totalt partifordelte stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
-    $match = regexAssertAndReturnMatch('/^Blanke stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9-]* ?[0-9]*)  \s* ([0-9-]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    $match = regexAssertAndReturnMatch('/^Blanke stemmesedler \s*  ([0-9\-\−]* ?[0-9]*)  \s* ([0-9\-\−]* ?[0-9]*)  \s* ([0-9\-\−]* ?[0-9]*)\s*$/', trim($lines[$i++]));
     $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Blanke stemmesedler'} = new stdClass();
     $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Blanke stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
     $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Blanke stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
     $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Blanke stemmesedler'}->avvik = cleanFormattedNumber($match[3]);
-    $match = regexAssertAndReturnMatch('/^Totalt godkjente stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    $match = regexAssertAndReturnMatch('/^Totalt godkjente stemmesedler \s*  ([0-9\-]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)\s*$/', trim($lines[$i++]));
     $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Totalt godkjente stemmesedler'} = new stdClass();
     $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Totalt godkjente stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
     $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Totalt godkjente stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
@@ -850,12 +850,12 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $remarks = array();
     while (true) {
-        if ($i >= count($lines) || trim($lines[$i]) == '') {
+        if (str_starts_with(trim($lines[$i]), 'B3.2 Forkastede forhåndsstemmesedler')) {
             break;
         }
         $remarks[] = trim($lines[$i++]);
     }
-    $obj->{'B3.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler'}->remarks = $remarks;
+    $obj->{'B3.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler'}->remarks = explode("\n", trim(implode("\n", $remarks)));
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
@@ -973,7 +973,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         if ($i >= count($lines) || str_starts_with(trim($lines[$i]), 'Totalt partifordelte stemmesedler')) {
             break;
         }
-        $match = regexAssertAndReturnMatch('/^([A-Za-zÆØÅæøåáö\(\) \-]*) \s*  ([0-9\-]* ?[0-9]*) \s*  ([0-9\-]* ?[0-9]*) \s*  ([0-9\-]* ?[0-9]*)$/', trim($lines[$i++]));
+        $match = regexAssertAndReturnMatch('/^([A-Za-zÆØÅæøåáö\(\) \-]*) \s*  ([0-9\-\−]* ?[0-9]*) \s*  ([0-9\-\−]* ?[0-9]*) \s*  ([0-9\-\−]* ?[0-9]*)$/', trim($lines[$i++]));
         $obj->{'B3.3 Fordeling av forhåndsstemmesedler - øvrige'}->parties[] = (object) array(
             'name' => trim($match[1]),
             'førsteTelling' => cleanFormattedNumber($match[2]),
@@ -985,7 +985,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $obj->{'B3.3 Fordeling av forhåndsstemmesedler - øvrige'}->{'Totalt partifordelte stemmesedler'} = new stdClass();
     $obj->{'B3.3 Fordeling av forhåndsstemmesedler - øvrige'}->{'Totalt partifordelte stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
     $obj->{'B3.3 Fordeling av forhåndsstemmesedler - øvrige'}->{'Totalt partifordelte stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
-    $match = regexAssertAndReturnMatch('/^Blanke stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    $match = regexAssertAndReturnMatch('/^Blanke stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9\-\−]* ?[0-9]*)  \s* ([0-9\-\−]* ?[0-9]*)\s*$/', trim($lines[$i++]));
     $obj->{'B3.3 Fordeling av forhåndsstemmesedler - øvrige'}->{'Blanke stemmesedler'} = new stdClass();
     $obj->{'B3.3 Fordeling av forhåndsstemmesedler - øvrige'}->{'Blanke stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
     $obj->{'B3.3 Fordeling av forhåndsstemmesedler - øvrige'}->{'Blanke stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
@@ -1518,12 +1518,12 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $remarks = array();
         while (true) {
-            if ($i >= count($lines) || trim($lines[$i]) == '') {
+            if (str_starts_with(trim($lines[$i]), 'C2.2 Forkastede valgtingsstemmesedler')) {
                 break;
             }
             $remarks[] = trim($lines[$i++]);
         }
-        $pollingStation->{'C2.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler'}->remarks = $remarks;
+        $pollingStation->{'C2.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler'}->remarks = explode("\n", trim(implode("\n", $remarks)));
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -1619,7 +1619,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->{'Totalt partifordelte stemmesedler'} = new stdClass();
         $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->{'Totalt partifordelte stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
         $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->{'Totalt partifordelte stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
-        $match = regexAssertAndReturnMatch('/^Blanke stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+        $match = regexAssertAndReturnMatch('/^Blanke stemmesedler \s*  ([0-9\-\−]* ?[0-9]*)  \s* ([0-9\-\−]* ?[0-9]*)  \s* ([0-9\-\−]* ?[0-9]*)\s*$/', trim($lines[$i++]));
         $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->{'Blanke stemmesedler'} = new stdClass();
         $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->{'Blanke stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
         $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->{'Blanke stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
@@ -1960,9 +1960,13 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         $i = removeLineIfPresent_andEmpty($lines, $i);
         regexAssertAndReturnMatch('/^Opptellingskategori \s* Resultat$/', trim($lines[$i++]));
         while (true) {
-            if ($i >= count($lines) || trim($lines[$i]) == '') {
+            $i = removeLineIfPresent_andEmpty($lines, $i);
+            $i = removeLineIfPresent_andEmpty($lines, $i);
+            $i = removeLineIfPresent_andEmpty($lines, $i);
+            if (str_starts_with(trim($lines[$i]), 'E Godkjenning')) {
                 break;
             }
+
             // Expect: Opptellingskategori <whitespace> Resultat
             $match = regexAssertAndReturnMatch('/^([A-Za-zÆØÅæøå0-9\-\.\(\) ,]+?)  \s*(.+)$/', trim($lines[$i++]));
             if (empty(trim($match[1]))) {

@@ -1812,5 +1812,5 @@
         "Gjennomførte stikkprøver": []
     },
     "E Godkjenning": {},
-    "errorMessage": "Did not find expected value on line [771].\nExpected ... : E Godkjenning\nActual ..... : I opptellingen har det vært tatt stikkprøver av alle kategorier, med unntak av kategorien øvrige forhåndsstemmer. Her hadde vi så få\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2003): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "errorMessage": "Did not find expected value on line [771].\nExpected ... : E Godkjenning\nActual ..... : I opptellingen har det vært tatt stikkprøver av alle kategorier, med unntak av kategorien øvrige forhåndsstemmer. Her hadde vi så få\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2007): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }
