@@ -333,6 +333,8 @@ $ignore_files = array(
 
 $files_written = array();
 
+$summary_numbers = array();
+
 $files = getDirContents(__DIR__ . '/docs/data-store/pdfs-' . $election_year);
 foreach ($files as $file) {
     if (!str_ends_with($file, '.layout.txt')) {
@@ -516,6 +518,32 @@ foreach ($files as $file) {
     logInfo('.');
     logInfo('.');
 }
+
+// Write summary to file
+$summary_file = __DIR__ . '/docs/data-store/status-' . $election_year . '.json';
+// Count total, success, and error files
+$summary_numbers['files_total'] = count($files);
+$summary_numbers['files_successful'] = 0;
+$summary_numbers['files_error'] = 0;
+$summary_numbers['error_messages']  = array();
+
+foreach ($files_written as $obj) {
+    if (isset($obj->error) && $obj->error) {
+        $summary_numbers['files_error']++;
+
+        if (isset($obj->errorMessage)) {
+            if (!isset($summary_numbers['error_messages'][$obj->errorMessage])) {
+                $summary_numbers['error_messages'][$obj->errorMessage] = 0;
+            }
+            $summary_numbers['error_messages'][$obj->errorMessage]++;
+        }
+
+    } else {
+        $summary_numbers['files_successful']++;
+    }
+}
+
+file_put_contents($summary_file, json_encode((object)$summary_numbers, JSON_PRETTY_PRINT ^ JSON_UNESCAPED_SLASHES ^ JSON_UNESCAPED_UNICODE));
 
 function parseFile_andWriteToDisk(&$obj, $file) {
     global $domain_to_name, $election_year;
