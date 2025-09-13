@@ -1888,12 +1888,12 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $remarks = array();
     while (true) {
-        if ($i >= count($lines) || trim($lines[$i]) == '') {
+        if (str_starts_with(trim($lines[$i]), 'Andre merknader til valgtingsstemmer - øvrige')) {
             break;
         }
         $remarks[] = trim($lines[$i++]);
     }
-    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->avvikRemarks = $remarks;
+    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->avvikRemarks = explode("\n", trim(implode("\n", $remarks)));
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -1902,12 +1902,12 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $remarks = array();
     while (true) {
-        if ($i >= count($lines) || trim($lines[$i]) == '') {
+        if (str_starts_with(trim($lines[$i]), 'D Kontrolltiltak')) {
             break;
         }
         $remarks[] = trim($lines[$i++]);
     }
-    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->remarks = $remarks;
+    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->remarks = explode("\n", trim(implode("\n", $remarks)));
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
