@@ -1030,15 +1030,12 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $remarks = array();
     while (true) {
-        if ($i >= count($lines) || trim($lines[$i]) == '') {
+        if (str_starts_with($lines[$i], 'B4 Forhåndsstemmer')) {
             break;
         }    
         $remarks[] = trim($lines[$i++]);
     }
-    $obj->{'B3.3 Fordeling av forhåndsstemmesedler - øvrige'}->remarks = $remarks;
-    $i = removeLineIfPresent_andEmpty($lines, $i);
-    $i = removeLineIfPresent_andEmpty($lines, $i);
-    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $obj->{'B3.3 Fordeling av forhåndsstemmesedler - øvrige'}->remarks = explode("\n", trim(implode("\n", $remarks)));
     
     
     // B4 Forhåndsstemmer - telt etter kl. 17 dagen etter valgdagen

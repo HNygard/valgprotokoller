@@ -1613,5 +1613,5 @@
             }
         }
     },
-    "errorMessage": "Did not find expected value on line [692].\nExpected ... : C2.2 Forkastede valgtingsstemmesedler\nActual ..... : Forkastelsesgrunn                                                                                                       Antall\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1549): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "errorMessage": "Did not find expected value on line [692].\nExpected ... : C2.2 Forkastede valgtingsstemmesedler\nActual ..... : Forkastelsesgrunn                                                                                                       Antall\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1546): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }

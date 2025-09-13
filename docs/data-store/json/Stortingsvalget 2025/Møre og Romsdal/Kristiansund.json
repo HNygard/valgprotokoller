@@ -1846,5 +1846,5 @@
         "Gjennomførte stikkprøver": []
     },
     "E Godkjenning": {},
-    "errorMessage": "Did not find expected value on line [776].\nExpected ... : E Godkjenning\nActual ..... : Under opptelling har valgstyret møtt for å vurdere forkastelser av stemmegivinger og stemmesedler.\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2006): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "errorMessage": "Did not find expected value on line [776].\nExpected ... : E Godkjenning\nActual ..... : Under opptelling har valgstyret møtt for å vurdere forkastelser av stemmegivinger og stemmesedler.\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2003): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }

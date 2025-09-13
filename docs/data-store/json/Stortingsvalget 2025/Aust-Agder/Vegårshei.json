@@ -695,5 +695,5 @@
         ]
     },
     "B4.2 Forkastede forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen": {},
-    "errorMessage": "Did not find expected value on line [334].\nExpected ... : B4.2 Forkastede forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen\nActual ..... : En partistemmeseddel manglet stempel og ble stemplet. Ved telling var det en seddel for mye i forhold til manntallskryss. Vi har ingen\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1120): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "errorMessage": "Did not find expected value on line [334].\nExpected ... : B4.2 Forkastede forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen\nActual ..... : En partistemmeseddel manglet stempel og ble stemplet. Ved telling var det en seddel for mye i forhold til manntallskryss. Vi har ingen\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1117): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }

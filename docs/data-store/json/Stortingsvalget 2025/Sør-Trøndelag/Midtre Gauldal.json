@@ -1750,5 +1750,5 @@
         ]
     },
     "C3.2 Forkastede valgtingsstemmesedler - øvrige": {},
-    "errorMessage": "Did not find expected value on line [750].\nExpected ... : C3.2 Forkastede valgtingsstemmesedler - øvrige\nActual ..... : Forkastelsesgrunn                                                               Første telling              Andre telling                Totalt\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1753): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "errorMessage": "Did not find expected value on line [750].\nExpected ... : C3.2 Forkastede valgtingsstemmesedler - øvrige\nActual ..... : Forkastelsesgrunn                                                               Første telling              Andre telling                Totalt\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1750): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }

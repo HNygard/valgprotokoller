@@ -1633,5 +1633,5 @@
             }
         }
     },
-    "errorMessage": "Did not find expected value on line [700].\nExpected ... : C2.2 Forkastede valgtingsstemmesedler\nActual ..... : Ved registrering sentralt foreslås stemmegivning forkastet med bakgrunn at det allerede er registrert en godkjent stemmegivning på\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1549): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "errorMessage": "Did not find expected value on line [700].\nExpected ... : C2.2 Forkastede valgtingsstemmesedler\nActual ..... : Ved registrering sentralt foreslås stemmegivning forkastet med bakgrunn at det allerede er registrert en godkjent stemmegivning på\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1546): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }
