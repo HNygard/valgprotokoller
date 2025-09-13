@@ -1016,12 +1016,12 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $remarks = array();
     while (true) {
-        if ($i >= count($lines) || trim($lines[$i]) == '') {
+        if (str_starts_with(trim($lines[$i]), 'Andre merknader til forhåndsstemmer - øvrige')) {
             break;
         }
         $remarks[] = trim($lines[$i++]);
     }
-    $obj->{'B3.3 Fordeling av forhåndsstemmesedler - øvrige'}->avvikRemarks = $remarks;
+    $obj->{'B3.3 Fordeling av forhåndsstemmesedler - øvrige'}->avvikRemarks = explode("\n", trim(implode("\n", $remarks)));
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -1996,6 +1996,11 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         $i = removeLineIfPresent_andEmpty($lines, $i);
     }
     $obj->{'D2 Stikkprøvekontroll'}->{'Gjennomførte stikkprøver'} = $stikkprove;
+    //$obj->{'D2 Stikkprøvekontroll'}->remarks = array();
+
+    if (!str_starts_with(trim($lines[$i]), 'E Godkjenning')) {
+
+    }
     
     
     // E Godkjenning
