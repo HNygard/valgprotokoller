@@ -1230,6 +1230,9 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $obj->{'B4.3 Fordeling av forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen'}->{'Totalt godkjente stemmesedler'} = new stdClass();
     $obj->{'B4.3 Fordeling av forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen'}->{'Totalt godkjente stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
     $obj->{'B4.3 Fordeling av forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen'}->{'Totalt godkjente stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
     
 
     // 
@@ -1248,6 +1251,33 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // 
     // 
     
+    $i = assertLine_trim($lines, $i, 'Merknad til avvik mellom første og andre telling');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $remarks = array();
+    while (true) {
+        if ($i >= count($lines) || trim($lines[$i]) == '') {
+            break;
+        }
+        $remarks[] = trim($lines[$i++]);
+    }
+    $obj->{'B4.3 Fordeling av forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen'}->avvikRemarks = $remarks;
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = assertLine_trim($lines, $i, 'Andre merknader til forhåndsstemmer - telt etter kl. 17 dagen etter valgdagen');
+    $i = assertLine_trim($lines, $i, 'Eventuelt annen relevant informasjon fra valggjennomføring og opptelling.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $remarks = array();
+    while (true) {
+        if ($i >= count($lines) || trim($lines[$i]) == '') {
+            break;
+        }
+        $remarks[] = trim($lines[$i++]);
+    }
+    $obj->{'B4.3 Fordeling av forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen'}->remarks = $remarks;
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
     
     
     // C Valgtingsstemmer
@@ -1272,6 +1302,47 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // 
     // 
     
+    $obj->{'C1.1 Valgtingsstemmegivninger'} = new stdClass();
+    $i = assertLine_trim($lines, $i, 'C Valgtingsstemmer');
+    $i = assertLine_trim($lines, $i, 'C1 Oppsummering av valgtingsstemmer');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = assertLine_trim($lines, $i, 'C1.1 Valgtingsstemmegivninger');
+    $i = assertLine_trim($lines, $i, 'Oversikt over godkjente stemmegivninger (kryss i manntall) og forkastede stemmegivninger i kommunen.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = assertLine_trim($lines, $i, 'Antall');
+    $match = regexAssertAndReturnMatch('/^Godkjente stemmegivninger \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    $obj->{'C1.1 Valgtingsstemmegivninger'}->{'Godkjente stemmegivninger'} = cleanFormattedNumber($match[1]);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    regexAssertAndReturnMatch('/^Forkastelsesgrunn\s*Antall$/', trim($lines[$i++]));
+    $items = array(
+        'Velgeren er ikke innført i manntallet i kommunen § 10-2 (1) a',
+        'Velgeren har ikke stemmerett § 10-2 (1) a',
+        'Det kan ikke fastslås hvem velgeren er § 10-2 (1) b',
+        'Stemmegivningen er ikke levert til et sted der velgeren kan stemme § 10-2 (1) c',
+        'Det er sannsynlighetsovervekt for at omslagskonvolutten er åpnet § 10-2 (1) d',
+        'Velgeren har tidligere fått godkjent en stemmegivning § 10-2 (1) e',
+        'Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter klokken 17 dagen etter valgdagen § 10-2 (1) f',
+        'Forkastede stemmegivninger'
+    );
+    foreach ($items as $item) {
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        if ($item == 'Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter klokken 17 dagen etter valgdagen § 10-2 (1) f') {
+            $part1 = 'Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter';
+            $part2 = 'klokken 17 dagen etter valgdagen § 10-2 (1) f';
+            $number = regexAssertAndReturnMatch('/^' . $part1 . ' \s*([0-9\-]* ?[0-9]*)\s*$/', trim($lines[$i++]))[1];
+            $i = assertLine_trim($lines, $i, $part2);
+        } else {
+            $item_regex = str_replace('(', '\(', $item);
+            $item_regex = str_replace(')', '\)', $item_regex);
+            $item_regex = str_replace('/', '\/', $item_regex);
+            $number = regexAssertAndReturnMatch('/^' . $item_regex . ' \s*([0-9\-]* ?[0-9]*)\s*$/', trim($lines[$i++]))[1];
+        }
+        $obj->{'C1.1 Valgtingsstemmegivninger'}->{$item} = $number;
+    }
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
     
     
     // C1.2 Valgtingsstemmesedler
@@ -1291,9 +1362,39 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // 
     // 
     // 
-    // 
-    // 
-    // 
+
+    $obj->{'C1.2 Valgtingsstemmesedler'} = new stdClass();
+    $i = assertLine_trim($lines, $i, 'C1.2 Valgtingsstemmesedler');
+    $i = assertLine_trim($lines, $i, 'Oversikt over alle godkjente og forkastede stemmesedler i kommunen.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = assertLine_trim($lines, $i, 'Antall');
+    $match = regexAssertAndReturnMatch('/^Godkjente stemmesedler \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    $obj->{'C1.2 Valgtingsstemmesedler'}->{'Godkjente stemmesedler'} = cleanFormattedNumber($match[1]);
+    $match = regexAssertAndReturnMatch('/^Forkastede stemmesedler \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    $obj->{'C1.2 Valgtingsstemmesedler'}->{'Forkastede stemmesedler'} = cleanFormattedNumber($match[1]);
+    $match = regexAssertAndReturnMatch('/^Totalt antall stemmesedler \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    $obj->{'C1.2 Valgtingsstemmesedler'}->{'Totalt antall stemmesedler'} = cleanFormattedNumber($match[1]);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    regexAssertAndReturnMatch('/^Forkastelsesgrunn\s*Antall$/', trim($lines[$i++]));
+    $items = array(
+        'Seddelen mangler offentlig stempel § 10-3 (1) a',
+        'Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b',
+        'Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c',
+        'Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d',
+        'Forkastede stemmesedler'
+    );
+    foreach ($items as $item) {
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $item_regex = str_replace('(', '\(', $item);
+        $item_regex = str_replace(')', '\)', $item_regex);
+        $item_regex = str_replace('/', '\/', $item_regex);
+        $number = regexAssertAndReturnMatch('/^' . $item_regex . ' \s*([0-9\-]* ?[0-9]*)\s*$/', trim($lines[$i++]))[1];
+        $obj->{'C1.2 Valgtingsstemmesedler'}->{$item} = $number;
+    }
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
     
     
     

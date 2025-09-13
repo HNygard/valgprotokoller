@@ -925,7 +925,33 @@
         "Totalt godkjente stemmesedler": {
             "førsteTelling": 270,
             "andreTelling": 270
-        }
+        },
+        "avvikRemarks": [
+            "Tellefeil i 1. telling (manuell telling)"
+        ],
+        "remarks": [
+            "-"
+        ]
     },
-    "errorMessage": "No match for regex.\nRegex ..... : Stop here\nLine ...... : \n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1586): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(617): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
+    "C1.1 Valgtingsstemmegivninger": {
+        "Godkjente stemmegivninger": 4532,
+        "Velgeren er ikke innført i manntallet i kommunen § 10-2 (1) a": "19",
+        "Velgeren har ikke stemmerett § 10-2 (1) a": "12",
+        "Det kan ikke fastslås hvem velgeren er § 10-2 (1) b": "-",
+        "Stemmegivningen er ikke levert til et sted der velgeren kan stemme § 10-2 (1) c": "-",
+        "Det er sannsynlighetsovervekt for at omslagskonvolutten er åpnet § 10-2 (1) d": "-",
+        "Velgeren har tidligere fått godkjent en stemmegivning § 10-2 (1) e": "-",
+        "Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter klokken 17 dagen etter valgdagen § 10-2 (1) f": "-",
+        "Forkastede stemmegivninger": "31"
+    },
+    "C1.2 Valgtingsstemmesedler": {
+        "Godkjente stemmesedler": 4533,
+        "Forkastede stemmesedler": "14",
+        "Totalt antall stemmesedler": 4547,
+        "Seddelen mangler offentlig stempel § 10-3 (1) a": "14",
+        "Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b": "-",
+        "Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c": "-",
+        "Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d": "-"
+    },
+    "errorMessage": "No match for regex.\nRegex ..... : Stop here\nLine ...... : C1.3 Fordeling av valgtingsstemmesedler\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1687): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(617): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
 }
