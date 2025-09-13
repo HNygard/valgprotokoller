@@ -1085,12 +1085,12 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $remarks = array();
     while (true) {
-        if ($i >= count($lines) || trim($lines[$i]) == '') {
+        if (str_starts_with(trim($lines[$i]), 'B4.2 Forkastede forhåndsstemmesedler')) {
             break;
         }
         $remarks[] = trim($lines[$i++]);
     }
-    $obj->{'B4.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler'}->remarks = $remarks;
+    $obj->{'B4.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler'}->remarks = explode("\n", trim(implode("\n", $remarks)));
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -1251,12 +1251,12 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $remarks = array();
     while (true) {
-        if ($i >= count($lines) || trim($lines[$i]) == '') {
+        if (str_starts_with(trim($lines[$i]), 'Andre merknader til forhåndsstemmer - telt etter kl. 17 dagen etter valgdagen')) {
             break;
         }
         $remarks[] = trim($lines[$i++]);
     }
-    $obj->{'B4.3 Fordeling av forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen'}->avvikRemarks = $remarks;
+    $obj->{'B4.3 Fordeling av forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen'}->avvikRemarks = explode("\n", trim(implode("\n", $remarks)));
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -1265,12 +1265,12 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $remarks = array();
     while (true) {
-        if ($i >= count($lines) || trim($lines[$i]) == '') {
+        if (str_starts_with($lines[$i], 'C Valgtingsstemmer')) {
             break;
         }
         $remarks[] = trim($lines[$i++]);
     }
-    $obj->{'B4.3 Fordeling av forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen'}->remarks = $remarks;
+    $obj->{'B4.3 Fordeling av forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen'}->remarks = explode("\n", trim(implode("\n", $remarks)));
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -1982,8 +1982,14 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
 
             if ($kategori == 'Forhåndsstemmer - telt etter kl. 17 dagen etter') {
                 // Special case: the line break happened in the middle of the category name
-                $i = assertLine_trim($lines, $i, 'valgdagen');
                 $kategori .= ' valgdagen';
+                if (trim($lines[$i]) == 'valgdagen') {
+                    $i = assertLine_trim($lines, $i, 'valgdagen');
+                }
+                else {
+                    $match = regexAssertAndReturnMatch('/^valgdagen  \s+(.+)$/', trim($lines[$i++]));
+                    $resultat = trim($resultat . ' ' . trim($match[1]));
+                }
             }
 
             $stikkprove[] = (object)[

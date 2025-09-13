@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "10.09.2025    12:50",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Elverum kommune Hedmark valgdistrikt",
@@ -1815,6 +1815,84 @@
             "og fulgt opp under hele stemmeperioden."
         ]
     },
-    "D2 Stikkprøvekontroll": {},
-    "errorMessage": "Did not find expected value on line [782].\nExpected ... : valgdagen\nActual ..... : valgdagen                                                           avvik.\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1985): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "D2 Stikkprøvekontroll": {
+        "Gjennomførte stikkprøver": [
+            {
+                "kategori": "Forhåndsstemmer - fra valglokalene",
+                "resultat": "Det er foretatt stikkprøve av både kasseinnhold og partisedler. Ikke funnet avvik."
+            },
+            {
+                "kategori": "Forhåndsstemmer - øvrige",
+                "resultat": "Det er foretatt stikkprøve av både kasseinnhold og partisedler. Ikke funnet avvik."
+            },
+            {
+                "kategori": "Forhåndsstemmer - telt etter kl. 17 dagen etter valgdagen",
+                "resultat": "Det er foretatt stikkprøve av både kasseinnhold og partisedler. Ikke funnet avvik."
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Det er foretatt stikkprøve av både kasseinnhold og partisedler. Ikke funnet avvik."
+            }
+        ]
+    },
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "-"
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "LILLIAN SKJÆRVIK",
+                "role": "Leder"
+            },
+            {
+                "name": "ARNFINN UTHUS",
+                "role": "Nestleder"
+            },
+            {
+                "name": "SØLVI JOHANNE AMUNDSEN AAS",
+                "role": "Medlem"
+            },
+            {
+                "name": "INGRID HVIDSTEN GABRIELSEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "TURID OLSEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "DAG MARTIN BAKKEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "MARTIN GRØNBEKK MOEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "GJERMUND GJESTVANG",
+                "role": "Medlem"
+            },
+            {
+                "name": "JAN ARILD LINDSTAD",
+                "role": "Medlem"
+            },
+            {
+                "name": "VIDAR SKARET",
+                "role": "Medlem"
+            }
+        ],
+        "dato": "Onsdag 10. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "LILLIAN SKJÆRVIK"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "ARNFINN UTHUS"
+            }
+        ]
+    }
 }

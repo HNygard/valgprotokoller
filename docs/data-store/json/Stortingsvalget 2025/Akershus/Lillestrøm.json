@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "10.09.2025    09:39",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Lillestrøm kommune Akershus valgdistrikt",
@@ -4355,6 +4355,56 @@
             "feil underveis."
         ]
     },
-    "D2 Stikkprøvekontroll": {},
-    "errorMessage": "Did not find expected value on line [1786].\nExpected ... : valgdagen\nActual ..... : valgdagen                                                            stemmekretser. Disse er fordelt på alle 4 skannere som har vært i bruk. Det er\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1985): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "D2 Stikkprøvekontroll": {
+        "Gjennomførte stikkprøver": [
+            {
+                "kategori": "Forhåndsstemmer - fra valglokalene",
+                "resultat": "Det er gjennomført stikkprøvekontroll på alle opptellingskategorier og stemmekretser. Disse er fordelt på alle 4 skannere som har vært i bruk. Det er ikke funnet avvik på noen av stikkprøvekontrollene."
+            },
+            {
+                "kategori": "Forhåndsstemmer - øvrige",
+                "resultat": "Det er gjennomført stikkprøvekontroll på alle opptellingskategorier og stemmekretser. Disse er fordelt på alle 4 skannere som har vært i bruk. Det er ikke funnet avvik på noen av stikkprøvekontrollene."
+            },
+            {
+                "kategori": "Forhåndsstemmer - telt etter kl. 17 dagen etter valgdagen",
+                "resultat": "Det er gjennomført stikkprøvekontroll på alle opptellingskategorier og stemmekretser. Disse er fordelt på alle 4 skannere som har vært i bruk. Det er ikke funnet avvik på noen av stikkprøvekontrollene."
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Det er gjennomført stikkprøvekontroll på alle opptellingskategorier og stemmekretser. Disse er fordelt på alle 4 skannere som har vært i bruk. Det er ikke funnet avvik på noen av stikkprøvekontrollene."
+            },
+            {
+                "kategori": "Valgtingsstemmer - øvrige",
+                "resultat": "Det er gjennomført stikkprøvekontroll på alle opptellingskategorier og stemmekretser. Disse er fordelt på alle 4 skannere som har vært i bruk. Det er ikke funnet avvik på noen av stikkprøvekontrollene."
+            }
+        ]
+    },
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "-"
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "KJARTAN BERLAND",
+                "role": "Leder"
+            },
+            {
+                "name": "ANETTE CARNARIUS ELSETH",
+                "role": "Nestleder"
+            }
+        ],
+        "dato": "Onsdag 10. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "KJARTAN BERLAND"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "ANETTE CARNARIUS ELSETH"
+            }
+        ]
+    }
 }

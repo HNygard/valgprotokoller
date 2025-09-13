@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "10.09.2025    08:37",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Sør-Varanger kommune Finnmark Finnmárku valgdistrikt",
@@ -2581,6 +2581,86 @@
             "stemmegivninger både ved forhåndsmottak og ved valgting har vært dedikerte maskiner."
         ]
     },
-    "D2 Stikkprøvekontroll": {},
-    "errorMessage": "Did not find expected value on line [1083].\nExpected ... : valgdagen\nActual ..... : valgdagen                                                           valgtellingen som helhet. Denne stikkprøven viste ingen differanse mellom\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1985): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "D2 Stikkprøvekontroll": {
+        "Gjennomførte stikkprøver": [
+            {
+                "kategori": "Forhåndsstemmer - fra valglokalene",
+                "resultat": "Det er utført en stikkprøvekontroll på en kasse fra hvert av de to registrerte forhåndsstemmemottakene. Begge stikkprøver viser ingen differanse mellom maskinell og manuell telling."
+            },
+            {
+                "kategori": "Forhåndsstemmer - øvrige",
+                "resultat": "Stikkprøve utført på en kasse i kategorien. Stikkprøven viste ingen differanse mellom maskinell og manuell telling."
+            },
+            {
+                "kategori": "Forhåndsstemmer - telt etter kl. 17 dagen etter valgdagen",
+                "resultat": "Stikkprøve utført på siste kasse under tellingen både av kategori og valgtellingen som helhet. Denne stikkprøven viste ingen differanse mellom maskinell og manuell telling."
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Stikkprøve valgt ut på forhånd til totalt 4 kasser fordelt på kretser av ulik størrelse. 2 stikkprøver endte i tom kasse. 2 stikkprøver viste ingen differanse mellom maskinell og manuell telling. Disse to er gjennomført tidlig i den totale tellingen av kategorien."
+            },
+            {
+                "kategori": "Valgtingsstemmer - øvrige",
+                "resultat": "Det var planlagt stikkprøve i denne kategorien men kategorien endte som en 0-telling og dermed tom kasse. Stikkprøve ikke gjennomført"
+            }
+        ]
+    },
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "7 av 8 protokoller fra valglokalene er signert elektronisk via den nye løsningen i EVA. Den siste protokollen kunne ikke signeres via den",
+            "elektroniske løsningen da leder måtte byttes ut kort tid før valgtinget skulle gjennomføres. Nestleder registrert i grunnlagsdata",
+            "fungerte som leder i stemmelokalet under valgtinget og en ny nestleder ble tilført stemmelokalet. Da protokolleringsløsningen er ny",
+            "tenkte ingen på at leder/nestleder måtte oppdateres i grunndata før gjennomføring av valgtinget. Valgteamet forsøkte å endre",
+            "grunnlagsdata i løpet av kvelden, da leder meldte at digital signering ikke lot seg gjennomføre. Endringer av grunndata var ikke tillatt",
+            "på daværende tidspunkt. Valgteamet valgte løsningen med papirutskrift og manuell endring av leder/nestleder slik at protokollene",
+            "kunne signeres."
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "MAGNUS MÆLAND",
+                "role": "Leder"
+            },
+            {
+                "name": "TORE FREDRIK NILSEN",
+                "role": "Nestleder"
+            },
+            {
+                "name": "GURO KVAAL BRANDSHAUG",
+                "role": "Medlem"
+            },
+            {
+                "name": "TINA-AGNETE BØNÅ",
+                "role": "Medlem"
+            },
+            {
+                "name": "ELIN MATHISEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "KURT PASVIKBAMSEN WIKAN",
+                "role": "Medlem"
+            },
+            {
+                "name": "ASTRID ELISABETH HASSELBERG",
+                "role": "Varamedlem"
+            },
+            {
+                "name": "SILJE ELISABETH HEMMINGHYTT MAGNUSSEN",
+                "role": "Varamedlem"
+            }
+        ],
+        "dato": "Onsdag 10. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "MAGNUS MÆLAND"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "GURO KVAAL BRANDSHAUG"
+            }
+        ]
+    }
 }
