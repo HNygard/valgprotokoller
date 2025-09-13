@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "09.09.2025    20:27",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Nord-Fron kommune Oppland valgdistrikt",
@@ -1805,12 +1805,70 @@
             "en tidlige fase, og mener ikke det skal ha fått innvirkning på valgresultatet for kommunen, eller for velgernes muligheter til å velge på",
             "sitt foretrukne parti.",
             "Vi har vært i kontakt med Valgdirektoratet tirsdag 09.09.2025, og fått bekreftet fra de at de rutinene vi iverksatte var tilstrekkelige til at",
-            "de mener valget i Nord-Fron kan godkjennes."
+            "de mener valget i Nord-Fron kan godkjennes.",
+            "",
+            "I opptellingen har det vært tatt stikkprøver av alle kategorier, med unntak av kategorien øvrige forhåndsstemmer. Her hadde vi så få",
+            "stemmer, at den manuelle tellingen i to runder sammen med den maskinelle tellingen anses som dekkende for å sikre kontroll."
         ]
     },
     "D2 Stikkprøvekontroll": {
-        "Gjennomførte stikkprøver": []
+        "Gjennomførte stikkprøver": [
+            {
+                "kategori": "Forhåndsstemmer - fra valglokalene",
+                "resultat": "Ingen avvik"
+            },
+            {
+                "kategori": "Forhåndsstemmer - telt etter kl. 17 dagen etter valgdagen",
+                "resultat": "Ingen avvik"
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Ingen avvik"
+            }
+        ]
     },
-    "E Godkjenning": {},
-    "errorMessage": "Did not find expected value on line [771].\nExpected ... : E Godkjenning\nActual ..... : I opptellingen har det vært tatt stikkprøver av alle kategorier, med unntak av kategorien øvrige forhåndsstemmer. Her hadde vi så få\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2015): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "-"
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "ANNE MARIE OLSTAD",
+                "role": "Leder"
+            },
+            {
+                "name": "MORTEN RANDEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "EVA KAPPELSLÅEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "MARTHE DYPDALEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "TRYGVE GROVEN VAAL",
+                "role": "Medlem"
+            },
+            {
+                "name": "SIMEN STOKKE",
+                "role": "Varamedlem"
+            }
+        ],
+        "dato": "Tirsdag 09. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "ANNE MARIE OLSTAD"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "MARTHE DYPDALEN"
+            }
+        ]
+    }
 }

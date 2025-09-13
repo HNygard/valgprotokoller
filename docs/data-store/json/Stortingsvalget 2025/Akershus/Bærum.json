@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "10.09.2025    14:34",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Bærum kommune Akershus valgdistrikt",
@@ -4645,12 +4645,143 @@
     },
     "D Kontrolltiltak": {
         "D1 Kontrolltiltak": [
-            "Valget er planlagt og gjennomført i henhold til bestemmelsene i gjeldende valglov og valgforskrift."
+            "Valget er planlagt og gjennomført i henhold til bestemmelsene i gjeldende valglov og valgforskrift.",
+            "",
+            "Valgdirektoratets veileder «Hvordan gjennomføre sikre valg i kommuner og fylkeskommuner» er lagt til grunn for kommunens arbeid",
+            "med valg.",
+            "",
+            "Det er utarbeidet en egen risiko- og sårbarhetsanalyse for valgarbeidet med en tilhørende beredskapsplan som fokuserer på",
+            "risikoreduserende og avbøtende tiltak.",
+            "",
+            "I valglokalene installeres det elektroniske valgadministrasjonssystemet (EVA) på nye PCer av kvalifisert IT-personell. Maskinene er låst",
+            "for annen bruk, og det kreves personlig innlogging med Bank-ID for å benytte programvaren.",
+            "",
+            "Programvare for klientmonitorering av operativsystemet er installert på maskinene som benyttes til EVA-skanning programvaren.",
+            "",
+            "Stikkprøvekontroller er gjennomført i overensstemmelse med gjeldende rutine fra Valgdirektoratet, jf. også punkt D2 nedenfor.",
+            "",
+            "Kommunen har utarbeidet egne rutiner for forsvarlig tømming av urner gjennom hele stemmeperioden.",
+            "",
+            "Kommunen har utarbeidet egne rutiner for forsegling oppbevaring og transport av valgmateriell gjennom hele stemmeperioden. Det",
+            "er etablert et eget sikkerhetsregime knyttet til oppbevaring av stemmesedler, skannere og stempler. Nøkler oppbevares innlåst og",
+            "registreres ut på person. Personkontroll ved at minimum to personer er til stede og kvalitetssikrer håndteringen av avgitte stemmer.",
+            "",
+            "Opplæring av samtlige valgmedarbeidere, både gjennom krav om deltakelse på fysisk kurs, samt ved at det er utarbeidet egne",
+            "veiledere til forhåndsstemmemottakere, valgmedarbeidere og ledergruppene i lokalene.",
+            "",
+            "Dersom det forekommer noe annet enn minimale avvik mellom første og andre telling gjennomføres ny tredje telling."
         ]
     },
     "D2 Stikkprøvekontroll": {
-        "Gjennomførte stikkprøver": []
+        "Gjennomførte stikkprøver": [
+            {
+                "kategori": "Forhåndsstemmer - fra valglokalene",
+                "resultat": "Scanner nummer 1, antall sedler 1027, ingen avvik"
+            },
+            {
+                "kategori": "Forhåndsstemmer - øvrige",
+                "resultat": "Scanner nummer 2, antall sedler 410, ingen avvik"
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Scanner nummer 3, antall sedler 326, ingen avvik"
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Scanner nummer 4, antall sedler 487, ingen avvik"
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Scanner nummer 5, antall sedler 470, ingen avvik"
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Scanner nummer 6, antall sedler 193, ingen avvik"
+            }
+        ]
     },
-    "E Godkjenning": {},
-    "errorMessage": "Did not find expected value on line [1874].\nExpected ... : E Godkjenning\nActual ..... : Valgdirektoratets veileder «Hvordan gjennomføre sikre valg i kommuner og fylkeskommuner» er lagt til grunn for kommunens arbeid\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2015): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "-"
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "LISBETH HAMMER KROG",
+                "role": "Leder"
+            },
+            {
+                "name": "HAAKON KVENNA VEUM",
+                "role": "Nestleder"
+            },
+            {
+                "name": "Tone Halvorsen",
+                "role": "Sekretær"
+            },
+            {
+                "name": "CATHRINE CHAFFEY",
+                "role": "Medlem"
+            },
+            {
+                "name": "REIDAR KLEPPE",
+                "role": "Medlem"
+            },
+            {
+                "name": "TORBJØRN ESPELIEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "DAG EGIL STRØMME",
+                "role": "Medlem"
+            },
+            {
+                "name": "ELISABETH HEGG GJØLME",
+                "role": "Medlem"
+            },
+            {
+                "name": "HAAKON CHRISTOPHER SANDVEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "MORTEN SKAUGE",
+                "role": "Medlem"
+            },
+            {
+                "name": "ANDERS NIKKI SCHEI",
+                "role": "Medlem"
+            },
+            {
+                "name": "EIRIK TRYGVE BØE",
+                "role": "Medlem"
+            },
+            {
+                "name": "WENCHE STEEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "ANDERS PUNTERVOLD HAMMER",
+                "role": "Varamedlem"
+            },
+            {
+                "name": "ELISABETH NESSET",
+                "role": "Varamedlem"
+            },
+            {
+                "name": "DAG VANGSNES",
+                "role": "Varamedlem"
+            }
+        ],
+        "dato": "Onsdag 10. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "LISBETH HAMMER KROG"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "HAAKON KVENNA VEUM"
+            }
+        ]
+    }
 }

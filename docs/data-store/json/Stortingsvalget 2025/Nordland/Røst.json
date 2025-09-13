@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "09.09.2025    17:21",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Røst kommune Nordland valgdistrikt",
@@ -1324,12 +1324,49 @@
     "D Kontrolltiltak": {
         "D1 Kontrolltiltak": [
             "Valgstyret har vedtatt sikkerhet, beredskap og ROS-analyse for valget med klare retningslinjer som ble fulgt i alle faser. Valglokalene",
-            "var godt bemannet under forhåndsstemmegivningen og på valgtinget."
+            "var godt bemannet under forhåndsstemmegivningen og på valgtinget.",
+            "",
+            "Samlet vurdering er at kontrolltiltakene har vært tilstrekkelige og at valget er gjennomført på en korrekt og sikker måte i tråd med",
+            "vedtatte retningslinjer."
         ]
     },
     "D2 Stikkprøvekontroll": {
         "Gjennomførte stikkprøver": []
     },
-    "E Godkjenning": {},
-    "errorMessage": "Did not find expected value on line [585].\nExpected ... : E Godkjenning\nActual ..... : Samlet vurdering er at kontrolltiltakene har vært tilstrekkelige og at valget er gjennomført på en korrekt og sikker måte i tråd med\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2015): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "-"
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "ELISABETH KRISTIN MIKALSEN",
+                "role": "Leder"
+            },
+            {
+                "name": "HARJEET KAUR JASSAL",
+                "role": "Nestleder"
+            },
+            {
+                "name": "STEINAR HANSEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "JØRUND RENE GREGER JOHANSEN",
+                "role": "Medlem"
+            }
+        ],
+        "dato": "Tirsdag 09. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "STEINAR HANSEN"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "JØRUND RENE GREGER JOHANSEN"
+            }
+        ]
+    }
 }

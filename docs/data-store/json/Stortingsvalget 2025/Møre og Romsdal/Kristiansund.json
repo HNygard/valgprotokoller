@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "09.09.2025    18:05",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Kristiansund kommune Møre og Romsdal valgdistrikt",
@@ -1839,12 +1839,79 @@
             "4. mars 2025",
             "3. juni 2025",
             "8. september 2025",
-            "9. september 2025"
+            "9. september 2025",
+            "",
+            "Under opptelling har valgstyret møtt for å vurdere forkastelser av stemmegivinger og stemmesedler.",
+            "",
+            "Valgstyrets leder og nestleder har gjennomført flere stikkprøvekontroller i valglokaler og under opptelling for å se at rutiner og",
+            "gjennomføring har gått riktig for seg."
         ]
     },
     "D2 Stikkprøvekontroll": {
         "Gjennomførte stikkprøver": []
     },
-    "E Godkjenning": {},
-    "errorMessage": "Did not find expected value on line [776].\nExpected ... : E Godkjenning\nActual ..... : Under opptelling har valgstyret møtt for å vurdere forkastelser av stemmegivinger og stemmesedler.\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2015): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "-"
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "KJELL NEERGAARD",
+                "role": "Leder"
+            },
+            {
+                "name": "LINDA DALSEG HØVIK",
+                "role": "Nestleder"
+            },
+            {
+                "name": "KRISTIN HEGGELUND",
+                "role": "Sekretær"
+            },
+            {
+                "name": "HENRIK STENSØNES",
+                "role": "Medlem"
+            },
+            {
+                "name": "BERIT TØNNESEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "SIGVE LORÅS TORLAND",
+                "role": "Medlem"
+            },
+            {
+                "name": "LINE KARLSVIK",
+                "role": "Medlem"
+            },
+            {
+                "name": "ROBERT NORDVIK",
+                "role": "Medlem"
+            },
+            {
+                "name": "KRISTINA VISNES",
+                "role": "Medlem"
+            },
+            {
+                "name": "RAGNHILD HELSETH",
+                "role": "Varamedlem"
+            },
+            {
+                "name": "ASGEIR HANSEN",
+                "role": "Varamedlem"
+            }
+        ],
+        "dato": "Tirsdag 09. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "KJELL NEERGAARD"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "RAGNHILD HELSETH"
+            }
+        ]
+    }
 }

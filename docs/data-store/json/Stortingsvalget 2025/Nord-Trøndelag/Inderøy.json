@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "09.09.2025    19:33",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Inderøy kommune Nord-Trøndelag valgdistrikt",
@@ -1948,12 +1948,67 @@
             "antallet de teller. Dersom det blir avvik mellom disse to tellingene, blir det telt på nytt fram til avviket er avdekket. Andre telling er",
             "gjennomført maskinelt med skanning, med unntak av kategorien forhåndsstemmer - sent innkommet.",
             "Dersom det avdekkes avvik mellom første manuelle telling og skanningen blir det foretatt ny manuell telling av bunkene der feilen er",
-            "avdekket. Avvik er kommentert i protokollen."
+            "avdekket. Avvik er kommentert i protokollen.",
+            "",
+            "Det er foretatt stikkprøvekontroll i hver kategori som er blitt skannet. Forhåndsstemmer - ordinære, forhåndsstemmer - øvrige og",
+            "valgtingsstemmer - fra valglokalene.",
+            "Kategorien forhåndsstemmer - sent innkommet telles kun manuelt. Denne telles to ganger; første telling og andre telling."
         ]
     },
     "D2 Stikkprøvekontroll": {
-        "Gjennomførte stikkprøver": []
+        "Gjennomførte stikkprøver": [
+            {
+                "kategori": "Forhåndsstemmer - fra valglokalene",
+                "resultat": "Stikkprøvekontrollen viste ingen avvik."
+            },
+            {
+                "kategori": "Forhåndsstemmer - øvrige",
+                "resultat": "Stikkprøvekontrollen viste ingen avvik."
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Stikkprøvekontrollen viste ingen avvik."
+            }
+        ]
     },
-    "E Godkjenning": {},
-    "errorMessage": "Did not find expected value on line [828].\nExpected ... : E Godkjenning\nActual ..... : Det er foretatt stikkprøvekontroll i hver kategori som er blitt skannet. Forhåndsstemmer - ordinære, forhåndsstemmer - øvrige og\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2015): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "Ingen merknader."
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "VIBEKE ARNTZEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "SIGNAR TORMOD BERGER",
+                "role": "Medlem"
+            },
+            {
+                "name": "TRUDE HOFF",
+                "role": "Medlem"
+            },
+            {
+                "name": "TORE WOLD",
+                "role": "Varamedlem"
+            },
+            {
+                "name": "ERLEND ØSTGÅRD KVAKLAND",
+                "role": "Varamedlem"
+            }
+        ],
+        "dato": "Tirsdag 09. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "VIBEKE ARNTZEN"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "ERLEND ØSTGÅRD KVAKLAND"
+            }
+        ]
+    }
 }

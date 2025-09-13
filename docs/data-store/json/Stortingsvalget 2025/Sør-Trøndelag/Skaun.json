@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "10.09.2025    09:09",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Skaun kommune Sør-Trøndelag valgdistrikt",
@@ -1958,12 +1958,85 @@
             "Kommunen vedtok før valggjennomføringen \"Rutine for forsegling, oppbevaring og transport av valgmateriell - stortings- og",
             "sametingsvalget 2025\", som sier detaljert hvordan valgmateriell skal behandles. Denne er fulgt nøye gjennom hele",
             "valggjennomføringen. I tillegg har vi lagt vekt på prinsippene i den i opplæring av valgmedarbeidere som jobbet på valgdagen og",
-            "under forhåndsstemmeperioden."
+            "under forhåndsstemmeperioden.",
+            "",
+            "Både vi og ITMidt har også utformet lokale ROS-analyser."
         ]
     },
     "D2 Stikkprøvekontroll": {
-        "Gjennomførte stikkprøver": []
+        "Gjennomførte stikkprøver": [
+            {
+                "kategori": "Forhåndsstemmer - fra valglokalene",
+                "resultat": "Ikke systematiske feil. Prøve tatt av kasse 1."
+            },
+            {
+                "kategori": "Forhåndsstemmer - øvrige",
+                "resultat": "Ikke systematiske feil. Prøve tatt av kasse 2."
+            },
+            {
+                "kategori": "Forhåndsstemmer - telt etter kl. 17 dagen etter valgdagen",
+                "resultat": "Ikke systematiske feil. Prøve tatt av kasse 2."
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Ikke systematiske feil. Prøve tatt av kasse 1 fra Viggja og kasse 2 fra Venn."
+            },
+            {
+                "kategori": "Valgtingsstemmer - øvrige",
+                "resultat": "Ikke systematiske feil. Prøve tatt av kasse 1."
+            }
+        ]
     },
-    "E Godkjenning": {},
-    "errorMessage": "Did not find expected value on line [826].\nExpected ... : E Godkjenning\nActual ..... : Både vi og ITMidt har også utformet lokale ROS-analyser.\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2015): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            ""
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "DAVID SØRLI NIELSEN",
+                "role": "Nestleder"
+            },
+            {
+                "name": "MILDRID ELISABETH WIGGEN GIMSENG",
+                "role": "Medlem"
+            },
+            {
+                "name": "KIM-ARE NÆSS LEISTAD",
+                "role": "Medlem"
+            },
+            {
+                "name": "MARIT THERESE VIKVALD HALVORSEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "LARS ARNE PEDERSEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "MARTIN TALSNES ENGEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "KJELL DAGFINN ØIAAS",
+                "role": "Varamedlem"
+            },
+            {
+                "name": "ASBJØRN LERAAND",
+                "role": "Varamedlem"
+            }
+        ],
+        "dato": "Onsdag 10. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "KIM-ARE NÆSS LEISTAD"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "MARTIN TALSNES ENGEN"
+            }
+        ]
+    }
 }

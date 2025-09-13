@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "09.09.2025    20:51",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Indre Fosen kommune Sør-Trøndelag valgdistrikt",
@@ -2128,12 +2128,65 @@
     },
     "D Kontrolltiltak": {
         "D1 Kontrolltiltak": [
-            "Det er gjennomfør stikkprøvekontroll. Skriftlige rutiner er utarbeidet og formidla til leder og nestleder valglokaler."
+            "Det er gjennomfør stikkprøvekontroll. Skriftlige rutiner er utarbeidet og formidla til leder og nestleder valglokaler.",
+            "",
+            "Rutiner er dokumenter i kommunens sak/arkivsystem."
         ]
     },
     "D2 Stikkprøvekontroll": {
-        "Gjennomførte stikkprøver": []
+        "Gjennomførte stikkprøver": [
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Ingen avvik - Leksvik kasse 3"
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Ingen avvik - Stjørna kasse 3"
+            }
+        ]
     },
-    "E Godkjenning": {},
-    "errorMessage": "Did not find expected value on line [886].\nExpected ... : E Godkjenning\nActual ..... : Rutiner er dokumenter i kommunens sakarkivsystem.\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2015): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "-"
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "OSKAR ANDRÉ SMÅVIK",
+                "role": "Leder"
+            },
+            {
+                "name": "RAYMOND BALSTAD",
+                "role": "Nestleder"
+            },
+            {
+                "name": "HARALD FAGERVOLD",
+                "role": "Medlem"
+            },
+            {
+                "name": "KARI ÅKER",
+                "role": "Medlem"
+            },
+            {
+                "name": "SIGURD SAUE",
+                "role": "Medlem"
+            },
+            {
+                "name": "KURT RØNNING",
+                "role": "Varamedlem"
+            }
+        ],
+        "dato": "Tirsdag 09. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "OSKAR ANDRÉ SMÅVIK"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "SIGURD SAUE"
+            }
+        ]
+    }
 }

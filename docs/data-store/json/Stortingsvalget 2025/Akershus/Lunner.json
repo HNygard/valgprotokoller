@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "09.09.2025    19:04",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Lunner kommune Akershus valgdistrikt",
@@ -2108,12 +2108,84 @@
     },
     "D Kontrolltiltak": {
         "D1 Kontrolltiltak": [
-            "Det er gjennomført stikkprøvekontroller på alle opptellingskategorier. Stikkprøvekontrollene viste ingen avvik."
+            "Det er gjennomført stikkprøvekontroller på alle opptellingskategorier. Stikkprøvekontrollene viste ingen avvik.",
+            "",
+            "Der det har vært avvik mellom 1. og 2. telling har vi gjennomført en manuell kontrolltelling, som har vist at 2. telling har vært korrekt.",
+            "",
+            "Første manuelle tellingen er telt to ganger av to ulike valgmedarbeidere. En telling er utført med partinavnet opp, og en telling er",
+            "utført med stempelfeltet opp."
         ]
     },
     "D2 Stikkprøvekontroll": {
-        "Gjennomførte stikkprøver": []
+        "Gjennomførte stikkprøver": [
+            {
+                "kategori": "Forhåndsstemmer - fra valglokalene",
+                "resultat": "Stikkprøven gav ingen avvik."
+            },
+            {
+                "kategori": "Forhåndsstemmer - øvrige",
+                "resultat": "Stikkprøven gav ingen avvik."
+            },
+            {
+                "kategori": "Forhåndsstemmer - telt etter kl. 17 dagen etter valgdagen",
+                "resultat": "Stikkprøven gav ingen avvik."
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Stikkprøven gav ingen avvik."
+            },
+            {
+                "kategori": "Valgtingsstemmer - øvrige",
+                "resultat": "Stikkprøven gav ingen avvik."
+            }
+        ]
     },
-    "E Godkjenning": {},
-    "errorMessage": "Did not find expected value on line [885].\nExpected ... : E Godkjenning\nActual ..... : Der det har vært avvik mellom 1. og 2. telling har vi gjennomført en manuell kontrolltelling, som har vist at 2. telling har vært korrekt.\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2015): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "-"
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "HARALD TYRDAL",
+                "role": "Leder"
+            },
+            {
+                "name": "MARGARET FRØISLI",
+                "role": "Nestleder"
+            },
+            {
+                "name": "VIBEKE BURAAS DYRNES",
+                "role": "Medlem"
+            },
+            {
+                "name": "SVEIN KRAKK",
+                "role": "Medlem"
+            },
+            {
+                "name": "OLE GUSTAV MORSTAD",
+                "role": "Medlem"
+            },
+            {
+                "name": "GEIR ANDRÉ OLSEN",
+                "role": "Varamedlem"
+            },
+            {
+                "name": "LINE JORUNG",
+                "role": "Varamedlem"
+            }
+        ],
+        "dato": "Tirsdag 09. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "HARALD TYRDAL"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "OLE GUSTAV MORSTAD"
+            }
+        ]
+    }
 }

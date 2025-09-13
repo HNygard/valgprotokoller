@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "09.09.2025    19:09",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Harstad kommune Troms Romsa valgdistrikt",
@@ -2816,12 +2816,73 @@
     },
     "D Kontrolltiltak": {
         "D1 Kontrolltiltak": [
-            "Valgstyret har ikke vedtatt egne kontrolltiltak."
+            "Valgstyret har ikke vedtatt egne kontrolltiltak.",
+            "",
+            "Pga av svært lave avvik mellom 1. og 2. telling av alle seddelkategorier har man ikke funnet det nødvendig å foreta stikkprøvekontroll."
         ]
     },
     "D2 Stikkprøvekontroll": {
-        "Gjennomførte stikkprøver": []
+        "Gjennomførte stikkprøver": [
+            {
+                "kategori": "Ingen oppføring",
+                "resultat": "-"
+            }
+        ]
     },
-    "E Godkjenning": {},
-    "errorMessage": "Did not find expected value on line [1169].\nExpected ... : E Godkjenning\nActual ..... : Pga av svært lave avvik mellom 1. og 2. telling av alle seddelkategorier har man ikke funnet det nødvendig å foreta stikkprøvekontroll.\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2015): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "-"
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "ELSE MARIE STENHAUG",
+                "role": "Leder"
+            },
+            {
+                "name": "LEIF SVEIN LYSVIK",
+                "role": "Nestleder"
+            },
+            {
+                "name": "EIVIND STENE",
+                "role": "Medlem"
+            },
+            {
+                "name": "MARIE MODAL",
+                "role": "Medlem"
+            },
+            {
+                "name": "EDVIN MATHIAS ERIKSEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "TROND VIGGO OPDAL",
+                "role": "Varamedlem"
+            },
+            {
+                "name": "ANNE MARGRETE ENEBERG",
+                "role": "Varamedlem"
+            },
+            {
+                "name": "MAGNAR CHARLY SOLBERG",
+                "role": "Varamedlem"
+            },
+            {
+                "name": "KJETIL BJØRKELUND",
+                "role": "Varamedlem"
+            }
+        ],
+        "dato": "Tirsdag 09. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "ELSE MARIE STENHAUG"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "LEIF SVEIN LYSVIK"
+            }
+        ]
+    }
 }

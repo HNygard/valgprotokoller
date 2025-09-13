@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "10.09.2025    11:32",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Gjerdrum kommune Akershus valgdistrikt",
@@ -1337,12 +1337,98 @@
     },
     "D Kontrolltiltak": {
         "D1 Kontrolltiltak": [
-            "Administrasjonen har laget og fulgt prosedyrer iht. regelverket."
+            "Administrasjonen har laget og fulgt prosedyrer iht. regelverket.",
+            "",
+            "Valgmedarbeiderne har fått god opplæring og vært meget motiverte for å gjennomføre sine oppgaver i tråd med regelverk og",
+            "prosedyrer.",
+            "",
+            "Valglokalene i forhåndsstemmeperioden og på valgdagen ble organisert i tråd med regelverket og på en ryddig og funksjonell måte,",
+            "både for medarbeiderne og for velgerne. Nødvendige kontrolltiltak kunne derfor utføres til enhver tid. Valglokalene har til enhver tid i",
+            "åpningstidene hatt leder og nestleder tilstede.",
+            "",
+            "Lokaler, utstyr og materiell har vært brukt/oppbevart i tråd med regelverk og prosedyrer. Vi har operert med soneinndeling av lokaler",
+            "for oppbevaring; herunder også røde soner.",
+            "",
+            "Adm. har tatt stikkprøver av alle anvendte tellekategorier, uten funn av feil.",
+            "",
+            "Adm. har gjennomført risiko- og sårbarhetsanalyse for alle fasene i planlegging og gjennomføring av valget, oppdatert kort tid før",
+            "valgdagen."
         ]
     },
     "D2 Stikkprøvekontroll": {
-        "Gjennomførte stikkprøver": []
+        "Gjennomførte stikkprøver": [
+            {
+                "kategori": "Forhåndsstemmer - fra valglokalene",
+                "resultat": "Tatt stikkprøve av kasse 3, 166 sedler. Ingen avvik avdekket."
+            },
+            {
+                "kategori": "Forhåndsstemmer - øvrige",
+                "resultat": "Tatt stikkprøve av kasse 2, 78 sedler. Ingen avvik avdekket."
+            },
+            {
+                "kategori": "Forhåndsstemmer - telt etter kl. 17 dagen etter valgdagen",
+                "resultat": "Tatt stikkprøve av kasse 1, 105 sedler. Ingen avvik avdekket."
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Tatt stikkprøve av kasse 1, 260 sedler. Ingen avvik avdekket."
+            }
+        ]
     },
-    "E Godkjenning": {},
-    "errorMessage": "Did not find expected value on line [585].\nExpected ... : E Godkjenning\nActual ..... : Valgmedarbeiderne har fått god opplæring og vært meget motiverte for å gjennomføre sine oppgaver i tråd med regelverk og\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2015): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "-"
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "LARS GUSTAV MONSEN",
+                "role": "Leder"
+            },
+            {
+                "name": "ANITA BRENNMOEN AASLAND",
+                "role": "Medlem"
+            },
+            {
+                "name": "DAGRUN AGNETE ØDEGAARD",
+                "role": "Medlem"
+            },
+            {
+                "name": "BJØRN ERIK SØRLI",
+                "role": "Medlem"
+            },
+            {
+                "name": "MADS KNUDSEN SANDER",
+                "role": "Medlem"
+            },
+            {
+                "name": "ANNA SANDMAN",
+                "role": "Medlem"
+            },
+            {
+                "name": "IVAR AAMODT",
+                "role": "Medlem"
+            },
+            {
+                "name": "GUNNHILD GUSTAVSEN HUSER",
+                "role": "Varamedlem"
+            },
+            {
+                "name": "ESPEN VENLI",
+                "role": "Varamedlem"
+            }
+        ],
+        "dato": "Onsdag 10. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "LARS GUSTAV MONSEN"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "ANNA SANDMAN"
+            }
+        ]
+    }
 }

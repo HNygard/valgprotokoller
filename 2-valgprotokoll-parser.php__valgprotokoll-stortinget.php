@@ -1924,12 +1924,15 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
 
     $kontrolltiltak = array();
     while (true) {
-        if ($i >= count($lines) || trim($lines[$i]) == '') {
+        if (
+            str_starts_with(trim($lines[$i]), 'D2 Stikkprøvekontroll') ||
+            str_starts_with(trim($lines[$i]), 'E Godkjenning')
+        ) {
             break;
         }
         $kontrolltiltak[] = trim($lines[$i++]);
     }
-    $obj->{'D Kontrolltiltak'}->{'D1 Kontrolltiltak'} = $kontrolltiltak;
+    $obj->{'D Kontrolltiltak'}->{'D1 Kontrolltiltak'} = explode("\n", trim(implode("\n", $kontrolltiltak)));
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -2013,12 +2016,12 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
 
     $e1_merknad = array();
     while (true) {
-        if ($i >= count($lines) || trim($lines[$i]) == '') {
+        if (str_starts_with(trim($lines[$i]), 'E2 Signering')) {
             break;
         }
         $e1_merknad[] = trim($lines[$i++]);
     }
-    $obj->{'E Godkjenning'}->{'E1 Valgstyrets merknad'} = $e1_merknad;
+    $obj->{'E Godkjenning'}->{'E1 Valgstyrets merknad'} = explode("\n", trim(implode("\n", $e1_merknad)));
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
