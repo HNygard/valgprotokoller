@@ -546,95 +546,177 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // 
     // 
     // 
- 
+    $obj->{'B1.3 Fordeling av forhåndsstemmesedler'} = new stdClass();
+    $i = assertLine_trim($lines, $i, 'B1.3 Fordeling av forhåndsstemmesedler');
+    $i = assertLine_trim($lines, $i, 'Fordelingen av godkjente stemmesedler i første og andre telling.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    regexAssertAndReturnMatch('/^Partinavn \s* Første telling \s* Andre telling \s* Avvik$/', trim($lines[$i++]));
+    // The list of item are political parties
+    // Parse each party line until we hit "Totalt partifordelte stemmesedler"
+    $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->parties = array();
+    while (true) {
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        if (str_starts_with(trim($lines[$i]), 'Totalt partifordelte stemmesedler')) {
+            break;
+        }
+        $match = regexAssertAndReturnMatch('/^([A-Za-zÆØÅæøåáö\(\) \-]*) \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)  \s* ([0-9\-\−]* ?[0-9]*)$/', trim($lines[$i++]));
+        $party = new stdClass();
+        $party->name = trim($match[1]);
+        $party->førsteTelling = cleanFormattedNumber($match[2]);
+        $party->andreTelling = cleanFormattedNumber($match[3]);
+        $party->avvik = cleanFormattedNumber($match[4]);
+        $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->parties[] = $party;
+    }
+    $match = regexAssertAndReturnMatch('/^Totalt partifordelte stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Totalt partifordelte stemmesedler'} = new stdClass();
+    $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Totalt partifordelte stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
+    $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Totalt partifordelte stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
+    $match = regexAssertAndReturnMatch('/^Blanke stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9-]* ?[0-9]*)  \s* ([0-9-]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Blanke stemmesedler'} = new stdClass();
+    $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Blanke stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
+    $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Blanke stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
+    $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Blanke stemmesedler'}->avvik = cleanFormattedNumber($match[3]);
+    $match = regexAssertAndReturnMatch('/^Totalt godkjente stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    if ($obj->{'B1.2 Forhåndsstemmesedler'}->{'Godkjente stemmesedler'} != cleanFormattedNumber($match[1])) {
+        throw new ErrorException('Mismatch in totalt godkjente stemmesedler: ' . $obj->{'B1.2 Forhåndsstemmesedler'}->{'Godkjente stemmesedler'} . ' vs ' . cleanFormattedNumber($match[1]));
+    }
+    $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Totalt godkjente stemmesedler'} = new stdClass();
+    $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Totalt godkjente stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
+    $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Totalt godkjente stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
  
     // B2 Forhåndsstemmer - fra valglokalene
     // Forhåndsstemmer telt per lokale.
     // 
+    $obj->{'B2 Forhåndsstemmer'} = new stdClass();
+    $obj->{'B2 Forhåndsstemmer'}->Valglokaler = array();
+    $i = assertLine_trim($lines, $i, 'B2 Forhåndsstemmer - fra valglokalene');
+    $i = assertLine_trim($lines, $i, 'Forhåndsstemmer telt per lokale.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    // Each polling station starts with a line like "4001 Rådhuset 4 etg"
+    while (true) {
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        if ($i >= count($lines) || trim($lines[$i]) == '') {
+            break;
+        }
+        $pollingStationName = regexAssertAndReturnMatch('/^([0-9]{4} .*)$/', trim($lines[$i++]))[1];
+        $pollingStation = new stdClass();
+        $pollingStation->Navn = $pollingStationName;
+        $obj->{'B2 Forhåndsstemmer'}->Valglokaler[$pollingStationName] = $pollingStation;
+
+        // ## NOTICE: This section B2.1, B2.2 and B2.3 repeats for every polling station (valglokale)
+        // 4001 Rådhuset 4 etg
+        // B2.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler
+        // Avvik mellom godkjente forhåndsstemmegivninger (kryss i manntall) og forhåndsstemmesedler fra første telling.
+        // 
+        //    Godkjente forhåndsstemmegivninger                                       Totalt antall stemmesedler                             Avvik
+        //    3 267                                                                                             3 281                           −14
+        // 
+        //    Tvilsomme stemmesedler lagt til side før første telling                                                                            17
+        // 
+        // Merknad til sammenligning av godkjente stemmegivninger og stemmesedler
+        // 
+        //    Det er 3 267 kryss i manntallet og 3 264 godkjente stemmesedler.
+        //    To fellessedler, stemplet, men uten at velgeren har huket av for hvilket parti/blank stemme som velgeren ønsker å stemme på. Det er i
+        //    tillegg 15 tvilsomme uten stempel. Disse behandles i kategorien Forhåndsstemmer Øvrige. Det var registrert en feil 25.8.25 som
+        //    forklarer avviket.
+        //    Antallet mottatte stemmesedler er talt opp hver eneste dag, uten å se på parti/liste, og antallet har stemt overens hver eneste dag
+        //    mot antall kryss i manntallet.
+        // 
+        // 
+        
+        $pollingStation->{'B2.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler'} = new stdClass();
+        $i = assertLine_trim($lines, $i, 'B2.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler');
+        $i = assertLine_trim($lines, $i, 'Avvik mellom godkjente forhåndsstemmegivninger (kryss i manntall) og forhåndsstemmesedler fra første telling.');
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        regexAssertAndReturnMatch('/^Godkjente forhåndsstemmegivninger \s* Totalt antall stemmesedler \s* Avvik$/', trim($lines[$i++]));
+        $match = regexAssertAndReturnMatch('/^([0-9]* ?[0-9]*) \s* ([0-9]* ?[0-9]*) \s* ([0-9\-\−]* ?[0-9]*)$/', trim($lines[$i++]));
+        $pollingStation->{'B2.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler'}->{'Godkjente forhåndsstemmegivninger'} = cleanFormattedNumber($match[1]);
+        $pollingStation->{'B2.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler'}->{'Totalt antall stemmesedler'} = cleanFormattedNumber($match[2]);
+        $pollingStation->{'B2.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler'}->{'Avvik'} = cleanFormattedNumber($match[3]);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $match = regexAssertAndReturnMatch('/^Tvilsomme stemmesedler lagt til side før første telling\s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+        $pollingStation->{'B2.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler'}->{'Tvilsomme stemmesedler lagt til side før første telling'} = cleanFormattedNumber($match[1]);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = assertLine_trim($lines, $i, 'Merknad til sammenligning av godkjente stemmegivninger og stemmesedler');
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $remarks = array();
+        while (true) {
+            $i = removeLineIfPresent_andEmpty($lines, $i);
+            if ($i >= count($lines) || trim($lines[$i]) == '') {
+                break;
+            }
+            $remarks[] = trim($lines[$i++]);
+        }
+        $pollingStation->{'B2.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler'}->remarks = $remarks;
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
 
 
-    // ## NOTICE: This section B2.1, B2.2 and B2.3 repeats for every polling station (valglokale)
-    // 4001 Rådhuset 4 etg
-    // B2.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler
-    // Avvik mellom godkjente forhåndsstemmegivninger (kryss i manntall) og forhåndsstemmesedler fra første telling.
-    // 
-    //    Godkjente forhåndsstemmegivninger                                       Totalt antall stemmesedler                             Avvik
-    //    3 267                                                                                             3 281                           −14
-    // 
-    //    Tvilsomme stemmesedler lagt til side før første telling                                                                            17
-    // 
-    // Merknad til sammenligning av godkjente stemmegivninger og stemmesedler
-    // 
-    //    Det er 3 267 kryss i manntallet og 3 264 godkjente stemmesedler.
-    //    To fellessedler, stemplet, men uten at velgeren har huket av for hvilket parti/blank stemme som velgeren ønsker å stemme på. Det er i
-    //    tillegg 15 tvilsomme uten stempel. Disse behandles i kategorien Forhåndsstemmer Øvrige. Det var registrert en feil 25.8.25 som
-    //    forklarer avviket.
-    //    Antallet mottatte stemmesedler er talt opp hver eneste dag, uten å se på parti/liste, og antallet har stemt overens hver eneste dag
-    //    mot antall kryss i manntallet.
-    // 
-    // 
-    // 
-    // 
-    // 
-    // 
+        // B2.2 Forkastede forhåndsstemmesedler
+        // Oversikt over forhåndsstemmesedler fra valglokalet som valgstyret har forkastet i andre telling.
+        // 
+        //    Forkastelsesgrunn                                                                                                 Antall
+        //    Seddelen mangler offentlig stempel § 10-3 (1) a                                                                          -
+        //    Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b                                                     -
+        //    Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c                                -
+        //    Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d                                                   -
+        //    Forkastede stemmesedler                                                                                                 0
+        // 
+        // 
+        // 
 
 
-    // B2.2 Forkastede forhåndsstemmesedler
-    // Oversikt over forhåndsstemmesedler fra valglokalet som valgstyret har forkastet i andre telling.
-    // 
-    //    Forkastelsesgrunn                                                                                                 Antall
-    //    Seddelen mangler offentlig stempel § 10-3 (1) a                                                                          -
-    //    Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b                                                     -
-    //    Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c                                -
-    //    Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d                                                   -
-    //    Forkastede stemmesedler                                                                                                 0
-    // 
-    // 
-    // 
-
-
-    // B2.3 Fordeling av forhåndsstemmesedler - 4001 Rådhuset 4 etg
-    // Fordelingen av godkjente stemmesedler i første og andre telling.
-    // 
-    //    Partinavn                                                                      Første telling     Andre telling    Avvik
-    //    Fremskrittspartiet                                                                        1 131           1 131          -
-    //    Arbeiderpartiet                                                                            745             745           -
-    //    Høyre                                                                                      438             438           -
-    //    Kristelig Folkeparti                                                                       302             302           -
-    //    Rødt                                                                                       165             165           -
-    //    Senterpartiet                                                                              133             133           -
-    //    SV - Sosialistisk Venstreparti                                                             101             101           -
-    //    Venstre                                                                                     62              62           -
-    //    Miljøpartiet De Grønne                                                                      43              43           -
-    //    Konservativt                                                                                36              36           -
-    //    Pensjonistpartiet                                                                           20              20           -
-    //    Industri- og Næringspartiet                                                                 18              18           -
-    //    Generasjonspartiet                                                                          17              17           -
-    //    Norgesdemokratene                                                                           14              14           -
-    //    Partiet DNI                                                                                  7               7           -
-    //    Fred og Rettferdighet (FOR)                                                                  6               6           -
-    //    Velferd og Innovasjonspartiet                                                                5               5           -
-    //    Partiet Sentrum                                                                              2               2           -
-    //    Totalt partifordelte stemmesedler                                                         3 245          3 245
-    //    Blanke stemmesedler                                                                         19              19           -
-    //    Totalt godkjente stemmesedler                                                             3 264          3 264
-    // 
-    // Merknad til avvik mellom første og andre telling
-    // 
-    //    -
-    // 
-    // 
-    // Andre merknader til forhåndsstemmer - 4001 Rådhuset 4 etg
-    // Eventuelt annen relevant informasjon fra valggjennomføring og opptelling.
-    // 
-    //    -
-    // 
-    // 
-    // 
-    // 
-    // 
-    // 
-
+        // B2.3 Fordeling av forhåndsstemmesedler - 4001 Rådhuset 4 etg
+        // Fordelingen av godkjente stemmesedler i første og andre telling.
+        // 
+        //    Partinavn                                                                      Første telling     Andre telling    Avvik
+        //    Fremskrittspartiet                                                                        1 131           1 131          -
+        //    Arbeiderpartiet                                                                            745             745           -
+        //    Høyre                                                                                      438             438           -
+        //    Kristelig Folkeparti                                                                       302             302           -
+        //    Rødt                                                                                       165             165           -
+        //    Senterpartiet                                                                              133             133           -
+        //    SV - Sosialistisk Venstreparti                                                             101             101           -
+        //    Venstre                                                                                     62              62           -
+        //    Miljøpartiet De Grønne                                                                      43              43           -
+        //    Konservativt                                                                                36              36           -
+        //    Pensjonistpartiet                                                                           20              20           -
+        //    Industri- og Næringspartiet                                                                 18              18           -
+        //    Generasjonspartiet                                                                          17              17           -
+        //    Norgesdemokratene                                                                           14              14           -
+        //    Partiet DNI                                                                                  7               7           -
+        //    Fred og Rettferdighet (FOR)                                                                  6               6           -
+        //    Velferd og Innovasjonspartiet                                                                5               5           -
+        //    Partiet Sentrum                                                                              2               2           -
+        //    Totalt partifordelte stemmesedler                                                         3 245          3 245
+        //    Blanke stemmesedler                                                                         19              19           -
+        //    Totalt godkjente stemmesedler                                                             3 264          3 264
+        // 
+        // Merknad til avvik mellom første og andre telling
+        // 
+        //    -
+        // 
+        // 
+        // Andre merknader til forhåndsstemmer - 4001 Rådhuset 4 etg
+        // Eventuelt annen relevant informasjon fra valggjennomføring og opptelling.
+        // 
+        //    -
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+    }
 
     // B3 Forhåndsstemmer - øvrige
     // Forhåndsstemmer som ikke er telt per lokale.
