@@ -19,7 +19,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     }
     $obj->documentType = 'valgprotokoll-stortinget';
 
-    // :: Strip footers
+    // :: Strip footers and headers
     // 10.09.2025   09:01                                                       Side 2 av 19
     $regex_footer = '/^([0-9]*\.[0-9]*\.[0-9]* *[0-9]*:[0-9]*) \s* Side [0-9]* av [0-9]*$/';
     $match = regexAssertAndReturnMatch($regex_footer . 'm', $file_content);
@@ -29,6 +29,11 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
 
     // Strip new page
     $file_content = str_replace(chr(12), '', $file_content);
+
+    // Strip headers
+    // Stortingsvalget 2025   Protokoll for valgstyret i Eigersund kommune, Rogaland Valgdistrikt
+    $regex_header = '/^(Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]* \s* Protokoll for valgstyret i (.*), (.*) Valgdistrikt\s*$/m';
+    $file_content = preg_replace($regex_header, '', $file_content);
 
     // Strip multiple empty lines. Remenants of footer.
     $file_content = preg_replace('/\n\n\n/', "\n\n", $file_content);
@@ -141,7 +146,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
     
     $i = assertLine_trim($lines, $i, 'Antall');
-    $match = regexAssertAndReturnMatch('/^Godkjente stemmegivninger \s* ([0-9 ]*)\s*$/', trim($lines[$i++]));
+    $match = regexAssertAndReturnMatch('/^Godkjente stemmegivninger \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
     if ($obj->keyfigures_totaltAntallGodkjenteStemmegivninger != cleanFormattedNumber($match[1])) {
         throw new ErrorException('Mismatch in godkjente stemmegivninger: ' . $obj->keyfigures_totaltAntallGodkjenteStemmegivninger . ' vs ' . cleanFormattedNumber($match[1]));
     }
@@ -202,11 +207,11 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
     $i = assertLine_trim($lines, $i, 'Antall');
-    $match = regexAssertAndReturnMatch('/^Godkjente stemmesedler \s* ([0-9 ]*)\s*$/', trim($lines[$i++]));
+    $match = regexAssertAndReturnMatch('/^Godkjente stemmesedler \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
     $obj->{'A1.3 Stemmesedler'}->{'Godkjente stemmesedler'} = cleanFormattedNumber($match[1]);
-    $match = regexAssertAndReturnMatch('/^Forkastede stemmesedler \s* ([0-9 ]*)\s*$/', trim($lines[$i++]));
+    $match = regexAssertAndReturnMatch('/^Forkastede stemmesedler \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
     $obj->{'A1.3 Stemmesedler'}->{'Forkastede stemmesedler'} = cleanFormattedNumber($match[1]);
-    $match = regexAssertAndReturnMatch('/^Totalt antall stemmesedler \s* ([0-9 ]*)\s*$/', trim($lines[$i++]));
+    $match = regexAssertAndReturnMatch('/^Totalt antall stemmesedler \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
     $obj->{'A1.3 Stemmesedler'}->{'Totalt antall stemmesedler'} = cleanFormattedNumber($match[1]);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     regexAssertAndReturnMatch('/^Forkastelsesgrunn\s*Antall$/', trim($lines[$i++]));
@@ -225,6 +230,9 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         $number = regexAssertAndReturnMatch('/^' . $item_regex . ' \s*([0-9 \-]*)\s*$/', trim($lines[$i++]))[1];
         $obj->{'A1.3 Stemmesedler'}->{$item} = $number;
     }
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
     
 
     // A1.4 Fordeling av stemmesedler
@@ -252,22 +260,77 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     //    Totalt partifordelte stemmesedler                                                         4 129                   4 487     8 616
     //    Blanke stemmesedler                                                                         27                       46         73
     //    Totalt godkjente stemmesedler                                                             4 156                   4 533     8 689
+    //     
+    // 
     // 
     
-    
-    // 
-    // 
+    $obj->{'A1.4 Fordeling av stemmesedler'} = new stdClass();
+    $i = assertLine_trim($lines, $i, 'A1.4 Fordeling av stemmesedler');
+    $i = assertLine_trim($lines, $i, 'Fordelingen av godkjente stemmesedler fra forhånd, valgting og totalt.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    regexAssertAndReturnMatch('/^Partinavn \s* Forhånd \s* Valgting \s* Totalt\s*$/', trim($lines[$i++]));
+    // The list of item are political parties
+    // Parse each party line until we hit "Totalt partifordelte stemmesedler"
+    $obj->{'A1.4 Fordeling av stemmesedler'}->parties = array();
+    while (true) {
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        if (str_starts_with(trim($lines[$i]), 'Totalt partifordelte stemmesedler')) {
+            break;
+        }
+        $match = regexAssertAndReturnMatch('/^([A-Za-zÆØÅæøåáö\(\) \-]*) \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)$/', trim($lines[$i++]));
+        $party = new stdClass();
+        $party->name = trim($match[1]);
+        $party->forhånd = cleanFormattedNumber($match[2]);
+        $party->valgting = cleanFormattedNumber($match[3]);
+        $party->totalt = cleanFormattedNumber($match[4]);
+        $obj->{'A1.4 Fordeling av stemmesedler'}->parties[] = $party;
+    }
+    $match = regexAssertAndReturnMatch('/^Totalt partifordelte stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)$/', trim($lines[$i++]));
+    $obj->{'A1.4 Fordeling av stemmesedler'}->{'Totalt partifordelte stemmesedler'} = new stdClass();
+    $obj->{'A1.4 Fordeling av stemmesedler'}->{'Totalt partifordelte stemmesedler'}->forhånd = cleanFormattedNumber($match[1]);
+    $obj->{'A1.4 Fordeling av stemmesedler'}->{'Totalt partifordelte stemmesedler'}->valgting = cleanFormattedNumber($match[2]);
+    $obj->{'A1.4 Fordeling av stemmesedler'}->{'Totalt partifordelte stemmesedler'}->totalt = cleanFormattedNumber($match[3]);
+    $match = regexAssertAndReturnMatch('/^Blanke stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)$/', trim($lines[$i++]));
+    $obj->{'A1.4 Fordeling av stemmesedler'}->{'Blanke stemmesedler'} = new stdClass();
+    $obj->{'A1.4 Fordeling av stemmesedler'}->{'Blanke stemmesedler'}->forhånd = cleanFormattedNumber($match    [1]);
+    $obj->{'A1.4 Fordeling av stemmesedler'}->{'Blanke stemmesedler'}->valgting = cleanFormattedNumber($match[2]);
+    $obj->{'A1.4 Fordeling av stemmesedler'}->{'Blanke stemmesedler'}->totalt = cleanFormattedNumber($match[3]);
+    $match = regexAssertAndReturnMatch('/^Totalt godkjente stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)$/', trim($lines[$i++]));
+    if ($obj->{'A1.3 Stemmesedler'}->{'Godkjente stemmesedler'} != cleanFormattedNumber($match[3])) {
+        throw new ErrorException('Mismatch in totalt godkjente stemmesedler: ' . $obj->{'A1.3 Stemmesedler'}->{'Godkjente stemmesedler'} . ' vs ' . cleanFormattedNumber($match[3]));
+    }
+    $obj->{'A1.4 Fordeling av stemmesedler'}->{'Totalt godkjente stemmesedler'} = new stdClass();
+    $obj->{'A1.4 Fordeling av stemmesedler'}->{'Totalt godkjente stemmesedler'}->forhånd = cleanFormattedNumber($match[1]);
+    $obj->{'A1.4 Fordeling av stemmesedler'}->{'Totalt godkjente stemmesedler'}->valgting = cleanFormattedNumber($match[2]);
+    $obj->{'A1.4 Fordeling av stemmesedler'}->{'Totalt godkjente stemmesedler'}->totalt = cleanFormattedNumber($match[3]);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
     // A2 Informasjon om valggjennomføringen
     // A2.1 Manntall og tellemåte
     // Mantallet på valgdagen kan være elektronisk eller på papir. Andre telling kan gjennomføres manuelt eller maskinelt.
     // 
     //    Manntall valgting                                                                     Tellemåte andre telling
     //    Elektronisk                                                                           Maskinell
-    // 
-    
-    
+    //     
     // 
     // 
+    $obj->{'A2.1 Manntall og tellemåte'} = new stdClass();
+    $i = assertLine_trim($lines, $i, 'A2 Informasjon om valggjennomføringen');
+    $i = assertLine_trim($lines, $i, 'A2.1 Manntall og tellemåte');
+    $i = assertLine_trim($lines, $i, 'Mantallet på valgdagen kan være elektronisk eller på papir. Andre telling kan gjennomføres manuelt eller maskinelt.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $match = regexAssertAndReturnMatch('/^Manntall valgting \s* Tellemåte andre telling\s*$/', trim($lines[$i++]));
+    $match = regexAssertAndReturnMatch('/^(Elektronisk|Papir) \s* (Manuell|Maskinell)\s*$/', trim($lines[$i++]));
+    $obj->{'A2.1 Manntall og tellemåte'}->manntallValgting = $match[1];
+    $obj->{'A2.1 Manntall og tellemåte'}->tellemåteAndreTelling = $match[2];
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
     // A2.2 Valgstyret
     // Folkevalgt organ oppnevnt av kommunestyret med ansvar for valggjennomføringen i kommunen.
     // 
@@ -1036,7 +1099,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
             $type_forkastelse_regex = str_replace('(', '\(', $type_forkastelse);
             $type_forkastelse_regex = str_replace(')', '\)', $type_forkastelse_regex);
             $type_forkastelse_regex = str_replace('/', '\/', $type_forkastelse_regex);
-            $number = regexAssertAndReturnMatch('/^ ' . $type_forkastelse_regex . ' \s*([0-9 ]*)\s*$/', $lines[$i++])[1];
+            $number = regexAssertAndReturnMatch('/^ ' . $type_forkastelse_regex . ' \s*([0-9]* ?[0-9]*)\s*$/', $lines[$i++])[1];
             $muncipality->numbers['B.1 Forkastede stemmegivninger']->{$type_forkastelse} = $number;
             $i = removeLineIfPresent_andEmpty($lines, $i);
         }
