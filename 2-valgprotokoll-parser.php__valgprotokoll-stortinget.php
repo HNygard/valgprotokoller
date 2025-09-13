@@ -108,7 +108,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $match = regexAssertAndReturnMatch('/^ *Stemmeberettigede \s* Godkjente stemmegivninger \s* Fremmøteprosent\s*$/', trim($lines[$i++]));
     $match = regexAssertAndReturnMatch('/^([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*) \s* ([0-9,]* %)\s*$/', trim($lines[$i++]));
     $obj->keyfigures_antallStemmeberettigede = cleanFormattedNumber($match[1]);
-    $obj->keyfigures_totaltAntallGodkjenteStemmesedler = cleanFormattedNumber($match[2]);
+    $obj->keyfigures_totaltAntallGodkjenteStemmegivninger = cleanFormattedNumber($match[2]);
     $obj->keyfigures_oppmøteprosent = $match[3];
     
     $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -142,9 +142,10 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     
     $i = assertLine_trim($lines, $i, 'Antall');
     $match = regexAssertAndReturnMatch('/^Godkjente stemmegivninger \s* ([0-9 ]*)\s*$/', trim($lines[$i++]));
-    if ($obj->keyfigures_totaltAntallGodkjenteStemmesedler != cleanFormattedNumber($match[1])) {
-        throw new ErrorException('Mismatch in godkjente stemmegivninger: ' . $obj->keyfigures_godkjenteStemmegvininger . ' vs ' . cleanFormattedNumber($match[1]));
+    if ($obj->keyfigures_totaltAntallGodkjenteStemmegivninger != cleanFormattedNumber($match[1])) {
+        throw new ErrorException('Mismatch in godkjente stemmegivninger: ' . $obj->keyfigures_totaltAntallGodkjenteStemmegivninger . ' vs ' . cleanFormattedNumber($match[1]));
     }
+    $obj->{'A2.1 Stemmegivninger'}->{'Godkjente stemmegivninger'} = cleanFormattedNumber($match[1]);
 
     $i = removeLineIfPresent_andEmpty($lines, $i);
     regexAssertAndReturnMatch('/^Forkastelsesgrunn\s*Antall$/', trim($lines[$i++]));
@@ -174,50 +175,59 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         }   
         $obj->{'A2.1 Stemmegivninger'}->{$item} = $number;
     }
-
-    $i = removeLineIfPresent_andEmpty($lines, $i);
-    $match = regexAssertAndReturnMatch('/^ Totalt antall godkjente forhåndsstemmegivninger \s*([0-9 ]*)\s*$/', $lines[$i++]);
-    $obj->keyfigures_totaltAntallGodkjenteForhåndsstemmegivninger = cleanFormattedNumber($match[1]);
-
-    $i = removeLineIfPresent_andEmpty($lines, $i);
-    $match = regexAssertAndReturnMatch('/^ Totalt antall godkjente valgtingsstemmegivninger \s*([0-9 ]*)\s*$/', $lines[$i++]);
-    $obj->keyfigures_totaltAntallGodkjenteValgtingsstemmegivninger = cleanFormattedNumber($match[1]);
-
-    $i = removeLineIfPresent_andEmpty($lines, $i);
-    $match = regexAssertAndReturnMatch('/^ Totalt antall forkastede stemmegivninger \s*([0-9 ]*)\s*$/', $lines[$i++]);
-    $obj->keyfigures_totaltAntallForkastedeStemmegivninger = cleanFormattedNumber($match[1]);
-
-    $i = removeLineIfPresent_andEmpty($lines, $i);
-    $match = regexAssertAndReturnMatch('/^ Totalt antall godkjente stemmesedler \s*([0-9 ]*)\s*$/', $lines[$i++]);
-    $obj->keyfigures_totaltAntallGodkjenteStemmesedler = cleanFormattedNumber($match[1]);
-
-    $i = removeLineIfPresent_andEmpty($lines, $i);
-    $match = regexAssertAndReturnMatch('/^ Totalt antall forkastede stemmesedler \s*([0-9 ]*)\s*$/', $lines[$i++]);
-    $obj->keyfigures_totaltAntallForkastedeStemmesedler = cleanFormattedNumber($match[1]);
-
-    $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
-    $obj->{'B Avvik kommune-fylke'} = new stdClass();
 
-    if (ifExistsAndEqual($lines, $i, 'Mandatfordeling')) {
-        while (!str_starts_with(trim($lines[$i]), 'Sum')) {
-            // Skip
-            $i++;
-        }
-        $i++;
+    // A1.3 Stemmesedler
+    // Oversikt over alle godkjente og forkastede stemmesedler i kommunen.
+    // 
+    //                                                                                                                 Antall
+    // Godkjente stemmesedler                                                                                         8 689
+    // Forkastede stemmesedler                                                                                           33
+    // Totalt antall stemmesedler                                                                                    8 722
+    // 
+    // Forkastelsesgrunn                                                                                             Antall
+    // Seddelen mangler offentlig stempel § 10-3 (1) a                                                                   31
+    // Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b                                                -
+    // Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c                           2
+    // Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d                                              -
+    // Forkastede stemmesedler                                                                                           33
+
+    $obj->{'A1.3 Stemmesedler'} = new stdClass();
+    $i = assertLine_trim($lines, $i, 'A1.3 Stemmesedler');
+    $i = assertLine_trim($lines, $i, 'Oversikt over alle godkjente og forkastede stemmesedler i kommunen.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    $i = assertLine_trim($lines, $i, 'Antall');
+    $match = regexAssertAndReturnMatch('/^Godkjente stemmesedler \s* ([0-9 ]*)\s*$/', trim($lines[$i++]));
+    $obj->{'A1.3 Stemmesedler'}->{'Godkjente stemmesedler'} = cleanFormattedNumber($match[1]);
+    $match = regexAssertAndReturnMatch('/^Forkastede stemmesedler \s* ([0-9 ]*)\s*$/', trim($lines[$i++]));
+    $obj->{'A1.3 Stemmesedler'}->{'Forkastede stemmesedler'} = cleanFormattedNumber($match[1]);
+    $match = regexAssertAndReturnMatch('/^Totalt antall stemmesedler \s* ([0-9 ]*)\s*$/', trim($lines[$i++]));
+    $obj->{'A1.3 Stemmesedler'}->{'Totalt antall stemmesedler'} = cleanFormattedNumber($match[1]);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    regexAssertAndReturnMatch('/^Forkastelsesgrunn\s*Antall$/', trim($lines[$i++]));
+    $items = array(
+        'Seddelen mangler offentlig stempel § 10-3 (1) a',
+        'Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b',
+        'Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c',
+        'Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d',
+        'Forkastede stemmesedler'
+    );
+    foreach ($items as $item) {
         $i = removeLineIfPresent_andEmpty($lines, $i);
+        $item_regex = str_replace('(', '\(', $item);
+        $item_regex = str_replace(')', '\)', $item_regex);
+        $item_regex = str_replace('/', '\/', $item_regex);
+        $number = regexAssertAndReturnMatch('/^' . $item_regex . ' \s*([0-9 \-]*)\s*$/', trim($lines[$i++]))[1];
+        $obj->{'A1.3 Stemmesedler'}->{$item} = $number;
     }
-
-    $i = assertLine_trim($lines, $i, 'A Administrative forhold');
-    // A1 Valgstyret
-    // A2 Valgtinget
-    // Continue to 'B Foreløpig opptelling av forhåndsstemmer'
-    while (trim($lines[$i]) != 'B Avvik mellom kommunenes endelige opptelling og valgdistriktets endelige opptelling') {
-        $i++;
-    }
+    
+    
+    regexAssertAndReturnMatch('/Stop here/', $lines[$i++]);
 
 
     $i = assertLine_trim($lines, $i, 'B Avvik mellom kommunenes endelige opptelling og valgdistriktets endelige opptelling');
