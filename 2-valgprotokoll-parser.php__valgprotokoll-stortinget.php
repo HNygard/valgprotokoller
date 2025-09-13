@@ -1649,12 +1649,12 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $remarks = array();
         while (true) {
-            if ($i >= count($lines) || trim($lines[$i]) == '') {
+            if (str_starts_with(trim($lines[$i]), 'Andre merknader til valgtingsstemmer - ')) {
                 break;
             }
             $remarks[] = trim($lines[$i++]);
         }
-        $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->avvikRemarks = $remarks;
+        $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->avvikRemarks = explode("\n", trim(implode("\n", $remarks)));
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
