@@ -1823,6 +1823,44 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     //    Blanke stemmesedler                                                                        0                  0                               -
     //    Totalt godkjente stemmesedler                                                              1                  1
     // 
+
+    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'} = new stdClass();
+    $i = assertLine_trim($lines, $i, 'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige');
+    $i = assertLine_trim($lines, $i, 'Fordelingen av godkjente stemmesedler i første og andre telling.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    regexAssertAndReturnMatch('/^Partinavn \s* Første telling \s* Andre telling \s* Avvik$/', trim($lines[$i++]));
+    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->parties = array();
+    while (true) {
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        if ($i >= count($lines) || str_starts_with(trim($lines[$i]), 'Totalt partifordelte stemmesedler')) {
+            break;
+        }
+        $match = regexAssertAndReturnMatch('/^([A-Za-zÆØÅæøåáö\(\) \-]*) \s*  ([0-9\-]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)$/', trim($lines[$i++]));
+        $party = new stdClass();
+        $party->name = trim($match[1]);
+        $party->førsteTelling = cleanFormattedNumber($match[2]);
+        $party->andreTelling = cleanFormattedNumber($match[3]);
+        $party->avvik = cleanFormattedNumber($match[4]);
+        $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->parties[] = $party;
+    }
+    $match = regexAssertAndReturnMatch('/^Totalt partifordelte stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->{'Totalt partifordelte stemmesedler'} = new stdClass();
+    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->{'Totalt partifordelte stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
+    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->{'Totalt partifordelte stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
+    $match = regexAssertAndReturnMatch('/^Blanke stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->{'Blanke stemmesedler'} = new stdClass();
+    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->{'Blanke stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
+    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->{'Blanke stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
+    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->{'Blanke stemmesedler'}->avvik = cleanFormattedNumber($match[3]);
+    $match = regexAssertAndReturnMatch('/^Totalt godkjente stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->{'Totalt godkjente stemmesedler'} = new stdClass();
+    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->{'Totalt godkjente stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
+    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->{'Totalt godkjente stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
     // Merknad til avvik mellom første og andre telling
     // 
     //    -
@@ -1840,7 +1878,33 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // 
     // 
     
-    
+    $i = assertLine_trim($lines, $i, 'Merknad til avvik mellom første og andre telling');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $remarks = array();
+    while (true) {
+        if ($i >= count($lines) || trim($lines[$i]) == '') {
+            break;
+        }
+        $remarks[] = trim($lines[$i++]);
+    }
+    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->avvikRemarks = $remarks;
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = assertLine_trim($lines, $i, 'Andre merknader til valgtingsstemmer - øvrige');
+    $i = assertLine_trim($lines, $i, 'Eventuelt annen relevant informasjon fra valggjennomføring og opptelling.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $remarks = array();
+    while (true) {
+        if ($i >= count($lines) || trim($lines[$i]) == '') {
+            break;
+        }
+        $remarks[] = trim($lines[$i++]);
+    }
+    $obj->{'C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige'}->remarks = $remarks;
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
     
     // D Kontrolltiltak
     // D1 Kontrolltiltak
