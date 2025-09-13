@@ -226,7 +226,775 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         $obj->{'A1.3 Stemmesedler'}->{$item} = $number;
     }
     
+
+    // A1.4 Fordeling av stemmesedler
+    // Fordelingen av godkjente stemmesedler fra forhånd, valgting og totalt.
+    // 
+    //    Partinavn                                                                             Forhånd                   Valgting   Totalt
+    //    Fremskrittspartiet                                                                        1 353                    1 313    2 666
+    //    Arbeiderpartiet                                                                            941                     1 034    1 975
+    //    Høyre                                                                                      585                      644     1 229
+    //    Kristelig Folkeparti                                                                       375                      506        881
+    //    Senterpartiet                                                                              191                      355        546
+    //    Rødt                                                                                       208                      176        384
+    //    SV - Sosialistisk Venstreparti                                                             157                      123        280
+    //    Venstre                                                                                     90                      100        190
+    //    Miljøpartiet De Grønne                                                                      75                       75        150
+    //    Konservativt                                                                                40                       27         67
+    //    Industri- og Næringspartiet                                                                 29                       35         64
+    //    Pensjonistpartiet                                                                           25                       34         59
+    //    Norgesdemokratene                                                                           16                       28         44
+    //    Generasjonspartiet                                                                          21                       17         38
+    //    Partiet DNI                                                                                  7                        8         15
+    //    Velferd og Innovasjonspartiet                                                                6                        8         14
+    //    Fred og Rettferdighet (FOR)                                                                  7                        2           9
+    //    Partiet Sentrum                                                                              3                        2           5
+    //    Totalt partifordelte stemmesedler                                                         4 129                   4 487     8 616
+    //    Blanke stemmesedler                                                                         27                       46         73
+    //    Totalt godkjente stemmesedler                                                             4 156                   4 533     8 689
+    // 
     
+    
+    // 
+    // 
+    // A2 Informasjon om valggjennomføringen
+    // A2.1 Manntall og tellemåte
+    // Mantallet på valgdagen kan være elektronisk eller på papir. Andre telling kan gjennomføres manuelt eller maskinelt.
+    // 
+    //    Manntall valgting                                                                     Tellemåte andre telling
+    //    Elektronisk                                                                           Maskinell
+    // 
+    
+    
+    // 
+    // 
+    // A2.2 Valgstyret
+    // Folkevalgt organ oppnevnt av kommunestyret med ansvar for valggjennomføringen i kommunen.
+    // 
+    // 
+    // 
+    // 
+    // 
+    //    Medlem                                                                                Rolle
+    //    ANJA HOVLAND                                                                          Leder
+    //    MAY HELEN HETLAND ERVIK                                                               Nestleder
+    //    LEIF ERIK BROCH                                                                       Sekretær
+    //    ROALD EIE                                                                             Medlem
+    //    BEATE KYDLAND                                                                         Medlem
+    //    MARI SKAARA OMDAL                                                                     Medlem
+    //    BJØRNAR STAPNES                                                                       Medlem
+    //    KNUT SIREVÅG                                                                          Medlem
+    //    ARNT OLAV SIVERTSEN                                                                   Medlem
+    //    JOHN MONG                                                                             Medlem
+    //    KARI JOHANNE MELHUS                                                                   Medlem
+    //    HALVOR ØSTERMAN THENGS                                                                Medlem
+    //    KARI-ANNE BERGØY                                                                      Varamedlem
+    //    TOM RUNE SLEVELAND                                                                    Varamedlem
+    //    TOVE HELEN LØYNING                                                                    Varamedlem
+    //    ODD STANGELAND                                                                        Varamedlem
+    //    ELIN ADSEN KVÅLE                                                                      Varamedlem
+    //    SIGMUND SLETTEBØ                                                                      Varamedlem
+    //    MORTEN ØGLEND                                                                         Varamedlem
+    //    MARIAN SEGLEM                                                                         Varamedlem
+    //    SVEN EIRIK HANSEN                                                                     Varamedlem
+    //    LISE RAVNEBERG                                                                        Varamedlem
+    //    ISELIN GRØSFJELD SKOGEN                                                               Varamedlem
+    //    KJELL VIDAR NYGÅRD                                                                    Varamedlem
+    //    JENNY KVILHAUG TUEN                                                                   Varamedlem
+    //    STEFFEN VINDHEIM                                                                      Varamedlem
+    //    OLGA MERETE ARNESEN ØSTERBØ                                                           Varamedlem
+    //    HILDE ALICE SKÅRA GUNVALDSEN                                                          Varamedlem
+    //    KENNETH PEDERSEN                                                                      Varamedlem
+    //    FRANK LEIDLAND                                                                        Varamedlem
+    //    GUNNAR KVASSHEIM                                                                      Varamedlem
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    
+    
+    
+    // B Forhåndsstemmer
+    // B1 Oppsummering av forhåndsstemmer
+    // B1.1 Forhåndsstemmegivninger
+    // Oversikt over godkjente stemmegivninger (kryss i manntall) og forkastede stemmegivninger i kommunen.
+    // 
+    //                                                                                                        Antall
+    //    Godkjente stemmegivninger                                                                            4 159
+    // 
+    //    Forkastelsesgrunn                                                                                   Antall
+    //    Velgeren er ikke innført i manntallet i kommunen § 10-2 (1) a                                              2
+    //    Velgeren har ikke stemmerett § 10-2 (1) a                                                                  3
+    //    Det kan ikke fastslås hvem velgeren er § 10-2 (1) b                                                        -
+    //    Stemmegivningen er ikke levert til et sted der velgeren kan stemme § 10-2 (1) c                            -
+    //    Det er sannsynlighetsovervekt for at omslagskonvolutten er åpnet § 10-2 (1) d                              1
+    //    Velgeren har tidligere fått godkjent en stemmegivning § 10-2 (1) e                                         3
+    //    Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter           -
+    //    klokken 17 dagen etter valgdagen § 10-2 (1) f
+    //    Forkastede stemmegivninger                                                                                9
+    // 
+    // 
+    // 
+    
+    
+    // B1.2 Forhåndsstemmesedler
+    // Oversikt over alle godkjente og forkastede stemmesedler i kommunen.
+    // 
+    //                                                                                                        Antall
+    //    Godkjente stemmesedler                                                                               4 156
+    //    Forkastede stemmesedler                                                                                  19
+    //    Totalt antall stemmesedler                                                                           4 175
+    // 
+    //    Forkastelsesgrunn                                                                                   Antall
+    //    Seddelen mangler offentlig stempel § 10-3 (1) a                                                          17
+    //    Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b                                       -
+    //    Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c                  2
+    //    Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d                                     -
+    //    Forkastede stemmesedler                                                                                  19
+    // 
+    // 
+    // 
+
+
+    // B1.3 Fordeling av forhåndsstemmesedler
+    // Fordelingen av godkjente stemmesedler i første og andre telling.
+    // 
+    // 
+    // 
+    // 
+    // 
+    //    Partinavn                                                                      Første telling             Andre telling        Avvik
+    //    Fremskrittspartiet                                                                        1 354                   1 353            −1
+    //    Arbeiderpartiet                                                                            941                     941               -
+    //    Høyre                                                                                      584                     585               1
+    //    Kristelig Folkeparti                                                                       375                     375               -
+    //    Rødt                                                                                       208                     208               -
+    //    Senterpartiet                                                                              191                     191               -
+    //    SV - Sosialistisk Venstreparti                                                             157                     157               -
+    //    Venstre                                                                                     90                      90               -
+    //    Miljøpartiet De Grønne                                                                      75                      75               -
+    //    Konservativt                                                                                40                      40               -
+    //    Industri- og Næringspartiet                                                                 29                      29               -
+    //    Pensjonistpartiet                                                                           25                      25               -
+    //    Generasjonspartiet                                                                          21                      21               -
+    //    Norgesdemokratene                                                                           16                      16               -
+    //    Fred og Rettferdighet (FOR)                                                                  7                       7               -
+    //    Partiet DNI                                                                                  7                       7               -
+    //    Velferd og Innovasjonspartiet                                                                6                       6               -
+    //    Partiet Sentrum                                                                              3                       3               -
+    //    Totalt partifordelte stemmesedler                                                         4 129                  4 129
+    //    Blanke stemmesedler                                                                         27                      27               -
+    //    Totalt godkjente stemmesedler                                                             4 156                  4 156
+    // 
+    // 
+    // 
+ 
+ 
+    // B2 Forhåndsstemmer - fra valglokalene
+    // Forhåndsstemmer telt per lokale.
+    // 
+
+
+    // ## NOTICE: This section B2.1, B2.2 and B2.3 repeats for every polling station (valglokale)
+    // 4001 Rådhuset 4 etg
+    // B2.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler
+    // Avvik mellom godkjente forhåndsstemmegivninger (kryss i manntall) og forhåndsstemmesedler fra første telling.
+    // 
+    //    Godkjente forhåndsstemmegivninger                                       Totalt antall stemmesedler                             Avvik
+    //    3 267                                                                                             3 281                           −14
+    // 
+    //    Tvilsomme stemmesedler lagt til side før første telling                                                                            17
+    // 
+    // Merknad til sammenligning av godkjente stemmegivninger og stemmesedler
+    // 
+    //    Det er 3 267 kryss i manntallet og 3 264 godkjente stemmesedler.
+    //    To fellessedler, stemplet, men uten at velgeren har huket av for hvilket parti/blank stemme som velgeren ønsker å stemme på. Det er i
+    //    tillegg 15 tvilsomme uten stempel. Disse behandles i kategorien Forhåndsstemmer Øvrige. Det var registrert en feil 25.8.25 som
+    //    forklarer avviket.
+    //    Antallet mottatte stemmesedler er talt opp hver eneste dag, uten å se på parti/liste, og antallet har stemt overens hver eneste dag
+    //    mot antall kryss i manntallet.
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+
+
+    // B2.2 Forkastede forhåndsstemmesedler
+    // Oversikt over forhåndsstemmesedler fra valglokalet som valgstyret har forkastet i andre telling.
+    // 
+    //    Forkastelsesgrunn                                                                                                 Antall
+    //    Seddelen mangler offentlig stempel § 10-3 (1) a                                                                          -
+    //    Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b                                                     -
+    //    Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c                                -
+    //    Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d                                                   -
+    //    Forkastede stemmesedler                                                                                                 0
+    // 
+    // 
+    // 
+
+
+    // B2.3 Fordeling av forhåndsstemmesedler - 4001 Rådhuset 4 etg
+    // Fordelingen av godkjente stemmesedler i første og andre telling.
+    // 
+    //    Partinavn                                                                      Første telling     Andre telling    Avvik
+    //    Fremskrittspartiet                                                                        1 131           1 131          -
+    //    Arbeiderpartiet                                                                            745             745           -
+    //    Høyre                                                                                      438             438           -
+    //    Kristelig Folkeparti                                                                       302             302           -
+    //    Rødt                                                                                       165             165           -
+    //    Senterpartiet                                                                              133             133           -
+    //    SV - Sosialistisk Venstreparti                                                             101             101           -
+    //    Venstre                                                                                     62              62           -
+    //    Miljøpartiet De Grønne                                                                      43              43           -
+    //    Konservativt                                                                                36              36           -
+    //    Pensjonistpartiet                                                                           20              20           -
+    //    Industri- og Næringspartiet                                                                 18              18           -
+    //    Generasjonspartiet                                                                          17              17           -
+    //    Norgesdemokratene                                                                           14              14           -
+    //    Partiet DNI                                                                                  7               7           -
+    //    Fred og Rettferdighet (FOR)                                                                  6               6           -
+    //    Velferd og Innovasjonspartiet                                                                5               5           -
+    //    Partiet Sentrum                                                                              2               2           -
+    //    Totalt partifordelte stemmesedler                                                         3 245          3 245
+    //    Blanke stemmesedler                                                                         19              19           -
+    //    Totalt godkjente stemmesedler                                                             3 264          3 264
+    // 
+    // Merknad til avvik mellom første og andre telling
+    // 
+    //    -
+    // 
+    // 
+    // Andre merknader til forhåndsstemmer - 4001 Rådhuset 4 etg
+    // Eventuelt annen relevant informasjon fra valggjennomføring og opptelling.
+    // 
+    //    -
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+
+
+    // B3 Forhåndsstemmer - øvrige
+    // Forhåndsstemmer som ikke er telt per lokale.
+    // 
+
+
+
+    // B3.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler
+    // Avvik mellom godkjente forhåndsstemmegivninger (kryss i manntall) og forhåndsstemmesedler fra første telling.
+    // 
+    //    Godkjente forhåndsstemmegivninger                                          Godkjente stemmesedler                                        Avvik
+    //    622                                                                                             622                                            -
+    // 
+    // Merknad til sammenligning av godkjente stemmegivninger og stemmesedler
+    // 
+    //    -
+    // 
+    // 
+    // 
+    // 
+
+
+
+    // B3.2 Forkastede forhåndsstemmesedler - øvrige
+    // Oversikt over forhåndsstemmesedler valgstyret har forkastet. Eventuelle forkastede tvilsomme sedler lagt til side før første telling fra
+    // valglokalene, er inkludert i forkastelser fra første telling.
+    // 
+    //    Forkastelsesgrunn                                                              Første telling         Andre telling                     Totalt
+    //    Seddelen mangler offentlig stempel § 10-3 (1) a                                           17                      -                          17
+    //    Det fremkommer ikke hvilket valg                                                            -                     -                            -
+    //    stemmeseddelen gjelder § 10-3 (1) b
+    //    Det fremkommer ikke hvilket parti eller hvilken                                            2                      -                            2
+    //    gruppe velgeren har stemt på § 10-3 (1) c
+    //    Partiet eller gruppen stiller ikke liste i                                                  -                     -                            -
+    //    valgdistriktet § 10-3 (1) d
+    //    Forkastede stemmesedler                                                                   19                     0                           19
+    // 
+    // 
+    // 
+    
+    
+    // B3.3 Fordeling av forhåndsstemmesedler - øvrige
+    // Fordelingen av stemmesedler i første og andre telling. Forkastede som oppdages i andre telling fjernes fra tellingen.
+    // 
+    // 
+    // 
+    // 
+    // 
+    //    Partinavn                                                                      Første telling   Andre telling                  Avvik
+    //    Fremskrittspartiet                                                                        161            161                         -
+    //    Arbeiderpartiet                                                                           135            135                         -
+    //    Høyre                                                                                      98             98                         -
+    //    Kristelig Folkeparti                                                                       54             54                         -
+    //    Senterpartiet                                                                              44             44                         -
+    //    Rødt                                                                                       35             35                         -
+    //    SV - Sosialistisk Venstreparti                                                             35             35                         -
+    //    Miljøpartiet De Grønne                                                                     23             23                         -
+    //    Venstre                                                                                    15             15                         -
+    //    Industri- og Næringspartiet                                                                 7              7                         -
+    //    Generasjonspartiet                                                                          4              4                         -
+    //    Pensjonistpartiet                                                                           3              3                         -
+    //    Konservativt                                                                                2              2                         -
+    //    Partiet Sentrum                                                                             1              1                         -
+    //    Velferd og Innovasjonspartiet                                                               1              1                         -
+    //    Fred og Rettferdighet (FOR)                                                                 0              0                         -
+    //    Norgesdemokratene                                                                           0              0                         -
+    //    Partiet DNI                                                                                 0              0                         -
+    //    Totalt partifordelte stemmesedler                                                         618            618
+    //    Blanke stemmesedler                                                                         4              4                         -
+    //    Totalt godkjente stemmesedler                                                             622            622
+    // 
+    // Merknad til avvik mellom første og andre telling
+    // 
+    //    -
+    // 
+    // 
+    // Andre merknader til forhåndsstemmer - øvrige
+    // Eventuelt annen relevant informasjon fra valggjennomføring og opptelling.
+    // 
+    //    -
+    // 
+    // 
+    // 
+    // 
+    
+    
+    
+    // B4 Forhåndsstemmer - telt etter kl. 17 dagen etter valgdagen
+    // Forhåndsstemmer mottatt etter forhåndsstemmeperioden er over og før kl. 17 dagen etter valgdagen. Av hensyn til hemmelig valg, er det lagt
+    // til side et antall forhåndsstemmegivninger, som skal telles i denne kategorien.
+    // 
+    //    Forhåndsstemmer lagt til side                                                                                                      30
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    
+    
+    
+    // B4.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler
+    // Avvik mellom godkjente forhåndsstemmegivninger (kryss i manntall) og forhåndsstemmesedler fra første telling.
+    // 
+    //    Godkjente forhåndsstemmegivninger                                          Godkjente stemmesedler                       Avvik
+    //    270                                                                                             270                           -
+    // 
+    // Merknad til sammenligning av godkjente stemmegivninger og stemmesedler
+    // 
+    //    -
+    // 
+    // 
+    // 
+    // 
+    
+    
+    
+    // B4.2 Forkastede forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen
+    // Oversikt over forhåndsstemmesedler valgstyret har forkastet.
+    // 
+    //    Forkastelsesgrunn                                                              Første telling         Andre telling    Totalt
+    //    Seddelen mangler offentlig stempel § 10-3 (1) a                                             -                     -           -
+    //    Det fremkommer ikke hvilket valg                                                            -                     -           -
+    //    stemmeseddelen gjelder § 10-3 (1) b
+    //    Det fremkommer ikke hvilket parti eller hvilken                                             -                     -           -
+    //    gruppe velgeren har stemt på § 10-3 (1) c
+    //    Partiet eller gruppen stiller ikke liste i                                                  -                     -           -
+    //    valgdistriktet § 10-3 (1) d
+    //    Forkastede stemmesedler                                                                     0                    0            0
+    // 
+    // 
+    // 
+    
+    
+    
+    // B4.3 Fordeling av forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen
+    // Fordelingen av godkjente stemmesedler i første og andre telling.
+    // 
+    //    Partinavn                                                                      Første telling         Andre telling     Avvik
+    //    Fremskrittspartiet                                                                         62                   61          −1
+    //    Arbeiderpartiet                                                                            61                   61            -
+    //    Høyre                                                                                      48                   49            1
+    //    SV - Sosialistisk Venstreparti                                                             21                   21            -
+    //    Kristelig Folkeparti                                                                       19                   19            -
+    //    Senterpartiet                                                                              14                   14            -
+    //    Venstre                                                                                    13                   13            -
+    //    Miljøpartiet De Grønne                                                                      9                    9            -
+    //    Rødt                                                                                        8                    8            -
+    //    Industri- og Næringspartiet                                                                 4                    4            -
+    //    Konservativt                                                                                2                    2            -
+    //    Norgesdemokratene                                                                           2                    2            -
+    //    Pensjonistpartiet                                                                           2                    2            -
+    //    Fred og Rettferdighet (FOR)                                                                 1                    1            -
+    //    Generasjonspartiet                                                                          0                    0            -
+    //    Partiet DNI                                                                                 0                    0            -
+    //    Partiet Sentrum                                                                             0                    0            -
+    //    Velferd og Innovasjonspartiet                                                               0                    0            -
+    //    Totalt partifordelte stemmesedler                                                         266                  266
+    //    Blanke stemmesedler                                                                         4                    4            -
+    //    Totalt godkjente stemmesedler                                                             270                  270
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // Merknad til avvik mellom første og andre telling
+    // 
+    //    Tellefeil i 1. telling (manuell telling)
+    // 
+    // 
+    // Andre merknader til forhåndsstemmer - telt etter kl. 17 dagen etter valgdagen
+    // Eventuelt annen relevant informasjon fra valggjennomføring og opptelling.
+    // 
+    //    -
+    // 
+    // 
+    // 
+    // 
+    
+    
+    
+    // C Valgtingsstemmer
+    // C1 Oppsummering av valgtingsstemmer
+    // C1.1 Valgtingsstemmegivninger
+    // Oversikt over godkjente stemmegivninger (kryss i manntall) og forkastede stemmegivninger i kommunen.
+    // 
+    //                                                                                                         Antall
+    //    Godkjente stemmegivninger                                                                              4 532
+    // 
+    //    Forkastelsesgrunn                                                                                    Antall
+    //    Velgeren er ikke innført i manntallet i kommunen § 10-2 (1) a                                             19
+    //    Velgeren har ikke stemmerett § 10-2 (1) a                                                                 12
+    //    Det kan ikke fastslås hvem velgeren er § 10-2 (1) b                                                         -
+    //    Stemmegivningen er ikke levert til et sted der velgeren kan stemme § 10-2 (1) c                             -
+    //    Det er sannsynlighetsovervekt for at omslagskonvolutten er åpnet § 10-2 (1) d                               -
+    //    Velgeren har tidligere fått godkjent en stemmegivning § 10-2 (1) e                                          -
+    //    Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter            -
+    //    klokken 17 dagen etter valgdagen § 10-2 (1) f
+    //    Forkastede stemmegivninger                                                                                31
+    // 
+    // 
+    // 
+    
+    
+    
+    // C1.2 Valgtingsstemmesedler
+    // Oversikt over alle godkjente og forkastede stemmesedler i kommunen.
+    // 
+    //                                                                                                         Antall
+    //    Godkjente stemmesedler                                                                                 4 533
+    //    Forkastede stemmesedler                                                                                   14
+    //    Totalt antall stemmesedler                                                                            4 547
+    // 
+    //    Forkastelsesgrunn                                                                                    Antall
+    //    Seddelen mangler offentlig stempel § 10-3 (1) a                                                           14
+    //    Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b                                        -
+    //    Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c                   -
+    //    Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d                                      -
+    //    Forkastede stemmesedler                                                                                   14
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    
+    
+    
+    // C1.3 Fordeling av valgtingsstemmesedler
+    // Fordelingen av godkjente stemmesedler i første og andre telling.
+    // 
+    //    Partinavn                                                                      Første telling             Andre telling     Avvik
+    //    Fremskrittspartiet                                                                        1 312                   1 313           1
+    //    Arbeiderpartiet                                                                           1 033                   1 034           1
+    //    Høyre                                                                                      645                     644          −1
+    //    Kristelig Folkeparti                                                                       506                     506            -
+    //    Senterpartiet                                                                              356                     355          −1
+    //    Rødt                                                                                       176                     176            -
+    //    SV - Sosialistisk Venstreparti                                                             123                     123            -
+    //    Venstre                                                                                     99                     100            1
+    //    Miljøpartiet De Grønne                                                                      75                      75            -
+    //    Industri- og Næringspartiet                                                                 35                      35            -
+    //    Pensjonistpartiet                                                                           34                      34            -
+    //    Norgesdemokratene                                                                           28                      28            -
+    //    Konservativt                                                                                27                      27            -
+    //    Generasjonspartiet                                                                          17                      17            -
+    //    Partiet DNI                                                                                  8                       8            -
+    //    Velferd og Innovasjonspartiet                                                                8                       8            -
+    //    Fred og Rettferdighet (FOR)                                                                  2                       2            -
+    //    Partiet Sentrum                                                                              2                       2            -
+    //    Totalt partifordelte stemmesedler                                                         4 486                  4 487
+    //    Blanke stemmesedler                                                                         46                      46            -
+    //    Totalt godkjente stemmesedler                                                             4 532                  4 533
+    // 
+    // 
+    // 
+    
+    
+    
+    // C2 Valgtingsstemmer - fra valglokalene
+    // Valgtingsstemmer telt per lokale. Første telling er gjennomført i valglokalet.
+    // 
+
+
+    // ## NOTICE: This section C2.1, C2.2 and C2.3 repeats for every polling station (valglokale)
+    // 0001 Lundåne Bo- og servicesenter
+    
+    
+    // C2.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler
+    // Avvik mellom godkjente valgtingsstemmegivninger (kryss i manntall) og valgtingsstemmesedler fra første telling.
+    // 
+    //    Godkjente valgtingsstemmegivninger                                      Totalt antall stemmesedler                          Avvik
+    //    1 373                                                                                             1 379                         −6
+    // 
+    //    Tvilsomme stemmesedler lagt til side før første telling                                                                           6
+    // 
+    // Merknad til sammenligning av godkjente stemmegivninger og stemmesedler
+    // 
+    //    Avvik på 6 er stemmesedler uten stempel (tvilsomme sedler)
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    
+    
+    
+    // C2.2 Forkastede valgtingsstemmesedler
+    // Oversikt over valgtingsstemmesedler fra valglokalet som valgstyret har forkastet i andre telling.
+    // 
+    //    Forkastelsesgrunn                                                                                                  Antall
+    //    Seddelen mangler offentlig stempel § 10-3 (1) a                                                                           -
+    //    Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b                                                      -
+    //    Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c                                 -
+    //    Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d                                                    -
+    //    Forkastede stemmesedler                                                                                                   0
+    // 
+    // 
+    // 
+    
+    
+    
+    // C2.3 Fordeling av valgtingsstemmesedler - 0001 Lundåne Bo- og servicesenter
+    // Fordelingen av godkjente stemmesedler i første og andre telling.
+    // 
+    //    Partinavn                                                                      Første telling     Andre telling     Avvik
+    //    Fremskrittspartiet                                                                         343             345            2
+    //    Arbeiderpartiet                                                                            327             327            -
+    //    Høyre                                                                                      218             218            -
+    //    Kristelig Folkeparti                                                                       167             165          −2
+    //    Senterpartiet                                                                               81              81            -
+    //    Rødt                                                                                        66              66            -
+    //    Venstre                                                                                     41              41            -
+    //    SV - Sosialistisk Venstreparti                                                              39              39            -
+    //    Miljøpartiet De Grønne                                                                      21              21            -
+    //    Pensjonistpartiet                                                                           13              13            -
+    //    Norgesdemokratene                                                                           12              12            -
+    //    Industri- og Næringspartiet                                                                 10              10            -
+    //    Konservativt                                                                                 8               8            -
+    //    Generasjonspartiet                                                                           3               3            -
+    //    Fred og Rettferdighet (FOR)                                                                  2               2            -
+    //    Partiet DNI                                                                                  2               2            -
+    //    Partiet Sentrum                                                                              0               0            -
+    //    Velferd og Innovasjonspartiet                                                                0               0            -
+    //    Totalt partifordelte stemmesedler                                                         1 353          1 353
+    //    Blanke stemmesedler                                                                         20              20            -
+    //    Totalt godkjente stemmesedler                                                             1 373          1 373
+    // 
+    // Merknad til avvik mellom første og andre telling
+    // 
+    //    Tellefeil i 1. telling i valglokalet
+    // 
+    // 
+    // Andre merknader til valgtingsstemmer - 0001 Lundåne Bo- og servicesenter
+    // Eventuelt annen relevant informasjon fra valggjennomføring og opptelling.
+    // 
+    //    -
+    // 
+    // 
+    // 
+    // 
+    
+    
+    
+    // C3 Valgtingsstemmer - øvrige
+    // Valgtingsstemmer som ikke er telt per lokale.
+    // 
+    
+    
+    
+    // C3.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler
+    // Avvik mellom godkjente valgtingsstemmegivninger (kryss i manntall) og valgtingsstemmesedler fra første telling.
+    // 
+    //    Godkjente valgtingsstemmegivninger                                         Godkjente stemmesedler                     Avvik
+    //    1                                                                                               1                           -
+    // 
+    // Merknad til sammenligning av godkjente stemmegivninger og stemmesedler
+    // 
+    //    En velger ble innført i manntallet etter å ha stemt i konvolutt, vedkommende hadde stemmerett.
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    
+    
+    
+    // C3.2 Forkastede valgtingsstemmesedler - øvrige
+    // Oversikt over valgtingsstemmesedler valgstyret har forkastet. Eventuelle forkastede tvilsomme sedler lagt til side før første telling fra
+    // valglokalene er inkludert i forkastelser fra første telling.
+    // 
+    //    Forkastelsesgrunn                                                              Første telling    Andre telling                           Totalt
+    //    Seddelen mangler offentlig stempel § 10-3 (1) a                                           14                   -                            14
+    //    Det fremkommer ikke hvilket valg                                                            -                  -                              -
+    //    stemmeseddelen gjelder § 10-3 (1) b
+    //    Det fremkommer ikke hvilket parti eller hvilken                                             -                  -                              -
+    //    gruppe velgeren har stemt på § 10-3 (1) c
+    //    Partiet eller gruppen stiller ikke liste i                                                  -                  -                              -
+    //    valgdistriktet § 10-3 (1) d
+    //    Forkastede stemmesedler                                                                   14                  0                             14
+    // 
+    // 
+    // 
+    
+    
+    
+    // C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige
+    // Fordelingen av godkjente stemmesedler i første og andre telling.
+    // 
+    //    Partinavn                                                                      Første telling    Andre telling                           Avvik
+    //    Fremskrittspartiet                                                                         1                  1                               -
+    //    Arbeiderpartiet                                                                            0                  0                               -
+    //    Fred og Rettferdighet (FOR)                                                                0                  0                               -
+    //    Generasjonspartiet                                                                         0                  0                               -
+    //    Høyre                                                                                      0                  0                               -
+    //    Industri- og Næringspartiet                                                                0                  0                               -
+    //    Konservativt                                                                               0                  0                               -
+    //    Kristelig Folkeparti                                                                       0                  0                               -
+    //    Miljøpartiet De Grønne                                                                     0                  0                               -
+    //    Norgesdemokratene                                                                          0                  0                               -
+    //    Partiet DNI                                                                                0                  0                               -
+    //    Partiet Sentrum                                                                            0                  0                               -
+    //    Pensjonistpartiet                                                                          0                  0                               -
+    //    Rødt                                                                                       0                  0                               -
+    //    SV - Sosialistisk Venstreparti                                                             0                  0                               -
+    //    Senterpartiet                                                                              0                  0                               -
+    //    Velferd og Innovasjonspartiet                                                              0                  0                               -
+    //    Venstre                                                                                    0                  0                               -
+    //    Totalt partifordelte stemmesedler                                                          1                  1
+    //    Blanke stemmesedler                                                                        0                  0                               -
+    //    Totalt godkjente stemmesedler                                                              1                  1
+    // 
+    // Merknad til avvik mellom første og andre telling
+    // 
+    //    -
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // Andre merknader til valgtingsstemmer - øvrige
+    // Eventuelt annen relevant informasjon fra valggjennomføring og opptelling.
+    // 
+    //    -
+    // 
+    // 
+    // 
+    
+    
+    
+    // D Kontrolltiltak
+    // D1 Kontrolltiltak
+    // Redegjørelse for kontrolltiltak kommunen har gjennomført for å ivareta korrekt og sikker valggjennomføring.
+    // 
+    // Valgstyrets redegjørelse for kontrolltiltak
+    // 
+    //    Det er gjennomført stikkprøver ved alle skanninger og alle tellinger der det er avvik er talt flere ganger.
+    // 
+    // 
+    // 
+    // 
+    
+    
+    
+    // D2 Stikkprøvekontroll
+    // Gjennomførte stikkprøvekontroller for å kontrollere systematiske avvik ved maskinell telling.
+    // 
+    // Gjennomførte stikkprøver
+    //    Opptellingskategori                                                 Resultat
+    //    Forhåndsstemmer - fra valglokalene                                  Ingen avvik på noen av stikkprøvene.
+    //    Forhåndsstemmer - øvrige                                            Ingen avvik på noen av stikkprøvene.
+    //    Forhåndsstemmer - telt etter kl. 17 dagen etter                     Ingen avvik på noen av stikkprøvene.
+    //    valgdagen
+    //    Valgtingsstemmer - fra valglokalene                                 Ingen avvik på noen av stikkprøvene.
+    //    Valgtingsstemmer - øvrige                                           Ingen avvik på noen av stikkprøvene.
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    
+    
+    
+    // E Godkjenning
+    // E1 Valgstyrets merknad
+    // Merknad til valggjennomføringen i kommunen
+    // 
+    //    Protokollen ble godkjent i VS-sak 3/25 9. september 2025.
+    // 
+    // 
+    // 
+    // 
+    
+    
+    
+    // E2 Signering
+    // To medlemmer av valgstyret signerer i forbindelse med godkjenningen av valget i kommunen.
+    // 
+    // Oppmøte
+    //    Medlem                                                                                Rolle
+    //    ANJA HOVLAND                                                                          Leder
+    //    MAY HELEN HETLAND ERVIK                                                               Nestleder
+    //    LEIF ERIK BROCH                                                                       Sekretær
+    //    ROALD EIE                                                                             Medlem
+    //    BEATE KYDLAND                                                                         Medlem
+    //    MARI SKAARA OMDAL                                                                     Medlem
+    //    BJØRNAR STAPNES                                                                       Medlem
+    //    KNUT SIREVÅG                                                                          Medlem
+    //    KARI JOHANNE MELHUS                                                                   Medlem
+    //    HALVOR ØSTERMAN THENGS                                                                Medlem
+    //    STEFFEN VINDHEIM                                                                      Varamedlem
+    //    KENNETH PEDERSEN                                                                      Varamedlem
+    //
+    // 
+    //              Dato: Tirsdag 09. september 2025
+    // 
+    // 
+    // 
+    //         Signatar: SIGNERT ELEKTRONISK
+    //                        BJØRNAR STAPNES
+    // 
+    // 
+    // 
+    //         Signatar: SIGNERT ELEKTRONISK
+    //                        HALVOR ØSTERMAN THENGS
+    // 
+    // 
+
+
     regexAssertAndReturnMatch('/Stop here/', $lines[$i++]);
 
 
