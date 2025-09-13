@@ -1427,91 +1427,261 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // 
     // 
     
-    
+    $obj->{'C1.3 Fordeling av valgtingsstemmesedler'} = new stdClass();
+    $i = assertLine_trim($lines, $i, 'C1.3 Fordeling av valgtingsstemmesedler');
+    $i = assertLine_trim($lines, $i, 'Fordelingen av godkjente stemmesedler i første og andre telling.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    regexAssertAndReturnMatch('/^Partinavn \s* Første telling \s* Andre telling \s* Avvik$/', trim($lines[$i++]));
+    $obj->{'C1.3 Fordeling av valgtingsstemmesedler'}->parties = array();
+    while (true) {
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        if ($i >= count($lines) || str_starts_with(trim($lines[$i]), 'Totalt partifordelte stemmesedler')) {
+            break;
+        }
+        $match = regexAssertAndReturnMatch('/^([A-Za-zÆØÅæøåáö\(\) \-]*) \s*  ([0-9\-]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)  \s* ([0-9\-\−]* ?[0-9]*)$/', trim($lines[$i++]));
+        $party = new stdClass();
+        $party->name = trim($match[1]);
+        $party->førsteTelling = cleanFormattedNumber($match[2]);
+        $party->andreTelling = cleanFormattedNumber($match[3]);
+        $party->avvik = cleanFormattedNumber($match[4]);
+        $obj->{'C1.3 Fordeling av valgtingsstemmesedler'}->parties[] = $party;
+    }
+    $match = regexAssertAndReturnMatch('/^Totalt partifordelte stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    $obj->{'C1.3 Fordeling av valgtingsstemmesedler'}->{'Totalt partifordelte stemmesedler'} = new stdClass();
+    $obj->{'C1.3 Fordeling av valgtingsstemmesedler'}->{'Totalt partifordelte stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
+    $obj->{'C1.3 Fordeling av valgtingsstemmesedler'}->{'Totalt partifordelte stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
+    $match = regexAssertAndReturnMatch('/^Blanke stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    $obj->{'C1.3 Fordeling av valgtingsstemmesedler'}->{'Blanke stemmesedler'} = new stdClass();
+    $obj->{'C1.3 Fordeling av valgtingsstemmesedler'}->{'Blanke stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
+    $obj->{'C1.3 Fordeling av valgtingsstemmesedler'}->{'Blanke stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
+    $obj->{'C1.3 Fordeling av valgtingsstemmesedler'}->{'Blanke stemmesedler'}->avvik = cleanFormattedNumber($match[3]);
+    $match = regexAssertAndReturnMatch('/^Totalt godkjente stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    $obj->{'C1.3 Fordeling av valgtingsstemmesedler'}->{'Totalt godkjente stemmesedler'} = new stdClass();
+    $obj->{'C1.3 Fordeling av valgtingsstemmesedler'}->{'Totalt godkjente stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
+    $obj->{'C1.3 Fordeling av valgtingsstemmesedler'}->{'Totalt godkjente stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
     
     // C2 Valgtingsstemmer - fra valglokalene
     // Valgtingsstemmer telt per lokale. Første telling er gjennomført i valglokalet.
     // 
 
+    $obj->{'C2 Valgtingsstemmer - fra valglokalene'} = new stdClass();
+    $obj->{'C2 Valgtingsstemmer - fra valglokalene'}->Valglokaler = array();
+    $i = assertLine_trim($lines, $i, 'C2 Valgtingsstemmer - fra valglokalene');
+    $i = assertLine_trim($lines, $i, 'Valgtingsstemmer telt per lokale. Første telling er gjennomført i valglokalet.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
 
-    // ## NOTICE: This section C2.1, C2.2 and C2.3 repeats for every polling station (valglokale)
-    // 0001 Lundåne Bo- og servicesenter
-    
-    
-    // C2.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler
-    // Avvik mellom godkjente valgtingsstemmegivninger (kryss i manntall) og valgtingsstemmesedler fra første telling.
-    // 
-    //    Godkjente valgtingsstemmegivninger                                      Totalt antall stemmesedler                          Avvik
-    //    1 373                                                                                             1 379                         −6
-    // 
-    //    Tvilsomme stemmesedler lagt til side før første telling                                                                           6
-    // 
-    // Merknad til sammenligning av godkjente stemmegivninger og stemmesedler
-    // 
-    //    Avvik på 6 er stemmesedler uten stempel (tvilsomme sedler)
-    // 
-    // 
-    // 
-    // 
-    // 
-    // 
-    
-    
-    
-    // C2.2 Forkastede valgtingsstemmesedler
-    // Oversikt over valgtingsstemmesedler fra valglokalet som valgstyret har forkastet i andre telling.
-    // 
-    //    Forkastelsesgrunn                                                                                                  Antall
-    //    Seddelen mangler offentlig stempel § 10-3 (1) a                                                                           -
-    //    Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b                                                      -
-    //    Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c                                 -
-    //    Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d                                                    -
-    //    Forkastede stemmesedler                                                                                                   0
-    // 
-    // 
-    // 
-    
-    
-    
-    // C2.3 Fordeling av valgtingsstemmesedler - 0001 Lundåne Bo- og servicesenter
-    // Fordelingen av godkjente stemmesedler i første og andre telling.
-    // 
-    //    Partinavn                                                                      Første telling     Andre telling     Avvik
-    //    Fremskrittspartiet                                                                         343             345            2
-    //    Arbeiderpartiet                                                                            327             327            -
-    //    Høyre                                                                                      218             218            -
-    //    Kristelig Folkeparti                                                                       167             165          −2
-    //    Senterpartiet                                                                               81              81            -
-    //    Rødt                                                                                        66              66            -
-    //    Venstre                                                                                     41              41            -
-    //    SV - Sosialistisk Venstreparti                                                              39              39            -
-    //    Miljøpartiet De Grønne                                                                      21              21            -
-    //    Pensjonistpartiet                                                                           13              13            -
-    //    Norgesdemokratene                                                                           12              12            -
-    //    Industri- og Næringspartiet                                                                 10              10            -
-    //    Konservativt                                                                                 8               8            -
-    //    Generasjonspartiet                                                                           3               3            -
-    //    Fred og Rettferdighet (FOR)                                                                  2               2            -
-    //    Partiet DNI                                                                                  2               2            -
-    //    Partiet Sentrum                                                                              0               0            -
-    //    Velferd og Innovasjonspartiet                                                                0               0            -
-    //    Totalt partifordelte stemmesedler                                                         1 353          1 353
-    //    Blanke stemmesedler                                                                         20              20            -
-    //    Totalt godkjente stemmesedler                                                             1 373          1 373
-    // 
-    // Merknad til avvik mellom første og andre telling
-    // 
-    //    Tellefeil i 1. telling i valglokalet
-    // 
-    // 
-    // Andre merknader til valgtingsstemmer - 0001 Lundåne Bo- og servicesenter
-    // Eventuelt annen relevant informasjon fra valggjennomføring og opptelling.
-    // 
-    //    -
-    // 
-    // 
-    // 
-    // 
+    // Each polling station starts with a line like "4001 Rådhuset 4 etg"
+    while (true) {
+        // ## NOTICE: This section C2.1, C2.2 and C2.3 repeats for every polling station (valglokale)
+
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $pollingStationName = regexAssertAndReturnMatch('/^([0-9]{4} .*)$/', trim($lines[$i]))[1];
+        $pollingStation = new stdClass();
+        $pollingStation->Navn = $pollingStationName;
+        $obj->{'C2 Valgtingsstemmer - fra valglokalene'}->Valglokaler[$pollingStationName] = $pollingStation;
+
+
+        // 0001 Lundåne Bo- og servicesenter    
+        // C2.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler
+        // Avvik mellom godkjente valgtingsstemmegivninger (kryss i manntall) og valgtingsstemmesedler fra første telling.
+        // 
+        //    Godkjente valgtingsstemmegivninger                                      Totalt antall stemmesedler                          Avvik
+        //    1 373                                                                                             1 379                         −6
+        // 
+        //    Tvilsomme stemmesedler lagt til side før første telling                                                                           6
+        // 
+        // Merknad til sammenligning av godkjente stemmegivninger og stemmesedler
+        // 
+        //    Avvik på 6 er stemmesedler uten stempel (tvilsomme sedler)
+        // 
+        // 
+        // 
+
+        $i = assertLine_trim($lines, $i, $pollingStationName);
+        $i = assertLine_trim($lines, $i, 'C2.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler');
+        $pollingStation->{'C2.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler'} = new stdClass();
+        $i = assertLine_trim($lines, $i, 'Avvik mellom godkjente valgtingsstemmegivninger (kryss i manntall) og valgtingsstemmesedler fra første telling.');
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        regexAssertAndReturnMatch('/^Godkjente valgtingsstemmegivninger \s* Totalt antall stemmesedler \s* Avvik$/', trim($lines[$i++]));
+        $match = regexAssertAndReturnMatch('/^([0-9]* ?[0-9]*) \s* ([0-9]* ?[0-9]*) \s* ([0-9\-\−]* ?[0-9]*)$/', trim($lines[$i++]));
+        $pollingStation->{'C2.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler'}->{'Godkjente valgtingsstemmegivninger'} = cleanFormattedNumber($match[1]);
+        $pollingStation->{'C2.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler'}->{'Totalt antall stemmesedler'} = cleanFormattedNumber($match[2]);
+        $pollingStation->{'C2.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler'}->{'Avvik'} = cleanFormattedNumber($match[3]);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $match = regexAssertAndReturnMatch('/^Tvilsomme stemmesedler lagt til side før første telling\s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+        $pollingStation->{'C2.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler'}->{'Tvilsomme stemmesedler lagt til side før første telling'} = cleanFormattedNumber($match[1]);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = assertLine_trim($lines, $i, 'Merknad til sammenligning av godkjente stemmegivninger og stemmesedler');
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $remarks = array();
+        while (true) {
+            if ($i >= count($lines) || trim($lines[$i]) == '') {
+                break;
+            }
+            $remarks[] = trim($lines[$i++]);
+        }
+        $pollingStation->{'C2.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler'}->remarks = $remarks;
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        
+        
+        
+        // C2.2 Forkastede valgtingsstemmesedler
+        // Oversikt over valgtingsstemmesedler fra valglokalet som valgstyret har forkastet i andre telling.
+        // 
+        //    Forkastelsesgrunn                                                                                                  Antall
+        //    Seddelen mangler offentlig stempel § 10-3 (1) a                                                                           -
+        //    Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b                                                      -
+        //    Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c                                 -
+        //    Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d                                                    -
+        //    Forkastede stemmesedler                                                                                                   0
+        // 
+        // 
+        // 
+        $pollingStation->{'C2.2 Forkastede valgtingsstemmesedler'} = new stdClass();
+        $i = assertLine_trim($lines, $i, 'C2.2 Forkastede valgtingsstemmesedler');
+        $i = assertLine_trim($lines, $i, 'Oversikt over valgtingsstemmesedler fra valglokalet som valgstyret har forkastet i andre telling.');
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        regexAssertAndReturnMatch('/^Forkastelsesgrunn\s*Antall$/', trim($lines[$i++]));
+        $items = array(
+            'Seddelen mangler offentlig stempel § 10-3 (1) a',
+            'Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b',
+            'Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c',
+            'Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d',
+            'Forkastede stemmesedler'
+        );
+        foreach ($items as $item) {
+            $i = removeLineIfPresent_andEmpty($lines, $i);
+            $item_regex = str_replace('(', '\(', $item);
+            $item_regex = str_replace(')', '\)', $item_regex);
+            $item_regex = str_replace('/', '\/', $item_regex);
+            $number = regexAssertAndReturnMatch('/^' . $item_regex . ' \s*([0-9\-]* ?[0-9]*)\s*$/', trim($lines[$i++]))[1];
+            $pollingStation->{'C2.2 Forkastede valgtingsstemmesedler'}->{$item} = $number;
+        }
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        
+        
+        // C2.3 Fordeling av valgtingsstemmesedler - 0001 Lundåne Bo- og servicesenter
+        // Fordelingen av godkjente stemmesedler i første og andre telling.
+        // 
+        //    Partinavn                                                                      Første telling     Andre telling     Avvik
+        //    Fremskrittspartiet                                                                         343             345            2
+        //    Arbeiderpartiet                                                                            327             327            -
+        //    Høyre                                                                                      218             218            -
+        //    Kristelig Folkeparti                                                                       167             165          −2
+        //    Senterpartiet                                                                               81              81            -
+        //    Rødt                                                                                        66              66            -
+        //    Venstre                                                                                     41              41            -
+        //    SV - Sosialistisk Venstreparti                                                              39              39            -
+        //    Miljøpartiet De Grønne                                                                      21              21            -
+        //    Pensjonistpartiet                                                                           13              13            -
+        //    Norgesdemokratene                                                                           12              12            -
+        //    Industri- og Næringspartiet                                                                 10              10            -
+        //    Konservativt                                                                                 8               8            -
+        //    Generasjonspartiet                                                                           3               3            -
+        //    Fred og Rettferdighet (FOR)                                                                  2               2            -
+        //    Partiet DNI                                                                                  2               2            -
+        //    Partiet Sentrum                                                                              0               0            -
+        //    Velferd og Innovasjonspartiet                                                                0               0            -
+        //    Totalt partifordelte stemmesedler                                                         1 353          1 353
+        //    Blanke stemmesedler                                                                         20              20            -
+        //    Totalt godkjente stemmesedler                                                             1 373          1 373
+        // 
+
+        $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'} = new stdClass();
+        $i = assertLine_trim($lines, $i, 'C2.3 Fordeling av valgtingsstemmesedler - ' . $pollingStationName);
+        $i = assertLine_trim($lines, $i, 'Fordelingen av godkjente stemmesedler i første og andre telling.');
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        regexAssertAndReturnMatch('/^Partinavn \s* Første telling \s* Andre telling \s* Avvik$/', trim($lines[$i++]));
+        $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->parties = array();
+        while (true) {
+            $i = removeLineIfPresent_andEmpty($lines, $i);
+            if ($i >= count($lines) || str_starts_with(trim($lines[$i]), 'Totalt partifordelte stemmesedler')) {
+                break;
+            }
+            $match = regexAssertAndReturnMatch('/^([A-Za-zÆØÅæøåáö\(\) \-]*) \s*  ([0-9\-]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)  \s* ([0-9\-\−]* ?[0-9]*)$/', trim($lines[$i++]));
+            $party = new stdClass();
+            $party->name = trim($match[1]);
+            $party->førsteTelling = cleanFormattedNumber($match[2]);
+            $party->andreTelling = cleanFormattedNumber($match[3]);
+            $party->avvik = cleanFormattedNumber($match[4]);
+            $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->parties[] = $party;
+        }
+        $match = regexAssertAndReturnMatch('/^Totalt partifordelte stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+        $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->{'Totalt partifordelte stemmesedler'} = new stdClass();
+        $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->{'Totalt partifordelte stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
+        $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->{'Totalt partifordelte stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
+        $match = regexAssertAndReturnMatch('/^Blanke stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+        $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->{'Blanke stemmesedler'} = new stdClass();
+        $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->{'Blanke stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
+        $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->{'Blanke stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
+        $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->{'Blanke stemmesedler'}->avvik = cleanFormattedNumber($match[3]);
+        $match = regexAssertAndReturnMatch('/^Totalt godkjente stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+        $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->{'Totalt godkjente stemmesedler'} = new stdClass();
+        $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->{'Totalt godkjente stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
+        $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->{'Totalt godkjente stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+
+
+        // Merknad til avvik mellom første og andre telling
+        // 
+        //    Tellefeil i 1. telling i valglokalet
+        // 
+        // 
+        // Andre merknader til valgtingsstemmer - 0001 Lundåne Bo- og servicesenter
+        // Eventuelt annen relevant informasjon fra valggjennomføring og opptelling.
+        // 
+        //    -
+        // 
+        // 
+
+        $i = assertLine_trim($lines, $i, 'Merknad til avvik mellom første og andre telling');
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $remarks = array();
+        while (true) {
+            if ($i >= count($lines) || trim($lines[$i]) == '') {
+                break;
+            }
+            $remarks[] = trim($lines[$i++]);
+        }
+        $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->avvikRemarks = $remarks;
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = assertLine_trim($lines, $i, 'Andre merknader til valgtingsstemmer - ' . $pollingStationName);
+        $i = assertLine_trim($lines, $i, 'Eventuelt annen relevant informasjon fra valggjennomføring og opptelling.');
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $remarks = array();
+        while (true) {
+            if ($i >= count($lines) || trim($lines[$i]) == '') {
+                break;
+            }
+            $remarks[] = trim($lines[$i++]);
+        }
+        $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'}->remarks = $remarks;
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+
+        // Check for end of polling stations section
+        if ($i >= count($lines) || trim($lines[$i]) == 'C3 Valgtingsstemmer - øvrige') {
+            break;
+        }
+    }
     
     
     
