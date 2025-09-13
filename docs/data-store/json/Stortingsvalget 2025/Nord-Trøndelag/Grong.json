@@ -229,5 +229,141 @@
             "role": "Varamedlem"
         }
     ],
-    "errorMessage": "No match for regex.\nRegex ..... : ^(.*)  \\s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\\s*$\nLine ...... : B Forhåndsstemmer\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(394): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "B1.1 Forhåndsstemmegivninger": {
+        "Godkjente stemmegivninger": 742,
+        "Velgeren er ikke innført i manntallet i kommunen § 10-2 (1) a": "-",
+        "Velgeren har ikke stemmerett § 10-2 (1) a": "-",
+        "Det kan ikke fastslås hvem velgeren er § 10-2 (1) b": "-",
+        "Stemmegivningen er ikke levert til et sted der velgeren kan stemme § 10-2 (1) c": "-",
+        "Det er sannsynlighetsovervekt for at omslagskonvolutten er åpnet § 10-2 (1) d": "-",
+        "Velgeren har tidligere fått godkjent en stemmegivning § 10-2 (1) e": "-",
+        "Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter klokken 17 dagen etter valgdagen § 10-2 (1) f": "-",
+        "Forkastede stemmegivninger": "0"
+    },
+    "B1.2 Forhåndsstemmesedler": {
+        "Godkjente stemmesedler": 752,
+        "Forkastede stemmesedler": "0",
+        "Totalt antall stemmesedler": 752,
+        "Seddelen mangler offentlig stempel § 10-3 (1) a": "-",
+        "Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b": "-",
+        "Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c": "-",
+        "Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d": "-"
+    },
+    "B1.3 Fordeling av forhåndsstemmesedler": {
+        "parties": [
+            {
+                "name": "Arbeiderpartiet",
+                "førsteTelling": 528,
+                "andreTelling": 280,
+                "avvik": "−248"
+            },
+            {
+                "name": "Senterpartiet",
+                "førsteTelling": 344,
+                "andreTelling": 181,
+                "avvik": "−163"
+            },
+            {
+                "name": "Fremskrittspartiet",
+                "førsteTelling": 203,
+                "andreTelling": 114,
+                "avvik": "−89"
+            },
+            {
+                "name": "Rødt",
+                "førsteTelling": 85,
+                "andreTelling": 44,
+                "avvik": "−41"
+            },
+            {
+                "name": "SV - Sosialistisk Venstreparti",
+                "førsteTelling": 73,
+                "andreTelling": 40,
+                "avvik": "−33"
+            },
+            {
+                "name": "Høyre",
+                "førsteTelling": 65,
+                "andreTelling": 35,
+                "avvik": "−30"
+            },
+            {
+                "name": "Generasjonspartiet",
+                "førsteTelling": 27,
+                "andreTelling": 14,
+                "avvik": "−13"
+            },
+            {
+                "name": "Miljøpartiet De Grønne",
+                "førsteTelling": 18,
+                "andreTelling": 11,
+                "avvik": "−7"
+            },
+            {
+                "name": "Kristelig Folkeparti",
+                "førsteTelling": 13,
+                "andreTelling": 7,
+                "avvik": "−6"
+            },
+            {
+                "name": "Norgesdemokratene",
+                "førsteTelling": 13,
+                "andreTelling": 7,
+                "avvik": "−6"
+            },
+            {
+                "name": "Venstre",
+                "førsteTelling": 9,
+                "andreTelling": 5,
+                "avvik": "−4"
+            },
+            {
+                "name": "Pensjonistpartiet",
+                "førsteTelling": 8,
+                "andreTelling": 4,
+                "avvik": "−4"
+            },
+            {
+                "name": "Konservativt",
+                "førsteTelling": 4,
+                "andreTelling": 2,
+                "avvik": "−2"
+            },
+            {
+                "name": "Partiet DNI",
+                "førsteTelling": 3,
+                "andreTelling": 2,
+                "avvik": "−1"
+            },
+            {
+                "name": "Industri- og Næringspartiet",
+                "førsteTelling": 2,
+                "andreTelling": 1,
+                "avvik": "−1"
+            },
+            {
+                "name": "Partiet Sentrum",
+                "førsteTelling": 2,
+                "andreTelling": 1,
+                "avvik": "−1"
+            },
+            {
+                "name": "Velferd og Innovasjonspartiet",
+                "førsteTelling": 2,
+                "andreTelling": 1,
+                "avvik": "−1"
+            },
+            {
+                "name": "Fred og Rettferdighet (FOR)",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            }
+        ],
+        "Totalt partifordelte stemmesedler": {
+            "førsteTelling": 1399,
+            "andreTelling": 749
+        }
+    },
+    "errorMessage": "No match for regex.\nRegex ..... : ^Blanke stemmesedler \\s*  ([0-9]* ?[0-9]*)  \\s* ([0-9-]* ?[0-9]*)  \\s* ([0-9-]* ?[0-9]*)\\s*$\nLine ...... : Blanke stemmesedler                                                                            6               3         −3\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(578): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }

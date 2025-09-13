@@ -388,7 +388,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     regexAssertAndReturnMatch('/^Medlem \s* Rolle\s*$/', trim($lines[$i++]));
     while (true) {
         $i = removeLineIfPresent_andEmpty($lines, $i);
-        if ($i >= count($lines) || trim($lines[$i]) == '') {
+        if ($i >= count($lines) || trim($lines[$i]) == '' || str_starts_with(trim($lines[$i]), 'B Forhåndsstemmer')) {
             break;
         }
         $match = regexAssertAndReturnMatch('/^(.*)  \s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\s*$/', trim($lines[$i++]));
@@ -494,6 +494,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $obj->{'B1.2 Forhåndsstemmesedler'}->{'Forkastede stemmesedler'} = cleanFormattedNumber($match[1]);
     $match = regexAssertAndReturnMatch('/^Totalt antall stemmesedler \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
     $obj->{'B1.2 Forhåndsstemmesedler'}->{'Totalt antall stemmesedler'} = cleanFormattedNumber($match[1]);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     regexAssertAndReturnMatch('/^Forkastelsesgrunn\s*Antall$/', trim($lines[$i++]));
     $items = array(
