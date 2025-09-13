@@ -15,7 +15,7 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline) {
     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
 });
 
-$election_year = '2023';
+$election_year = '2025';
 
 
 $cache_dir_pdfs = __DIR__ . '/docs/data-store/pdfs-' . $election_year . '/';
