@@ -77,6 +77,31 @@ function downloadUrls_parseTxt($lines) {
             file_put_contents($cache_name . '.pdfinfo.txt', implode(chr(10), $pdfinfoOutput));
         }
 
+        if (!file_exists($cache_name . '-att')) {
+            mkdir($cache_name . '-att');
+            exec('pdfdetach -saveall -o "' . $cache_name . '-att" "' . $cache_name . '"');
+
+        }
+
+        $attachments = scandir($cache_name . '-att');
+        foreach ($attachments as $attachment) {
+            if (in_array($attachment, array('.', '..'))) {
+                continue;
+            }
+            if (str_ends_with($attachment, '.pdf')) {
+                if (!file_exists($cache_name . '-att/' . $attachment . '.layout.txt')) {
+                    $pdfLines = '';
+                    exec('pdftotext -layout "' . $cache_name . '-att/' . $attachment . '" -', $pdfLines);
+                    file_put_contents($cache_name . '-att/' . $attachment . '.layout.txt', implode(chr(10), $pdfLines));
+                }
+                if (!file_exists($cache_name . '-att/' . $attachment . '.pdfinfo.txt')) {
+                    $pdfinfoOutput = '';
+                    exec('pdfinfo "' . $cache_name . '-att/' . $attachment . '"', $pdfinfoOutput);
+                    file_put_contents($cache_name . '-att/' . $attachment . '.pdfinfo.txt', implode(chr(10), $pdfinfoOutput));
+                }
+            }
+        }
+
         if (!isset($lines_found[$line])) {
             // Removes any duplicates to keep it clean.
             $lines_found[$line] = '';
