@@ -304,5 +304,14 @@
         "Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter klokken 17 dagen etter valgdagen § 10-2 (1) f": "-",
         "Forkastede stemmegivninger": "9"
     },
-    "errorMessage": "No match for regex.\nRegex ..... : Stop here\nLine ...... : B1.2 Forhåndsstemmesedler\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1122): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(617): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
+    "B1.2 Forhåndsstemmesedler": {
+        "Godkjente stemmesedler": 4156,
+        "Forkastede stemmesedler": "19",
+        "Totalt antall stemmesedler": 4175,
+        "Seddelen mangler offentlig stempel § 10-3 (1) a": "17",
+        "Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b": "-",
+        "Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c": "2",
+        "Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d": "-"
+    },
+    "errorMessage": "No match for regex.\nRegex ..... : Stop here\nLine ...... : B1.3 Fordeling av forhåndsstemmesedler\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1153): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(617): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
 }
