@@ -1,0 +1,41 @@
+{
+    "localSource": "docs/data-store/pdfs-2025/valgmedarbeiderportalen.valg.no-umbraco-Surface-MeetingBook-downloadByName-?meetingBookFolderId=23814&meetingBookName=0301_st_2025.pdf-att/Original-document-1.pdf.layout.txt",
+    "url": "<missing>",
+    "downloadTime": null,
+    "pdfMetaData": "Title:           Protokoll for valgstyret i Oslo kommune\nProducer:        OpenPDF 2.0.3\nCreationDate:    Thu Sep 11 16:05:05 2025 CEST\nCustom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           252\nEncrypted:       no\nPage size:       595 x 842 pts (A4)\nPage rot:        0\nFile size:       658423 bytes\nOptimized:       no\nPDF version:     1.5",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll-stortinget",
+    "error": true,
+    "reportGenerated": "11.09.2025    16:05",
+    "election": "Stortingsvalget 2025",
+    "heading": "Protokoll for valgstyret i Oslo kommune Oslo valgdistrikt",
+    "electionYear": "2025",
+    "municipality": "Oslo",
+    "county": "Oslo",
+    "keyfigures_antallStemmeberettigede": 518680,
+    "keyfigures_totaltAntallGodkjenteStemmegivninger": 423986,
+    "keyfigures_oppmøteprosent": "81,7 %",
+    "A2.1 Stemmegivninger": {
+        "Godkjente stemmegivninger": 423986,
+        "Velgeren er ikke innført i manntallet i kommunen § 10-2 (1) a": "4",
+        "Velgeren har ikke stemmerett § 10-2 (1) a": "328",
+        "Det kan ikke fastslås hvem velgeren er § 10-2 (1) b": "1",
+        "Stemmegivningen er ikke levert til et sted der velgeren kan stemme § 10-2 (1) c": "30",
+        "Det er sannsynlighetsovervekt for at omslagskonvolutten er åpnet § 10-2 (1) d": "-",
+        "Velgeren har tidligere fått godkjent en stemmegivning § 10-2 (1) e": "37",
+        "Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter klokken 17 dagen etter valgdagen § 10-2 (1) f": "-",
+        "Forkastede stemmegivninger": "400"
+    },
+    "A1.3 Stemmesedler": {
+        "Godkjente stemmesedler": 424036,
+        "Forkastede stemmesedler": "436",
+        "Totalt antall stemmesedler": 424472,
+        "Seddelen mangler offentlig stempel § 10-3 (1) a": "404",
+        "Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b": "-",
+        "Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c": "24",
+        "Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d": "8"
+    },
+    "A1.4 Fordeling av stemmesedler": {},
+    "errorMessage": "No match for regex.\nRegex ..... : ^Partinavn \\s* Forhånd \\s* Valgting \\s* Totalt\\s*$\nLine ...... : Partinavn                                           Mandat                       Forhånd                   Valgting    Totalt\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(275): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+}

@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2025/valgmedarbeiderportalen.valg.no-umbraco-Surface-MeetingBook-downloadByName-?meetingBookFolderId=23814&meetingBookName=1539_st_2025.pdf.layout.txt",
+    "url": "https://valgmedarbeiderportalen.valg.no/umbraco/Surface/MeetingBook/downloadByName/?meetingBookFolderId=23814&meetingBookName=1539_st_2025",
+    "downloadTime": "2025-09-13 12:07:05",
+    "pdfMetaData": "Author:\nCreator:         RICOH MP C6004ex\nProducer:        Sikri AS,  PixEdit Converter Server Core Version 2.11.1.20\nCreationDate:    Thu Sep 11 02:00:01 2025 CEST\nModDate:         Thu Sep 11 02:00:01 2025 CEST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           22\nEncrypted:       no\nPage size:       841.92 x 595.2 pts (A4)\nPage rot:        270\nFile size:       10296988 bytes\nOptimized:       no\nPDF version:     1.7",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll-stortinget",
+    "error": true,
+    "reportGenerated": "09.09.2025    18:31",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : VALG\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(53): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+}
