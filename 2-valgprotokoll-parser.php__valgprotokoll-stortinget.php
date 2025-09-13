@@ -1837,7 +1837,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         if ($i >= count($lines) || str_starts_with(trim($lines[$i]), 'Totalt partifordelte stemmesedler')) {
             break;
         }
-        $match = regexAssertAndReturnMatch('/^([A-Za-zÆØÅæøåáö\(\) \-]*) \s*  ([0-9\-]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)  \s* ([0-9\-]* ?[0-9]*)$/', trim($lines[$i++]));
+        $match = regexAssertAndReturnMatch('/^([A-Za-zÆØÅæøåáö\(\) \-]*) \s*  ([0-9\-\−]* ?[0-9]*)  \s* ([0-9\-\−]* ?[0-9]*)  \s* ([0-9\-\−]* ?[0-9]*)$/', trim($lines[$i++]));
         $party = new stdClass();
         $party->name = trim($match[1]);
         $party->førsteTelling = cleanFormattedNumber($match[2]);

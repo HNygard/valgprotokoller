@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "09.09.2025    18:43",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Kongsvinger kommune Hedmark valgdistrikt",
@@ -2230,7 +2230,199 @@
         }
     },
     "C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige": {
-        "parties": []
+        "parties": [
+            {
+                "name": "Arbeiderpartiet",
+                "førsteTelling": 5,
+                "andreTelling": 0,
+                "avvik": "−5"
+            },
+            {
+                "name": "Fremskrittspartiet",
+                "førsteTelling": 2,
+                "andreTelling": 0,
+                "avvik": "−2"
+            },
+            {
+                "name": "Høyre",
+                "førsteTelling": 1,
+                "andreTelling": 0,
+                "avvik": "−1"
+            },
+            {
+                "name": "Fred og Rettferdighet (FOR)",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Generasjonspartiet",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Industri- og Næringspartiet",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Konservativt",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Kristelig Folkeparti",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Miljøpartiet De Grønne",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Norgesdemokratene",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Partiet DNI",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Partiet Sentrum",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Pensjonistpartiet",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Rødt",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "SV - Sosialistisk Venstreparti",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Senterpartiet",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Velferd og Innovasjonspartiet",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            },
+            {
+                "name": "Venstre",
+                "førsteTelling": 0,
+                "andreTelling": 0,
+                "avvik": "-"
+            }
+        ],
+        "Totalt partifordelte stemmesedler": {
+            "førsteTelling": 8,
+            "andreTelling": 0
+        },
+        "Blanke stemmesedler": {
+            "førsteTelling": 1,
+            "andreTelling": 0,
+            "avvik": "−1"
+        },
+        "Totalt godkjente stemmesedler": {
+            "førsteTelling": 9,
+            "andreTelling": 0
+        },
+        "avvikRemarks": [
+            "Det var kun 9 sedler som manglet stempler. Det er summert første og andre telling. Det er feil"
+        ],
+        "remarks": [
+            "-"
+        ]
     },
-    "errorMessage": "No match for regex.\nRegex ..... : ^([A-Za-zÆØÅæøåáö\\(\\) \\-]*) \\s*  ([0-9\\-]* ?[0-9]*)  \\s* ([0-9\\-]* ?[0-9]*)  \\s* ([0-9\\-]* ?[0-9]*)$\nLine ...... : Arbeiderpartiet                                                                            5              0          −5\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1840): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "D Kontrolltiltak": {
+        "D1 Kontrolltiltak": [
+            "-"
+        ]
+    },
+    "D2 Stikkprøvekontroll": {
+        "Gjennomførte stikkprøver": [
+            {
+                "kategori": "Forhåndsstemmer - fra valglokalene",
+                "resultat": "Kongsvinger bibliotek - Ingen avvik"
+            },
+            {
+                "kategori": "Valgtingsstemmer - fra valglokalene",
+                "resultat": "Krets 0006 - Lundersæter- Ingen avvik"
+            }
+        ]
+    },
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "-"
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "ELIN SÅHEIM BJØRKLI",
+                "role": "Leder"
+            },
+            {
+                "name": "ØYVIND RANDMÆL-WARPE",
+                "role": "Nestleder"
+            },
+            {
+                "name": "KJELL ARNE HANSSEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "TOMMY SMEDTORP",
+                "role": "Medlem"
+            },
+            {
+                "name": "TORUNN ARNESEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "AUDUN WANGEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "RANDI MARIE RYAN",
+                "role": "Medlem"
+            }
+        ],
+        "dato": "Tirsdag 09. september 2025",
+        "signatarer": [
+            {
+                "type": "",
+                "name": "ELIN SÅHEIM BJØRKLI"
+            },
+            {
+                "type": "",
+                "name": "ØYVIND RANDMÆL-WARPE"
+            }
+        ]
+    }
 }
