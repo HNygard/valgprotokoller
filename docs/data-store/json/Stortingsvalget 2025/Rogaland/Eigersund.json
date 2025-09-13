@@ -6,12 +6,12 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": false,
+    "error": true,
     "reportGenerated": "09.09.2025    18:55",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Eigersund kommune Rogaland valgdistrikt",
     "electionYear": "2025",
     "municipality": "Eigersund",
     "county": "Rogaland",
-    "unknown_lines": true
+    "errorMessage": "Did not find expected value on line [40].\nExpected ... : Nøkkeltall i valggjennomføringen\nActual ..... : \n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(105): assertLine_trim()\n#1 2-valgprotokoll-parser.php(617): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
 }

@@ -30,17 +30,6 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // Strip new page
     $file_content = str_replace(chr(12), '', $file_content);
 
-    // Note: Don't know if this is a thing. But Levanger kommune have a logo and text at the top.
-    /*
-    if (str_starts_with(trim($file_content), 'Levanger kommune')) {
-        $file_content = preg_replace('/\s\s\sLevanger kommune/', '', $file_content);
-        $file_content = trim($file_content);
-
-        var_dump( $file_content);
-
-    }
-    */
-
     // Strip multiple empty lines. Remenants of footer.
     $file_content = preg_replace('/\n\n\n/', "\n\n", $file_content);
     $file_content = preg_replace('/\n\n\n/', "\n\n", $file_content);
@@ -88,10 +77,30 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
 
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
-    /*
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    // Skip over "Innholdsfortegnelse" (table of contents) if present
+
+
+    $i = assertLine_trim($lines, $i, 'Innholdsfortegnelse');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = assertLine_trim($lines, $i, 'A Nøkkeltall og informasjon om valggjennomføringen');
+    // Skip the table of contents section until we find the key figures section
+    while (
+        $i < count($lines)
+        && trim($lines[$i]) != 'A Nøkkeltall og informasjon om valggjennomføringen'
+    ) {
+        $i++;
+    }
+
+    $i = assertLine_trim($lines, $i, 'A Nøkkeltall og informasjon om valggjennomføringen');
+    $i = assertLine_trim($lines, $i, 'A1 Oppsummering');
+    $i = assertLine_trim($lines, $i, 'A1.1 Nøkkeltall');
+    $i = assertLine_trim($lines, $i, 'Oversikt over antall stemmeberettigede og hvor mange velgere som benyttet stemmeretten.');
+    
+        
 
     $i = assertLine_trim($lines, $i, 'Nøkkeltall i valggjennomføringen');
 
@@ -299,8 +308,6 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         $comments = explode("\n\n", trim(implode("\n", $comment_lines)));
         $muncipality->comments[$merknad_heading] = $comments;
     }
-    */
-
 
     //$i = assertLine_trim($lines, $i, 'C Avgitte godkjente stemmesedler');
     //$i = removeLineIfPresent_andEmpty($lines, $i);
