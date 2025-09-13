@@ -494,5 +494,5 @@
         }
     },
     "B3 Forhåndsstemmer - øvrige": {},
-    "errorMessage": "Did not find expected value on line [248].\nExpected ... : B3 Forhåndsstemmer - øvrige\nActual ..... : 4002 Flåheimen\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(824): assertLine_trim()\n#1 2-valgprotokoll-parser.php(647): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "errorMessage": "Did not find expected value on line [248].\nExpected ... : B3 Forhåndsstemmer - øvrige\nActual ..... : 4002 Flåheimen\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(824): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }

@@ -394,7 +394,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         if ($i >= count($lines) || trim($lines[$i]) == '') {
             break;
         }
-        $match = regexAssertAndReturnMatch('/^([A-Za-zÆØÅæøåáö \-]*) \s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\s*$/', trim($lines[$i++]));
+        $match = regexAssertAndReturnMatch('/^(.*)  \s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\s*$/', trim($lines[$i++]));
         $member = new stdClass();
         $member->name = trim($match[1]);
         $member->role = trim($match[2]);
@@ -2073,7 +2073,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
             break;
         }
         // Try to match member and role
-        $match = regexAssertAndReturnMatch('/^([A-ZÆØÅa-zæøå \-\.]+) \s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\s*$/', trim($lines[$i]));
+        $match = regexAssertAndReturnMatch('/^(.*)  \s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\s*$/', trim($lines[$i]));
         if ($match) {
             $oppmote[] = (object)[
                 'name' => trim($match[1]),

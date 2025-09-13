@@ -171,7 +171,67 @@
         {
             "name": "GRO HELLELAND",
             "role": "Leder"
+        },
+        {
+            "name": "RENÉ MUNTHE EIK",
+            "role": "Nestleder"
+        },
+        {
+            "name": "MAI GURSLI",
+            "role": "Sekretær"
+        },
+        {
+            "name": "MAGNHILD RITA EIA",
+            "role": "Medlem"
+        },
+        {
+            "name": "JAN MORTEN NYHUS",
+            "role": "Medlem"
+        },
+        {
+            "name": "ROGER MYKLEBUST",
+            "role": "Medlem"
+        },
+        {
+            "name": "TOVE BIRKELI STEINNES",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "TOM HELGE MOEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "HELGE HAMRE",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "KLAUDIA ANNA RØYLAND",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "KJELL ANDREAS HESKESTAD",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "ANDRE RØST KJØRMO",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "TED ARE STENBERG",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "OLE-ROGER HIPPE",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "SIV KARIN UTHEIM",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "BENTE HAUKLAND BROGELAND",
+            "role": "Varamedlem"
         }
     ],
-    "errorMessage": "No match for regex.\nRegex ..... : ^([A-Za-zÆØÅæøåáö \\-]*) \\s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\\s*$\nLine ...... : RENÉ MUNTHE EIK                                                                      Nestleder\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(397): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(647): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "errorMessage": "No match for regex.\nRegex ..... : ^(.*)  \\s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\\s*$\nLine ...... : B Forhåndsstemmer\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(397): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }

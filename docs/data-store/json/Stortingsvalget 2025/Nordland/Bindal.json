@@ -175,7 +175,59 @@
         {
             "name": "WENKE SALTNES RYAN",
             "role": "Nestleder"
+        },
+        {
+            "name": "LASSE RENÉ KOLSVIK",
+            "role": "Medlem"
+        },
+        {
+            "name": "ELIN KRISTINE VAREIDE LIAN",
+            "role": "Medlem"
+        },
+        {
+            "name": "BJØRG HEIDI HALD",
+            "role": "Medlem"
+        },
+        {
+            "name": "KAROLINE ANDREA BERG-HANSEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "KAROLINE VELDE",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "SVANHILD HELOVISE BÅTNES HOLTEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "BJØRN MAGNE VATNAN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "EDGAR HERMANSTAD DAHL",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "ELIN GANGSTØ",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "VERONIKA NYGÅRD OTERVIK",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "RUNE AARSAND",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "GUNHILD HELEN JOHANSEN GUTVIK",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "EIVIND SOMMERSETH",
+            "role": "Varamedlem"
         }
     ],
-    "errorMessage": "No match for regex.\nRegex ..... : ^([A-Za-zÆØÅæøåáö \\-]*) \\s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\\s*$\nLine ...... : LASSE RENÉ KOLSVIK                                                                     Medlem\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(397): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(647): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "errorMessage": "No match for regex.\nRegex ..... : ^(.*)  \\s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\\s*$\nLine ...... : B Forhåndsstemmer\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(397): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }

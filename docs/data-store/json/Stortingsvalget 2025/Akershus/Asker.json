@@ -187,7 +187,43 @@
         {
             "name": "STIG WETTRE-JOHNSEN",
             "role": "Medlem"
+        },
+        {
+            "name": "WALDEMAR R. GARNTANGEN",
+            "role": "Medlem"
+        },
+        {
+            "name": "IVAR GRANUM",
+            "role": "Medlem"
+        },
+        {
+            "name": "MARIANNE RIIS RASMUSSEN",
+            "role": "Medlem"
+        },
+        {
+            "name": "TONJE LAVIK PEDERSSEN",
+            "role": "Medlem"
+        },
+        {
+            "name": "RIKARD GAARDER KNUTSEN",
+            "role": "Medlem"
+        },
+        {
+            "name": "ELISABETH HOLTER-SCHØYEN",
+            "role": "Medlem"
+        },
+        {
+            "name": "ANDERS NORDMO",
+            "role": "Medlem"
+        },
+        {
+            "name": "EVA HØILI",
+            "role": "Medlem"
+        },
+        {
+            "name": "HELGE HAUGEN",
+            "role": "Medlem"
         }
     ],
-    "errorMessage": "No match for regex.\nRegex ..... : ^([A-Za-zÆØÅæøåáö \\-]*) \\s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\\s*$\nLine ...... : WALDEMAR R. GARNTANGEN                                                                Medlem\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(397): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(647): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "errorMessage": "No match for regex.\nRegex ..... : ^(.*)  \\s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\\s*$\nLine ...... : B Forhåndsstemmer\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(397): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }
