@@ -99,8 +99,22 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $i = assertLine_trim($lines, $i, 'A1 Oppsummering');
     $i = assertLine_trim($lines, $i, 'A1.1 Nøkkeltall');
     $i = assertLine_trim($lines, $i, 'Oversikt over antall stemmeberettigede og hvor mange velgere som benyttet stemmeretten.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
     
-        
+
+    // Stemmeberettigede          Godkjente stemmegivninger    Fremmøteprosent
+    // 11 018                                         8 691             78,9 %
+    $match = regexAssertAndReturnMatch('/^ *Stemmeberettigede \s* Godkjente stemmegivninger \s* Fremmøteprosent\s*$/', trim($lines[$i++]));
+    $match = regexAssertAndReturnMatch('/^([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*) \s* ([0-9,]* %)\s*$/', trim($lines[$i++]));
+    $obj->keyfigures_antallStemmeberettigede = cleanFormattedNumber($match[1]);
+    $obj->keyfigures_totaltAntallKryssIManntallet = cleanFormattedNumber($match[2]);
+    $obj->keyfigures_oppmøteprosent = $match[3];
+    
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
 
     $i = assertLine_trim($lines, $i, 'Nøkkeltall i valggjennomføringen');
 

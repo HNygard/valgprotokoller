@@ -13,5 +13,8 @@
     "electionYear": "2025",
     "municipality": "Eigersund",
     "county": "Rogaland",
-    "errorMessage": "Did not find expected value on line [40].\nExpected ... : Nøkkeltall i valggjennomføringen\nActual ..... : \n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(105): assertLine_trim()\n#1 2-valgprotokoll-parser.php(617): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
+    "keyfigures_antallStemmeberettigede": 11018,
+    "keyfigures_totaltAntallKryssIManntallet": 8691,
+    "keyfigures_oppmøteprosent": "78,9 %",
+    "errorMessage": "Did not find expected value on line [44].\nExpected ... : Nøkkeltall i valggjennomføringen\nActual ..... : A1.2 Stemmegivninger\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(119): assertLine_trim()\n#1 2-valgprotokoll-parser.php(617): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
 }
