@@ -601,9 +601,6 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // Each polling station starts with a line like "4001 Rådhuset 4 etg"
     while (true) {
         $i = removeLineIfPresent_andEmpty($lines, $i);
-        if ($i >= count($lines) || trim($lines[$i]) == '') {
-            break;
-        }
         $pollingStationName = regexAssertAndReturnMatch('/^([0-9]{4} .*)$/', trim($lines[$i++]))[1];
         $pollingStation = new stdClass();
         $pollingStation->Navn = $pollingStationName;
@@ -673,7 +670,30 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         // 
         // 
         // 
-
+        $pollingStation->{'B2.2 Forkastede forhåndsstemmesedler'} = new stdClass();
+        $i = assertLine_trim($lines, $i, 'B2.2 Forkastede forhåndsstemmesedler');
+        $i = assertLine_trim($lines, $i, 'Oversikt over forhåndsstemmesedler fra valglokalet som valgstyret har forkastet i andre telling.');
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        regexAssertAndReturnMatch('/^Forkastelsesgrunn\s*Antall$/', trim($lines[$i++]));
+        $items = array(
+            'Seddelen mangler offentlig stempel § 10-3 (1) a',
+            'Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b',
+            'Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c',
+            'Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d',
+            'Forkastede stemmesedler'
+        );
+        foreach ($items as $item) {
+            $i = removeLineIfPresent_andEmpty($lines, $i);
+            $item_regex = str_replace('(', '\(', $item);
+            $item_regex = str_replace(')', '\)', $item_regex);
+            $item_regex = str_replace('/', '\/', $item_regex);
+            $number = regexAssertAndReturnMatch('/^' . $item_regex . ' \s*([0-9\-]* ?[0-9]*)\s*$/', trim($lines[$i++]))[1];
+            $pollingStation->{'B2.2 Forkastede forhåndsstemmesedler'}->{$item} = $number;
+        }
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
 
         // B2.3 Fordeling av forhåndsstemmesedler - 4001 Rådhuset 4 etg
         // Fordelingen av godkjente stemmesedler i første og andre telling.
@@ -701,6 +721,47 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         //    Blanke stemmesedler                                                                         19              19           -
         //    Totalt godkjente stemmesedler                                                             3 264          3 264
         // 
+        
+        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'} = new stdClass();
+        $i = assertLine_trim($lines, $i, 'B2.3 Fordeling av forhåndsstemmesedler - ' . $pollingStationName);
+        $i = assertLine_trim($lines, $i, 'Fordelingen av godkjente stemmesedler i første og andre telling.');
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        regexAssertAndReturnMatch('/^Partinavn \s* Første telling \s* Andre telling \s* Avvik$/', trim($lines[$i++]));
+        // The list of item are political parties
+        // Parse each party line until we hit "Totalt partifordelte stemmesedler"
+        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->parties = array();
+        while (true) {
+            $i = removeLineIfPresent_andEmpty($lines, $i);
+            if ($i >= count($lines) || str_starts_with(trim($lines[$i]), 'Totalt partifordelte stemmesedler')) {
+                break;
+            }
+            $match = regexAssertAndReturnMatch('/^([A-Za-zÆØÅæøåáö\(\) \-]*) \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)  \s* ([0-9\-\−]* ?[0-9]*)$/', trim($lines[$i++]));
+            $party = new stdClass();
+            $party->name = trim($match[1]);
+            $party->førsteTelling = cleanFormattedNumber($match[2]);
+            $party->andreTelling = cleanFormattedNumber($match[3]);
+            $party->avvik = cleanFormattedNumber($match[4]);
+            $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->parties[] = $party;
+        }
+        $match = regexAssertAndReturnMatch('/^Totalt partifordelte stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->{'Totalt partifordelte stemmesedler'} = new stdClass();
+        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->{'Totalt partifordelte stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
+        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->{'Totalt partifordelte stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
+        $match = regexAssertAndReturnMatch('/^Blanke stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9-]* ?[0-9]*)  \s* ([0-9-]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->{'Blanke stemmesedler'} = new stdClass();
+        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->{'Blanke stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
+        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->{'Blanke stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
+        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->{'Blanke stemmesedler'}->avvik = cleanFormattedNumber($match[3]);
+        $match = regexAssertAndReturnMatch('/^Totalt godkjente stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->{'Totalt godkjente stemmesedler'} = new stdClass();
+        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->{'Totalt godkjente stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
+        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->{'Totalt godkjente stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+
         // Merknad til avvik mellom første og andre telling
         // 
         //    -
@@ -711,11 +772,44 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         // 
         //    -
         // 
-        // 
-        // 
-        // 
-        // 
-        // 
+
+        $i = assertLine_trim($lines, $i, 'Merknad til avvik mellom første og andre telling');
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $remarks = array();
+        while (true) {
+            if ($i >= count($lines) || trim($lines[$i]) == '') {
+                break;
+            }
+            $remarks[] = trim($lines[$i++]);
+        }
+        if (isset($pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->avvikRemarks)) {
+            throw new ErrorException('Duplicate avvik remarks section in B2.3 Fordeling av forhåndsstemmesedler for polling station ' . $pollingStationName);
+        }
+        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->avvikRemarks = $remarks;
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = assertLine_trim($lines, $i, 'Andre merknader til forhåndsstemmer - ' . $pollingStationName);
+        $i = assertLine_trim($lines, $i, 'Eventuelt annen relevant informasjon fra valggjennomføring og opptelling.');
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $remarks = array();
+        while (true) {
+            if ($i >= count($lines) || trim($lines[$i]) == '') {
+                break;
+            }    
+            $remarks[] = trim($lines[$i++]);
+        }
+        if (isset($pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->remarks)) {
+            throw new ErrorException('Duplicate remarks section in B2.3 Fordeling av forhåndsstemmesedler for polling station ' . $pollingStationName);
+        }
+        $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'}->remarks = $remarks;
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+
+        if ($lines[$i == 'B3 Forhåndsstemmer - øvrige']) {
+            break;
+        }   
     }
 
     // B3 Forhåndsstemmer - øvrige
