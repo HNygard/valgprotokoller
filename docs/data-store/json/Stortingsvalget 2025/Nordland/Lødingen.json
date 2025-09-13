@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "09.09.2025    17:33",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Lødingen kommune Nordland valgdistrikt",
@@ -1455,6 +1455,47 @@
             "-"
         ]
     },
-    "D2 Stikkprøvekontroll": {},
-    "errorMessage": "Did not find expected value on line [634].\nExpected ... : D2 Stikkprøvekontroll\nActual ..... : E Godkjenning\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1962): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "D2 Stikkprøvekontroll": {
+        "Gjennomførte stikkprøver": []
+    },
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "-"
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "HUGO ANDRÉ BONGARD JACOBSEN",
+                "role": "Leder"
+            },
+            {
+                "name": "BJØRN HARALD MOEN",
+                "role": "Nestleder"
+            },
+            {
+                "name": "JØRN VOLLEN",
+                "role": "Sekretær"
+            },
+            {
+                "name": "BETH-ASTRID JENSEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "RACHEL ELFRID MARTINUSSEN",
+                "role": "Medlem"
+            }
+        ],
+        "dato": "Tirsdag 09. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "JØRN VOLLEN"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "RACHEL ELFRID MARTINUSSEN"
+            }
+        ]
+    }
 }

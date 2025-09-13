@@ -1596,6 +1596,36 @@
             "stikkprøvekontroller, men på to av valglokalene var valgansvarlige tilstede, for å sikre at nye rutiner ble fulgt."
         ]
     },
-    "D2 Stikkprøvekontroll": {},
-    "errorMessage": "Did not find expected value on line [687].\nExpected ... : D2 Stikkprøvekontroll\nActual ..... : E Godkjenning\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1962): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "D2 Stikkprøvekontroll": {
+        "Gjennomførte stikkprøver": []
+    },
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "Valget er gjennomført i henhold til valgloven. Valgstyret er svært fornøyde med gjennomføringen."
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "MARIT HOUGSRUD",
+                "role": "Leder"
+            },
+            {
+                "name": "SVEIN ERIK WOLD",
+                "role": "Medlem"
+            },
+            {
+                "name": "ROGER KJENSRUD",
+                "role": "Medlem"
+            },
+            {
+                "name": "CATHRINE HAGEN",
+                "role": "Medlem"
+            }
+        ],
+        "dato": "Tirsdag 09. september 2025",
+        "signatarer": []
+    },
+    "unknown_lines": true,
+    "errorMessage": "Unknown lines.\n\n#0 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#1 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#2 {main}"
 }

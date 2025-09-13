@@ -651,7 +651,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         $remarks = array();
         while (true) {
             $i = removeLineIfPresent_andEmpty($lines, $i);
-            if ($i >= count($lines) || trim($lines[$i]) == '') {
+            if ($i >= count($lines) || trim($lines[$i]) == '' || str_starts_with(trim($lines[$i]), 'B2.2 ')) {
                 break;
             }
             $remarks[] = trim($lines[$i++]);
@@ -811,7 +811,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
 
-        if ($lines[$i == 'B3 Forhåndsstemmer - øvrige']) {
+        if ($lines[$i] == 'B3 Forhåndsstemmer - øvrige') {
             break;
         }   
     }
@@ -846,7 +846,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     regexAssertAndReturnMatch('/^Godkjente forhåndsstemmegivninger \s* Godkjente stemmesedler \s* Avvik$/', trim($lines[$i++]));
-    $match = regexAssertAndReturnMatch('/^([0-9]* ?[0-9]*) \s* ([0-9]* ?[0-9]*) \s* ([0-9\-\−]* ?[0-9]*)$/', trim($lines[$i++]));
+    $match = regexAssertAndReturnMatch('/^([0-9\-\−]* ?[0-9]*) \s* ([0-9\-\−]* ?[0-9]*) \s* ([0-9\-\−]* ?[0-9]*)$/', trim($lines[$i++]));
     $obj->{'B3.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler'}->{'Godkjente forhåndsstemmegivninger'} = cleanFormattedNumber($match[1]);
     $obj->{'B3.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler'}->{'Godkjente stemmesedler'} = cleanFormattedNumber($match[2]);
     $obj->{'B3.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler'}->{'Avvik'} = cleanFormattedNumber($match[3]);
@@ -920,7 +920,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
             $item_regex = str_replace('(', '\(', $item);
             $item_regex = str_replace(')', '\)', $item_regex);
             $item_regex = str_replace('/', '\/', $item_regex);
-            $number = regexAssertAndReturnMatch('/^' . $item_regex . ' \s* ([0-9]* ?[0-9]*) \s* ([0-9\-]* ?[0-9]*) \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+            $number = regexAssertAndReturnMatch('/^' . $item_regex . ' \s* ([0-9\-]* ?[0-9]*) \s* ([0-9\-]* ?[0-9]*) \s* ([0-9\-]* ?[0-9]*)\s*$/', trim($lines[$i++]));
         }
         $obj->{'B3.2 Forkastede forhåndsstemmesedler - øvrige'}->{$item} = new stdClass();
         $obj->{'B3.2 Forkastede forhåndsstemmesedler - øvrige'}->{$item}->førsteTelling = cleanFormattedNumber($number[1]);
@@ -1959,40 +1959,42 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // 
 
     $obj->{'D2 Stikkprøvekontroll'} = new stdClass();
-    $i = assertLine_trim($lines, $i, 'D2 Stikkprøvekontroll');
-    $i = assertLine_trim($lines, $i, 'Gjennomførte stikkprøvekontroller for å kontrollere systematiske avvik ved maskinell telling.');
-    $i = removeLineIfPresent_andEmpty($lines, $i);
-    $i = assertLine_trim($lines, $i, 'Gjennomførte stikkprøver');
-    $i = removeLineIfPresent_andEmpty($lines, $i);
-    regexAssertAndReturnMatch('/^Opptellingskategori \s* Resultat$/', trim($lines[$i++]));
     $stikkprove = array();
-    while (true) {
-        if ($i >= count($lines) || trim($lines[$i]) == '') {
-            break;
-        }
-        // Expect: Opptellingskategori <whitespace> Resultat
-        $match = regexAssertAndReturnMatch('/^([A-Za-zÆØÅæøå0-9\-\.\(\) ,]+?)  \s*(.+)$/', trim($lines[$i++]));
-        if (empty(trim($match[1]))) {
-            throw new Exception('Expected opptellingskategori in stikkprøvekontroll, got empty string at line ' . ($i) . ': ' . $lines[$i-1]);
-        }
-        $kategori = trim($match[1]);
-        $resultat = trim($match[2]);
+    if (trim($lines[$i]) == 'D2 Stikkprøvekontroll') {
+        $i = assertLine_trim($lines, $i, 'D2 Stikkprøvekontroll');
+        $i = assertLine_trim($lines, $i, 'Gjennomførte stikkprøvekontroller for å kontrollere systematiske avvik ved maskinell telling.');
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = assertLine_trim($lines, $i, 'Gjennomførte stikkprøver');
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        regexAssertAndReturnMatch('/^Opptellingskategori \s* Resultat$/', trim($lines[$i++]));
+        while (true) {
+            if ($i >= count($lines) || trim($lines[$i]) == '') {
+                break;
+            }
+            // Expect: Opptellingskategori <whitespace> Resultat
+            $match = regexAssertAndReturnMatch('/^([A-Za-zÆØÅæøå0-9\-\.\(\) ,]+?)  \s*(.+)$/', trim($lines[$i++]));
+            if (empty(trim($match[1]))) {
+                throw new Exception('Expected opptellingskategori in stikkprøvekontroll, got empty string at line ' . ($i) . ': ' . $lines[$i-1]);
+            }
+            $kategori = trim($match[1]);
+            $resultat = trim($match[2]);
 
-        if ($kategori == 'Forhåndsstemmer - telt etter kl. 17 dagen etter') {
-            // Special case: the line break happened in the middle of the category name
-            $i = assertLine_trim($lines, $i, 'valgdagen');
-            $kategori .= ' valgdagen';
-        }
+            if ($kategori == 'Forhåndsstemmer - telt etter kl. 17 dagen etter') {
+                // Special case: the line break happened in the middle of the category name
+                $i = assertLine_trim($lines, $i, 'valgdagen');
+                $kategori .= ' valgdagen';
+            }
 
-        $stikkprove[] = (object)[
-            'kategori' => $kategori,
-            'resultat' => $resultat
-        ];
+            $stikkprove[] = (object)[
+                'kategori' => $kategori,
+                'resultat' => $resultat
+            ];
+        }
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $i = removeLineIfPresent_andEmpty($lines, $i);
     }
     $obj->{'D2 Stikkprøvekontroll'}->{'Gjennomførte stikkprøver'} = $stikkprove;
-    $i = removeLineIfPresent_andEmpty($lines, $i);
-    $i = removeLineIfPresent_andEmpty($lines, $i);
-    $i = removeLineIfPresent_andEmpty($lines, $i);
     
     
     // E Godkjenning
@@ -2069,7 +2071,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $oppmote = array();
     while (true) {
         $i = removeLineIfPresent_andEmpty($lines, $i);
-        if ($i >= count($lines) || trim($lines[$i]) == '') {
+        if ($i >= count($lines) || trim($lines[$i]) == '' || str_starts_with(trim($lines[$i]), 'Dato:')) {
             break;
         }
         // Try to match member and role

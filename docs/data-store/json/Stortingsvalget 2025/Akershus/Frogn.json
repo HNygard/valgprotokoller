@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "09.09.2025    20:41",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Frogn kommune Akershus valgdistrikt",
@@ -1714,6 +1714,77 @@
             "Valgdirektoratets sikkerhetsveileder følges, for eksempel mht. IKT."
         ]
     },
-    "D2 Stikkprøvekontroll": {},
-    "errorMessage": "Did not find expected value on line [732].\nExpected ... : D2 Stikkprøvekontroll\nActual ..... : E Godkjenning\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1962): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
+    "D2 Stikkprøvekontroll": {
+        "Gjennomførte stikkprøver": []
+    },
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "Valget ble gjennomført på en tilfredsstillende måte, med god valgdeltakelse. En svært stor andel av velgerne forhåndsstemte. Valget",
+            "ble gjennomført med tre kretser i stedet for fem og med ett nytt valglokale (Smia).",
+            "Valgstyret har ikke registrert uregelmessigheter i tilknytning til valggjennomføringen."
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "SIGBJØRN ODDEN",
+                "role": "Leder"
+            },
+            {
+                "name": "LASSE KØHLER BOTTEN",
+                "role": "Nestleder"
+            },
+            {
+                "name": "ANNE LISE LARSSON",
+                "role": "Sekretær"
+            },
+            {
+                "name": "ANINE NORÉN",
+                "role": "Medlem"
+            },
+            {
+                "name": "BENTE KRYSTAD HEIERSJØ",
+                "role": "Medlem"
+            },
+            {
+                "name": "ØYVIND BRENDEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "VIBEKE LUNDH KARLSEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "HANS KRISTIAN RAANAAS",
+                "role": "Medlem"
+            },
+            {
+                "name": "LINE STOKHOLM",
+                "role": "Medlem"
+            },
+            {
+                "name": "RAGNAR DAHL",
+                "role": "Medlem"
+            },
+            {
+                "name": "HENRIK FORSBERG MATHIESEN",
+                "role": "Medlem"
+            },
+            {
+                "name": "INGRID OLESEN",
+                "role": "Varamedlem"
+            }
+        ],
+        "dato": "Tirsdag 09. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "ØYVIND BRENDEN"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "HANS KRISTIAN RAANAAS"
+            }
+        ]
+    }
 }
