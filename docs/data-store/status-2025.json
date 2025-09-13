@@ -1,10 +1,9 @@
 {
     "files_total": 1962,
-    "files_successful": 99,
-    "files_error": 76,
+    "files_successful": 114,
+    "files_error": 61,
     "error_messages": {
         "Nynorsk text detected. Parser not finished.\n\n#0 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#1 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#2 {main}": 46,
-        "Unknown lines.\n\n#0 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#1 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#2 {main}": 15,
         "Did not find expected value on line [334].\nExpected ... : B4.2 Forkastede forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen\nActual ..... : En partistemmeseddel manglet stempel og ble stemplet. Ved telling var det en seddel for mye i forhold til manntallskryss. Vi har ingen\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1117): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}": 1,
         "Did not find expected value on line [705].\nExpected ... : B4.2 Forkastede forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen\nActual ..... : 2) 5 velgere har avgitt til sammen 5 stemmer som er forkastet fordi det ikke fremgår ikke hvilket parti eller hvilken liste (FC) eller\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1117): assertLine_trim()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}": 1,
         "No match for regex.\nRegex ..... : ^([0-9]{4} .*)$\nLine ...... : Én velger påsto at det i et avlukke på Fjellhamar manglet sedler fra flere partier (nevnte ikke hvilke) i et avlukke. Avlukkene ble\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1479): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}": 1,

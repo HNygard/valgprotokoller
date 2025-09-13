@@ -2094,38 +2094,37 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     }
     $obj->{'E2 Signering'}->oppmote = $oppmote;
 
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
     // Dato
-    while ($i < count($lines) && trim($lines[$i]) == '') $i++;
-    if (preg_match('/^Dato: (.+)$/', trim($lines[$i]), $match)) {
-        $obj->{'E2 Signering'}->dato = trim($match[1]);
-        $i++;
-        while ($i < count($lines) && trim($lines[$i]) == '') $i++;
-    }
+    $match = regexAssertAndReturnMatch('/^Dato: (.+)$/', trim($lines[$i++]));
+    $obj->{'E2 Signering'}->dato = trim($match[1]);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
 
     // Signatarer
-    $signatarer = array();
-    while ($i < count($lines)) {
-        if (trim($lines[$i]) === '') {
-            $i++;
-            continue;
-        }
-        if (preg_match('/^Signatar: (.+)$/', trim($lines[$i]), $match)) {
-            $signaturtype = trim($match[1]);
-            $i++;
-            while ($i < count($lines) && trim($lines[$i]) == '') $i++;
-            $signaturnavn = '';
-            if ($i < count($lines) && trim($lines[$i]) !== '' && !str_starts_with(trim($lines[$i]), 'Signatar:')) {
-                $signaturnavn = trim($lines[$i++]);
-            }
-            $signatarer[] = (object)[
-                'type' => $signaturtype,
-                'name' => $signaturnavn
+    $obj->{'E2 Signering'}->signatarer = array();
+    
+    $match = regexAssertAndReturnMatch('/^Signatar:( .*)?$/', trim($lines[$i++]));
+    $obj->{'E2 Signering'}->signatarer[] = (object)[
+                'type' => trim($match[1] ?? ''),
+                'name' => trim($lines[$i++])
             ];
-        } else {
-            break;
-        }
-    }
-    $obj->{'E2 Signering'}->signatarer = $signatarer;
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    
+    $match = regexAssertAndReturnMatch('/^Signatar:( .*)?$/', trim($lines[$i++]));
+    $obj->{'E2 Signering'}->signatarer[] = (object)[
+                'type' => trim($match[1] ?? ''),
+                'name' => trim($lines[$i++])
+            ];
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
 
 
     //$i = assertLine_trim($lines, $i, 'C Avgitte godkjente stemmesedler');

@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "09.09.2025    17:04",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Flekkefjord kommune Vest-Agder valgdistrikt",
@@ -1995,8 +1995,15 @@
             }
         ],
         "dato": "Tirsdag 09. september 2025",
-        "signatarer": []
-    },
-    "unknown_lines": true,
-    "errorMessage": "Unknown lines.\n\n#0 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#1 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#2 {main}"
+        "signatarer": [
+            {
+                "type": "",
+                "name": "JAN SIGBJØRNSEN"
+            },
+            {
+                "type": "",
+                "name": "BJØRN SAND"
+            }
+        ]
+    }
 }

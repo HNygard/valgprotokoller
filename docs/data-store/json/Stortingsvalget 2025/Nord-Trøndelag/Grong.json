@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "10.09.2025    09:39",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Grong kommune Nord-Trøndelag valgdistrikt",
@@ -1552,8 +1552,15 @@
             }
         ],
         "dato": "Onsdag 10. september 2025",
-        "signatarer": []
-    },
-    "unknown_lines": true,
-    "errorMessage": "Unknown lines.\n\n#0 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#1 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#2 {main}"
+        "signatarer": [
+            {
+                "type": "",
+                "name": "LARS BJØRNAR VIST"
+            },
+            {
+                "type": "",
+                "name": "BORGNY KJØLSTAD GRANDE"
+            }
+        ]
+    }
 }
