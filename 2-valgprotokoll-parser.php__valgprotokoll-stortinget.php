@@ -2001,6 +2001,23 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // 
     // 
     
+    $obj->{'E Godkjenning'} = new stdClass();
+    $i = assertLine_trim($lines, $i, 'E Godkjenning');
+    $i = assertLine_trim($lines, $i, 'E1 Valgstyrets merknad');
+    $i = assertLine_trim($lines, $i, 'Merknad til valggjennomføringen i kommunen');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+
+    $e1_merknad = array();
+    while (true) {
+        if ($i >= count($lines) || trim($lines[$i]) == '') {
+            break;
+        }
+        $e1_merknad[] = trim($lines[$i++]);
+    }
+    $obj->{'E Godkjenning'}->{'E1 Valgstyrets merknad'} = $e1_merknad;
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
     
     
     // E2 Signering
@@ -2036,157 +2053,68 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // 
     // 
 
-
-    regexAssertAndReturnMatch('/Stop here/', $lines[$i++]);
-
-
-    $i = assertLine_trim($lines, $i, 'B Avvik mellom kommunenes endelige opptelling og valgdistriktets endelige opptelling');
+    $obj->{'E2 Signering'} = new stdClass();
+    $i = assertLine_trim($lines, $i, 'E2 Signering');
+    $i = assertLine_trim($lines, $i, 'To medlemmer av valgstyret signerer i forbindelse med godkjenningen av valget i kommunen.');
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
-    while (trim($lines[$i]) != 'C Avgitte godkjente stemmesedler') {
-        // For each municipality
-        $muncipality = new stdClass();
+    // Oppmøte
+    $i = assertLine_trim($lines, $i, 'Oppmøte');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    regexAssertAndReturnMatch('/^Medlem \s* Rolle$/', trim($lines[$i++]));
+    $oppmote = array();
+    while (true) {
         $i = removeLineIfPresent_andEmpty($lines, $i);
-        $muncipality->name = regexAssertAndReturnMatch('/^Kommune:\s*([A-Za-zÆØÅæøå0-9 \-]*)\s*$/', $lines[$i++])[1];
-        $obj->{'B Avvik kommune-fylke'}->{$muncipality->name} = $muncipality;
-        $muncipality->numbers = array();
-
-        $i = removeLineIfPresent_andEmpty($lines, $i);
-        regexAssertAndReturnMatch('/^B.1 \s*Forkastede stemmegivninger$/', trim($lines[$i++]));
-        $muncipality->numbers['B.1 Forkastede stemmegivninger'] = new stdClass();
-
-        $i = removeLineIfPresent_andEmpty($lines, $i);
-        regexAssertAndReturnMatch('/Type forkastelse  \s* Antall$/', trim($lines[$i++]));
-
-        foreach (array(
-                     'Velgeren er ikke innført i manntallet i kommunen § 10-1 (1) a',
-                     'Stemmegivningen inneholder ikke tilstrekkelige opplysninger til å fastslå hvem velgeren er § 10-1 (1) b',
-                     'Stemmegivningen er ikke avgitt til rett tid § 10-1 (1) c',
-                     'Stemmegivningen er ikke levert til rett stemmemottaker § 10-1 (1) d',
-                     'Omslagskonvolutten er åpnet eller forsøkt åpnet § 10-1 (1) e',
-                     'Velgeren har allerede avgitt godkjent stemmegivning § 10-1 (1) f',
-                     'Stemmegivningen er ikke kommet inn til valgstyret innen kl. 17 dagen etter valgdagen § 10-1 (1) g',
-                     'Velgeren er ikke innført i manntallet i kommunen § 10-1a (1) a',
-                     'Velgeren har allerede avgitt godkjent stemmegivning § 10-1a (1) c',
-                     'Sum forkastede forhåndsstemmegivninger',
-                     'Velger ikke i kommunens manntall §10-2(1) a)',
-                     'Velger hadde forhåndsstemt/avgitt allerede godkjent stemme §10-2(1) c)',
-                     'Sum forkastede valgtingsstemmegivninger',
-                     'Totalt forkastede stemmegivninger'
-                 ) as $type_forkastelse) {
-            $i = removeLineIfPresent_andEmpty($lines, $i);
-            $type_forkastelse_regex = str_replace('(', '\(', $type_forkastelse);
-            $type_forkastelse_regex = str_replace(')', '\)', $type_forkastelse_regex);
-            $type_forkastelse_regex = str_replace('/', '\/', $type_forkastelse_regex);
-            $number = regexAssertAndReturnMatch('/^ ' . $type_forkastelse_regex . ' \s*([0-9]* ?[0-9]*)\s*$/', $lines[$i++])[1];
-            $muncipality->numbers['B.1 Forkastede stemmegivninger']->{$type_forkastelse} = $number;
-            $i = removeLineIfPresent_andEmpty($lines, $i);
+        if ($i >= count($lines) || trim($lines[$i]) == '') {
+            break;
         }
-
-
-        $i = removeLineIfPresent_andEmpty($lines, $i);
-
-        // ---- Table per municipality - B.2 Behandling av stemmesedler
-        $current_heading = 'B.2 Behandling av stemmesedler';
-        $text_heading = 'Stemmesedler';
-        $column_heading = null;
-        $column1 = 'Forhånd';
-        $column2 = 'Valgting';
-        $sum_row1 = null;
-        $sum_row2 = null;
-        $table_ending = 'B2.1       Forkastede stemmesedler';
-        $i = readTable_twoColumns($muncipality, $lines, $i, $current_heading, $text_heading, $column_heading, $column1, $column2, $sum_row1, $sum_row2, $table_ending);
-
-        // ---- Table per municipality - B2.1 Forkastede stemmesedler
-        $current_heading = 'B2.1       Forkastede stemmesedler';
-        $text_heading = 'Type forkastelse';
-        $column_heading = null;
-        $column1 = 'Kommune';
-        $column2 = 'Valgdistrikt';
-        $column3 = 'Avvik';
-        $table_ending = 'B.2.2 Avvik mellom kommunens endelige opptelling og valgdistriktets endelige opptelling';
-        $start_of_row_keywords_partier = array(
-            'Seddelen manglet off. stempel §10-3(1) a)',
-            'Det fremgår ikke hvilket valg stemmeseddelen gjelder §10-3(1) b)',
-            'Det fremgår ikke hvilket parti eller gruppe velgeren har stemt på §10-3(1) c)',
-            'Partiet eller gruppen stiller ikke liste §10-3(1) d)',
-            'Sum forkastede stemmesedler - forhånd',
-            'Sum forkastede stemmesedler - valgting',
-            'Totalt forkastede stemmesedler',
-        );
-        $subheadings = array(
-            'Forhånd',
-            'Valgting'
-        );
-        $i = readTable_threeColumns_subheadings($muncipality, $lines, $i, $current_heading, $text_heading, $column1, $column2, $column3, $table_ending, $start_of_row_keywords_partier,$subheadings);
-        $muncipality->numbers[$current_heading]['Sum forkastede stemmesedler - forhånd'] = $muncipality->numbers[$current_heading]['Forhånd']['Sum forkastede stemmesedler - forhånd'];
-        unset($muncipality->numbers[$current_heading]['Forhånd']['Sum forkastede stemmesedler - forhånd']);
-        $muncipality->numbers[$current_heading]['Sum forkastede stemmesedler - valgting'] = $muncipality->numbers[$current_heading]['Valgting']['Sum forkastede stemmesedler - valgting'];
-        unset($muncipality->numbers[$current_heading]['Valgting']['Sum forkastede stemmesedler - valgting']);
-        $muncipality->numbers[$current_heading]['Totalt forkastede stemmesedler'] = $muncipality->numbers[$current_heading]['Valgting']['Totalt forkastede stemmesedler'];
-        unset($muncipality->numbers[$current_heading]['Valgting']['Totalt forkastede stemmesedler']);
-        $muncipality->numbers['B2.1 Forkastede stemmesedler'] = $muncipality->numbers[$current_heading];
-        unset($muncipality->numbers[$current_heading]);
-
-        // ---- Table per municipality - B.2.2 Avvik mellom kommunens endelige opptelling og valgdistriktets endelige opptelling
-        $current_heading = 'B.2.2 Avvik mellom kommunens endelige opptelling og valgdistriktets endelige opptelling';
-        $text_heading = 'Parti';
-        $column_heading = null;
-        $column1 = 'Kommune';
-        $column2 = 'Valgdistrikt';
-        $column3 = 'Avvik';
-        $table_ending = 'B.2.3 Blanke stemmesedler';
-        global $alle_partier;
-        $start_of_row_keywords_partier = $alle_partier;
-        $start_of_row_keywords_partier[] = 'Sum antall partifordelte stemmesedler — forhånd';
-        $start_of_row_keywords_partier[] = 'Sum antall partifordelte stemmesedler — valgting';
-        $start_of_row_keywords_partier[] = 'Totalt antall partifordelte stemmesedler';
-        $subheadings = array(
-            'Forhånd',
-            'Valgting'
-        );
-        $i = readTable_threeColumns_subheadings($muncipality, $lines, $i, $current_heading, $text_heading, $column1, $column2, $column3, $table_ending, $start_of_row_keywords_partier, $subheadings);
-        $muncipality->numbers[$current_heading]['Sum antall partifordelte stemmesedler — forhånd'] = $muncipality->numbers[$current_heading]['Forhånd']['Sum antall partifordelte stemmesedler — forhånd'];
-        unset($muncipality->numbers[$current_heading]['Forhånd']['Sum antall partifordelte stemmesedler — forhånd']);
-        $muncipality->numbers[$current_heading]['Sum antall partifordelte stemmesedler — valgting'] = $muncipality->numbers[$current_heading]['Valgting']['Sum antall partifordelte stemmesedler — valgting'];
-        unset($muncipality->numbers[$current_heading]['Valgting']['Sum antall partifordelte stemmesedler — valgting']);
-        $muncipality->numbers[$current_heading]['Totalt antall partifordelte stemmesedler'] = $muncipality->numbers[$current_heading]['Valgting']['Totalt antall partifordelte stemmesedler'];
-        unset($muncipality->numbers[$current_heading]['Valgting']['Totalt antall partifordelte stemmesedler']);
-
-        // ---- Table per municipality - B.2.3 Blanke stemmesedler
-        $current_heading = 'B.2.3 Blanke stemmesedler';
-        $text_heading = 'Blanke stemmesedler';
-        $column_heading = null;
-        $column1 = 'Kommune';
-        $column2 = 'Valgdistrikt';
-        $column3 = 'Avvik';
-        $table_ending = 'B.2.4 Merknader';
-        $start_of_row_keywords_partier = array(
-            'Forhånd',
-            'Valgting',
-            'Totalt'
-        );
-        $i = readTable_threeColumns($muncipality, $lines, $i, $current_heading, $text_heading, $column1, $column2, $column3, $table_ending, $start_of_row_keywords_partier);
-
-        // ---- Comment sections per municipality - B.2.4 Merknader
-        $merknad_heading = 'B.2.4 Merknader';
-        $merknad_reason = null;
-
-        $i = assertLine_trim($lines, $i, $merknad_heading);
-        $i = removeLineIfPresent_andEmpty($lines, $i);
-
-        $comment_lines = array();
-        while (
-            // Stopp på neste kommune
-            !str_starts_with(trim($lines[$i]), 'Kommune: ') &&
-            // Stopp på per-kommune-info
-            !str_starts_with(trim($lines[$i]), 'C Avgitte godkjente stemmesedler')
-        ) {
-            $comment_lines[] = trim($lines[$i++]);
+        // Try to match member and role
+        $match = regexAssertAndReturnMatch('/^([A-ZÆØÅa-zæøå \-\.]+) \s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\s*$/', trim($lines[$i]));
+        if ($match) {
+            $oppmote[] = (object)[
+                'name' => trim($match[1]),
+                'role' => trim($match[2])
+            ];
+            $i++;
+        } else {
+            break;
         }
-        $comments = explode("\n\n", trim(implode("\n", $comment_lines)));
-        $muncipality->comments[$merknad_heading] = $comments;
     }
+    $obj->{'E2 Signering'}->oppmote = $oppmote;
+
+    // Dato
+    while ($i < count($lines) && trim($lines[$i]) == '') $i++;
+    if (preg_match('/^Dato: (.+)$/', trim($lines[$i]), $match)) {
+        $obj->{'E2 Signering'}->dato = trim($match[1]);
+        $i++;
+        while ($i < count($lines) && trim($lines[$i]) == '') $i++;
+    }
+
+    // Signatarer
+    $signatarer = array();
+    while ($i < count($lines)) {
+        if (trim($lines[$i]) === '') {
+            $i++;
+            continue;
+        }
+        if (preg_match('/^Signatar: (.+)$/', trim($lines[$i]), $match)) {
+            $signaturtype = trim($match[1]);
+            $i++;
+            while ($i < count($lines) && trim($lines[$i]) == '') $i++;
+            $signaturnavn = '';
+            if ($i < count($lines) && trim($lines[$i]) !== '' && !str_starts_with(trim($lines[$i]), 'Signatar:')) {
+                $signaturnavn = trim($lines[$i++]);
+            }
+            $signatarer[] = (object)[
+                'type' => $signaturtype,
+                'name' => $signaturnavn
+            ];
+        } else {
+            break;
+        }
+    }
+    $obj->{'E2 Signering'}->signatarer = $signatarer;
+
 
     //$i = assertLine_trim($lines, $i, 'C Avgitte godkjente stemmesedler');
     //$i = removeLineIfPresent_andEmpty($lines, $i);

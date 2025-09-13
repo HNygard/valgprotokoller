@@ -6,7 +6,7 @@
     "language": "nb-NO",
     "languageName": "Norwegian, Bokmål",
     "documentType": "valgprotokoll-stortinget",
-    "error": true,
+    "error": false,
     "reportGenerated": "09.09.2025    18:55",
     "election": "Stortingsvalget 2025",
     "heading": "Protokoll for valgstyret i Eigersund kommune Rogaland valgdistrikt",
@@ -2178,5 +2178,72 @@
             }
         ]
     },
-    "errorMessage": "No match for regex.\nRegex ..... : Stop here\nLine ...... : E Godkjenning\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(2040): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(617): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
+    "E Godkjenning": {
+        "E1 Valgstyrets merknad": [
+            "Protokollen ble godkjent i VS-sak 3/25 9. september 2025."
+        ]
+    },
+    "E2 Signering": {
+        "oppmote": [
+            {
+                "name": "ANJA HOVLAND",
+                "role": "Leder"
+            },
+            {
+                "name": "MAY HELEN HETLAND ERVIK",
+                "role": "Nestleder"
+            },
+            {
+                "name": "LEIF ERIK BROCH",
+                "role": "Sekretær"
+            },
+            {
+                "name": "ROALD EIE",
+                "role": "Medlem"
+            },
+            {
+                "name": "BEATE KYDLAND",
+                "role": "Medlem"
+            },
+            {
+                "name": "MARI SKAARA OMDAL",
+                "role": "Medlem"
+            },
+            {
+                "name": "BJØRNAR STAPNES",
+                "role": "Medlem"
+            },
+            {
+                "name": "KNUT SIREVÅG",
+                "role": "Medlem"
+            },
+            {
+                "name": "KARI JOHANNE MELHUS",
+                "role": "Medlem"
+            },
+            {
+                "name": "HALVOR ØSTERMAN THENGS",
+                "role": "Medlem"
+            },
+            {
+                "name": "STEFFEN VINDHEIM",
+                "role": "Varamedlem"
+            },
+            {
+                "name": "KENNETH PEDERSEN",
+                "role": "Varamedlem"
+            }
+        ],
+        "dato": "Tirsdag 09. september 2025",
+        "signatarer": [
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "BJØRNAR STAPNES"
+            },
+            {
+                "type": "SIGNERT ELEKTRONISK",
+                "name": "HALVOR ØSTERMAN THENGS"
+            }
+        ]
+    }
 }
