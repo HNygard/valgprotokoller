@@ -378,6 +378,27 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // 
     // 
     
+    $obj->{'A2.2 Valgstyret'} = array();
+    $i = assertLine_trim($lines, $i, 'A2.2 Valgstyret');
+    $i = assertLine_trim($lines, $i, 'Folkevalgt organ oppnevnt av kommunestyret med ansvar for valggjennomføringen i kommunen.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    regexAssertAndReturnMatch('/^Medlem \s* Rolle\s*$/', trim($lines[$i++]));
+    while (true) {
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        if ($i >= count($lines) || trim($lines[$i]) == '') {
+            break;
+        }
+        $match = regexAssertAndReturnMatch('/^([A-Za-zÆØÅæøåáö \-]*) \s* (Leder|Nestleder|Sekretær|Medlem|Varamedlem)\s*$/', trim($lines[$i++]));
+        $member = new stdClass();
+        $member->name = trim($match[1]);
+        $member->role = trim($match[2]);
+        $obj->{'A2.2 Valgstyret'}[] = $member;
+    }
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
     
     
     // B Forhåndsstemmer
@@ -401,7 +422,47 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // 
     // 
     // 
-    
+    $obj->{'B1.1 Forhåndsstemmegivninger'} = new stdClass();
+    $i = assertLine_trim($lines, $i, 'B Forhåndsstemmer');
+    $i = assertLine_trim($lines, $i, 'B1 Oppsummering av forhåndsstemmer');
+    $i = assertLine_trim($lines, $i, 'B1.1 Forhåndsstemmegivninger');
+    $i = assertLine_trim($lines, $i, 'Oversikt over godkjente stemmegivninger (kryss i manntall) og forkastede stemmegivninger i kommunen.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = assertLine_trim($lines, $i, 'Antall'); 
+    $match = regexAssertAndReturnMatch('/^Godkjente stemmegivninger \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+    $obj->{'B1.1 Forhåndsstemmegivninger'}->{'Godkjente stemmegivninger'} = cleanFormattedNumber($match[1]);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    regexAssertAndReturnMatch('/^Forkastelsesgrunn\s*Antall$/', trim($lines[$i++]));
+    $items = array(
+        'Velgeren er ikke innført i manntallet i kommunen § 10-2 (1) a',
+        'Velgeren har ikke stemmerett § 10-2 (1) a',
+        'Det kan ikke fastslås hvem velgeren er § 10-2 (1) b',
+        'Stemmegivningen er ikke levert til et sted der velgeren kan stemme § 10-2 (1) c',
+        'Det er sannsynlighetsovervekt for at omslagskonvolutten er åpnet § 10-2 (1) d',
+        'Velgeren har tidligere fått godkjent en stemmegivning § 10-2 (1) e',
+        'Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter klokken 17 dagen etter valgdagen § 10-2 (1) f',
+        'Forkastede stemmegivninger'
+    );
+    foreach ($items as $item) {
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        if ($item == 'Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter klokken 17 dagen etter valgdagen § 10-2 (1) f') {
+            $part1 = 'Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter';
+            $part2 = 'klokken 17 dagen etter valgdagen § 10-2 (1) f';
+            $number = regexAssertAndReturnMatch('/^' . $part1 . ' \s*([0-9 \-]*)\s*$/', trim($lines[$i++]))[1];
+            $i = assertLine_trim($lines, $i, $part2);
+        }
+        else {
+            $item_regex = str_replace('(', '\(', $item);
+            $item_regex = str_replace(')', '\)', $item_regex);
+            $item_regex = str_replace('/', '\/', $item_regex);
+            $number = regexAssertAndReturnMatch('/^' . $item_regex . ' \s*([0-9 \-]*)\s*$/', trim($lines[$i++]))[1];
+        }
+        $obj->{'B1.1 Forhåndsstemmegivninger'}->{$item} = $number;
+    }
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
     
     // B1.2 Forhåndsstemmesedler
     // Oversikt over alle godkjente og forkastede stemmesedler i kommunen.

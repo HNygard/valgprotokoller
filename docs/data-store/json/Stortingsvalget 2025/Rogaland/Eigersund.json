@@ -167,5 +167,142 @@
         "manntallValgting": "Elektronisk",
         "tellemåteAndreTelling": "Maskinell"
     },
-    "errorMessage": "No match for regex.\nRegex ..... : Stop here\nLine ...... : A2.2 Valgstyret\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1061): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(617): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
+    "A2.2 Valgstyret": [
+        {
+            "name": "ANJA HOVLAND",
+            "role": "Leder"
+        },
+        {
+            "name": "MAY HELEN HETLAND ERVIK",
+            "role": "Nestleder"
+        },
+        {
+            "name": "LEIF ERIK BROCH",
+            "role": "Sekretær"
+        },
+        {
+            "name": "ROALD EIE",
+            "role": "Medlem"
+        },
+        {
+            "name": "BEATE KYDLAND",
+            "role": "Medlem"
+        },
+        {
+            "name": "MARI SKAARA OMDAL",
+            "role": "Medlem"
+        },
+        {
+            "name": "BJØRNAR STAPNES",
+            "role": "Medlem"
+        },
+        {
+            "name": "KNUT SIREVÅG",
+            "role": "Medlem"
+        },
+        {
+            "name": "ARNT OLAV SIVERTSEN",
+            "role": "Medlem"
+        },
+        {
+            "name": "JOHN MONG",
+            "role": "Medlem"
+        },
+        {
+            "name": "KARI JOHANNE MELHUS",
+            "role": "Medlem"
+        },
+        {
+            "name": "HALVOR ØSTERMAN THENGS",
+            "role": "Medlem"
+        },
+        {
+            "name": "KARI-ANNE BERGØY",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "TOM RUNE SLEVELAND",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "TOVE HELEN LØYNING",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "ODD STANGELAND",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "ELIN ADSEN KVÅLE",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "SIGMUND SLETTEBØ",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "MORTEN ØGLEND",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "MARIAN SEGLEM",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "SVEN EIRIK HANSEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "LISE RAVNEBERG",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "ISELIN GRØSFJELD SKOGEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "KJELL VIDAR NYGÅRD",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "JENNY KVILHAUG TUEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "STEFFEN VINDHEIM",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "OLGA MERETE ARNESEN ØSTERBØ",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "HILDE ALICE SKÅRA GUNVALDSEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "KENNETH PEDERSEN",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "FRANK LEIDLAND",
+            "role": "Varamedlem"
+        },
+        {
+            "name": "GUNNAR KVASSHEIM",
+            "role": "Varamedlem"
+        }
+    ],
+    "B1.1 Forhåndsstemmegivninger": {
+        "Godkjente stemmegivninger": 4159,
+        "Velgeren er ikke innført i manntallet i kommunen § 10-2 (1) a": "2",
+        "Velgeren har ikke stemmerett § 10-2 (1) a": "3",
+        "Det kan ikke fastslås hvem velgeren er § 10-2 (1) b": "-",
+        "Stemmegivningen er ikke levert til et sted der velgeren kan stemme § 10-2 (1) c": "-",
+        "Det er sannsynlighetsovervekt for at omslagskonvolutten er åpnet § 10-2 (1) d": "1",
+        "Velgeren har tidligere fått godkjent en stemmegivning § 10-2 (1) e": "3",
+        "Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter klokken 17 dagen etter valgdagen § 10-2 (1) f": "-",
+        "Forkastede stemmegivninger": "9"
+    },
+    "errorMessage": "No match for regex.\nRegex ..... : Stop here\nLine ...... : B1.2 Forhåndsstemmesedler\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1122): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(617): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
 }
