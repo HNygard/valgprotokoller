@@ -1688,7 +1688,11 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // C3 Valgtingsstemmer - øvrige
     // Valgtingsstemmer som ikke er telt per lokale.
     // 
-    
+    $obj->{'C3 Valgtingsstemmer - øvrige'} = new stdClass();
+    $i = assertLine_trim($lines, $i, 'C3 Valgtingsstemmer - øvrige');
+    $i = assertLine_trim($lines, $i, 'Valgtingsstemmer som ikke er telt per lokale.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
     
     
     // C3.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler
@@ -1703,10 +1707,30 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // 
     // 
     // 
-    // 
-    // 
-    // 
-    
+
+    $obj->{'C3.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler'} = new stdClass();
+    $i = assertLine_trim($lines, $i, 'C3.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler');
+    $i = assertLine_trim($lines, $i, 'Avvik mellom godkjente valgtingsstemmegivninger (kryss i manntall) og valgtingsstemmesedler fra første telling.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    regexAssertAndReturnMatch('/^Godkjente valgtingsstemmegivninger \s* Godkjente stemmesedler \s* Avvik$/', trim($lines[$i++]));
+    $match = regexAssertAndReturnMatch('/^([0-9]* ?[0-9]*) \s* ([0-9]* ?[0-9]*) \s* ([0-9\-\−]* ?[0-9]*)$/', trim($lines[$i++]));
+    $obj->{'C3.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler'}->{'Godkjente valgtingsstemmegivninger'} = cleanFormattedNumber($match[1]);
+    $obj->{'C3.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler'}->{'Godkjente stemmesedler'} = cleanFormattedNumber($match[2]);
+    $obj->{'C3.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler'}->{'Avvik'} = cleanFormattedNumber($match[3]);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = assertLine_trim($lines, $i, 'Merknad til sammenligning av godkjente stemmegivninger og stemmesedler');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $remarks = array();
+    while (true) {
+        if ($i >= count($lines) || trim($lines[$i]) == '') {
+            break;
+        }
+        $remarks[] = trim($lines[$i++]);
+    }
+    $obj->{'C3.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler'}->remarks = $remarks;
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
     
     
     // C3.2 Forkastede valgtingsstemmesedler - øvrige
@@ -1726,6 +1750,51 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // 
     // 
     
+    $obj->{'C3.2 Forkastede valgtingsstemmesedler - øvrige'} = new stdClass();
+    $i = assertLine_trim($lines, $i, 'C3.2 Forkastede valgtingsstemmesedler - øvrige');
+    $i = assertLine_trim($lines, $i, 'Oversikt over valgtingsstemmesedler valgstyret har forkastet. Eventuelle forkastede tvilsomme sedler lagt til side før første telling fra');
+    $i = assertLine_trim($lines, $i, 'valglokalene er inkludert i forkastelser fra første telling.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    regexAssertAndReturnMatch('/^Forkastelsesgrunn \s* Første telling \s* Andre telling \s* Totalt$/', trim($lines[$i++]));
+    $items = array(
+        'Seddelen mangler offentlig stempel § 10-3 (1) a',
+        'Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b',
+        'Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c',
+        'Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d',
+        'Forkastede stemmesedler'
+    );
+    foreach ($items as $item) {
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        if ($item == 'Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b') {
+            $part1 = 'Det fremkommer ikke hvilket valg';
+            $part2 = 'stemmeseddelen gjelder § 10-3 (1) b';
+            $number = regexAssertAndReturnMatch('/^' . $part1 . ' \s* ([0-9\-]* ?[0-9]*) \s* ([0-9\-]* ?[0-9]*) \s* ([0-9\-]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+            $i = assertLine_trim($lines, $i, $part2);
+        } elseif ($item == 'Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c') {
+            $part1 = 'Det fremkommer ikke hvilket parti eller hvilken';
+            $part2 = 'gruppe velgeren har stemt på § 10-3 (1) c';
+            $number = regexAssertAndReturnMatch('/^' . $part1 . ' \s* ([0-9\-]* ?[0-9]*) \s* ([0-9\-]* ?[0-9]*) \s* ([0-9\-]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+            $i = assertLine_trim($lines, $i, $part2);
+        } elseif ($item == 'Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d') {
+            $part1 = 'Partiet eller gruppen stiller ikke liste i';
+            $part2 = 'valgdistriktet § 10-3 (1) d';
+            $number = regexAssertAndReturnMatch('/^' . $part1 . ' \s* ([0-9\-]* ?[0-9]*) \s* ([0-9\-]* ?[0-9]*) \s* ([0-9\-]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+            $i = assertLine_trim($lines, $i, $part2);
+        } else {
+            $item_regex = str_replace('(', '\(', $item);
+            $item_regex = str_replace(')', '\)', $item_regex);
+            $item_regex = str_replace('/', '\/', $item_regex);
+            $number = regexAssertAndReturnMatch('/^' . $item_regex . ' \s* ([0-9\-]* ?[0-9]*) \s* ([0-9\-]* ?[0-9]*) \s* ([0-9\-]* ?[0-9]*)\s*$/', trim($lines[$i++]));
+        }
+        $obj->{'C3.2 Forkastede valgtingsstemmesedler - øvrige'}->{$item} = new stdClass();
+        $obj->{'C3.2 Forkastede valgtingsstemmesedler - øvrige'}->{$item}->førsteTelling = cleanFormattedNumber($number[1]);
+        $obj->{'C3.2 Forkastede valgtingsstemmesedler - øvrige'}->{$item}->andreTelling = cleanFormattedNumber($number[2]);
+        $obj->{'C3.2 Forkastede valgtingsstemmesedler - øvrige'}->{$item}->totalt = cleanFormattedNumber($number[3]);
+    }
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
     
     
     // C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige

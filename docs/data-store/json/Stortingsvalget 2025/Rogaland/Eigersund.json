@@ -1982,5 +1982,41 @@
             }
         }
     },
-    "errorMessage": "No match for regex.\nRegex ..... : Stop here\nLine ...... : C3 Valgtingsstemmer - øvrige\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1857): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(617): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
+    "C3 Valgtingsstemmer - øvrige": {},
+    "C3.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler": {
+        "Godkjente valgtingsstemmegivninger": 1,
+        "Godkjente stemmesedler": 1,
+        "Avvik": "-",
+        "remarks": [
+            "En velger ble innført i manntallet etter å ha stemt i konvolutt, vedkommende hadde stemmerett."
+        ]
+    },
+    "C3.2 Forkastede valgtingsstemmesedler - øvrige": {
+        "Seddelen mangler offentlig stempel § 10-3 (1) a": {
+            "førsteTelling": 14,
+            "andreTelling": "-",
+            "totalt": 14
+        },
+        "Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b": {
+            "førsteTelling": "-",
+            "andreTelling": "-",
+            "totalt": "-"
+        },
+        "Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c": {
+            "førsteTelling": "-",
+            "andreTelling": "-",
+            "totalt": "-"
+        },
+        "Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d": {
+            "førsteTelling": "-",
+            "andreTelling": "-",
+            "totalt": "-"
+        },
+        "Forkastede stemmesedler": {
+            "førsteTelling": 14,
+            "andreTelling": 0,
+            "totalt": 14
+        }
+    },
+    "errorMessage": "No match for regex.\nRegex ..... : Stop here\nLine ...... : C3.3 Fordeling av stemmesedler - valgtingsstemmer - øvrige\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(1926): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(617): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
 }
