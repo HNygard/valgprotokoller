@@ -108,7 +108,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $match = regexAssertAndReturnMatch('/^ *Stemmeberettigede \s* Godkjente stemmegivninger \s* Fremmøteprosent\s*$/', trim($lines[$i++]));
     $match = regexAssertAndReturnMatch('/^([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*) \s* ([0-9,]* %)\s*$/', trim($lines[$i++]));
     $obj->keyfigures_antallStemmeberettigede = cleanFormattedNumber($match[1]);
-    $obj->keyfigures_totaltAntallKryssIManntallet = cleanFormattedNumber($match[2]);
+    $obj->keyfigures_totaltAntallGodkjenteStemmesedler = cleanFormattedNumber($match[2]);
     $obj->keyfigures_oppmøteprosent = $match[3];
     
     $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -116,19 +116,64 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
 
-    $i = assertLine_trim($lines, $i, 'Nøkkeltall i valggjennomføringen');
+    // 
+    // A1.2 Stemmegivninger
+    // Oversikt over godkjente stemmegivninger (kryss i manntall) og forkastede stemmegivninger i kommunen.
+    // 
+    //                                                                                                              Antall
+    // Godkjente stemmegivninger                                                                                      8 691
+    // 
+    // Forkastelsesgrunn                                                                                             Antall
+    // Velgeren er ikke innført i manntallet i kommunen § 10-2 (1) a                                                     21
+    // Velgeren har ikke stemmerett § 10-2 (1) a                                                                         15
+    // Det kan ikke fastslås hvem velgeren er § 10-2 (1) b                                                                 -
+    // Stemmegivningen er ikke levert til et sted der velgeren kan stemme § 10-2 (1) c                                     -
+    // Det er sannsynlighetsovervekt for at omslagskonvolutten er åpnet § 10-2 (1) d                                       1
+    // Velgeren har tidligere fått godkjent en stemmegivning § 10-2 (1) e                                                  3
+    // Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter                    -
+    // klokken 17 dagen etter valgdagen § 10-2 (1) f
+    // Forkastede stemmegivninger                                                                                        40
+
+    $obj->{'A2.1 Stemmegivninger'} = new stdClass();
+    $i = assertLine_trim($lines, $i, 'A1.2 Stemmegivninger');
+    $i = assertLine_trim($lines, $i, 'Oversikt over godkjente stemmegivninger (kryss i manntall) og forkastede stemmegivninger i kommunen.');
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    $i = removeLineIfPresent_andEmpty($lines, $i);
+    
+    $i = assertLine_trim($lines, $i, 'Antall');
+    $match = regexAssertAndReturnMatch('/^Godkjente stemmegivninger \s* ([0-9 ]*)\s*$/', trim($lines[$i++]));
+    if ($obj->keyfigures_totaltAntallGodkjenteStemmesedler != cleanFormattedNumber($match[1])) {
+        throw new ErrorException('Mismatch in godkjente stemmegivninger: ' . $obj->keyfigures_godkjenteStemmegvininger . ' vs ' . cleanFormattedNumber($match[1]));
+    }
 
     $i = removeLineIfPresent_andEmpty($lines, $i);
-    $match = regexAssertAndReturnMatch('/^ Antall stemmeberettigede \s*([0-9 ]*)\s*$/', $lines[$i++]);
-    $obj->keyfigures_antallStemmeberettigede = cleanFormattedNumber($match[1]);
-
-    $i = removeLineIfPresent_andEmpty($lines, $i);
-    $match = regexAssertAndReturnMatch('/^ Totalt antall kryss i manntallet \s*([0-9 ]*)\s*$/', $lines[$i++]);
-    $obj->keyfigures_totaltAntallKryssIManntallet = cleanFormattedNumber($match[1]);
-
-    $i = removeLineIfPresent_andEmpty($lines, $i);
-    $match = regexAssertAndReturnMatch('/^ Oppmøteprosent \s*([0-9, %]*)\s*$/', $lines[$i++]);
-    $obj->keyfigures_oppmøteprosent = $match[1];
+    regexAssertAndReturnMatch('/^Forkastelsesgrunn\s*Antall$/', trim($lines[$i++]));
+    $items = array(
+        'Velgeren er ikke innført i manntallet i kommunen § 10-2 (1) a',
+        'Velgeren har ikke stemmerett § 10-2 (1) a',
+        'Det kan ikke fastslås hvem velgeren er § 10-2 (1) b',
+        'Stemmegivningen er ikke levert til et sted der velgeren kan stemme § 10-2 (1) c',
+        'Det er sannsynlighetsovervekt for at omslagskonvolutten er åpnet § 10-2 (1) d',
+        'Velgeren har tidligere fått godkjent en stemmegivning § 10-2 (1) e',
+        'Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter klokken 17 dagen etter valgdagen § 10-2 (1) f',
+        'Forkastede stemmegivninger'
+    );
+    foreach ($items as $item) {
+        $i = removeLineIfPresent_andEmpty($lines, $i);
+        $item_regex = str_replace('(', '\(', $item);
+        $item_regex = str_replace(')', '\)', $item_regex);
+        $item_regex = str_replace('/', '\/', $item_regex);
+        if ($item == 'Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter klokken 17 dagen etter valgdagen § 10-2 (1) f') {
+            $part1 = 'Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter';
+            $part2 = 'klokken 17 dagen etter valgdagen § 10-2 (1) f';
+            $number = regexAssertAndReturnMatch('/^' . $part1 . ' \s*([0-9 \-]*)\s*$/', trim($lines[$i++]))[1];
+            $i = assertLine_trim($lines, $i, $part2);
+        }
+        else {
+            $number = regexAssertAndReturnMatch('/^' . $item_regex . ' \s*([0-9 \-]*)\s*$/', trim($lines[$i++]))[1];
+        }   
+        $obj->{'A2.1 Stemmegivninger'}->{$item} = $number;
+    }
 
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $match = regexAssertAndReturnMatch('/^ Totalt antall godkjente forhåndsstemmegivninger \s*([0-9 ]*)\s*$/', $lines[$i++]);

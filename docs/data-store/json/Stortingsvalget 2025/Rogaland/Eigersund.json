@@ -14,7 +14,17 @@
     "municipality": "Eigersund",
     "county": "Rogaland",
     "keyfigures_antallStemmeberettigede": 11018,
-    "keyfigures_totaltAntallKryssIManntallet": 8691,
+    "keyfigures_totaltAntallGodkjenteStemmesedler": 8691,
     "keyfigures_oppmøteprosent": "78,9 %",
-    "errorMessage": "Did not find expected value on line [44].\nExpected ... : Nøkkeltall i valggjennomføringen\nActual ..... : A1.2 Stemmegivninger\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(119): assertLine_trim()\n#1 2-valgprotokoll-parser.php(617): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
+    "A2.1 Stemmegivninger": {
+        "Velgeren er ikke innført i manntallet i kommunen § 10-2 (1) a": "21",
+        "Velgeren har ikke stemmerett § 10-2 (1) a": "15",
+        "Det kan ikke fastslås hvem velgeren er § 10-2 (1) b": "-",
+        "Stemmegivningen er ikke levert til et sted der velgeren kan stemme § 10-2 (1) c": "-",
+        "Det er sannsynlighetsovervekt for at omslagskonvolutten er åpnet § 10-2 (1) d": "1",
+        "Velgeren har tidligere fått godkjent en stemmegivning § 10-2 (1) e": "3",
+        "Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter klokken 17 dagen etter valgdagen § 10-2 (1) f": "-",
+        "Forkastede stemmegivninger": "40"
+    },
+    "errorMessage": "No match for regex.\nRegex ..... : ^ Totalt antall godkjente forhåndsstemmegivninger \\s*([0-9 ]*)\\s*$\nLine ...... : A1.3 Stemmesedler\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(179): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(617): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
 }
