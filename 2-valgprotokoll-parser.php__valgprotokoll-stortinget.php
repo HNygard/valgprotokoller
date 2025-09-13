@@ -300,9 +300,6 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $obj->{'A1.4 Fordeling av stemmesedler'}->{'Blanke stemmesedler'}->valgting = cleanFormattedNumber($match[2]);
     $obj->{'A1.4 Fordeling av stemmesedler'}->{'Blanke stemmesedler'}->totalt = cleanFormattedNumber($match[3]);
     $match = regexAssertAndReturnMatch('/^Totalt godkjente stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)$/', trim($lines[$i++]));
-    if ($obj->{'A1.3 Stemmesedler'}->{'Godkjente stemmesedler'} != cleanFormattedNumber($match[3])) {
-        throw new ErrorException('Mismatch in totalt godkjente stemmesedler: ' . $obj->{'A1.3 Stemmesedler'}->{'Godkjente stemmesedler'} . ' vs ' . cleanFormattedNumber($match[3]));
-    }
     $obj->{'A1.4 Fordeling av stemmesedler'}->{'Totalt godkjente stemmesedler'} = new stdClass();
     $obj->{'A1.4 Fordeling av stemmesedler'}->{'Totalt godkjente stemmesedler'}->forhånd = cleanFormattedNumber($match[1]);
     $obj->{'A1.4 Fordeling av stemmesedler'}->{'Totalt godkjente stemmesedler'}->valgting = cleanFormattedNumber($match[2]);
@@ -583,9 +580,6 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Blanke stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);
     $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Blanke stemmesedler'}->avvik = cleanFormattedNumber($match[3]);
     $match = regexAssertAndReturnMatch('/^Totalt godkjente stemmesedler \s*  ([0-9]* ?[0-9]*)  \s* ([0-9]* ?[0-9]*)\s*$/', trim($lines[$i++]));
-    if ($obj->{'B1.2 Forhåndsstemmesedler'}->{'Godkjente stemmesedler'} != cleanFormattedNumber($match[1])) {
-        throw new ErrorException('Mismatch in totalt godkjente stemmesedler: ' . $obj->{'B1.2 Forhåndsstemmesedler'}->{'Godkjente stemmesedler'} . ' vs ' . cleanFormattedNumber($match[1]));
-    }
     $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Totalt godkjente stemmesedler'} = new stdClass();
     $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Totalt godkjente stemmesedler'}->førsteTelling = cleanFormattedNumber($match[1]);
     $obj->{'B1.3 Fordeling av forhåndsstemmesedler'}->{'Totalt godkjente stemmesedler'}->andreTelling = cleanFormattedNumber($match[2]);

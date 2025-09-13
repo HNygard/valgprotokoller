@@ -336,7 +336,555 @@
             "førsteTelling": 68,
             "andreTelling": 68,
             "avvik": "-"
+        },
+        "Totalt godkjente stemmesedler": {
+            "førsteTelling": 10296,
+            "andreTelling": 10292
         }
     },
-    "errorMessage": "Mismatch in totalt godkjente stemmesedler: 10292 vs 10296\n\n#0 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#1 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#2 {main}"
+    "B2 Forhåndsstemmer": {
+        "Valglokaler": {
+            "4001 Torgkvartalet kjøpesenter": {
+                "Navn": "4001 Torgkvartalet kjøpesenter",
+                "B2.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler": {
+                    "Godkjente forhåndsstemmegivninger": 7368,
+                    "Totalt antall stemmesedler": 7394,
+                    "Avvik": "−26",
+                    "Tvilsomme stemmesedler lagt til side før første telling": 23,
+                    "remarks": [
+                        "Det er 3 flere godkjente sedler enn kryss i manntall. Det kan f.eks. skyldes at det er sedler uten stempel. 3 i avvik av 7368 er bra ved",
+                        "manuell sortering/telling."
+                    ]
+                },
+                "B2.2 Forkastede forhåndsstemmesedler": {
+                    "Seddelen mangler offentlig stempel § 10-3 (1) a": "1",
+                    "Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b": "-",
+                    "Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c": "-",
+                    "Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d": "-",
+                    "Forkastede stemmesedler": "1"
+                },
+                "B2.3 Fordeling av forhåndsstemmesedler": {
+                    "parties": [
+                        {
+                            "name": "Arbeiderpartiet",
+                            "førsteTelling": 2740,
+                            "andreTelling": 2742,
+                            "avvik": 2
+                        },
+                        {
+                            "name": "Fremskrittspartiet",
+                            "førsteTelling": 1759,
+                            "andreTelling": 1755,
+                            "avvik": "−4"
+                        },
+                        {
+                            "name": "Høyre",
+                            "førsteTelling": 807,
+                            "andreTelling": 807,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Senterpartiet",
+                            "førsteTelling": 557,
+                            "andreTelling": 558,
+                            "avvik": 1
+                        },
+                        {
+                            "name": "SV - Sosialistisk Venstreparti",
+                            "førsteTelling": 309,
+                            "andreTelling": 309,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Rødt",
+                            "førsteTelling": 291,
+                            "andreTelling": 291,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Miljøpartiet De Grønne",
+                            "førsteTelling": 188,
+                            "andreTelling": 188,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Kristelig Folkeparti",
+                            "førsteTelling": 187,
+                            "andreTelling": 187,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Venstre",
+                            "førsteTelling": 163,
+                            "andreTelling": 163,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Pensjonistpartiet",
+                            "førsteTelling": 116,
+                            "andreTelling": 116,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Industri- og Næringspartiet",
+                            "førsteTelling": 47,
+                            "andreTelling": 47,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Generasjonspartiet",
+                            "førsteTelling": 43,
+                            "andreTelling": 43,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Norgesdemokratene",
+                            "førsteTelling": 35,
+                            "andreTelling": 35,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Partiet DNI",
+                            "førsteTelling": 28,
+                            "andreTelling": 28,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Konservativt",
+                            "førsteTelling": 25,
+                            "andreTelling": 25,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Fred og Rettferdighet (FOR)",
+                            "førsteTelling": 16,
+                            "andreTelling": 16,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Velferd og Innovasjonspartiet",
+                            "førsteTelling": 12,
+                            "andreTelling": 12,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Partiet Sentrum",
+                            "førsteTelling": 8,
+                            "andreTelling": 8,
+                            "avvik": "-"
+                        }
+                    ],
+                    "Totalt partifordelte stemmesedler": {
+                        "førsteTelling": 7331,
+                        "andreTelling": 7330
+                    },
+                    "Blanke stemmesedler": {
+                        "førsteTelling": 40,
+                        "andreTelling": 40,
+                        "avvik": "-"
+                    },
+                    "Totalt godkjente stemmesedler": {
+                        "førsteTelling": 7371,
+                        "andreTelling": 7370
+                    },
+                    "avvikRemarks": [
+                        "Samme antall stemmesedler som ved første manuelle telling. Fant en uten gyldig stempel."
+                    ],
+                    "remarks": [
+                        "-"
+                    ]
+                }
+            },
+            "4002 Stjørdal rådhus": {
+                "Navn": "4002 Stjørdal rådhus",
+                "B2.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler": {
+                    "Godkjente forhåndsstemmegivninger": 1554,
+                    "Totalt antall stemmesedler": 1564,
+                    "Avvik": "−10",
+                    "Tvilsomme stemmesedler lagt til side før første telling": 9,
+                    "remarks": [
+                        "10 flere sedler enn kryss i manntall. 9 skyldes tvilsomme sedler oppdaget med manglende stempel. Vi antar at det i maskinell telling",
+                        "vil oppdages 1 seddel til uten stempel."
+                    ]
+                },
+                "B2.2 Forkastede forhåndsstemmesedler": {
+                    "Seddelen mangler offentlig stempel § 10-3 (1) a": "-",
+                    "Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b": "-",
+                    "Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c": "-",
+                    "Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d": "-",
+                    "Forkastede stemmesedler": "0"
+                },
+                "B2.3 Fordeling av forhåndsstemmesedler": {
+                    "parties": [
+                        {
+                            "name": "Arbeiderpartiet",
+                            "førsteTelling": 596,
+                            "andreTelling": 596,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Fremskrittspartiet",
+                            "førsteTelling": 340,
+                            "andreTelling": 340,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Høyre",
+                            "førsteTelling": 166,
+                            "andreTelling": 168,
+                            "avvik": 2
+                        },
+                        {
+                            "name": "Senterpartiet",
+                            "førsteTelling": 150,
+                            "andreTelling": 148,
+                            "avvik": "−2"
+                        },
+                        {
+                            "name": "Rødt",
+                            "førsteTelling": 72,
+                            "andreTelling": 72,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Kristelig Folkeparti",
+                            "førsteTelling": 62,
+                            "andreTelling": 62,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "SV - Sosialistisk Venstreparti",
+                            "førsteTelling": 57,
+                            "andreTelling": 57,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Miljøpartiet De Grønne",
+                            "førsteTelling": 32,
+                            "andreTelling": 32,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Venstre",
+                            "førsteTelling": 29,
+                            "andreTelling": 29,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Pensjonistpartiet",
+                            "førsteTelling": 21,
+                            "andreTelling": 21,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Industri- og Næringspartiet",
+                            "førsteTelling": 7,
+                            "andreTelling": 7,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Norgesdemokratene",
+                            "førsteTelling": 6,
+                            "andreTelling": 6,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Generasjonspartiet",
+                            "førsteTelling": 3,
+                            "andreTelling": 3,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Fred og Rettferdighet (FOR)",
+                            "førsteTelling": 2,
+                            "andreTelling": 2,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Konservativt",
+                            "førsteTelling": 2,
+                            "andreTelling": 2,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Partiet DNI",
+                            "førsteTelling": 1,
+                            "andreTelling": 1,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Partiet Sentrum",
+                            "førsteTelling": 1,
+                            "andreTelling": 1,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Velferd og Innovasjonspartiet",
+                            "førsteTelling": 1,
+                            "andreTelling": 1,
+                            "avvik": "-"
+                        }
+                    ],
+                    "Totalt partifordelte stemmesedler": {
+                        "førsteTelling": 1548,
+                        "andreTelling": 1548
+                    },
+                    "Blanke stemmesedler": {
+                        "førsteTelling": 7,
+                        "andreTelling": 7,
+                        "avvik": "-"
+                    },
+                    "Totalt godkjente stemmesedler": {
+                        "førsteTelling": 1555,
+                        "andreTelling": 1555
+                    },
+                    "avvikRemarks": [
+                        "Antallet stemmer overens med første telling. En sorteringsfeil i manuell telling på 2 stemmer mellom 2 parti."
+                    ],
+                    "remarks": [
+                        "-"
+                    ]
+                }
+            },
+            "4009 Stjørdal helsehus": {
+                "Navn": "4009 Stjørdal helsehus",
+                "B2.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler": {
+                    "Godkjente forhåndsstemmegivninger": 0,
+                    "Totalt antall stemmesedler": 0,
+                    "Avvik": "-",
+                    "Tvilsomme stemmesedler lagt til side før første telling": 0,
+                    "remarks": [
+                        "Ligger sammen med forhåndsstemmer øvrige."
+                    ]
+                },
+                "B2.2 Forkastede forhåndsstemmesedler": {
+                    "Seddelen mangler offentlig stempel § 10-3 (1) a": "-",
+                    "Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b": "-",
+                    "Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c": "-",
+                    "Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d": "-",
+                    "Forkastede stemmesedler": "0"
+                },
+                "B2.3 Fordeling av forhåndsstemmesedler": {
+                    "parties": [
+                        {
+                            "name": "Arbeiderpartiet",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Fred og Rettferdighet (FOR)",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Fremskrittspartiet",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Generasjonspartiet",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Høyre",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Industri- og Næringspartiet",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Konservativt",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Kristelig Folkeparti",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Miljøpartiet De Grønne",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Norgesdemokratene",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Partiet DNI",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Partiet Sentrum",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Pensjonistpartiet",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Rødt",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "SV - Sosialistisk Venstreparti",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Senterpartiet",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Velferd og Innovasjonspartiet",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        },
+                        {
+                            "name": "Venstre",
+                            "førsteTelling": 0,
+                            "andreTelling": 0,
+                            "avvik": "-"
+                        }
+                    ],
+                    "Totalt partifordelte stemmesedler": {
+                        "førsteTelling": 0,
+                        "andreTelling": 0
+                    },
+                    "Blanke stemmesedler": {
+                        "førsteTelling": 0,
+                        "andreTelling": 0,
+                        "avvik": "-"
+                    },
+                    "Totalt godkjente stemmesedler": {
+                        "førsteTelling": 0,
+                        "andreTelling": 0
+                    },
+                    "avvikRemarks": [
+                        "-"
+                    ],
+                    "remarks": [
+                        "-"
+                    ]
+                }
+            }
+        }
+    },
+    "B3 Forhåndsstemmer - øvrige": {},
+    "B3.1 Sammenligning av godkjente forhåndsstemmegivninger og forhåndsstemmesedler": {
+        "Godkjente forhåndsstemmegivninger": 748,
+        "Godkjente stemmesedler": 748,
+        "Avvik": "-",
+        "remarks": [
+            "Stemmer helt med kryss i manntallet."
+        ]
+    },
+    "B3.2 Forkastede forhåndsstemmesedler - øvrige": {
+        "Seddelen mangler offentlig stempel § 10-3 (1) a": {
+            "førsteTelling": 33,
+            "andreTelling": 1,
+            "totalt": 34
+        },
+        "Det fremkommer ikke hvilket valg stemmeseddelen gjelder § 10-3 (1) b": {
+            "førsteTelling": "-",
+            "andreTelling": "-",
+            "totalt": "-"
+        },
+        "Det fremkommer ikke hvilket parti eller hvilken gruppe velgeren har stemt på § 10-3 (1) c": {
+            "førsteTelling": "-",
+            "andreTelling": "-",
+            "totalt": "-"
+        },
+        "Partiet eller gruppen stiller ikke liste i valgdistriktet § 10-3 (1) d": {
+            "førsteTelling": 1,
+            "andreTelling": "-",
+            "totalt": 1
+        },
+        "Forkastede stemmesedler": {
+            "førsteTelling": 34,
+            "andreTelling": 1,
+            "totalt": 35
+        }
+    },
+    "B3.3 Fordeling av forhåndsstemmesedler - øvrige": {
+        "parties": [
+            {
+                "name": "Arbeiderpartiet",
+                "førsteTelling": 270,
+                "andreTelling": 270,
+                "avvik": "-"
+            },
+            {
+                "name": "Fremskrittspartiet",
+                "førsteTelling": 151,
+                "andreTelling": 151,
+                "avvik": "-"
+            },
+            {
+                "name": "Høyre",
+                "førsteTelling": 86,
+                "andreTelling": 86,
+                "avvik": "-"
+            },
+            {
+                "name": "SV - Sosialistisk Venstreparti",
+                "førsteTelling": 59,
+                "andreTelling": 59,
+                "avvik": "-"
+            },
+            {
+                "name": "Senterpartiet",
+                "førsteTelling": 47,
+                "andreTelling": 47,
+                "avvik": "-"
+            },
+            {
+                "name": "Miljøpartiet De Grønne",
+                "førsteTelling": 31,
+                "andreTelling": 31,
+                "avvik": "-"
+            },
+            {
+                "name": "Kristelig Folkeparti",
+                "førsteTelling": 28,
+                "andreTelling": 28,
+                "avvik": "-"
+            },
+            {
+                "name": "Rødt",
+                "førsteTelling": 21,
+                "andreTelling": 21,
+                "avvik": "-"
+            }
+        ]
+    },
+    "errorMessage": "No match for regex.\nRegex ..... : ^([A-Za-zÆØÅæøåáö\\(\\) \\-]*) \\s*  ([0-9\\-]* ?[0-9]*) \\s*  ([0-9\\-]* ?[0-9]*) \\s*  ([0-9\\-]* ?[0-9]*)$\nLine ...... : Venstre                                                                                         20             19                          −1\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(975): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(646): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(372): parseFile_andWriteToDisk()\n#3 {main}"
 }
