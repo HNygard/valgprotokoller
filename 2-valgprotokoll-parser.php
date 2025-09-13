@@ -604,6 +604,19 @@ function parseFile_andWriteToDisk(&$obj, $file) {
         readValgprotokollKommune($file_content, $obj, $election_year);
         return;
     }
+    if (
+        !isset($obj->documentType)
+        && str_contains(substr($file_content, 0, 100), 'Stortingsvalget 2025')
+        && (
+            str_contains(substr($file_content, 0, 100), 'Protokoll for valstyret')
+            || str_contains(substr($file_content, 0, 100), 'Protokoll for valgstyret')
+        )
+    ) {
+        require_once __DIR__ . '/2-valgprotokoll-parser.php__valgprotokoll-stortinget.php';
+
+        readValgprotokollStortinget($file_content, $obj, $election_year);
+        return;
+    }
 
 
     $obj->error = true;

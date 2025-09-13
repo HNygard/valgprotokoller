@@ -1,0 +1,12 @@
+{
+    "localSource": "docs/data-store/pdfs-2025/valgmedarbeiderportalen.valg.no-umbraco-Surface-MeetingBook-downloadByName-?meetingBookFolderId=23814&meetingBookName=4222_st_2025.pdf.layout.txt",
+    "url": "https://valgmedarbeiderportalen.valg.no/umbraco/Surface/MeetingBook/downloadByName/?meetingBookFolderId=23814&meetingBookName=4222_st_2025",
+    "downloadTime": "2025-09-10 19:14:00",
+    "pdfMetaData": "Creator:         AutoStore\nProducer:        AutoStore\nCreationDate:    Wed Sep 10 09:11:10 2025 CEST\nModDate:         Wed Sep 10 11:11:39 2025 CEST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          yes\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           19\nEncrypted:       no\nPage size:       595.2 x 841.9 pts (A4)\nPage rot:        0\nFile size:       2746807 bytes\nOptimized:       yes\nPDF version:     1.4",
+    "language": "nn-NO",
+    "languageName": "Norwegian, Nynorsk",
+    "documentType": "valgprotokoll-stortinget",
+    "error": true,
+    "reportGenerated": "09.09.2025   13:19",
+    "errorMessage": "No match for regex.\nRegex ..... : ^\\s*((Fylkestingsvalget|Kommunestyrevalget|Stortingsvalget) [0-9]*)\\s*$\nLine ...... : VALG\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(59): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(617): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(370): parseFile_andWriteToDisk()\n#3 {main}"
+}
