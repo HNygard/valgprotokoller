@@ -602,10 +602,14 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     // Each polling station starts with a line like "4001 Rådhuset 4 etg"
     while (true) {
         $i = removeLineIfPresent_andEmpty($lines, $i);
-        $pollingStationName = regexAssertAndReturnMatch('/^([0-9]{4} .*)$/', trim($lines[$i++]))[1];
+        $pollingStationMatch = regexAssertAndReturnMatch('/^([0-9]{4}) (.*)$/', trim($lines[$i++]));
+        $pollingStationId = trim($pollingStationMatch[1]);
+        $pollingStationName = trim($pollingStationMatch[2]);
+        $pollingStationIdAndName = $pollingStationId . ' ' . $pollingStationName;
         $pollingStation = new stdClass();
+        $pollingStation->Kretsnr = $pollingStationId;
         $pollingStation->Navn = $pollingStationName;
-        $obj->{'B2 Forhåndsstemmer'}->Valglokaler[$pollingStationName] = $pollingStation;
+        $obj->{'B2 Forhåndsstemmer'}->Valglokaler[$pollingStationIdAndName] = $pollingStation;
 
         // ## NOTICE: This section B2.1, B2.2 and B2.3 repeats for every polling station (valglokale)
         // 4001 Rådhuset 4 etg
@@ -724,7 +728,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         // 
         
         $pollingStation->{'B2.3 Fordeling av forhåndsstemmesedler'} = new stdClass();
-        $i = assertLine_trim($lines, $i, 'B2.3 Fordeling av forhåndsstemmesedler - ' . $pollingStationName);
+        $i = assertLine_trim($lines, $i, 'B2.3 Fordeling av forhåndsstemmesedler - ' . $pollingStationIdAndName);
         $i = assertLine_trim($lines, $i, 'Fordelingen av godkjente stemmesedler i første og andre telling.');
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -790,7 +794,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
-        $i = assertLine_trim($lines, $i, 'Andre merknader til forhåndsstemmer - ' . $pollingStationName);
+        $i = assertLine_trim($lines, $i, 'Andre merknader til forhåndsstemmer - ' . $pollingStationIdAndName);
         $i = assertLine_trim($lines, $i, 'Eventuelt annen relevant informasjon fra valggjennomføring og opptelling.');
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $remarks = array();
@@ -1490,10 +1494,14 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         // ## NOTICE: This section C2.1, C2.2 and C2.3 repeats for every polling station (valglokale)
 
         $i = removeLineIfPresent_andEmpty($lines, $i);
-        $pollingStationName = regexAssertAndReturnMatch('/^([0-9]{4} .*)$/', trim($lines[$i]))[1];
+        $pollingStationMatch = regexAssertAndReturnMatch('/^([0-9]{4}) (.*)$/', trim($lines[$i]));
+        $pollingStationId = trim($pollingStationMatch[1]);
+        $pollingStationName = trim($pollingStationMatch[2]);
+        $pollingStationIdAndName = $pollingStationId . ' ' . $pollingStationName;
         $pollingStation = new stdClass();
+        $pollingStation->Kretsnr = $pollingStationId;
         $pollingStation->Navn = $pollingStationName;
-        $obj->{'C2 Valgtingsstemmer - fra valglokalene'}->Valglokaler[$pollingStationName] = $pollingStation;
+        $obj->{'C2 Valgtingsstemmer - fra valglokalene'}->Valglokaler[$pollingStationIdAndName] = $pollingStation;
 
 
         // 0001 Lundåne Bo- og servicesenter    
@@ -1512,7 +1520,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         // 
         // 
 
-        $i = assertLine_trim($lines, $i, $pollingStationName);
+        $i = assertLine_trim($lines, $i, $pollingStationIdAndName);
         $i = assertLine_trim($lines, $i, 'C2.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler');
         $pollingStation->{'C2.1 Sammenligning av godkjente valgtingsstemmegivninger og valgtingsstemmesedler'} = new stdClass();
         $i = assertLine_trim($lines, $i, 'Avvik mellom godkjente valgtingsstemmegivninger (kryss i manntall) og valgtingsstemmesedler fra første telling.');
@@ -1610,7 +1618,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         // 
 
         $pollingStation->{'C2.3 Fordeling av valgtingsstemmesedler'} = new stdClass();
-        $i = assertLine_trim($lines, $i, 'C2.3 Fordeling av valgtingsstemmesedler - ' . $pollingStationName);
+        $i = assertLine_trim($lines, $i, 'C2.3 Fordeling av valgtingsstemmesedler - ' . $pollingStationIdAndName);
         $i = assertLine_trim($lines, $i, 'Fordelingen av godkjente stemmesedler i første og andre telling.');
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -1672,7 +1680,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $i = removeLineIfPresent_andEmpty($lines, $i);
-        $i = assertLine_trim($lines, $i, 'Andre merknader til valgtingsstemmer - ' . $pollingStationName);
+        $i = assertLine_trim($lines, $i, 'Andre merknader til valgtingsstemmer - ' . $pollingStationIdAndName);
         $i = assertLine_trim($lines, $i, 'Eventuelt annen relevant informasjon fra valggjennomføring og opptelling.');
         $i = removeLineIfPresent_andEmpty($lines, $i);
         $remarks = array();
