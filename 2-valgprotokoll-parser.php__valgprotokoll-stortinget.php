@@ -19,6 +19,13 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     }
     $obj->documentType = 'valgprotokoll-stortinget';
 
+    // Strip one scentence in bokmål to make it easier for nynorsk parsing
+    $file_content = str_replace(
+        'Fordelingen av stemmesedler i første og andre telling. Forkastede som oppdages i andre telling fjernes fra tellingen.',
+        'Fordelingen av stemmesedler i første og andre telling.', 
+        $file_content
+    );
+
     // :: Strip footers and headers
     // 10.09.2025   09:01                                                       Side 2 av 19
     $regex_footer = '/^([0-9]*\.[0-9]*\.[0-9]* *[0-9]*:[0-9]*) \s* Side [0-9]* av [0-9]*$/';
@@ -86,12 +93,7 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
 
-    if ($nynorsk) {
-        throw new Exception("Nynorsk text detected. Parser not finished.");
-    }
-
     // Skip over "Innholdsfortegnelse" (table of contents) if present
-
 
     $i = assertLine_trim($lines, $i, 'Innholdsfortegnelse');
     $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -964,7 +966,8 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
 
     $obj->{'B3.3 Fordeling av forhåndsstemmesedler - øvrige'} = new stdClass();
     $i = assertLine_trim($lines, $i, 'B3.3 Fordeling av forhåndsstemmesedler - øvrige');
-    $i = assertLine_trim($lines, $i, 'Fordelingen av stemmesedler i første og andre telling. Forkastede som oppdages i andre telling fjernes fra tellingen.');
+    //$i = assertLine_trim($lines, $i, 'Fordelingen av stemmesedler i første og andre telling. Forkastede som oppdages i andre telling fjernes fra tellingen.');
+    $i = assertLine_trim($lines, $i, 'Fordelingen av stemmesedler i første og andre telling.');
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
@@ -1198,7 +1201,13 @@ function readValgprotokollStortinget($file_content, &$obj, $election_year) {
 
     $obj->{'B4.3 Fordeling av forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen'} = new stdClass();
     $i = assertLine_trim($lines, $i, 'B4.3 Fordeling av forhåndsstemmesedler - telt etter kl. 17 dagen etter valgdagen');
-    $i = assertLine_trim($lines, $i, 'Fordelingen av godkjente stemmesedler i første og andre telling.');
+    if ($lines[$i] == 'Fordelingen av stemmesedler i første og andre telling.') {
+        // From the nynorsk translated version. Also fine.
+        $i = assertLine_trim($lines, $i, 'Fordelingen av stemmesedler i første og andre telling.');
+    }
+    else {
+        $i = assertLine_trim($lines, $i, 'Fordelingen av godkjente stemmesedler i første og andre telling.');
+    }
     $i = removeLineIfPresent_andEmpty($lines, $i);
     $i = removeLineIfPresent_andEmpty($lines, $i);
     regexAssertAndReturnMatch('/^Partinavn \s* Første telling \s* Andre telling \s* Avvik$/', trim($lines[$i++]));

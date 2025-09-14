@@ -318,7 +318,8 @@ foreach ($lines as $line) {
     if (empty(trim($line))) {
         continue;
     }
-    $line = trim($line);
+    $line = trim($line, "\n\r");
+    $line = str_replace('    ', "\t", $line);
     $nynorskString = explode("\t", $line)[0];
     $bokmaalString = explode("\t", $line)[1];
     $nynorskToBokmaal[$nynorskString] = $bokmaalString;
