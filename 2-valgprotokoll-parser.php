@@ -1088,6 +1088,9 @@ function cleanFormattedNumber($stringNumber) {
     }
 
     $stringNumber = str_replace(' ', '', $stringNumber);
+
+    // Switch U+2212 (minus sign) to normal minus used in JSON numbers
+    $stringNumber = str_replace('−', '-', $stringNumber);
     if (is_numeric($stringNumber) && !str_contains($stringNumber, ',')) {
         return (int)$stringNumber;
     }
