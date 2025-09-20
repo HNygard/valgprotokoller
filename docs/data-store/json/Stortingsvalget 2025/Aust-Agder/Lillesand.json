@@ -1,0 +1,36 @@
+{
+    "localSource": "docs/data-store/pdfs-2025/valgmedarbeiderportalen.valg.no-umbraco-Surface-MeetingBook-downloadByName-?meetingBookFolderId=23814&meetingBookName=4215_st_2025.pdf.layout.txt",
+    "url": "https://valgmedarbeiderportalen.valg.no/umbraco/Surface/MeetingBook/downloadByName/?meetingBookFolderId=23814&meetingBookName=4215_st_2025",
+    "downloadTime": "2025-09-20 09:23:27",
+    "pdfMetaData": "Title:           Protokoll for valgstyret i Lillesand kommune\nProducer:        OpenPDF 2.0.3\nCreationDate:    Tue Aug 19 11:31:32 2025 CEST\nCustom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           17\nEncrypted:       no\nPage size:       595 x 842 pts (A4)\nPage rot:        0\nFile size:       99912 bytes\nOptimized:       no\nPDF version:     1.5",
+    "language": "nb-NO",
+    "languageName": "Norwegian, Bokmål",
+    "documentType": "valgprotokoll-stortinget",
+    "error": true,
+    "reportGenerated": "19.08.2025    11:31",
+    "election": "Stortingsvalget 2025",
+    "heading": "Protokoll for valgstyret i Lillesand kommune Aust-Agder Valgdistrikt",
+    "electionYear": "2025",
+    "municipality": "Lillesand",
+    "county": "Aust-Agder",
+    "keyfigures_antallStemmeberettigede": 8650,
+    "keyfigures_totaltAntallGodkjenteStemmegivninger": 211,
+    "keyfigures_oppmøteprosent": "2,4 %",
+    "A2.1 Stemmegivninger": {
+        "Godkjente stemmegivninger": 211,
+        "Velgeren er ikke innført i manntallet i kommunen § 10-2 (1) a": "-",
+        "Velgeren har ikke stemmerett § 10-2 (1) a": "-",
+        "Det kan ikke fastslås hvem velgeren er § 10-2 (1) b": "-",
+        "Stemmegivningen er ikke levert til et sted der velgeren kan stemme § 10-2 (1) c": "-",
+        "Det er sannsynlighetsovervekt for at omslagskonvolutten er åpnet § 10-2 (1) d": "-",
+        "Velgeren har tidligere fått godkjent en stemmegivning § 10-2 (1) e": "-",
+        "Stemmegivingen har kommet inn til valgstyret før forhåndsstemmegivningen har startet eller etter klokken 17 dagen etter valgdagen § 10-2 (1) f": "-",
+        "Forkastede stemmegivninger": "0"
+    },
+    "A1.3 Stemmesedler": {
+        "Godkjente stemmesedler": 238,
+        "Forkastede stemmesedler": 8,
+        "Totalt antall stemmesedler": 246
+    },
+    "errorMessage": "No match for regex.\nRegex ..... : ^Seddelen mangler offentlig stempel § 10-3 \\(1\\) a \\s*([0-9\\-]* ?[0-9]*)\\s*$\nLine ...... : Seddelen mangler offisielt stempel § 10-3 (1) a                                                                     6\n\n#0 2-valgprotokoll-parser.php__valgprotokoll-stortinget.php(236): regexAssertAndReturnMatch()\n#1 2-valgprotokoll-parser.php(647): readValgprotokollStortinget()\n#2 2-valgprotokoll-parser.php(373): parseFile_andWriteToDisk()\n#3 {main}"
+}
